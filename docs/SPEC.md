@@ -1,6 +1,6 @@
 # Observatório: padrão de dados, versão 1.0
 
-*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: publisher, lab, researcher, family (models are always derived by the collector, never contributed). One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
+*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: publisher, lab, researcher, family and benchmark (models and datasets are always derived by the collector, never contributed). One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
 
 As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `schema/` e `scripts/validar.py` implementam este texto; se divergirem dele, é um defeito de um dos dois.
 
@@ -9,7 +9,7 @@ As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `sche
 | Camada | Onde | Quem escreve | Contribuição pode alterar? |
 |---|---|---|---|
 | **Curada** | `data/entidades/<tipo>/` | pessoas (por pull request), revisão humana | sim |
-| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
+| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `datasets.json`, `benchmarks.json`, `foto_camadas.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
 | **Exemplos** | `data/exemplos/` | mantenedor | só para ensinar o formato; nunca entram nos dados oficiais |
 | **Remoções** | `data/remocoes.json` | mantenedor | não (seção 8) |
 
@@ -27,6 +27,8 @@ laboratorio ─ instituição (objeto: nome, país, fonte)
    ▲
    └── pesquisador.afiliacoes[].laboratorio (afirmação do pesquisador, com fonte)
 laboratorio.publicadores[] ─ contas que o laboratório usa para publicar
+benchmark.datasets[] ─ datasets do Hugging Face que o benchmark aponta (derivado: metadados do dataset)
+publicador ──< dataset                      (derivado: datasets públicos do publicador)
 ```
 
 - **publicador**: quem publica modelos: pessoa independente, grupo, empresa, universidade ou outra organização. É a chave da constelação.
@@ -34,6 +36,8 @@ laboratorio.publicadores[] ─ contas que o laboratório usa para publicar
 - **pesquisador**: pessoa com vínculo profissional público. Ver seção 7.
 - **modelo**: um modelo de linguagem. É sempre derivado pelo coletor a partir do Hugging Face; não existe arquivo curado de modelo.
 - **familia**: linhagem de modelos (regra F). O arquivo curado dá nome, descrição e fonte.
+- **dataset**: conjunto de dados público do Hugging Face. É sempre derivado pelo coletor (seção 4.8); não existe arquivo curado de dataset.
+- **benchmark**: conceito de avaliação em português ou do Brasil (por exemplo, um exame ou um corpus de avaliação), curado por contribuição com evidência, como o laboratório. Aponta para datasets; os metadados deles vêm da coleta (seção 4.9).
 - **constelação**: apenas derivada (publicador e seus modelos); não se contribui.
 
 A direção das relações é única, para haver uma só verdade por fato: o vínculo pesquisador–laboratório e pesquisador–modelo vive no arquivo do **pesquisador**; o laboratório e o modelo mostram a lista inversa, calculada. Assim, remover uma pessoa é apagar um arquivo, sem referências soltas.
@@ -101,6 +105,14 @@ Fonte: `{tipo, url, acessado}` + opcionais `rotulo`, `trecho`. Evidência: igual
 | `repositorio` | repositório de código ou de dados |
 | `cartao_modelo` | cartão (README) de um modelo |
 
+### 4.8 dataset (derivado)
+
+Não há arquivo curado de dataset. Cada dataset tem `id` (`<publicador>/<nome>`, como no Hugging Face), `publicador`, `nome`, `url`, `descricao` (uma linha do cartão, até 160 caracteres, sem contato pessoal), `idiomas[]` (códigos do cartão), `pt_br` (o cartão marca português do Brasil), `tarefas[]`, `licenca`, tamanho em bytes e faixa de tamanho (`<1MB`, `1-100MB`, `100MB-1GB`, `1-10GB`, `>10GB`), faixa de linhas declarada no cartão (a API de listagem não traz a contagem exata), `downloads` (30 dias), `likes`, `atualizado`, `escopo` (`br` ou `pt`), `benchmarks[]` (ids dos benchmarks que o apontam) e `fontes[]`. Só se usam metadados públicos que o próprio Hugging Face expõe; datasets privados ou com acesso restrito (gated) não entram. A forma publicada para a interface está em [docs/CONTRATO_CAMADAS.md](CONTRATO_CAMADAS.md).
+
+### 4.9 benchmark
+
+`id` (kebab-case), `nome`, `sigla?`, `descricao` (`pt` e `en`, 1 a 2 linhas), `dominio[]` (obrigatório; um ou mais de `geral`, `vestibular_educacao`, `juridico`, `saude`, `codigo`, `matematica`, `extracao_classificacao`, `cultura_lingua`, `outros`), `idiomas[]`, `tarefas[]`, `tipo` (`conjunto`, `avaliacao` ou `leaderboard`; `leaderboard` exige `links.leaderboard`), `datasets[]` (ids do Hugging Face, `<publicador>/<nome>`), `criador?` (`publicador` do Hugging Face, ou `nome` institucional com `fonte`), `ano?`, `links` (`artigo`, `site`, `leaderboard`, `codigo`; pelo menos um) e `fontes` (pelo menos uma, **cada uma com trecho literal** da página, como as demais evidências da seção 4.7). Campos derivados (`n_datasets`, `tamanho_total_bytes`, `downloads_total`) são calculados pelo coletor a partir dos datasets que a coleta encontra; um dataset citado que não existe, é privado ou tem acesso restrito não conta e aparece no relatório da coleta.
+
 ## 5. Referências mínimas
 
 1. **Toda entidade tem `fontes` com pelo menos 1 fonte** (tipo, URL, data de acesso). Sem fonte, sem arquivo (`FONTE_FALTA`).
@@ -160,7 +172,7 @@ Pesquisadores e donos de contas são **pessoas**. Valem a LGPD (Lei 13.709/2018)
 
 ### 9.1 Princípio: a contribuição indica publicadores, o coletor deriva os modelos
 
-Modelos do Hugging Face, tamanhos, formatos, status de build, GGUF, família e contagens **nunca são inseridos à mão nem por contribuição**: são sempre derivados pelo coletor a partir das APIs públicas do Hugging Face, por regra. A contribuição indica **quem publica** (usuário ou organização do Hugging Face, por id ou URL), com a evidência mínima de país e de natureza (seções 4.2 e 6). Nenhuma etapa do fluxo, da contribuição à publicação, depende de inteligência artificial: a validação é mecânica e a revisão é humana.
+Modelos e datasets do Hugging Face, tamanhos, formatos, status de build, GGUF, família e contagens **nunca são inseridos à mão nem por contribuição**: são sempre derivados pelo coletor a partir das APIs públicas do Hugging Face, por regra. A contribuição indica **quem publica** (usuário ou organização do Hugging Face, por id ou URL), com a evidência mínima de país e de natureza (seções 4.2 e 6). Nenhuma etapa do fluxo, da contribuição à publicação, depende de inteligência artificial: a validação é mecânica e a revisão é humana.
 
 ### 9.2 Quem entra no mapa
 
@@ -186,6 +198,17 @@ Entidades `arquivado` e exemplos não são coletados. Contas em `data/remocoes.j
 ### 9.4 Coleta
 
 Os mantenedores rodam `scripts/coletar.py` em modo incremental (`--novos`: só publicadores ainda ausentes dos dados, cuja entidade curada mudou ou cuja coleta passou de 30 dias; o resultado é mesclado) ou completo (`--tudo`), ou só para alguns publicadores (`--so`). A saída é determinística (ordem estável): rodar duas vezes sem mudança na fonte não altera nenhum arquivo. A coleta é retomável (um checkpoint por publicador) e respeita o limite da API anônima (500 chamadas por 5 minutos). `scripts/relatorio_coleta.py` compara os dados antes e depois para revisão. As regras de formato, R, S, G, V, tamanho e F estão em [docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md) e permanecem válidas.
+
+### 9.5 Camada de datasets
+
+O coletor deriva a camada de datasets por unidades, cada uma com checkpoint: os datasets em português, um conjunto por publicador do Brasil e um por benchmark. Entram no mapa apenas datasets públicos (não privados, não gated), pela regra:
+
+1. **Escopo `br`:** todos os datasets públicos dos publicadores brasileiros curados (classe `br_evidencia`, com ou sem modelos no corte).
+2. **Escopo `pt`:** datasets com idioma `pt`, `pt-br` ou `por` no cartão, de outros publicadores, com pelo menos **100 downloads** (últimos 30 dias) **ou 3 curtidas**. Fica de fora o reupload sem metadados mínimos (sem licença **e** sem descrição) e a duplicata óbvia (mesmo nome e mesmo tamanho; permanece o de mais downloads).
+3. **Datasets de benchmark:** todo dataset público citado por um benchmark curado entra, mesmo abaixo dos limiares, com escopo `pt` quando o publicador não é do Brasil.
+4. Datasets de escopo mundo (sem idioma português e sem benchmark) não entram.
+
+A ordem é estável: Brasil antes de português, `downloads` decrescente, `id`. Rodar a coleta duas vezes sem mudança na fonte não altera nenhum arquivo.
 
 ## 10. Texto, idiomas, licenças
 

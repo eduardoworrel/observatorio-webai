@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "lener-br",
+  "nome": "LeNER-Br",
+  "sigla": "LeNER-Br",
+  "descricao": {
+    "pt": "Reconhecimento de entidades nomeadas em documentos jurídicos brasileiros anotados à mão.",
+    "en": "Named entity recognition in manually annotated Brazilian legal documents."
+  },
+  "dominio": [
+    "juridico",
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "token-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "peluz/lener_br"
+  ],
+  "ano": 2018,
+  "links": {
+    "site": "https://huggingface.co/datasets/peluz/lener_br"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/peluz/lener_br",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "LeNER-Br is a Portuguese language dataset for named entity recognition applied to legal documents ... year = {2018}"
+    }
+  ]
+}

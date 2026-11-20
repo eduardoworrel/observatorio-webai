@@ -1,0 +1,46 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "sib-200",
+  "nome": "SIB-200",
+  "sigla": "SIB-200",
+  "descricao": {
+    "pt": "Classificação de tópicos em 200 línguas e dialetos, inclusive português (por_Latn).",
+    "en": "Topic classification in 200 languages and dialects, including Portuguese (por_Latn)."
+  },
+  "dominio": [
+    "extracao_classificacao",
+    "cultura_lingua"
+  ],
+  "idiomas": [
+    "pt",
+    "en"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "Davlan/sib200"
+  ],
+  "ano": 2023,
+  "links": {
+    "artigo": "https://arxiv.org/abs/2309.07445"
+  },
+  "fontes": [
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/abs/2309.07445",
+      "acessado": "2026-11-20",
+      "rotulo": "resumo do artigo",
+      "trecho": "we created SIB-200 -- a large-scale open-sourced benchmark dataset for topic classification in 200 languages and dialects"
+    },
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/Davlan/sib200",
+      "acessado": "2026-11-20",
+      "rotulo": "subconjunto em português no cartão",
+      "trecho": "pol_Latn (1k rows) por_Latn (1k rows)"
+    }
+  ]
+}

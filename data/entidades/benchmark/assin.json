@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "assin",
+  "nome": "ASSIN (Avaliação de Similaridade Semântica e INferência textual)",
+  "sigla": "ASSIN",
+  "descricao": {
+    "pt": "Pares de sentenças de notícias em português do Brasil e de Portugal, anotados para similaridade semântica e implicação textual.",
+    "en": "Sentence pairs from Brazilian and European Portuguese news, annotated for semantic similarity and textual entailment."
+  },
+  "dominio": [
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "nilc-nlp/assin"
+  ],
+  "ano": 2016,
+  "links": {
+    "site": "https://huggingface.co/datasets/nilc-nlp/assin"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/nilc-nlp/assin",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "The ASSIN (Avaliação de Similaridade Semântica e INferência textual) corpus is a corpus annotated with pairs of sentences written in Portuguese ... year={2016}"
+    }
+  ]
+}

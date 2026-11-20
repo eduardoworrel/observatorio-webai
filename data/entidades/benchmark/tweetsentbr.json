@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "tweetsentbr",
+  "nome": "TweetSentBR",
+  "sigla": "TweetSentBR",
+  "descricao": {
+    "pt": "Corpus de tweets em português do Brasil anotados em três classes de sentimento.",
+    "en": "Corpus of tweets in Brazilian Portuguese annotated with three sentiment classes."
+  },
+  "dominio": [
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "eduagarcia/tweetsentbr_fewshot"
+  ],
+  "links": {
+    "site": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "TweetSentBR is a corpus of Tweets in Brazilian Portuguese"
+    }
+  ]
+}

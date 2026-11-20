@@ -1,0 +1,42 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "nome-do-benchmark",
+  "nome": "Nome do benchmark",
+  "sigla": "SIGLA",
+  "descricao": {
+    "pt": "Uma ou duas linhas sobre o que o benchmark mede.",
+    "en": "One or two lines on what the benchmark measures."
+  },
+  "dominio": [
+    "geral"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "question-answering"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "publicador/nome-do-dataset"
+  ],
+  "criador": {
+    "publicador": "id-no-hugging-face"
+  },
+  "ano": 2024,
+  "links": {
+    "artigo": "https://EXEMPLO",
+    "site": "https://EXEMPLO",
+    "codigo": "https://EXEMPLO"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/publicador/nome-do-dataset",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "cartao do dataset",
+      "trecho": "copie aqui a frase curta da pagina que descreve o benchmark"
+    }
+  ]
+}

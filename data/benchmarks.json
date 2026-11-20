@@ -1,0 +1,417 @@
+{
+ "meta": {
+  "coletado_em": "2026-11-20",
+  "fonte": "Hugging Face API publica",
+  "versao_spec": "1.0"
+ },
+ "benchmarks": [
+  {
+   "id": "assin",
+   "nome": "ASSIN (Avaliação de Similaridade Semântica e INferência textual)",
+   "sigla": "ASSIN",
+   "descricao": {
+    "pt": "Pares de sentenças de notícias em português do Brasil e de Portugal, anotados para similaridade semântica e implicação textual.",
+    "en": "Sentence pairs from Brazilian and European Portuguese news, annotated for semantic similarity and textual entailment."
+   },
+   "dominio": [
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "nilc-nlp/assin"
+   ],
+   "ano": 2016,
+   "links": {
+    "site": "https://huggingface.co/datasets/nilc-nlp/assin"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/nilc-nlp/assin",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "The ASSIN (Avaliação de Similaridade Semântica e INferência textual) corpus is a corpus annotated with pairs of sentences written in Portuguese ... year={2016}"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 2691886,
+   "downloads_total": 589
+  },
+  {
+   "id": "assin-2",
+   "nome": "ASSIN 2",
+   "sigla": "ASSIN 2",
+   "descricao": {
+    "pt": "Pares de sentenças simples em português do Brasil, anotados para implicação textual e similaridade semântica.",
+    "en": "Simple sentence pairs in Brazilian Portuguese, annotated for textual entailment and semantic similarity."
+   },
+   "dominio": [
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "nilc-nlp/assin2"
+   ],
+   "ano": 2020,
+   "links": {
+    "site": "https://huggingface.co/datasets/nilc-nlp/assin2"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/nilc-nlp/assin2",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "The training and validation data are composed, respectively, of 6,500 and 500 sentence pairs in Brazilian Portuguese, annotated for entailment and semantic similarity ... year={2020}"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 573134,
+   "downloads_total": 2461
+  },
+  {
+   "id": "bluex",
+   "nome": "BLUEX (Brazilian Leading Universities Entrance eXams)",
+   "sigla": "BLUEX",
+   "descricao": {
+    "pt": "Provas de vestibular da UNICAMP e da USP, com metadados por assunto, para avaliar modelos em português.",
+    "en": "Entrance exams from UNICAMP and USP, with subject metadata, to evaluate models in Portuguese."
+   },
+   "dominio": [
+    "vestibular_educacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "multiple-choice"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "portuguese-benchmark-datasets/BLUEX"
+   ],
+   "ano": 2023,
+   "links": {
+    "artigo": "https://arxiv.org/abs/2307.05410"
+   },
+   "fontes": [
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/abs/2307.05410",
+     "acessado": "2026-11-20",
+     "rotulo": "resumo do artigo",
+     "trecho": "we introduce the Brazilian Leading Universities Entrance eXams (BLUEX), a dataset of entrance exams from the two leading universities in Brazil: UNICAMP and USP"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 92238275,
+   "downloads_total": 2013
+  },
+  {
+   "id": "enem",
+   "nome": "ENEM (Exame Nacional do Ensino Médio)",
+   "sigla": "ENEM",
+   "descricao": {
+    "pt": "Questões de múltipla escolha das duas últimas edições do Exame Nacional do Ensino Médio, para avaliar modelos de texto e de texto com imagem.",
+    "en": "Multiple-choice questions from the last two editions of the Brazilian national secondary-school exam, for text-only and text-and-image models."
+   },
+   "dominio": [
+    "vestibular_educacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "multiple-choice",
+    "visual-question-answering"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "maritaca-ai/enem"
+   ],
+   "criador": {
+    "publicador": "maritaca-ai"
+   },
+   "ano": 2023,
+   "links": {
+    "artigo": "https://arxiv.org/abs/2311.14169"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/maritaca-ai/enem",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "all multiple-choice questions from the last two editions of the Exame Nacional do Ensino Médio (ENEM)"
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/abs/2311.14169",
+     "acessado": "2026-11-20",
+     "rotulo": "resumo do artigo",
+     "trecho": "we present a comprehensive framework to evaluate language models on entrance exams, which incorporates both textual and visual elements"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 744072,
+   "downloads_total": 3439
+  },
+  {
+   "id": "faquad",
+   "nome": "FaQuAD",
+   "sigla": "FaQuAD",
+   "descricao": {
+    "pt": "Compreensão de leitura no domínio do ensino superior brasileiro, no formato do SQuAD.",
+    "en": "Machine reading comprehension in the domain of Brazilian higher education, in the SQuAD format."
+   },
+   "dominio": [
+    "geral"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "question-answering"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "eraldoluis/faquad"
+   ],
+   "links": {
+    "site": "https://huggingface.co/datasets/eraldoluis/faquad"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/eraldoluis/faquad",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "we present FaQuAD: a novel machine reading comprehension dataset in the domain of Brazilian higher education institutions"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 12224,
+   "downloads_total": 116
+  },
+  {
+   "id": "hatebr",
+   "nome": "HateBR",
+   "sigla": "HateBR",
+   "descricao": {
+    "pt": "Comentários brasileiros do Instagram anotados por especialistas para detecção de discurso de ódio e linguagem ofensiva.",
+    "en": "Brazilian Instagram comments annotated by experts for hate speech and offensive language detection."
+   },
+   "dominio": [
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "franciellevargas/HateBR"
+   ],
+   "links": {
+    "site": "https://huggingface.co/datasets/franciellevargas/HateBR"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/franciellevargas/HateBR",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "HateBR is the first large-scale, expert-annotated dataset of Brazilian Instagram comments specifically designed for hate speech detection on the web and social media"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 1132225,
+   "downloads_total": 796
+  },
+  {
+   "id": "lener-br",
+   "nome": "LeNER-Br",
+   "sigla": "LeNER-Br",
+   "descricao": {
+    "pt": "Reconhecimento de entidades nomeadas em documentos jurídicos brasileiros anotados à mão.",
+    "en": "Named entity recognition in manually annotated Brazilian legal documents."
+   },
+   "dominio": [
+    "juridico",
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "token-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "peluz/lener_br"
+   ],
+   "ano": 2018,
+   "links": {
+    "site": "https://huggingface.co/datasets/peluz/lener_br"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/peluz/lener_br",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "LeNER-Br is a Portuguese language dataset for named entity recognition applied to legal documents ... year = {2018}"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 13128,
+   "downloads_total": 1138
+  },
+  {
+   "id": "oab-bench",
+   "nome": "OAB-Bench",
+   "sigla": "OAB-Bench",
+   "descricao": {
+    "pt": "Avaliação de redação jurídica com 210 questões da segunda fase do Exame de Ordem, com diretrizes de correção.",
+    "en": "Legal writing evaluation with 210 questions from the second phase of the Brazilian Bar Examination, with grading guidelines."
+   },
+   "dominio": [
+    "juridico"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-generation"
+   ],
+   "tipo": "avaliacao",
+   "datasets": [
+    "maritaca-ai/oab-bench"
+   ],
+   "criador": {
+    "publicador": "maritaca-ai"
+   },
+   "ano": 2025,
+   "links": {
+    "artigo": "https://arxiv.org/abs/2504.21202"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/maritaca-ai/oab-bench",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "OAB-Bench is a benchmark for evaluating Large Language Models (LLMs) on legal writing tasks from the Brazilian Bar Examination (OAB) Phase 2"
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/abs/2504.21202",
+     "acessado": "2026-11-20",
+     "rotulo": "resumo do artigo",
+     "trecho": "benchmarks for evaluating legal writing remain scarce due to the inherent complexity of assessing open-ended responses in this domain"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 390654,
+   "downloads_total": 244
+  },
+  {
+   "id": "sib-200",
+   "nome": "SIB-200",
+   "sigla": "SIB-200",
+   "descricao": {
+    "pt": "Classificação de tópicos em 200 línguas e dialetos, inclusive português (por_Latn).",
+    "en": "Topic classification in 200 languages and dialects, including Portuguese (por_Latn)."
+   },
+   "dominio": [
+    "extracao_classificacao",
+    "cultura_lingua"
+   ],
+   "idiomas": [
+    "pt",
+    "en"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "Davlan/sib200"
+   ],
+   "ano": 2023,
+   "links": {
+    "artigo": "https://arxiv.org/abs/2309.07445"
+   },
+   "fontes": [
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/abs/2309.07445",
+     "acessado": "2026-11-20",
+     "rotulo": "resumo do artigo",
+     "trecho": "we created SIB-200 -- a large-scale open-sourced benchmark dataset for topic classification in 200 languages and dialects"
+    },
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/Davlan/sib200",
+     "acessado": "2026-11-20",
+     "rotulo": "subconjunto em português no cartão",
+     "trecho": "pol_Latn (1k rows) por_Latn (1k rows)"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 43869140,
+   "downloads_total": 16042
+  },
+  {
+   "id": "tweetsentbr",
+   "nome": "TweetSentBR",
+   "sigla": "TweetSentBR",
+   "descricao": {
+    "pt": "Corpus de tweets em português do Brasil anotados em três classes de sentimento.",
+    "en": "Corpus of tweets in Brazilian Portuguese annotated with three sentiment classes."
+   },
+   "dominio": [
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "eduagarcia/tweetsentbr_fewshot"
+   ],
+   "links": {
+    "site": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "TweetSentBR is a corpus of Tweets in Brazilian Portuguese"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 116846,
+   "downloads_total": 481
+  }
+ ]
+}
