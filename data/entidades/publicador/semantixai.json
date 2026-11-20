@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "semantixai",
+  "nome": "Semantix",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/semantixai",
+    "acessado": "2026-11-20",
+    "trecho": "Founded in 2010 in Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/semantixai",
+    "acessado": "2026-11-20",
+    "trecho": "Semantix company Verified https://semantix.ai"
+  },
+  "links": {
+    "hf": "https://huggingface.co/semantixai",
+    "oficial": "https://semantix.ai"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/semantixai",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

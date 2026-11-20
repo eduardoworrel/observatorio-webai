@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "unicamp-dl",
+  "nome": "unicamp-dl",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/unicamp-dl",
+    "acessado": "2026-11-20",
+    "trecho": "unicamp-dl university https://sites.google.com/unicamp.br/deep-learning-nlp"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/unicamp-dl",
+    "acessado": "2026-11-20",
+    "trecho": "unicamp-dl university https://sites.google.com/unicamp.br/deep-learning-nlp"
+  },
+  "links": {
+    "hf": "https://huggingface.co/unicamp-dl",
+    "oficial": "https://sites.google.com/unicamp.br/deep-learning-nlp"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/unicamp-dl",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

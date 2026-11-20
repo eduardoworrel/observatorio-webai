@@ -1,0 +1,33 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "c2d-poli-usp",
+  "nome": "Centro de Ciência de Dados",
+  "sigla": "C2D",
+  "instituicao": {
+    "nome": "Universidade de São Paulo",
+    "pais": "BR",
+    "regiao": "BR-SP",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://c2d.poli.usp.br",
+      "acessado": "2026-11-20",
+      "rotulo": "site do próprio centro",
+      "trecho": "Centro de Ciência de Dados - POLI USP"
+    }
+  },
+  "links": {
+    "oficial": "https://c2d.poli.usp.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://c2d.poli.usp.br/",
+      "acessado": "2026-11-20",
+      "rotulo": "site oficial"
+    }
+  ],
+  "publicadores": [
+    "c2d-usp"
+  ]
+}

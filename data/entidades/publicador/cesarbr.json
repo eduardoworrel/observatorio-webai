@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "cesarbr",
+  "nome": "CESAR",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/cesarbr",
+    "acessado": "2026-11-20",
+    "trecho": "CESAR company https://www.cesar.org.br/"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/cesarbr",
+    "acessado": "2026-11-20",
+    "trecho": "CESAR company"
+  },
+  "links": {
+    "hf": "https://huggingface.co/cesarbr",
+    "oficial": "https://www.cesar.org.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/cesarbr",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

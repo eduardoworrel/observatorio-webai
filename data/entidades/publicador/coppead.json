@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "coppead",
+  "nome": "COPPEAD / UFRJ",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-RJ",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/coppead",
+    "acessado": "2026-11-20",
+    "trecho": "COPPEAD / UFRJ university https://www.coppead.ufrj.br"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/coppead",
+    "acessado": "2026-11-20",
+    "trecho": "is the graduate school of business of the Federal University of Rio de Janeiro, a public institution founded in 1973"
+  },
+  "links": {
+    "hf": "https://huggingface.co/coppead",
+    "oficial": "https://www.coppead.ufrj.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/coppead",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

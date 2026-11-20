@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "neuralmind",
+  "nome": "NeuralMind Inteligência Artificial",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/neuralmind-ai",
+    "acessado": "2026-11-20",
+    "trecho": "Campinas, SP, Brazil"
+  },
+  "links": {
+    "hf": "https://huggingface.co/neuralmind",
+    "github": "https://github.com/neuralmind-ai",
+    "oficial": "https://www.neuralmind.ai"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/neuralmind",
+      "acessado": "2026-11-20",
+      "rotulo": "Conta no Hugging Face"
+    },
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/neuralmind/bert-base-portuguese-cased/raw/main/README.md",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão que aponta para o GitHub da NeuralMind",
+      "trecho": "[BERTimbau repository](https://github.com/neuralmind-ai/portuguese-bert/)"
+    }
+  ],
+  "status": "ativo"
+}

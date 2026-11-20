@@ -1,0 +1,43 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "carolina-c4ai",
+  "nome": "Carolina C4AI",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "evidencia_pais": {
+    "tipo": "site_institucional",
+    "url": "https://sites.usp.br/corpuscarolina/",
+    "acessado": "2026-11-20",
+    "trecho": "O C4AI-USP tem a missão de produzir pesquisa avançada em Inteligência Artificial no Brasil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "site_institucional",
+    "url": "https://sites.usp.br/corpuscarolina/",
+    "acessado": "2026-11-20",
+    "trecho": "membros do Laboratório Virtual de Humanidades Digitais - LaViHD e do Centro de Inteligência Artificial da Universidade de São Paulo - C4AI"
+  },
+  "links": {
+    "hf": "https://huggingface.co/carolina-c4ai",
+    "oficial": "https://sites.usp.br/corpuscarolina/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/carolina-c4ai",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "site_institucional",
+      "url": "https://sites.usp.br/corpuscarolina/",
+      "acessado": "2026-11-20",
+      "rotulo": "Site do Corpus Carolina"
+    }
+  ],
+  "status": "ativo"
+}
