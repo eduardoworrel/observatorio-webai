@@ -4,7 +4,7 @@ Curto de propósito. Vale a partir da publicação.
 
 ## Papéis
 
-- **Mantenedores:** fazem merge, atendem pedidos de remoção, decidem disputas, mudam regras e infraestrutura. No lançamento há um mantenedor (o dono da conta que hospeda o repositório, também controlador dos dados pessoais, ver `docs/PRIVACIDADE.md`); a meta é ter pelo menos dois depois.
+- **Mantenedores:** fazem merge, atendem pedidos de remoção, decidem disputas, mudam regras e infraestrutura. Há um mantenedor (o dono da conta que hospeda o repositório, também controlador dos dados pessoais, ver `docs/PRIVACIDADE.md`); o projeto busca ter pelo menos dois.
 - **Revisores** (opcionais, convidados pelos mantenedores): leem PRs de dados e recomendam; não fazem merge de dados pessoais. Só os mantenedores mexem em `scripts/`, `schema/`, `.github/`, `docs/` e `data/remocoes.json` (CODEOWNERS).
 - **Contribuidores:** qualquer pessoa. O crédito sai do Git.
 
@@ -60,7 +60,7 @@ Regra geral: **a palavra da pessoa sobre ela mesma prevalece sobre a regra autom
 
 ## Sustentação
 
-- **Esforço de moderação, fase 1 (estimativa a medir no piloto, em horas por semana):**
+- **Carga de revisão (referência, em horas por semana):**
 
 | PRs por semana | Horas por semana |
 |---|---|
@@ -69,7 +69,7 @@ Regra geral: **a palavra da pessoa sobre ela mesma prevalece sobre a regra autom
 | cerca de 30 | 5 a 8 |
 
   Cada PR bem formado leva de 8 a 15 minutos: a checagem de trechos poupa parte da abertura das fontes, e o humano confere contexto, pessoa e neutralidade. Pedidos de remoção são raros, mas têm prazo.
-- **Dependência de uma pessoa:** é o risco principal. Mitigações: procedimento escrito aqui, a meta de ter um segundo mantenedor e a possibilidade de pôr o projeto em modo somente leitura.
+- **Dependência de uma pessoa:** é o risco principal. Mitigações: procedimento escrito aqui, a busca por um segundo mantenedor e a possibilidade de pôr o projeto em modo somente leitura.
 - **Atualização dos derivados:** os mantenedores rodam `scripts/coletar.py` conforme a seção "Como os dados entram no site"; a diferença entra por PR (ramo `coleta-*`), com revisão e merge humanos.
 - **Crédito:** CONTRIBUTORS gerado do Git (`scripts/contributors.py`), sem coletar nada além do nome de commit. O rodapé do site mantém o crédito "Inspirado no Observatório da Maritaca", em texto simples, e a fonte Atkinson Hyperlegible (SIL OFL 1.1). O código da interface é original, escrito à mão.
 - **Licenças:** dados CC BY 4.0 (`LICENSE-DATA`), código MIT (`LICENSE`). Titular: "Observatório contributors".

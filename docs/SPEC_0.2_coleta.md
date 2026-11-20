@@ -10,7 +10,7 @@ Mapa de modelos de linguagem que rodam (ou podem rodar) no navegador e na borda,
 2. **Regra, não opinião.** Status, família, formato e tamanho saem de funções do coletor (`scripts/coletar.py`). A mesma API na mesma data dá o mesmo resultado.
 3. **Não medido não é zero.** Campo desconhecido é `null`, nunca 0.
 4. **Existe não é roda.** O mapa diz que há arquivos em formato de navegador. Não afirma que funcionam.
-5. **Independente de qualquer outro projeto.** Nenhum dado de terceiros além do Hugging Face; ligações com outros projetos (por exemplo, um futuro ranking de desempenho) são só links.
+5. **Independente de qualquer outro projeto.** Nenhum dado de terceiros além do Hugging Face; ligações com outros projetos são só links.
 
 ## Entidades
 
