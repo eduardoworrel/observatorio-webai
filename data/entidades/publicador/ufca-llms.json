@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ufca-llms",
+  "nome": "Grupo de Pesquisa em LLMs da UFCA",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufca-llms",
+    "acessado": "2026-11-20",
+    "trecho": "Grupo de Pesquisa em LLMs da UFCA university https://ufca.edu.br"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufca-llms",
+    "acessado": "2026-11-20",
+    "trecho": "Grupo de Pesquisa em LLMs da UFCA university https://ufca.edu.br"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ufca-llms",
+    "oficial": "https://ufca.edu.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ufca-llms",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

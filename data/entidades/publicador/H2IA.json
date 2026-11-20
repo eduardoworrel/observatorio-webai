@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "H2IA",
+  "nome": "Hub de Inovação em Inteligência Artificial - UFPel",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/H2IA",
+    "acessado": "2026-11-20",
+    "trecho": "Hub de Inovação em Inteligência Artificial - UFPel university https://ia.ufpel.edu.br"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/H2IA",
+    "acessado": "2026-11-20",
+    "trecho": "Hub de Inovação em Inteligência Artificial - UFPel university https://ia.ufpel.edu.br"
+  },
+  "links": {
+    "hf": "https://huggingface.co/H2IA",
+    "oficial": "https://ia.ufpel.edu.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/H2IA",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

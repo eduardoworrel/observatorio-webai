@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ufmg-digital-pathology",
+  "nome": "Patologia Digital UFMG",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufmg-digital-pathology",
+    "acessado": "2026-11-20",
+    "trecho": "Patologia Digital UFMG university https://www.ufmg.br/"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufmg-digital-pathology",
+    "acessado": "2026-11-20",
+    "trecho": "Patologia Digital UFMG university https://www.ufmg.br/"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ufmg-digital-pathology",
+    "oficial": "https://www.ufmg.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ufmg-digital-pathology",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}
