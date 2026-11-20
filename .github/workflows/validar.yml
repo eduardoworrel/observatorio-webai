@@ -35,7 +35,7 @@ jobs:
       - name: Dados derivados
         run: python3 scripts/verificar.py
       - name: Arquivos do PR (derivados e infraestrutura)
-        # a coleta semanal (ramo coleta-*, aberto pelo workflow com o token do proprio repositorio) muda arquivos derivados de proposito
+        # o PR de dados derivados (ramo coleta-*, aberto por um mantenedor depois da coleta local) muda arquivos derivados de proposito
         if: github.event_name == 'pull_request' && !startsWith(github.head_ref, 'coleta-')
         env:
           BASE: ${{ github.base_ref }}

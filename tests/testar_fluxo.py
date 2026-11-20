@@ -6,6 +6,8 @@
 Cobre: (a) entidade curada entra como candidato e prevalece sobre o sinal automatico; (b) --novos nao recoleta quem ja existe;
 (c) retomada depois de interrupcao (kill -9 no meio); (d) idempotencia (git diff vazio); (e) scripts/processar_pr.sh num PR local.
 """
+import warnings
+warnings.simplefilter("ignore", ResourceWarning)
 import http.server, json, os, shutil, signal, subprocess, sys, tempfile, threading, time, unittest, urllib.parse
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

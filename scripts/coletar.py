@@ -982,7 +982,7 @@ def main():
                 xs, _, fora = modelos_do_publicador(c["id"])
                 print(f"            previa: {len(xs)} modelo(s) no corte" + (f", {fora} acima de {MAX_B:g} B" if fora else "") + (": " + ", ".join(x["id"].split("/")[-1] for x in xs[:5]) + (" ..." if len(xs) > 5 else "") if xs else ""))
         ch, mi = estimativa(ncur, len(alvos) - ncur)
-        print(f"estimativa: ~{ch} chamadas, ~{mi:.0f} min na API anonima, mais o indice de builds (~170 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
+        print(f"estimativa: ~{ch} chamadas, ~{mi:.0f} min na API anonima, mais o indice de builds (~50 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
         return
     if not alvos and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
         print(f"{modo}: nada a coletar ({len(cands)} candidatos em dia). Nenhum arquivo alterado.")

@@ -21,7 +21,7 @@ The Observatório maps who publishes Web AI models in Brazil and around the worl
 | Request removal or correction of a person's data | "Request removal" form or the private report in the repository's Security tab (contacts in `docs/PRIVACIDADE.md`) |
 | Propose a new field | "Propose a field" form; changing the standard is a spec decision |
 
-Do not edit `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` or `web/data.js`: the collector generates them (build status, sizes, formats, counts). The check rejects PRs that touch them.
+Do not edit `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` or `web/data.js`: the collector generates them (build status, sizes, formats, counts). The check rejects PRs that touch them. You indicate **who publishes** (a Hugging Face user or organization) with the minimum evidence of country and nature; the models are always derived by the collector from the public APIs and are never entered by hand. After a PR is merged, the maintainers run the collection and publish the derived data (section "Como os dados entram no site" in `docs/GOVERNANCA.md`, in Portuguese).
 
 ## Without knowing Git: in the browser
 

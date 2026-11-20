@@ -9,7 +9,7 @@ As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `sche
 | Camada | Onde | Quem escreve | Contribuição pode alterar? |
 |---|---|---|---|
 | **Curada** | `data/entidades/<tipo>/` | pessoas (por pull request), revisão humana | sim |
-| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9) | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR da coleta semanal, em ramo `coleta-*`, aberto pelo workflow do próprio repositório e fundido por uma pessoa |
+| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
 | **Exemplos** | `data/exemplos/` | mantenedor | só para ensinar o formato; nunca entram nos dados oficiais |
 | **Remoções** | `data/remocoes.json` | mantenedor | não (seção 8) |
 
@@ -159,9 +159,34 @@ Pesquisadores e donos de contas são **pessoas**. Valem a LGPD (Lei 13.709/2018)
 
 ## 9. Dados derivados e regras de coleta automática
 
-O status de build por regra (nativo oficial, nativo de comunidade, GGUF via wllama, sem build), família, tamanhos e demais campos derivados continuam calculados pelo coletor a partir da API pública do Hugging Face, **sem edição humana**. As regras (formato, R, S, G, V, tamanho, F) estão em [docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md) e permanecem válidas.
+### 9.1 Princípio: a contribuição indica publicadores, o coletor deriva os modelos
 
-Os arquivos de `data/entidades/` são validados e servem de fonte curada; a classificação de publicadores no mapa continua a calculada pelo coletor com as regras da seção 6.
+Modelos do Hugging Face, tamanhos, formatos, status de build, GGUF, família e contagens **nunca são inseridos à mão nem por contribuição**: são sempre derivados pelo coletor a partir das APIs públicas do Hugging Face, por regra. A contribuição indica **quem publica** (usuário ou organização do Hugging Face, por id ou URL), com a evidência mínima de país e de natureza (seções 4.2 e 6). Nenhuma etapa do fluxo, da contribuição à publicação, depende de inteligência artificial: a validação é mecânica e a revisão é humana. (A entidade `modelo` curada da seção 4.5 é só para modelo fora do Hugging Face e não alimenta os derivados.)
+
+### 9.2 Quem entra no mapa
+
+O coletor lê, nesta ordem de precedência: (1) as entidades curadas de `data/entidades/publicador/` (a classificação de país e de natureza e as evidências vêm da entidade, já validadas pelo `validar.py`, sem nova derivação por regra); (2) as listas de `seed/publishers.json`; (3) a descoberta automática por busca na API. A entidade curada tem precedência sobre o sinal automático (seção 6).
+
+| Classe da entidade | Escopo no mapa |
+|---|---|
+| `br_evidencia` | Brasil |
+| `fora_br` | mundo |
+| `nao_classificado` | mundo (até 8 repositórios de formato de navegador); nunca entra no escopo Brasil |
+
+Entidades `arquivado` e exemplos não são coletados. Contas em `data/remocoes.json` e na lista local `.excluir` são ignoradas.
+
+### 9.3 Filtro de relevância (quais modelos sobem para a página)
+
+1. **Tarefa:** modelos de linguagem, isto é, `pipeline_tag` em `text-generation`, `image-text-to-text`, `any-to-any` ou `text2text-generation`. Repositório sem tarefa declarada não entra.
+2. **Tamanho:** até 12 bilhões de parâmetros (`safetensors.total`, ou `gguf.total`); sem informação de tamanho, o modelo fica, com `parametros_b` nulo.
+3. **Sem adaptadores:** LoRA/PEFT (tags `peft`, `lora` ou `base_model:adapter`) não contam, pois não rodam sozinhos.
+4. **Sem duplicatas (regra R):** repositório que é só outro formato ou quantização (ONNX, MLC, LiteRT, GGUF) de um modelo do mesmo publicador vira **build** desse modelo, não modelo novo. Builds de terceiros são ligados ao modelo de origem pelo nome e pela relação `base_model:quantized`; conversões de terceiros só aparecem como modelo próprio para publicadores do mundo sem classificação, com `conversao_de`.
+5. **GGUF à parte:** GGUF via wllama conta separado do build nativo e só se a menor variante Q4 tiver até 4 GB (regra G).
+6. **Publicador sem modelos no corte:** o publicador é registrado em `foto.json` (`descartados`) com o motivo "sem modelos no corte" e os números de cada filtro, e não aparece no mapa.
+
+### 9.4 Coleta
+
+Os mantenedores rodam `scripts/coletar.py` em modo incremental (`--novos`: só publicadores ainda ausentes dos dados, cuja entidade curada mudou ou cuja coleta passou de 30 dias; o resultado é mesclado) ou completo (`--tudo`), ou só para alguns publicadores (`--so`). A saída é determinística (ordem estável): rodar duas vezes sem mudança na fonte não altera nenhum arquivo. A coleta é retomável (um checkpoint por publicador) e respeita o limite da API anônima (500 chamadas por 5 minutos). `scripts/relatorio_coleta.py` compara os dados antes e depois para revisão. As regras de formato, R, S, G, V, tamanho e F estão em [docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md) e permanecem válidas.
 
 ## 10. Texto, idiomas, licenças
 

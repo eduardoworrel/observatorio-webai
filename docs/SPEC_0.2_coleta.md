@@ -26,7 +26,7 @@ Mapa de modelos de linguagem que rodam (ou podem rodar) no navegador e na borda,
 | `natureza` | `independente` \| `instituicao` \| `empresa` \| `nao_classificada` | sim | regra N |
 | `evidencia_natureza` | `{classe, tipo, url, trecho, acessado, regra}` | sim para publicadores do Brasil classificados | regra N |
 | `escopo` | `br` \| `mundo` | sim | `br` só com `classe_pais = br_evidencia` |
-| `origem_lista` | texto | sim | `lista inicial`, `busca na API`, `lista mundo` ou `descoberta por builds de navegador` |
+| `origem_lista` | texto | sim | `lista inicial`, `entidade curada`, `busca na API`, `lista mundo` ou `descoberta por builds de navegador` |
 | `modelos_fora_do_corte` | inteiro | sim | modelos de linguagem acima do corte de 12 B |
 | `n_modelos_hf`, `n_membros` | inteiro ou `null` | não | API de perfil |
 | `url`, `fontes[]` | URL; `{rotulo, url, acessado}` | sim | |
@@ -123,7 +123,7 @@ Modelo **criado por brasileiros** (pessoa, grupo, empresa ou universidade do Bra
 - **E3**: o cartão de um modelo do publicador traz endereço ou e-mail `.br` (E3a) ou uma linha com afiliação e Brasil, fora de menções ao idioma (E3b, marcada `revisar`);
 - **institucional**: página curada (`seed/evidencias.json`) que responde na coleta e traz o padrão esperado.
 
-Classes: `br_evidencia` (Brasil, com evidência), `nao_classificado` (sem evidência: **não é adivinhado**, e fica fora do mapa) e `fora_br` (lista curada de grandes publicadores internacionais, confiança baixa). Candidatos vêm da lista inicial e de buscas na API por termos em português (`pt`, `pt-br`, `ptbr`, `portuguese`, `brasil`, `brazil`...); só entram no mapa os que têm evidência. Os demais ficam em `data/foto.json` (`descartados`), com o motivo. Independentes descobertos fora do Brasil por terem builds de navegador entram como `nao_classificado`.
+Classes: `br_evidencia` (Brasil, com evidência), `nao_classificado` (sem evidência: **não é adivinhado**, e fica fora do mapa) e `fora_br` (lista curada de grandes publicadores internacionais, confiança baixa). Candidatos vêm das entidades curadas, da lista inicial e de buscas na API por termos em português (`pt`, `pt-br`, `ptbr`, `portuguese`, `brasil`, `brazil`...); só entram no mapa os que têm evidência. Os demais ficam em `data/foto.json` (`descartados`), com o motivo. Independentes descobertos fora do Brasil por terem builds de navegador entram como `nao_classificado`.
 
 ### N: natureza do publicador
 
@@ -135,12 +135,12 @@ Classes: `br_evidencia` (Brasil, com evidência), `nao_classificado` (sem evidê
 ## Qualidade e verificação
 
 - `python3 scripts/verificar.py` confere o esquema: campos obrigatórios, `fontes[]` com URL e data, status coerente com `builds[]`, `gb` nulo ou positivo, escopo `br` com `evidencia`, ids únicos.
-- O coletor faz pausa entre chamadas, repete em caso de limite de uso (429) e guarda respostas em `.cache/` (fora do Git).
-- Cada coleta registra a data e o número de chamadas em `data/foto.json`.
+- O coletor faz pausa entre chamadas, repete em caso de limite de uso (429) e guarda respostas e checkpoints por publicador em `.cache/` (fora do Git).
+- A data da coleta fica em `data/foto.json`; o número de chamadas e as diferenças entre coletas ficam no relatório local (`scripts/relatorio_coleta.py`, pasta `.relatorios/`, fora do Git), para que `foto.json` não mude quando nada mudou.
 
 ## Amostra
 
-Todos os modelos de linguagem de cada publicador classificado, paginando a API, com corte de **12 B de parâmetros** (`safetensors.total`, ou `gguf.total`; sem informação, o modelo fica). Adaptadores LoRA/PEFT (tags `peft`, `lora` ou `base_model:adapter`) não contam, pois não rodam sozinhos. Repositórios que são só um formato de outro modelo do mesmo publicador viram build desse modelo, não modelo novo. O coletor respeita o limite da API anônima (500 chamadas por 5 minutos) lendo o cabeçalho de limite.
+Todos os modelos de linguagem de cada publicador classificado, paginando a API, com corte de **12 B de parâmetros** (`safetensors.total`, ou `gguf.total`; sem informação, o modelo fica). Adaptadores LoRA/PEFT (tags `peft`, `lora` ou `base_model:adapter`) não contam, pois não rodam sozinhos. Repositórios que são só um formato de outro modelo do mesmo publicador viram build desse modelo, não modelo novo. Publicador sem nenhum modelo nesse corte fica registrado como "sem modelos no corte" e não aparece no mapa (ver docs/SPEC.md, seção 9.3). O coletor respeita o limite da API anônima (500 chamadas por 5 minutos) lendo o cabeçalho de limite.
 
 ## Fora do escopo (0.2)
 

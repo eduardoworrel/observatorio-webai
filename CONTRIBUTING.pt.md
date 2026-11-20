@@ -21,7 +21,7 @@ O Observatório mapeia quem publica modelos de Web AI no Brasil e no mundo. Voc�
 | Pedir remoção ou correção de dados de uma pessoa | Formulário "Pedir remoção" ou relato privado na aba Security do repositório (contatos em `docs/PRIVACIDADE.md`) |
 | Propor um campo novo | Formulário "Propor campo"; mudar o padrão é decisão de spec |
 
-Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles.
+Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles. Você indica **quem publica** (usuário ou organização do Hugging Face) com a evidência mínima de país e de natureza; os modelos são sempre derivados pelo coletor a partir das APIs públicas e nunca são inseridos à mão. Depois do merge, os mantenedores rodam a coleta e publicam os dados derivados (seção "Como os dados entram no site" em `docs/GOVERNANCA.md`).
 
 ## Sem saber usar Git: pelo navegador
 
