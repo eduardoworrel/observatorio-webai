@@ -426,7 +426,13 @@ def evidencias(pid, info, seed_ev, modelos_top):
 
 # ---------- coleta de modelos ----------
 def modelos_do_publicador(pid):
-    lista = [x for x in listar(max_paginas=10, author=pid, limit=100) if x.get("pipeline_tag") in TAREFAS and not e_adaptador(x)]
+    """Filtro de relevancia (SPEC.md secao 9): modelos de linguagem, sem adaptadores, ate MAX_B bilhoes de parametros.
+    Repositorios que so mudam o formato de um modelo do mesmo publicador viram build dele (regra R), nao modelo novo."""
+    todos = listar(max_paginas=10, author=pid, limit=100)
+    outra = [x for x in todos if x.get("pipeline_tag") not in TAREFAS]
+    sem_tarefa = [x for x in outra if not x.get("pipeline_tag")]
+    adapt = [x for x in todos if x.get("pipeline_tag") in TAREFAS and e_adaptador(x)]
+    lista = [x for x in todos if x.get("pipeline_tag") in TAREFAS and not e_adaptador(x)]
     normais = [x for x in lista if not e_puro(x)]
     nomes = [x["id"].split("/")[-1] for x in normais]
     puros = [x for x in lista if e_puro(x)]
@@ -439,6 +445,8 @@ def modelos_do_publicador(pid):
             fora += 1
             continue
         saida.append(x)
+    estado["filtro"] = {"listados": len(todos), "outra_tarefa": len(outra) - len(sem_tarefa), "sem_tarefa": len(sem_tarefa), "adaptadores": len(adapt), "acima_do_corte": fora,
+                        "so_formato_de_outro": len(puros) - len(extras), "no_corte": len(saida)}
     return saida, puros, fora
 
 
@@ -664,7 +672,9 @@ def _pub(pid, nome, tipo, classe, ev_pais, nat, ev_nat, escopo, info, origem, fo
 
 
 def _sem_modelos(pid, c, fora, escopo):
-    d = {"id": pid, "origem": c["origem"], "motivo": f"sem modelos no corte (fora do corte: {fora})", "coletado_em": HOJE}
+    f = estado.get("filtro") or {}
+    det = f"{f.get('listados', 0)} listados: {fora} acima de {MAX_B:g} B, {f.get('outra_tarefa', 0)} de outra tarefa, {f.get('sem_tarefa', 0)} sem tarefa declarada, {f.get('adaptadores', 0)} adaptadores"
+    d = {"id": pid, "origem": c["origem"], "motivo": f"sem modelos no corte ({det})", "coletado_em": HOJE}
     if escopo == "mundo":
         d["escopo"] = "mundo"
     return d
@@ -681,6 +691,7 @@ def unidade(c, ctx):
     """Coleta um publicador e devolve o registro {pub, modelos, descartado}. Nao grava nada."""
     pid, ent = c["id"], c.get("curado")
     r0, f0 = estado["rede"], estado["falhas"]
+    estado.pop("filtro", None)
     reg = {"v": 1, "id": pid, "coletado_em": HOJE, "assinatura": assinatura(c), "pub": None, "modelos": [], "descartado": None}
     info = info_publicador(pid)
     if not info:
@@ -693,6 +704,7 @@ def unidade(c, ctx):
         reg.update(_unidade_indep(c, info, ctx))
     else:
         reg.update(_unidade_mundo(c, info, ctx))
+    reg["filtro"] = estado.pop("filtro", None)
     reg["chamadas"] = estado["rede"] - r0
     reg["incompleto"] = estado["falhas"] > f0
     return reg

@@ -83,9 +83,11 @@ def comparar(a, d):
     for i in r["pubs_removidos"]:
         if a["pubs"][i]["classe_pais"] == "br_evidencia":
             an.append(f"publicador do Brasil saiu do mapa (evidencia que parou de responder ou sem modelos no corte): {i}")
-    novos_desc = [x["id"] for x in d["foto"].get("descartados", []) if x["id"] not in {y["id"] for y in a["foto"].get("descartados", [])}]
-    for i in novos_desc:
-        an.append(f"publicador registrado como descartado (ver motivo em foto.json): {i}")
+    antes_desc = {y["id"] for y in a["foto"].get("descartados", [])}
+    novos = [x for x in d["foto"].get("descartados", []) if x["id"] not in antes_desc]
+    novos_desc = [x["id"] for x in novos]
+    for x in novos:
+        an.append(f"publicador fora do mapa: {x['id']}: {x['motivo']}")
     for i in r["classe_mudou"]:
         an.append(f"classe/natureza mudou em {i[0]}: {i[1]} -> {i[2]}")
     r["novos_descartados"] = novos_desc
