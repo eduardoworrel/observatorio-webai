@@ -4,7 +4,7 @@ Curto de propósito. Vale a partir da publicação.
 
 ## Papéis
 
-- **Mantenedores:** fazem merge, atendem pedidos de remoção, decidem disputas, mudam regras e infraestrutura. No lançamento há um mantenedor (o dono da conta que hospeda o repositório, também controlador dos dados pessoais, ver `docs/PRIVACIDADE.md`); a meta é ter pelo menos dois depois.
+- **Mantenedores:** fazem merge, atendem pedidos de remoção, decidem disputas, mudam regras e infraestrutura. Há um mantenedor (o dono da conta que hospeda o repositório, também controlador dos dados pessoais, ver `docs/PRIVACIDADE.md`); o projeto busca ter pelo menos dois.
 - **Revisores** (opcionais, convidados pelos mantenedores): leem PRs de dados e recomendam; não fazem merge de dados pessoais. Só os mantenedores mexem em `scripts/`, `schema/`, `.github/`, `docs/` e `data/remocoes.json` (CODEOWNERS).
 - **Contribuidores:** qualquer pessoa. O crédito sai do Git.
 
@@ -16,6 +16,21 @@ Pesquisadores e donos de contas são pessoas. A moderação combina **validaçã
 2. **Revisão humana dos mantenedores**, sempre: abrem as fontes, conferem se a pessoa deve estar, a neutralidade do texto, disputas e pedidos de remoção, e fazem o merge.
 
 
+## Como os dados entram no site
+
+A contribuição indica **quem publica** (usuário ou organização do Hugging Face) e a evidência mínima de país e de natureza. Os modelos, tamanhos, formatos, status de build e famílias nunca são inseridos à mão: o coletor os deriva das APIs públicas. Nenhuma etapa depende de inteligência artificial.
+
+1. **Contribuição por PR.** A pessoa abre um PR com arquivos em `data/entidades/` (um por publicador, seguindo a SPEC). O PR não altera scripts, schema, site nem arquivos derivados.
+2. **Validação mecânica.** O CI roda `validar.py` (schema, ids, URLs, privacidade, regras de classificação, trechos citados). Mostra um status; não aprova nem rejeita.
+3. **Revisão e curadoria pelos mantenedores.** Abrem as fontes, conferem evidência, neutralidade e pessoas listadas; podem corrigir arquivos no próprio PR (commits no ramo do PR) antes do merge. Para ter um resumo local, `scripts/processar_pr.sh <número>` baixa o PR em pasta temporária (somente leitura), confere o que ele toca, valida e lista as entidades novas e os publicadores que a coleta traria.
+4. **Merge** pelos mantenedores.
+5. **Coleta pelos mantenedores.** Em `main` atualizada, no computador de um mantenedor (a API anônima do Hugging Face basta; a máquina deve estar na tomada): `python3 scripts/coletar.py --novos`. A coleta lê as entidades curadas, coleta só o que falta (publicadores novos, entidades alteradas e coletas com mais de 30 dias) e **mescla** o resultado nos dados existentes. É retomável: cada publicador coletado vira um checkpoint em `.cache/`; se a máquina desligar ou o terminal fechar, o mesmo comando continua de onde parou. Respeita o limite de 500 chamadas por 5 minutos. Referência: cerca de 100 chamadas por minuto; um publicador sem modelos no corte custa 1 a 3 chamadas, e um com modelos custa cerca de 3 chamadas por modelo, mais as do índice de builds (cerca de 50, uma vez por coleta). Na primeira coleta incremental sobre dados gerados antes desta rotina, rode uma vez `python3 scripts/coletar.py --normalizar`, que só reordena os arquivos derivados (sem rede, sem mudar conteúdo), para que o diff mostre apenas o que a coleta mudou.
+6. **Relatório.** `scripts/relatorio_coleta.py` (rodado ao fim da coleta) compara os dados antes e depois: publicadores novos, modelos adicionados e removidos, mudanças de status de build, contagens por classe e natureza e anomalias (publicador sem modelos no corte, queda grande de contagem, evidência que parou de responder). Fica em `.relatorios/`, fora do Git, para o mantenedor revisar antes de publicar.
+7. **Commit dos dados derivados.** Se o relatório estiver conforme, os mantenedores fazem o commit de `data/*.json` e `web/data.js` em ramo `coleta-*`, por PR, com revisão humana. A saída é determinística: sem mudança na fonte, o diff é vazio.
+8. **Atualização do site** a partir do `main`.
+
+**Periodicidade.** `coletar.py --novos` a cada lote de PRs fundidos, pelo menos uma vez por semana; `coletar.py --tudo` uma vez por mês, para atualizar contagens, downloads e status de build de todos os publicadores e retirar dos dados quem deixou de ser candidato (entidade arquivada ou removida). Uma coleta de cerca de 200 publicadores novos leva de 15 a 40 minutos com a API anônima (a maior parte do tempo é espera pelo limite de chamadas).
+
 ## Critérios de entrada
 
 | Entidade | Entra quando |
@@ -23,7 +38,6 @@ Pesquisadores e donos de contas são pessoas. A moderação combina **validaçã
 | publicador | tem modelos de linguagem publicados e perfil público; evidência de natureza; país só com evidência |
 | laboratório | tem página própria ou institucional que o vincule a uma instituição, e publica ou é citado como autor de modelo ou pesquisa de IA em linguagem |
 | pesquisador | página institucional ou perfil profissional público que o liste com vínculo, **e** pelo menos uma publicação ou modelo creditado a ele; estudantes e pessoas sem página só por autoinscrição; menores nunca |
-| modelo (curado) | fora do Hugging Face, com cartão ou página oficial |
 | família | linhagem reconhecida por pelo menos 2 modelos |
 
 Fora do escopo: ranking de pessoas, métricas de desempenho de pessoas, perfil pessoal, avaliação de qualidade de pesquisa.
@@ -46,7 +60,7 @@ Regra geral: **a palavra da pessoa sobre ela mesma prevalece sobre a regra autom
 
 ## Sustentação
 
-- **Esforço de moderação, fase 1 (estimativa a medir no piloto, em horas por semana):**
+- **Carga de revisão (referência, em horas por semana):**
 
 | PRs por semana | Horas por semana |
 |---|---|
@@ -55,8 +69,8 @@ Regra geral: **a palavra da pessoa sobre ela mesma prevalece sobre a regra autom
 | cerca de 30 | 5 a 8 |
 
   Cada PR bem formado leva de 8 a 15 minutos: a checagem de trechos poupa parte da abertura das fontes, e o humano confere contexto, pessoa e neutralidade. Pedidos de remoção são raros, mas têm prazo.
-- **Dependência de uma pessoa:** é o risco principal. Mitigações: procedimento escrito aqui, a meta de ter um segundo mantenedor e a possibilidade de pôr o projeto em modo somente leitura.
-- **Atualização dos derivados:** os mantenedores rodam `scripts/coletar.py` periodicamente; a diferença entra por PR (ramo `coleta-*`), com revisão e merge humanos.
+- **Dependência de uma pessoa:** é o risco principal. Mitigações: procedimento escrito aqui, a busca por um segundo mantenedor e a possibilidade de pôr o projeto em modo somente leitura.
+- **Atualização dos derivados:** os mantenedores rodam `scripts/coletar.py` conforme a seção "Como os dados entram no site"; a diferença entra por PR (ramo `coleta-*`), com revisão e merge humanos.
 - **Crédito:** CONTRIBUTORS gerado do Git (`scripts/contributors.py`), sem coletar nada além do nome de commit. O rodapé do site mantém o crédito "Inspirado no Observatório da Maritaca", em texto simples, e a fonte Atkinson Hyperlegible (SIL OFL 1.1). O código da interface é original, escrito à mão.
 - **Licenças:** dados CC BY 4.0 (`LICENSE-DATA`), código MIT (`LICENSE`). Titular: "Observatório contributors".
 - **Privacidade:** aviso em [docs/PRIVACIDADE.md](PRIVACIDADE.md) (quem é listado, fonte, como se opor); base legal: legítimo interesse (LGPD art. 7, IX e §§3 e 4; GDPR art. 6(1)(f)); prazos na SPEC, seção 8.

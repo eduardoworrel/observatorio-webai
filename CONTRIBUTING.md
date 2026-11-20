@@ -15,19 +15,19 @@ The Observatório maps who publishes Web AI models in Brazil and around the worl
 
 | I want to... | How |
 |---|---|
-| Add a publisher, lab, researcher, model or family | PR with a new file under `data/entidades/<type>/` (or the "Add an entity" form) |
+| Add a publisher, lab, researcher or family | PR with a new file under `data/entidades/<type>/` (or the "Add an entity" form) |
 | Add or fix a source | PR editing `fontes`, or the "Source" form |
 | Fix an error | PR editing the file, or the "Fix" form |
 | Request removal or correction of a person's data | "Request removal" form or the private report in the repository's Security tab (contacts in `docs/PRIVACIDADE.md`) |
 | Propose a new field | "Propose a field" form; changing the standard is a spec decision |
 
-Do not edit `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` or `web/data.js`: the collector generates them (build status, sizes, formats, counts). The check rejects PRs that touch them.
+Do not edit `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` or `web/data.js`: the collector generates them (build status, sizes, formats, counts). The check rejects PRs that touch them. You indicate **who publishes** (a Hugging Face user or organization) with the minimum evidence of country and nature; the models are always derived by the collector from the public APIs and are never entered by hand. After a PR is merged, the maintainers run the collection and publish the derived data (section "Como os dados entram no site" in `docs/GOVERNANCA.md`, in Portuguese).
 
 ## Without knowing Git: in the browser
 
 1. Create a GitHub account (in Settings, Emails, turn on "Keep my email addresses private").
 2. Open the repository's `templates/` folder, open the template for your type (for example `pesquisador.json`) and copy the text.
-3. Go to `data/entidades/<type>/`, click **Add file, Create new file** and type the name: the id plus `.json` (`recogna.json`; for a model, `publisher/name.json`). The id is kebab-case: lowercase, digits and hyphens.
+3. Go to `data/entidades/<type>/`, click **Add file, Create new file** and type the name: the id plus `.json` (`recogna.json`). The id is kebab-case: lowercase, digits and hyphens.
 4. Paste the template and replace the values. Delete what does not apply (optional fields). Mind the commas: no comma after the last item of a list.
 5. For each source: open the page, check it says what you wrote, copy the URL, pick the `tipo` and put today's date in `acessado` (`"2026-11-20"`, quoted). For evidence, paste a short quote from the page in `trecho`.
 6. Click **Commit changes, Propose changes**, then **Create pull request**. GitHub makes your copy for you.

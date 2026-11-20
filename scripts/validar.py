@@ -19,7 +19,7 @@ CONFIAVEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAIZ = os.path.abspath(os.environ.get("VALIDAR_RAIZ") or CONFIAVEL)   # VALIDAR_RAIZ: copia do PR; schema e codigo vem sempre do ramo confiavel
 SCHEMA_DIR = os.path.join(CONFIAVEL, "schema")
 HOJE = datetime.date.fromisoformat(os.environ.get("VALIDAR_HOJE") or datetime.date.today().isoformat())
-DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "modelo": "modelo", "familia": "familia"}
+DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "familia": "familia"}
 ISO = set("""AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ
 DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP
 KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM
@@ -27,7 +27,7 @@ PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH
 UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW""".split())
 DERIVADOS = {"n_modelos_hf", "n_membros", "n_modelos_mapeados", "modelos_fora_do_corte", "escopo", "origem_lista", "builds", "formatos_proprios", "formatos_navegador",
              "gguf", "gguf_wllama", "gguf_gb", "gguf_origem", "gguf_grande", "via", "gb_navegador", "conversao_de", "downloads", "atualizado", "idioma_pt", "base",
-             "tarefa", "constelacao", "arestas", "modelos_total"}
+             "tarefa", "tarefa_inferida", "regra_tarefa", "constelacao", "arestas", "modelos_total"}
 PROIBIDOS = {"email", "e-mail", "telefone", "celular", "endereco", "endereço", "nascimento", "data_nascimento", "foto", "imagem", "avatar", "cpf", "rg", "genero", "gênero",
              "raca", "raça", "etnia", "religiao", "religião", "orientacao_sexual", "nacionalidade", "idade", "estado_civil", "redes", "instagram", "facebook", "whatsapp"}
 REDES_PESSOAIS = ("facebook.com", "fb.com", "instagram.com", "tiktok.com", "snapchat.com", "wa.me", "whatsapp.com", "t.me", "telegram.me", "x.com", "twitter.com",
@@ -213,8 +213,8 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
     # identidade x arquivo
     if not rejeitado and isinstance(o.get("id"), str):
         stem = rel(arq)[:-5].split(os.sep)
-        if ent in DIRS and stem[-1 if ent != "modelo" else -2:] != ([o["id"]] if ent != "modelo" else o["id"].split("/")):
-            E(("id",), "ID_ARQUIVO", f"o caminho do arquivo nao bate com o id {o['id']!r}", "Nome do arquivo = id" + ("; modelo: <publicador>/<nome>.json" if ent == "modelo" else "") + ".")
+        if ent in DIRS and stem[-1:] != [o["id"]]:
+            E(("id",), "ID_ARQUIVO", f"o caminho do arquivo nao bate com o id {o['id']!r}", "Nome do arquivo = id.")
         chave = (ent, o["id"].lower(), "exemplos" in stem)
         if chave in ctx["ids"]: E(("id",), "ID_DUPLICADO", f"id repetido (sem diferenciar maiusculas): {o['id']}", f"Ja existe em {ctx['ids'][chave]}.")
         else: ctx["ids"][chave] = rel(arq)
@@ -260,13 +260,6 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
         if o.get("origem_cadastro") == "terceiro" and not any((a.get("fonte") or {}).get("tipo") in TIPOS_VINCULO for a in o.get("afiliacoes") or []):
             E(("origem_cadastro",), "TERCEIRO_SEM_FONTE", "cadastro por terceiro exige pagina institucional ou perfil publico que liste a pessoa", "")
         if ent == "pesquisador" and o.get("origem_cadastro") != "coletor" and any(k in o for k in ("brasil", "classe_pais")): E(("classe_pais",), "CAMPO_PROIBIDO", "pesquisador nao tem classe de pais: so afiliacao", "")
-    if ent == "modelo":
-        if o.get("publicador") not in ctx["pubs"]: E(("publicador",), "REF_INEXISTENTE", f"publicador {o.get('publicador')!r} nao existe", "")
-        elif isinstance(o.get("id"), str) and o["id"].split("/")[0] != o["publicador"]: E(("publicador",), "ID_ARQUIVO", "a parte antes da barra do id deve ser o publicador", "")
-        if o.get("familia") and o["familia"] not in ctx["fams"]: E(("familia",), "REF_INEXISTENTE", f"familia {o['familia']!r} nao existe", "")
-        hf = (o.get("links") or {}).get("hf")
-        if hf and isinstance(o.get("id"), str) and not hf.rstrip("/").endswith("huggingface.co/" + o["id"]): E(("links", "hf"), "HF_ID", "o link do Hugging Face deve ser https://huggingface.co/<id>", "")
-        if not o.get("links"): E(("links",), "CAMPO_FALTA", "modelo precisa de ao menos um link oficial", "")
     if ent == "familia" and o.get("origem") and o["origem"] not in ctx["pubs"]: E(("origem",), "REF_INEXISTENTE", f"publicador {o['origem']!r} nao existe", "")
 
 def carregar_json(arq):
@@ -314,7 +307,7 @@ def contexto(arqs_ent):
         try: o = json.load(open(a, encoding="utf-8"))
         except Exception: continue
         if not isinstance(o, dict) or not isinstance(o.get("id"), str): continue
-        {"publicador": ctx["pubs"], "laboratorio": ctx["labs"], "modelo": ctx["modelos"], "familia": ctx["fams"]}.get(o.get("entidade"), set()).add(o["id"])
+        {"publicador": ctx["pubs"], "laboratorio": ctx["labs"], "familia": ctx["fams"]}.get(o.get("entidade"), set()).add(o["id"])
     return ctx
 
 def derivados_pii():

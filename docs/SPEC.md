@@ -1,6 +1,6 @@
 # Observatório: padrão de dados, versão 1.0
 
-*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: publisher, lab, researcher, model, family. One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
+*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: publisher, lab, researcher, family (models are always derived by the collector, never contributed). One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
 
 As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `schema/` e `scripts/validar.py` implementam este texto; se divergirem dele, é um defeito de um dos dois.
 
@@ -9,7 +9,7 @@ As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `sche
 | Camada | Onde | Quem escreve | Contribuição pode alterar? |
 |---|---|---|---|
 | **Curada** | `data/entidades/<tipo>/` | pessoas (por pull request), revisão humana | sim |
-| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9) | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR da coleta semanal, em ramo `coleta-*`, aberto pelo workflow do próprio repositório e fundido por uma pessoa |
+| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
 | **Exemplos** | `data/exemplos/` | mantenedor | só para ensinar o formato; nunca entram nos dados oficiais |
 | **Remoções** | `data/remocoes.json` | mantenedor | não (seção 8) |
 
@@ -32,7 +32,7 @@ laboratorio.publicadores[] ─ contas que o laboratório usa para publicar
 - **publicador**: quem publica modelos: pessoa independente, grupo, empresa, universidade ou outra organização. É a chave da constelação.
 - **laboratorio**: laboratório ou grupo de pesquisa **vinculado a uma instituição**.
 - **pesquisador**: pessoa com vínculo profissional público. Ver seção 7.
-- **modelo**: um modelo de linguagem. Os do Hugging Face vêm do coletor; o arquivo curado só existe para modelo fora do Hugging Face ou para ligar fonte e família.
+- **modelo**: um modelo de linguagem. É sempre derivado pelo coletor a partir do Hugging Face; não existe arquivo curado de modelo.
 - **familia**: linhagem de modelos (regra F). O arquivo curado dá nome, descrição e fonte.
 - **constelação**: apenas derivada (publicador e seus modelos); não se contribui.
 
@@ -40,7 +40,7 @@ A direção das relações é única, para haver uma só verdade por fato: o ví
 
 ## 3. Formato de arquivo: JSON, um arquivo por entidade
 
-`data/entidades/<tipo>/<id>.json`, em UTF-8, indentação de 2 espaços, uma chave por linha. Modelo: `data/entidades/modelo/<publicador>/<nome>.json`.
+`data/entidades/<tipo>/<id>.json`, em UTF-8, indentação de 2 espaços, uma chave por linha.
 
 Escolha de JSON em vez de YAML, com as razões: (1) o projeto só usa a biblioteca padrão do Python, que lê JSON e não lê YAML; (2) os dados gerados já são JSON; (3) o editor web do GitHub aceita os dois e o validador aponta linha e coluna do erro de JSON; (4) o YAML traz ambiguidades (`no`, datas sem aspas) que uma pessoa iniciante não vê. A contrapartida é a vírgula do último item, que o validador acusa com a linha.
 
@@ -53,8 +53,7 @@ Campos desconhecidos são erro. Em todos: `spec` (obrigatório, `"1.0"`), `entid
 ### 4.1 Identificadores
 
 - `id`: kebab-case `^[a-z0-9]+(-[a-z0-9]+)*$`, 2 a 60 caracteres. **Estável**: nunca é renomeado nem reaproveitado para outra coisa. Maiúsculas e minúsculas não distinguem ids (o arquivo precisa funcionar em macOS e Windows).
-- **Exceção, `publicador.id` e o publicador de um `modelo`**: é a **chave da fonte primária**, com a mesma grafia do Hugging Face (`CEIA-UFG`, `HuggingFaceTB`), porque os dados derivados e a interface usam essa chave. Publicador sem conta no Hugging Face usa kebab-case.
-- `modelo.id`: `<publicador>/<nome>`, como no Hugging Face.
+- **Exceção, `publicador.id`**: é a **chave da fonte primária**, com a mesma grafia do Hugging Face (`CEIA-UFG`, `HuggingFaceTB`), porque os dados derivados e a interface usam essa chave. Publicador sem conta no Hugging Face usa kebab-case.
 - País: ISO 3166-1 alfa-2 (`BR`, `PT`, `US`), conferido contra a lista. Região, opcional: ISO 3166-2 (`BR-GO`). Região e país descrevem **onde fica a instituição ou o endereço profissional declarado**, nunca a nacionalidade de uma pessoa.
 - Datas: `AAAA-MM-DD`, entre aspas.
 - URLs: `https://`, até 300 caracteres, sem usuário (`user@`), sem `mailto:` nem `tel:`, de página pública.
@@ -81,9 +80,9 @@ Campos desconhecidos são erro. Em todos: `spec` (obrigatório, `"1.0"`), `entid
 
 `id` (`nome-sobrenome`, com instituição se houver homônimo), `nome` (nome profissional público), `origem_cadastro` (obrigatório), `afiliacoes[]` (1 a 4): `{instituicao, pais, laboratorio?, papel?, fonte}` com `fonte` em evidência de tipo `site_institucional`, `perfil_oficial` ou `pagina_pessoa`; `areas[]`; `publicacoes[]` (até 30): `{titulo, ano, fonte}`; `modelos[]`: `{modelo, fonte}` (id existente); `links`: `instituicao`, `github`, `hf`, `orcid`, `scholar`, `lattes`, `oficial` (site profissional). **Não existem** campos de e-mail, telefone, endereço, nascimento, foto, redes pessoais, nacionalidade, gênero ou qualquer atributo sensível.
 
-### 4.5 modelo
+### 4.5 modelo (derivado)
 
-`id`, `nome`, `publicador` (existente), `familia?`, `licenca?`, `lancado_em?`, `parametros_b?`, `links` (pelo menos um: `hf`, `oficial`, `repositorio`, `artigo`), `fontes`. Se há `links.hf`, o id é o do repositório. Status de build, formatos, GGUF, tamanhos e downloads são **derivados** e só existem para modelos do Hugging Face, calculados pelo coletor.
+Não há arquivo curado de modelo. Os modelos, com id `<publicador>/<nome>` como no Hugging Face, e todos os seus campos (tarefa, tamanho, formatos, status de build, GGUF, downloads, família) são derivados pelo coletor (seção 9). `pesquisador.modelos[]` pode citar o id de um modelo derivado.
 
 ### 4.6 familia
 
@@ -159,9 +158,34 @@ Pesquisadores e donos de contas são **pessoas**. Valem a LGPD (Lei 13.709/2018)
 
 ## 9. Dados derivados e regras de coleta automática
 
-O status de build por regra (nativo oficial, nativo de comunidade, GGUF via wllama, sem build), família, tamanhos e demais campos derivados continuam calculados pelo coletor a partir da API pública do Hugging Face, **sem edição humana**. As regras (formato, R, S, G, V, tamanho, F) estão em [docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md) e permanecem válidas.
+### 9.1 Princípio: a contribuição indica publicadores, o coletor deriva os modelos
 
-Os arquivos de `data/entidades/` são validados e servem de fonte curada; a classificação de publicadores no mapa continua a calculada pelo coletor com as regras da seção 6.
+Modelos do Hugging Face, tamanhos, formatos, status de build, GGUF, família e contagens **nunca são inseridos à mão nem por contribuição**: são sempre derivados pelo coletor a partir das APIs públicas do Hugging Face, por regra. A contribuição indica **quem publica** (usuário ou organização do Hugging Face, por id ou URL), com a evidência mínima de país e de natureza (seções 4.2 e 6). Nenhuma etapa do fluxo, da contribuição à publicação, depende de inteligência artificial: a validação é mecânica e a revisão é humana.
+
+### 9.2 Quem entra no mapa
+
+O coletor lê, nesta ordem de precedência: (1) as entidades curadas de `data/entidades/publicador/` (a classificação de país e de natureza e as evidências vêm da entidade, já validadas pelo `validar.py`, sem nova derivação por regra); (2) as listas de `seed/publishers.json`; (3) a descoberta automática por busca na API. A entidade curada tem precedência sobre o sinal automático (seção 6).
+
+| Classe da entidade | Escopo no mapa |
+|---|---|
+| `br_evidencia` | Brasil |
+| `fora_br` | mundo |
+| `nao_classificado` | mundo (até 8 repositórios de formato de navegador); nunca entra no escopo Brasil |
+
+Entidades `arquivado` e exemplos não são coletados. Contas em `data/remocoes.json` e na lista local `.excluir` são ignoradas.
+
+### 9.3 Filtro de relevância (quais modelos sobem para a página)
+
+1. **Tarefa:** modelos de linguagem, isto é, `pipeline_tag` em `text-generation`, `image-text-to-text`, `any-to-any` ou `text2text-generation`. Quando o repositório não declara `pipeline_tag`, a tarefa é **inferida por regra**, só com campos da listagem da API (tags, nome e tamanho dos pesos; nenhum peso é baixado): (a) o tamanho precisa ser conhecido (`safetensors.total` ou `gguf.total`); (b) a tag de arquitetura ou de tarefa indica linguagem, isto é, arquitetura causal (`llama`, `mistral`, `gemma`, `qwen`, `phi`, `gpt2`, `gpt_neox`, `falcon` e semelhantes) ou tag `text-generation`, `text-generation-inference` ou `conversational` dão `text-generation`; arquitetura sequência-para-sequência (`t5`, `mt5`, `bart`, `pegasus` e semelhantes) ou tag `text2text-generation` dão `text2text-generation`; (c) ficam de fora adaptadores (LoRA/PEFT), modelos de embedding, reranqueamento, classificação, reconhecimento de entidades, codificadores (`bert`, `roberta` e semelhantes), visão e áudio, por tag ou por nome; (d) vale o corte de tamanho do item 2. O modelo inferido traz `tarefa_inferida: true` e `regra_tarefa` com a regra usada, para conferência. Sem sinal, o repositório não entra.
+2. **Tamanho:** até 12 bilhões de parâmetros (`safetensors.total`, ou `gguf.total`); sem informação de tamanho, o modelo fica, com `parametros_b` nulo.
+3. **Sem adaptadores:** LoRA/PEFT (tags `peft`, `lora` ou `base_model:adapter`) não contam, pois não rodam sozinhos.
+4. **Sem duplicatas (regra R):** repositório que é só outro formato ou quantização (ONNX, MLC, LiteRT, GGUF) de um modelo do mesmo publicador vira **build** desse modelo, não modelo novo. Builds de terceiros são ligados ao modelo de origem pelo nome e pela relação `base_model:quantized`; conversões de terceiros só aparecem como modelo próprio para publicadores do mundo sem classificação, com `conversao_de`.
+5. **GGUF à parte:** GGUF via wllama conta separado do build nativo e só se a menor variante Q4 tiver até 4 GB (regra G).
+6. **Publicador sem modelos no corte:** o publicador é registrado em `foto.json` (`descartados`) com o motivo "sem modelos no corte" e os números de cada filtro, e não aparece no mapa.
+
+### 9.4 Coleta
+
+Os mantenedores rodam `scripts/coletar.py` em modo incremental (`--novos`: só publicadores ainda ausentes dos dados, cuja entidade curada mudou ou cuja coleta passou de 30 dias; o resultado é mesclado) ou completo (`--tudo`), ou só para alguns publicadores (`--so`). A saída é determinística (ordem estável): rodar duas vezes sem mudança na fonte não altera nenhum arquivo. A coleta é retomável (um checkpoint por publicador) e respeita o limite da API anônima (500 chamadas por 5 minutos). `scripts/relatorio_coleta.py` compara os dados antes e depois para revisão. As regras de formato, R, S, G, V, tamanho e F estão em [docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md) e permanecem válidas.
 
 ## 10. Texto, idiomas, licenças
 
@@ -178,4 +202,4 @@ Os arquivos de `data/entidades/` são validados e servem de fonte curada; a clas
 
 ## 12. Códigos do validador
 
-`JSON`, `ENTIDADE`, `TIPO`, `VALOR`, `FORMATO`, `LIMITE`, `MIN_ITENS`, `MAX_ITENS`, `CAMPO_FALTA`, `CAMPO_DESCONHECIDO`, `CAMPO_DERIVADO`, `CAMPO_PROIBIDO`, `FONTE_FALTA`, `FONTE_REPETIDA`, `FONTE_VELHA`, `DATA_FUTURA`, `URL`, `URL_BUSCA`, `REDE_PESSOAL`, `FOTO`, `EMAIL`, `TELEFONE`, `CPF`, `ENDERECO`, `NASCIMENTO`, `SENSIVEL`, `PAIS_INVALIDO`, `BR_REGRA`, `NAO_CLASSIFICADO`, `NATUREZA_SEM_EVIDENCIA`, `NATUREZA_INCOERENTE`, `INDEPENDENTE`, `VINCULO_FONTE`, `TERCEIRO_SEM_FONTE`, `REF_INEXISTENTE`, `ID_ARQUIVO`, `ID_DUPLICADO`, `HF_ID`, `EXEMPLO_MARCA`, `ARQUIVO`, `REMOVIDO`, `PR_DERIVADO`, `PR_INFRA`, `LINK_QUEBRADO`, `LINK_INCERTO`, `TRECHO_AUSENTE`, `TRECHO_NAO_VERIFICADO`. Todos são erros, exceto `SENSIVEL`, `URL_BUSCA`, `FONTE_REPETIDA`, `PR_INFRA`, `LINK_INCERTO`, `TRECHO_NAO_VERIFICADO` e `FONTE_VELHA` entre 180 e 365 dias, que são avisos. Os casos em `data/exemplos/rejeitados/` testam o validador (`python3 scripts/validar.py --rejeitados`).
+`JSON`, `ENTIDADE`, `TIPO`, `VALOR`, `FORMATO`, `LIMITE`, `MIN_ITENS`, `MAX_ITENS`, `CAMPO_FALTA`, `CAMPO_DESCONHECIDO`, `CAMPO_DERIVADO`, `CAMPO_PROIBIDO`, `FONTE_FALTA`, `FONTE_REPETIDA`, `FONTE_VELHA`, `DATA_FUTURA`, `URL`, `URL_BUSCA`, `REDE_PESSOAL`, `FOTO`, `EMAIL`, `TELEFONE`, `CPF`, `ENDERECO`, `NASCIMENTO`, `SENSIVEL`, `PAIS_INVALIDO`, `BR_REGRA`, `NAO_CLASSIFICADO`, `NATUREZA_SEM_EVIDENCIA`, `NATUREZA_INCOERENTE`, `INDEPENDENTE`, `VINCULO_FONTE`, `TERCEIRO_SEM_FONTE`, `REF_INEXISTENTE`, `ID_ARQUIVO`, `ID_DUPLICADO`, `EXEMPLO_MARCA`, `ARQUIVO`, `REMOVIDO`, `PR_DERIVADO`, `PR_INFRA`, `LINK_QUEBRADO`, `LINK_INCERTO`, `TRECHO_AUSENTE`, `TRECHO_NAO_VERIFICADO`. Todos são erros, exceto `SENSIVEL`, `URL_BUSCA`, `FONTE_REPETIDA`, `PR_INFRA`, `LINK_INCERTO`, `TRECHO_NAO_VERIFICADO` e `FONTE_VELHA` entre 180 e 365 dias, que são avisos. Os casos em `data/exemplos/rejeitados/` testam o validador (`python3 scripts/validar.py --rejeitados`).

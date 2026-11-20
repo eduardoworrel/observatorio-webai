@@ -31,7 +31,7 @@
       m1_t: 'Status do build', m1_a: 'Nativo: arquivos em ONNX (Transformers.js), MLC (WebLLM) ou LiteRT, publicados pelo próprio publicador ou pela comunidade.', m1_b: 'GGUF via wllama: conta à parte, só se a menor variante Q4 tiver até 4 GB (limite do WebAssembly de 32 bits; arquivo de até 2 GB por parte).', m1_c: 'Existir não é rodar: o mapa não executa modelos.',
       m2_t: 'Modelo brasileiro', m2_a: 'Modelo criado por brasileiros (pessoa, grupo, empresa ou universidade do Brasil), inclusive ajuste fino sobre base estrangeira. Não é "em português feito por estrangeiros".', m2_b: 'Cada publicador só entra com evidência pública guardada com link e data: site .br no perfil, descrição do perfil, cartão do modelo ou página institucional. Sem evidência, fica fora do mapa.', m2_c: 'Classes: Brasil (evidência), Não classificado, Fora do Brasil.',
       m3_t: 'Independente, instituição, empresa', m3_a: 'Independente: pessoa ou grupo pequeno sem vínculo institucional declarado. Instituição: universidade ou instituto. Empresa: declarada no perfil ou em página institucional.', m3_b: 'A ausência de vínculo declarado não prova que não exista; a evidência fica registrada em cada publicador.', m3_c: 'Dados: API pública do Hugging Face, coletados por regra, sem modelo de linguagem decidindo.',
-      rodape: 'Dados do Hugging Face de', modelo: 'Modelo', tarefa: 'Tarefa', evidencias: 'Evidências', ev_pais: 'País', ev_nat: 'Natureza', n_mod: 'modelos mapeados', gguf_nota: 'GGUF existe, mas passa de 4 GB.', fam_t: 'Família'
+      rodape: 'Dados do Hugging Face de', modelo: 'Modelo', tarefa: 'Tarefa', evidencias: 'Evidências', ev_pais: 'País', ev_nat: 'Natureza', n_mod: 'modelos mapeados', gguf_nota: 'GGUF existe, mas passa de 4 GB.', fam_t: 'Família', src_perfil_oficial: 'perfil oficial', src_site_institucional: 'site institucional', src_pagina_pessoa: 'página da pessoa', src_artigo: 'artigo', src_repositorio: 'repositório', src_cartao_modelo: 'cartão do modelo', src_orgao_fomento: 'órgão de fomento', src_perfil: 'perfil', src_cartao: 'cartão do modelo', src_institucional: 'página institucional', src_curadoria: 'lista curada', src_perfil_cartao: 'perfil ou cartão'
     },
     en: {
       skip: 'Skip the map and go to the table', brand_sub: 'of Web AI in Brazil and the world', nav_inicio: 'Home', nav_metodo: 'How we read the data',
@@ -57,7 +57,7 @@
       m1_t: 'Build status', m1_a: 'Native: files in ONNX (Transformers.js), MLC (WebLLM) or LiteRT, published by the publisher itself or by the community.', m1_b: 'GGUF via wllama: counted separately, only if the smallest Q4 variant is up to 4 GB (32-bit WebAssembly limit; up to 2 GB per file part).', m1_c: 'Existing is not running: this map does not execute models.',
       m2_t: 'Brazilian model', m2_a: 'A model created by Brazilians (a person, group, company or university in Brazil), including fine-tunes on foreign bases. It is not "Portuguese made by foreigners".', m2_b: 'Each publisher only enters with public evidence stored with a link and date: a .br site on the profile, the profile description, the model card or an institutional page. Without evidence, it stays off the map.', m2_c: 'Classes: Brazil (evidence), Not classified, Outside Brazil.',
       m3_t: 'Independent, institution, company', m3_a: 'Independent: a person or small group with no declared institutional tie. Institution: university or institute. Company: declared on the profile or an institutional page.', m3_b: 'No declared tie does not prove there is none; the evidence is stored on each publisher.', m3_c: 'Data: public Hugging Face API, collected by rule, with no language model deciding.',
-      rodape: 'Hugging Face data from', modelo: 'Model', tarefa: 'Task', evidencias: 'Evidence', ev_pais: 'Country', ev_nat: 'Type', n_mod: 'models mapped', gguf_nota: 'GGUF exists, but is over 4 GB.', fam_t: 'Family'
+      rodape: 'Hugging Face data from', modelo: 'Model', tarefa: 'Task', evidencias: 'Evidence', ev_pais: 'Country', ev_nat: 'Type', n_mod: 'models mapped', gguf_nota: 'GGUF exists, but is over 4 GB.', fam_t: 'Family', src_perfil_oficial: 'official profile', src_site_institucional: 'institutional site', src_pagina_pessoa: 'personal page', src_artigo: 'paper', src_repositorio: 'repository', src_cartao_modelo: 'model card', src_orgao_fomento: 'funding agency', src_perfil: 'profile', src_cartao: 'model card', src_institucional: 'institutional page', src_curadoria: 'curated list', src_perfil_cartao: 'profile or card'
     }
   };
   var S = { lang: 'pt', escopo: 'todos', via: 'todos', nat: 'todas', busca: '', agrupar: 'publicador', sort: { k: 'via', d: 1 }, sel: null, paused: false, zoom: 1, panX: 0, panY: 0, limite: 150 };
@@ -69,6 +69,7 @@
   if (qs.get('agrupar') === 'familia') S.agrupar = 'familia';
   if (qs.get('sky')) { var sv = qs.get('sky').split(',').map(Number); if (sv.length === 3 && sv.every(isFinite)) { S.zoom = sv[0]; S.panX = sv[1]; S.panY = sv[2]; } }
   var t = function (k) { return (T[S.lang] && T[S.lang][k]) || k; };
+  var tipoFonte = function (x) { var v = T[S.lang] && T[S.lang]['src_' + String(x).replace(/\W+/g, '_')]; return v || String(x).replace(/_/g, ' '); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var nf = function (n, d) { return n == null ? '—' : n.toLocaleString(S.lang === 'pt' ? 'pt-BR' : 'en-US', { minimumFractionDigits: d == null ? 0 : d, maximumFractionDigits: d == null ? 2 : d }); };
   var mqDark = matchMedia('(prefers-color-scheme:dark)'), DK = false;
@@ -470,7 +471,7 @@
   function li(f) { return '<li><a href="' + esc(f.url) + '" target="_blank" rel="noopener">' + esc(f.rotulo) + '</a> · ' + esc(f.acessado) + (f.trecho ? '<br><em>' + esc(f.trecho) + '</em>' : '') + '</li>'; }
   function evidHtml(p) {
     var l = [];
-    if (p.evidencia_pais) l.push({ rotulo: t('ev_pais') + ': ' + t('cl_' + p.classe_pais) + ' (' + p.evidencia_pais.tipo + ')', url: p.evidencia_pais.url, acessado: p.evidencia_pais.acessado, trecho: p.evidencia_pais.trecho });
+    if (p.evidencia_pais) l.push({ rotulo: t('ev_pais') + ': ' + t('cl_' + p.classe_pais) + ' (' + tipoFonte(p.evidencia_pais.tipo) + ')', url: p.evidencia_pais.url, acessado: p.evidencia_pais.acessado, trecho: p.evidencia_pais.trecho });
     if (p.evidencia_natureza) l.push({ rotulo: t('ev_nat') + ': ' + t(p.natureza), url: p.evidencia_natureza.url, acessado: p.evidencia_natureza.acessado, trecho: p.evidencia_natureza.trecho });
     return l.length ? '<h3>' + t('evidencias') + '</h3><ul>' + l.map(li).join('') + '</ul>' : '';
   }
