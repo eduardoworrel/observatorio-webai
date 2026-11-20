@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "ceei-ufcg",
+  "nome": "Unidade Embrapii CEEI-UFCG",
+  "sigla": "CEEI-UFCG",
+  "instituicao": {
+    "nome": "Universidade Federal de Campina Grande",
+    "pais": "BR",
+    "regiao": "BR-PB",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/software-e-automaco-ceei/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii",
+      "trecho": "a UE CEEI-UFCG conta com diversos laboratórios, com competências complementares, dentro de sua área de atuação como Unidade EMBRAPII"
+    }
+  },
+  "links": {
+    "oficial": "https://embrapii.org.br/unidades/software-e-automaco-ceei/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/software-e-automaco-ceei/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii"
+    }
+  ]
+}

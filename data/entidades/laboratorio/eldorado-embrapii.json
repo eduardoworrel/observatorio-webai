@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "eldorado-embrapii",
+  "nome": "Unidade Embrapii ELDORADO",
+  "instituicao": {
+    "nome": "Instituto de Pesquisas Eldorado",
+    "pais": "BR",
+    "regiao": "BR-SP",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://www.eldorado.org.br/fomento/embrapii/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional",
+      "trecho": "O Instituto de Pesquisas ELDORADO é uma unidade credenciada pela EMBRAPII"
+    }
+  },
+  "links": {
+    "oficial": "https://www.eldorado.org.br/fomento/embrapii/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.eldorado.org.br/fomento/embrapii/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional"
+    }
+  ]
+}

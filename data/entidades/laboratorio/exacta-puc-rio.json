@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "exacta-puc-rio",
+  "nome": "ExACTa",
+  "sigla": "ExACTa",
+  "instituicao": {
+    "nome": "Pontifícia Universidade Católica do Rio de Janeiro",
+    "pais": "BR",
+    "regiao": "BR-RJ",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://www.inf.puc-rio.br/en/laboratory/exacta/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional",
+      "trecho": "ExACTa | Department of Informatics – PUC-Rio"
+    }
+  },
+  "links": {
+    "oficial": "https://www.inf.puc-rio.br/en/laboratory/exacta/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.inf.puc-rio.br/en/laboratory/exacta/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional"
+    }
+  ]
+}

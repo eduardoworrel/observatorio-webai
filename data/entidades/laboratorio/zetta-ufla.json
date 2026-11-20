@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "zetta-ufla",
+  "nome": "Zetta",
+  "sigla": "Zetta",
+  "instituicao": {
+    "nome": "Universidade Federal de Lavras",
+    "pais": "BR",
+    "regiao": "BR-MG",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-em-geotecnologia-e-agronegocio-zetta-ufla/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii",
+      "trecho": "A Zetta/UFLA é credenciada na área de Agricultura Digital"
+    }
+  },
+  "links": {
+    "oficial": "https://embrapii.org.br/unidades/sistemas-inteligentes-em-geotecnologia-e-agronegocio-zetta-ufla/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-em-geotecnologia-e-agronegocio-zetta-ufla/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "certi-embrapii",
+  "nome": "Unidade Embrapii CERTI",
+  "instituicao": {
+    "nome": "Fundação CERTI",
+    "pais": "BR",
+    "regiao": "BR-SC",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-certi/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii",
+      "trecho": "Conheça mais as competências e atuações da Unidade Embrapii CERTI"
+    }
+  },
+  "links": {
+    "oficial": "https://embrapii.org.br/unidades/sistemas-inteligentes-certi/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-certi/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii"
+    }
+  ]
+}

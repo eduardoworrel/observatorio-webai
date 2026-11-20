@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "lactec-embrapii",
+  "nome": "Unidade Embrapii Lactec de Inteligência Embarcada",
+  "instituicao": {
+    "nome": "Lactec",
+    "pais": "BR",
+    "regiao": "BR-PR",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/inteligencia-embarcada-lactec/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii",
+      "trecho": "O Lactec também é Unidade Embrapii de Inteligência Embarcada"
+    }
+  },
+  "links": {
+    "oficial": "https://embrapii.org.br/unidades/inteligencia-embarcada-lactec/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/inteligencia-embarcada-lactec/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii"
+    }
+  ]
+}

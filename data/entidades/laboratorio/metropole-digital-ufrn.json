@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "metropole-digital-ufrn",
+  "nome": "Unidade Embrapii Metrópole Digital",
+  "instituicao": {
+    "nome": "Universidade Federal do Rio Grande do Norte",
+    "pais": "BR",
+    "regiao": "BR-RN",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-e-computaco-aplicada-metropole-digital-ufrn/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii",
+      "trecho": "A Unidade Embrapii Metrópole Digital, vinculada à Universidade Federal do Rio Grande do Norte (UFRN)"
+    }
+  },
+  "links": {
+    "oficial": "https://embrapii.org.br/unidades/sistemas-inteligentes-e-computaco-aplicada-metropole-digital-ufrn/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://embrapii.org.br/unidades/sistemas-inteligentes-e-computaco-aplicada-metropole-digital-ufrn/",
+      "acessado": "2026-11-20",
+      "rotulo": "página da unidade no site da Embrapii"
+    }
+  ]
+}

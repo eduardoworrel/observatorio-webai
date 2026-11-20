@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "tecgraf-puc-rio",
+  "nome": "Instituto Tecgraf",
+  "sigla": "Tecgraf",
+  "instituicao": {
+    "nome": "Pontifícia Universidade Católica do Rio de Janeiro",
+    "pais": "BR",
+    "regiao": "BR-RJ",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://www.inf.puc-rio.br/en/laboratory/instituto-tecgraf/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional",
+      "trecho": "Instituto Tecgraf | Department of Informatics – PUC-Rio"
+    }
+  },
+  "links": {
+    "oficial": "https://www.inf.puc-rio.br/en/laboratory/instituto-tecgraf/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.inf.puc-rio.br/en/laboratory/instituto-tecgraf/",
+      "acessado": "2026-11-20",
+      "rotulo": "página institucional"
+    }
+  ]
+}
