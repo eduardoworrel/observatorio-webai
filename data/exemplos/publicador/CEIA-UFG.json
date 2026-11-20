@@ -1,0 +1,44 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "publicador",
+  "id": "CEIA-UFG",
+  "nome": "Centro de Excelência em IA",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-GO",
+  "evidencia_pais": {
+    "tipo": "site_institucional",
+    "url": "https://ceia.ufg.br/",
+    "acessado": "2026-11-20",
+    "trecho": "Pionerismo e inovação em IA no Brasil ... O Centro de Excelência em Inteligência Artificial (CEIA) da Universidade Federal de Goiás (UFG)"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "site_institucional",
+    "url": "https://ceia.ufg.br/",
+    "acessado": "2026-11-20",
+    "trecho": "O Centro de Excelência em Inteligência Artificial (CEIA) da Universidade Federal de Goiás (UFG) é um polo de inovação"
+  },
+  "links": {
+    "hf": "https://huggingface.co/CEIA-UFG",
+    "oficial": "https://ceia.ufg.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/CEIA-UFG",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "site_institucional",
+      "url": "https://ceia.ufg.br/",
+      "acessado": "2026-11-20",
+      "rotulo": "Site do centro"
+    }
+  ],
+  "status": "ativo"
+}

@@ -1,0 +1,34 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "sigla-instituicao",
+  "nome": "Nome do laboratorio ou grupo",
+  "sigla": "SIGLA",
+  "instituicao": {
+    "nome": "Nome da instituicao",
+    "pais": "BR",
+    "regiao": "BR-XX",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina",
+      "trecho": "copie aqui a frase curta da pagina que prova o fato"
+    }
+  },
+  "publicadores": [],
+  "areas": [
+    "linguagem natural"
+  ],
+  "links": {
+    "oficial": "https://EXEMPLO"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "familia",
+  "id": "sabia-7",
+  "nome": "Sabiá-7B",
+  "origem": "maritaca-ai",
+  "descricao": {
+    "pt": "Modelo Sabiá-7B da Maritaca AI e conversões.",
+    "en": "Sabiá-7B from Maritaca AI and conversions."
+  },
+  "links": {
+    "hf": "https://huggingface.co/maritaca-ai/sabia-7b"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/maritaca-ai/sabia-7b",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão de um modelo da família"
+    }
+  ],
+  "status": "ativo"
+}

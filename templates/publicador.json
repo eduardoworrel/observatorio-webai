@@ -1,0 +1,20 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "conta-no-huggingface",
+  "nome": "Nome como o publicador se apresenta",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "nao_classificado",
+  "links": {
+    "hf": "https://huggingface.co/conta-no-huggingface"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina"
+    }
+  ]
+}

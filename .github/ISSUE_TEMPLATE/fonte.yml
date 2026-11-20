@@ -1,0 +1,14 @@
+name: Adicionar ou corrigir uma fonte / Add or fix a source
+description: Link novo, link quebrado, data de acesso velha / New link, broken link, old access date
+labels: ["fonte"]
+body:
+  - type: input
+    id: id
+    attributes: {label: "Entrada (tipo/id) / Entry"}
+    validations: {required: true}
+  - type: textarea
+    id: fonte
+    attributes:
+      label: "Fonte (URL, tipo, dia em que abriu, trecho) / Source"
+      description: "Tipos: perfil_oficial, site_institucional, pagina_pessoa, artigo, repositorio, cartao_modelo. Link de busca não vale."
+    validations: {required: true}

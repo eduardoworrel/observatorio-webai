@@ -1,0 +1,25 @@
+name: Pedir remoção ou correção de dados pessoais / Request removal or correction of personal data
+description: Você (ou quem você representa) aparece e não quer, ou quer mudar / You appear and want it removed or changed
+labels: ["remocao"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Não escreva dados pessoais nesta página: ela é pública.** Basta o id da entrada e o que você pede. Não pedimos documento nem justificativa.
+        **Do not write personal data here: this page is public.** The entry id and your request are enough. We do not ask for ID or reasons.
+        Confirmação em até 3 dias úteis; remoção em até 7 dias corridos; reescrita do histórico do Git, se necessário, em até 30 dias. Um mantenedor humano atende. Canal privado: aba Security do repositório, "Report a vulnerability". Contatos: docs/PRIVACIDADE.md
+        Private channel and contacts: docs/PRIVACIDADE.md. Acknowledgement in 3 business days; removal in 7 days; Git history rewrite, if needed, in 30 days. A human maintainer handles it.
+  - type: input
+    id: id
+    attributes: {label: "Entrada (tipo/id, ex.: pesquisador/nome-sobrenome) / Entry"}
+    validations: {required: true}
+  - type: dropdown
+    id: pedido
+    attributes:
+      label: Pedido / Request
+      options: [Remover a entrada, Remover a entrada e reescrever o histórico do Git, Corrigir uma informação, "Mudar a classificação (país ou natureza)"]
+    validations: {required: true}
+  - type: dropdown
+    id: quem
+    attributes: {label: "Quem pede / Who", options: [A própria pessoa, Representante da pessoa ou da instituição, Outra]}
+    validations: {required: true}

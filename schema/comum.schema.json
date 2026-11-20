@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "comum.schema.json",
+  "title": "Definicoes comuns (SPEC 1.0)",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 60,
+      "description": "kebab-case: minusculas, digitos e hifens simples"
+    },
+    "id_publicador": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$",
+      "description": "Identificador na fonte primaria (usuario ou organizacao do Hugging Face, com a mesma grafia) ou kebab-case se nao houver conta"
+    },
+    "id_modelo": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}/[A-Za-z0-9][A-Za-z0-9._-]{0,95}$",
+      "description": "<publicador>/<nome>, como no Hugging Face"
+    },
+    "data": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://[^\\s@]+$",
+      "maxLength": 300
+    },
+    "pais": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO 3166-1 alfa-2; o validador confere a lista"
+    },
+    "regiao": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}-[A-Z0-9]{1,3}$",
+      "description": "ISO 3166-2, opcional"
+    },
+    "texto_i18n": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "pt": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 240
+        },
+        "en": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 240
+        }
+      }
+    },
+    "tipo_fonte": {
+      "enum": [
+        "perfil_oficial",
+        "site_institucional",
+        "artigo",
+        "repositorio",
+        "cartao_modelo",
+        "pagina_pessoa"
+      ]
+    },
+    "fonte": {
+      "type": "object",
+      "required": [
+        "tipo",
+        "url",
+        "acessado"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tipo": {
+          "$ref": "comum.schema.json#/$defs/tipo_fonte"
+        },
+        "url": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "acessado": {
+          "$ref": "comum.schema.json#/$defs/data"
+        },
+        "rotulo": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "trecho": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "regra": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    },
+    "evidencia": {
+      "type": "object",
+      "required": [
+        "tipo",
+        "url",
+        "acessado",
+        "trecho"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tipo": {
+          "$ref": "comum.schema.json#/$defs/tipo_fonte"
+        },
+        "url": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "acessado": {
+          "$ref": "comum.schema.json#/$defs/data"
+        },
+        "trecho": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 240
+        },
+        "rotulo": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "regra": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "revisar": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidencia_natureza": {
+      "type": "object",
+      "required": [
+        "classe",
+        "tipo",
+        "url",
+        "acessado",
+        "trecho"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "classe": {
+          "enum": [
+            "independente",
+            "instituicao",
+            "empresa"
+          ]
+        },
+        "tipo": {
+          "$ref": "comum.schema.json#/$defs/tipo_fonte"
+        },
+        "url": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "acessado": {
+          "$ref": "comum.schema.json#/$defs/data"
+        },
+        "trecho": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 240
+        },
+        "rotulo": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "regra": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "revisar": {
+          "type": "boolean"
+        }
+      }
+    },
+    "fontes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "$ref": "comum.schema.json#/$defs/fonte"
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "oficial": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "instituicao": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "hf": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "github": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "repositorio": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "orcid": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "scholar": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "lattes": {
+          "$ref": "comum.schema.json#/$defs/url"
+        },
+        "artigo": {
+          "$ref": "comum.schema.json#/$defs/url"
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "ativo",
+        "arquivado"
+      ]
+    },
+    "arquivo": {
+      "type": "object",
+      "required": [
+        "em",
+        "motivo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "em": {
+          "$ref": "comum.schema.json#/$defs/data"
+        },
+        "motivo": {
+          "enum": [
+            "link_morto",
+            "fundido",
+            "encerrado",
+            "a_pedido_do_titular"
+          ]
+        },
+        "substituido_por": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "publicador",
+  "id": "maritaca-ai",
+  "nome": "Maritaca AI",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "site_institucional",
+    "url": "https://www.maritaca.ai/",
+    "acessado": "2026-11-20",
+    "trecho": "os modelos com sufixo br-sp rodam em data center da EVEO em São Paulo"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/maritaca-ai",
+    "acessado": "2026-11-20",
+    "trecho": "Maritaca AI company https://maritaca.ai/"
+  },
+  "links": {
+    "hf": "https://huggingface.co/maritaca-ai",
+    "oficial": "https://www.maritaca.ai/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/maritaca-ai",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.maritaca.ai/",
+      "acessado": "2026-11-20",
+      "rotulo": "Site da empresa"
+    }
+  ],
+  "status": "ativo"
+}

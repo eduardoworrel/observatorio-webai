@@ -1,0 +1,24 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "familia",
+  "id": "s5",
+  "nome": "S5",
+  "origem": "maritaca-ai",
+  "descricao": {
+    "pt": "Modelos S5 da Maritaca AI no Hugging Face.",
+    "en": "S5 models from Maritaca AI on Hugging Face."
+  },
+  "links": {
+    "hf": "https://huggingface.co/maritaca-ai/S5-nano"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/maritaca-ai/S5-nano",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão de um modelo da família"
+    }
+  ],
+  "status": "ativo"
+}

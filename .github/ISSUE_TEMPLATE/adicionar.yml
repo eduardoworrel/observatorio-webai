@@ -1,0 +1,41 @@
+name: Adicionar entidade / Add an entity
+description: Publicador, laboratório, pesquisador, modelo ou família (sem saber usar Git) / publisher, lab, researcher, model or family
+labels: ["adicionar"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Só informação profissional já pública, com fonte. Nada de e-mail, telefone, endereço, data de nascimento, foto ou redes pessoais. O Git é público e permanente.
+        Professional, already-public information only, with a source. No e-mail, phone, address, birth date, photo or personal social networks. Git is public and permanent.
+        A decisão é sempre humana. / The decision is always human.
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo / Type
+      options: [publicador, laboratorio, pesquisador, modelo, familia]
+    validations: {required: true}
+  - type: input
+    id: nome
+    attributes: {label: "Nome público / Public name"}
+    validations: {required: true}
+  - type: textarea
+    id: fontes
+    attributes:
+      label: Fontes / Sources (URL, tipo, o dia em que você abriu a página, trecho curto)
+      description: "Tipos: perfil_oficial, site_institucional, pagina_pessoa, artigo, repositorio, cartao_modelo"
+      placeholder: "https://... | site_institucional | 2026-11-20 | \"Laboratório de ... da Universidade ...\""
+    validations: {required: true}
+  - type: textarea
+    id: relacoes
+    attributes: {label: "Vínculos (instituição, laboratório, modelos) e país da afiliação / Affiliations and country"}
+  - type: checkboxes
+    id: confirmo
+    attributes:
+      label: Confirmo / I confirm
+      options:
+        - label: Abri cada fonte e ela diz o que escrevi / I opened every source and it says what I wrote
+          required: true
+        - label: Não incluí dado pessoal além do perfil profissional público / No personal data beyond the public professional profile
+          required: true
+        - label: Aceito que o texto fique em CC BY 4.0 / I accept CC BY 4.0 for the text
+          required: true

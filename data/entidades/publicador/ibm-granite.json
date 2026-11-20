@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ibm-granite",
+  "nome": "IBM Granite",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "fora_br",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ibm-granite",
+    "acessado": "2026-11-20",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "regra": "lista curada (seed), confianca baixa"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ibm-granite",
+    "acessado": "2026-11-20",
+    "trecho": "natureza da lista curada (seed); vinculo nao conferido pelo coletor",
+    "regra": "lista curada (seed)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ibm-granite"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ibm-granite",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

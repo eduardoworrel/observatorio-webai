@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ceia-research",
+  "nome": "CEIA - UFG - Centro de Excelência em Inteligência Artificial - Research",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/ceia-research/lumi-4b",
+    "acessado": "2026-11-20",
+    "trecho": "ce.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16) - **Contact**: [e-mail omitido, dominio discente.ufg.br] ## Model Performance ### Model evolution ![Model evoluti",
+    "regra": "E3a: cartao do modelo com endereco .br"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ceia-research",
+    "acessado": "2026-11-20",
+    "trecho": "**Lumi** is a small language model developed by the **NLP team at CEIA/UFG**, available as a **4B instruct** model. Buil",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ceia-research"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ceia-research",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "pesquisador",
+  "id": "joao-paulo-papa",
+  "nome": "João Paulo Papa",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade Estadual Paulista (UNESP), Campus de Bauru",
+      "pais": "BR",
+      "papel": "docente",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://bv.fapesp.br/en/pesquisador/3113/joao-paulo-papa",
+        "acessado": "2026-11-20",
+        "trecho": "Currently, he is a Full Professor in the Computer Science Department at São Paulo State University ''Júlio de Mesquita Filho'', Unesp-Bauru."
+      }
+    }
+  ],
+  "areas": [
+    "visão computacional",
+    "aprendizado de máquina"
+  ],
+  "links": {
+    "oficial": "https://bv.fapesp.br/en/pesquisador/3113/joao-paulo-papa"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://bv.fapesp.br/en/pesquisador/3113/joao-paulo-papa",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil na Biblioteca Virtual da FAPESP"
+    }
+  ],
+  "status": "ativo"
+}

@@ -1,0 +1,16 @@
+name: Propor campo novo / Propose a new field
+description: Mudança no padrão de dados (spec) / Change to the data standard
+labels: ["spec"]
+body:
+  - type: textarea
+    id: campo
+    attributes: {label: "Campo, entidade e valores permitidos / Field, entity, allowed values"}
+    validations: {required: true}
+  - type: textarea
+    id: porque
+    attributes: {label: "Por que serve ao mapa e de que fonte pública ele sai / Why, and which public source"}
+    validations: {required: true}
+  - type: dropdown
+    id: pessoal
+    attributes: {label: "É dado de pessoa? / Is it about a person?", options: ["Não", "Sim (explique a base e a minimização)"]}
+    validations: {required: true}

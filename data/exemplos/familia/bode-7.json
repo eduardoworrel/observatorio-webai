@@ -1,0 +1,24 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "familia",
+  "id": "bode-7",
+  "nome": "Bode-7B",
+  "origem": "recogna-nlp",
+  "descricao": {
+    "pt": "Modelos Bode de 7 bilhões de parâmetros do Recogna NLP.",
+    "en": "7-billion-parameter Bode models from Recogna NLP."
+  },
+  "links": {
+    "hf": "https://huggingface.co/recogna-nlp/bode-7b-alpaca-pt-br-no-peft"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/recogna-nlp/bode-7b-alpaca-pt-br-no-peft",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão de um modelo da família"
+    }
+  ],
+  "status": "ativo"
+}

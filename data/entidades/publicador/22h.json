@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "22h",
+  "nome": "22 hours",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/22h",
+    "acessado": "2026-11-20",
+    "trecho": "opening ai all the way from brazil",
+    "regra": "E2: descricao do perfil cita Brasil"
+  },
+  "links": {
+    "hf": "https://huggingface.co/22h"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/22h",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

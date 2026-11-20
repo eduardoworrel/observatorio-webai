@@ -1,0 +1,31 @@
+{
+  "_esperado": [
+    "INDEPENDENTE"
+  ],
+  "_motivo": "Natureza 'independente' com link de universidade.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "grupo-ficticio",
+  "nome": "Grupo Ficticio",
+  "tipo": "grupo",
+  "natureza": "independente",
+  "classe_pais": "nao_classificado",
+  "links": {
+    "hf": "https://huggingface.co/grupo-ficticio",
+    "instituicao": "https://www.exemplo.edu.br/lab"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/grupo-ficticio",
+      "acessado": "2026-11-20"
+    }
+  ],
+  "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/grupo-ficticio",
+    "acessado": "2026-11-20",
+    "trecho": "perfil sem vinculo declarado"
+  }
+}

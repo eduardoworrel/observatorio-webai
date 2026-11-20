@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "familia.schema.json",
+  "title": "familia (SPEC 1.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "entidade",
+    "id",
+    "nome",
+    "fontes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "entidade": {
+      "const": "familia"
+    },
+    "exemplo": {
+      "type": "boolean"
+    },
+    "status": {
+      "$ref": "comum.schema.json#/$defs/status"
+    },
+    "arquivo": {
+      "$ref": "comum.schema.json#/$defs/arquivo"
+    },
+    "descricao": {
+      "$ref": "comum.schema.json#/$defs/texto_i18n"
+    },
+    "links": {
+      "$ref": "comum.schema.json#/$defs/links"
+    },
+    "fontes": {
+      "$ref": "comum.schema.json#/$defs/fontes"
+    },
+    "id": {
+      "$ref": "comum.schema.json#/$defs/id"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "origem": {
+      "$ref": "comum.schema.json#/$defs/id_publicador"
+    }
+  }
+}

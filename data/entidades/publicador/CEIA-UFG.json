@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "CEIA-UFG",
+  "nome": "Centro de Excelência em IA",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "acessado": "2026-11-20",
+    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)*",
+    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
+    "revisar": true
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/CEIA-UFG",
+    "acessado": "2026-11-20",
+    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excell",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/CEIA-UFG"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/CEIA-UFG",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

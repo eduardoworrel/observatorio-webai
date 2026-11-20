@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "plvictor",
+  "nome": "Paulo Victor Souza",
+  "tipo": "pessoa",
+  "natureza": "independente",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/plvictor",
+    "acessado": "2026-11-20",
+    "trecho": "descricao no GitHub vinculado: Hey, I’m Paulo! 👋 I’m a Brazilian Full-Stack Developer based in New York, working with HTML, Node.js, CSS, Dart, and always looking for ways to improve. :D",
+    "regra": "E4b: GitHub vinculado cita Brasil"
+  },
+  "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/plvictor",
+    "acessado": "2026-11-20",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/plvictor"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/plvictor",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

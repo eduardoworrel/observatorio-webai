@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "pesquisador",
+  "id": "fabio-cozman",
+  "nome": "Fabio G. Cozman",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade de São Paulo",
+      "pais": "BR",
+      "laboratorio": "c4ai-usp",
+      "papel": "docente",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://sites.poli.usp.br/p/fabio.cozman/",
+        "acessado": "2026-11-20",
+        "trecho": "I am a Full Professor at Escola Politécnica (Poli), Universidade de São Paulo (USP), Director of the University's Center for Artificial Intelligence and Machine Learning"
+      }
+    }
+  ],
+  "areas": [
+    "aprendizado de máquina",
+    "conhecimento e incerteza"
+  ],
+  "links": {
+    "instituicao": "https://sites.poli.usp.br/p/fabio.cozman/"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://sites.poli.usp.br/p/fabio.cozman/",
+      "acessado": "2026-11-20",
+      "rotulo": "Página profissional no site da Escola Politécnica da USP"
+    }
+  ],
+  "status": "ativo"
+}

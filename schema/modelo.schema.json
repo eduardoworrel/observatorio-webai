@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "modelo.schema.json",
+  "title": "modelo (SPEC 1.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "entidade",
+    "id",
+    "nome",
+    "publicador",
+    "links",
+    "fontes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "entidade": {
+      "const": "modelo"
+    },
+    "exemplo": {
+      "type": "boolean"
+    },
+    "status": {
+      "$ref": "comum.schema.json#/$defs/status"
+    },
+    "arquivo": {
+      "$ref": "comum.schema.json#/$defs/arquivo"
+    },
+    "descricao": {
+      "$ref": "comum.schema.json#/$defs/texto_i18n"
+    },
+    "links": {
+      "$ref": "comum.schema.json#/$defs/links"
+    },
+    "fontes": {
+      "$ref": "comum.schema.json#/$defs/fontes"
+    },
+    "id": {
+      "$ref": "comum.schema.json#/$defs/id_modelo"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "publicador": {
+      "$ref": "comum.schema.json#/$defs/id_publicador"
+    },
+    "familia": {
+      "$ref": "comum.schema.json#/$defs/id"
+    },
+    "licenca": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "lancado_em": {
+      "$ref": "comum.schema.json#/$defs/data"
+    },
+    "parametros_b": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 10000
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "AIInstituteLNCC",
+  "nome": "AI Institute of LNCC",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/fportoDexl",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Petropolis, Rio de Janeiro, Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "acessado": "2026-11-20",
+    "trecho": "LNCC",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/AIInstituteLNCC"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/AIInstituteLNCC",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

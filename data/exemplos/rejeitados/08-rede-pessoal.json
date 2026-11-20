@@ -1,0 +1,34 @@
+{
+  "_esperado": [
+    "REDE_PESSOAL"
+  ],
+  "_motivo": "Link para rede social pessoal.",
+  "spec": "1.0",
+  "entidade": "pesquisador",
+  "id": "fulana-de-tal",
+  "nome": "Fulana de Tal",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade Exemplo",
+      "pais": "BR",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://example.org/pessoa",
+        "acessado": "2026-11-20",
+        "trecho": "Professora do Departamento de Computacao, Universidade Exemplo, Brasil"
+      }
+    }
+  ],
+  "links": {
+    "instituicao": "https://example.org/pessoa",
+    "oficial": "https://www.instagram.com/fulana"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://example.org/pessoa",
+      "acessado": "2026-11-20"
+    }
+  ]
+}

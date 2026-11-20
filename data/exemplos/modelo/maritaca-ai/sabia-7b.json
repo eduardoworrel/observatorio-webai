@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "modelo",
+  "id": "maritaca-ai/sabia-7b",
+  "nome": "sabia-7b",
+  "publicador": "maritaca-ai",
+  "familia": "sabia-7",
+  "parametros_b": 6.74,
+  "links": {
+    "hf": "https://huggingface.co/maritaca-ai/sabia-7b"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/maritaca-ai/sabia-7b",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão do modelo no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

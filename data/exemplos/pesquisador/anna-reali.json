@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "pesquisador",
+  "id": "anna-reali",
+  "nome": "Anna Helena Reali Costa",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade de São Paulo",
+      "pais": "BR",
+      "laboratorio": "c4ai-usp",
+      "papel": "docente",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://pcs.usp.br/anna/",
+        "acessado": "2026-11-20",
+        "trecho": "Anna Helena Reali Costa (Anna Reali) is Full Professor of Computer Engineering at Universidade de São Paulo (USP), Brazil ... Member of C4AI."
+      }
+    }
+  ],
+  "areas": [
+    "inteligência artificial",
+    "aprendizado por reforço"
+  ],
+  "links": {
+    "instituicao": "https://pcs.usp.br/anna/"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://pcs.usp.br/anna/",
+      "acessado": "2026-11-20",
+      "rotulo": "Página no site do Departamento de Engenharia de Computação da USP"
+    }
+  ],
+  "status": "ativo"
+}

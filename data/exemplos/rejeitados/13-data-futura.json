@@ -1,0 +1,23 @@
+{
+  "_esperado": [
+    "DATA_FUTURA"
+  ],
+  "_motivo": "Data de acesso no futuro.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "grupo-ficticio",
+  "nome": "Grupo Ficticio",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "nao_classificado",
+  "links": {
+    "hf": "https://huggingface.co/grupo-ficticio"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/grupo-ficticio",
+      "acessado": "2030-01-01"
+    }
+  ]
+}

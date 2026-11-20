@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "althayr",
+  "nome": "Althayr Nazaret",
+  "tipo": "pessoa",
+  "natureza": "independente",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/althayr",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro, Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/althayr",
+    "acessado": "2026-11-20",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/althayr"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/althayr",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

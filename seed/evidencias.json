@@ -1,0 +1,15 @@
+{
+ "_nota": "Evidencias institucionais curadas. Valem so se a pagina responder na coleta e o padrao aparecer; a data de acesso e gravada.",
+ "maritaca-ai": {
+  "pais": "br",
+  "natureza": "empresa",
+  "url": "https://www.maritaca.ai/",
+  "regex": "(Maritaca AI|S5)[^.]{0,120}(Brasil|brasileir)[^.]{0,60}|(Brasil|brasileir)[^.]{0,100}"
+ },
+ "CEIA-UFG": {
+  "pais": "br",
+  "natureza": "instituicao",
+  "url": "https://huggingface.co/CEIA-UFG",
+  "regex": "Universidade Federal de Goi[^<\"]{0,80}"
+ }
+}

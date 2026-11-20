@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "pesquisador",
+  "id": "nome-sobrenome",
+  "nome": "Nome profissional publico",
+  "origem_cadastro": "autoinscricao",
+  "afiliacoes": [
+    {
+      "instituicao": "Nome da instituicao",
+      "pais": "BR",
+      "papel": "docente",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://EXEMPLO",
+        "acessado": "AAAA-MM-DD",
+        "rotulo": "descricao curta da pagina",
+        "trecho": "copie aqui a frase curta da pagina que prova o fato"
+      }
+    }
+  ],
+  "areas": [
+    "aprendizado de maquina"
+  ],
+  "links": {
+    "instituicao": "https://EXEMPLO"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina"
+    }
+  ]
+}

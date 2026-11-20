@@ -1,0 +1,16 @@
+{
+  "_esperado": [
+    "FONTE_FALTA"
+  ],
+  "_motivo": "Entrada sem nenhuma fonte: sem fonte, sem linha.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "grupo-ficticio",
+  "nome": "Grupo Ficticio",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "nao_classificado",
+  "links": {
+    "hf": "https://huggingface.co/grupo-ficticio"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "spec": "1.0",
+  "entidade": "modelo",
+  "id": "publicador/nome-do-modelo",
+  "nome": "nome-do-modelo",
+  "publicador": "publicador",
+  "links": {
+    "hf": "https://huggingface.co/publicador/nome-do-modelo"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina"
+    }
+  ]
+}

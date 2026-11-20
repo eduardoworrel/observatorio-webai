@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "recogna-nlp",
+  "nome": "Recogna NLP",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br",
+    "acessado": "2026-11-20",
+    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do supercomputador SDumont.",
+    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
+    "revisar": true
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/recogna-nlp",
+    "acessado": "2026-11-20",
+    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do superc",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/recogna-nlp"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/recogna-nlp",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

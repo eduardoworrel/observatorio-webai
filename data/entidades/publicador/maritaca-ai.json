@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "maritaca-ai",
+  "nome": "Maritaca AI",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "site_institucional",
+    "url": "https://www.maritaca.ai/",
+    "acessado": "2026-11-20",
+    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
+    "regra": "seed verificado: pagina respondeu e o padrao apareceu"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "site_institucional",
+    "url": "https://www.maritaca.ai/",
+    "acessado": "2026-11-20",
+    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
+    "regra": "seed verificado: pagina respondeu e o padrao apareceu"
+  },
+  "links": {
+    "hf": "https://huggingface.co/maritaca-ai",
+    "oficial": "https://www.maritaca.ai/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/maritaca-ai",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

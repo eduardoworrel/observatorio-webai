@@ -1,0 +1,19 @@
+name: Corrigir um erro / Fix an error
+description: Algo está errado numa entrada / Something in an entry is wrong
+labels: ["correcao"]
+body:
+  - type: input
+    id: id
+    attributes: {label: "Entrada (tipo e id, ex.: pesquisador/nome-sobrenome) / Entry"}
+    validations: {required: true}
+  - type: textarea
+    id: erro
+    attributes: {label: "O que está errado e o que é o certo / What is wrong and what is right"}
+    validations: {required: true}
+  - type: textarea
+    id: fonte
+    attributes: {label: "Fonte que mostra o certo (URL, dia em que abriu, trecho) / Source showing the correct fact"}
+    validations: {required: true}
+  - type: markdown
+    attributes:
+      value: "Se a entrada é sobre você e quer que mude de classe (por exemplo, não é do Brasil, ou não é independente), basta dizer aqui; a sua palavra sobre si prevalece. / If the entry is about you, your word about yourself prevails."

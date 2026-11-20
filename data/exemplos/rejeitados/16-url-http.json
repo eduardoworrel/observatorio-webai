@@ -1,0 +1,33 @@
+{
+  "_esperado": [
+    "FORMATO"
+  ],
+  "_motivo": "URL sem https.",
+  "spec": "1.0",
+  "entidade": "pesquisador",
+  "id": "fulana-de-tal",
+  "nome": "Fulana de Tal",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade Exemplo",
+      "pais": "BR",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://example.org/pessoa",
+        "acessado": "2026-11-20",
+        "trecho": "Professora do Departamento de Computacao, Universidade Exemplo, Brasil"
+      }
+    }
+  ],
+  "links": {
+    "instituicao": "http://example.org/pessoa"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://example.org/pessoa",
+      "acessado": "2026-11-20"
+    }
+  ]
+}

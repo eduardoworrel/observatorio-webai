@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "laboratorio.schema.json",
+  "title": "laboratorio (SPEC 1.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "entidade",
+    "id",
+    "nome",
+    "instituicao",
+    "links",
+    "fontes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "entidade": {
+      "const": "laboratorio"
+    },
+    "exemplo": {
+      "type": "boolean"
+    },
+    "status": {
+      "$ref": "comum.schema.json#/$defs/status"
+    },
+    "arquivo": {
+      "$ref": "comum.schema.json#/$defs/arquivo"
+    },
+    "descricao": {
+      "$ref": "comum.schema.json#/$defs/texto_i18n"
+    },
+    "links": {
+      "$ref": "comum.schema.json#/$defs/links"
+    },
+    "fontes": {
+      "$ref": "comum.schema.json#/$defs/fontes"
+    },
+    "id": {
+      "$ref": "comum.schema.json#/$defs/id"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 160
+    },
+    "sigla": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "instituicao": {
+      "type": "object",
+      "required": [
+        "nome",
+        "pais",
+        "fonte"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nome": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "pais": {
+          "$ref": "comum.schema.json#/$defs/pais"
+        },
+        "regiao": {
+          "$ref": "comum.schema.json#/$defs/regiao"
+        },
+        "fonte": {
+          "$ref": "comum.schema.json#/$defs/evidencia"
+        }
+      }
+    },
+    "publicadores": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "$ref": "comum.schema.json#/$defs/id_publicador"
+      }
+    },
+    "areas": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 40
+      }
+    }
+  }
+}

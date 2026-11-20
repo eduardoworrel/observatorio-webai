@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "remocoes.schema.json",
+  "title": "data/remocoes.json (SPEC 1.0)",
+  "type": "object",
+  "required": [
+    "spec",
+    "itens"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "itens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sha256",
+          "removido_em"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "removido_em": {
+            "$ref": "comum.schema.json#/$defs/data"
+          },
+          "historico_reescrito": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

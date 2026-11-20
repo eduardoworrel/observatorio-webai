@@ -1,0 +1,24 @@
+{
+  "_esperado": [
+    "NAO_CLASSIFICADO"
+  ],
+  "_motivo": "'nao_classificado' com pais: ou ha evidencia, ou nao se classifica.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "grupo-ficticio",
+  "nome": "Grupo Ficticio",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "nao_classificado",
+  "links": {
+    "hf": "https://huggingface.co/grupo-ficticio"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/grupo-ficticio",
+      "acessado": "2026-11-20"
+    }
+  ],
+  "pais": "BR"
+}

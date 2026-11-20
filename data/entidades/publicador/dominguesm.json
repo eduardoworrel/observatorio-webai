@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "dominguesm",
+  "nome": "Maicon Domingues",
+  "tipo": "pessoa",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/DominguesM",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/dominguesm",
+    "acessado": "2026-11-20",
+    "trecho": "`Canarim-7B-VestibulAide` is a \"decoder-only\" model with 7 billion parameters, designed specifically for handling questi",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/dominguesm"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/dominguesm",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

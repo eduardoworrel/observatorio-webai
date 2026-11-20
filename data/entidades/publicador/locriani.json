@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "locriani",
+  "nome": "Zach",
+  "tipo": "pessoa",
+  "natureza": "independente",
+  "classe_pais": "nao_classificado",
+  "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/locriani",
+    "acessado": "2026-11-20",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "regra": "N3 (pessoa)"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/locriani"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/locriani",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

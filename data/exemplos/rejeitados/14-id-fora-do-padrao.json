@@ -1,0 +1,33 @@
+{
+  "_esperado": [
+    "FORMATO"
+  ],
+  "_motivo": "Id com maiuscula e espaco (kebab-case).",
+  "spec": "1.0",
+  "entidade": "pesquisador",
+  "id": "Fulana de Tal",
+  "nome": "Fulana de Tal",
+  "origem_cadastro": "terceiro",
+  "afiliacoes": [
+    {
+      "instituicao": "Universidade Exemplo",
+      "pais": "BR",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://example.org/pessoa",
+        "acessado": "2026-11-20",
+        "trecho": "Professora do Departamento de Computacao, Universidade Exemplo, Brasil"
+      }
+    }
+  ],
+  "links": {
+    "instituicao": "https://example.org/pessoa"
+  },
+  "fontes": [
+    {
+      "tipo": "pagina_pessoa",
+      "url": "https://example.org/pessoa",
+      "acessado": "2026-11-20"
+    }
+  ]
+}

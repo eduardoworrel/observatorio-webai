@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "publicador.schema.json",
+  "title": "publicador (SPEC 1.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "entidade",
+    "id",
+    "nome",
+    "tipo",
+    "natureza",
+    "classe_pais",
+    "links",
+    "fontes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "entidade": {
+      "const": "publicador"
+    },
+    "exemplo": {
+      "type": "boolean"
+    },
+    "status": {
+      "$ref": "comum.schema.json#/$defs/status"
+    },
+    "arquivo": {
+      "$ref": "comum.schema.json#/$defs/arquivo"
+    },
+    "descricao": {
+      "$ref": "comum.schema.json#/$defs/texto_i18n"
+    },
+    "links": {
+      "$ref": "comum.schema.json#/$defs/links"
+    },
+    "fontes": {
+      "$ref": "comum.schema.json#/$defs/fontes"
+    },
+    "id": {
+      "$ref": "comum.schema.json#/$defs/id_publicador"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "tipo": {
+      "enum": [
+        "pessoa",
+        "grupo"
+      ]
+    },
+    "natureza": {
+      "enum": [
+        "independente",
+        "instituicao",
+        "empresa",
+        "nao_classificada"
+      ]
+    },
+    "classe_pais": {
+      "enum": [
+        "br_evidencia",
+        "nao_classificado",
+        "fora_br"
+      ]
+    },
+    "pais": {
+      "$ref": "comum.schema.json#/$defs/pais"
+    },
+    "regiao": {
+      "$ref": "comum.schema.json#/$defs/regiao"
+    },
+    "evidencia_pais": {
+      "$ref": "comum.schema.json#/$defs/evidencia"
+    },
+    "evidencia_natureza": {
+      "$ref": "comum.schema.json#/$defs/evidencia_natureza"
+    },
+    "origem_cadastro": {
+      "enum": [
+        "autoinscricao",
+        "terceiro",
+        "coletor"
+      ]
+    }
+  }
+}

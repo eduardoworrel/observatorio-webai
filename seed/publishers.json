@@ -1,0 +1,79 @@
+{
+ "_nota": "Listas iniciais. 'br' sao candidatos conhecidos: so entram no mapa com evidencia publica de serem do Brasil (SPEC, regra B). 'mundo' e a lista curada de grandes publicadores internacionais.",
+ "br": [
+  "maritaca-ai",
+  "Polygl0t",
+  "TucanoBR",
+  "recogna-nlp",
+  "amadeusai",
+  "CEIA-UFG",
+  "ceia-br",
+  "AIInstituteLNCC",
+  "unicamp-dl",
+  "22h",
+  "BrCamp",
+  "nicholasKluge",
+  "rhaymison",
+  "dominguesm",
+  "lucianosb",
+  "JJhooww",
+  "tardellirs",
+  "lucasmg09",
+  "cnmoro",
+  "wilsondesouza",
+  "thejpdev",
+  "guicybercode",
+  "marcosremar2",
+  "FMendonca",
+  "Kisperger",
+  "limajr",
+  "DevTheusP",
+  "zerolimites"
+ ],
+ "mundo": [
+  "Qwen",
+  "google",
+  "microsoft",
+  "meta-llama",
+  "HuggingFaceTB",
+  "LiquidAI",
+  "ibm-granite",
+  "mistralai",
+  "nvidia",
+  "allenai"
+ ],
+ "empresas_mundo": [
+  "Qwen",
+  "google",
+  "microsoft",
+  "meta-llama",
+  "HuggingFaceTB",
+  "LiquidAI",
+  "ibm-granite",
+  "mistralai",
+  "nvidia"
+ ],
+ "instituicoes_mundo": [
+  "allenai"
+ ],
+ "runtime_orgs": [
+  "onnx-community",
+  "mlc-ai",
+  "litert-community"
+ ],
+ "termos_busca": [
+  "pt-br",
+  "ptbr",
+  "portuguese",
+  "portugues",
+  "brasil",
+  "brazil",
+  "brazilian",
+  "bode",
+  "tucano",
+  "canarim",
+  "cabrita",
+  "sabia",
+  "amazonia"
+ ]
+}

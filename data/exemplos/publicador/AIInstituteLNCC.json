@@ -1,0 +1,38 @@
+{
+  "spec": "1.0",
+  "exemplo": true,
+  "entidade": "publicador",
+  "id": "AIInstituteLNCC",
+  "nome": "AI Institute of LNCC",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-RJ",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "acessado": "2026-11-20",
+    "trecho": "The AI Institute of LNCC (IIA-LNCC) is an initiative of the National Laboratory for Scientific Computing (LNCC), based in Petrópolis (RJ), Brazil."
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "acessado": "2026-11-20",
+    "trecho": "AI Institute of LNCC university https://instituto.ia.lncc.br/"
+  },
+  "links": {
+    "hf": "https://huggingface.co/AIInstituteLNCC",
+    "oficial": "https://instituto.ia.lncc.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/AIInstituteLNCC",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

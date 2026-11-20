@@ -1,0 +1,18 @@
+{
+  "spec": "1.0",
+  "entidade": "familia",
+  "id": "nome-da-familia",
+  "nome": "Nome da familia",
+  "descricao": {
+    "pt": "Uma frase.",
+    "en": "One sentence."
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "descricao curta da pagina"
+    }
+  ]
+}

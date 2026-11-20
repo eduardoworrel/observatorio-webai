@@ -1,0 +1,42 @@
+# Arquivo pronto, nao ativado: so passa a rodar quando o repositorio for publicado no GitHub.
+# Apenas lint e status de checagem. Nao aprova, nao rejeita, nao faz merge, nao comenta.
+name: validar
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0   # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Usar o validador e os schemas do ramo principal, nao os do PR
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          git fetch origin "$BASE"
+          git checkout "origin/$BASE" -- scripts schema
+      - name: Entidades (schema, referencias, privacidade, classificacao)
+        run: python3 scripts/validar.py --exemplos
+      - name: Casos rejeitados continuam sendo rejeitados
+        run: python3 scripts/validar.py --rejeitados
+      - name: Trechos citados aparecem na pagina da fonte (rede; sem IA)
+        run: python3 scripts/validar.py --trechos
+      - name: Dados derivados
+        run: python3 scripts/verificar.py
+      - name: Arquivos do PR (derivados e infraestrutura)
+        # a coleta semanal (ramo coleta-*, aberto pelo workflow com o token do proprio repositorio) muda arquivos derivados de proposito
+        if: github.event_name == 'pull_request' && !startsWith(github.head_ref, 'coleta-')
+        env:
+          BASE: ${{ github.base_ref }}
+        run: python3 scripts/validar.py --base "origin/$BASE"
