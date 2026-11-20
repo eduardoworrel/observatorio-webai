@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "hailab-pucpr",
+  "nome": "Health Artificial Intelligence Lab",
+  "sigla": "HAILab",
+  "instituicao": {
+    "nome": "Pontifícia Universidade Católica do Paraná",
+    "pais": "BR",
+    "regiao": "BR-PR",
+    "fonte": {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/pucpr-br",
+      "acessado": "2026-11-20",
+      "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+    }
+  },
+  "publicadores": [
+    "pucpr-br"
+  ],
+  "areas": [
+    "inteligência artificial em saúde"
+  ],
+  "links": {
+    "github": "https://github.com/HAILab-PUCPR"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/pucpr-br",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}
