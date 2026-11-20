@@ -72,6 +72,16 @@
    ]
   },
   {
+   "id": "ai-eldorado",
+   "nome": "Eldorado Research Institute",
+   "escopo": "br",
+   "modelos": [
+    "ai-eldorado/Brazilian_CLT_DPO",
+    "ai-eldorado/LlamaEld-3.1-8B-Instruct"
+   ],
+   "arestas": []
+  },
+  {
    "id": "AIInstituteLNCC",
    "nome": "AI Institute of LNCC",
    "escopo": "br",
@@ -106,6 +116,82 @@
      "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
      "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
      "gemma-3"
+    ]
+   ]
+  },
+  {
+   "id": "amadeusai",
+   "nome": "AMADEUS AI",
+   "escopo": "br",
+   "modelos": [
+    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-7B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-FI-Qwen2.5-0.5B-PT-BR-Instruct",
+    "amadeusai/Amadeus-Verbo-FI-Qwen2.5-1.5B-PT-BR-Instruct",
+    "amadeusai/Amadeus-Verbo-FI-Qwen2.5-3B-PT-BR-Instruct",
+    "amadeusai/Amadeus-Verbo-FI-Qwen2.5-7B-PT-BR-Instruct",
+    "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+    "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-7B-PT-BR-Instruct-Experimental"
+   ],
+   "arestas": [
+    [
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-7B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-7B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-0.5B-PT-BR-Instruct",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-0.5B-PT-BR-Instruct",
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-1.5B-PT-BR-Instruct",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-1.5B-PT-BR-Instruct",
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-3B-PT-BR-Instruct",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-3B-PT-BR-Instruct",
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-7B-PT-BR-Instruct",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-FI-Qwen2.5-7B-PT-BR-Instruct",
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
+    ],
+    [
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-3B-PT-BR-Instruct-Experimental",
+     "amadeusai/Amadeus-Verbo-MI-Qwen-2.5-7B-PT-BR-Instruct-Experimental",
+     "qwen2.5"
     ]
    ]
   },
@@ -170,6 +256,200 @@
      "artificialguybr/QWEN-2.5-0.5B-Synthia-II",
      "artificialguybr/Qwen2.5-0.5B-OpenHermes2.5",
      "qwen2.5"
+    ]
+   ]
+  },
+  {
+   "id": "c2d-usp",
+   "nome": "Centro de Ciência de Dados",
+   "escopo": "br",
+   "modelos": [
+    "c2d-usp/AMP_llama_1_20_percent_compression",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_1_epoch",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_2_epochs",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_3_epochs",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_4_epochs",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_random",
+    "c2d-usp/AMP_llama_2_21.02_percent_compression_reversed",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_1_epoch",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_2_epochs",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_3_epochs",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_4_epochs",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_random",
+    "c2d-usp/AMP_llama_2_30.03_percent_compression_reversed",
+    "c2d-usp/AMP_llama_2_30_percent_compression",
+    "c2d-usp/AMP_llama_2_30_percent_compression_only_MHA",
+    "c2d-usp/AMP_llama_2_30_percent_compression_only_MLP",
+    "c2d-usp/AMP_llama_2_9.01_percent_compression",
+    "c2d-usp/AMP_llama_2_9.01_percent_compression_random",
+    "c2d-usp/AMP_llama_2_9.01_percent_compression_reversed",
+    "c2d-usp/AMP_phi_1.5_30_percent_compression",
+    "c2d-usp/AMP_phi_2_30_percent_compression",
+    "c2d-usp/layer_wise_lora_llava_1.5_7B_scienceqa_1epoch_GGUF_Q4_K_M",
+    "c2d-usp/layer_wise_lora_qwen_3_2B_scienceqa_1epoch_GGUF_Q4_K_M",
+    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
+    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
+    "c2d-usp/MoP_llama_2_20_percent_compression",
+    "c2d-usp/MoP_llama_2_20_percent_compression_2_epochs",
+    "c2d-usp/MoP_llama_2_30_percent_compression_2_epochs",
+    "c2d-usp/MoP_llama_2_40_percent_compression_2_epochs",
+    "c2d-usp/MoP_llama_3_20_percent_compression_2_epochs",
+    "c2d-usp/MoP_llama_3_30_percent_compression_2_epochs",
+    "c2d-usp/MoP_llama_3_40_percent_compression_2_epochs",
+    "c2d-usp/MoP_llava_1.5_40_percent_compression_2_epochs_GGUF_Q4_K_M"
+   ],
+   "arestas": [
+    [
+     "c2d-usp/AMP_llama_1_20_percent_compression",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_1_epoch",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_1_epoch",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_2_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_2_epochs",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_3_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_3_epochs",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_4_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_4_epochs",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_random",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_random",
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_reversed",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_21.02_percent_compression_reversed",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_1_epoch",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_1_epoch",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_2_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_2_epochs",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_3_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_3_epochs",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_4_epochs",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_4_epochs",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_random",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_random",
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_reversed",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30.03_percent_compression_reversed",
+     "c2d-usp/AMP_llama_2_30_percent_compression",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30_percent_compression",
+     "c2d-usp/AMP_llama_2_30_percent_compression_only_MHA",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30_percent_compression_only_MHA",
+     "c2d-usp/AMP_llama_2_30_percent_compression_only_MLP",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_30_percent_compression_only_MLP",
+     "c2d-usp/AMP_llama_2_9.01_percent_compression",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_9.01_percent_compression",
+     "c2d-usp/AMP_llama_2_9.01_percent_compression_random",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_9.01_percent_compression_random",
+     "c2d-usp/AMP_llama_2_9.01_percent_compression_reversed",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_llama_2_9.01_percent_compression_reversed",
+     "c2d-usp/AMP_phi_1.5_30_percent_compression",
+     "amp"
+    ],
+    [
+     "c2d-usp/AMP_phi_1.5_30_percent_compression",
+     "c2d-usp/AMP_phi_2_30_percent_compression",
+     "amp"
+    ],
+    [
+     "c2d-usp/layer_wise_lora_llava_1.5_7B_scienceqa_1epoch_GGUF_Q4_K_M",
+     "c2d-usp/layer_wise_lora_qwen_3_2B_scienceqa_1epoch_GGUF_Q4_K_M",
+     "layer"
+    ],
+    [
+     "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
+     "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
+     "llama_3.1"
+    ],
+    [
+     "c2d-usp/MoP_llama_2_20_percent_compression",
+     "c2d-usp/MoP_llama_2_20_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_2_20_percent_compression_2_epochs",
+     "c2d-usp/MoP_llama_2_30_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_2_30_percent_compression_2_epochs",
+     "c2d-usp/MoP_llama_2_40_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_2_40_percent_compression_2_epochs",
+     "c2d-usp/MoP_llama_3_20_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_3_20_percent_compression_2_epochs",
+     "c2d-usp/MoP_llama_3_30_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_3_30_percent_compression_2_epochs",
+     "c2d-usp/MoP_llama_3_40_percent_compression_2_epochs",
+     "mop"
+    ],
+    [
+     "c2d-usp/MoP_llama_3_40_percent_compression_2_epochs",
+     "c2d-usp/MoP_llava_1.5_40_percent_compression_2_epochs_GGUF_Q4_K_M",
+     "mop"
     ]
    ]
   },
@@ -280,6 +560,15 @@
      "tucano-160"
     ]
    ]
+  },
+  {
+   "id": "coppead",
+   "nome": "COPPEAD / UFRJ",
+   "escopo": "br",
+   "modelos": [
+    "coppead/causalista-4b"
+   ],
+   "arestas": []
   },
   {
    "id": "dominguesm",
@@ -3153,6 +3442,16 @@
    ]
   },
   {
+   "id": "pucpr-br",
+   "nome": "Pontifícia Universidade Católica do Paraná",
+   "escopo": "br",
+   "modelos": [
+    "pucpr-br/Clinical-BR-LlaMA-2-7B",
+    "pucpr-br/Clinical-BR-Mistral-7B-v0.2"
+   ],
+   "arestas": []
+  },
+  {
    "id": "recogna-nlp",
    "nome": "Recogna NLP",
    "escopo": "br",
@@ -3222,6 +3521,174 @@
      "mistral"
     ]
    ]
+  },
+  {
+   "id": "semantixai",
+   "nome": "Semantix",
+   "escopo": "br",
+   "modelos": [
+    "semantixai/Lloro",
+    "semantixai/Lloro-SQL",
+    "semantixai/LloroV3"
+   ],
+   "arestas": [
+    [
+     "semantixai/Lloro",
+     "semantixai/LloroV3",
+     "codellama-7"
+    ]
+   ]
+  },
+  {
+   "id": "ufca-llms",
+   "nome": "Grupo de Pesquisa em LLMs da UFCA",
+   "escopo": "br",
+   "modelos": [
+    "ufca-llms/Jua-Alpha-Mixed",
+    "ufca-llms/praact-deepseek-r1-distill-qwen-1-5b-4ep",
+    "ufca-llms/praact-gemma-2-2b-it",
+    "ufca-llms/praact-gemma-2-2b-it-4ep",
+    "ufca-llms/praact-gemma-2-2b-it-all-models-4ep",
+    "ufca-llms/praact-llama-3-2-3b-instruct-4ep",
+    "ufca-llms/PrAACT-qwen-4b-it",
+    "ufca-llms/praact-qwen2-5-1-5b-instruct-4ep",
+    "ufca-llms/praact-qwen2-5-3b-instruct-4ep",
+    "ufca-llms/praact-smollm3-3b-4ep"
+   ],
+   "arestas": [
+    [
+     "ufca-llms/praact-deepseek-r1-distill-qwen-1-5b-4ep",
+     "ufca-llms/praact-gemma-2-2b-it",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-gemma-2-2b-it",
+     "ufca-llms/praact-gemma-2-2b-it-4ep",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-gemma-2-2b-it-4ep",
+     "ufca-llms/praact-gemma-2-2b-it-all-models-4ep",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-gemma-2-2b-it-all-models-4ep",
+     "ufca-llms/praact-llama-3-2-3b-instruct-4ep",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-llama-3-2-3b-instruct-4ep",
+     "ufca-llms/PrAACT-qwen-4b-it",
+     "praact"
+    ],
+    [
+     "ufca-llms/PrAACT-qwen-4b-it",
+     "ufca-llms/praact-qwen2-5-1-5b-instruct-4ep",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-qwen2-5-1-5b-instruct-4ep",
+     "ufca-llms/praact-qwen2-5-3b-instruct-4ep",
+     "praact"
+    ],
+    [
+     "ufca-llms/praact-qwen2-5-3b-instruct-4ep",
+     "ufca-llms/praact-smollm3-3b-4ep",
+     "praact"
+    ]
+   ]
+  },
+  {
+   "id": "unicamp-dl",
+   "nome": "unicamp-dl",
+   "escopo": "br",
+   "modelos": [
+    "unicamp-dl/monoptt5-3b",
+    "unicamp-dl/monoptt5-base",
+    "unicamp-dl/monoptt5-large",
+    "unicamp-dl/monoptt5-small",
+    "unicamp-dl/ptt5-base-portuguese-vocab",
+    "unicamp-dl/ptt5-base-t5-vocab",
+    "unicamp-dl/ptt5-large-portuguese-vocab",
+    "unicamp-dl/ptt5-large-t5-vocab",
+    "unicamp-dl/ptt5-small-portuguese-vocab",
+    "unicamp-dl/ptt5-small-t5-vocab",
+    "unicamp-dl/ptt5-v2-3b",
+    "unicamp-dl/ptt5-v2-base",
+    "unicamp-dl/ptt5-v2-large",
+    "unicamp-dl/ptt5-v2-small"
+   ],
+   "arestas": [
+    [
+     "unicamp-dl/monoptt5-3b",
+     "unicamp-dl/monoptt5-base",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/monoptt5-base",
+     "unicamp-dl/monoptt5-large",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/monoptt5-large",
+     "unicamp-dl/monoptt5-small",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/monoptt5-small",
+     "unicamp-dl/ptt5-base-portuguese-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-base-portuguese-vocab",
+     "unicamp-dl/ptt5-base-t5-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-base-t5-vocab",
+     "unicamp-dl/ptt5-large-portuguese-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-large-portuguese-vocab",
+     "unicamp-dl/ptt5-large-t5-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-large-t5-vocab",
+     "unicamp-dl/ptt5-small-portuguese-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-small-portuguese-vocab",
+     "unicamp-dl/ptt5-small-t5-vocab",
+     "ptt5"
+    ],
+    [
+     "unicamp-dl/ptt5-v2-3b",
+     "unicamp-dl/ptt5-v2-base",
+     "t5"
+    ],
+    [
+     "unicamp-dl/ptt5-v2-base",
+     "unicamp-dl/ptt5-v2-large",
+     "t5"
+    ],
+    [
+     "unicamp-dl/ptt5-v2-large",
+     "unicamp-dl/ptt5-v2-small",
+     "t5"
+    ]
+   ]
+  },
+  {
+   "id": "Venturus",
+   "nome": "Venturus",
+   "escopo": "br",
+   "modelos": [
+    "Venturus/ptt5-v2-AnonyMED-BR"
+   ],
+   "arestas": []
   },
   {
    "id": "wilsondesouza",

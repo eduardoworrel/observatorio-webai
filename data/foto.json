@@ -3,14 +3,14 @@
  "regra_gguf": "GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate 4 GB",
  "corte_parametros_b": 12.0,
  "brasil": {
-  "modelos": 599,
+  "modelos": 679,
   "nativo_oficial": 2,
   "nativo_comunidade": 1,
-  "so_gguf_wllama": 78,
-  "gguf_grande_sem_nativo": 48,
-  "nenhum": 518,
+  "so_gguf_wllama": 91,
+  "gguf_grande_sem_nativo": 53,
+  "nenhum": 585,
   "so_nativo": 3,
-  "nativo_mais_gguf": 81
+  "nativo_mais_gguf": 94
  },
  "mundo": {
   "modelos": 1414,
@@ -33,32 +33,32 @@
   "nativo_mais_gguf": 73
  },
  "brasil_instituicoes": {
-  "modelos": 23,
+  "modelos": 87,
   "nativo_oficial": 0,
   "nativo_comunidade": 1,
-  "so_gguf_wllama": 5,
-  "gguf_grande_sem_nativo": 5,
-  "nenhum": 17,
+  "so_gguf_wllama": 9,
+  "gguf_grande_sem_nativo": 7,
+  "nenhum": 77,
   "so_nativo": 1,
-  "nativo_mais_gguf": 6
+  "nativo_mais_gguf": 10
  },
  "brasil_empresas": {
+  "modelos": 18,
+  "nativo_oficial": 0,
+  "nativo_comunidade": 0,
+  "so_gguf_wllama": 10,
+  "gguf_grande_sem_nativo": 4,
+  "nenhum": 8,
+  "so_nativo": 0,
+  "nativo_mais_gguf": 10
+ },
+ "brasil_natureza_nao_classificada": {
   "modelos": 3,
   "nativo_oficial": 0,
   "nativo_comunidade": 0,
   "so_gguf_wllama": 1,
-  "gguf_grande_sem_nativo": 1,
-  "nenhum": 2,
-  "so_nativo": 0,
-  "nativo_mais_gguf": 1
- },
- "brasil_natureza_nao_classificada": {
-  "modelos": 2,
-  "nativo_oficial": 0,
-  "nativo_comunidade": 0,
-  "so_gguf_wllama": 1,
   "gguf_grande_sem_nativo": 0,
-  "nenhum": 1,
+  "nenhum": 2,
   "so_nativo": 0,
   "nativo_mais_gguf": 1
  },
@@ -67,21 +67,22 @@
   "modelos": 402
  },
  "publicadores": {
-  "brasil": 21,
+  "brasil": 30,
   "mundo": 18,
   "brasil_por_natureza": {
    "independente": 13,
-   "instituicao": 6,
-   "empresa": 1,
-   "nao_classificada": 1
+   "instituicao": 12,
+   "empresa": 3,
+   "nao_classificada": 2
   }
  },
  "candidatos": {
-  "avaliados": 160,
-  "classificados_brasil": 21,
-  "descartados": 139,
+  "avaliados": 177,
+  "classificados_brasil": 30,
+  "descartados": 147,
   "descartados_por_motivo": {
-   "sem evidencia publica de ser do Brasil": 138,
+   "sem evidencia publica de ser do Brasil": 136,
+   "sem modelos no corte": 10,
    "nao encontrado na API": 1
   }
  },
@@ -103,6 +104,12 @@
    "modelos_vistos": [
     "abenzerps/LFM2.5-24B-A2B-Uncensored-GSQ-RCO-GGUF"
    ]
+  },
+  {
+   "id": "acso",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
   },
   {
    "id": "adalberto-temp",
@@ -183,16 +190,6 @@
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "alpindale/Llama-3.2-1B"
-   ]
-  },
-  {
-   "id": "amadeusai",
-   "origem": "lista inicial",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-0.5B-PT-BR-Instruct-Experimental",
-    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-1.5B-PT-BR-Instruct-Experimental",
-    "amadeusai/Amadeus-Verbo-BI-Qwen-2.5-14B-PT-BR-Instruct-Experimental"
    ]
   },
   {
@@ -339,6 +336,18 @@
    ]
   },
   {
+   "id": "c4ai-usp",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
+  },
+  {
+   "id": "carolina-c4ai",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (5 listados: 0 acima de 12 B, 4 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
+  },
+  {
    "id": "casperhansen",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -350,6 +359,18 @@
    "id": "ceia-br",
    "origem": "lista inicial",
    "motivo": "nao encontrado na API"
+  },
+  {
+   "id": "CERTIFoundation",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
+  },
+  {
+   "id": "cesarbr",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (2 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 1 adaptadores)",
+   "coletado_em": "2026-11-20"
   },
   {
    "id": "CMSManhattan",
@@ -586,6 +607,12 @@
    ]
   },
   {
+   "id": "H2IA",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (4 listados: 0 acima de 12 B, 4 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
+  },
+  {
    "id": "henriqueimoveis",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -602,6 +629,12 @@
    "modelos_vistos": [
     "hermitdave/LFM2.5-24B-A2B-MLX-DWQ-3bit"
    ]
+  },
+  {
+   "id": "hiaac-nlp",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (2 listados: 0 acima de 12 B, 0 de outra tarefa, 2 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
   },
   {
    "id": "hiwaifu-research",
@@ -673,6 +706,12 @@
     "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-MiniPlus-V3-GGUF",
     "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-NanoPlus-V3-GGUF"
    ]
+  },
+  {
+   "id": "Itau-Unibanco",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (3 listados: 0 acima de 12 B, 3 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
   },
   {
    "id": "jc-builds",
@@ -885,6 +924,12 @@
    "modelos_vistos": [
     "Mungert/LFM3-1.7B-GGUF"
    ]
+  },
+  {
+   "id": "neuralmind",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (2 listados: 0 acima de 12 B, 2 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
   },
   {
    "id": "ngquocvinh",
@@ -1231,21 +1276,17 @@
    ]
   },
   {
+   "id": "ufmg-digital-pathology",
+   "origem": "entidade curada",
+   "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 1 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
+   "coletado_em": "2026-11-20"
+  },
+  {
    "id": "Unbabel",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "Unbabel/Tower-Plus-9B"
-   ]
-  },
-  {
-   "id": "unicamp-dl",
-   "origem": "lista inicial",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "unicamp-dl/ptt5-base-portuguese-vocab",
-    "unicamp-dl/ptt5-large-portuguese-vocab",
-    "unicamp-dl/ptt5-small-portuguese-vocab"
    ]
   },
   {

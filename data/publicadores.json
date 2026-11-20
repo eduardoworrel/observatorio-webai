@@ -71,6 +71,40 @@
    "n_modelos_mapeados": 12
   },
   {
+   "id": "ai-eldorado",
+   "nome": "Eldorado Research Institute",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ai-eldorado",
+    "acessado": "2026-11-20",
+    "trecho": "As a leading Brazilian"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ai-eldorado",
+    "acessado": "2026-11-20",
+    "trecho": "Eldorado Research Institute non-profit"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 3,
+   "n_membros": 8,
+   "url": "https://huggingface.co/ai-eldorado",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ai-eldorado",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 2
+  },
+  {
    "id": "AIInstituteLNCC",
    "nome": "AI Institute of LNCC",
    "tipo": "grupo",
@@ -143,6 +177,40 @@
    "n_modelos_mapeados": 2
   },
   {
+   "id": "amadeusai",
+   "nome": "AMADEUS AI",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/amadeusai",
+    "acessado": "2026-11-20",
+    "trecho": "We are a deep-tech startup at the forefront of AI innovation in Brazil"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/amadeusai",
+    "acessado": "2026-11-20",
+    "trecho": "AMADEUS AI company https://amadeus-ai.com"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 27,
+   "n_membros": 21,
+   "url": "https://huggingface.co/amadeusai",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 9,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/amadeusai",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 12
+  },
+  {
    "id": "artificialguybr",
    "nome": "ArtificialGuy/JV.K",
    "tipo": "pessoa",
@@ -177,6 +245,40 @@
     }
    ],
    "n_modelos_mapeados": 15
+  },
+  {
+   "id": "c2d-usp",
+   "nome": "Centro de Ciência de Dados",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "Centro de Ciência de Dados university https://c2d.poli.usp.br/"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "O Centro de Ciência de Dados (C2D) foi criado a partir do interesse comum da Escola Politécnica da Universidade de São Paulo e do Banco Itaú-Unibanco"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 47,
+   "n_membros": 12,
+   "url": "https://huggingface.co/c2d-usp",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 2,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/c2d-usp",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 35
   },
   {
    "id": "ceia-research",
@@ -286,6 +388,40 @@
     }
    ],
    "n_modelos_mapeados": 21
+  },
+  {
+   "id": "coppead",
+   "nome": "COPPEAD / UFRJ",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/coppead",
+    "acessado": "2026-11-20",
+    "trecho": "COPPEAD / UFRJ university https://www.coppead.ufrj.br"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/coppead",
+    "acessado": "2026-11-20",
+    "trecho": "is the graduate school of business of the Federal University of Rio de Janeiro, a public institution founded in 1973"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 2,
+   "n_membros": 1,
+   "url": "https://huggingface.co/coppead",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/coppead",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
   },
   {
    "id": "dominguesm",
@@ -648,6 +784,40 @@
    "n_modelos_mapeados": 10
   },
   {
+   "id": "pucpr-br",
+   "nome": "Pontifícia Universidade Católica do Paraná",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "Pontifícia Universidade Católica do Paraná university https://www.pucpr.br/"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "Pontifícia Universidade Católica do Paraná university https://www.pucpr.br/"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 15,
+   "n_membros": 10,
+   "url": "https://huggingface.co/pucpr-br",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/pucpr-br",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 2
+  },
+  {
    "id": "recogna-nlp",
    "nome": "Recogna NLP",
    "tipo": "grupo",
@@ -719,6 +889,136 @@
     }
    ],
    "n_modelos_mapeados": 13
+  },
+  {
+   "id": "semantixai",
+   "nome": "Semantix",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/semantixai",
+    "acessado": "2026-11-20",
+    "trecho": "Founded in 2010 in Brazil"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/semantixai",
+    "acessado": "2026-11-20",
+    "trecho": "Semantix company Verified https://semantix.ai"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 4,
+   "n_membros": 5,
+   "url": "https://huggingface.co/semantixai",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/semantixai",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 3
+  },
+  {
+   "id": "ufca-llms",
+   "nome": "Grupo de Pesquisa em LLMs da UFCA",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufca-llms",
+    "acessado": "2026-11-20",
+    "trecho": "Grupo de Pesquisa em LLMs da UFCA university https://ufca.edu.br"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufca-llms",
+    "acessado": "2026-11-20",
+    "trecho": "Grupo de Pesquisa em LLMs da UFCA university https://ufca.edu.br"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 14,
+   "n_membros": 7,
+   "url": "https://huggingface.co/ufca-llms",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ufca-llms",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 10
+  },
+  {
+   "id": "unicamp-dl",
+   "nome": "unicamp-dl",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/unicamp-dl",
+    "acessado": "2026-11-20",
+    "trecho": "unicamp-dl university https://sites.google.com/unicamp.br/deep-learning-nlp"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/unicamp-dl",
+    "acessado": "2026-11-20",
+    "trecho": "unicamp-dl university https://sites.google.com/unicamp.br/deep-learning-nlp"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 42,
+   "n_membros": 26,
+   "url": "https://huggingface.co/unicamp-dl",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/unicamp-dl",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 14
+  },
+  {
+   "id": "Venturus",
+   "nome": "Venturus",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Venturus",
+    "acessado": "2026-11-20",
+    "trecho": "Venturus non-profit https://www.venturus.org.br/"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 3,
+   "n_membros": 32,
+   "url": "https://huggingface.co/Venturus",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Venturus",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
   },
   {
    "id": "wilsondesouza",
