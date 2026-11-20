@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ai-eldorado",
+  "nome": "Eldorado Research Institute",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ai-eldorado",
+    "acessado": "2026-11-20",
+    "trecho": "As a leading Brazilian"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ai-eldorado",
+    "acessado": "2026-11-20",
+    "trecho": "Eldorado Research Institute non-profit"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ai-eldorado"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ai-eldorado",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

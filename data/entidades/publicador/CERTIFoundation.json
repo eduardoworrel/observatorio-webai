@@ -1,0 +1,42 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "CERTIFoundation",
+  "nome": "CERTI Foundation",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/CERTIFoundation",
+    "acessado": "2026-11-20",
+    "trecho": "CERTI Foundation non-profit https://certi.com.br"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "site_institucional",
+    "url": "https://certi.com.br",
+    "acessado": "2026-11-20",
+    "trecho": "Fundação CERTI – Inovação para competitividade da indústria"
+  },
+  "links": {
+    "hf": "https://huggingface.co/CERTIFoundation",
+    "oficial": "https://certi.com.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/CERTIFoundation",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "site_institucional",
+      "url": "https://certi.com.br",
+      "acessado": "2026-11-20",
+      "rotulo": "Site da fundação"
+    }
+  ],
+  "status": "ativo"
+}
