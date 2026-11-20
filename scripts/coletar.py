@@ -907,7 +907,7 @@ def guardar_antes():
 
 
 # ---------- execucao ----------
-CH_CURADO, CH_AUTO = 12, 18   # chamadas por publicador (medido na coleta de teste; ver docs/GOVERNANCA.md)
+CH_CURADO, CH_AUTO = 5, 12   # chamadas por publicador (media medida em coletas reais: curado com ou sem modelos; descoberto com leitura de perfil e cartoes)
 
 
 def estimativa(n_curados, n_auto):
