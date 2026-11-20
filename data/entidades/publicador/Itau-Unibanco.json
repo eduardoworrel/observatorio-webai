@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "Itau-Unibanco",
+  "nome": "Itaú-Unibanco",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Itau-Unibanco",
+    "acessado": "2026-11-20",
+    "trecho": "Itaú-Unibanco Team company Verified https://www.itau.com.br"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Itau-Unibanco",
+    "acessado": "2026-11-20",
+    "trecho": "Itaú-Unibanco Team company Verified"
+  },
+  "links": {
+    "hf": "https://huggingface.co/Itau-Unibanco"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/Itau-Unibanco",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}
