@@ -34,16 +34,14 @@
 </header>
 
 <main id="main">
-  <section class="observatory-home" id="inicio" aria-labelledby="home-title">
+  <section class="observatory-home" id="inicio" role="tabpanel" aria-labelledby="tab-modelos">
     <div class="sky-stage" id="mapa">
       <div class="sky-top">
         <span class="sky-instrument-label"><span id="sky-field-count" role="status" aria-live="polite"></span></span>
         <span class="sky-top-actions">
-          <span class="mini-seg" role="group" aria-label="Agrupar" id="f-agrupar">
-            <button type="button" data-agrupar="publicador" aria-pressed="true" data-i18n="porpub">Publicador</button>
-            <button type="button" data-agrupar="familia" aria-pressed="false" data-i18n="porfam">Família</button>
-          </span>
+          <span class="mini-seg" role="group" aria-label="Agrupar" id="f-agrupar"></span>
           <button class="text-button" type="button" data-sky-reset data-i18n="recentrar">Recentrar ⌾</button>
+          <button class="exp-btn" type="button" id="exp-grafico" aria-haspopup="menu" aria-expanded="false" data-i18n="exportar">Exportar</button>
         </span>
       </div>
       <div class="model-sky" tabindex="0" role="region" aria-label="Mapa estrelado" id="ceu" aria-describedby="sky-ajuda">
@@ -65,6 +63,11 @@
       <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download.</p>
     </div>
     <div class="right-col">
+    <div class="tabs" role="tablist" id="tabs" aria-label="Camadas" data-i18n-aria="tabs_aria">
+      <button type="button" role="tab" id="tab-modelos" data-tab="modelos" aria-selected="true" aria-controls="inicio" tabindex="0" data-i18n="tab_modelos">Modelos</button>
+      <button type="button" role="tab" id="tab-datasets" data-tab="datasets" aria-selected="false" aria-controls="inicio" tabindex="-1" hidden data-i18n="tab_datasets">Datasets</button>
+      <button type="button" role="tab" id="tab-benchmarks" data-tab="benchmarks" aria-selected="false" aria-controls="inicio" tabindex="-1" hidden data-i18n="tab_benchmarks">Benchmarks</button>
+    </div>
     <header class="home-copy">
       <div>
         <div class="home-eyebrow"><span></span><i data-i18n="eyebrow">Modelos no navegador e na borda</i></div>
@@ -80,7 +83,7 @@
         <div><span class="home-section-label" data-i18n="res_label">Modelos</span><h2 id="res-titulo" data-i18n="res_titulo">Quem já roda no navegador</h2></div>
         <a href="#metodo" data-i18n="res_link">Regras ↗</a>
       </div>
-      <div class="home-filters">
+      <div class="home-filters" id="filtros-modelos">
         <div class="segmented" role="group" aria-label="Escopo" id="f-escopo">
           <button type="button" data-escopo="br" aria-pressed="false" data-i18n="br">Brasil</button>
           <button type="button" data-escopo="mundo" aria-pressed="false" data-i18n="mundo">Mundo</button>
@@ -94,10 +97,14 @@
         </div>
         <label class="sel"><span class="sr" data-i18n="f_nat">Natureza do publicador</span>
           <select id="f-nat"></select></label>
+        <label class="sel"><span class="sr" data-i18n="f_fmt">Formatos de build</span>
+          <select id="f-fmt"></select></label>
         <label class="sel search"><span class="sr" data-i18n="buscar">Buscar</span>
           <input id="busca" type="search" placeholder="Buscar" data-i18n-ph="buscar_ph" autocomplete="off"></label>
       </div>
-      <p class="home-average-note" id="resumo-recorte" aria-live="polite"></p>
+      <div class="home-filters" id="filtros-datasets" hidden></div>
+      <div class="home-filters" id="filtros-benchmarks" hidden></div>
+      <p class="home-average-note"><span id="resumo-recorte" aria-live="polite"></span> <button type="button" class="text-button" id="limpar" data-i18n="limpar">Limpar filtros</button> <button class="exp-btn" type="button" id="exp-tabela" aria-haspopup="menu" aria-expanded="false" data-i18n="exportar">Exportar</button></p>
       <div class="home-average-scroll" tabindex="-1">
         <table class="home-average-table" id="tb"><caption class="sr" data-i18n="res_titulo">Modelos</caption><thead></thead><tbody></tbody></table>
       </div>
@@ -140,6 +147,9 @@
 </aside>
 <script src="config.js"></script>
 <script src="data.js"></script>
+<script>if(/[?&]fixture=/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>')</script>
+<script src="camadas.js"></script>
+<script src="exportar.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
