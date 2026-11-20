@@ -1,24 +1,41 @@
 #!/usr/bin/env python3
-"""Coletor do Mapa WebAI (versao 0.2).
+"""Coletor do Observatorio (SPEC.md secao 9 e SPEC_0.2_coleta.md).
 
-Consulta a API publica do Hugging Face (sem token), aplica as regras de SPEC.md e grava
-data/*.json e web/data.js. Nenhum LLM le ou decide nada: tudo e regra.
+Consulta a API publica do Hugging Face (sem token), aplica as regras da SPEC e grava data/*.json e web/data.js.
+Nenhum LLM le ou decide nada: tudo e regra. Candidatos: data/entidades/publicador/*.json (curados; a classificacao
+de pais e natureza vem da entidade), seed/publishers.json e a descoberta automatica.
 
-Uso:  python3 scripts/coletar.py [--fresh] [--so a,b] [--max-candidatos 150]
-Limite da API anonima: 500 chamadas por janela de 5 min; o coletor le o cabecalho de limite e espera.
+Modos (um e obrigatorio):
+  --novos        so publicadores que ainda nao estao nos dados, cuja entidade curada mudou ou cuja coleta passou de --dias dias;
+                 o resultado e MESCLADO nos dados existentes
+  --tudo         atualizacao completa (todos os candidatos, mais a descoberta de independentes do mundo)
+  --so a,b       so estes publicadores (mescla)
+  --normalizar   so reordena os derivados existentes na ordem estavel (sem rede)
+Opcoes:
+  --dry-run      lista o que seria coletado, sem nenhuma chamada de rede e sem gravar
+  --previa       (com --dry-run) uma consulta por publicador, so da lista de modelos, para estimar o que entra no corte
+  --dias N       --novos: coleta mais velha que N dias e refeita (padrao 30)
+  --cache-dias N validade do cache de respostas e dos checkpoints (padrao 3); --fresh apaga o cache
+  --sem-descoberta  nao busca candidatos novos por termos em portugues
+Cada publicador coletado vira um checkpoint em .cache/publicadores/: se a coleta for interrompida, rode de novo e ela continua.
+Limite da API anonima: 500 chamadas por janela de 5 min; o coletor conta as chamadas e espera.
+Variaveis de teste: COLETOR_RAIZ, COLETOR_API, COLETOR_PAUSA.
 """
-import argparse, datetime, hashlib, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+import argparse, collections, datetime, hashlib, html as H, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
-RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-API = "https://huggingface.co/api"
+RAIZ = os.path.abspath(os.environ.get("COLETOR_RAIZ") or os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+API = os.environ.get("COLETOR_API") or "https://huggingface.co/api"
 HOJE = datetime.date.today().isoformat()
-UA = "mapa-webai-coletor/0.2 (leitura publica)"
+UA = "observatorio-coletor/1.0 (leitura publica)"
 TAREFAS = {"text-generation", "image-text-to-text", "any-to-any", "text2text-generation"}
 NAVEGADOR = ("onnx", "mlc", "litert")
 EXPAND = ["tags", "downloads", "likes", "pipeline_tag", "lastModified", "safetensors", "createdAt", "gguf"]
 MAX_B = 12.0           # corte de parametros (bilhoes)
-CORTE_GGUF_GB = 4.0    # corte do GGUF via wllama (ver SPEC.md, regra G)
-PAUSA = 0.55
+CORTE_GGUF_GB = 4.0    # corte do GGUF via wllama (ver SPEC_0.2, regra G)
+PAUSA = float(os.environ.get("COLETOR_PAUSA") or 0.55)
+JANELA_S, JANELA_MAX = 300, 480   # a API anonima aceita 500 chamadas por 5 min; ficamos abaixo
+CACHE_DIAS = 3.0
+MAX_INDEP_MUNDO = 8
 REMOVIDOS = set()  # sha256(id em minusculas) de data/remocoes.json (SPEC 1.0, secao 8)
 
 
@@ -29,7 +46,12 @@ class _Excl(set):
 
 
 EXCLUIR = _Excl()   # preenchido em main() a partir de .excluir e data/remocoes.json
-estado = {"rede": 0, "cache": 0, "restante": 500, "reset": 0}
+estado = {"rede": 0, "cache": 0, "restante": 500, "reset": 0, "falhas": 0}
+_janela = collections.deque()
+
+
+def log(*a):
+    print(*a, file=sys.stderr, flush=True)
 
 
 # ---------- rede ----------
@@ -39,9 +61,17 @@ def _cache(url, sufixo):
 
 def _esperar_limite():
     if estado["restante"] <= 8 and estado["reset"] > 0:
-        print(f"  limite quase no fim; espero {estado['reset'] + 1}s", file=sys.stderr)
+        log(f"  limite quase no fim; espero {estado['reset'] + 1}s")
         time.sleep(estado["reset"] + 1)
         estado["restante"] = 500
+    agora = time.time()
+    while _janela and agora - _janela[0] > JANELA_S:
+        _janela.popleft()
+    if len(_janela) >= JANELA_MAX:
+        espera = _janela[0] + JANELA_S - agora + 1
+        log(f"  {len(_janela)} chamadas nos ultimos 5 min; espero {int(espera)}s")
+        time.sleep(max(espera, 1))
+        _janela.clear()
 
 
 def _baixar(url, texto=False):
@@ -50,6 +80,7 @@ def _baixar(url, texto=False):
             _esperar_limite()
             time.sleep(PAUSA)
             estado["rede"] += 1
+            _janela.append(time.time())
             with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60) as r:
                 rl = r.headers.get("ratelimit") or ""
                 m = re.search(r"r=(\d+);t=(\d+)", rl)
@@ -62,25 +93,34 @@ def _baixar(url, texto=False):
             if e.code in (404, 403, 401):
                 return None, ""
             espera = int(e.headers.get("Retry-After") or 0) or int(re.search(r"t=(\d+)", e.headers.get("ratelimit") or "t=0").group(1)) or (8 * (tentativa + 1))
-            print(f"  HTTP {e.code}; espero {espera + 1}s", file=sys.stderr)
+            log(f"  HTTP {e.code}; espero {espera + 1}s")
             time.sleep(espera + 1)
             estado["restante"] = 500
+            _janela.clear()
         except Exception as e:
-            print(f"  erro {e}; tentativa {tentativa + 1}", file=sys.stderr)
+            log(f"  erro {e}; tentativa {tentativa + 1}")
             time.sleep(4 * (tentativa + 1))
+    estado["falhas"] += 1   # a unidade em curso nao vira checkpoint nem entra nos dados
     return None, ""
+
+
+def _atomico(caminho, conteudo):
+    os.makedirs(os.path.dirname(caminho), exist_ok=True)
+    tmp = caminho + f".tmp{os.getpid()}"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(conteudo)
+    os.replace(tmp, caminho)
 
 
 def get(url, texto=False):
     c = _cache(url, ".json")
-    if os.path.exists(c):
+    if os.path.exists(c) and (time.time() - os.path.getmtime(c)) < CACHE_DIAS * 86400:
         estado["cache"] += 1
         d = json.load(open(c))
         return d["d"], d["l"]
     d, l = _baixar(url, texto)
-    os.makedirs(os.path.dirname(c), exist_ok=True)
     if d is not None:
-        json.dump({"d": d, "l": l}, open(c, "w"))
+        _atomico(c, json.dumps({"d": d, "l": l}))
     return d, l
 
 
@@ -433,6 +473,7 @@ def construir(x, pub, escopo, idx, puros_do_pub, ev_extra=None):
         for y in paginar(f"{API}/models?" + urllib.parse.urlencode([("filter", f"base_model:quantized:{rid}"), ("limit", 100)] + [("expand[]", k) for k in ("tags", "downloads", "lastModified")]), 2):
             if "gguf" in y.get("tags", []):
                 add(y["id"], y["id"].split("/")[0], "gguf", y.get("lastModified"), y.get("downloads"))
+    m["builds"].sort(key=lambda b: (b["formato"], b["repo"]))   # ordem estavel: a mesma API da o mesmo arquivo
     # tamanhos: um repositorio por formato de navegador; ate 3 candidatos GGUF
     por_fmt = {}
     for b in sorted(m["builds"], key=lambda b: (not b["oficial"], not b["runtime_org"], -(b.get("downloads") or 0))):
@@ -475,7 +516,7 @@ def descobrir_candidatos(excluir, termos, max_pag):
                 a = x["id"].split("/")[0]
                 if a not in excluir and marca_pt(x.get("tags", []), x["id"]):
                     cont.setdefault(a, set()).add(x["id"])
-    return sorted(cont.items(), key=lambda kv: -len(kv[1]))
+    return sorted(cont.items(), key=lambda kv: (-len(kv[1]), kv[0].lower()))
 
 
 def contar(ms):
@@ -494,111 +535,298 @@ def contar(ms):
     return c
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--fresh", action="store_true")
-    ap.add_argument("--so", help="so estes publicadores (teste)")
-    ap.add_argument("--max-candidatos", type=int, default=150)
-    a = ap.parse_args()
-    if a.fresh:
-        import shutil
-        shutil.rmtree(os.path.join(RAIZ, ".cache"), ignore_errors=True)
-    seed = json.load(open(os.path.join(RAIZ, "seed", "publishers.json")))
-    # contas a ignorar por pedido do operador: arquivo local .excluir (uma por linha), fora do Git
-    caminho_ex = os.path.join(RAIZ, ".excluir")
-    if os.path.exists(caminho_ex):
-        EXCLUIR.update(l.strip() for l in open(caminho_ex) if l.strip())
-    caminho_rm = os.path.join(RAIZ, "data", "remocoes.json")
-    if os.path.exists(caminho_rm):
-        REMOVIDOS.update(i["sha256"] for i in json.load(open(caminho_rm)).get("itens", []))
-    seed_ev = json.load(open(os.path.join(RAIZ, "seed", "evidencias.json")))
-    orgs_rt = seed["runtime_orgs"]
-    print("indice de builds de navegador", file=sys.stderr)
-    idx = indice_navegador(orgs_rt, max_pag=40)
+# ---------- candidatos ----------
+def carregar_json(caminho, padrao=None):
+    try:
+        with open(caminho, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return padrao
 
-    mundo = seed["mundo"]
-    excluir = _Excl(set(mundo) | set(orgs_rt) | set(EXCLUIR))
-    candidatos = {}
-    for p in [x for x in seed["br"] if x not in EXCLUIR]:
-        candidatos[p] = {"origem": "lista inicial", "achados": []}
-    if not a.so:
-        print("descoberta de candidatos brasileiros", file=sys.stderr)
-        for pid, ids in descobrir_candidatos(excluir, seed["termos_busca"], 3)[: a.max_candidatos]:
-            candidatos.setdefault(pid, {"origem": "busca na API", "achados": []})["achados"] = sorted(ids)[:5]
+
+def carregar_curados():
+    """Publicadores curados (data/entidades/publicador/*.json), ja validados por validar.py. Arquivados, exemplos e removidos ficam fora."""
+    pasta = os.path.join(RAIZ, "data", "entidades", "publicador")
+    saida = {}
+    for nome in sorted(os.listdir(pasta)) if os.path.isdir(pasta) else []:
+        if not nome.endswith(".json"):
+            continue
+        e = carregar_json(os.path.join(pasta, nome))
+        if not isinstance(e, dict) or e.get("entidade") != "publicador" or not e.get("id"):
+            log(f"  aviso: {nome} ignorado (nao e um publicador valido)")
+            continue
+        if e.get("status") == "arquivado" or e.get("exemplo") or e["id"] in EXCLUIR:
+            continue
+        saida[e["id"]] = e
+    return saida
+
+
+def escopo_de(ent):
+    return "br" if ent["classe_pais"] == "br_evidencia" else "mundo"
+
+
+def assinatura(c):
+    e = c.get("curado") or {}
+    nucleo = [c["escopo"], c.get("tipo"), e.get("classe_pais"), e.get("natureza"), e.get("nome"), e.get("tipo"), e.get("evidencia_pais"), e.get("evidencia_natureza")]
+    return hashlib.sha1(json.dumps(nucleo, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+
+
+def candidatos_locais(seed, curados, exist):
+    """Candidatos sem rede. Entidade curada tem precedencia sobre o sinal automatico (SPEC 1.0, secao 6)."""
+    cands = {}
+    def add(pid, origem, escopo, tipo=None):
+        if pid in EXCLUIR:
+            return None
+        return cands.setdefault(pid.lower(), {"id": pid, "origem": origem, "escopo": escopo, "tipo": tipo, "curado": None, "achados": []})
+    for pid in seed["br"]:
+        add(pid, "lista inicial", "br")
+    for pid in seed["mundo"]:
+        add(pid, "lista mundo", "mundo", "fora_br")
+    for pid, ent in curados.items():
+        c = cands.get(pid.lower()) or add(pid, "entidade curada", "mundo")
+        c["id"], c["curado"], c["escopo"] = pid, ent, escopo_de(ent)
+        c["tipo"] = ent["classe_pais"]
+    for k, p in exist["pubs"].items():   # independentes do mundo achados antes por builds de navegador seguem sendo atualizados
+        if k not in cands and p.get("origem_lista") == "descoberta por builds de navegador" and p["id"] not in EXCLUIR:
+            add(p["id"], p["origem_lista"], "mundo", "indep")
+    return cands
+
+
+def carregar_existente():
+    pubs = (carregar_json(os.path.join(RAIZ, "data", "publicadores.json"), {}) or {}).get("publicadores", [])
+    mods = (carregar_json(os.path.join(RAIZ, "data", "modelos.json"), {}) or {}).get("modelos", [])
+    foto = carregar_json(os.path.join(RAIZ, "data", "foto.json"), {}) or {}
+    return {"pubs": {p["id"].lower(): p for p in pubs}, "modelos": mods, "desc": {d["id"].lower(): d for d in foto.get("descartados", [])}}
+
+
+def _chk(pid):
+    return os.path.join(RAIZ, ".cache", "publicadores", re.sub(r"[^A-Za-z0-9._-]", "_", pid) + ".json")
+
+
+def idade_dias(iso):
+    try:
+        return (datetime.date.today() - datetime.date.fromisoformat(iso[:10])).days
+    except (TypeError, ValueError):
+        return None
+
+
+def diverge(ent, p):
+    """A entidade curada difere do que esta nos dados (classe, natureza, nome, tipo ou evidencia)?"""
+    for k in ("classe_pais", "natureza", "nome", "tipo"):
+        if ent.get(k) and ent[k] != p.get(k):
+            return True
+    for k in ("evidencia_pais", "evidencia_natureza"):
+        e, q = ent.get(k), p.get(k)
+        if e and q and (e.get("url"), e.get("trecho")) != (q.get("url"), q.get("trecho")):
+            return True
+    return False
+
+
+def situacao(c, exist, dias):
+    k = c["id"].lower()
+    p, d = exist["pubs"].get(k), exist["desc"].get(k)
+    if not p and not d:
+        return "novo"
+    if p and c.get("curado") and diverge(c["curado"], p):
+        return "alterado"
+    if c.get("curado") and not p and d and not d["motivo"].startswith("sem modelos no corte"):
+        return "alterado"   # estava fora por falta de evidencia ou de achado na API; agora ha entidade curada
+    data = (p["fontes"][0]["acessado"] if p and p.get("fontes") else None) or (d or {}).get("coletado_em")
+    if not data and os.path.exists(_chk(c["id"])):
+        data = datetime.date.fromtimestamp(os.path.getmtime(_chk(c["id"]))).isoformat()
+    ida = idade_dias(data) if data else None
+    if ida is not None and ida > dias:
+        return "vencido"
+    return "em dia"
+
+
+# ---------- uma unidade = um publicador ----------
+class Ctx:
+    def __init__(self, seed, seed_ev):
+        self.seed, self.seed_ev, self._idx = seed, seed_ev, None
+
+    @property
+    def idx(self):
+        if self._idx is None:
+            log("indice de builds de navegador")
+            self._idx = indice_navegador(self.seed["runtime_orgs"], max_pag=40)
+        return self._idx
+
+
+def _perfil_fonte(pid):
+    return [{"rotulo": "Perfil no Hugging Face", "url": f"https://huggingface.co/{pid}", "acessado": HOJE}]
+
+
+def _pub(pid, nome, tipo, classe, ev_pais, nat, ev_nat, escopo, info, origem, fora, n):
+    return {"id": pid, "nome": nome, "tipo": tipo, "classe_pais": classe, "evidencia_pais": ev_pais, "natureza": nat, "evidencia_natureza": ev_nat,
+            "escopo": escopo, "n_modelos_hf": info["n_modelos"], "n_membros": info["n_membros"], "url": f"https://huggingface.co/{pid}",
+            "origem_lista": origem, "modelos_fora_do_corte": fora, "fontes": _perfil_fonte(pid), "n_modelos_mapeados": n}
+
+
+def _sem_modelos(pid, c, fora, escopo):
+    d = {"id": pid, "origem": c["origem"], "motivo": f"sem modelos no corte (fora do corte: {fora})", "coletado_em": HOJE}
+    if escopo == "mundo":
+        d["escopo"] = "mundo"
+    return d
+
+
+def _independentes_do_mundo(pid, idx, params=True):
+    ys = [y for repos in idx.values() for rid, y in repos.items()
+          if rid.split("/")[0].lower() == pid.lower() and y.get("pipeline_tag") in TAREFAS and not e_adaptador(y)]
+    dentro = [y for y in ys if not (params_b(y) and params_b(y) > MAX_B)]
+    return sorted(dentro, key=lambda y: (-(y.get("downloads") or 0), y["id"].lower()))[:MAX_INDEP_MUNDO], len(ys) - len(dentro)
+
+
+def unidade(c, ctx):
+    """Coleta um publicador e devolve o registro {pub, modelos, descartado}. Nao grava nada."""
+    pid, ent = c["id"], c.get("curado")
+    r0, f0 = estado["rede"], estado["falhas"]
+    reg = {"v": 1, "id": pid, "coletado_em": HOJE, "assinatura": assinatura(c), "pub": None, "modelos": [], "descartado": None}
+    info = info_publicador(pid)
+    if not info:
+        reg["descartado"] = {"id": pid, "origem": c["origem"], "motivo": "nao encontrado na API", "coletado_em": HOJE}
+    elif ent:
+        reg.update(_unidade_curada(c, ent, info, ctx))
+    elif c["escopo"] == "br":
+        reg.update(_unidade_br_auto(c, info, ctx))
+    elif c["tipo"] == "indep":
+        reg.update(_unidade_indep(c, info, ctx))
     else:
-        candidatos = {p: v for p, v in candidatos.items() if p in a.so.split(",")}
+        reg.update(_unidade_mundo(c, info, ctx))
+    reg["chamadas"] = estado["rede"] - r0
+    reg["incompleto"] = estado["falhas"] > f0
+    return reg
 
-    pubs, modelos, descartados = [], [], []
-    for pid, c in candidatos.items():
-        print(f"[candidato] {pid}", file=sys.stderr)
-        info = info_publicador(pid)
-        if not info:
-            descartados.append({"id": pid, "origem": c["origem"], "motivo": "nao encontrado na API"})
-            continue
-        top = c["achados"] or [x["id"] for x in listar(author=pid, sort="downloads", direction=-1, limit=5)]
-        ev = evidencias(pid, info, seed_ev, top)
-        if not ev["pais"]:
-            descartados.append({"id": pid, "origem": c["origem"], "motivo": "sem evidencia publica de ser do Brasil (nao classificado)", "modelos_vistos": c["achados"][:3]})
-            continue
-        xs, puros, fora = modelos_do_publicador(pid)
-        ms = [construir(x, pid, "br", idx, puros) for x in xs]
-        if not ms:
-            descartados.append({"id": pid, "origem": c["origem"], "motivo": f"evidencia ok, mas nenhum modelo de linguagem de ate {MAX_B:g}B (fora do corte: {fora})"})
-            continue
-        nat = (ev["natureza"] or {}).get("classe", "nao_classificada")
-        pubs.append({"id": pid, "nome": info["nome"], "tipo": info["tipo"], "classe_pais": "br_evidencia", "evidencia_pais": ev["pais"],
-                     "natureza": nat, "evidencia_natureza": ev["natureza"], "escopo": "br", "n_modelos_hf": info["n_modelos"], "n_membros": info["n_membros"],
-                     "url": f"https://huggingface.co/{pid}", "origem_lista": c["origem"], "modelos_fora_do_corte": fora,
-                     "fontes": [{"rotulo": "Perfil no Hugging Face", "url": f"https://huggingface.co/{pid}", "acessado": HOJE}], "n_modelos_mapeados": len(ms)})
-        modelos += ms
 
-    if not a.so:
-        for pid in mundo:
-            print(f"[mundo] {pid}", file=sys.stderr)
-            info = info_publicador(pid)
-            if not info:
-                descartados.append({"id": pid, "origem": "lista mundo", "motivo": "nao encontrado na API"})
-                continue
+def _unidade_curada(c, ent, info, ctx):
+    pid, classe, escopo = c["id"], ent["classe_pais"], c["escopo"]
+    if classe == "br_evidencia":
+        ev_pais = ent.get("evidencia_pais")
+    elif classe == "fora_br":
+        ev_pais = ent.get("evidencia_pais") or {"tipo": "curadoria", "url": f"https://huggingface.co/{pid}", "trecho": "publicador internacional da lista curada; sem pagina institucional conferida pelo coletor", "acessado": HOJE, "regra": "lista curada (seed), confianca baixa"}
+    else:
+        ev_pais = None
+    if classe == "nao_classificado":   # fora do Brasil no mapa: como os independentes do mundo, ate 8 repositorios de navegador
+        ys, fora = _independentes_do_mundo(pid, ctx.idx)
+        if ys:
+            ms = [construir(y, pid, "mundo", ctx.idx, [], {"conversao_de": base_primaria(y.get("tags", []))}) for y in ys]
+        else:
             xs, puros, fora = modelos_do_publicador(pid)
-            ms = [construir(x, pid, "mundo", idx, puros) for x in xs]
-            if not ms:
-                descartados.append({"id": pid, "origem": "lista mundo", "motivo": f"nenhum modelo de ate {MAX_B:g}B (fora do corte: {fora})"})
-                continue
-            pubs.append({"id": pid, "nome": info["nome"], "tipo": info["tipo"], "classe_pais": "fora_br",
-                         "evidencia_pais": {"tipo": "curadoria", "url": f"https://huggingface.co/{pid}", "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor", "acessado": HOJE, "regra": "lista curada (seed), confianca baixa"},
-                         "natureza": "empresa" if pid in seed.get("empresas_mundo", []) else "instituicao" if pid in seed.get("instituicoes_mundo", []) else "nao_classificada",
-                         "evidencia_natureza": None, "escopo": "mundo", "n_modelos_hf": info["n_modelos"], "n_membros": info["n_membros"], "url": f"https://huggingface.co/{pid}",
-                         "origem_lista": "lista mundo", "modelos_fora_do_corte": fora,
-                         "fontes": [{"rotulo": "Perfil no Hugging Face", "url": f"https://huggingface.co/{pid}", "acessado": HOJE}], "n_modelos_mapeados": len(ms)})
-            modelos += ms
-        # independentes do mundo: pessoas com mais repositorios de navegador entre os mais baixados
-        conta = {}
-        for stem_, repos in idx.items():
-            for rid_, y in repos.items():
-                au = rid_.split("/")[0]
-                if au not in excluir and y.get("pipeline_tag") in TAREFAS and not e_adaptador(y) and not any(au == p["id"] for p in pubs):
-                    conta.setdefault(au, []).append(y)
-        achados = 0
-        for au, ys in sorted(conta.items(), key=lambda kv: -sum(y.get("downloads") or 0 for y in kv[1])):
-            info = info_publicador(au)
-            if not info or info["tipo"] != "pessoa" or (info["n_modelos"] or 0) < 3:
-                continue
-            print(f"[mundo-indep] {au}", file=sys.stderr)
-            ys = sorted(ys, key=lambda y: -(y.get("downloads") or 0))[:8]
-            ms = [construir(y, au, "mundo", idx, [], {"conversao_de": base_primaria(y.get("tags", []))}) for y in ys]
-            pubs.append({"id": au, "nome": info["nome"], "tipo": "pessoa", "classe_pais": "nao_classificado", "evidencia_pais": None, "natureza": "independente",
-                         "evidencia_natureza": {"classe": "independente", "tipo": "perfil", "url": f"https://huggingface.co/{au}", "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido", "acessado": HOJE, "regra": "N3 (pessoa)"},
-                         "escopo": "mundo", "n_modelos_hf": info["n_modelos"], "n_membros": None, "url": f"https://huggingface.co/{au}", "origem_lista": "descoberta por builds de navegador",
-                         "modelos_fora_do_corte": 0, "fontes": [{"rotulo": "Perfil no Hugging Face", "url": f"https://huggingface.co/{au}", "acessado": HOJE}], "n_modelos_mapeados": len(ms)})
-            modelos += ms
-            achados += 1
-            if achados >= 8:
-                break
+            xs = sorted(xs, key=lambda x: (-(x.get("downloads") or 0), x["id"].lower()))[:MAX_INDEP_MUNDO]
+            ms = [construir(x, pid, "mundo", ctx.idx, puros) for x in xs]
+    else:
+        xs, puros, fora = modelos_do_publicador(pid)
+        ms = [construir(x, pid, escopo, ctx.idx, puros) for x in xs]
+    if not ms:
+        return {"descartado": _sem_modelos(pid, c, fora, escopo)}
+    pub = _pub(pid, ent.get("nome") or info["nome"], ent.get("tipo") or info["tipo"], classe, ev_pais, ent["natureza"], ent.get("evidencia_natureza"), escopo, info, c["origem"], fora, len(ms))
+    return {"pub": pub, "modelos": ms}
 
-    # constelacoes e familias
+
+def _unidade_br_auto(c, info, ctx):
+    pid = c["id"]
+    top = c["achados"] or [x["id"] for x in listar(author=pid, sort="downloads", direction=-1, limit=5)]
+    ev = evidencias(pid, info, ctx.seed_ev, top)
+    if not ev["pais"]:
+        return {"descartado": {"id": pid, "origem": c["origem"], "motivo": "sem evidencia publica de ser do Brasil (nao classificado)", "modelos_vistos": c["achados"][:3], "coletado_em": HOJE}}
+    xs, puros, fora = modelos_do_publicador(pid)
+    ms = [construir(x, pid, "br", ctx.idx, puros) for x in xs]
+    if not ms:
+        return {"descartado": _sem_modelos(pid, c, fora, "br")}
+    nat = (ev["natureza"] or {}).get("classe", "nao_classificada")
+    return {"pub": _pub(pid, info["nome"], info["tipo"], "br_evidencia", ev["pais"], nat, ev["natureza"], "br", info, c["origem"], fora, len(ms)), "modelos": ms}
+
+
+def _unidade_mundo(c, info, ctx):
+    pid, seed = c["id"], ctx.seed
+    xs, puros, fora = modelos_do_publicador(pid)
+    ms = [construir(x, pid, "mundo", ctx.idx, puros) for x in xs]
+    if not ms:
+        return {"descartado": _sem_modelos(pid, c, fora, "mundo")}
+    ev = {"tipo": "curadoria", "url": f"https://huggingface.co/{pid}", "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor", "acessado": HOJE, "regra": "lista curada (seed), confianca baixa"}
+    nat = "empresa" if pid in seed.get("empresas_mundo", []) else "instituicao" if pid in seed.get("instituicoes_mundo", []) else "nao_classificada"
+    return {"pub": _pub(pid, info["nome"], info["tipo"], "fora_br", ev, nat, None, "mundo", info, c["origem"], fora, len(ms)), "modelos": ms}
+
+
+def _unidade_indep(c, info, ctx):
+    pid = c["id"]
+    if info["tipo"] != "pessoa" or (info["n_modelos"] or 0) < 3:
+        return {"descartado": {"id": pid, "origem": c["origem"], "motivo": "independente do mundo sem os criterios (pessoa com 3 modelos ou mais)", "escopo": "mundo", "coletado_em": HOJE}}
+    ys, fora = _independentes_do_mundo(pid, ctx.idx)
+    ms = [construir(y, pid, "mundo", ctx.idx, [], {"conversao_de": base_primaria(y.get("tags", []))}) for y in ys]
+    if not ms:
+        return {"descartado": _sem_modelos(pid, c, fora, "mundo")}
+    ev_nat = {"classe": "independente", "tipo": "perfil", "url": f"https://huggingface.co/{pid}", "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido", "acessado": HOJE, "regra": "N3 (pessoa)"}
+    return {"pub": _pub(pid, info["nome"], "pessoa", "nao_classificado", None, "independente", ev_nat, "mundo", dict(info, n_membros=None), c["origem"], fora, len(ms)), "modelos": ms}
+
+
+def descobrir_independentes(ctx, conhecidos):
+    """Pessoas com builds de navegador entre os mais baixados (so no --tudo); ate MAX_INDEP_MUNDO novas por coleta."""
+    conta = {}
+    for repos in ctx.idx.values():
+        for rid, y in repos.items():
+            au = rid.split("/")[0]
+            if au.lower() not in conhecidos and au not in EXCLUIR and y.get("pipeline_tag") in TAREFAS and not e_adaptador(y):
+                conta.setdefault(au, []).append(y)
+    achados = []
+    for au, ys in sorted(conta.items(), key=lambda kv: (-sum(y.get("downloads") or 0 for y in kv[1]), kv[0].lower())):
+        info = info_publicador(au)
+        if info and info["tipo"] == "pessoa" and (info["n_modelos"] or 0) >= 3:
+            achados.append({"id": au, "origem": "descoberta por builds de navegador", "escopo": "mundo", "tipo": "indep", "curado": None, "achados": []})
+            if len(achados) >= MAX_INDEP_MUNDO:
+                break
+    return achados
+
+
+# ---------- montagem e gravacao (determinista) ----------
+def contar(ms):
+    c = {"modelos": len(ms), "nativo_oficial": 0, "nativo_comunidade": 0, "so_gguf_wllama": 0, "gguf_grande_sem_nativo": 0, "nenhum": 0}
+    for m in ms:
+        if m["via"] == "nativo":
+            c["nativo_oficial" if m["status"] == "oficial" else "nativo_comunidade"] += 1
+        elif m["via"] == "gguf":
+            c["so_gguf_wllama"] += 1
+        else:
+            c["nenhum"] += 1
+            if m["gguf_grande"]:
+                c["gguf_grande_sem_nativo"] += 1
+    c["so_nativo"] = c["nativo_oficial"] + c["nativo_comunidade"]
+    c["nativo_mais_gguf"] = c["so_nativo"] + c["so_gguf_wllama"]
+    return c
+
+
+def mesclar(exist, regs):
+    """Mescla os registros coletados nos dados existentes. Ids em remocoes/.excluir saem. Devolve (pubs, modelos, descartados)."""
+    pubs, desc = dict(exist["pubs"]), dict(exist["desc"])
+    mods = collections.defaultdict(list)
+    for m in exist["modelos"]:
+        mods[m["publicador"].lower()].append(m)
+    for k in [k for k, p in pubs.items() if p["id"] in EXCLUIR] + [k for k, d in desc.items() if d["id"] in EXCLUIR]:
+        pubs.pop(k, None), desc.pop(k, None), mods.pop(k, None)
+    for r in regs:
+        k = r["id"].lower()
+        antigo = pubs.get(k)
+        pubs.pop(k, None), desc.pop(k, None), mods.pop(k, None)
+        if r["pub"]:
+            if antigo and r["pub"]["origem_lista"] == "entidade curada" and antigo.get("origem_lista"):
+                r["pub"]["origem_lista"] = antigo["origem_lista"]
+            pubs[k] = r["pub"]
+            mods[k] = r["modelos"]
+        elif r["descartado"]:
+            desc[k] = r["descartado"]
+    ordem = sorted(pubs.values(), key=lambda p: (p["escopo"] != "br", p["id"].lower()))
+    pos = {p["id"].lower(): i for i, p in enumerate(ordem)}
+    modelos = sorted((m for k, l in mods.items() if k in pos for m in l), key=lambda m: (pos[m["publicador"].lower()], m["id"].lower()))
+    return ordem, modelos, sorted(desc.values(), key=lambda d: d["id"].lower())
+
+
+def montar(pubs, modelos, descartados):
     const, fams = [], {}
+    por_pub = collections.defaultdict(list)
+    for m in modelos:
+        por_pub[m["publicador"]].append(m)
     for p in pubs:
-        ms = [m for m in modelos if m["publicador"] == p["id"]]
+        ms = por_pub[p["id"]]
         por_fam = {}
         for m in ms:
             por_fam.setdefault(m["familia"].lower(), []).append(m["id"])
@@ -609,38 +837,197 @@ def main():
         f["modelos"].append(m["id"])
         if m["publicador"] not in f["publicadores"]:
             f["publicadores"].append(m["publicador"])
-
     pub_by = {p["id"]: p for p in pubs}
     br = [m for m in modelos if m["escopo"] == "br"]
     mu = [m for m in modelos if m["escopo"] == "mundo"]
     nat = lambda ms, n: [m for m in ms if pub_by[m["publicador"]]["natureza"] == n]
-    foto = {"data": HOJE, "regra_gguf": f"GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate {CORTE_GGUF_GB:g} GB",
-            "corte_parametros_b": MAX_B, "chamadas_rede": estado["rede"], "chamadas_cache": estado["cache"],
+    cand_br = [d for d in descartados if d.get("escopo") != "mundo" and d.get("origem") != "lista mundo"]
+    por_motivo = {}
+    for d in cand_br:
+        k = d["motivo"].split(" (")[0].split(",")[0]
+        por_motivo[k] = por_motivo.get(k, 0) + 1
+    n_br = sum(1 for p in pubs if p["escopo"] == "br")
+    data = max([p["fontes"][0]["acessado"] for p in pubs if p.get("fontes")] or [HOJE])
+    foto = {"data": data, "regra_gguf": f"GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate {CORTE_GGUF_GB:g} GB",
+            "corte_parametros_b": MAX_B,
             "brasil": contar(br), "mundo": contar(mu),
             "brasil_independentes": contar(nat(br, "independente")), "brasil_instituicoes": contar(nat(br, "instituicao")), "brasil_empresas": contar(nat(br, "empresa")), "brasil_natureza_nao_classificada": contar(nat(br, "nao_classificada")),
-            "maior_publicador_br": (lambda c: {"id": c[0][0], "modelos": c[0][1]} if c else None)(sorted(((p, sum(1 for m in br if m["publicador"] == p)) for p in set(m["publicador"] for m in br)), key=lambda x: -x[1])),
+            "maior_publicador_br": (lambda c: {"id": c[0][0], "modelos": c[0][1]} if c else None)(sorted(((p, sum(1 for m in br if m["publicador"] == p)) for p in set(m["publicador"] for m in br)), key=lambda x: (-x[1], x[0].lower()))),
             "publicadores": {"brasil": len(set(m["publicador"] for m in br)), "mundo": len(set(m["publicador"] for m in mu)),
                              "brasil_por_natureza": {n: sum(1 for p in pubs if p["escopo"] == "br" and p["natureza"] == n) for n in ("independente", "instituicao", "empresa", "nao_classificada")}},
-            "candidatos": {"avaliados": len(candidatos), "classificados_brasil": sum(1 for p in pubs if p["escopo"] == "br"), "descartados": len([d for d in descartados if d["id"] in candidatos]),
-                           "descartados_por_motivo": {}},
+            "candidatos": {"avaliados": n_br + len(cand_br), "classificados_brasil": n_br, "descartados": len(cand_br), "descartados_por_motivo": por_motivo},
             "descartados": descartados,
             "ressalvas": ["Build existe nao quer dizer que roda: nao ha execucao neste mapa.",
                           "GGUF via wllama conta a parte, com corte de tamanho; ONNX, MLC e LiteRT sao nativos de navegador.",
                           "Builds nativos de terceiros sao achados por regra de nome no indice das organizacoes de runtime e das buscas por tag; podem faltar os de nomes fora do padrao.",
                           "Modelos de linguagem ate %gB, todos os de cada publicador classificado; publicador sem evidencia de ser do Brasil fica fora do mapa." % MAX_B]}
-    for d in foto["descartados"]:
-        if d["id"] in candidatos:
-            k = d["motivo"].split(" (")[0].split(",")[0]
-            foto["candidatos"]["descartados_por_motivo"][k] = foto["candidatos"]["descartados_por_motivo"].get(k, 0) + 1
-    meta = {"coletado_em": HOJE, "fonte": "Hugging Face API publica", "versao_spec": "1.0"}
-    pacote = {"publicadores": pubs, "modelos": modelos, "constelacoes": const, "familias": list(fams.values())}
-    for nome, obj in pacote.items():
-        json.dump({"meta": meta, nome: obj}, open(os.path.join(RAIZ, "data", nome + ".json"), "w"), ensure_ascii=False, indent=1)
-    json.dump(foto, open(os.path.join(RAIZ, "data", "foto.json"), "w"), ensure_ascii=False, indent=1)
-    with open(os.path.join(RAIZ, "web", "data.js"), "w") as f:
-        f.write("window.MAPA_DADOS=" + json.dumps(dict(meta=meta, foto=foto, **pacote), ensure_ascii=False, separators=(",", ":")) + ";")
-    print(json.dumps({k: foto[k] for k in ("brasil", "mundo", "publicadores", "candidatos")}, ensure_ascii=False, indent=1))
+    meta = {"coletado_em": data, "fonte": "Hugging Face API publica", "versao_spec": "1.0"}
+    return meta, {"publicadores": pubs, "modelos": modelos, "constelacoes": const, "familias": [fams[k] for k in sorted(fams)]}, foto
+
+
+def gravar(meta, pacote, foto):
+    """Grava so o que mudou (diff vazio quando nada muda). Devolve os arquivos alterados."""
+    saidas = {os.path.join("data", nome + ".json"): json.dumps({"meta": meta, nome: obj}, ensure_ascii=False, indent=1) for nome, obj in pacote.items()}
+    saidas[os.path.join("data", "foto.json")] = json.dumps(foto, ensure_ascii=False, indent=1)
+    saidas[os.path.join("web", "data.js")] = "window.MAPA_DADOS=" + json.dumps(dict(meta=meta, foto=foto, **pacote), ensure_ascii=False, separators=(",", ":")) + ";"
+    mudou = []
+    for rel, conteudo in saidas.items():
+        caminho = os.path.join(RAIZ, rel)
+        try:
+            igual = open(caminho, encoding="utf-8").read() == conteudo
+        except OSError:
+            igual = False
+        if not igual:
+            _atomico(caminho, conteudo)
+            mudou.append(rel)
+    return mudou
+
+
+def guardar_antes():
+    """Copia dos derivados antes de gravar, para o relatorio quando nao ha Git."""
+    destino = os.path.join(RAIZ, ".relatorios", "antes")
+    os.makedirs(destino, exist_ok=True)
+    for n in ("publicadores", "modelos", "foto"):
+        origem = os.path.join(RAIZ, "data", n + ".json")
+        if os.path.exists(origem):
+            with open(origem, "rb") as f, open(os.path.join(destino, n + ".json"), "wb") as g:
+                g.write(f.read())
+
+
+# ---------- execucao ----------
+CH_CURADO, CH_AUTO = 12, 18   # chamadas por publicador (medido na coleta de teste; ver docs/GOVERNANCA.md)
+
+
+def estimativa(n_curados, n_auto):
+    ch = n_curados * CH_CURADO + n_auto * CH_AUTO
+    return ch, ch / 100.0   # a API anonima aceita ~100 chamadas por minuto
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Coletor do Observatorio", formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
+    g = ap.add_mutually_exclusive_group()
+    g.add_argument("--novos", action="store_true")
+    g.add_argument("--tudo", action="store_true")
+    g.add_argument("--so", help="so estes publicadores, separados por virgula (mescla)")
+    g.add_argument("--normalizar", action="store_true", help="reordena os derivados existentes na ordem estavel, sem rede (uma vez, antes da primeira coleta incremental)")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--previa", action="store_true")
+    ap.add_argument("--dias", type=float, default=30)
+    ap.add_argument("--cache-dias", type=float, default=3)
+    ap.add_argument("--fresh", action="store_true")
+    ap.add_argument("--sem-descoberta", action="store_true")
+    ap.add_argument("--max-candidatos", type=int, default=150)
+    a = ap.parse_args()
+    if not (a.novos or a.tudo or a.so or a.normalizar):
+        ap.error("escolha um modo: --novos, --tudo ou --so a,b")
+    global CACHE_DIAS
+    CACHE_DIAS = a.cache_dias
+    if a.fresh and not a.dry_run:
+        import shutil
+        shutil.rmtree(os.path.join(RAIZ, ".cache"), ignore_errors=True)
+    seed = carregar_json(os.path.join(RAIZ, "seed", "publishers.json"))
+    seed_ev = carregar_json(os.path.join(RAIZ, "seed", "evidencias.json"), {})
+    caminho_ex = os.path.join(RAIZ, ".excluir")   # contas a ignorar por pedido do operador (fora do Git)
+    if os.path.exists(caminho_ex):
+        EXCLUIR.update(l.strip() for l in open(caminho_ex) if l.strip())
+    REMOVIDOS.update(i["sha256"] for i in (carregar_json(os.path.join(RAIZ, "data", "remocoes.json"), {}) or {}).get("itens", []))
+    exist = carregar_existente()
+    if a.normalizar:
+        for m in exist["modelos"]:
+            m["builds"].sort(key=lambda b: (b["formato"], b["repo"]))
+        meta, pacote, foto = montar(*mesclar(exist, []))
+        print("normalizado; arquivos alterados:", gravar(meta, pacote, foto) or "nenhum")
+        return
+    cands = candidatos_locais(seed, carregar_curados(), exist)
+    modo = "--so" if a.so else "--novos" if a.novos else "--tudo"
+
+    def selecionar():
+        if a.so:
+            pedidos = {x.strip().lower() for x in a.so.split(",") if x.strip()}
+            for x in sorted(pedidos - set(cands)):
+                log(f"aviso: {x} nao e candidato (nem lista, nem entidade curada); ignorado")
+            return [(c, "pedido") for k, c in cands.items() if k in pedidos]
+        sit = [(c, situacao(c, exist, a.dias)) for c in cands.values()]
+        return [(c, s) for c, s in sit if a.tudo or s != "em dia"]
+
+    if not a.dry_run and not a.sem_descoberta and not a.so:   # descoberta por busca na API: so adiciona candidatos
+        excl = _Excl(set(seed["mundo"]) | set(seed["runtime_orgs"]) | set(EXCLUIR))
+        log("descoberta de candidatos brasileiros")
+        for pid, ids in descobrir_candidatos(excl, seed["termos_busca"], 3)[: a.max_candidatos]:
+            c = cands.setdefault(pid.lower(), {"id": pid, "origem": "busca na API", "escopo": "br", "tipo": None, "curado": None, "achados": []})
+            if not c["curado"] and c["escopo"] == "br":
+                c["achados"] = sorted(ids)[:5]
+    alvos = selecionar()
+
+    if a.dry_run:
+        ncur = sum(1 for c, _ in alvos if c["curado"])
+        print(f"{modo} --dry-run (sem chamadas de rede, nada gravado)")
+        print(f"candidatos: {len(cands)} (curados: {sum(1 for c in cands.values() if c['curado'])}); a coletar: {len(alvos)}; em dia: {len(cands) - len(alvos)}")
+        for c, s in sorted(alvos, key=lambda x: (x[1], x[0]["id"].lower())):
+            e = c["curado"]
+            print(f"  {s:9} {c['origem']:34} {(e['classe_pais'] + ' / ' + e['natureza']) if e else 'classificacao automatica':32} {c['id']}")
+            if a.previa:
+                xs, _, fora = modelos_do_publicador(c["id"])
+                print(f"            previa: {len(xs)} modelo(s) no corte" + (f", {fora} acima de {MAX_B:g} B" if fora else "") + (": " + ", ".join(x["id"].split("/")[-1] for x in xs[:5]) + (" ..." if len(xs) > 5 else "") if xs else ""))
+        ch, mi = estimativa(ncur, len(alvos) - ncur)
+        print(f"estimativa: ~{ch} chamadas, ~{mi:.0f} min na API anonima, mais o indice de builds (~170 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
+        return
+    if not alvos and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
+        print(f"{modo}: nada a coletar ({len(cands)} candidatos em dia). Nenhum arquivo alterado.")
+        return
+
+    ctx = Ctx(seed, seed_ev)
+    regs, n, t_ini, gastos = [], len(alvos), time.time(), []
+    log(f"{modo}: {n} publicador(es) a coletar")
+    try:
+        for i, (c, sit) in enumerate(alvos, 1):
+            pid = c["id"]
+            reg, chk = None, _chk(pid)
+            if not a.fresh and os.path.exists(chk) and (time.time() - os.path.getmtime(chk)) < CACHE_DIAS * 86400:
+                r = carregar_json(chk)
+                if r and r.get("v") == 1 and not r.get("incompleto") and r.get("assinatura") == assinatura(c):
+                    reg = r
+                    log(f"[{i}/{n}] {pid}: checkpoint de {r['coletado_em']} reaproveitado")
+            if reg is None:
+                t0 = time.time()
+                reg = unidade(c, ctx)
+                if reg["incompleto"]:
+                    log(f"[{i}/{n}] {pid}: falha de rede durante a coleta; nao entra nos dados (rode de novo)")
+                    continue
+                _atomico(chk, json.dumps(reg, ensure_ascii=False))
+                gastos.append(time.time() - t0)
+                resto = (sum(gastos) / len(gastos)) * (n - i)
+                alvo = "coletado" if reg["pub"] else "descartado: " + reg["descartado"]["motivo"]
+                log(f"[{i}/{n}] {pid} ({sit}; {c['origem']}): {alvo}; {len(reg['modelos'])} modelo(s), {reg['chamadas']} chamadas, {time.time() - t0:.0f}s; restam ~{resto / 60:.1f} min")
+                if os.environ.get("COLETOR_ESPERA_TESTE"):
+                    time.sleep(float(os.environ["COLETOR_ESPERA_TESTE"]))
+            regs.append(reg)
+        if a.tudo and not a.so and not a.sem_descoberta:   # pessoas do mundo achadas por builds de navegador
+            conhecidos = set(cands) | set(exist["pubs"]) | set(exist["desc"])
+            for c in descobrir_independentes(ctx, conhecidos):
+                reg = unidade(c, ctx)
+                if not reg["incompleto"]:
+                    _atomico(_chk(c["id"]), json.dumps(reg, ensure_ascii=False))
+                    regs.append(reg)
+    except KeyboardInterrupt:
+        log(f"interrompido: {len(regs)} publicador(es) ja estao em .cache/publicadores/; rode o mesmo comando para continuar")
+        sys.exit(130)
+
+    guardar_antes()
+    pubs, modelos, desc = mesclar(exist, regs)
+    meta, pacote, foto = montar(pubs, modelos, desc)
+    mudou = gravar(meta, pacote, foto)
+    resumo = {k: foto[k] for k in ("brasil", "mundo", "publicadores", "candidatos") if k != "candidatos"}
+    log(f"coleta concluida em {(time.time() - t_ini) / 60:.1f} min; chamadas de rede: {estado['rede']}, do cache: {estado['cache']}")
+    print(json.dumps({"coletados": len(regs), "arquivos_alterados": mudou, **{k: foto[k] for k in ("brasil", "mundo")}}, ensure_ascii=False, indent=1))
+    if mudou:
+        try:
+            import relatorio_coleta
+            relatorio_coleta.gerar(RAIZ, None, chamadas=estado["rede"])
+        except Exception as e:   # o relatorio nunca impede a coleta
+            log(f"relatorio nao gerado: {e}")
 
 
 if __name__ == "__main__":
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     main()
