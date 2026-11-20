@@ -1,0 +1,51 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "c4ai-usp",
+  "nome": "C4AI",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/C4AI",
+    "acessado": "2026-11-20",
+    "trecho": "A research center for advanced artificial intelligence in Brazil. Based at the Universidade de São Paulo"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/C4AI",
+    "acessado": "2026-11-20",
+    "trecho": "Based at the Universidade de São Paulo, sponsored by IBM and FAPESP"
+  },
+  "links": {
+    "hf": "https://huggingface.co/c4ai-usp",
+    "github": "https://github.com/C4AI",
+    "oficial": "https://c4ai.inova.usp.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/c4ai-usp",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/c4ai-usp/gap-text2sql/raw/main/README.md",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão do modelo que aponta para o repositório do C4AI",
+      "trecho": "more information: [mRAT-SQL](https://github.com/C4AI/gap-text2sql)"
+    },
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://github.com/C4AI",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização do C4AI no GitHub"
+    }
+  ],
+  "status": "ativo"
+}
