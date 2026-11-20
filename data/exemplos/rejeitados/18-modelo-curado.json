@@ -1,0 +1,21 @@
+{
+  "_esperado": [
+    "ENTIDADE"
+  ],
+  "_motivo": "Modelo nao e entidade curada: os modelos sao sempre derivados pelo coletor.",
+  "spec": "1.0",
+  "entidade": "modelo",
+  "id": "exemplo/modelo-curado",
+  "nome": "modelo-curado",
+  "publicador": "exemplo",
+  "links": {
+    "hf": "https://huggingface.co/exemplo/modelo-curado"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/exemplo/modelo-curado",
+      "acessado": "2026-11-20"
+    }
+  ]
+}

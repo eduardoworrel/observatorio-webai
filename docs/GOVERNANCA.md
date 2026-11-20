@@ -38,7 +38,6 @@ A contribuição indica **quem publica** (usuário ou organização do Hugging F
 | publicador | tem modelos de linguagem publicados e perfil público; evidência de natureza; país só com evidência |
 | laboratório | tem página própria ou institucional que o vincule a uma instituição, e publica ou é citado como autor de modelo ou pesquisa de IA em linguagem |
 | pesquisador | página institucional ou perfil profissional público que o liste com vínculo, **e** pelo menos uma publicação ou modelo creditado a ele; estudantes e pessoas sem página só por autoinscrição; menores nunca |
-| modelo (curado) | fora do Hugging Face, com cartão ou página oficial |
 | família | linhagem reconhecida por pelo menos 2 modelos |
 
 Fora do escopo: ranking de pessoas, métricas de desempenho de pessoas, perfil pessoal, avaliação de qualidade de pesquisa.

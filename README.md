@@ -17,7 +17,7 @@ open web/index.html
 
 ## Contribuir
 
-Você pode acrescentar ou corrigir **publicadores, laboratórios, pesquisadores, modelos e famílias**, sempre com pelo menos uma fonte pública (tipo, URL, data de acesso). Passo a passo, inclusive para quem nunca usou Git: [CONTRIBUTING.pt.md](CONTRIBUTING.pt.md) ([English](CONTRIBUTING.md)).
+Você pode acrescentar ou corrigir **publicadores, laboratórios, pesquisadores e famílias**, sempre com pelo menos uma fonte pública (tipo, URL, data de acesso). Passo a passo, inclusive para quem nunca usou Git: [CONTRIBUTING.pt.md](CONTRIBUTING.pt.md) ([English](CONTRIBUTING.md)).
 
 - **Pesquisadores são pessoas:** só informação profissional já pública, com fonte; nada de e-mail, telefone, endereço, nascimento, foto ou redes pessoais. Pedido de remoção ou correção a qualquer momento, sem justificar (SPEC, seção 8). O Git é público e permanente.
 - **A decisão é sempre humana.** A checagem automática (`python3 scripts/validar.py`) só confere formato, regras fixas e se cada trecho citado aparece na fonte; os mantenedores revisam e decidem (`docs/GOVERNANCA.md`).

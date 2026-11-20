@@ -237,6 +237,17 @@ class TestIncremental(Base):
         self.assertEqual(diff(), "")
 
 
+class TestRotulos(unittest.TestCase):
+    def test_tipos_de_fonte_tem_rotulo_em_pt_e_en(self):
+        app = open(os.path.join(REPO, "web", "app.js"), encoding="utf-8").read()
+        tipos = json.load(open(os.path.join(REPO, "schema", "comum.schema.json")))["$defs"]["tipo_fonte"]["enum"]
+        tipos += ["orgao_fomento", "perfil", "cartao", "institucional", "curadoria"]   # tipos de fonte e de evidencia derivada
+        for t in tipos:
+            self.assertEqual(app.count(f"src_{t}: '"), 2, f"falta rotulo PT e EN para {t}")
+        self.assertIn("tipoFonte(p.evidencia_pais.tipo)", app)
+        self.assertNotIn("evidencia_pais.tipo +", app, "o tipo cru nao deve ser impresso")
+
+
 @unittest.skipUnless(shutil.which("git") and shutil.which("bash"), "precisa de git e bash")
 class TestProcessarPR(unittest.TestCase):
     def sh(self, *cmd, cwd, check=True):

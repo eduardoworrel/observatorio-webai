@@ -1,5 +1,5 @@
 name: Adicionar entidade / Add an entity
-description: Publicador, laboratório, pesquisador, modelo ou família (sem saber usar Git) / publisher, lab, researcher, model or family
+description: Publicador, laboratório, pesquisador ou família (sem saber usar Git) / publisher, lab, researcher or family
 labels: ["adicionar"]
 body:
   - type: markdown
@@ -12,7 +12,7 @@ body:
     id: tipo
     attributes:
       label: Tipo / Type
-      options: [publicador, laboratorio, pesquisador, modelo, familia]
+      options: [publicador, laboratorio, pesquisador, familia]
     validations: {required: true}
   - type: input
     id: nome

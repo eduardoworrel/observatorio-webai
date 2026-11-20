@@ -15,7 +15,7 @@ O Observatório mapeia quem publica modelos de Web AI no Brasil e no mundo. Voc�
 
 | Quero... | Como |
 |---|---|
-| Adicionar publicador, laboratório, pesquisador, modelo ou família | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
+| Adicionar publicador, laboratório, pesquisador ou família | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
 | Adicionar ou corrigir uma fonte | PR editando o campo `fontes`, ou o formulário "Fonte" |
 | Corrigir um erro | PR editando o arquivo, ou o formulário "Corrigir" |
 | Pedir remoção ou correção de dados de uma pessoa | Formulário "Pedir remoção" ou relato privado na aba Security do repositório (contatos em `docs/PRIVACIDADE.md`) |
@@ -27,7 +27,7 @@ Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelac
 
 1. Crie uma conta no GitHub (nas configurações, em Settings, Emails, ative "Keep my email addresses private").
 2. Abra a pasta `templates/` do repositório, abra o modelo do tipo que você quer (por exemplo `pesquisador.json`) e copie o texto.
-3. Vá a `data/entidades/<tipo>/`, clique em **Add file, Create new file** e digite o nome: o id e `.json` (`recogna.json`; para modelo, `publicador/nome.json`). O id é kebab-case: minúsculas, números e hífens.
+3. Vá a `data/entidades/<tipo>/`, clique em **Add file, Create new file** e digite o nome: o id e `.json` (`recogna.json`). O id é kebab-case: minúsculas, números e hífens.
 4. Cole o modelo e troque os valores. Apague o que não se aplica (campos opcionais). Cuidado com as vírgulas: depois do último item de uma lista não vai vírgula.
 5. Para cada fonte: abra a página, confira que ela diz o que você escreveu, copie a URL, escolha o `tipo` e ponha o dia de hoje em `acessado` (`"2026-11-20"`, com aspas). Em evidências, cole em `trecho` a frase curta da página.
 6. Clique em **Commit changes, Propose changes** e depois **Create pull request**. O GitHub cria a sua cópia sozinho.

@@ -13,7 +13,6 @@ Todos os arquivos de exemplo ficam em `data/exemplos/` e têm `"exemplo": true`:
 | `pesquisador/fabio-cozman.json` | Cadastro por terceiro **com** página institucional que o lista; vínculo com laboratório por id; sem e-mail, foto ou local de nascimento. |
 | `pesquisador/joao-paulo-papa.json` | Idem, com perfil institucional de órgão de fomento. |
 | `pesquisador/anna-reali.json` | Idem, página no site do departamento. A página traz e-mail, telefone e sala: nada disso é copiado. |
-| `modelo/*` | Modelos que existem no Hugging Face: id `publicador/nome`, `links.hf`, cartão como fonte; status de build e tamanhos **não** estão no arquivo (derivados). |
 | `familia/*` | Família com nome, descrição `pt`/`en` e fonte. |
 
 ## Rejeitados, com o motivo
