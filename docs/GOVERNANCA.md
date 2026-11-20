@@ -18,7 +18,7 @@ Pesquisadores e donos de contas são pessoas. A moderação combina **validaçã
 
 ## Como os dados entram no site
 
-A contribuição indica **quem publica** (usuário ou organização do Hugging Face) e a evidência mínima de país e de natureza. Os modelos, tamanhos, formatos, status de build e famílias nunca são inseridos à mão: o coletor os deriva das APIs públicas. Nenhuma etapa depende de inteligência artificial.
+A contribuição indica **quem publica** (usuário ou organização do Hugging Face) e a evidência mínima de país e de natureza. Os modelos, os datasets, tamanhos, formatos, status de build e famílias nunca são inseridos à mão: o coletor os deriva das APIs públicas. Nenhuma etapa depende de inteligência artificial.
 
 1. **Contribuição por PR.** A pessoa abre um PR com arquivos em `data/entidades/` (um por publicador, seguindo a SPEC). O PR não altera scripts, schema, site nem arquivos derivados.
 2. **Validação mecânica.** O CI roda `validar.py` (schema, ids, URLs, privacidade, regras de classificação, trechos citados). Mostra um status; não aprova nem rejeita.
@@ -37,6 +37,7 @@ A contribuição indica **quem publica** (usuário ou organização do Hugging F
 |---|---|
 | publicador | tem modelos de linguagem publicados e perfil público; evidência de natureza; país só com evidência |
 | laboratório | tem página própria ou institucional que o vincule a uma instituição, e publica ou é citado como autor de modelo ou pesquisa de IA em linguagem |
+| benchmark | tem conjunto público (datasets no Hugging Face) e documentação oficial (artigo, cartão ou site do próprio benchmark) que o descreva; `dominio` obrigatório; trecho literal em cada fonte |
 | pesquisador | página institucional ou perfil profissional público que o liste com vínculo, **e** pelo menos uma publicação ou modelo creditado a ele; estudantes e pessoas sem página só por autoinscrição; menores nunca |
 | família | linhagem reconhecida por pelo menos 2 modelos |
 

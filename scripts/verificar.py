@@ -53,6 +53,34 @@ for esc in ("brasil", "mundo"):
     c = foto[esc]
     if c["nativo_oficial"] + c["nativo_comunidade"] + c["so_gguf_wllama"] + c["nenhum"] != c["modelos"]: err("foto " + esc + " nao soma")
     if c["nativo_mais_gguf"] != c["so_nativo"] + c["so_gguf_wllama"]: err("foto " + esc + ": nativo_mais_gguf")
+DOM = {"geral", "vestibular_educacao", "juridico", "saude", "codigo", "matematica", "extracao_classificacao", "cultura_lingua", "outros"}
+if os.path.exists(os.path.join(R, "data", "datasets.json")):
+    dss = L("datasets")["datasets"]; bms = L("benchmarks")["benchmarks"]; fc = L("foto_camadas")
+    dids = set()
+    for d in dss:
+        n = "dataset " + d["id"]
+        if d["id"].lower() in dids: err("dataset repetido " + d["id"])
+        dids.add(d["id"].lower()); fontes(d, n)
+        if d["escopo"] not in ("br", "pt"): err(n + ": escopo")
+        if d["escopo"] == "br" and d["publicador"] not in ids and d["publicador"] not in {x["id"] for x in foto["descartados"]}: err(n + ": escopo br com publicador desconhecido")
+        if d["id"].split("/")[0] != d["publicador"]: err(n + ": publicador")
+        if d["tamanho_bytes"] is not None and d["tamanho_bytes"] <= 0: err(n + ": tamanho invalido")
+        if d["escopo"] == "pt" and not d["benchmarks"] and not d.get("pt"): err(n + ": escopo pt sem idioma pt nem benchmark")
+        if not URL.match(d["fontes"][0]["url"]): err(n + ": url")
+    bid = set()
+    for b in bms:
+        n = "benchmark " + b["id"]
+        if b["id"] in bid: err("benchmark repetido " + b["id"])
+        bid.add(b["id"]); fontes(b, n)
+        if not b["dominio"] or any(x not in DOM for x in b["dominio"]): err(n + ": dominio")
+        if b["n_datasets"] > len(b["datasets"]): err(n + ": n_datasets")
+        for f in b["fontes"]:
+            if not f.get("trecho"): err(n + ": fonte sem trecho")
+    for d in dss:
+        for x in d["benchmarks"]:
+            if x not in bid: err(f"dataset {d['id']}: benchmark desconhecido {x}")
+    if fc["datasets"]["total"] != len(dss) or fc["benchmarks"]["total"] != len(bms): err("foto_camadas nao soma")
+    if sum(fc["datasets"]["por_escopo"].values()) != len(dss): err("foto_camadas: escopos nao somam")
 if erros:
     print("\n".join(erros[:60])); print(len(erros), "erros"); sys.exit(1)
-print(f"ok: {len(pubs)} publicadores, {len(mods)} modelos, {len(const)} constelacoes")
+print(f"ok: {len(pubs)} publicadores, {len(mods)} modelos, {len(const)} constelacoes" + (f", {len(dss)} datasets, {len(bms)} benchmarks" if os.path.exists(os.path.join(R, "data", "datasets.json")) else ""))

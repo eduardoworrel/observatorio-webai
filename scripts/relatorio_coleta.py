@@ -11,7 +11,7 @@ Imprime e grava em .relatorios/ (ignorado pelo Git). So leitura dos dados; nenhu
 import argparse, collections, datetime, json, os, subprocess, sys, urllib.request
 
 RAIZ_PADRAO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ARQS = {"publicadores": "publicadores", "modelos": "modelos", "foto": None}
+ARQS = {"publicadores": "publicadores", "modelos": "modelos", "foto": None, "datasets": None, "benchmarks": None}
 QUEDA_PUB, QUEDA_TOTAL = 0.30, 0.10   # queda relativa que vira anomalia (publicador com 3+ modelos; total)
 
 
@@ -38,7 +38,9 @@ def carregar(raiz, ref):
         saida[n] = _json(t)
     return {"pubs": {p["id"]: p for p in saida["publicadores"].get("publicadores", [])},
             "mods": {m["id"]: m for m in saida["modelos"].get("modelos", [])},
-            "foto": saida["foto"]}
+            "foto": saida["foto"],
+            "ds": {x["id"]: x for x in saida["datasets"].get("datasets", [])},
+            "bench": {x["id"]: x for x in saida["benchmarks"].get("benchmarks", [])}}
 
 
 def _cont(pubs, mods):
@@ -90,6 +92,15 @@ def comparar(a, d):
         an.append(f"publicador fora do mapa: {x['id']}: {x['motivo']}")
     for i in r["classe_mudou"]:
         an.append(f"classe/natureza mudou em {i[0]}: {i[1]} -> {i[2]}")
+    r["ds_novos"] = sorted(set(d["ds"]) - set(a["ds"]), key=str.lower)
+    r["ds_removidos"] = sorted(set(a["ds"]) - set(d["ds"]), key=str.lower)
+    r["bench_novos"] = sorted(set(d["bench"]) - set(a["bench"]))
+    r["bench_removidos"] = sorted(set(a["bench"]) - set(d["bench"]))
+    for i, b in d["bench"].items():
+        if b["n_datasets"] < len(b["datasets"]):
+            an.append(f"benchmark {i}: {len(b['datasets']) - b['n_datasets']} dataset(s) nao encontrado(s) ou fechado(s) na coleta")
+    if a["ds"] and len(d["ds"]) < len(a["ds"]) * (1 - QUEDA_TOTAL):
+        an.append(f"queda do total de datasets: {len(a['ds'])} -> {len(d['ds'])}")
     r["novos_descartados"] = novos_desc
     r["anomalias"] = an
     return r
@@ -132,6 +143,15 @@ def texto(r, a, d, antes_nome, chamadas=None, urls_ruins=()):
     ap(f"== Modelos removidos ({len(r['mods_removidos'])})")
     for i in r["mods_removidos"]:
         ap(f"  {i}")
+    ap(f"== Datasets novos ({len(r['ds_novos'])}); removidos ({len(r['ds_removidos'])}); total {len(a['ds'])} -> {len(d['ds'])}")
+    for i in r["ds_novos"][:60]:
+        x = d["ds"][i]
+        ap(f"  + {i}  [{x['escopo']}, {x['downloads']} downloads]")
+    if len(r["ds_novos"]) > 60:
+        ap(f"  ... e mais {len(r['ds_novos']) - 60} (lista completa: diff de data/datasets.json)")
+    for i in r["ds_removidos"][:60]:
+        ap(f"  - {i}")
+    ap(f"== Benchmarks novos ({len(r['bench_novos'])}): " + ", ".join(r["bench_novos"]) + f"; removidos ({len(r['bench_removidos'])}): " + ", ".join(r["bench_removidos"]))
     ap(f"== Mudancas de status de build ({len(r['status'])})")
     for i, s0, s1, v0, v1 in r["status"]:
         ap(f"  {i}: status {s0} -> {s1}; via {v0} -> {v1}")

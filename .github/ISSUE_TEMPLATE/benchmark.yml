@@ -1,0 +1,53 @@
+name: Adicionar benchmark / Add a benchmark
+description: Benchmark em português ou do Brasil, com os datasets do Hugging Face que ele aponta / Portuguese or Brazil-related benchmark and the Hugging Face datasets it points to
+labels: ["adicionar", "benchmark"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Só informação pública, com fonte. Os metadados dos datasets (tamanho, downloads, licença) são derivados pelo coletor: indique apenas os ids.
+        Public information only, with a source. Dataset metadata (size, downloads, license) is derived by the collector: give only the ids.
+        A decisão é sempre humana. / The decision is always human.
+  - type: input
+    id: nome
+    attributes: {label: "Nome e sigla do benchmark / Benchmark name and acronym"}
+    validations: {required: true}
+  - type: dropdown
+    id: dominio
+    attributes:
+      label: Domínio / Domain
+      options: [geral, vestibular_educacao, juridico, saude, codigo, matematica, extracao_classificacao, cultura_lingua, outros]
+    validations: {required: true}
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo / Type
+      options: [conjunto, avaliacao, leaderboard]
+    validations: {required: true}
+  - type: textarea
+    id: datasets
+    attributes:
+      label: Datasets no Hugging Face (um por linha, publicador/nome) / Hugging Face datasets (one per line)
+      placeholder: "publicador/nome-do-dataset"
+    validations: {required: true}
+  - type: textarea
+    id: fontes
+    attributes:
+      label: Fontes / Sources (URL, tipo, o dia em que você abriu a página, trecho literal)
+      description: "Tipos: perfil_oficial, site_institucional, pagina_pessoa, artigo, repositorio. Cada fonte precisa de um trecho copiado da página."
+      placeholder: "https://huggingface.co/datasets/... | repositorio | 2026-11-20 | \"frase copiada do cartão do dataset\""
+    validations: {required: true}
+  - type: input
+    id: links
+    attributes: {label: "Artigo, site, leaderboard ou código (URLs) / Paper, site, leaderboard or code (URLs)"}
+  - type: checkboxes
+    id: confirmo
+    attributes:
+      label: Confirmo / I confirm
+      options:
+        - label: O benchmark tem conjunto público e documentação oficial / The benchmark has a public dataset and official documentation
+          required: true
+        - label: Abri cada fonte e ela diz o que escrevi / I opened every source and it says what I wrote
+          required: true
+        - label: Aceito que o texto fique em CC BY 4.0 / I accept CC BY 4.0 for the text
+          required: true

@@ -1,0 +1,32 @@
+{
+ "datasets": {
+  "total": 2221,
+  "por_escopo": {
+   "br": 238,
+   "pt": 1983
+  },
+  "pt_br": 259,
+  "por_faixa": {
+   "1-100MB": 722,
+   "1-10GB": 408,
+   "100MB-1GB": 424,
+   "<1MB": 247,
+   ">10GB": 420
+  },
+  "downloads_total": 6488512
+ },
+ "benchmarks": {
+  "total": 10,
+  "por_dominio": {
+   "cultura_lingua": 1,
+   "extracao_classificacao": 6,
+   "geral": 1,
+   "juridico": 2,
+   "vestibular_educacao": 2
+  },
+  "por_tipo": {
+   "avaliacao": 1,
+   "conjunto": 9
+  }
+ }
+}

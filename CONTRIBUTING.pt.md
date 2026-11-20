@@ -15,13 +15,14 @@ O Observatório mapeia quem publica modelos de Web AI no Brasil e no mundo. Voc�
 
 | Quero... | Como |
 |---|---|
-| Adicionar publicador, laboratório, pesquisador ou família | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
+| Adicionar publicador, laboratório, pesquisador, família ou benchmark | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
+| Adicionar um benchmark em português ou do Brasil | PR com um arquivo novo em `data/entidades/benchmark/` (modelo `templates/benchmark.json`, ou o formulário "Adicionar benchmark"): nome, domínio, os datasets do Hugging Face que ele aponta e fontes com trecho literal. Os metadados dos datasets (tamanho, downloads, licença) são derivados pelo coletor |
 | Adicionar ou corrigir uma fonte | PR editando o campo `fontes`, ou o formulário "Fonte" |
 | Corrigir um erro | PR editando o arquivo, ou o formulário "Corrigir" |
 | Pedir remoção ou correção de dados de uma pessoa | Formulário "Pedir remoção" ou relato privado na aba Security do repositório (contatos em `docs/PRIVACIDADE.md`) |
 | Propor um campo novo | Formulário "Propor campo"; mudar o padrão é decisão de spec |
 
-Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles. Você indica **quem publica** (usuário ou organização do Hugging Face) com a evidência mínima de país e de natureza; os modelos são sempre derivados pelo coletor a partir das APIs públicas e nunca são inseridos à mão. Depois do merge, os mantenedores rodam a coleta e publicam os dados derivados (seção "Como os dados entram no site" em `docs/GOVERNANCA.md`).
+Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `datasets.json`, `benchmarks.json`, `foto_camadas.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles. Você indica **quem publica** (usuário ou organização do Hugging Face) com a evidência mínima de país e de natureza; os modelos são sempre derivados pelo coletor a partir das APIs públicas e nunca são inseridos à mão. Depois do merge, os mantenedores rodam a coleta e publicam os dados derivados (seção "Como os dados entram no site" em `docs/GOVERNANCA.md`).
 
 ## Sem saber usar Git: pelo navegador
 

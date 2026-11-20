@@ -20,7 +20,7 @@ Versão do contrato: **1**. Quem consome (a interface) e quem produz (o coletor)
 | # | Coluna | Tipo | Significado |
 |---|---|---|---|
 | 0 | `id` | texto | `<publicador>/<nome>`, como no Hugging Face. A URL é `https://huggingface.co/datasets/<id>` |
-| 1 | `publicador` | texto | id do publicador (parte antes da barra); chave de `publicadores[]` quando o publicador está no mapa |
+| 1 | `publicador` | texto | id do publicador (parte antes da barra); chave de `publicadores[]` quando o publicador está no mapa; um publicador do Brasil sem modelos no corte (registrado em `foto.descartados`) também aparece aqui, sem constelação |
 | 2 | `nome` | texto | parte depois da barra |
 | 3 | `descricao` | texto | uma linha do cartão, até 160 caracteres, sem contato pessoal; vazio se o cartão não tem texto |
 | 4 | `idiomas` | texto[] | códigos de idioma do cartão (`pt`, `en`...), `pt` primeiro, no máximo 8 |

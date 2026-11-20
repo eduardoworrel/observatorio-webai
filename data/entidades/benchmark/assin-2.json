@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "assin-2",
+  "nome": "ASSIN 2",
+  "sigla": "ASSIN 2",
+  "descricao": {
+    "pt": "Pares de sentenças simples em português do Brasil, anotados para implicação textual e similaridade semântica.",
+    "en": "Simple sentence pairs in Brazilian Portuguese, annotated for textual entailment and semantic similarity."
+  },
+  "dominio": [
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "nilc-nlp/assin2"
+  ],
+  "ano": 2020,
+  "links": {
+    "site": "https://huggingface.co/datasets/nilc-nlp/assin2"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/nilc-nlp/assin2",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "The training and validation data are composed, respectively, of 6,500 and 500 sentence pairs in Brazilian Portuguese, annotated for entailment and semantic similarity ... year={2020}"
+    }
+  ]
+}

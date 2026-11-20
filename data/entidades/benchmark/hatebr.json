@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "hatebr",
+  "nome": "HateBR",
+  "sigla": "HateBR",
+  "descricao": {
+    "pt": "Comentários brasileiros do Instagram anotados por especialistas para detecção de discurso de ódio e linguagem ofensiva.",
+    "en": "Brazilian Instagram comments annotated by experts for hate speech and offensive language detection."
+  },
+  "dominio": [
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "franciellevargas/HateBR"
+  ],
+  "links": {
+    "site": "https://huggingface.co/datasets/franciellevargas/HateBR"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/franciellevargas/HateBR",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "HateBR is the first large-scale, expert-annotated dataset of Brazilian Instagram comments specifically designed for hate speech detection on the web and social media"
+    }
+  ]
+}

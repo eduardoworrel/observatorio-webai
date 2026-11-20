@@ -13,6 +13,7 @@ Todos os arquivos de exemplo ficam em `data/exemplos/` e têm `"exemplo": true`:
 | `pesquisador/fabio-cozman.json` | Cadastro por terceiro **com** página institucional que o lista; vínculo com laboratório por id; sem e-mail, foto ou local de nascimento. |
 | `pesquisador/joao-paulo-papa.json` | Idem, com perfil institucional de órgão de fomento. |
 | `pesquisador/anna-reali.json` | Idem, página no site do departamento. A página traz e-mail, telefone e sala: nada disso é copiado. |
+| `benchmark/*` | Benchmark com `dominio`, datasets do Hugging Face e fontes com trecho literal; `n_datasets`, tamanho e downloads são **derivados**. |
 | `familia/*` | Família com nome, descrição `pt`/`en` e fonte. |
 
 ## Rejeitados, com o motivo
@@ -38,6 +39,12 @@ Cada um é um arquivo de teste em `data/exemplos/rejeitados/` (pessoas e institu
 | `15-pais-inexistente.json` | Codigo de pais fora da ISO 3166-1. | PAIS_INVALIDO |
 | `16-url-http.json` | URL sem https. | FORMATO |
 | `17-atributo-sensivel.json` | Texto que registra atributo sensivel. | SENSIVEL |
+| `19-benchmark-sem-dominio.json` | Benchmark sem dominio. | CAMPO_FALTA |
+| `20-benchmark-dominio-invalido.json` | Dominio fora da lista permitida. | VALOR |
+| `21-benchmark-campo-derivado.json` | `n_datasets` e derivado: o coletor calcula. | CAMPO_DERIVADO |
+| `22-benchmark-fonte-sem-trecho.json` | Fonte de benchmark sem trecho literal. | CAMPO_FALTA |
+| `23-benchmark-dataset-id-invalido.json` | Dataset precisa ser `<publicador>/<nome>`. | FORMATO |
+| `24-benchmark-leaderboard-sem-link.json` | Tipo leaderboard exige `links.leaderboard`. | CAMPO_FALTA |
 
 ## Rejeitados por revisão humana (o validador não vê)
 
