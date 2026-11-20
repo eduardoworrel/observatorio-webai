@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "ciia-saude-ufmg",
+  "nome": "Centro de Inovação em Inteligência Artificial para a Saúde",
+  "sigla": "CI-IA Saúde",
+  "instituicao": {
+    "nome": "Universidade Federal de Minas Gerais",
+    "pais": "BR",
+    "regiao": "BR-MG",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://ciia-saude.dcc.ufmg.br",
+      "acessado": "2026-11-20",
+      "rotulo": "site do próprio centro",
+      "trecho": "O Centro de Inovação em Inteligência Artificial em Saúde, sediado na UFMG"
+    }
+  },
+  "links": {
+    "oficial": "https://ciia-saude.dcc.ufmg.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://ciia-saude.dcc.ufmg.br/",
+      "acessado": "2026-11-20",
+      "rotulo": "site oficial"
+    }
+  ]
+}

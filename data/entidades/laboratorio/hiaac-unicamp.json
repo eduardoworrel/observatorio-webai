@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "hiaac-unicamp",
+  "nome": "Hub de Inteligência Artificial e Arquiteturas Cognitivas",
+  "sigla": "H.IAAC",
+  "instituicao": {
+    "nome": "Universidade Estadual de Campinas",
+    "pais": "BR",
+    "regiao": "BR-SP",
+    "fonte": {
+      "tipo": "site_institucional",
+      "url": "https://hiaac.unicamp.br/about-the-hub/",
+      "acessado": "2026-11-20",
+      "rotulo": "site do próprio centro",
+      "trecho": "H.IAAC, Hub de Inteligência Artificial e Arquiteturas Cognitivas - Universidade Estadual de Campinas"
+    }
+  },
+  "links": {
+    "oficial": "https://hiaac.unicamp.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://hiaac.unicamp.br/",
+      "acessado": "2026-11-20",
+      "rotulo": "site oficial"
+    }
+  ]
+}
