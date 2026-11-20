@@ -22,7 +22,7 @@ Mapa de modelos de linguagem que rodam (ou podem rodar) no navegador e na borda,
 | `nome` | texto | sim | `fullname` da API de perfil |
 | `tipo` | `pessoa` \| `grupo` | sim | `/api/users/<id>/overview` (pessoa) ou `/api/organizations/<id>/overview` (grupo) |
 | `classe_pais` | `br_evidencia` \| `nao_classificado` \| `fora_br` | sim | regra B |
-| `evidencia_pais` | `{tipo, url, trecho, acessado, regra}` | sim se `br_evidencia` | regra B; `tipo` é `perfil`, `cartao` ou `institucional` |
+| `evidencia_pais` | `{tipo, url, trecho, acessado, regra}` | sim se `br_evidencia` | regra B; `tipo` é `perfil`, `cartao` ou `institucional` quando derivada pelo coletor, ou o tipo da entidade curada (`perfil_oficial`, `site_institucional`, ...; SPEC 1.0, seção 4.7) |
 | `natureza` | `independente` \| `instituicao` \| `empresa` \| `nao_classificada` | sim | regra N |
 | `evidencia_natureza` | `{classe, tipo, url, trecho, acessado, regra}` | sim para publicadores do Brasil classificados | regra N |
 | `escopo` | `br` \| `mundo` | sim | `br` só com `classe_pais = br_evidencia` |

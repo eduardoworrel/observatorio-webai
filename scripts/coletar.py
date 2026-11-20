@@ -8,7 +8,7 @@ de pais e natureza vem da entidade), seed/publishers.json e a descoberta automat
 Modos (um e obrigatorio):
   --novos        so publicadores que ainda nao estao nos dados, cuja entidade curada mudou ou cuja coleta passou de --dias dias;
                  o resultado e MESCLADO nos dados existentes
-  --tudo         atualizacao completa (todos os candidatos, mais a descoberta de independentes do mundo)
+  --tudo         atualizacao completa (todos os candidatos, mais a descoberta de independentes do mundo); quem deixou de ser candidato sai dos dados
   --so a,b       so estes publicadores (mescla)
   --normalizar   so reordena os derivados existentes na ordem estavel (sem rede)
 Opcoes:
@@ -724,6 +724,7 @@ def _unidade_curada(c, ent, info, ctx):
             ms = [construir(y, pid, "mundo", ctx.idx, [], {"conversao_de": base_primaria(y.get("tags", []))}) for y in ys]
         else:
             xs, puros, fora = modelos_do_publicador(pid)
+            xs = [x for x in xs if set(formatos(x["id"], x.get("tags", []))) & set(NAVEGADOR)]
             xs = sorted(xs, key=lambda x: (-(x.get("downloads") or 0), x["id"].lower()))[:MAX_INDEP_MUNDO]
             ms = [construir(x, pid, "mundo", ctx.idx, puros) for x in xs]
     else:
@@ -807,13 +808,13 @@ def contar(ms):
     return c
 
 
-def mesclar(exist, regs):
+def mesclar(exist, regs, remover=()):
     """Mescla os registros coletados nos dados existentes. Ids em remocoes/.excluir saem. Devolve (pubs, modelos, descartados)."""
     pubs, desc = dict(exist["pubs"]), dict(exist["desc"])
     mods = collections.defaultdict(list)
     for m in exist["modelos"]:
         mods[m["publicador"].lower()].append(m)
-    for k in [k for k, p in pubs.items() if p["id"] in EXCLUIR] + [k for k, d in desc.items() if d["id"] in EXCLUIR]:
+    for k in [k for k, p in pubs.items() if p["id"] in EXCLUIR] + [k for k, d in desc.items() if d["id"] in EXCLUIR] + list(remover):
         pubs.pop(k, None), desc.pop(k, None), mods.pop(k, None)
     for r in regs:
         k = r["id"].lower()
@@ -973,7 +974,7 @@ def main():
 
     if a.dry_run:
         ncur = sum(1 for c, _ in alvos if c["curado"])
-        print(f"{modo} --dry-run (sem chamadas de rede, nada gravado)")
+        print(f"{modo} --dry-run --previa (uma consulta de lista por publicador; nada gravado)" if a.previa else f"{modo} --dry-run (sem chamadas de rede, nada gravado)")
         print(f"candidatos: {len(cands)} (curados: {sum(1 for c in cands.values() if c['curado'])}); a coletar: {len(alvos)}; em dia: {len(cands) - len(alvos)}")
         for c, s in sorted(alvos, key=lambda x: (x[1], x[0]["id"].lower())):
             e = c["curado"]
@@ -1025,8 +1026,14 @@ def main():
         log(f"interrompido: {len(regs)} publicador(es) ja estao em .cache/publicadores/; rode o mesmo comando para continuar")
         sys.exit(130)
 
+    remover = set()
+    if a.tudo:   # coleta completa: quem deixou de ser candidato (entidade arquivada ou apagada, saiu das listas) sai dos dados
+        descoberta_rodou = not a.sem_descoberta
+        for k, p in list(exist["pubs"].items()) + list(exist["desc"].items()):
+            if k not in cands and (descoberta_rodou or p.get("origem_lista", p.get("origem")) != "busca na API"):
+                remover.add(k)
     guardar_antes()
-    pubs, modelos, desc = mesclar(exist, regs)
+    pubs, modelos, desc = mesclar(exist, regs, remover)
     meta, pacote, foto = montar(pubs, modelos, desc)
     mudou = gravar(meta, pacote, foto)
     resumo = {k: foto[k] for k in ("brasil", "mundo", "publicadores", "candidatos") if k != "candidatos"}

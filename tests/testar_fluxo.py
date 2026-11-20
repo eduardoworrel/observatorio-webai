@@ -75,7 +75,7 @@ class Base(unittest.TestCase):
             "teste-br": {"nome": "Teste BR", "modelos": [modelo("teste-br", "alfa-1B"), modelo("teste-br", "beta-2B"), modelo("teste-br", "grande-30B", params=30_000_000_000),
                                                          modelo("teste-br", "imagem", tarefa="text-to-image"), modelo("teste-br", "lora", tags=["peft", "lora"])]},
             "teste-fora": {"nome": "Teste Fora", "modelos": [modelo("teste-fora", "m-1B")]},
-            "teste-nc": {"nome": "Teste NC", "modelos": [modelo("teste-nc", "x-1B")]},
+            "teste-nc": {"nome": "Teste NC", "modelos": [modelo("teste-nc", "x-1B-onnx", tags=["onnx"]), modelo("teste-nc", "y-1B")]},
             "teste-vazio": {"nome": "Teste Vazio", "modelos": [modelo("teste-vazio", "so-imagem", tarefa="image-classification")]},
             "teste-novo": {"nome": "Teste Novo", "modelos": [modelo("teste-novo", "n-1B")]},
         }
@@ -140,6 +140,7 @@ class TestCandidatosCurados(Base):
         self.assertEqual(pubs["teste-fora"]["escopo"], "mundo")
         self.assertEqual(pubs["teste-nc"]["escopo"], "mundo")   # nao classificado fica fora do escopo Brasil
         self.assertEqual(pubs["teste-nc"]["classe_pais"], "nao_classificado")
+        self.assertEqual([m["id"] for m in self.dados("modelos") if m["publicador"] == "teste-nc"], ["teste-nc/x-1B-onnx"], "nao classificado: so repositorios de formato de navegador")
         mods = [m["id"] for m in self.dados("modelos") if m["publicador"] == "teste-br"]
         self.assertEqual(mods, ["teste-br/alfa-1B", "teste-br/beta-2B"], "so linguagem, sem LoRA, ate 12 B")
         foto = json.load(open(os.path.join(self.raiz, "data", "foto.json")))
@@ -183,6 +184,18 @@ class TestIncremental(Base):
         self.assertIn("alterado", r.stdout)
         self.coletar("--novos")
         self.assertEqual(self.dados()[0]["natureza"], "empresa")
+
+    def test_tudo_remove_quem_deixou_de_ser_candidato(self):
+        self.por(entidade("22h", "teste-br"))
+        self.por(entidade("google", "teste-fora"))
+        self.coletar("--tudo")
+        self.assertEqual({p["id"] for p in self.dados()}, {"teste-br", "teste-fora"})
+        self.por(entidade("google", "teste-fora", status="arquivado"))
+        self.coletar("--novos")
+        self.assertIn("teste-fora", {p["id"] for p in self.dados()}, "--novos nao remove")
+        self.coletar("--tudo")
+        self.assertEqual({p["id"] for p in self.dados()}, {"teste-br"})
+        self.assertEqual({m["publicador"] for m in self.dados("modelos")}, {"teste-br"})
 
     def test_c_retomada_depois_de_interrupcao(self):
         for i in ("teste-br", "teste-fora", "teste-nc"):
