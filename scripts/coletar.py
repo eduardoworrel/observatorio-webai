@@ -425,10 +425,47 @@ def evidencias(pid, info, seed_ev, modelos_top):
 
 
 # ---------- coleta de modelos ----------
+# ---------- tarefa inferida (SPEC.md secao 9.3, item 1) ----------
+ARQ_CAUSAL = {"llama", "mistral", "mixtral", "gemma", "gemma2", "gemma3", "gemma3_text", "qwen", "qwen2", "qwen2_moe", "qwen3", "qwen3_moe", "phi", "phi3", "phimoe", "gpt2", "gpt_neo", "gpt_neox",
+              "gptj", "gpt_bigcode", "opt", "bloom", "falcon", "stablelm", "olmo", "olmo2", "smollm3", "granite", "granitemoe", "mamba", "mamba2", "deepseek_v2", "deepseek_v3", "cohere", "cohere2",
+              "starcoder2", "internlm2", "lfm2", "glm", "glm4", "baichuan", "yi", "mpt", "codegen", "xglm", "openelm", "nemotron", "exaone", "rwkv", "jamba", "persimmon", "bitnet", "ministral"}
+ARQ_SEQ2SEQ = {"t5", "mt5", "umt5", "longt5", "bart", "mbart", "pegasus", "led", "ul2", "flan-t5", "byt5", "m2m_100", "marian"}
+TAGS_CAUSAL = {"text-generation", "text-generation-inference", "conversational", "causal-lm"}
+TAGS_SEQ2SEQ = {"text2text-generation", "seq2seq"}
+NAO_LINGUAGEM_TAG = re.compile(r"^(sentence-transformers|feature-extraction|sentence-similarity|text-classification|token-classification|fill-mask|question-answering|"
+                               r"image-classification|object-detection|automatic-speech-recognition|text-to-image|open_clip|clip|bert|roberta|distilbert|electra|deberta|deberta-v2|xlm-roberta|albert|vit|whisper|wav2vec2)$")
+NAO_LINGUAGEM_NOME = re.compile(r"embed|rerank|reward|\bclip\b|classif|\bner\b|sentiment|bertimbau|\bbert\b|roberta|sbert|colbert|whisper|wav2vec|detect", re.I)
+
+
+def inferir_tarefa(x):
+    """Tarefa de modelo sem pipeline_tag, por regra e so com campos da listagem (tags, nome, safetensors/gguf). Devolve (tarefa, regra) ou None.
+    Exige tamanho conhecido; exclui adaptadores, embedding, classificacao, visao e audio puros."""
+    if x.get("pipeline_tag") or e_adaptador(x):
+        return None
+    tags = {t.lower() for t in x.get("tags", [])}
+    if not params_b(x):
+        return None   # sem safetensors.total nem gguf.total nao ha como confirmar que e um modelo de pesos de linguagem dentro do corte
+    if tags & {t for t in tags if NAO_LINGUAGEM_TAG.match(t)} or NAO_LINGUAGEM_NOME.search(x["id"].split("/")[-1]):
+        return None
+    if tags & TAGS_SEQ2SEQ:
+        return "text2text-generation", "tag de tarefa de texto para texto + pesos medidos"
+    if tags & ARQ_SEQ2SEQ:
+        return "text2text-generation", "arquitetura sequencia-para-sequencia (" + sorted(tags & ARQ_SEQ2SEQ)[0] + ") + pesos medidos"
+    if tags & TAGS_CAUSAL:
+        return "text-generation", "tag de geracao de texto + pesos medidos"
+    if tags & ARQ_CAUSAL:
+        return "text-generation", "arquitetura de linguagem causal (" + sorted(tags & ARQ_CAUSAL)[0] + ") + pesos medidos"
+    return None
+
+
 def modelos_do_publicador(pid):
     """Filtro de relevancia (SPEC.md secao 9): modelos de linguagem, sem adaptadores, ate MAX_B bilhoes de parametros.
     Repositorios que so mudam o formato de um modelo do mesmo publicador viram build dele (regra R), nao modelo novo."""
     todos = listar(max_paginas=10, author=pid, limit=100)
+    for x in todos:
+        r = inferir_tarefa(x)
+        if r:
+            x["pipeline_tag"], x["tarefa_inferida"], x["regra_tarefa"] = r[0], True, r[1]
     outra = [x for x in todos if x.get("pipeline_tag") not in TAREFAS]
     sem_tarefa = [x for x in outra if not x.get("pipeline_tag")]
     adapt = [x for x in todos if x.get("pipeline_tag") in TAREFAS and e_adaptador(x)]
@@ -455,6 +492,8 @@ def construir(x, pub, escopo, idx, puros_do_pub, ev_extra=None):
     m = {"id": rid, "nome": nome, "publicador": pub, "escopo": escopo, "familia": familia(rid, tags), "tarefa": x.get("pipeline_tag"), "licenca": licenca(tags),
          "parametros_b": params_b(x), "downloads": x.get("downloads"), "atualizado": (x.get("lastModified") or "")[:10], "idioma_pt": marca_pt(tags, rid),
          "url": f"https://huggingface.co/{rid}", "base": base_primaria(tags), "formatos_proprios": formatos(rid, tags), "builds": []}
+    if x.get("tarefa_inferida"):
+        m["tarefa_inferida"], m["regra_tarefa"] = True, x["regra_tarefa"]
     if ev_extra:
         m.update(ev_extra)
     vistos = set()

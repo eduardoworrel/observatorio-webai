@@ -237,6 +237,56 @@ class TestIncremental(Base):
         self.assertEqual(diff(), "")
 
 
+class TestInferenciaDeTarefa(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import coletar
+        cls.c = coletar
+
+    def inf(self, nome, tags, total=1_000_000_000, **extra):
+        x = {"id": "p/" + nome, "tags": tags, "safetensors": {"total": total} if total else None}
+        x.update(extra)
+        return self.c.inferir_tarefa(x)
+
+    def test_positivos(self):
+        self.assertEqual(self.inf("AMP_llama_2_compressao", ["safetensors", "llama"])[0], "text-generation")
+        self.assertEqual(self.inf("PrAACT-qwen-4b-it", ["safetensors", "qwen3"])[0], "text-generation")
+        self.assertEqual(self.inf("modelo", ["text-generation-inference"])[0], "text-generation")
+        self.assertEqual(self.inf("monoptt5", ["safetensors", "t5"])[0], "text2text-generation")
+        self.assertIn("llama", self.inf("x", ["llama"])[1])
+
+    def test_negativos(self):
+        self.assertIsNone(self.inf("Qwen3-Embedding-0.6B", ["safetensors", "qwen3"]), "embedding")
+        self.assertIsNone(self.inf("x-lora", ["peft", "llama"]), "adaptador")
+        self.assertIsNone(self.inf("x", ["bert", "pt"]), "encoder")
+        self.assertIsNone(self.inf("BERTimbau-NER", ["safetensors", "t5"]), "nome de classificador")
+        self.assertIsNone(self.inf("x", ["llama", "text-classification"]), "classificacao")
+        self.assertIsNone(self.inf("CAPIVARA", ["open_clip", "safetensors"]), "visao")
+        self.assertIsNone(self.inf("x", ["llama"], total=None), "sem tamanho conhecido")
+        self.assertIsNone(self.inf("x", ["llama"], pipeline_tag="text-classification"), "ja tem tarefa declarada")
+        self.assertIsNone(self.inf("x", ["region:us"]), "sem sinal")
+
+    def test_integrado_entra_marcado_e_respeita_corte(self):
+        c = self.c
+        base = dict(downloads=1, lastModified="2026-01-01T00:00:00.000Z")
+        ok = dict(id="p/AMP_llama", tags=["safetensors", "llama"], safetensors={"total": 4_000_000_000}, **base)
+        grande = dict(id="p/Grande-llama", tags=["safetensors", "llama"], safetensors={"total": 30_000_000_000}, **base)
+        emb = dict(id="p/Emb-embedding", tags=["safetensors", "qwen3"], safetensors={"total": 600_000_000}, **base)
+        antes = c.listar
+        c.listar = lambda **k: [ok, grande, emb]
+        try:
+            xs, _, fora = c.modelos_do_publicador("p")
+        finally:
+            c.listar = antes
+        self.assertEqual([x["id"] for x in xs], ["p/AMP_llama"])
+        self.assertEqual(fora, 1)
+        self.assertTrue(xs[0]["tarefa_inferida"])
+        m = c.construir(xs[0], "p", "br", {}, [])
+        self.assertTrue(m["tarefa_inferida"] and m["regra_tarefa"])
+        self.assertEqual(m["tarefa"], "text-generation")
+
+
 class TestRotulos(unittest.TestCase):
     def test_tipos_de_fonte_tem_rotulo_em_pt_e_en(self):
         app = open(os.path.join(REPO, "web", "app.js"), encoding="utf-8").read()
