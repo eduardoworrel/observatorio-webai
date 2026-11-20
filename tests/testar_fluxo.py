@@ -13,7 +13,7 @@ import http.server, json, os, shutil, signal, subprocess, sys, tempfile, threadi
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COLETAR = os.path.join(REPO, "scripts", "coletar.py")
 ENT = os.path.join(REPO, "data", "entidades", "publicador")
-GIT = ["git", "-c", "user.name=teste", "-c", "user.email=teste@example.invalid"]
+GIT = ["git", "-c", "user.name=teste", "-c", "user.email=teste"]
 
 
 def entidade(origem, novo_id, **mudancas):
