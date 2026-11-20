@@ -31,7 +31,10 @@
       m1_t: 'Status do build', m1_a: 'Nativo: arquivos em ONNX (Transformers.js), MLC (WebLLM) ou LiteRT, publicados pelo próprio publicador ou pela comunidade.', m1_b: 'GGUF via wllama: conta à parte, só se a menor variante Q4 tiver até 4 GB (limite do WebAssembly de 32 bits; arquivo de até 2 GB por parte).', m1_c: 'Existir não é rodar: o mapa não executa modelos.',
       m2_t: 'Modelo brasileiro', m2_a: 'Modelo criado por brasileiros (pessoa, grupo, empresa ou universidade do Brasil), inclusive ajuste fino sobre base estrangeira. Não é "em português feito por estrangeiros".', m2_b: 'Cada publicador só entra com evidência pública guardada com link e data: site .br no perfil, descrição do perfil, cartão do modelo ou página institucional. Sem evidência, fica fora do mapa.', m2_c: 'Classes: Brasil (evidência), Não classificado, Fora do Brasil.',
       m3_t: 'Independente, instituição, empresa', m3_a: 'Independente: pessoa ou grupo pequeno sem vínculo institucional declarado. Instituição: universidade ou instituto. Empresa: declarada no perfil ou em página institucional.', m3_b: 'A ausência de vínculo declarado não prova que não exista; a evidência fica registrada em cada publicador.', m3_c: 'Dados: API pública do Hugging Face, coletados por regra, sem modelo de linguagem decidindo.',
-      eyebrow_ds: 'Datasets em português e no mundo', eyebrow_bm: 'Benchmarks de avaliação', tabs_aria: 'Camadas', tab_modelos: 'Modelos', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
+      eyebrow_ds: 'Datasets em português e no mundo', eyebrow_bm: 'Benchmarks de avaliação', esc_br: 'Publicador no Brasil', esc_pt: 'Português (só pelo idioma)', esc_ptbr: 'Marcado pt-BR', link_artigo: 'Artigo', link_site: 'Site', link_leaderboard: 'Leaderboard', link_codigo: 'Código',
+      dom_geral: 'Geral', dom_vestibular_educacao: 'Vestibular e educação', dom_juridico: 'Jurídico', dom_saude: 'Saúde', dom_codigo: 'Código', dom_matematica: 'Matemática', dom_extracao_classificacao: 'Extração e classificação', dom_cultura_lingua: 'Cultura e língua', dom_outros: 'Outros',
+      tipo_conjunto: 'Conjunto de dados', tipo_avaliacao: 'Avaliação', tipo_leaderboard: 'Leaderboard',
+      tabs_aria: 'Camadas', tab_modelos: 'Modelos', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Quem publica dados, e em que idiomas', res_label_bm: 'Benchmarks', res_titulo_bm: 'Como os modelos são avaliados',
       campo_ds: 'datasets no mapa', campo_bm: 'benchmarks no mapa', recorte_ds: 'datasets no recorte', recorte_bm: 'benchmarks no recorte', datasets: 'datasets', benchmarks: 'benchmarks',
       sky_nota_ds: 'Posição é só organização por grupo; tamanho indica o tamanho do dataset (ou os downloads); brilho e cor indicam idioma e licença.', sky_nota_bm: 'Posição é só organização por domínio; tamanho indica o número de datasets; brilho e cor indicam o idioma. Linhas tênues ligam o benchmark aos seus datasets.',
@@ -70,7 +73,10 @@
       m1_t: 'Build status', m1_a: 'Native: files in ONNX (Transformers.js), MLC (WebLLM) or LiteRT, published by the publisher itself or by the community.', m1_b: 'GGUF via wllama: counted separately, only if the smallest Q4 variant is up to 4 GB (32-bit WebAssembly limit; up to 2 GB per file part).', m1_c: 'Existing is not running: this map does not execute models.',
       m2_t: 'Brazilian model', m2_a: 'A model created by Brazilians (a person, group, company or university in Brazil), including fine-tunes on foreign bases. It is not "Portuguese made by foreigners".', m2_b: 'Each publisher only enters with public evidence stored with a link and date: a .br site on the profile, the profile description, the model card or an institutional page. Without evidence, it stays off the map.', m2_c: 'Classes: Brazil (evidence), Not classified, Outside Brazil.',
       m3_t: 'Independent, institution, company', m3_a: 'Independent: a person or small group with no declared institutional tie. Institution: university or institute. Company: declared on the profile or an institutional page.', m3_b: 'No declared tie does not prove there is none; the evidence is stored on each publisher.', m3_c: 'Data: public Hugging Face API, collected by rule, with no language model deciding.',
-      eyebrow_ds: 'Datasets in Portuguese and worldwide', eyebrow_bm: 'Evaluation benchmarks', tabs_aria: 'Layers', tab_modelos: 'Models', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
+      eyebrow_ds: 'Datasets in Portuguese and worldwide', eyebrow_bm: 'Evaluation benchmarks', esc_br: 'Publisher in Brazil', esc_pt: 'Portuguese (by language only)', esc_ptbr: 'Marked pt-BR', link_artigo: 'Paper', link_site: 'Website', link_leaderboard: 'Leaderboard', link_codigo: 'Code',
+      dom_geral: 'General', dom_vestibular_educacao: 'Entrance exams and education', dom_juridico: 'Legal', dom_saude: 'Health', dom_codigo: 'Code', dom_matematica: 'Math', dom_extracao_classificacao: 'Extraction and classification', dom_cultura_lingua: 'Culture and language', dom_outros: 'Other',
+      tipo_conjunto: 'Dataset', tipo_avaliacao: 'Evaluation', tipo_leaderboard: 'Leaderboard',
+      tabs_aria: 'Layers', tab_modelos: 'Models', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Who publishes data, and in which languages', res_label_bm: 'Benchmarks', res_titulo_bm: 'How models are evaluated',
       campo_ds: 'datasets on the map', campo_bm: 'benchmarks on the map', recorte_ds: 'datasets in selection', recorte_bm: 'benchmarks in selection', datasets: 'datasets', benchmarks: 'benchmarks',
       sky_nota_ds: 'Position is only grouping; size shows the dataset size (or downloads); brightness and color show language and license.', sky_nota_bm: 'Position is only grouping by domain; size shows the number of datasets; brightness and color show the language. Faint lines link a benchmark to its datasets.',
@@ -119,16 +125,17 @@
   var licAberta = function (l) { return !!l && /^(cc0|cc-by|apache|mit|bsd|odc|odbl|pddl|unlicense|mpl|openrail|gpl|lgpl|agpl)/i.test(l) && !/-n[cd]\b/i.test(l); };
   var uniq = function (a) { var o = {}, r = []; a.forEach(function (x) { if (x && !o[x]) { o[x] = 1; r.push(x); } }); return r.sort(); };
   var fmtB = function (b) { if (b == null) return '—'; if (b >= 1e9) return nf(b / 1e9, 2) + ' GB'; if (b >= 1e6) return nf(b / 1e6, 1) + ' MB'; return nf(b / 1e3, 0) + ' kB'; };
-  var balde = function (b) { return b == null ? 'x' : b < 1e7 ? 'a' : b < 1e8 ? 'b' : b < 1e9 ? 'c' : b < 1e10 ? 'd' : 'e'; };
+  var balde = function (d) { return d.faixa || 'x'; };
   var inclui = function (q, partes) { q = q.trim().toLowerCase(); if (!q) return true; return partes.join(' ').toLowerCase().indexOf(q) >= 0; };
   function passaDataset(d) {
     var f = S.f.datasets;
-    if (f.escopo === 'br' && !(d.pt_br || d.escopo === 'br')) return false;
-    if (f.escopo === 'pt' && !(d.pt_br || d.idiomas.some(function (i) { return /^pt/i.test(i); }))) return false;
+    if (f.escopo === 'br' && d.escopo !== 'br') return false;
+    if (f.escopo === 'pt' && d.escopo !== 'pt') return false;
+    if (f.escopo === 'ptbr' && !d.pt_br) return false;
     if (f.idioma && d.idiomas.indexOf(f.idioma) < 0) return false;
     if (f.tarefa && d.tarefas.indexOf(f.tarefa) < 0) return false;
     if (f.licenca && (f.licenca === '__sem' ? !!d.licenca : d.licenca !== f.licenca)) return false;
-    if (f.tamanho && balde(d.tamanho_bytes) !== f.tamanho) return false;
+    if (f.tamanho && balde(d) !== f.tamanho) return false;
     if (f.publicador && d.publicador !== f.publicador) return false;
     if (f.bench === 'sim' && !d.benchmarks.length) return false;
     if (f.bench === 'nao' && d.benchmarks.length) return false;
@@ -164,6 +171,8 @@
   }
   D.modelos.forEach(function (m) { m.fmts = formatosDe(m); m.nfmt = m.fmts.length; });
   CC.datasets.forEach(function (d) { d.nfmt = 1; }); CC.benchmarks.forEach(function (b) { b.nfmt = 1; });
+  var rotDom = function (x) { var v = T[S.lang]['dom_' + x]; return v || String(x).replace(/_/g, ' '); };
+  var rotTipo = function (x) { var v = T[S.lang]['tipo_' + x]; return v || String(x).replace(/_/g, ' '); };
   var CAM = null;
   var ORD = { oficial: 0, comunidade: 1, gguf: 2, nenhum: 3 };
   var CAMS = {
@@ -193,12 +202,12 @@
       id: 'benchmarks', por: bmBy, itens: function () { return CC.benchmarks; }, passa: passaBench, cls: clsBench, campo: 'campo_bm', eb: 'eyebrow_bm', recorte: 'recorte_bm', nota: 'sky_nota_bm', rot: 'res_label_bm', tit: 'res_titulo_bm', plural: 'benchmarks',
       modos: [['dominio', 'por_dominio'], ['criador', 'por_criador']], modo: function () { return S.modoL.benchmarks; },
       base: function () { return CC.benchmarks; },
-      grupo: function (b) { return S.modoL.benchmarks === 'dominio' ? { k: b.dominio[0] || '—', nome: b.dominio[0] || '—', pub: null } : { k: b.criador || '—', nome: b.criador || '—', pub: null }; },
+      grupo: function (b) { return S.modoL.benchmarks === 'dominio' ? { k: b.dominio[0] || '—', nome: b.dominio[0] ? rotDom(b.dominio[0]) : '—', pub: null } : { k: b.criador || '—', nome: b.criador || '—', pub: null }; },
       fam: function (b) { return b.dominio[0] || ''; },
       ord: function (a, b) { return (a.ano || 0) - (b.ano || 0) || (a.nome < b.nome ? -1 : 1); },
       tam: function (b) { return 1.8 + Math.min(2.6, 1.0 * Math.log2(1 + b.datasets.length)); },
       legenda: [['oficial', 'leg_bm_of', 'of'], ['comunidade', 'leg_bm_co', 'co'], ['gguf', 'leg_bm_gg', 'gg'], ['nenhum', 'leg_bm_no', 'no']],
-      tip: function (b) { return '<b>' + esc(b.sigla ? b.sigla + ' · ' + b.nome : b.nome) + '</b><br>' + esc(b.dominio.join(', ') || '—') + ' · ' + b.datasets.length + ' datasets'; }
+      tip: function (b) { return '<b>' + esc(b.sigla ? b.sigla + ' · ' + b.nome : b.nome) + '</b><br>' + esc(b.dominio.map(rotDom).join(', ') || '—') + ' · ' + b.datasets.length + ' datasets'; }
     }
   };
 
@@ -226,9 +235,9 @@
   ];
   CAMS.benchmarks.cols = [
     { k: 'nome', rot: 'c_benchmark', val: function (b) { return (b.sigla || b.nome).toLowerCase(); }, td: function (b) { return '<td><span class="mname">' + esc(b.sigla || b.nome) + '</span>' + (b.sigla ? '<small>' + esc(b.nome) + '</small>' : '') + '</td>'; }, txt: function (b) { return b.sigla ? b.sigla + ' (' + b.nome + ')' : b.nome; } },
-    { k: 'dominio', rot: 'c_dominio', val: function (b) { return b.dominio.join(','); }, td: function (b) { return '<td><small>' + esc(b.dominio.join(', ') || '—') + '</small></td>'; }, txt: function (b) { return b.dominio.join(', ') || '—'; } },
+    { k: 'dominio', rot: 'c_dominio', val: function (b) { return b.dominio.join(','); }, td: function (b) { return '<td><small>' + esc(b.dominio.map(rotDom).join(', ') || '—') + '</small></td>'; }, txt: function (b) { return b.dominio.map(rotDom).join(', ') || '—'; } },
     { k: 'idiomas', rot: 'c_idiomas', val: function (b) { return b.idiomas.join(','); }, td: function (b) { return '<td><small>' + esc(b.idiomas.join(', ') || '—') + '</small></td>'; }, txt: function (b) { return b.idiomas.join(', ') || '—'; } },
-    { k: 'tipo', rot: 'c_tipo', val: function (b) { return b.tipo; }, td: function (b) { return '<td><small>' + esc(b.tipo || '—') + '</small></td>'; }, txt: function (b) { return b.tipo || '—'; } },
+    { k: 'tipo', rot: 'c_tipo', val: function (b) { return b.tipo; }, td: function (b) { return '<td><small>' + esc(b.tipo ? rotTipo(b.tipo) : '—') + '</small></td>'; }, txt: function (b) { return b.tipo ? rotTipo(b.tipo) : '—'; } },
     { k: 'tarefas', rot: 'c_tarefas', val: function (b) { return b.tarefas.join(','); }, td: function (b) { return '<td><small>' + esc(b.tarefas.join(', ') || '—') + '</small></td>'; }, txt: function (b) { return b.tarefas.join(', ') || '—'; } },
     { k: 'nd', rot: 'c_ndatasets', val: function (b) { return b.datasets.length; }, td: function (b) { return '<td><span class="num">' + b.datasets.length + '</span></td>'; }, txt: function (b) { return String(b.datasets.length); } },
     { k: 'ano', rot: 'c_ano', val: function (b) { return b.ano; }, td: function (b) { return '<td><small>' + esc(b.ano == null ? '—' : b.ano) + '</small></td>'; }, txt: function (b) { return b.ano == null ? '—' : String(b.ano); } },
@@ -279,9 +288,13 @@
       b.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural));
       host.appendChild(b); g.el = b; g.nome_el = b.firstChild; grupoPorId[g.id] = g;
     });
-    montarGrade(); medirRotulos(); filtroSuja = true; assinatura = null; estSuja = true; snap = null;
+    stage.classList.toggle('grande', G.length > 120); montarGrade(); medirRotulos(); filtroSuja = true; assinatura = null; estSuja = true; snap = null;
   }
-  function medirRotulos() { G.forEach(function (g) { g.lw = g.nome_el.offsetWidth; g.lh = g.nome_el.offsetHeight; g.lx = g.ly = g.trAnt = null; g.hasAnt = undefined; g.insideAnt = undefined; }); }
+  function medirRotulos() {
+    stage.classList.remove('grande');   // sem display:none, para medir todos
+    G.forEach(function (g) { g.lw = g.nome_el.offsetWidth; g.lh = g.nome_el.offsetHeight; g.lx = g.ly = g.trAnt = null; g.hasAnt = undefined; g.insideAnt = undefined; });
+    stage.classList.toggle('grande', G.length > 120);
+  }
 
   // ---------- camera e pintura ----------
   // Tecnicas de desempenho (nenhum elemento e removido; so muda como e desenhado):
@@ -459,17 +472,17 @@
 
   var lastCampo = '', lastZoom = '';
   function atualizarCamera() {
-    var sig = projetar(), sc = scale();
+    var sig = projetar(), sc = scale(), grande = G.length > 120;   // camadas com muitos grupos: so os rotulos visiveis existem no DOM
     G.forEach(function (g) {
       var px = W / 2 + (g.u - 0.5 + S.panX) * sc, py = H / 2 + (g.v - 0.5 + S.panY) * sc, ext = g.R * g.k * sc * 0.5, top = py + Math.max(0, ext - 14);
       var inside = px >= 6 && px <= W - 6 && py >= 6 && py <= H - 6, el = g.el;
       g.px = px; g.py = top; g.inside = inside;
-      if (inside !== g.insideAnt) { g.insideAnt = inside; el.classList.toggle('out-of-field', !inside); el.setAttribute('aria-hidden', String(!inside)); el.tabIndex = inside ? 0 : -1; }
+      if (!grande && inside !== g.insideAnt) { g.insideAnt = inside; el.classList.toggle('out-of-field', !inside); el.setAttribute('aria-hidden', String(!inside)); el.tabIndex = inside ? 0 : -1; }
     });
-    var placed = [];   // rotulos sem colisao, dos maiores para os menores (tamanhos medidos uma vez)
+    var placed = [];   // rotulos sem colisao, dos maiores para os menores (tamanhos medidos uma vez); em camadas grandes, no maximo 90
     G.forEach(function (g) {
       var has = false, el = g.el;
-      if (g.inside) {
+      if (g.inside && (!grande || placed.length < 90)) {
         var w = g.lw, h = g.lh, x = g.px, y = g.py, ch = [[-w / 2, 12], [-w / 2, -h - 12], [14, -h / 2], [-w - 14, -h / 2]], ok = null;
         for (var i = 0; i < ch.length && !ok; i++) {
           var bx = x + ch[i][0], by = y + ch[i][1];
@@ -478,9 +491,11 @@
         }
         if (ok) { has = true; placed.push(ok[1]); var lx = (15 + ok[0][0]) + 'px', ly = (15 + ok[0][1]) + 'px'; if (g.lx !== lx) g.nome_el.style.left = g.lx = lx; if (g.ly !== ly) g.nome_el.style.top = g.ly = ly; }
       }
-      if (has !== g.hasAnt) { g.hasAnt = has; el.classList.toggle('has-label', has); }
-      var tr = 'translate(' + g.px + 'px,' + g.py + 'px) translate(-50%,-50%)';
-      if (tr !== g.trAnt) { g.trAnt = tr; el.style.transform = tr; }
+      if (has !== g.hasAnt) {
+        g.hasAnt = has; el.classList.toggle('has-label', has);
+        if (grande) { el.classList.toggle('nolabel', !has); el.tabIndex = has ? 0 : -1; el.setAttribute('aria-hidden', String(!has)); }
+      }
+      if (!grande || has) { var tr = 'translate(' + g.px + 'px,' + g.py + 'px) translate(-50%,-50%)'; if (tr !== g.trAnt) { g.trAnt = tr; el.style.transform = tr; } }
     });
     if (sig !== assinatura) {
       assinatura = sig; clearTimeout(tabelaT);
@@ -675,11 +690,12 @@
       '<h3>' + t('fontes') + '</h3><ul>' + srcs.map(li).join('') + '</ul>';
   }
   function drawerBench(b) {
-    var cls = clsBench(b), ds = b.datasets.map(function (id) { return dsBy[id]; }).filter(Boolean), links = Object.keys(b.links).filter(function (k) { return seguro(b.links[k]); }).map(function (k) { return { rotulo: k, url: b.links[k], acessado: D.meta.coletado_em }; });
+    var cls = clsBench(b), ds = b.datasets.map(function (id) { return dsBy[id]; }).filter(Boolean), links = (b.fontes || []).filter(function (f) { return seguro(f.url); }).map(function (f) { return { rotulo: tipoFonte(f.tipo), url: f.url, acessado: f.acessado || D.meta.coletado_em, trecho: f.trecho }; });
+    Object.keys(b.links).forEach(function (k) { if (seguro(b.links[k]) && !links.some(function (l) { return l.url === b.links[k]; })) links.push({ rotulo: t('link_' + k), url: b.links[k], acessado: D.meta.coletado_em }); });
     var desc = (b.descricao && (b.descricao[S.lang] || b.descricao.pt || b.descricao.en)) || '';
     return '<span class="dr-label">' + t('benchmark') + '</span><h2 id="drawer-titulo">' + esc(b.sigla ? b.sigla + ' · ' + b.nome : b.nome) + '</h2><p class="dr-sub">' + esc(b.criador || '—') + (b.ano ? ' · ' + b.ano : '') + '</p>' +
       '<p><span class="badge ' + cls + '">' + t('leg_bm_' + ({ oficial: 'of', comunidade: 'co', gguf: 'gg', nenhum: 'no' })[cls]) + '</span></p>' + (desc ? '<p>' + esc(desc) + '</p>' : '') +
-      '<dl class="dr-grid"><dt>' + t('c_dominio') + '</dt><dd>' + esc(b.dominio.join(', ') || '—') + '</dd><dt>' + t('c_idiomas') + '</dt><dd>' + esc(b.idiomas.join(', ') || '—') + '</dd><dt>' + t('c_tipo') + '</dt><dd>' + esc(b.tipo || '—') + '</dd>' +
+      '<dl class="dr-grid"><dt>' + t('c_dominio') + '</dt><dd>' + esc(b.dominio.join(', ') || '—') + '</dd><dt>' + t('c_idiomas') + '</dt><dd>' + esc(b.idiomas.join(', ') || '—') + '</dd><dt>' + t('c_tipo') + '</dt><dd>' + esc(b.tipo ? rotTipo(b.tipo) : '—') + '</dd>' +
       '<dt>' + t('c_tarefas') + '</dt><dd>' + esc(b.tarefas.join(', ') || '—') + '</dd><dt>' + t('c_ndatasets') + '</dt><dd>' + b.datasets.length + '</dd></dl>' +
       (ds.length ? '<h3>' + t('tab_datasets') + ' (' + ds.length + ')</h3><ul class="dr-lista">' + ds.map(function (d) { return linhaIr('datasets', d.id, d.nome); }).join('') + '</ul>' : '') +
       '<h3>' + t('fontes') + '</h3><ul>' + links.map(li).join('') + '</ul>';
@@ -815,7 +831,7 @@
   }
   function tudo() { textos(); renderFoto(); montar(); G.forEach(function (g) { g.el.firstChild.textContent = g.nome + ' · ' + g.ms.length; g.el.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural)); }); renderLegenda(); assinatura = null; if (S.sel) renderDrawer(); resize(); }
 
-  document.querySelectorAll('[data-lang]').forEach(function (b) { b.onclick = function () { S.lang = b.dataset.lang; try { localStorage.setItem('observatorio-lang', S.lang); } catch (e) {} textos(); renderFoto(); assinatura = null; if (S.sel) renderDrawer(); medirRotulos(); posicionar(); }; });
+  document.querySelectorAll('[data-lang]').forEach(function (b) { b.onclick = function () { S.lang = b.dataset.lang; try { localStorage.setItem('observatorio-lang', S.lang); } catch (e) {} textos(); renderFoto(); assinatura = null; if (S.sel) renderDrawer(); if (S.tab === 'benchmarks') tudo(); else { medirRotulos(); posicionar(); } }; });
   document.querySelectorAll('[data-escopo]').forEach(function (b) { b.onclick = function () { S.escopo = b.dataset.escopo; fecharDrawer(); S.zoom = 1; S.panX = 0; S.panY = 0; tudo(); salvaUrl(); }; });
   $('#f-agrupar').addEventListener('click', function (e) {
     var b = e.target.closest('[data-modo]'); if (!b) return;
@@ -836,10 +852,10 @@
   // ---------- exportar (grafico e tabela), tudo no navegador ----------
   var EX = window.MAPA_EXPORT, hoje = function () { return new Date().toISOString().slice(0, 10); };
   var ROT_F = { escopo: 'f_escopo', idioma: 'c_idiomas', tarefa: 'c_tarefas', licenca: 'c_lic', tamanho: 'c_tamanho', publicador: 'c_pub', bench: 'c_benchmarks', dominio: 'c_dominio', tipo: 'c_tipo', q: 'buscar' };
-  var TAM_ROT = { a: '< 10 MB', b: '10 – 100 MB', c: '100 MB – 1 GB', d: '1 – 10 GB', e: '> 10 GB', x: null };
+  var TAM_ROT = { '<1MB': '< 1 MB', '1-100MB': '1 – 100 MB', '100MB-1GB': '100 MB – 1 GB', '1-10GB': '1 – 10 GB', '>10GB': '> 10 GB', x: null };
   function valorFiltro(k, v) {
-    if (k === 'publicador') return pubNome(v); if (k === 'licenca' && v === '__sem') return t('sem_licenca'); if (k === 'escopo') return t(v === 'br' ? 'br' : 'so_pt');
-    if (k === 'bench') return t(v === 'sim' ? 'com_bench' : 'sem_bench'); if (k === 'tamanho') return TAM_ROT[v] || t('desconhecido'); return v;
+    if (k === 'publicador') return pubNome(v); if (k === 'licenca' && v === '__sem') return t('sem_licenca'); if (k === 'escopo') return t('esc_' + v);
+    if (k === 'dominio') return rotDom(v); if (k === 'tipo') return rotTipo(v); if (k === 'bench') return t(v === 'sim' ? 'com_bench' : 'sem_bench'); if (k === 'tamanho') return TAM_ROT[v] || t('desconhecido'); return v;
   }
   function filtrosAtivos() {
     var l = [];
@@ -901,24 +917,24 @@
     });
   }
   // menu de exportar: um botao por bloco, popover com itens (padrao dos menus do mapa State of the Art)
-  var menuEl = null, menuBtn = null;
+  var menuEl = null, menuBtn = null, menuY = 0;
   function fecharMenu(foco) { if (!menuEl) return; menuEl.remove(); menuEl = null; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); if (foco) menuBtn.focus(); } menuBtn = null; }
   function abrirMenu(btn, itens) {
     if (menuEl && menuBtn === btn) return fecharMenu(true);
     fecharMenu(); var m = document.createElement('div'); m.className = 'pop'; m.setAttribute('role', 'menu'); m.setAttribute('aria-label', btn.textContent);
     itens.forEach(function (it) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'menuitem'); b.tabIndex = -1; b.textContent = t(it[0]); b.addEventListener('click', function () { fecharMenu(true); it[1](); }); m.appendChild(b); });
     document.body.appendChild(m); var r = btn.getBoundingClientRect();
-    m.style.top = (r.bottom + 4) + 'px'; m.style.left = Math.max(8, Math.min(innerWidth - m.offsetWidth - 8, r.right - m.offsetWidth)) + 'px';
-    btn.setAttribute('aria-expanded', 'true'); menuEl = m; menuBtn = btn; m.firstChild.focus();
+    m.style.top = (r.bottom + 4 + m.offsetHeight > innerHeight - 8 ? Math.max(8, r.top - m.offsetHeight - 4) : r.bottom + 4) + 'px'; m.style.left = Math.max(8, Math.min(innerWidth - m.offsetWidth - 8, r.right - m.offsetWidth)) + 'px';
+    btn.setAttribute('aria-expanded', 'true'); menuEl = m; menuBtn = btn; menuY = scrollY; m.firstChild.focus({ preventScroll: true });
   }
   document.addEventListener('keydown', function (e) {
     if (!menuEl) return; var its = [].slice.call(menuEl.querySelectorAll('[role=menuitem]')), i = its.indexOf(document.activeElement);
     if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); fecharMenu(true); }
-    else if (e.key === 'ArrowDown') { e.preventDefault(); its[(i + 1) % its.length].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); its[(i - 1 + its.length) % its.length].focus(); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); its[(i + 1) % its.length].focus({ preventScroll: true }); } else if (e.key === 'ArrowUp') { e.preventDefault(); its[(i - 1 + its.length) % its.length].focus({ preventScroll: true }); }
     else if (e.key === 'Home') { e.preventDefault(); its[0].focus(); } else if (e.key === 'End') { e.preventDefault(); its[its.length - 1].focus(); } else if (e.key === 'Tab') fecharMenu(false);
   }, true);
   document.addEventListener('click', function (e) { if (menuEl && !menuEl.contains(e.target) && e.target !== menuBtn) fecharMenu(false); });
-  addEventListener('scroll', function (e) { if (menuEl && (e.target === document || e.target === document.documentElement)) fecharMenu(false); }, true);
+  addEventListener('scroll', function (e) { if (menuEl && (e.target === document || e.target === document.documentElement) && Math.abs(scrollY - menuY) > 30) fecharMenu(false); }, true);
   var itensExp = function (f) { return [['exp_png', function () { f('png'); }], ['exp_svg', function () { f('svg'); }], ['exp_html', function () { f('html'); }]]; };
   $('#exp-grafico').addEventListener('click', function (e) { abrirMenu(e.currentTarget, itensExp(exportarGrafico)); });
   $('#exp-tabela').addEventListener('click', function (e) { abrirMenu(e.currentTarget, itensExp(exportarTabela)); });
@@ -942,15 +958,15 @@
     if (fm) fm.value = S.fmt;
     if (TEM.datasets) {
       $('#filtros-datasets').innerHTML =
-        selHtml('datasets', 'escopo', 'f_escopo', [['br', t('br')], ['pt', t('so_pt')]]) + selHtml('datasets', 'idioma', 'c_idiomas', paraOps(uniq(plano(CC.datasets.map(function (d) { return d.idiomas; }))))) +
+        selHtml('datasets', 'escopo', 'f_escopo', [['br', t('esc_br')], ['pt', t('esc_pt')], ['ptbr', t('esc_ptbr')]]) + selHtml('datasets', 'idioma', 'c_idiomas', paraOps(uniq(plano(CC.datasets.map(function (d) { return d.idiomas; }))))) +
         selHtml('datasets', 'tarefa', 'c_tarefas', paraOps(uniq(plano(CC.datasets.map(function (d) { return d.tarefas; }))))) + selHtml('datasets', 'licenca', 'c_lic', paraOps(uniq(CC.datasets.map(function (d) { return d.licenca; }))).concat([['__sem', t('sem_licenca')]])) +
-        selHtml('datasets', 'tamanho', 'c_tamanho', [['a', '< 10 MB'], ['b', '10 – 100 MB'], ['c', '100 MB – 1 GB'], ['d', '1 – 10 GB'], ['e', '> 10 GB'], ['x', t('desconhecido')]]) +
+        selHtml('datasets', 'tamanho', 'c_tamanho', [['<1MB', '< 1 MB'], ['1-100MB', '1 – 100 MB'], ['100MB-1GB', '100 MB – 1 GB'], ['1-10GB', '1 – 10 GB'], ['>10GB', '> 10 GB'], ['x', t('desconhecido')]]) +
         selHtml('datasets', 'publicador', 'c_pub', uniq(CC.datasets.map(function (d) { return d.publicador; })).map(function (p) { return [p, pubNome(p)]; })) + selHtml('datasets', 'bench', 'c_benchmarks', [['sim', t('com_bench')], ['nao', t('sem_bench')]]) + buscaHtml('datasets');
     }
     if (TEM.benchmarks) {
       $('#filtros-benchmarks').innerHTML =
-        selHtml('benchmarks', 'dominio', 'c_dominio', paraOps(uniq(plano(CC.benchmarks.map(function (b) { return b.dominio; }))))) + selHtml('benchmarks', 'idioma', 'c_idiomas', paraOps(uniq(plano(CC.benchmarks.map(function (b) { return b.idiomas; }))))) +
-        selHtml('benchmarks', 'tipo', 'c_tipo', paraOps(uniq(CC.benchmarks.map(function (b) { return b.tipo; })))) + selHtml('benchmarks', 'tarefa', 'c_tarefas', paraOps(uniq(plano(CC.benchmarks.map(function (b) { return b.tarefas; }))))) + buscaHtml('benchmarks');
+        selHtml('benchmarks', 'dominio', 'c_dominio', uniq(plano(CC.benchmarks.map(function (b) { return b.dominio; }))).map(function (x) { return [x, rotDom(x)]; })) + selHtml('benchmarks', 'idioma', 'c_idiomas', paraOps(uniq(plano(CC.benchmarks.map(function (b) { return b.idiomas; }))))) +
+        selHtml('benchmarks', 'tipo', 'c_tipo', uniq(CC.benchmarks.map(function (b) { return b.tipo; })).map(function (x) { return [x, rotTipo(x)]; })) + selHtml('benchmarks', 'tarefa', 'c_tarefas', paraOps(uniq(plano(CC.benchmarks.map(function (b) { return b.tarefas; }))))) + buscaHtml('benchmarks');
     }
   }
   ['#filtros-datasets', '#filtros-benchmarks'].forEach(function (id) {

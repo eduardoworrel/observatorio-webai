@@ -54,6 +54,10 @@ Python 3.9+, standard library only. The validator prints `file:line:column: ERRO
 2. **Human:** the maintainer opens the sources and checks they say what the file claims, whether the person should be listed at all (SPEC section 7) and whether the wording is neutral. Target: a reply within 14 days; it can take longer, this is volunteer work.
 3. A person merges. The site updates on the next publish.
 
+## Changing the interface
+
+The interface is plain HTML, CSS and JavaScript in `web/` (no build step). Before opening a PR, run `node scripts/testar-camadas.mjs` (tabs, filters and exports, with the example data of `?fixture=1`) and `node scripts/perf.mjs` (frame cost with 500 to 4,000 nodes; the map must stay under 3 ms per frame at p95). Both need `playwright-core` and Chrome (`PLAYWRIGHT_CORE` and `CHROME` set the paths). The adapter for the datasets and benchmarks contract is `web/camadas.js`; the exports are in `web/exportar.js`. Do not add libraries or external requests: the page and the exported files must work offline.
+
 ## Examples
 
 Accepted: `data/exemplos/` (marked `"exemplo": true`; they never enter the official data). Rejected, with the reason: `data/exemplos/rejeitados/` and [docs/EXEMPLOS_CONTRIBUICAO.md](docs/EXEMPLOS_CONTRIBUICAO.md).

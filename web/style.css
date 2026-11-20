@@ -260,3 +260,5 @@ main{max-width:1500px;margin:auto;padding:0 32px 35px;min-height:70vh}
 @media(max-width:760px){.tabs button{padding:9px 10px}#tb[data-camada=datasets]{min-width:900px}}
 
 td.nw{white-space:nowrap}
+
+.model-sky.grande .sky-model.nolabel{display:none}

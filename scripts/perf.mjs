@@ -17,6 +17,7 @@ const NS = arg('n', '500,1000,2000,4000').split(',').map(Number);
 const DPR = Number(arg('dpr', '2'));
 const VW = Number(arg('vw', '1440')), VH = Number(arg('vh', '900'));
 const ROTULO = arg('rotulo', 'medida');
+const ABA = arg('aba', '');   // datasets ou benchmarks: troca de aba antes de medir (dados reais da aba, sem sinteticos)
 const SAIDA = arg('saida', path.join(raiz, 'ref', `perf-${ROTULO}.json`));
 const CHROME = process.env.CHROME || undefined;
 const URL_PAGINA = pathToFileURL(path.resolve(arg('web', path.join(raiz, 'web')), 'index.html')).href;
@@ -68,6 +69,7 @@ async function cenario(browser, N) {
   await page.waitForTimeout(600);
   r.carga = await page.evaluate(() => ({ pronto_ms: Math.round(performance.now()), tarefas_longas: window.__p.long.filter(d => d > 50).length, maior_tarefa_ms: Math.round(Math.max(0, ...window.__p.long)), soma_tarefas_longas_ms: Math.round(window.__p.long.reduce((a, b) => a + b, 0)) }));
   r.carga.parede_ms = Date.now() - t0;
+  if (ABA) { await page.evaluate(h => { location.hash = h; }, '#' + ABA); await page.waitForTimeout(1500); await page.waitForFunction(() => window.__obs.stats.estrelas > 0); }
   const m0 = await metricas(cdp);
   r.memoria = { heap_mb: +(m0.JSHeapUsedSize / 1048576).toFixed(1), nos_dom: m0.Nodes };
   r.modelos = await page.evaluate(() => window.__obs.modelos);

@@ -15,6 +15,16 @@ python3 scripts/verificar.py && python3 scripts/validar.py
 open web/index.html
 ```
 
+## Como usar a interface
+
+- **Abas Modelos, Datasets e Benchmarks:** trocam o que se vê no mesmo layout (a constelação à esquerda e a tabela à direita). A escolha vai para o endereço (`#datasets`, `#benchmarks`) e as setas do teclado trocam de aba. Sem dados de datasets e benchmarks, só a aba Modelos aparece.
+- **Constelação:** cada estrela é um item e cada grupo é um publicador (ou família, tema, domínio ou criador). Arraste e aproxime com o mouse, o trackpad ou os botões; os filtros esmaecem na constelação o que não passa e tiram da tabela. Em Modelos, **mais de um formato de build para o navegador** (entre ONNX, MLC, LiteRT e GGUF via wllama) dá mais brilho e anéis: 2 formatos, um anel; 3 ou mais, dois anéis com pulso lento (parado com movimento reduzido). 0 formatos é um ponto apagado.
+- **Tabela e painel:** clique em uma estrela, um grupo ou uma linha para abrir o painel com os detalhes e as fontes (em Modelos, os builds por formato, com origem, publicador do build, tamanho e link). A coluna Builds mostra os formatos e a contagem, e o filtro "Mais de um formato" mostra só esses modelos.
+- **Filtros por aba, contador e Limpar filtros:** Modelos (escopo, build, natureza do publicador, formatos); Datasets (escopo, idioma, tarefa, licença, tamanho, publicador, com benchmark); Benchmarks (domínio, idioma, tipo, tarefa).
+- **Exportar (um botão por bloco, no gráfico e na tabela):** imagem PNG, imagem SVG e HTML autocontido, sempre do que está na aba atual com os filtros aplicados. A imagem traz legenda, filtros ativos, data, fonte, crédito e a licença CC BY 4.0; o HTML abre fora do site, sem dependências, com lista alternativa (gráfico) ou tabela ordenável (tabela). Tudo é gerado no navegador e nada é enviado. Tabelas longas saem em várias imagens de até 100 linhas.
+
+Testes da interface (Chrome com `playwright-core`): `node scripts/testar-camadas.mjs` (abas, filtros e exportações) e `node scripts/perf.mjs` (desempenho, 500 a 4.000 nós; `--aba datasets` para a aba de datasets). Com `?fixture=1` a página usa dados de exemplo (`web/fixtures/camadas.js`).
+
 ## Contribuir
 
 Você pode acrescentar ou corrigir **publicadores, laboratórios, pesquisadores, famílias e benchmarks em português ou do Brasil**, sempre com pelo menos uma fonte pública (tipo, URL, data de acesso). Passo a passo, inclusive para quem nunca usou Git: [CONTRIBUTING.pt.md](CONTRIBUTING.pt.md) ([English](CONTRIBUTING.md)).
