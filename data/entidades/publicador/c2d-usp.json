@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "c2d-usp",
+  "nome": "Centro de Ciência de Dados",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "Centro de Ciência de Dados university https://c2d.poli.usp.br/"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "O Centro de Ciência de Dados (C2D) foi criado a partir do interesse comum da Escola Politécnica da Universidade de São Paulo e do Banco Itaú-Unibanco"
+  },
+  "links": {
+    "hf": "https://huggingface.co/c2d-usp",
+    "oficial": "https://c2d.poli.usp.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/c2d-usp",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}
