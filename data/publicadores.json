@@ -6,152 +6,6 @@
  },
  "publicadores": [
   {
-   "id": "maritaca-ai",
-   "nome": "Maritaca AI",
-   "tipo": "grupo",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "institucional",
-    "url": "https://www.maritaca.ai/",
-    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
-    "acessado": "2026-11-20",
-    "regra": "seed verificado: pagina respondeu e o padrao apareceu"
-   },
-   "natureza": "empresa",
-   "evidencia_natureza": {
-    "tipo": "institucional",
-    "url": "https://www.maritaca.ai/",
-    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
-    "acessado": "2026-11-20",
-    "regra": "seed verificado: pagina respondeu e o padrao apareceu",
-    "classe": "empresa"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 6,
-   "n_membros": 9,
-   "url": "https://huggingface.co/maritaca-ai",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/maritaca-ai",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 3
-  },
-  {
-   "id": "recogna-nlp",
-   "nome": "Recogna NLP",
-   "tipo": "grupo",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "cartao",
-    "url": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br",
-    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do supercomputador SDumont.",
-    "acessado": "2026-11-20",
-    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
-    "revisar": true
-   },
-   "natureza": "instituicao",
-   "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/recogna-nlp",
-    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do superc",
-    "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 45,
-   "n_membros": 18,
-   "url": "https://huggingface.co/recogna-nlp",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 3,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/recogna-nlp",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 10
-  },
-  {
-   "id": "CEIA-UFG",
-   "nome": "Centro de Excelência em IA",
-   "tipo": "grupo",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "cartao",
-    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)*",
-    "acessado": "2026-11-20",
-    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
-    "revisar": true
-   },
-   "natureza": "instituicao",
-   "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/CEIA-UFG",
-    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excell",
-    "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 1,
-   "n_membros": 10,
-   "url": "https://huggingface.co/CEIA-UFG",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/CEIA-UFG",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 1
-  },
-  {
-   "id": "AIInstituteLNCC",
-   "nome": "AI Institute of LNCC",
-   "tipo": "grupo",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/fportoDexl",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Petropolis, Rio de Janeiro, Brazil",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "instituicao",
-   "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/AIInstituteLNCC",
-    "trecho": "LNCC",
-    "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 3,
-   "n_membros": 2,
-   "url": "https://huggingface.co/AIInstituteLNCC",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/AIInstituteLNCC",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 3
-  },
-  {
    "id": "22h",
    "nome": "22 hours",
    "tipo": "grupo",
@@ -179,294 +33,6 @@
     }
    ],
    "n_modelos_mapeados": 2
-  },
-  {
-   "id": "rhaymison",
-   "nome": "Rhaymison Cristian",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/rhaymisonbetini",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brasil",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/rhaymison",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 27,
-   "n_membros": null,
-   "url": "https://huggingface.co/rhaymison",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 3,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/rhaymison",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 13
-  },
-  {
-   "id": "dominguesm",
-   "nome": "Maicon Domingues",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/DominguesM",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brazil",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "instituicao",
-   "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/dominguesm",
-    "trecho": "`Canarim-7B-VestibulAide` is a \"decoder-only\" model with 7 billion parameters, designed specifically for handling questi",
-    "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 21,
-   "n_membros": null,
-   "url": "https://huggingface.co/dominguesm",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/dominguesm",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 6
-  },
-  {
-   "id": "lucianosb",
-   "nome": "Luciano Santa Brígida",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://huggingface.co/lucianosb",
-    "trecho": "site declarado no perfil: https://lucianosb.com.br",
-    "acessado": "2026-11-20",
-    "regra": "E1: site com dominio .br"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/lucianosb",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 29,
-   "n_membros": null,
-   "url": "https://huggingface.co/lucianosb",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 1,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/lucianosb",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 12
-  },
-  {
-   "id": "cnmoro",
-   "nome": "Carlo Moro",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/cnmoro",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Curitiba",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/cnmoro",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 95,
-   "n_membros": null,
-   "url": "https://huggingface.co/cnmoro",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/cnmoro",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 21
-  },
-  {
-   "id": "wilsondesouza",
-   "nome": "Wilson Souza Junior",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/wilsondesouza",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/wilsondesouza",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 2,
-   "n_membros": null,
-   "url": "https://huggingface.co/wilsondesouza",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/wilsondesouza",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 1
-  },
-  {
-   "id": "guicybercode",
-   "nome": "Guilherme Monteiro",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/guicybercode",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: brazil",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/guicybercode",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 11,
-   "n_membros": null,
-   "url": "https://huggingface.co/guicybercode",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/guicybercode",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 10
-  },
-  {
-   "id": "FMendonca",
-   "nome": "Fernando Mendonca",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/fernandomcrsilva",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/FMendonca",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 3,
-   "n_membros": null,
-   "url": "https://huggingface.co/FMendonca",
-   "origem_lista": "lista inicial",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/FMendonca",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 1
-  },
-  {
-   "id": "g-assismoraes",
-   "nome": "Gabriel Assis",
-   "tipo": "pessoa",
-   "classe_pais": "br_evidencia",
-   "evidencia_pais": {
-    "tipo": "perfil",
-    "url": "https://github.com/g-assismoraes",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Niterói,  RJ",
-    "acessado": "2026-11-20",
-    "regra": "E4: GitHub vinculado declara local no Brasil"
-   },
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/g-assismoraes",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
-   },
-   "escopo": "br",
-   "n_modelos_hf": 901,
-   "n_membros": null,
-   "url": "https://huggingface.co/g-assismoraes",
-   "origem_lista": "busca na API",
-   "modelos_fora_do_corte": 26,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/g-assismoraes",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 402
   },
   {
    "id": "adalbertojunior",
@@ -505,40 +71,40 @@
    "n_modelos_mapeados": 12
   },
   {
-   "id": "plvictor",
-   "nome": "Paulo Victor Souza",
-   "tipo": "pessoa",
+   "id": "AIInstituteLNCC",
+   "nome": "AI Institute of LNCC",
+   "tipo": "grupo",
    "classe_pais": "br_evidencia",
    "evidencia_pais": {
     "tipo": "perfil",
-    "url": "https://github.com/plvictor",
-    "trecho": "descricao no GitHub vinculado: Hey, I’m Paulo! 👋 I’m a Brazilian Full-Stack Developer based in New York, working with HTML, Node.js, CSS, Dart, and always looking for ways to improve. :D",
+    "url": "https://github.com/fportoDexl",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Petropolis, Rio de Janeiro, Brazil",
     "acessado": "2026-11-20",
-    "regra": "E4b: GitHub vinculado cita Brasil"
+    "regra": "E4: GitHub vinculado declara local no Brasil"
    },
-   "natureza": "independente",
+   "natureza": "instituicao",
    "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/plvictor",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "classe": "instituicao",
+    "tipo": "perfil/cartao",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "trecho": "LNCC",
     "acessado": "2026-11-20",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
    },
    "escopo": "br",
-   "n_modelos_hf": 11,
-   "n_membros": null,
-   "url": "https://huggingface.co/plvictor",
-   "origem_lista": "busca na API",
+   "n_modelos_hf": 3,
+   "n_membros": 2,
+   "url": "https://huggingface.co/AIInstituteLNCC",
+   "origem_lista": "lista inicial",
    "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/plvictor",
+     "url": "https://huggingface.co/AIInstituteLNCC",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 10
+   "n_modelos_mapeados": 3
   },
   {
    "id": "althayr",
@@ -613,14 +179,87 @@
    "n_modelos_mapeados": 15
   },
   {
-   "id": "Guilherme34",
-   "nome": "Guilherme Keller2",
+   "id": "ceia-research",
+   "nome": "CEIA - UFG - Centro de Excelência em Inteligência Artificial - Research",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "cartao",
+    "url": "https://huggingface.co/ceia-research/lumi-4b",
+    "trecho": "ce.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16) - **Contact**: [e-mail omitido, dominio discente.ufg.br] ## Model Performance ### Model evolution ![Model evoluti",
+    "acessado": "2026-11-20",
+    "regra": "E3a: cartao do modelo com endereco .br"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil/cartao",
+    "url": "https://huggingface.co/ceia-research",
+    "trecho": "**Lumi** is a small language model developed by the **NLP team at CEIA/UFG**, available as a **4B instruct** model. Buil",
+    "acessado": "2026-11-20",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 1,
+   "n_membros": 3,
+   "url": "https://huggingface.co/ceia-research",
+   "origem_lista": "busca na API",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ceia-research",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
+  },
+  {
+   "id": "CEIA-UFG",
+   "nome": "Centro de Excelência em IA",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "cartao",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)*",
+    "acessado": "2026-11-20",
+    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
+    "revisar": true
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil/cartao",
+    "url": "https://huggingface.co/CEIA-UFG",
+    "trecho": "**GAIA** was developed through a partnership between **The Brazilian Association of AI (ABRIA)**, the **Center of Excell",
+    "acessado": "2026-11-20",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 1,
+   "n_membros": 10,
+   "url": "https://huggingface.co/CEIA-UFG",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/CEIA-UFG",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
+  },
+  {
+   "id": "cnmoro",
+   "nome": "Carlo Moro",
    "tipo": "pessoa",
    "classe_pais": "br_evidencia",
    "evidencia_pais": {
     "tipo": "perfil",
-    "url": "https://github.com/guilh00009",
-    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brazil",
+    "url": "https://github.com/cnmoro",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Curitiba",
     "acessado": "2026-11-20",
     "regra": "E4: GitHub vinculado declara local no Brasil"
    },
@@ -628,25 +267,133 @@
    "evidencia_natureza": {
     "classe": "independente",
     "tipo": "perfil",
-    "url": "https://huggingface.co/Guilherme34",
+    "url": "https://huggingface.co/cnmoro",
     "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
     "acessado": "2026-11-20",
     "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
    },
    "escopo": "br",
-   "n_modelos_hf": 333,
+   "n_modelos_hf": 95,
    "n_membros": null,
-   "url": "https://huggingface.co/Guilherme34",
-   "origem_lista": "busca na API",
-   "modelos_fora_do_corte": 24,
+   "url": "https://huggingface.co/cnmoro",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34",
+     "url": "https://huggingface.co/cnmoro",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 71
+   "n_modelos_mapeados": 21
+  },
+  {
+   "id": "dominguesm",
+   "nome": "Maicon Domingues",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil",
+    "url": "https://github.com/DominguesM",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brazil",
+    "acessado": "2026-11-20",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil/cartao",
+    "url": "https://huggingface.co/dominguesm",
+    "trecho": "`Canarim-7B-VestibulAide` is a \"decoder-only\" model with 7 billion parameters, designed specifically for handling questi",
+    "acessado": "2026-11-20",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 21,
+   "n_membros": null,
+   "url": "https://huggingface.co/dominguesm",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/dominguesm",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 6
+  },
+  {
+   "id": "FMendonca",
+   "nome": "Fernando Mendonca",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil",
+    "url": "https://github.com/fernandomcrsilva",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro",
+    "acessado": "2026-11-20",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/FMendonca",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 3,
+   "n_membros": null,
+   "url": "https://huggingface.co/FMendonca",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/FMendonca",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
+  },
+  {
+   "id": "g-assismoraes",
+   "nome": "Gabriel Assis",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil",
+    "url": "https://github.com/g-assismoraes",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Niterói,  RJ",
+    "acessado": "2026-11-20",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/g-assismoraes",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 901,
+   "n_membros": null,
+   "url": "https://huggingface.co/g-assismoraes",
+   "origem_lista": "busca na API",
+   "modelos_fora_do_corte": 26,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/g-assismoraes",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 402
   },
   {
    "id": "Giuliano",
@@ -685,40 +432,76 @@
    "n_modelos_mapeados": 2
   },
   {
-   "id": "ceia-research",
-   "nome": "CEIA - UFG - Centro de Excelência em Inteligência Artificial - Research",
-   "tipo": "grupo",
+   "id": "guicybercode",
+   "nome": "Guilherme Monteiro",
+   "tipo": "pessoa",
    "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "cartao",
-    "url": "https://huggingface.co/ceia-research/lumi-4b",
-    "trecho": "ce.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16) - **Contact**: [e-mail omitido, dominio discente.ufg.br] ## Model Performance ### Model evolution ![Model evoluti",
+    "tipo": "perfil",
+    "url": "https://github.com/guicybercode",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: brazil",
     "acessado": "2026-11-20",
-    "regra": "E3a: cartao do modelo com endereco .br"
+    "regra": "E4: GitHub vinculado declara local no Brasil"
    },
-   "natureza": "instituicao",
+   "natureza": "independente",
    "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/ceia-research",
-    "trecho": "**Lumi** is a small language model developed by the **NLP team at CEIA/UFG**, available as a **4B instruct** model. Buil",
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/guicybercode",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
     "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
    },
    "escopo": "br",
-   "n_modelos_hf": 1,
-   "n_membros": 3,
-   "url": "https://huggingface.co/ceia-research",
-   "origem_lista": "busca na API",
+   "n_modelos_hf": 11,
+   "n_membros": null,
+   "url": "https://huggingface.co/guicybercode",
+   "origem_lista": "lista inicial",
    "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/ceia-research",
+     "url": "https://huggingface.co/guicybercode",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 1
+   "n_modelos_mapeados": 10
+  },
+  {
+   "id": "Guilherme34",
+   "nome": "Guilherme Keller2",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil",
+    "url": "https://github.com/guilh00009",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brazil",
+    "acessado": "2026-11-20",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/Guilherme34",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 333,
+   "n_membros": null,
+   "url": "https://huggingface.co/Guilherme34",
+   "origem_lista": "busca na API",
+   "modelos_fora_do_corte": 24,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Guilherme34",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 71
   },
   {
    "id": "joaoalvarenga",
@@ -757,265 +540,221 @@
    "n_modelos_mapeados": 1
   },
   {
-   "id": "Qwen",
-   "nome": "Qwen",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "id": "lucianosb",
+   "nome": "Luciano Santa Brígida",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/Qwen",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/lucianosb",
+    "trecho": "site declarado no perfil: https://lucianosb.com.br",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "E1: site com dominio .br"
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 469,
-   "n_membros": 192,
-   "url": "https://huggingface.co/Qwen",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 179,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/lucianosb",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 29,
+   "n_membros": null,
+   "url": "https://huggingface.co/lucianosb",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 1,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/Qwen",
+     "url": "https://huggingface.co/lucianosb",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 190
+   "n_modelos_mapeados": 12
   },
   {
-   "id": "google",
-   "nome": "Google",
+   "id": "maritaca-ai",
+   "nome": "Maritaca AI",
    "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/google",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "institucional",
+    "url": "https://www.maritaca.ai/",
+    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "seed verificado: pagina respondeu e o padrao apareceu"
    },
    "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 1136,
-   "n_membros": 3886,
-   "url": "https://huggingface.co/google",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 28,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/google",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 289
-  },
-  {
-   "id": "microsoft",
-   "nome": "Microsoft",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
-   "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/microsoft",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+   "evidencia_natureza": {
+    "tipo": "institucional",
+    "url": "https://www.maritaca.ai/",
+    "trecho": "S5 no chat Conheça o lançamento Veja o Sabiá em ação Pergunte qualquer coisa sobre o Brasil — o Sabiá pesquisa em dados oficiais e responde com a fonte. | Maritaca · Data Ocean Pensou e consultou bases de dados oficiais Nossos mode",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "seed verificado: pagina respondeu e o padrao apareceu",
+    "classe": "empresa"
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 556,
-   "n_membros": 263,
-   "url": "https://huggingface.co/microsoft",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 18,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/microsoft",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 173
-  },
-  {
-   "id": "meta-llama",
-   "nome": "Meta Llama",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
-   "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/meta-llama",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
-    "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
-   },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 70,
-   "n_membros": 318,
-   "url": "https://huggingface.co/meta-llama",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 29,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/meta-llama",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 33
-  },
-  {
-   "id": "HuggingFaceTB",
-   "nome": "Hugging Face Smol Models Research",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
-   "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/HuggingFaceTB",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
-    "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
-   },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 84,
-   "n_membros": 31,
-   "url": "https://huggingface.co/HuggingFaceTB",
-   "origem_lista": "lista mundo",
+   "escopo": "br",
+   "n_modelos_hf": 6,
+   "n_membros": 9,
+   "url": "https://huggingface.co/maritaca-ai",
+   "origem_lista": "lista inicial",
    "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/HuggingFaceTB",
+     "url": "https://huggingface.co/maritaca-ai",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 36
+   "n_modelos_mapeados": 3
   },
   {
-   "id": "LiquidAI",
-   "nome": "Liquid AI",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "id": "plvictor",
+   "nome": "Paulo Victor Souza",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/LiquidAI",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "perfil",
+    "url": "https://github.com/plvictor",
+    "trecho": "descricao no GitHub vinculado: Hey, I’m Paulo! 👋 I’m a Brazilian Full-Stack Developer based in New York, working with HTML, Node.js, CSS, Dart, and always looking for ways to improve. :D",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "E4b: GitHub vinculado cita Brasil"
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 245,
-   "n_membros": 97,
-   "url": "https://huggingface.co/LiquidAI",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 14,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/plvictor",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 11,
+   "n_membros": null,
+   "url": "https://huggingface.co/plvictor",
+   "origem_lista": "busca na API",
+   "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/LiquidAI",
+     "url": "https://huggingface.co/plvictor",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 131
+   "n_modelos_mapeados": 10
   },
   {
-   "id": "ibm-granite",
-   "nome": "IBM Granite",
+   "id": "recogna-nlp",
+   "nome": "Recogna NLP",
    "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/ibm-granite",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "cartao",
+    "url": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br",
+    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do supercomputador SDumont.",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "E3b: cartao com afiliacao e Brasil na mesma linha",
+    "revisar": true
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 252,
-   "n_membros": 216,
-   "url": "https://huggingface.co/ibm-granite",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 20,
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil/cartao",
+    "url": "https://huggingface.co/recogna-nlp",
+    "trecho": "Agradecemos ao Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil) por prover os recursos de CAD do superc",
+    "acessado": "2026-11-20",
+    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 45,
+   "n_membros": 18,
+   "url": "https://huggingface.co/recogna-nlp",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 3,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/ibm-granite",
+     "url": "https://huggingface.co/recogna-nlp",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 115
+   "n_modelos_mapeados": 10
   },
   {
-   "id": "mistralai",
-   "nome": "Mistral",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "id": "rhaymison",
+   "nome": "Rhaymison Cristian",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/mistralai",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "perfil",
+    "url": "https://github.com/rhaymisonbetini",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brasil",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "E4: GitHub vinculado declara local no Brasil"
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 83,
-   "n_membros": 14,
-   "url": "https://huggingface.co/mistralai",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 2,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/rhaymison",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 27,
+   "n_membros": null,
+   "url": "https://huggingface.co/rhaymison",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 3,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/mistralai",
+     "url": "https://huggingface.co/rhaymison",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 5
+   "n_modelos_mapeados": 13
   },
   {
-   "id": "nvidia",
-   "nome": "NVIDIA",
-   "tipo": "grupo",
-   "classe_pais": "fora_br",
+   "id": "wilsondesouza",
+   "nome": "Wilson Souza Junior",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "curadoria",
-    "url": "https://huggingface.co/nvidia",
-    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "tipo": "perfil",
+    "url": "https://github.com/wilsondesouza",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro",
     "acessado": "2026-11-20",
-    "regra": "lista curada (seed), confianca baixa"
+    "regra": "E4: GitHub vinculado declara local no Brasil"
    },
-   "natureza": "empresa",
-   "evidencia_natureza": null,
-   "escopo": "mundo",
-   "n_modelos_hf": 1063,
-   "n_membros": 5015,
-   "url": "https://huggingface.co/nvidia",
-   "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 153,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/wilsondesouza",
+    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
+    "acessado": "2026-11-20",
+    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 2,
+   "n_membros": null,
+   "url": "https://huggingface.co/wilsondesouza",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/nvidia",
+     "url": "https://huggingface.co/wilsondesouza",
      "acessado": "2026-11-20"
     }
    ],
-   "n_modelos_mapeados": 183
+   "n_modelos_mapeados": 1
   },
   {
    "id": "allenai",
@@ -1045,186 +784,6 @@
     }
    ],
    "n_modelos_mapeados": 222
-  },
-  {
-   "id": "Xenova",
-   "nome": "Joshua",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/Xenova",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 765,
-   "n_membros": null,
-   "url": "https://huggingface.co/Xenova",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/Xenova",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 8
-  },
-  {
-   "id": "KrynexLabs",
-   "nome": "KrynexLabs",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/KrynexLabs",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 13,
-   "n_membros": null,
-   "url": "https://huggingface.co/KrynexLabs",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/KrynexLabs",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 7
-  },
-  {
-   "id": "sallani",
-   "nome": "Dr Sabri ALLANI",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/sallani",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 8,
-   "n_membros": null,
-   "url": "https://huggingface.co/sallani",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/sallani",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 3
-  },
-  {
-   "id": "JonathanColetti",
-   "nome": "Jonathan Coletti",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/JonathanColetti",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 5,
-   "n_membros": null,
-   "url": "https://huggingface.co/JonathanColetti",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/JonathanColetti",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 1
-  },
-  {
-   "id": "mlboydaisuke",
-   "nome": "Daisuke Majima (MLBoy)",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/mlboydaisuke",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 364,
-   "n_membros": null,
-   "url": "https://huggingface.co/mlboydaisuke",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/mlboydaisuke",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 8
-  },
-  {
-   "id": "locriani",
-   "nome": "Zach",
-   "tipo": "pessoa",
-   "classe_pais": "nao_classificado",
-   "evidencia_pais": null,
-   "natureza": "independente",
-   "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil",
-    "url": "https://huggingface.co/locriani",
-    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
-    "acessado": "2026-11-20",
-    "regra": "N3 (pessoa)"
-   },
-   "escopo": "mundo",
-   "n_modelos_hf": 6,
-   "n_membros": null,
-   "url": "https://huggingface.co/locriani",
-   "origem_lista": "descoberta por builds de navegador",
-   "modelos_fora_do_corte": 0,
-   "fontes": [
-    {
-     "rotulo": "Perfil no Hugging Face",
-     "url": "https://huggingface.co/locriani",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "n_modelos_mapeados": 3
   },
   {
    "id": "daveycodez",
@@ -1257,6 +816,35 @@
    "n_modelos_mapeados": 3
   },
   {
+   "id": "google",
+   "nome": "Google",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/google",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1136,
+   "n_membros": 3886,
+   "url": "https://huggingface.co/google",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 28,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/google",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 289
+  },
+  {
    "id": "hbfreed",
    "nome": "Henry",
    "tipo": "pessoa",
@@ -1285,6 +873,418 @@
     }
    ],
    "n_modelos_mapeados": 4
+  },
+  {
+   "id": "HuggingFaceTB",
+   "nome": "Hugging Face Smol Models Research",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/HuggingFaceTB",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 84,
+   "n_membros": 31,
+   "url": "https://huggingface.co/HuggingFaceTB",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/HuggingFaceTB",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 36
+  },
+  {
+   "id": "ibm-granite",
+   "nome": "IBM Granite",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/ibm-granite",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 252,
+   "n_membros": 216,
+   "url": "https://huggingface.co/ibm-granite",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 20,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ibm-granite",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 115
+  },
+  {
+   "id": "JonathanColetti",
+   "nome": "Jonathan Coletti",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/JonathanColetti",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 5,
+   "n_membros": null,
+   "url": "https://huggingface.co/JonathanColetti",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/JonathanColetti",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 1
+  },
+  {
+   "id": "KrynexLabs",
+   "nome": "KrynexLabs",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/KrynexLabs",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 13,
+   "n_membros": null,
+   "url": "https://huggingface.co/KrynexLabs",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/KrynexLabs",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 7
+  },
+  {
+   "id": "LiquidAI",
+   "nome": "Liquid AI",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/LiquidAI",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 245,
+   "n_membros": 97,
+   "url": "https://huggingface.co/LiquidAI",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 14,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/LiquidAI",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 131
+  },
+  {
+   "id": "locriani",
+   "nome": "Zach",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/locriani",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 6,
+   "n_membros": null,
+   "url": "https://huggingface.co/locriani",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/locriani",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 3
+  },
+  {
+   "id": "meta-llama",
+   "nome": "Meta Llama",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/meta-llama",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 70,
+   "n_membros": 318,
+   "url": "https://huggingface.co/meta-llama",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 29,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/meta-llama",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 33
+  },
+  {
+   "id": "microsoft",
+   "nome": "Microsoft",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/microsoft",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 556,
+   "n_membros": 263,
+   "url": "https://huggingface.co/microsoft",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 18,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/microsoft",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 173
+  },
+  {
+   "id": "mistralai",
+   "nome": "Mistral",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/mistralai",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 83,
+   "n_membros": 14,
+   "url": "https://huggingface.co/mistralai",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 2,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/mistralai",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 5
+  },
+  {
+   "id": "mlboydaisuke",
+   "nome": "Daisuke Majima (MLBoy)",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/mlboydaisuke",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 364,
+   "n_membros": null,
+   "url": "https://huggingface.co/mlboydaisuke",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/mlboydaisuke",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 8
+  },
+  {
+   "id": "nvidia",
+   "nome": "NVIDIA",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/nvidia",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1063,
+   "n_membros": 5015,
+   "url": "https://huggingface.co/nvidia",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 153,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/nvidia",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 183
+  },
+  {
+   "id": "Qwen",
+   "nome": "Qwen",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "curadoria",
+    "url": "https://huggingface.co/Qwen",
+    "trecho": "grande publicador internacional da lista curada; sem pagina institucional conferida pelo coletor",
+    "acessado": "2026-11-20",
+    "regra": "lista curada (seed), confianca baixa"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 469,
+   "n_membros": 192,
+   "url": "https://huggingface.co/Qwen",
+   "origem_lista": "lista mundo",
+   "modelos_fora_do_corte": 179,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Qwen",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 190
+  },
+  {
+   "id": "sallani",
+   "nome": "Dr Sabri ALLANI",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/sallani",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 8,
+   "n_membros": null,
+   "url": "https://huggingface.co/sallani",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/sallani",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 3
+  },
+  {
+   "id": "Xenova",
+   "nome": "Joshua",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "independente",
+   "evidencia_natureza": {
+    "classe": "independente",
+    "tipo": "perfil",
+    "url": "https://huggingface.co/Xenova",
+    "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido",
+    "acessado": "2026-11-20",
+    "regra": "N3 (pessoa)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 765,
+   "n_membros": null,
+   "url": "https://huggingface.co/Xenova",
+   "origem_lista": "descoberta por builds de navegador",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Xenova",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 8
   }
  ]
 }

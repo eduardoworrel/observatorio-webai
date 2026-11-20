@@ -2,8 +2,6 @@
  "data": "2026-11-20",
  "regra_gguf": "GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate 4 GB",
  "corte_parametros_b": 12.0,
- "chamadas_rede": 92,
- "chamadas_cache": 5272,
  "brasil": {
   "modelos": 599,
   "nativo_oficial": 2,
@@ -89,23 +87,102 @@
  },
  "descartados": [
   {
-   "id": "Polygl0t",
-   "origem": "lista inicial",
+   "id": "aariciah",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
-    "Polygl0t/Tucano2-0.6B-Base",
-    "Polygl0t/Tucano2-qwen-0.5B-Base",
-    "Polygl0t/Tucano2-qwen-0.5B-Instruct"
+    "aariciah/gpt2-portuguese-20k",
+    "aariciah/gpt2-portuguese-20k-lc",
+    "aariciah/gpt2-portuguese-dutch-configC-6k"
    ]
   },
   {
-   "id": "TucanoBR",
-   "origem": "lista inicial",
+   "id": "abenzerps",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
-    "TucanoBR/Tucano-160m",
-    "TucanoBR/Tucano-1b1",
-    "TucanoBR/Tucano-1b1-Instruct"
+    "abenzerps/LFM2.5-24B-A2B-Uncensored-GSQ-RCO-GGUF"
+   ]
+  },
+  {
+   "id": "adalberto-temp",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "adalberto-temp/gemma_portuguese",
+    "adalberto-temp/llama-3-8b-dolphin-portuguese-v0.3-SDFT",
+    "adalberto-temp/llama-3-8b-dolphin-portuguese-v0.3-thinking-2-merged"
+   ]
+  },
+  {
+   "id": "admin-lima",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "admin-lima/phi35-saude-amazonia-gguf",
+    "admin-lima/phi35-saude-amazonia-lora",
+    "admin-lima/qwen05b-saude-amazonia-gguf"
+   ]
+  },
+  {
+   "id": "afrideva",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v0-GGUF",
+    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v1-GGUF",
+    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v2-GGUF"
+   ]
+  },
+  {
+   "id": "ai-forever",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ai-forever/mGPT",
+    "ai-forever/mGPT-13B"
+   ]
+  },
+  {
+   "id": "ai21labs",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ai21labs/AI21-Jamba-Large-1.5",
+    "ai21labs/AI21-Jamba-Mini-1.5"
+   ]
+  },
+  {
+   "id": "aifeifei798",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "aifeifei798/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored"
+   ]
+  },
+  {
+   "id": "akjindal53244",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "akjindal53244/Llama-3.1-Storm-8B",
+    "akjindal53244/Llama-3.1-Storm-8B-GGUF"
+   ]
+  },
+  {
+   "id": "AlmawaveLabs",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "AlmawaveLabs/Velvet-14B"
+   ]
+  },
+  {
+   "id": "alpindale",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "alpindale/Llama-3.2-1B"
    ]
   },
   {
@@ -119,18 +196,126 @@
    ]
   },
   {
-   "id": "ceia-br",
-   "origem": "lista inicial",
-   "motivo": "nao encontrado na API"
-  },
-  {
-   "id": "unicamp-dl",
-   "origem": "lista inicial",
+   "id": "anthracite-org",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
-    "unicamp-dl/ptt5-base-portuguese-vocab",
-    "unicamp-dl/ptt5-large-portuguese-vocab",
-    "unicamp-dl/ptt5-small-portuguese-vocab"
+    "anthracite-org/magnum-v2-123b",
+    "anthracite-org/magnum-v2-12b",
+    "anthracite-org/magnum-v2-12b-gguf"
+   ]
+  },
+  {
+   "id": "arcee-ai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "arcee-ai/AFM-4.5B",
+    "arcee-ai/AFM-4.5B-Base",
+    "arcee-ai/Trinity-Large-Base"
+   ]
+  },
+  {
+   "id": "arthurbittencourt",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold0",
+    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold1",
+    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold2"
+   ]
+  },
+  {
+   "id": "Assaoka",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Assaoka/Tucano2-qwen-0.5b-Merge-Brighter",
+    "Assaoka/Tucano2-qwen-0.5b-Merge-FinBERT",
+    "Assaoka/Tucano2-qwen-0.5b-Merge-GoEmotions"
+   ]
+  },
+  {
+   "id": "ATH-MaaS",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ATH-MaaS/Marco-Mini-Instruct",
+    "ATH-MaaS/Marco-Nano-Instruct"
+   ]
+  },
+  {
+   "id": "AtlaAI",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "AtlaAI/Selene-1-Mini-Llama-3.1-8B"
+   ]
+  },
+  {
+   "id": "AtomicChat",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "AtomicChat/LFM2.5-24B-A2B-GGUF",
+    "AtomicChat/LFM2.5-24B-A2B-Uncensored-GGUF"
+   ]
+  },
+  {
+   "id": "bartowski",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "bartowski/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
+    "bartowski/EuroLLM-9B-Instruct-GGUF",
+    "bartowski/Falcon3-7B-Instruct-GGUF"
+   ]
+  },
+  {
+   "id": "benjleite",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "benjleite/ptt5-ptbr-qa",
+    "benjleite/ptt5-ptbr-qg"
+   ]
+  },
+  {
+   "id": "bigscience",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "bigscience/bloom",
+    "bigscience/bloom-1b1",
+    "bigscience/bloom-1b7"
+   ]
+  },
+  {
+   "id": "BioMistral",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "BioMistral/BioMistral-7B"
+   ]
+  },
+  {
+   "id": "BlinkDL",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "BlinkDL/rwkv-4-world",
+    "BlinkDL/rwkv-5-world",
+    "BlinkDL/rwkv-6-world"
+   ]
+  },
+  {
+   "id": "bratao",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "bratao/PortugueseT5-Instruct",
+    "bratao/PortugueseT5Oie",
+    "bratao/PortugueseT5OieAbstractive"
    ]
   },
   {
@@ -144,13 +329,368 @@
    ]
   },
   {
-   "id": "nicholasKluge",
-   "origem": "lista inicial",
+   "id": "BSC-LT",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
-    "nicholasKluge/Aira-2-portuguese-124M",
-    "nicholasKluge/Aira-2-portuguese-1B7",
-    "nicholasKluge/Aira-2-portuguese-560M"
+    "BSC-LT/ALIA-40b",
+    "BSC-LT/salamandra-2b",
+    "BSC-LT/salamandra-2b-instruct"
+   ]
+  },
+  {
+   "id": "casperhansen",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "casperhansen/llama-3.3-70b-instruct-awq"
+   ]
+  },
+  {
+   "id": "ceia-br",
+   "origem": "lista inicial",
+   "motivo": "nao encontrado na API"
+  },
+  {
+   "id": "CMSManhattan",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "CMSManhattan/JiRackDeltaNet_180b",
+    "CMSManhattan/JiRackDeltaNet_27b",
+    "CMSManhattan/JiRackUltra_14b"
+   ]
+  },
+  {
+   "id": "CohereLabs",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "CohereLabs/aya-23-35B",
+    "CohereLabs/aya-23-8B",
+    "CohereLabs/aya-expanse-32b"
+   ]
+  },
+  {
+   "id": "CRD716",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "CRD716/ggml-LLaMa-65B-quantized",
+    "CRD716/ggml-vicuna-1.1-quantized"
+   ]
+  },
+  {
+   "id": "cybertruck32489",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "cybertruck32489/LFM3-1.7B-RD"
+   ]
+  },
+  {
+   "id": "darkc0de",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "darkc0de/XORTRON.CriminalComputing.LARGE.2026.3"
+   ]
+  },
+  {
+   "id": "DavidAU",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
+    "DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
+    "DavidAU/LFM2.5-8B-A1B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF"
+   ]
+  },
+  {
+   "id": "dealignai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "dealignai/Nemotron-3.5-Super-VL-120B-A12B-CYBER-NVFP4",
+    "dealignai/Ornith-1.5-122B-UNCENSORED-GGUF"
+   ]
+  },
+  {
+   "id": "DevTheusP",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": []
+  },
+  {
+   "id": "diablomike20",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "diablomike20/Claude-Opus-5.5"
+   ]
+  },
+  {
+   "id": "DiegoVSulz",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "DiegoVSulz/capivara-ptbr-13b-lv2-chat",
+    "DiegoVSulz/capivarinha-portugues-7b-lv2-gptq-128-4bit",
+    "DiegoVSulz/capivarinha_portugues_7Blv2-4bit-128-GPTQ"
+   ]
+  },
+  {
+   "id": "divinetribe",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "divinetribe/Llama-3.3-70B-Instruct-abliterated-8bit-mlx"
+   ]
+  },
+  {
+   "id": "egonrp",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "egonrp/gpt2-medium-squadv11-portuguese",
+    "egonrp/gpt2-medium-wikiwriter-squadv11-portuguese",
+    "egonrp/gpt2-small-portuguese"
+   ]
+  },
+  {
+   "id": "Epiculous",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Epiculous/Violet_Twilight-v0.2",
+    "Epiculous/Violet_Twilight-v0.2-GGUF"
+   ]
+  },
+  {
+   "id": "facebook",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "facebook/xglm-4.5B",
+    "facebook/xglm-564M",
+    "facebook/xglm-7.5B"
+   ]
+  },
+  {
+   "id": "featherless-ai-quants",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "featherless-ai-quants/JJhooww-Mistral-7B-v0.2-Base_ptbr-GGUF",
+    "featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-GGUF",
+    "featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-v0.2-GGUF"
+   ]
+  },
+  {
+   "id": "felipe-carlos-ipms",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "felipe-carlos-ipms/gemma-portuguese-tom-cat-2b-it-Q8_0-GGUF",
+    "felipe-carlos-ipms/phi-3-portuguese-tom-cat-4k-instruct-Q4_K_M-GGUF"
+   ]
+  },
+  {
+   "id": "fernandovmacedo",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-IQ4_NL-GGUF",
+    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-Q4_K_M-GGUF",
+    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-Q4_K_S-GGUF"
+   ]
+  },
+  {
+   "id": "FriendliAI",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "FriendliAI/Meta-Llama-3.1-8B-Instruct-fp8",
+    "FriendliAI/Meta-Llama-3.1-8B-Instruct-int8"
+   ]
+  },
+  {
+   "id": "furiosa-ai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "furiosa-ai/Meta-Llama-3.1-8B-Instruct-FP8-dynamic"
+   ]
+  },
+  {
+   "id": "Gabs1346",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Gabs1346/gemma-4-e4b-cpt-clinico-ptbr",
+    "Gabs1346/qwen3.5-9b-cpt-clinico-ptbr"
+   ]
+  },
+  {
+   "id": "ghost-x",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ghost-x/ghost-8b-beta-1608"
+   ]
+  },
+  {
+   "id": "giovannimaffeo",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "giovannimaffeo/ptt5-v2-large-portuguese-legal-descriptor-generation",
+    "giovannimaffeo/ptt5-v2-small-portuguese-legal-descriptor-generation",
+    "giovannimaffeo/qwen3.5-0.8b-portuguese-legal-descriptor-generation"
+   ]
+  },
+  {
+   "id": "godofmining",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "godofmining/brazilnut_v1",
+    "godofmining/brazilnut_v2"
+   ]
+  },
+  {
+   "id": "grumd0",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "grumd0/Nemotron-3.5-Bolt-E4B-Heretic-GGUF"
+   ]
+  },
+  {
+   "id": "gsjang",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-arcee_fusion-50_50",
+    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-breadcrumbs-50_50",
+    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-breadcrumbs_ties-50_50"
+   ]
+  },
+  {
+   "id": "GuilhermeAumo",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "GuilhermeAumo/Tucano-2b4-Instruct-Q4_K_M-GGUF",
+    "GuilhermeAumo/Tucano-2b4-Instruct-Q8_0-GGUF"
+   ]
+  },
+  {
+   "id": "henriqueimoveis",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "henriqueimoveis/Echoes-1-Base-PT-BR",
+    "henriqueimoveis/Echoes-1-Instruct-PT-BR",
+    "henriqueimoveis/Echoes-1.5-Base-PT-BR"
+   ]
+  },
+  {
+   "id": "hermitdave",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "hermitdave/LFM2.5-24B-A2B-MLX-DWQ-3bit"
+   ]
+  },
+  {
+   "id": "hiwaifu-research",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "hiwaifu-research/WaifuGemma4-26b-a4b-v1",
+    "hiwaifu-research/WaifuGemma4-26b-a4b-v1-GGUF",
+    "hiwaifu-research/WaifuGemma4-26b-a4b-v1-i1-GGUF"
+   ]
+  },
+  {
+   "id": "hugging-quants",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "hugging-quants/Llama-3.2-1B-Instruct-Q4_K_M-GGUF",
+    "hugging-quants/Llama-3.2-1B-Instruct-Q8_0-GGUF",
+    "hugging-quants/Llama-3.2-3B-Instruct-Q4_K_M-GGUF"
+   ]
+  },
+  {
+   "id": "huggingtweets",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "huggingtweets/gduvivier-guilhermeboulos-ptbrasil",
+    "huggingtweets/lulaoficial-ptbrasil"
+   ]
+  },
+  {
+   "id": "huihui-ai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "huihui-ai/Llama-3.3-70B-Instruct-abliterated"
+   ]
+  },
+  {
+   "id": "ibnzterrell",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ibnzterrell/Meta-Llama-3.3-70B-Instruct-AWQ-INT4"
+   ]
+  },
+  {
+   "id": "infosave",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "infosave/Granite-4.2-cmf"
+   ]
+  },
+  {
+   "id": "intervitens",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "intervitens/mini-magnum-12b-v1.1"
+   ]
+  },
+  {
+   "id": "IsValorum",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "IsValorum/Clover-35B-A3B-Preview-APEX-I-NanoPlus-V2.1-GGUF",
+    "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-MiniPlus-V3-GGUF",
+    "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-NanoPlus-V3-GGUF"
+   ]
+  },
+  {
+   "id": "jc-builds",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "jc-builds/Qwen3.5-4B-Q4_K_M-GGUF",
+    "jc-builds/Qwen3.5-9B-Q4_K_M-GGUF"
+   ]
+  },
+  {
+   "id": "JFernandoGRE",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_05",
+    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_50",
+    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_age"
    ]
   },
   {
@@ -160,12 +700,79 @@
    "modelos_vistos": []
   },
   {
-   "id": "tardellirs",
-   "origem": "lista inicial",
+   "id": "joshnader",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
-    "tardellirs/aac-board-generator-770m-ptbr",
-    "tardellirs/aac-board-generator-770m-ptbr-GGUF"
+    "joshnader/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF"
+   ]
+  },
+  {
+   "id": "Kisperger",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": []
+  },
+  {
+   "id": "kosbu",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "kosbu/Llama-3.3-70B-Instruct-AWQ"
+   ]
+  },
+  {
+   "id": "kyutai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "kyutai/helium-1-2b",
+    "kyutai/helium-1-preview-2b"
+   ]
+  },
+  {
+   "id": "legraphista",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "legraphista/Llama-3.2-3B-Instruct-IMat-GGUF",
+    "legraphista/Mistral-Large-Instruct-2407-IMat-GGUF",
+    "legraphista/c4ai-command-r-plus-08-2024-IMat-GGUF"
+   ]
+  },
+  {
+   "id": "LGAI-EXAONE",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
+    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B-DSpark",
+    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B-FP8"
+   ]
+  },
+  {
+   "id": "limajr",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": []
+  },
+  {
+   "id": "LLaMAX",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "LLaMAX/LLaMAX3-8B",
+    "LLaMAX/LLaMAX3-8B-Alpaca"
+   ]
+  },
+  {
+   "id": "lmstudio-community",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "lmstudio-community/Devstral-Small-2505-MLX-4bit",
+    "lmstudio-community/Devstral-Small-2507-MLX-4bit",
+    "lmstudio-community/Devstral-Small-2507-MLX-6bit"
    ]
   },
   {
@@ -179,10 +786,23 @@
    ]
   },
   {
-   "id": "thejpdev",
-   "origem": "lista inicial",
+   "id": "Luciano",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": []
+   "modelos_vistos": [
+    "Luciano/gpt2-small-portuguese-finetuned-peticoes",
+    "Luciano/gpt2-small-portuguese-finetuned-tcu-acordaos"
+   ]
+  },
+  {
+   "id": "Madras1",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Madras1/Yara-50M-PTBR-QA",
+    "Madras1/tinygpt-ptbr-sft-v1",
+    "Madras1/tinygpt-ptbr-v1"
+   ]
   },
   {
    "id": "marcosremar2",
@@ -195,22 +815,513 @@
    ]
   },
   {
-   "id": "Kisperger",
+   "id": "mattritchey",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "mattritchey/next-1b-Q4_K_M-GGUF"
+   ]
+  },
+  {
+   "id": "MaziyarPanahi",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "MaziyarPanahi/BioMistral-7B-GGUF",
+    "MaziyarPanahi/Meta-Llama-3.1-405B-Instruct-GGUF",
+    "MaziyarPanahi/Meta-Llama-3.1-70B-Instruct-GGUF"
+   ]
+  },
+  {
+   "id": "Melvin56",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Melvin56/Phi-4-mini-instruct-abliterated-GGUF"
+   ]
+  },
+  {
+   "id": "mlx-community",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "mlx-community/Llama-3.1-8B-Instruct-4bit",
+    "mlx-community/Llama-3.2-1B-Instruct-4bit",
+    "mlx-community/Llama-3.2-3B-Instruct-4bit"
+   ]
+  },
+  {
+   "id": "mobilint",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "mobilint/Llama-3.1-8B-Instruct",
+    "mobilint/Llama-3.2-1B-Instruct",
+    "mobilint/Llama-3.2-3B-Instruct"
+   ]
+  },
+  {
+   "id": "mondk",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "mondk/LFM3-1.7B-Claude-Code-GGUF"
+   ]
+  },
+  {
+   "id": "mradermacher",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "mradermacher/Canarim-7B-Instruct-GGUF",
+    "mradermacher/Canarim-7B-Instruct-i1-GGUF",
+    "mradermacher/DarkIdol-Qwen3.8-27B-v1.1-i1-GGUF"
+   ]
+  },
+  {
+   "id": "Mungert",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Mungert/LFM3-1.7B-GGUF"
+   ]
+  },
+  {
+   "id": "ngquocvinh",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ngquocvinh/LFM3-1.7B-GGUF"
+   ]
+  },
+  {
+   "id": "nicholasKluge",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "nicholasKluge/Aira-2-portuguese-124M",
+    "nicholasKluge/Aira-2-portuguese-1B7",
+    "nicholasKluge/Aira-2-portuguese-560M"
+   ]
+  },
+  {
+   "id": "NikolayKozloff",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "NikolayKozloff/Llama-3-portuguese-Tom-cat-8b-instruct-Q6_K-GGUF",
+    "NikolayKozloff/Llama-portuguese-13b-Luana-v0.2-GGUF",
+    "NikolayKozloff/Mistral-portuguese-luana-7b-Mathematics-GGUF"
+   ]
+  },
+  {
+   "id": "NousResearch",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "NousResearch/Llama-3.2-1B",
+    "NousResearch/Meta-Llama-3.1-8B",
+    "NousResearch/Meta-Llama-3.1-8B-Instruct"
+   ]
+  },
+  {
+   "id": "noxinc",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q2_K-GGUF-PTBR",
+    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q4_K_M-GGUF-PTBR",
+    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q5_K_M-GGUF-PTBR"
+   ]
+  },
+  {
+   "id": "NoxNotreve",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "NoxNotreve/AMALIA-9B-0626-SFT-GGUF"
+   ]
+  },
+  {
+   "id": "oivlisnet",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "oivlisnet/Llama-2-13b-chat-bode-pt-br",
+    "oivlisnet/Llama-2-13b-chat-bode-pt-br-gptq",
+    "oivlisnet/Llama-2-13b-fuq-pt-br-v2-gptq"
+   ]
+  },
+  {
+   "id": "openGPT-X",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "openGPT-X/Teuken-7B-instruct-commercial-v0.4",
+    "openGPT-X/Teuken-7B-instruct-research-v0.4"
+   ]
+  },
+  {
+   "id": "orcarouter",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "orcarouter/LFM3-1.7B-abliterated",
+    "orcarouter/Mistral-Large-4-1T-A52B-GGUF"
+   ]
+  },
+  {
+   "id": "OS-Software",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "OS-Software/LFM2.5-24B-A2B-Uncensored-Heretic-GGUF"
+   ]
+  },
+  {
+   "id": "osouza",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "osouza/gemma-portuguese-luana-2b-questoes",
+    "osouza/gemma-portuguese-luana-2b-questoes-beecrowd",
+    "osouza/gemma-portuguese-luana-2b-questoes-string"
+   ]
+  },
+  {
+   "id": "OVHaiLLM",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "OVHaiLLM/Olala-v1.0-mini-7A1B",
+    "OVHaiLLM/Olala-v1.0-mini-7A1B-GGUF"
+   ]
+  },
+  {
+   "id": "Papuguinho",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Papuguinho/gemmuguinho-636m-GGUF"
+   ]
+  },
+  {
+   "id": "PocketDoc",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "PocketDoc/Dans-PersonalityEngine-V1.3.0-12b",
+    "PocketDoc/Dans-PersonalityEngine-V1.3.0-24b"
+   ]
+  },
+  {
+   "id": "Polygl0t",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Polygl0t/Tucano2-0.6B-Base",
+    "Polygl0t/Tucano2-qwen-0.5B-Base",
+    "Polygl0t/Tucano2-qwen-0.5B-Instruct"
+   ]
+  },
+  {
+   "id": "PORTULAN",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
+    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder"
+   ]
+  },
+  {
+   "id": "prithivMLmods",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "prithivMLmods/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
+   ]
+  },
+  {
+   "id": "QuantFactory",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "QuantFactory/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
+    "QuantFactory/gemma-portuguese-luana-2b-GGUF",
+    "QuantFactory/phi-3-portuguese-tom-cat-4k-instruct-GGUF"
+   ]
+  },
+  {
+   "id": "RedHatAI",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic"
+   ]
+  },
+  {
+   "id": "RichardErkhov",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-4bits",
+    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-8bits",
+    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-1B7-4bits"
+   ]
+  },
+  {
+   "id": "saidutta69",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "saidutta69/EuroLLM-1.7B-Instruct-heretic",
+    "saidutta69/LFM2.5-8B-A1B-heretic",
+    "saidutta69/LFM3-1.7B-Base-heretic"
+   ]
+  },
+  {
+   "id": "sakamakismile",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "sakamakismile/Qwen3.6-27B-Text-NVFP4-MTP"
+   ]
+  },
+  {
+   "id": "second-state",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "second-state/Mistral-Nemo-Instruct-2407-GGUF"
+   ]
+  },
+  {
+   "id": "Soulfate24",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Soulfate24/LFM3-1.7B-Paretrix-GGUF"
+   ]
+  },
+  {
+   "id": "speakleash",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "speakleash/Bielik-11B-v3.0-Instruct",
+    "speakleash/Bielik-11B-v3.0-Instruct-GGUF",
+    "speakleash/Bielik-11B-v3.0-Instruct-awq"
+   ]
+  },
+  {
+   "id": "ssmits",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "ssmits/Falcon2-5.5B-Portuguese",
+    "ssmits/Falcon2-8B-Portuguese"
+   ]
+  },
+  {
+   "id": "stabilityai",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "stabilityai/stablelm-2-12b",
+    "stabilityai/stablelm-2-1_6b"
+   ]
+  },
+  {
+   "id": "stelterlab",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "stelterlab/Mistral-Small-24B-Instruct-2501-AWQ"
+   ]
+  },
+  {
+   "id": "tardellirs",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "tardellirs/aac-board-generator-770m-ptbr",
+    "tardellirs/aac-board-generator-770m-ptbr-GGUF"
+   ]
+  },
+  {
+   "id": "taronaeo",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "taronaeo/Granite-4.2-3B-BE-GGUF"
+   ]
+  },
+  {
+   "id": "tensorblock",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "tensorblock/Tucano-1b1-GGUF",
+    "tensorblock/Tucano-1b1-Instruct-GGUF",
+    "tensorblock/Tucano-2b4-Instruct-GGUF"
+   ]
+  },
+  {
+   "id": "TheBloke",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "TheBloke/sabia-7B-AWQ",
+    "TheBloke/sabia-7B-GPTQ"
+   ]
+  },
+  {
+   "id": "thejpdev",
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": []
   },
   {
-   "id": "limajr",
-   "origem": "lista inicial",
+   "id": "ThomasBaruzier",
+   "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": []
+   "modelos_vistos": [
+    "ThomasBaruzier/Meta-Llama-3.1-405B-Instruct-GGUF",
+    "ThomasBaruzier/Meta-Llama-3.1-8B-Instruct-GGUF"
+   ]
   },
   {
-   "id": "DevTheusP",
+   "id": "tiiuae",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "tiiuae/Falcon-H1-1.5B-Instruct",
+    "tiiuae/Falcon-H1-34B-Instruct",
+    "tiiuae/Falcon-H1-3B-Instruct"
+   ]
+  },
+  {
+   "id": "TildeAI",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "TildeAI/TildeOpen-30b"
+   ]
+  },
+  {
+   "id": "timteh673",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "timteh673/Mistral-Small-4-119B-Uncensored-GGUF",
+    "timteh673/Qwen3.5-397B-A17B-Opus-4.6-Reasoning-Uncensored-GGUF"
+   ]
+  },
+  {
+   "id": "TucanoBR",
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": []
+   "modelos_vistos": [
+    "TucanoBR/Tucano-160m",
+    "TucanoBR/Tucano-1b1",
+    "TucanoBR/Tucano-1b1-Instruct"
+   ]
+  },
+  {
+   "id": "Unbabel",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Unbabel/Tower-Plus-9B"
+   ]
+  },
+  {
+   "id": "unicamp-dl",
+   "origem": "lista inicial",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "unicamp-dl/ptt5-base-portuguese-vocab",
+    "unicamp-dl/ptt5-large-portuguese-vocab",
+    "unicamp-dl/ptt5-small-portuguese-vocab"
+   ]
+  },
+  {
+   "id": "unsloth",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "unsloth/Devstral-Small-2507-unsloth-bnb-4bit",
+    "unsloth/LFM2.5-230M",
+    "unsloth/LFM2.5-230M-GGUF"
+   ]
+  },
+  {
+   "id": "utter-project",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "utter-project/EuroLLM-1.7B",
+    "utter-project/EuroLLM-1.7B-Instruct",
+    "utter-project/EuroLLM-22B-2512"
+   ]
+  },
+  {
+   "id": "vabatista",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "vabatista/question-generation-t5-base-pt-br",
+    "vabatista/question-generation-t5-small-pt-br",
+    "vabatista/question-generation-t5-small-pt-br-2"
+   ]
+  },
+  {
+   "id": "VAGOsolutions",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "VAGOsolutions/Llama-3.1-SauerkrautLM-70b-Instruct",
+    "VAGOsolutions/Llama-3.1-SauerkrautLM-8b-Instruct"
+   ]
+  },
+  {
+   "id": "Vortecks",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF"
+   ]
+  },
+  {
+   "id": "winderfeld",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "winderfeld/mistral-for-portuguese-sentiment-analysis-v2",
+    "winderfeld/mistral-for-portuguese-sentiment-analysis-v3"
+   ]
+  },
+  {
+   "id": "xande-p",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "xande-p/Qwen3-23B-A3B-Instruct-REAP-ptbr",
+    "xande-p/Qwen3-23B-A3B-Instruct-REAP-ptbr-GGUF",
+    "xande-p/Qwen3-23B-A3B-Thinking-REAP-ptbr"
+   ]
+  },
+  {
+   "id": "zaakirio",
+   "origem": "busca na API",
+   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
+   "modelos_vistos": [
+    "zaakirio/LFM2.5-8B-A1B-Uncensored-GGUF"
+   ]
   },
   {
    "id": "zerolimites",
@@ -226,1119 +1337,6 @@
     "zhzh98/gpt2-portuguese-20k",
     "zhzh98/gpt2-portuguese-20k-seed123",
     "zhzh98/gpt2-portuguese-20k-seed13"
-   ]
-  },
-  {
-   "id": "bartowski",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "bartowski/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
-    "bartowski/EuroLLM-9B-Instruct-GGUF",
-    "bartowski/Falcon3-7B-Instruct-GGUF"
-   ]
-  },
-  {
-   "id": "arthurbittencourt",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold0",
-    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold1",
-    "arthurbittencourt/distillGPT2-semeval2025_ptbr_disgust-fold2"
-   ]
-  },
-  {
-   "id": "gsjang",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-arcee_fusion-50_50",
-    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-breadcrumbs-50_50",
-    "gsjang/pt-gemma-portuguese-luana-2b-x-gemma-2b-it-breadcrumbs_ties-50_50"
-   ]
-  },
-  {
-   "id": "RedHatAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
-    "RedHatAI/Llama-3.2-1B-Instruct-FP8",
-    "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic"
-   ]
-  },
-  {
-   "id": "lmstudio-community",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "lmstudio-community/Devstral-Small-2505-MLX-4bit",
-    "lmstudio-community/Devstral-Small-2507-MLX-4bit",
-    "lmstudio-community/Devstral-Small-2507-MLX-6bit"
-   ]
-  },
-  {
-   "id": "bigscience",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "bigscience/bloom",
-    "bigscience/bloom-1b1",
-    "bigscience/bloom-1b7"
-   ]
-  },
-  {
-   "id": "CohereLabs",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "CohereLabs/aya-23-35B",
-    "CohereLabs/aya-23-8B",
-    "CohereLabs/aya-expanse-32b"
-   ]
-  },
-  {
-   "id": "noxinc",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q2_K-GGUF-PTBR",
-    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q4_K_M-GGUF-PTBR",
-    "noxinc/Llama-3-portuguese-Tom-cat-8b-instruct-Q5_K_M-GGUF-PTBR"
-   ]
-  },
-  {
-   "id": "DavidAU",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
-    "DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
-    "DavidAU/LFM2.5-8B-A1B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF"
-   ]
-  },
-  {
-   "id": "mradermacher",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mradermacher/Canarim-7B-Instruct-GGUF",
-    "mradermacher/Canarim-7B-Instruct-i1-GGUF",
-    "mradermacher/DarkIdol-Qwen3.8-27B-v1.1-i1-GGUF"
-   ]
-  },
-  {
-   "id": "arcee-ai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "arcee-ai/AFM-4.5B",
-    "arcee-ai/AFM-4.5B-Base",
-    "arcee-ai/Trinity-Large-Base"
-   ]
-  },
-  {
-   "id": "tiiuae",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "tiiuae/Falcon-H1-1.5B-Instruct",
-    "tiiuae/Falcon-H1-34B-Instruct",
-    "tiiuae/Falcon-H1-3B-Instruct"
-   ]
-  },
-  {
-   "id": "mlx-community",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mlx-community/Llama-3.1-8B-Instruct-4bit",
-    "mlx-community/Llama-3.2-1B-Instruct-4bit",
-    "mlx-community/Llama-3.2-3B-Instruct-4bit"
-   ]
-  },
-  {
-   "id": "featherless-ai-quants",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "featherless-ai-quants/JJhooww-Mistral-7B-v0.2-Base_ptbr-GGUF",
-    "featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-GGUF",
-    "featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-v0.2-GGUF"
-   ]
-  },
-  {
-   "id": "unsloth",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "unsloth/Devstral-Small-2507-unsloth-bnb-4bit",
-    "unsloth/LFM2.5-230M",
-    "unsloth/LFM2.5-230M-GGUF"
-   ]
-  },
-  {
-   "id": "hugging-quants",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "hugging-quants/Llama-3.2-1B-Instruct-Q4_K_M-GGUF",
-    "hugging-quants/Llama-3.2-1B-Instruct-Q8_0-GGUF",
-    "hugging-quants/Llama-3.2-3B-Instruct-Q4_K_M-GGUF"
-   ]
-  },
-  {
-   "id": "utter-project",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "utter-project/EuroLLM-1.7B",
-    "utter-project/EuroLLM-1.7B-Instruct",
-    "utter-project/EuroLLM-22B-2512"
-   ]
-  },
-  {
-   "id": "IsValorum",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "IsValorum/Clover-35B-A3B-Preview-APEX-I-NanoPlus-V2.1-GGUF",
-    "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-MiniPlus-V3-GGUF",
-    "IsValorum/Huihui-Qwen3.8-27B-Coder390-EfficientThink-abliterated-VAL-APEX-I-NanoPlus-V3-GGUF"
-   ]
-  },
-  {
-   "id": "anthracite-org",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "anthracite-org/magnum-v2-123b",
-    "anthracite-org/magnum-v2-12b",
-    "anthracite-org/magnum-v2-12b-gguf"
-   ]
-  },
-  {
-   "id": "aariciah",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "aariciah/gpt2-portuguese-20k",
-    "aariciah/gpt2-portuguese-20k-lc",
-    "aariciah/gpt2-portuguese-dutch-configC-6k"
-   ]
-  },
-  {
-   "id": "CMSManhattan",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "CMSManhattan/JiRackDeltaNet_180b",
-    "CMSManhattan/JiRackDeltaNet_27b",
-    "CMSManhattan/JiRackUltra_14b"
-   ]
-  },
-  {
-   "id": "afrideva",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v0-GGUF",
-    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v1-GGUF",
-    "afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v2-GGUF"
-   ]
-  },
-  {
-   "id": "oivlisnet",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "oivlisnet/Llama-2-13b-chat-bode-pt-br",
-    "oivlisnet/Llama-2-13b-chat-bode-pt-br-gptq",
-    "oivlisnet/Llama-2-13b-fuq-pt-br-v2-gptq"
-   ]
-  },
-  {
-   "id": "NikolayKozloff",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "NikolayKozloff/Llama-3-portuguese-Tom-cat-8b-instruct-Q6_K-GGUF",
-    "NikolayKozloff/Llama-portuguese-13b-Luana-v0.2-GGUF",
-    "NikolayKozloff/Mistral-portuguese-luana-7b-Mathematics-GGUF"
-   ]
-  },
-  {
-   "id": "RichardErkhov",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-4bits",
-    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-8bits",
-    "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-1B7-4bits"
-   ]
-  },
-  {
-   "id": "JFernandoGRE",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_05",
-    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_50",
-    "JFernandoGRE/llama3_8b_brazil_augmenteddemocracy_dups_all4_age"
-   ]
-  },
-  {
-   "id": "speakleash",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "speakleash/Bielik-11B-v3.0-Instruct",
-    "speakleash/Bielik-11B-v3.0-Instruct-GGUF",
-    "speakleash/Bielik-11B-v3.0-Instruct-awq"
-   ]
-  },
-  {
-   "id": "MaziyarPanahi",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "MaziyarPanahi/BioMistral-7B-GGUF",
-    "MaziyarPanahi/Meta-Llama-3.1-405B-Instruct-GGUF",
-    "MaziyarPanahi/Meta-Llama-3.1-70B-Instruct-GGUF"
-   ]
-  },
-  {
-   "id": "BSC-LT",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "BSC-LT/ALIA-40b",
-    "BSC-LT/salamandra-2b",
-    "BSC-LT/salamandra-2b-instruct"
-   ]
-  },
-  {
-   "id": "BlinkDL",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "BlinkDL/rwkv-4-world",
-    "BlinkDL/rwkv-5-world",
-    "BlinkDL/rwkv-6-world"
-   ]
-  },
-  {
-   "id": "saidutta69",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "saidutta69/EuroLLM-1.7B-Instruct-heretic",
-    "saidutta69/LFM2.5-8B-A1B-heretic",
-    "saidutta69/LFM3-1.7B-Base-heretic"
-   ]
-  },
-  {
-   "id": "tensorblock",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "tensorblock/Tucano-1b1-GGUF",
-    "tensorblock/Tucano-1b1-Instruct-GGUF",
-    "tensorblock/Tucano-2b4-Instruct-GGUF"
-   ]
-  },
-  {
-   "id": "adalberto-temp",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "adalberto-temp/gemma_portuguese",
-    "adalberto-temp/llama-3-8b-dolphin-portuguese-v0.3-SDFT",
-    "adalberto-temp/llama-3-8b-dolphin-portuguese-v0.3-thinking-2-merged"
-   ]
-  },
-  {
-   "id": "Assaoka",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Assaoka/Tucano2-qwen-0.5b-Merge-Brighter",
-    "Assaoka/Tucano2-qwen-0.5b-Merge-FinBERT",
-    "Assaoka/Tucano2-qwen-0.5b-Merge-GoEmotions"
-   ]
-  },
-  {
-   "id": "LGAI-EXAONE",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
-    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B-DSpark",
-    "LGAI-EXAONE/K-EXAONE-2.0-750B-A37B-FP8"
-   ]
-  },
-  {
-   "id": "xande-p",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "xande-p/Qwen3-23B-A3B-Instruct-REAP-ptbr",
-    "xande-p/Qwen3-23B-A3B-Instruct-REAP-ptbr-GGUF",
-    "xande-p/Qwen3-23B-A3B-Thinking-REAP-ptbr"
-   ]
-  },
-  {
-   "id": "PORTULAN",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
-    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
-    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder"
-   ]
-  },
-  {
-   "id": "henriqueimoveis",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "henriqueimoveis/Echoes-1-Base-PT-BR",
-    "henriqueimoveis/Echoes-1-Instruct-PT-BR",
-    "henriqueimoveis/Echoes-1.5-Base-PT-BR"
-   ]
-  },
-  {
-   "id": "egonrp",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "egonrp/gpt2-medium-squadv11-portuguese",
-    "egonrp/gpt2-medium-wikiwriter-squadv11-portuguese",
-    "egonrp/gpt2-small-portuguese"
-   ]
-  },
-  {
-   "id": "giovannimaffeo",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "giovannimaffeo/ptt5-v2-large-portuguese-legal-descriptor-generation",
-    "giovannimaffeo/ptt5-v2-small-portuguese-legal-descriptor-generation",
-    "giovannimaffeo/qwen3.5-0.8b-portuguese-legal-descriptor-generation"
-   ]
-  },
-  {
-   "id": "bratao",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "bratao/PortugueseT5-Instruct",
-    "bratao/PortugueseT5Oie",
-    "bratao/PortugueseT5OieAbstractive"
-   ]
-  },
-  {
-   "id": "admin-lima",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "admin-lima/phi35-saude-amazonia-gguf",
-    "admin-lima/phi35-saude-amazonia-lora",
-    "admin-lima/qwen05b-saude-amazonia-gguf"
-   ]
-  },
-  {
-   "id": "NousResearch",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "NousResearch/Llama-3.2-1B",
-    "NousResearch/Meta-Llama-3.1-8B",
-    "NousResearch/Meta-Llama-3.1-8B-Instruct"
-   ]
-  },
-  {
-   "id": "mobilint",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mobilint/Llama-3.1-8B-Instruct",
-    "mobilint/Llama-3.2-1B-Instruct",
-    "mobilint/Llama-3.2-3B-Instruct"
-   ]
-  },
-  {
-   "id": "hiwaifu-research",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "hiwaifu-research/WaifuGemma4-26b-a4b-v1",
-    "hiwaifu-research/WaifuGemma4-26b-a4b-v1-GGUF",
-    "hiwaifu-research/WaifuGemma4-26b-a4b-v1-i1-GGUF"
-   ]
-  },
-  {
-   "id": "facebook",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "facebook/xglm-4.5B",
-    "facebook/xglm-564M",
-    "facebook/xglm-7.5B"
-   ]
-  },
-  {
-   "id": "legraphista",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "legraphista/Llama-3.2-3B-Instruct-IMat-GGUF",
-    "legraphista/Mistral-Large-Instruct-2407-IMat-GGUF",
-    "legraphista/c4ai-command-r-plus-08-2024-IMat-GGUF"
-   ]
-  },
-  {
-   "id": "QuantFactory",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "QuantFactory/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
-    "QuantFactory/gemma-portuguese-luana-2b-GGUF",
-    "QuantFactory/phi-3-portuguese-tom-cat-4k-instruct-GGUF"
-   ]
-  },
-  {
-   "id": "Madras1",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Madras1/Yara-50M-PTBR-QA",
-    "Madras1/tinygpt-ptbr-sft-v1",
-    "Madras1/tinygpt-ptbr-v1"
-   ]
-  },
-  {
-   "id": "vabatista",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "vabatista/question-generation-t5-base-pt-br",
-    "vabatista/question-generation-t5-small-pt-br",
-    "vabatista/question-generation-t5-small-pt-br-2"
-   ]
-  },
-  {
-   "id": "DiegoVSulz",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "DiegoVSulz/capivara-ptbr-13b-lv2-chat",
-    "DiegoVSulz/capivarinha-portugues-7b-lv2-gptq-128-4bit",
-    "DiegoVSulz/capivarinha_portugues_7Blv2-4bit-128-GPTQ"
-   ]
-  },
-  {
-   "id": "osouza",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "osouza/gemma-portuguese-luana-2b-questoes",
-    "osouza/gemma-portuguese-luana-2b-questoes-beecrowd",
-    "osouza/gemma-portuguese-luana-2b-questoes-string"
-   ]
-  },
-  {
-   "id": "fernandovmacedo",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-IQ4_NL-GGUF",
-    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-Q4_K_M-GGUF",
-    "fernandovmacedo/portuguese-Phi3-Tom-Cat-128k-instruct-Q4_K_S-GGUF"
-   ]
-  },
-  {
-   "id": "AtomicChat",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "AtomicChat/LFM2.5-24B-A2B-GGUF",
-    "AtomicChat/LFM2.5-24B-A2B-Uncensored-GGUF"
-   ]
-  },
-  {
-   "id": "dealignai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "dealignai/Nemotron-3.5-Super-VL-120B-A12B-CYBER-NVFP4",
-    "dealignai/Ornith-1.5-122B-UNCENSORED-GGUF"
-   ]
-  },
-  {
-   "id": "Vortecks",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
-    "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF"
-   ]
-  },
-  {
-   "id": "VAGOsolutions",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "VAGOsolutions/Llama-3.1-SauerkrautLM-70b-Instruct",
-    "VAGOsolutions/Llama-3.1-SauerkrautLM-8b-Instruct"
-   ]
-  },
-  {
-   "id": "FriendliAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "FriendliAI/Meta-Llama-3.1-8B-Instruct-fp8",
-    "FriendliAI/Meta-Llama-3.1-8B-Instruct-int8"
-   ]
-  },
-  {
-   "id": "Epiculous",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Epiculous/Violet_Twilight-v0.2",
-    "Epiculous/Violet_Twilight-v0.2-GGUF"
-   ]
-  },
-  {
-   "id": "stabilityai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "stabilityai/stablelm-2-12b",
-    "stabilityai/stablelm-2-1_6b"
-   ]
-  },
-  {
-   "id": "timteh673",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "timteh673/Mistral-Small-4-119B-Uncensored-GGUF",
-    "timteh673/Qwen3.5-397B-A17B-Opus-4.6-Reasoning-Uncensored-GGUF"
-   ]
-  },
-  {
-   "id": "jc-builds",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "jc-builds/Qwen3.5-4B-Q4_K_M-GGUF",
-    "jc-builds/Qwen3.5-9B-Q4_K_M-GGUF"
-   ]
-  },
-  {
-   "id": "ThomasBaruzier",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ThomasBaruzier/Meta-Llama-3.1-405B-Instruct-GGUF",
-    "ThomasBaruzier/Meta-Llama-3.1-8B-Instruct-GGUF"
-   ]
-  },
-  {
-   "id": "ai-forever",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ai-forever/mGPT",
-    "ai-forever/mGPT-13B"
-   ]
-  },
-  {
-   "id": "orcarouter",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "orcarouter/LFM3-1.7B-abliterated",
-    "orcarouter/Mistral-Large-4-1T-A52B-GGUF"
-   ]
-  },
-  {
-   "id": "ai21labs",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ai21labs/AI21-Jamba-Large-1.5",
-    "ai21labs/AI21-Jamba-Mini-1.5"
-   ]
-  },
-  {
-   "id": "akjindal53244",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "akjindal53244/Llama-3.1-Storm-8B",
-    "akjindal53244/Llama-3.1-Storm-8B-GGUF"
-   ]
-  },
-  {
-   "id": "PocketDoc",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "PocketDoc/Dans-PersonalityEngine-V1.3.0-12b",
-    "PocketDoc/Dans-PersonalityEngine-V1.3.0-24b"
-   ]
-  },
-  {
-   "id": "kyutai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "kyutai/helium-1-2b",
-    "kyutai/helium-1-preview-2b"
-   ]
-  },
-  {
-   "id": "openGPT-X",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "openGPT-X/Teuken-7B-instruct-commercial-v0.4",
-    "openGPT-X/Teuken-7B-instruct-research-v0.4"
-   ]
-  },
-  {
-   "id": "ATH-MaaS",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ATH-MaaS/Marco-Mini-Instruct",
-    "ATH-MaaS/Marco-Nano-Instruct"
-   ]
-  },
-  {
-   "id": "OVHaiLLM",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "OVHaiLLM/Olala-v1.0-mini-7A1B",
-    "OVHaiLLM/Olala-v1.0-mini-7A1B-GGUF"
-   ]
-  },
-  {
-   "id": "CRD716",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "CRD716/ggml-LLaMa-65B-quantized",
-    "CRD716/ggml-vicuna-1.1-quantized"
-   ]
-  },
-  {
-   "id": "LLaMAX",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "LLaMAX/LLaMAX3-8B",
-    "LLaMAX/LLaMAX3-8B-Alpaca"
-   ]
-  },
-  {
-   "id": "Gabs1346",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Gabs1346/gemma-4-e4b-cpt-clinico-ptbr",
-    "Gabs1346/qwen3.5-9b-cpt-clinico-ptbr"
-   ]
-  },
-  {
-   "id": "benjleite",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "benjleite/ptt5-ptbr-qa",
-    "benjleite/ptt5-ptbr-qg"
-   ]
-  },
-  {
-   "id": "huggingtweets",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "huggingtweets/gduvivier-guilhermeboulos-ptbrasil",
-    "huggingtweets/lulaoficial-ptbrasil"
-   ]
-  },
-  {
-   "id": "Luciano",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Luciano/gpt2-small-portuguese-finetuned-peticoes",
-    "Luciano/gpt2-small-portuguese-finetuned-tcu-acordaos"
-   ]
-  },
-  {
-   "id": "winderfeld",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "winderfeld/mistral-for-portuguese-sentiment-analysis-v2",
-    "winderfeld/mistral-for-portuguese-sentiment-analysis-v3"
-   ]
-  },
-  {
-   "id": "felipe-carlos-ipms",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "felipe-carlos-ipms/gemma-portuguese-tom-cat-2b-it-Q8_0-GGUF",
-    "felipe-carlos-ipms/phi-3-portuguese-tom-cat-4k-instruct-Q4_K_M-GGUF"
-   ]
-  },
-  {
-   "id": "ssmits",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ssmits/Falcon2-5.5B-Portuguese",
-    "ssmits/Falcon2-8B-Portuguese"
-   ]
-  },
-  {
-   "id": "godofmining",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "godofmining/brazilnut_v1",
-    "godofmining/brazilnut_v2"
-   ]
-  },
-  {
-   "id": "GuilhermeAumo",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "GuilhermeAumo/Tucano-2b4-Instruct-Q4_K_M-GGUF",
-    "GuilhermeAumo/Tucano-2b4-Instruct-Q8_0-GGUF"
-   ]
-  },
-  {
-   "id": "TheBloke",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "TheBloke/sabia-7B-AWQ",
-    "TheBloke/sabia-7B-GPTQ"
-   ]
-  },
-  {
-   "id": "casperhansen",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "casperhansen/llama-3.3-70b-instruct-awq"
-   ]
-  },
-  {
-   "id": "taronaeo",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "taronaeo/Granite-4.2-3B-BE-GGUF"
-   ]
-  },
-  {
-   "id": "kosbu",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "kosbu/Llama-3.3-70B-Instruct-AWQ"
-   ]
-  },
-  {
-   "id": "sakamakismile",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "sakamakismile/Qwen3.6-27B-Text-NVFP4-MTP"
-   ]
-  },
-  {
-   "id": "abenzerps",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "abenzerps/LFM2.5-24B-A2B-Uncensored-GSQ-RCO-GGUF"
-   ]
-  },
-  {
-   "id": "stelterlab",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "stelterlab/Mistral-Small-24B-Instruct-2501-AWQ"
-   ]
-  },
-  {
-   "id": "Unbabel",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Unbabel/Tower-Plus-9B"
-   ]
-  },
-  {
-   "id": "ghost-x",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ghost-x/ghost-8b-beta-1608"
-   ]
-  },
-  {
-   "id": "grumd0",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "grumd0/Nemotron-3.5-Bolt-E4B-Heretic-GGUF"
-   ]
-  },
-  {
-   "id": "BioMistral",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "BioMistral/BioMistral-7B"
-   ]
-  },
-  {
-   "id": "Mungert",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Mungert/LFM3-1.7B-GGUF"
-   ]
-  },
-  {
-   "id": "furiosa-ai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "furiosa-ai/Meta-Llama-3.1-8B-Instruct-FP8-dynamic"
-   ]
-  },
-  {
-   "id": "huihui-ai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "huihui-ai/Llama-3.3-70B-Instruct-abliterated"
-   ]
-  },
-  {
-   "id": "AtlaAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "AtlaAI/Selene-1-Mini-Llama-3.1-8B"
-   ]
-  },
-  {
-   "id": "infosave",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "infosave/Granite-4.2-cmf"
-   ]
-  },
-  {
-   "id": "OS-Software",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "OS-Software/LFM2.5-24B-A2B-Uncensored-Heretic-GGUF"
-   ]
-  },
-  {
-   "id": "alpindale",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "alpindale/Llama-3.2-1B"
-   ]
-  },
-  {
-   "id": "Soulfate24",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Soulfate24/LFM3-1.7B-Paretrix-GGUF"
-   ]
-  },
-  {
-   "id": "NoxNotreve",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "NoxNotreve/AMALIA-9B-0626-SFT-GGUF"
-   ]
-  },
-  {
-   "id": "mondk",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mondk/LFM3-1.7B-Claude-Code-GGUF"
-   ]
-  },
-  {
-   "id": "prithivMLmods",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "prithivMLmods/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
-   ]
-  },
-  {
-   "id": "ibnzterrell",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ibnzterrell/Meta-Llama-3.3-70B-Instruct-AWQ-INT4"
-   ]
-  },
-  {
-   "id": "cybertruck32489",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "cybertruck32489/LFM3-1.7B-RD"
-   ]
-  },
-  {
-   "id": "diablomike20",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "diablomike20/Claude-Opus-5.5"
-   ]
-  },
-  {
-   "id": "ngquocvinh",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ngquocvinh/LFM3-1.7B-GGUF"
-   ]
-  },
-  {
-   "id": "joshnader",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "joshnader/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF"
-   ]
-  },
-  {
-   "id": "Melvin56",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Melvin56/Phi-4-mini-instruct-abliterated-GGUF"
-   ]
-  },
-  {
-   "id": "hermitdave",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "hermitdave/LFM2.5-24B-A2B-MLX-DWQ-3bit"
-   ]
-  },
-  {
-   "id": "zaakirio",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "zaakirio/LFM2.5-8B-A1B-Uncensored-GGUF"
-   ]
-  },
-  {
-   "id": "divinetribe",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "divinetribe/Llama-3.3-70B-Instruct-abliterated-8bit-mlx"
-   ]
-  },
-  {
-   "id": "Papuguinho",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Papuguinho/gemmuguinho-636m-GGUF"
-   ]
-  },
-  {
-   "id": "mattritchey",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mattritchey/next-1b-Q4_K_M-GGUF"
-   ]
-  },
-  {
-   "id": "aifeifei798",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "aifeifei798/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored"
-   ]
-  },
-  {
-   "id": "TildeAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "TildeAI/TildeOpen-30b"
-   ]
-  },
-  {
-   "id": "AlmawaveLabs",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "AlmawaveLabs/Velvet-14B"
-   ]
-  },
-  {
-   "id": "darkc0de",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "darkc0de/XORTRON.CriminalComputing.LARGE.2026.3"
-   ]
-  },
-  {
-   "id": "intervitens",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "intervitens/mini-magnum-12b-v1.1"
-   ]
-  },
-  {
-   "id": "second-state",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "second-state/Mistral-Nemo-Instruct-2407-GGUF"
    ]
   }
  ],
