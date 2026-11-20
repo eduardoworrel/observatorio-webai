@@ -318,7 +318,12 @@
   function posicionar() { camSuja = true; pintSuja = true; agendar(); }
   function mexeu() { ultInteracao = performance.now(); interagindo = true; posicionar(); }
   function paint() { pintSuja = true; agendar(); }
-  function filtrou() { filtroSuja = true; assinatura = null; camSuja = true; estSuja = true; pintSuja = true; agendar(); }
+  function marcaAtivos() {
+    document.querySelectorAll('.sel select').forEach(function (c) { c.classList.toggle('ativo', c.value !== '' && c.value !== 'todas'); });
+    var f = S.f[S.tab], tem = S.tab === 'modelos' ? (S.escopo !== 'todos' || S.via !== 'todos' || S.nat !== 'todas' || S.busca.trim() !== '' || S.fmt !== '') : Object.keys(f).some(function (k) { return f[k] !== ''; });
+    var l = $('#limpar'); if (l) l.disabled = !tem;
+  }
+  function filtrou() { marcaAtivos(); filtroSuja = true; assinatura = null; camSuja = true; estSuja = true; pintSuja = true; agendar(); }
   function rgba(c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; }
 
   // grade espacial em coordenadas do mapa (u, v)
@@ -826,7 +831,7 @@
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === S.lang)); });
     document.querySelectorAll('[data-escopo]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.escopo === S.escopo)); });
     document.querySelectorAll('[data-via]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.via === S.via)); });
-    renderModos(); renderFiltros(); var ff = $('#f-fmt'); if (ff) ff.value = S.fmt;
+    renderModos(); renderFiltros(); marcaAtivos(); var ff = $('#f-fmt'); if (ff) ff.value = S.fmt;
     var mot = $('[data-sky-motion]'); mot.setAttribute('aria-label', S.paused ? (S.lang === 'pt' ? 'Retomar animação' : 'Resume animation') : (S.lang === 'pt' ? 'Pausar animação' : 'Pause animation'));
   }
   function tudo() { textos(); renderFoto(); montar(); G.forEach(function (g) { g.el.firstChild.textContent = g.nome + ' · ' + g.ms.length; g.el.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural)); }); renderLegenda(); assinatura = null; if (S.sel) renderDrawer(); resize(); }
@@ -975,6 +980,7 @@
     el.addEventListener('input', function (e) { var c = e.target.closest('input[data-q]'); if (!c) return; S.f[c.dataset.f].q = c.value; filtrou(); });
   });
   $('#f-fmt').addEventListener('change', function (e) { S.fmt = e.target.value; filtrou(); });
+  document.addEventListener('change', function (e) { if (e.target.matches && e.target.matches('.sel select')) marcaAtivos(); });
   $('#limpar').addEventListener('click', function () {
     if (S.tab === 'modelos') { S.escopo = 'todos'; S.via = 'todos'; S.nat = 'todas'; S.busca = ''; S.fmt = ''; $('#busca').value = ''; textos(); fecharDrawer(); S.zoom = 1; S.panX = 0; S.panY = 0; tudo(); }
     else { var f = S.f[S.tab]; Object.keys(f).forEach(function (k) { f[k] = ''; }); renderFiltros(); filtrou(); }
