@@ -1,0 +1,29 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "acso",
+  "nome": "Centro de Pesquisa em Arquitetura de Computadores, Sistemas Inteligentes e Robótica",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/acso",
+    "acessado": "2026-11-20",
+    "trecho": "Centro de Pesquisa em Arquitetura de Computadores, Sistemas Inteligentes e Robótica company https://acso.uneb.br/"
+  },
+  "links": {
+    "hf": "https://huggingface.co/acso",
+    "oficial": "https://acso.uneb.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/acso",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

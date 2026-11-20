@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "amadeusai",
+  "nome": "AMADEUS AI",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/amadeusai",
+    "acessado": "2026-11-20",
+    "trecho": "We are a deep-tech startup at the forefront of AI innovation in Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/amadeusai",
+    "acessado": "2026-11-20",
+    "trecho": "AMADEUS AI company https://amadeus-ai.com"
+  },
+  "links": {
+    "hf": "https://huggingface.co/amadeusai",
+    "oficial": "https://amadeus-ai.com"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/amadeusai",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}
