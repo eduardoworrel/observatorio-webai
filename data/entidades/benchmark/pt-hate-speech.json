@@ -1,0 +1,46 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "pt-hate-speech",
+  "nome": "Portuguese Hate Speech Dataset",
+  "sigla": "PT Hate Speech",
+  "descricao": {
+    "pt": "Tweets em português com anotação binária (discurso de ódio ou não), para detecção de discurso de ódio.",
+    "en": "Portuguese tweets with binary annotation (hate or no-hate), for hate speech detection."
+  },
+  "dominio": [
+    "extracao_classificacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "hate-speech-portuguese/hate_speech_portuguese"
+  ],
+  "ano": 2019,
+  "links": {
+    "site": "https://huggingface.co/datasets/hate-speech-portuguese/hate_speech_portuguese",
+    "artigo": "https://aclanthology.org/W19-3510/",
+    "codigo": "https://github.com/paulafortuna/Portuguese-Hate-Speech-Dataset"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/hate-speech-portuguese/hate_speech_portuguese",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "Portuguese dataset for hate speech detection composed of 5,668 tweets with binary annotations"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://aclanthology.org/W19-3510/",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo (ACL Anthology)",
+      "trecho": "A Hierarchically-Labeled Portuguese Hate Speech Dataset"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "felipeoes",
+  "nome": "Felipe Oliveira",
+  "tipo": "pessoa",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/felipeoes",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: São Paulo - SP, Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/felipeoes",
+    "github": "https://github.com/felipeoes"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/felipeoes",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

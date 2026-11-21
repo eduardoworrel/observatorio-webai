@@ -1,0 +1,30 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "sagui-nlp",
+  "nome": "Sagui NLP",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/sagui-nlp",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada na organização do GitHub que aponta para o perfil do Hugging Face",
+    "trecho": "Brazil"
+  },
+  "links": {
+    "hf": "https://huggingface.co/sagui-nlp",
+    "github": "https://github.com/sagui-nlp"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/sagui-nlp",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

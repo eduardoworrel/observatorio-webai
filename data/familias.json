@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -123,10 +123,20 @@
    "id": "albertina",
    "nome": "albertina",
    "modelos": [
-    "carolina-c4ai/albertina-100m-ptbr-domain-classifier"
+    "carolina-c4ai/albertina-100m-ptbr-domain-classifier",
+    "PORTULAN/albertina-100m-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-100m-portuguese-ptpt-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptbr-encoder-256",
+    "PORTULAN/albertina-1b5-portuguese-ptpt-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptpt-encoder-256",
+    "PORTULAN/albertina-900m-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-900m-portuguese-ptbr-encoder-brwac",
+    "PORTULAN/albertina-900m-portuguese-ptpt-encoder"
    ],
    "publicadores": [
-    "carolina-c4ai"
+    "carolina-c4ai",
+    "PORTULAN"
    ]
   },
   {
@@ -366,9 +376,15 @@
    "id": "bert-multilingual",
    "nome": "bert-multilingual",
    "modelos": [
+    "alfaneo/bert-base-multilingual-sts",
+    "pucpr/biobertpt-all",
+    "pucpr/biobertpt-bio",
+    "pucpr/biobertpt-clin",
     "Venturus/mBERT-AnonyMED-BR-syn"
    ],
    "publicadores": [
+    "alfaneo",
+    "pucpr",
     "Venturus"
    ]
   },
@@ -377,6 +393,7 @@
    "nome": "BERTimbau",
    "modelos": [
     "adalbertojunior/bert-base-portuguese-cased-8192",
+    "alfaneo/bertimbaulaw-base-portuguese-cased",
     "carolina-c4ai/bert-base-portuguese-cased-domain-classifier",
     "carolina-c4ai/bert-large-portuguese-cased-domain-classifier",
     "cnmoro/bert-base-portuguese-cased-safetensors",
@@ -410,6 +427,7 @@
    ],
    "publicadores": [
     "adalbertojunior",
+    "alfaneo",
     "carolina-c4ai",
     "cnmoro",
     "g-assismoraes",
@@ -419,6 +437,17 @@
     "pucpr-br",
     "rhaymison",
     "Polygl0t"
+   ]
+  },
+  {
+   "id": "bert-pt",
+   "nome": "bert-pt",
+   "modelos": [
+    "pierreguillou/bert-base-cased-pt-lenerbr",
+    "pierreguillou/bert-large-cased-pt-lenerbr"
+   ],
+   "publicadores": [
+    "pierreguillou"
    ]
   },
   {
@@ -432,6 +461,17 @@
    ]
   },
   {
+   "id": "bert-squad",
+   "nome": "bert-squad",
+   "modelos": [
+    "pierreguillou/bert-base-cased-squad-v1.1-portuguese",
+    "pierreguillou/bert-large-cased-squad-v1.1-portuguese"
+   ],
+   "publicadores": [
+    "pierreguillou"
+   ]
+  },
+  {
    "id": "bertabaporu",
    "nome": "bertabaporu",
    "modelos": [
@@ -439,6 +479,16 @@
    ],
    "publicadores": [
     "Polygl0t"
+   ]
+  },
+  {
+   "id": "bertimbau-portuguese",
+   "nome": "bertimbau-portuguese",
+   "modelos": [
+    "alfaneo/bertimbau-base-portuguese-sts"
+   ],
+   "publicadores": [
+    "alfaneo"
    ]
   },
   {
@@ -450,6 +500,36 @@
    ],
    "publicadores": [
     "TucanoBR"
+   ]
+  },
+  {
+   "id": "bertimbaulaw-portuguese",
+   "nome": "bertimbaulaw-portuguese",
+   "modelos": [
+    "alfaneo/bertimbaulaw-base-portuguese-sts"
+   ],
+   "publicadores": [
+    "alfaneo"
+   ]
+  },
+  {
+   "id": "bertugues-portuguese",
+   "nome": "BERTugues-portuguese",
+   "modelos": [
+    "ricardoz/BERTugues-base-portuguese-cased"
+   ],
+   "publicadores": [
+    "ricardoz"
+   ]
+  },
+  {
+   "id": "bertweetbr",
+   "nome": "bertweetbr",
+   "modelos": [
+    "melll-uff/bertweetbr"
+   ],
+   "publicadores": [
+    "melll-uff"
    ]
   },
   {
@@ -529,10 +609,12 @@
    "id": "biobertpt",
    "nome": "biobertpt",
    "modelos": [
-    "adalbertojunior/test-medner"
+    "adalbertojunior/test-medner",
+    "pucpr/bioBERTpt-squad-v1.1-portuguese"
    ],
    "publicadores": [
-    "adalbertojunior"
+    "adalbertojunior",
+    "pucpr"
    ]
   },
   {
@@ -690,6 +772,36 @@
    ]
   },
   {
+   "id": "cabra",
+   "nome": "Cabra",
+   "modelos": [
+    "botbotrobotics/Cabra"
+   ],
+   "publicadores": [
+    "botbotrobotics"
+   ]
+  },
+  {
+   "id": "cabra13",
+   "nome": "cabra13",
+   "modelos": [
+    "botbotrobotics/cabra13b"
+   ],
+   "publicadores": [
+    "botbotrobotics"
+   ]
+  },
+  {
+   "id": "cabramistral",
+   "nome": "CabraMistral",
+   "modelos": [
+    "botbotrobotics/CabraMistral-v3-7b-32k"
+   ],
+   "publicadores": [
+    "botbotrobotics"
+   ]
+  },
+  {
    "id": "cabrita",
    "nome": "cabrita",
    "modelos": [
@@ -738,6 +850,28 @@
    ]
   },
   {
+   "id": "clinicalnerpt",
+   "nome": "clinicalnerpt",
+   "modelos": [
+    "pucpr/clinicalnerpt-chemical",
+    "pucpr/clinicalnerpt-diagnostic",
+    "pucpr/clinicalnerpt-disease",
+    "pucpr/clinicalnerpt-disorder",
+    "pucpr/clinicalnerpt-finding",
+    "pucpr/clinicalnerpt-healthcare",
+    "pucpr/clinicalnerpt-laboratory",
+    "pucpr/clinicalnerpt-medical",
+    "pucpr/clinicalnerpt-pharmacologic",
+    "pucpr/clinicalnerpt-procedure",
+    "pucpr/clinicalnerpt-quantitative",
+    "pucpr/clinicalnerpt-sign",
+    "pucpr/clinicalnerpt-therapeutic"
+   ],
+   "publicadores": [
+    "pucpr"
+   ]
+  },
+  {
    "id": "clip",
    "nome": "clip",
    "modelos": [
@@ -758,6 +892,26 @@
    ],
    "publicadores": [
     "cnmoro"
+   ]
+  },
+  {
+   "id": "cocoruta",
+   "nome": "cocoruta",
+   "modelos": [
+    "felipeoes/cocoruta-7b"
+   ],
+   "publicadores": [
+    "felipeoes"
+   ]
+  },
+  {
+   "id": "cocoruta-2",
+   "nome": "cocoruta-2",
+   "modelos": [
+    "felipeoes/cocoruta-2-8b"
+   ],
+   "publicadores": [
+    "felipeoes"
    ]
   },
   {
@@ -1113,6 +1267,18 @@
    ]
   },
   {
+   "id": "debertinha",
+   "nome": "debertinha",
+   "modelos": [
+    "sagui-nlp/debertinha-ptbr-xsmall",
+    "sagui-nlp/debertinha-ptbr-xsmall-assin2-sts",
+    "sagui-nlp/debertinha-ptbr-xsmall-lenerbr"
+   ],
+   "publicadores": [
+    "sagui-nlp"
+   ]
+  },
+  {
    "id": "deepseek",
    "nome": "DeepSeek",
    "modelos": [
@@ -1329,6 +1495,16 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "ehelpbertpt",
+   "nome": "eHelpBERTpt",
+   "modelos": [
+    "pucpr/eHelpBERTpt"
+   ],
+   "publicadores": [
+    "pucpr"
    ]
   },
   {
@@ -1812,6 +1988,18 @@
    ]
   },
   {
+   "id": "gervasio",
+   "nome": "gervasio",
+   "modelos": [
+    "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
+    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit"
+   ],
+   "publicadores": [
+    "PORTULAN"
+   ]
+  },
+  {
    "id": "gigakriya",
    "nome": "GigaKriya",
    "modelos": [
@@ -1920,10 +2108,14 @@
     "nicholasKluge/Aira-2-1B5",
     "nicholasKluge/Aira-2-355M",
     "nicholasKluge/Aira-2-774M",
-    "nicholasKluge/Aira-2-portuguese-124M"
+    "nicholasKluge/Aira-2-portuguese-124M",
+    "pierreguillou/gpt2-small-portuguese",
+    "pucpr/gpt2-bio-pt"
    ],
    "publicadores": [
-    "nicholasKluge"
+    "nicholasKluge",
+    "pierreguillou",
+    "pucpr"
    ]
   },
   {
@@ -2444,6 +2636,17 @@
    ]
   },
   {
+   "id": "itd",
+   "nome": "itd",
+   "modelos": [
+    "melll-uff/itd_bert",
+    "melll-uff/itd_longformer"
+   ],
+   "publicadores": [
+    "melll-uff"
+   ]
+  },
+  {
    "id": "ivila",
    "nome": "ivila",
    "modelos": [
@@ -2507,6 +2710,17 @@
    ],
    "publicadores": [
     "ufca-llms"
+   ]
+  },
+  {
+   "id": "jurisbert-portuguese",
+   "nome": "jurisbert-portuguese",
+   "modelos": [
+    "alfaneo/jurisbert-base-portuguese-sts",
+    "alfaneo/jurisbert-base-portuguese-uncased"
+   ],
+   "publicadores": [
+    "alfaneo"
    ]
   },
   {
@@ -2578,6 +2792,27 @@
    ],
    "publicadores": [
     "c2d-usp"
+   ]
+  },
+  {
+   "id": "layout",
+   "nome": "layout",
+   "modelos": [
+    "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+    "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512"
+   ],
+   "publicadores": [
+    "pierreguillou"
+   ]
+  },
+  {
+   "id": "layoutxlm",
+   "nome": "layoutxlm",
+   "modelos": [
+    "pierreguillou/layoutxlm-finetuned-xfund-fr"
+   ],
+   "publicadores": [
+    "pierreguillou"
    ]
   },
   {
@@ -2817,6 +3052,18 @@
    ]
   },
   {
+   "id": "lilt",
+   "nome": "lilt",
+   "modelos": [
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-funsd-iob-original",
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512"
+   ],
+   "publicadores": [
+    "pierreguillou"
+   ]
+  },
+  {
    "id": "liltii",
    "nome": "LilTii",
    "modelos": [
@@ -2874,6 +3121,7 @@
     "Giuliano/llama-2-7b-chat-periquito-pt-br",
     "Giuliano/llama-2-7b-periquito-pt-br",
     "lucianosb/llama-2-7b-langchain-chat-GGUF",
+    "pierreguillou/llama-2-7b-hf-text2image-prompts-Liege-test",
     "pucpr-br/Clinical-BR-LlaMA-2-7B",
     "allenai/open-instruct-llama2-sharegpt-7b",
     "allenai/open-instruct-llama2-sharegpt-dpo-7b",
@@ -2899,6 +3147,7 @@
     "g-assismoraes",
     "Giuliano",
     "lucianosb",
+    "pierreguillou",
     "pucpr-br",
     "allenai",
     "meta-llama",
@@ -2982,7 +3231,8 @@
     "nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1-FP4-QAD",
     "nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1-mcore",
     "nvidia/Llama-3.1-Nemotron-Safety-Guard-8B-v3",
-    "nvidia/OpenMath2-Llama3.1-8B"
+    "nvidia/OpenMath2-Llama3.1-8B",
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder"
    ],
    "publicadores": [
     "ai-eldorado",
@@ -2992,7 +3242,8 @@
     "allenai",
     "meta-llama",
     "microsoft",
-    "nvidia"
+    "nvidia",
+    "PORTULAN"
    ]
   },
   {
@@ -3224,10 +3475,12 @@
    "id": "longformer",
    "nome": "longformer",
    "modelos": [
+    "melll-uff/longformer",
     "allenai/longformer-large-4096-finetuned-triviaqa",
     "allenai/longformer-scico"
    ],
    "publicadores": [
+    "melll-uff",
     "allenai"
    ]
   },
@@ -3431,6 +3684,7 @@
     "artificialguybr/llama3-8b-redmond-code290k",
     "artificialguybr/llama3-8b-sql-create-context",
     "artificialguybr/Meta-Llama-3.1-8B-openhermes-2.5",
+    "botbotrobotics/CabraLlama3-8b",
     "rhaymison/Llama-3-portuguese-Tom-cat-8b-instruct",
     "rhaymison/Llama3-portuguese-luana-8b-instruct",
     "semantixai/Lloro-SQL",
@@ -3447,6 +3701,7 @@
    "publicadores": [
     "ai-eldorado",
     "artificialguybr",
+    "botbotrobotics",
     "rhaymison",
     "semantixai",
     "allenai",
@@ -3541,6 +3796,7 @@
    "modelos": [
     "adalbertojunior/Mistral-7b-Portuguese-V0.1",
     "artificialguybr/OpenHermesV2-PTBR",
+    "botbotrobotics/CabraMistral7b",
     "cnmoro/Mistral-7B-Portuguese",
     "cnmoro/Mistral-7B-Portuguese-AWQ",
     "lucianosb/boto-7B",
@@ -3570,6 +3826,7 @@
    "publicadores": [
     "adalbertojunior",
     "artificialguybr",
+    "botbotrobotics",
     "cnmoro",
     "lucianosb",
     "pucpr-br",
@@ -3908,9 +4165,12 @@
    "id": "ner",
    "nome": "ner",
    "modelos": [
+    "pierreguillou/ner-bert-base-cased-pt-lenerbr",
+    "pierreguillou/ner-bert-large-cased-pt-lenerbr",
     "Venturus/BERTimbau-AnonyMED-BR"
    ],
    "publicadores": [
+    "pierreguillou",
     "Venturus"
    ]
   },
@@ -4219,6 +4479,16 @@
    ]
   },
   {
+   "id": "opus",
+   "nome": "opus",
+   "modelos": [
+    "wandgibaut/opus-mt-en-de-finetuned-en-to-de"
+   ],
+   "publicadores": [
+    "wandgibaut"
+   ]
+  },
+  {
    "id": "orca-2",
    "nome": "Orca-2",
    "modelos": [
@@ -4439,6 +4709,16 @@
    ],
    "publicadores": [
     "Xenova"
+   ]
+  },
+  {
+   "id": "periquito",
+   "nome": "periquito",
+   "modelos": [
+    "wandgibaut/periquito-3B"
+   ],
+   "publicadores": [
+    "wandgibaut"
    ]
   },
   {
@@ -4672,10 +4952,12 @@
    "id": "pt",
    "nome": "pt",
    "modelos": [
-    "dominguesm/pt_core_news_trf"
+    "dominguesm/pt_core_news_trf",
+    "melll-uff/pt-br_simcse"
    ],
    "publicadores": [
-    "dominguesm"
+    "dominguesm",
+    "melll-uff"
    ]
   },
   {
@@ -4769,6 +5051,7 @@
    "id": "qwen1.5",
    "nome": "Qwen1.5",
    "modelos": [
+    "botbotrobotics/CabraQwen7b",
     "rhaymison/Qwen-portuguese-luana-7b",
     "Qwen/Qwen1.5-0.5B",
     "Qwen/Qwen1.5-0.5B-Chat",
@@ -4796,6 +5079,7 @@
     "Qwen/Qwen1.5-7B-Chat-GPTQ-Int8"
    ],
    "publicadores": [
+    "botbotrobotics",
     "rhaymison",
     "Qwen"
    ]
@@ -5553,13 +5837,25 @@
    ]
   },
   {
+   "id": "robertacrawlpt",
+   "nome": "RoBERTaCrawlPT",
+   "modelos": [
+    "eduagarcia/RoBERTaCrawlPT-base"
+   ],
+   "publicadores": [
+    "eduagarcia"
+   ]
+  },
+  {
    "id": "robertalexpt",
    "nome": "RoBERTaLexPT",
    "modelos": [
-    "adalbertojunior/RoBERTaLexPT-base-8k"
+    "adalbertojunior/RoBERTaLexPT-base-8k",
+    "eduagarcia/RoBERTaLexPT-base"
    ],
    "publicadores": [
-    "adalbertojunior"
+    "adalbertojunior",
+    "eduagarcia"
    ]
   },
   {
@@ -5699,6 +5995,16 @@
    ]
   },
   {
+   "id": "sbert",
+   "nome": "sbert",
+   "modelos": [
+    "melll-uff/sbert_ptbr"
+   ],
+   "publicadores": [
+    "melll-uff"
+   ]
+  },
+  {
    "id": "scibert",
    "nome": "scibert",
    "modelos": [
@@ -5752,6 +6058,21 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "serafim",
+   "nome": "serafim",
+   "modelos": [
+    "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
+    "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder-ir",
+    "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder-ir"
+   ],
+   "publicadores": [
+    "PORTULAN"
    ]
   },
   {
@@ -6081,11 +6402,13 @@
    "id": "tempclin",
    "nome": "tempclin",
    "modelos": [
+    "pucpr/tempclin-biobertpt-all",
     "pucpr-br/tempclin-biobertpt-all",
     "pucpr-br/tempclin-biobertpt-bio",
     "pucpr-br/tempclin-biobertpt-clin"
    ],
    "publicadores": [
+    "pucpr",
     "pucpr-br"
    ]
   },

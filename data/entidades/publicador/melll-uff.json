@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "melll-uff",
+  "nome": "Machine and Language Learning Lab at Universidade Federal Fluminense",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/MeLLL-UFF",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada na organização MeLLL-UFF no GitHub",
+    "trecho": "Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/melll-uff",
+    "acessado": "2026-11-20",
+    "trecho": "Machine and Language Learning Lab at Universidade Federal Fluminense"
+  },
+  "links": {
+    "hf": "https://huggingface.co/melll-uff",
+    "github": "https://github.com/MeLLL-UFF"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/melll-uff",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

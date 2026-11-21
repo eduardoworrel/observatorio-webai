@@ -1,0 +1,31 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "nlx-ulisboa",
+  "nome": "NLX - Natural Language and Speech Group",
+  "sigla": "NLX",
+  "instituicao": "ulisboa",
+  "vinculo_fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+  },
+  "areas": [
+    "processamento de linguagem natural",
+    "tecnologia da fala"
+  ],
+  "links": {
+    "instituicao": "https://www.ulisboa.pt/en"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do modelo",
+      "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+    }
+  ]
+}

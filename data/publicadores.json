@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -151,6 +151,44 @@
    "relacionados": []
   },
   {
+   "id": "alfaneo",
+   "nome": "Alfaneo AI",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/alfaneo-ai",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada no GitHub vinculado ao perfil do Hugging Face",
+    "trecho": "Campo Grande - MS, Brazil"
+   },
+   "natureza": "empresa",
+   "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "site_institucional",
+    "url": "https://alfaneo.ai",
+    "acessado": "2026-11-20",
+    "trecho": "A liderança da nossa empresa é composta por especialistas apaixonados por IA."
+   },
+   "escopo": "br",
+   "n_modelos_hf": 6,
+   "n_membros": 6,
+   "url": "https://huggingface.co/alfaneo",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/alfaneo",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 6,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
    "id": "althayr",
    "nome": "Althayr Nazaret",
    "tipo": "pessoa",
@@ -265,6 +303,38 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "botbotrobotics",
+   "nome": "BotBot",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/botbotrobotics",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada no GitHub vinculado ao perfil do Hugging Face",
+    "trecho": "Brazil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 11,
+   "n_membros": 2,
+   "url": "https://huggingface.co/botbotrobotics",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 5,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/botbotrobotics",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 6,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "c2d-usp",
@@ -552,6 +622,76 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "eduagarcia",
+   "nome": "eduagarcia",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/eduagarcia",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Goiânia, Brasil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 2,
+   "n_membros": null,
+   "url": "https://huggingface.co/eduagarcia",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/eduagarcia",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "felipeoes",
+   "nome": "Felipe Oliveira",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/felipeoes",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: São Paulo - SP, Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 6,
+   "n_membros": null,
+   "url": "https://huggingface.co/felipeoes",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/felipeoes",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "FMendonca",
@@ -988,6 +1128,44 @@
    "relacionados": []
   },
   {
+   "id": "melll-uff",
+   "nome": "Machine and Language Learning Lab at Universidade Federal Fluminense",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/MeLLL-UFF",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada na organização MeLLL-UFF no GitHub",
+    "trecho": "Brazil"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/melll-uff",
+    "acessado": "2026-11-20",
+    "trecho": "Machine and Language Learning Lab at Universidade Federal Fluminense"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 7,
+   "n_membros": 23,
+   "url": "https://huggingface.co/melll-uff",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/melll-uff",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 6,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
    "id": "neuralmind",
    "nome": "NeuralMind Inteligência Artificial",
    "tipo": "grupo",
@@ -1079,6 +1257,80 @@
     "uni-bonn"
    ],
    "natureza_rotulo": "afiliada"
+  },
+  {
+   "id": "pierreguillou",
+   "nome": "Pierre Guillou",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/piegu",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brasilia",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 18,
+   "n_membros": null,
+   "url": "https://huggingface.co/pierreguillou",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/pierreguillou",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 14,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "pucpr",
+   "nome": "PUC PR",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/pucpr/biobertpt-all",
+    "acessado": "2026-11-20",
+    "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/pucpr/biobertpt-all",
+    "acessado": "2026-11-20",
+    "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
+   },
+   "escopo": "br",
+   "n_modelos_hf": 20,
+   "n_membros": null,
+   "url": "https://huggingface.co/pucpr",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/pucpr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 20,
+   "instituicoes": [
+    "pucpr"
+   ],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "pucpr-br",
@@ -1202,6 +1454,73 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "ricardoz",
+   "nome": "Ricardo Zago",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/ricardozago",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: São Paulo-SP",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 1,
+   "n_membros": null,
+   "url": "https://huggingface.co/ricardoz",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ricardoz",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "sagui-nlp",
+   "nome": "Sagui NLP",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/sagui-nlp",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada na organização do GitHub que aponta para o perfil do Hugging Face",
+    "trecho": "Brazil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 4,
+   "n_membros": 5,
+   "url": "https://huggingface.co/sagui-nlp",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/sagui-nlp",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 3,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "semantixai",
@@ -1350,6 +1669,43 @@
    "instituicoes": [],
    "labs": [],
    "relacionados": []
+  },
+  {
+   "id": "wandgibaut",
+   "nome": "Wandemberg Gibaut",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/wandgibaut",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Campinas, SP, Brazil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 3,
+   "n_membros": null,
+   "url": "https://huggingface.co/wandgibaut",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/wandgibaut",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [
+    "ai-eldorado"
+   ],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "wilsondesouza",
@@ -2005,6 +2361,47 @@
     "nicholasKluge",
     "TucanoBR"
    ]
+  },
+  {
+   "id": "PORTULAN",
+   "nome": "PORTULAN",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "trecho": "PORTULAN CLARIN—Research Infrastructure for the Science and Technology of Language, funded by Lisboa 2020"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 21,
+   "n_membros": 7,
+   "url": "https://huggingface.co/PORTULAN",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 1,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/PORTULAN",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 19,
+   "instituicoes": [
+    "ulisboa"
+   ],
+   "labs": [
+    "nlx-ulisboa"
+   ],
+   "relacionados": []
   },
   {
    "id": "Qwen",
