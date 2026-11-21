@@ -1,0 +1,37 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "bluex",
+  "nome": "BLUEX (Brazilian Leading Universities Entrance eXams)",
+  "sigla": "BLUEX",
+  "descricao": {
+    "pt": "Provas de vestibular da UNICAMP e da USP, com metadados por assunto, para avaliar modelos em português.",
+    "en": "Entrance exams from UNICAMP and USP, with subject metadata, to evaluate models in Portuguese."
+  },
+  "dominio": [
+    "vestibular_educacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "multiple-choice"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "portuguese-benchmark-datasets/BLUEX"
+  ],
+  "ano": 2023,
+  "links": {
+    "artigo": "https://arxiv.org/abs/2307.05410"
+  },
+  "fontes": [
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/abs/2307.05410",
+      "acessado": "2026-11-20",
+      "rotulo": "resumo do artigo",
+      "trecho": "we introduce the Brazilian Leading Universities Entrance eXams (BLUEX), a dataset of entrance exams from the two leading universities in Brazil: UNICAMP and USP"
+    }
+  ]
+}

@@ -917,11 +917,24 @@ def montar(pubs, modelos, descartados):
     return meta, {"publicadores": pubs, "modelos": modelos, "constelacoes": const, "familias": [fams[k] for k in sorted(fams)]}, foto
 
 
-def gravar(meta, pacote, foto):
+def camadas_atuais():
+    """Camadas de datasets e benchmarks como estao em data/ (quando a execucao nao as recoleta)."""
+    d = carregar_datasets_existentes()
+    b = (carregar_json(os.path.join(RAIZ, "data", "benchmarks.json"), {}) or {}).get("benchmarks", [])
+    f = carregar_json(os.path.join(RAIZ, "data", "foto_camadas.json"), {}) or {"datasets": {"total": 0, "por_escopo": {"br": 0, "pt": 0}, "pt_br": 0, "por_faixa": {}, "downloads_total": 0}, "benchmarks": {"total": 0, "por_dominio": {}, "por_tipo": {}}}
+    return d["datasets"], b, f, d["unidades"]
+
+
+def gravar(meta, pacote, foto, camadas=None):
     """Grava so o que mudou (diff vazio quando nada muda). Devolve os arquivos alterados."""
+    ds, bs, foto_c, unidades = camadas or camadas_atuais()
+    meta_c = dict(meta, coletado_em=max([r["fontes"][0]["acessado"] for r in ds if r.get("fontes")] or [meta["coletado_em"]]), unidades=unidades)
     saidas = {os.path.join("data", nome + ".json"): json.dumps({"meta": meta, nome: obj}, ensure_ascii=False, indent=1) for nome, obj in pacote.items()}
     saidas[os.path.join("data", "foto.json")] = json.dumps(foto, ensure_ascii=False, indent=1)
-    saidas[os.path.join("web", "data.js")] = "window.MAPA_DADOS=" + json.dumps(dict(meta=meta, foto=foto, **pacote), ensure_ascii=False, separators=(",", ":")) + ";"
+    saidas[os.path.join("data", "datasets.json")] = json.dumps({"meta": meta_c, "datasets": ds}, ensure_ascii=False, indent=1)
+    saidas[os.path.join("data", "benchmarks.json")] = json.dumps({"meta": meta, "benchmarks": bs}, ensure_ascii=False, indent=1)
+    saidas[os.path.join("data", "foto_camadas.json")] = json.dumps(foto_c, ensure_ascii=False, indent=1)
+    saidas.update(arquivos_web(meta, foto, pacote, ds, bs, foto_c))
     mudou = []
     for rel, conteudo in saidas.items():
         caminho = os.path.join(RAIZ, rel)
@@ -946,6 +959,235 @@ def guardar_antes():
                 g.write(f.read())
 
 
+# ---------- camada de datasets e benchmarks (SPEC.md secoes 4.8, 4.9 e 9.5) ----------
+EXPAND_DS = ["tags", "downloads", "likes", "lastModified", "description", "gated", "private", "createdAt", "mainSize"]
+MIN_DOWNLOADS_DS, MIN_LIKES_DS = 100, 3   # datasets em portugues de publicadores fora do Brasil: 100 downloads (30 dias) ou 3 curtidas
+LINGUAS_PT = ("pt", "pt-br", "por")
+DOMINIOS = ("geral", "vestibular_educacao", "juridico", "saude", "codigo", "matematica", "extracao_classificacao", "cultura_lingua", "outros")
+COLUNAS_DS = ["id", "publicador", "nome", "descricao", "idiomas", "pt_br", "tarefas", "licenca", "bytes", "faixa", "linhas_faixa", "downloads", "likes", "atualizado", "escopo", "benchmarks"]
+RX_BR_TAG = re.compile(r"(^|[:_-])(pt-?br|brazil|brasil|brazilian|brasileir)", re.I)
+RX_MD = [(re.compile(r"!\[[^\]]*\]\([^)]*\)"), " "), (re.compile(r"\[([^\]]*)\]\([^)]*\)"), r"\1"), (re.compile(r"<[^>]+>"), " "), (re.compile(r"https?://\S+"), " "),
+         (re.compile(r"[#*_`>|]+"), " "), (re.compile(r"\s+"), " ")]
+
+
+def faixa_bytes(b):
+    if b is None:
+        return None
+    return "<1MB" if b < 1e6 else "1-100MB" if b < 1e8 else "100MB-1GB" if b < 1e9 else "1-10GB" if b < 1e10 else ">10GB"
+
+
+def limpar_descricao(t, n=160):
+    """Uma linha do cartao: primeira linha de texto corrido, sem marcacao, sem contato pessoal, ate n caracteres."""
+    for linha in (t or "").replace("\t", " ").split("\n"):
+        l = linha
+        for rx, rep in RX_MD:
+            l = rx.sub(rep, l)
+        l = l.strip(" -:\u2026")
+        if len(l) >= 30 and sum(c.isalpha() for c in l) > 0.6 * len(l) and not re.match(r"^(paper|code|dataset (card|summary|description)|table of contents|see the full)", l, re.I):
+            l = sem_pii(l)
+            return l if len(l) <= n else l[: n - 1].rsplit(" ", 1)[0] + "\u2026"
+    return ""
+
+
+def listar_ds(max_paginas=1, **params):
+    q = [(k, v) for k, v in params.items()] + [("expand[]", x) for x in EXPAND_DS]
+    return paginar(f"{API}/datasets?" + urllib.parse.urlencode(q), max_paginas)
+
+
+def e_pt_ds(x):
+    return any(t.lower() in {"language:" + l for l in LINGUAS_PT} for t in x.get("tags", []))
+
+
+def registro_dataset(x, unidade_ds):
+    """Registro de um dataset publico, so com metadados publicos da API; None se privado, fechado (gated) ou desabilitado."""
+    if x.get("gated") or x.get("private") or x.get("disabled"):
+        return None
+    tags = x.get("tags", [])
+    langs = []
+    for t in tags:
+        if t.lower().startswith("language:") and t[9:] not in langs:
+            langs.append(t[9:])
+    langs = sorted(langs, key=lambda l: (l.lower() not in LINGUAS_PT, l.lower()))[:8]
+    b = x.get("mainSize")
+    nome = x["id"].split("/", 1)[-1]
+    return {"id": x["id"], "publicador": x["id"].split("/")[0], "nome": nome, "descricao": limpar_descricao(x.get("description")), "idiomas": langs,
+            "pt_br": any(RX_BR_TAG.search(t) for t in tags if not t.startswith(("license:", "size_categories:", "format:", "library:", "region:"))) or RX_BR_TAG.search(nome) is not None and e_pt_ds(x),
+            "pt": e_pt_ds(x), "tarefas": [t[16:] for t in tags if t.startswith("task_categories:")][:6], "licenca": next((t[8:] for t in tags if t.startswith("license:")), None),
+            "tamanho_bytes": b if isinstance(b, int) and b > 0 else None, "faixa": faixa_bytes(b if isinstance(b, int) and b > 0 else None),
+            "linhas_faixa": next((t[16:] for t in tags if t.startswith("size_categories:")), None), "downloads": x.get("downloads") or 0, "likes": x.get("likes") or 0,
+            "atualizado": (x.get("lastModified") or "")[:10], "fontes": [{"rotulo": "Dataset no Hugging Face", "url": f"https://huggingface.co/datasets/{x['id']}", "acessado": HOJE}], "u": [unidade_ds]}
+
+
+def carregar_benchmarks():
+    pasta = os.path.join(RAIZ, "data", "entidades", "benchmark")
+    saida = {}
+    for nome in sorted(os.listdir(pasta)) if os.path.isdir(pasta) else []:
+        e = carregar_json(os.path.join(pasta, nome)) if nome.endswith(".json") else None
+        if isinstance(e, dict) and e.get("entidade") == "benchmark" and e.get("status") != "arquivado" and not e.get("exemplo") and e.get("id") and e["id"] not in EXCLUIR:
+            saida[e["id"]] = e
+    return saida
+
+
+def carregar_datasets_existentes():
+    d = carregar_json(os.path.join(RAIZ, "data", "datasets.json"), {}) or {}
+    return {"datasets": d.get("datasets", []), "unidades": (d.get("meta") or {}).get("unidades", {})}
+
+
+def _chk_ds(unid):
+    return os.path.join(RAIZ, ".cache", "datasets", re.sub(r"[^A-Za-z0-9._-]", "_", unid) + ".json")
+
+
+def _sig_ds(unid, bench):
+    if unid.startswith("ds:bench:"):
+        b = bench.get(unid[9:]) or {}
+        return hashlib.sha1(json.dumps(sorted(b.get("datasets", [])), ensure_ascii=False).encode()).hexdigest()[:12]
+    return ""
+
+
+def unidades_ds(br_ids, bench):
+    """Unidades de coleta da camada de datasets: os do idioma, um por publicador do Brasil e um por benchmark."""
+    return ["ds:pt"] + ["ds:pub:" + p for p in sorted(br_ids, key=str.lower)] + ["ds:bench:" + b for b in sorted(bench)]
+
+
+def situacao_ds(unid, exist_ds, bench, dias):
+    e = exist_ds["unidades"].get(unid)
+    if not e:
+        return "novo"
+    if e.get("sig", "") != _sig_ds(unid, bench):
+        return "alterado"
+    ida = idade_dias(e.get("em"))
+    return "vencido" if ida is not None and ida > dias else "em dia"
+
+
+def coletar_unidade_ds(unid, bench):
+    """Coleta uma unidade da camada de datasets. Devolve {registros, ausentes, chamadas, incompleto}."""
+    r0, f0 = estado["rede"], estado["falhas"]
+    regs, ausentes = {}, []
+    def add(x):
+        r = registro_dataset(x, unid)
+        if r:
+            regs[r["id"].lower()] = r
+    if unid == "ds:pt":
+        for lang in LINGUAS_PT:
+            for ordem, limiar in (("downloads", lambda x: x.get("downloads", 0) < MIN_DOWNLOADS_DS), ("likes", lambda x: x.get("likes", 0) < MIN_LIKES_DS)):
+                url = f"{API}/datasets?" + urllib.parse.urlencode([("filter", "language:" + lang), ("sort", ordem), ("direction", -1), ("limit", 1000)] + [("expand[]", k) for k in EXPAND_DS])
+                for _ in range(8):
+                    d, link = get(url)
+                    if not isinstance(d, list) or not d:
+                        break
+                    for x in d:
+                        if (x.get("downloads") or 0) >= MIN_DOWNLOADS_DS or (x.get("likes") or 0) >= MIN_LIKES_DS:
+                            add(x)
+                    m = re.search(r'<([^>]+)>;\s*rel="next"', link or "")
+                    if limiar(d[-1]) or not m:
+                        break
+                    url = m.group(1)
+    elif unid.startswith("ds:pub:"):
+        for x in listar_ds(max_paginas=6, author=unid[7:], limit=1000, sort="downloads", direction=-1):
+            add(x)
+    elif unid.startswith("ds:bench:"):
+        for did in (bench.get(unid[9:]) or {}).get("datasets", []):
+            pub, nome = did.split("/", 1)
+            achou = [x for x in listar_ds(author=pub, search=nome, limit=100) if x["id"].lower() == did.lower()]
+            if achou and registro_dataset(achou[0], unid):
+                add(achou[0])
+            else:
+                ausentes.append(did)
+    return {"v": 1, "unidade": unid, "coletado_em": HOJE, "registros": sorted(regs.values(), key=lambda r: r["id"].lower()), "ausentes": ausentes,
+            "chamadas": estado["rede"] - r0, "incompleto": estado["falhas"] > f0}
+
+
+def mesclar_ds(exist_ds, resultados, unidades_ativas, bench, remover_inativas):
+    """Mescla os registros das unidades coletadas. Cada registro lembra de quais unidades veio (u)."""
+    por_id = {r["id"].lower(): dict(r, u=list(r.get("u", []))) for r in exist_ds["datasets"]}
+    unidades = dict(exist_ds["unidades"])
+    refeitas = {r["unidade"] for r in resultados}
+    saem = set(refeitas)
+    if remover_inativas:
+        saem |= {u for u in unidades if u not in unidades_ativas}
+    for k, r in list(por_id.items()):
+        r["u"] = [u for u in r["u"] if u not in saem]
+        if not r["u"]:
+            del por_id[k]
+    for u in saem - refeitas:
+        unidades.pop(u, None)
+    for res in resultados:
+        unidades[res["unidade"]] = {"em": res["coletado_em"], "sig": _sig_ds(res["unidade"], bench)}
+        for r in res["registros"]:
+            k = r["id"].lower()
+            if k in por_id:
+                por_id[k] = dict(r, u=sorted(set(por_id[k]["u"]) | {res["unidade"]}))
+            else:
+                por_id[k] = dict(r, u=[res["unidade"]])
+    return list(por_id.values()), dict(sorted(unidades.items()))
+
+
+def montar_camadas(raw, bench, br_ids):
+    """Aplica a regra de relevancia (SPEC 9.5) e deriva escopo, benchmarks e contagens. Ordem estavel."""
+    br = {b.lower() for b in br_ids}
+    por_ds = collections.defaultdict(list)
+    for bid, b in sorted(bench.items()):
+        for d in b.get("datasets", []):
+            por_ds[d.lower()].append(bid)
+    mantidos = []
+    for r in raw:
+        k, em_bench = r["id"].lower(), r["id"].lower() in por_ds
+        if r["publicador"].lower() in br:
+            esc = "br"
+        elif em_bench or (r.get("pt") and (r["downloads"] >= MIN_DOWNLOADS_DS or r["likes"] >= MIN_LIKES_DS)):
+            esc = "pt"
+            if not em_bench and not r["licenca"] and not r["descricao"]:
+                continue   # reupload sem metadados minimos
+        else:
+            continue
+        mantidos.append(dict(r, escopo=esc, benchmarks=por_ds.get(k, [])))
+    vistos = {}
+    for r in sorted(mantidos, key=lambda r: (-r["downloads"], r["id"].lower())):   # duplicata obvia: mesmo nome e mesmo tamanho fora do Brasil
+        if r["escopo"] == "pt" and not r["benchmarks"] and r["tamanho_bytes"]:
+            chave = (r["nome"].lower(), r["tamanho_bytes"])
+            if chave in vistos:
+                r["_dup"] = True
+            vistos.setdefault(chave, r["id"])
+    final = [r for r in mantidos if not r.get("_dup")]
+    final.sort(key=lambda r: (r["escopo"] != "br", -r["downloads"], r["id"].lower()))
+    por_id = {r["id"].lower(): r for r in final}
+    bs = []
+    for bid, b in sorted(bench.items()):
+        ds = [por_id[d.lower()] for d in b.get("datasets", []) if d.lower() in por_id]
+        o = {k: b[k] for k in ("id", "nome", "sigla", "descricao", "dominio", "idiomas", "tarefas", "tipo", "datasets", "criador", "ano", "links", "fontes") if k in b}
+        o.update(n_datasets=len(ds), tamanho_total_bytes=sum(d["tamanho_bytes"] or 0 for d in ds) or None, downloads_total=sum(d["downloads"] for d in ds))
+        bs.append(o)
+    foto = {"datasets": {"total": len(final), "por_escopo": {e: sum(1 for r in final if r["escopo"] == e) for e in ("br", "pt")}, "pt_br": sum(1 for r in final if r["pt_br"]),
+                         "por_faixa": dict(sorted(collections.Counter(r["faixa"] or "desconhecido" for r in final).items())), "downloads_total": sum(r["downloads"] for r in final)},
+            "benchmarks": {"total": len(bs), "por_dominio": dict(sorted(collections.Counter(d for b in bs for d in b["dominio"]).items())),
+                           "por_tipo": dict(sorted(collections.Counter(b["tipo"] for b in bs).items()))}}
+    return final, bs, foto
+
+
+def arquivos_web(meta, foto, pacote, ds, bs, foto_c):
+    """Arquivos de web/: data.js traz o necessario para a aba Modelos; datasets, benchmarks e os builds e fontes de cada modelo
+    ficam em arquivos proprios, carregados sob demanda pela interface. window.MAPA_DADOS continua com as mesmas chaves depois de carregados."""
+    dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
+    leves, detalhes = [], {}
+    for m in pacote["modelos"]:
+        leves.append({k: v for k, v in m.items() if k not in ("builds", "fontes")})
+        detalhes[m["id"]] = {"builds": m["builds"], "fontes": m["fontes"]}
+    partes = {"builds": "data-builds.js", "datasets": "data-datasets.js", "benchmarks": "data-benchmarks.js"}
+    w = lambda nome: os.path.join("web", nome)
+    extras = {w("data-builds.js"): "window.MAPA_DETALHES=" + dump(detalhes) + ";",
+              w("data-datasets.js"): "window.MAPA_DADOS.datasets=" + dump(compactar_datasets(ds)) + ";",
+              w("data-benchmarks.js"): "window.MAPA_DADOS.benchmarks=" + dump(bs) + ";"}
+    tamanhos = {nome: len(extras[w(arq)].encode("utf-8")) for nome, arq in partes.items()}   # bytes brutos: a interface mostra o progresso real
+    nucleo = dict(meta=meta, foto=foto, **dict(pacote, modelos=leves), foto_camadas=foto_c, contrato_camadas=1, partes=partes, partes_bytes=tamanhos)
+    return dict({w("data.js"): "window.MAPA_DADOS=" + dump(nucleo) + ";"}, **extras)
+
+
+def compactar_datasets(final):
+    linhas = [[r["id"], r["publicador"], r["nome"], r["descricao"], r["idiomas"], r["pt_br"], r["tarefas"], r["licenca"], r["tamanho_bytes"], r["faixa"], r["linhas_faixa"],
+               r["downloads"], r["likes"], r["atualizado"], r["escopo"], r["benchmarks"]] for r in final]
+    return {"colunas": COLUNAS_DS, "linhas": linhas}
+
+
 # ---------- execucao ----------
 CH_CURADO, CH_AUTO = 5, 12   # chamadas por publicador (media medida em coletas reais: curado com ou sem modelos; descoberto com leitura de perfil e cartoes)
 
@@ -968,6 +1210,8 @@ def main():
     ap.add_argument("--cache-dias", type=float, default=3)
     ap.add_argument("--fresh", action="store_true")
     ap.add_argument("--sem-descoberta", action="store_true")
+    ap.add_argument("--sem-datasets", action="store_true", help="nao coleta a camada de datasets e benchmarks")
+    ap.add_argument("--so-datasets", action="store_true", help="coleta so a camada de datasets e benchmarks")
     ap.add_argument("--max-candidatos", type=int, default=150)
     a = ap.parse_args()
     if not (a.novos or a.tudo or a.so or a.normalizar):
@@ -1009,12 +1253,25 @@ def main():
             c = cands.setdefault(pid.lower(), {"id": pid, "origem": "busca na API", "escopo": "br", "tipo": None, "curado": None, "achados": []})
             if not c["curado"] and c["escopo"] == "br":
                 c["achados"] = sorted(ids)[:5]
-    alvos = selecionar()
+    alvos = [] if a.so_datasets else selecionar()
+    bench = carregar_benchmarks()
+    exist_ds = carregar_datasets_existentes()
+    br_ids = {c["id"] for c in cands.values() if c["curado"] and c["escopo"] == "br"} | {p["id"] for p in exist["pubs"].values() if p["escopo"] == "br"}
+
+    def alvos_ds(br):
+        todas = unidades_ds(br, bench)
+        if a.sem_datasets:
+            return [], todas
+        if a.so:
+            pedidos = {x.strip().lower() for x in a.so.split(",") if x.strip()}
+            return [(u, "pedido") for u in todas if u.startswith("ds:pub:") and u[7:].lower() in pedidos], todas
+        sit = [(u, situacao_ds(u, exist_ds, bench, a.dias)) for u in todas]
+        return [(u, x) for u, x in sit if a.tudo or x != "em dia"], todas
 
     if a.dry_run:
         ncur = sum(1 for c, _ in alvos if c["curado"])
         print(f"{modo} --dry-run --previa (uma consulta de lista por publicador; nada gravado)" if a.previa else f"{modo} --dry-run (sem chamadas de rede, nada gravado)")
-        print(f"candidatos: {len(cands)} (curados: {sum(1 for c in cands.values() if c['curado'])}); a coletar: {len(alvos)}; em dia: {len(cands) - len(alvos)}")
+        print(f"modelos: candidatos {len(cands)} (curados: {sum(1 for c in cands.values() if c['curado'])}); a coletar: {len(alvos)}; em dia: {len(cands) - len(alvos)}")
         for c, s in sorted(alvos, key=lambda x: (x[1], x[0]["id"].lower())):
             e = c["curado"]
             print(f"  {s:9} {c['origem']:34} {(e['classe_pais'] + ' / ' + e['natureza']) if e else 'classificacao automatica':32} {c['id']}")
@@ -1022,9 +1279,15 @@ def main():
                 xs, _, fora = modelos_do_publicador(c["id"])
                 print(f"            previa: {len(xs)} modelo(s) no corte" + (f", {fora} acima de {MAX_B:g} B" if fora else "") + (": " + ", ".join(x["id"].split("/")[-1] for x in xs[:5]) + (" ..." if len(xs) > 5 else "") if xs else ""))
         ch, mi = estimativa(ncur, len(alvos) - ncur)
-        print(f"estimativa: ~{ch} chamadas, ~{mi:.0f} min na API anonima, mais o indice de builds (~50 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
+        ads, todas_ds = alvos_ds(br_ids)
+        print(f"datasets: unidades {len(todas_ds)} (publicadores do Brasil: {len(br_ids)}, benchmarks: {len(bench)}); a coletar: {len(ads)}")
+        for u, x in ads:
+            print(f"  {x:9} {u}")
+        ch += sum(7 if u == "ds:pt" else 2 for u, _ in ads)
+        print(f"estimativa: ~{ch} chamadas, ~{ch / 100:.0f} min na API anonima, mais o indice de builds (~50 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
         return
-    if not alvos and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
+    ads, _ = alvos_ds(br_ids)
+    if not alvos and not ads and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
         print(f"{modo}: nada a coletar ({len(cands)} candidatos em dia). Nenhum arquivo alterado.")
         return
 
@@ -1054,7 +1317,7 @@ def main():
                 if os.environ.get("COLETOR_ESPERA_TESTE"):
                     time.sleep(float(os.environ["COLETOR_ESPERA_TESTE"]))
             regs.append(reg)
-        if a.tudo and not a.so and not a.sem_descoberta:   # pessoas do mundo achadas por builds de navegador
+        if a.tudo and not a.so and not a.sem_descoberta and not a.so_datasets:   # pessoas do mundo achadas por builds de navegador
             conhecidos = set(cands) | set(exist["pubs"]) | set(exist["desc"])
             for c in descobrir_independentes(ctx, conhecidos):
                 reg = unidade(c, ctx)
@@ -1066,7 +1329,7 @@ def main():
         sys.exit(130)
 
     remover = set()
-    if a.tudo:   # coleta completa: quem deixou de ser candidato (entidade arquivada ou apagada, saiu das listas) sai dos dados
+    if a.tudo and not a.so_datasets:   # coleta completa: quem deixou de ser candidato (entidade arquivada ou apagada, saiu das listas) sai dos dados
         descoberta_rodou = not a.sem_descoberta
         for k, p in list(exist["pubs"].items()) + list(exist["desc"].items()):
             if k not in cands and (descoberta_rodou or p.get("origem_lista", p.get("origem")) != "busca na API"):
@@ -1074,10 +1337,41 @@ def main():
     guardar_antes()
     pubs, modelos, desc = mesclar(exist, regs, remover)
     meta, pacote, foto = montar(pubs, modelos, desc)
-    mudou = gravar(meta, pacote, foto)
-    resumo = {k: foto[k] for k in ("brasil", "mundo", "publicadores", "candidatos") if k != "candidatos"}
+
+    # camada de datasets e benchmarks: unidades incrementais, com checkpoint
+    br_ids = {c["id"] for c in cands.values() if c["curado"] and c["escopo"] == "br"} | {p["id"] for p in pubs if p["escopo"] == "br"}
+    ads, todas_ds = alvos_ds(br_ids)
+    resultados, nd = [], len(ads)
+    if ads:
+        log(f"datasets: {nd} unidade(s) a coletar")
+    try:
+        for i, (u, sit) in enumerate(ads, 1):
+            chk, res = _chk_ds(u), None
+            if not a.fresh and os.path.exists(chk) and (time.time() - os.path.getmtime(chk)) < CACHE_DIAS * 86400:
+                r = carregar_json(chk)
+                if r and r.get("v") == 1 and not r.get("incompleto") and r.get("sig", "") == _sig_ds(u, bench):
+                    res = r
+                    log(f"[datasets {i}/{nd}] {u}: checkpoint de {r['coletado_em']} reaproveitado")
+            if res is None:
+                t0 = time.time()
+                res = coletar_unidade_ds(u, bench)
+                if res["incompleto"]:
+                    log(f"[datasets {i}/{nd}] {u}: falha de rede durante a coleta; nao entra nos dados (rode de novo)")
+                    continue
+                res["sig"] = _sig_ds(u, bench)
+                _atomico(chk, json.dumps(res, ensure_ascii=False))
+                log(f"[datasets {i}/{nd}] {u} ({sit}): {len(res['registros'])} dataset(s)" + (f"; ausentes: {', '.join(res['ausentes'])}" if res["ausentes"] else "") + f"; {res['chamadas']} chamadas, {time.time() - t0:.0f}s")
+                if os.environ.get("COLETOR_ESPERA_TESTE"):
+                    time.sleep(float(os.environ["COLETOR_ESPERA_TESTE"]))
+            resultados.append(res)
+    except KeyboardInterrupt:
+        log(f"interrompido: {len(resultados)} unidade(s) de datasets ja estao em .cache/datasets/; rode o mesmo comando para continuar")
+        sys.exit(130)
+    raw, unidades = mesclar_ds(exist_ds, resultados, set(todas_ds), bench, a.tudo and not a.sem_datasets)
+    camadas = montar_camadas(raw, bench, br_ids) + (unidades,)
+    mudou = gravar(meta, pacote, foto, camadas)
     log(f"coleta concluida em {(time.time() - t_ini) / 60:.1f} min; chamadas de rede: {estado['rede']}, do cache: {estado['cache']}")
-    print(json.dumps({"coletados": len(regs), "arquivos_alterados": mudou, **{k: foto[k] for k in ("brasil", "mundo")}}, ensure_ascii=False, indent=1))
+    print(json.dumps({"coletados": len(regs), "unidades_datasets": len(resultados), "arquivos_alterados": mudou, **{k: foto[k] for k in ("brasil", "mundo")}, "camadas": camadas[2]}, ensure_ascii=False, indent=1))
     if mudou:
         try:
             import relatorio_coleta

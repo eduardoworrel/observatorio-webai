@@ -8,12 +8,58 @@
 <script>if(location.protocol!=="file:"&&!/\/$|\.[A-Za-z0-9]+$/.test(location.pathname))location.replace(location.pathname+"/"+location.search+location.hash)</script>
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="assets/marca.svg" type="image/svg+xml">
+<style id="css-carga">
+#carregando{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;font-family:"Atkinson Hyperlegible Next","Atkinson Hyperlegible Next Fallback",system-ui,sans-serif;color:#141942;background:linear-gradient(160deg,#d6e1ff,#eee8ff 55%,#fde8de);transition:opacity .25s ease}
+#carregando.saindo{opacity:0;pointer-events:none}
+#carregando .c-marca{font-size:clamp(26px,5vw,40px);font-weight:400;letter-spacing:-.012em}
+#carregando .c-marca b{font-weight:400;color:#5b63d6}
+#carregando .c-msg{margin:0;font-size:16px;color:#4c527c;max-width:34ch}
+#carregando .c-barra{width:min(320px,70vw);height:6px;border-radius:3px;background:#c9cff0;overflow:hidden}
+#carregando .c-barra i{display:block;height:100%;width:8%;background:#2c33a0;border-radius:3px;transition:width .35s ease}
+#carregando .c-etapa{margin:0;font-size:13px;color:#4c527c}
+#carregando .c-ns{display:none}
+@media(prefers-color-scheme:dark){html:not([data-theme=light]) #carregando{background:linear-gradient(160deg,#2c376d,#262f60 55%,#1f2753);color:#fafbff}html:not([data-theme=light]) #carregando .c-msg,html:not([data-theme=light]) #carregando .c-etapa{color:#dde1f8}html:not([data-theme=light]) #carregando .c-barra{background:#3a4478}html:not([data-theme=light]) #carregando .c-barra i{background:#aab1ff}html:not([data-theme=light]) #carregando .c-marca b{color:#aab1ff}}
+html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262f60 55%,#1f2753);color:#fafbff}html[data-theme=dark] #carregando .c-msg,html[data-theme=dark] #carregando .c-etapa{color:#dde1f8}html[data-theme=dark] #carregando .c-barra{background:#3a4478}html[data-theme=dark] #carregando .c-barra i{background:#aab1ff}html[data-theme=dark] #carregando .c-marca b{color:#aab1ff}
+@media(prefers-reduced-motion:no-preference){#carregando .c-barra.indet i{width:35%!important;animation:c-vai 1.2s ease-in-out infinite}}
+@keyframes c-vai{0%{margin-left:-35%}100%{margin-left:100%}}
+@media(prefers-reduced-motion:reduce){#carregando,#carregando .c-barra i{transition:none}}
+</style>
 <link rel="stylesheet" href="style.css">
 <script>
   try { var t = localStorage.getItem('observatorio-tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 </head>
 <body>
+<div id="carregando" role="status" aria-live="polite" aria-busy="true">
+  <div class="c-marca">Observatório <b>Web AI</b></div>
+  <p class="c-msg" id="c-msg">Carregando modelos, datasets e benchmarks…</p>
+  <div class="c-barra" id="c-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" aria-label="Progresso"><i id="c-prog"></i></div>
+  <p class="c-etapa" id="c-etapa">Baixando dados…</p>
+  <p class="c-ns" id="c-ns"></p>
+</div>
+<noscript><style>#carregando{display:none}.ns-aviso{display:block!important}</style><div class="ns-aviso" style="display:none;margin:0;padding:14px 20px;background:#fff6d6;color:#3a2e00;font:15px system-ui,sans-serif">Este site precisa de JavaScript para mostrar o mapa. This site needs JavaScript to show the map.</div></noscript>
+<script>
+(function () {
+  var T = { pt: ['Carregando modelos, datasets e benchmarks…', 'Baixando dados…', 'Preparando o mapa…', 'Desenhando…', 'Pronto.', 'A carga está demorando mais que o normal. Se nada mudar, recarregue a página.', 'Progresso'],
+            en: ['Loading models, datasets and benchmarks…', 'Downloading data…', 'Preparing the map…', 'Drawing…', 'Ready.', 'Loading is taking longer than usual. If nothing changes, reload the page.', 'Progress'] };
+  var lang = 'pt'; try { lang = (/[?&]lang=(en|pt)/.exec(location.search) || [])[1] || localStorage.getItem('observatorio-lang') || 'pt'; } catch (e) {} if (lang !== 'en') lang = 'pt';
+  var tx = T[lang], el = function (i) { return document.getElementById(i); }, pct = [8, 40, 70, 90, 100];
+  document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+  el('c-msg').textContent = tx[0]; el('c-etapa').textContent = tx[1]; el('c-barra').setAttribute('aria-label', tx[6]);
+  var t0 = performance.now(), feito = false;
+  window.__carga = {
+    t: { html: Math.round(t0) },
+    etapa: function (i) { if (feito) return; el('c-etapa').textContent = tx[1 + i]; el('c-prog').style.width = pct[i] + '%'; el('c-barra').setAttribute('aria-valuenow', pct[i]); window.__carga.t['etapa' + i] = Math.round(performance.now()); },
+    fim: function () {
+      if (feito) return; feito = true; var b = el('carregando'); window.__carga.t.pronto = Math.round(performance.now());
+      el('c-etapa').textContent = tx[4]; el('c-prog').style.width = '100%'; b.setAttribute('aria-busy', 'false');
+      var reduzido = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function () { b.classList.add('saindo'); setTimeout(function () { if (b.parentNode) b.parentNode.removeChild(b); }, reduzido ? 0 : 280); }, reduzido ? 0 : 120);
+    }
+  };
+  setTimeout(function () { if (!feito) { el('c-msg').textContent = tx[5]; el('c-barra').classList.add('indet'); } }, 15000);
+})();
+</script>
 <canvas id="fundo" aria-hidden="true"></canvas>
 <a class="skip-link" href="#tabela" data-i18n="skip">Pular o mapa e ir para a tabela</a>
 <header class="site-header">
@@ -34,16 +80,14 @@
 </header>
 
 <main id="main">
-  <section class="observatory-home" id="inicio" aria-labelledby="home-title">
+  <section class="observatory-home" id="inicio" role="tabpanel" aria-labelledby="tab-modelos">
     <div class="sky-stage" id="mapa">
       <div class="sky-top">
         <span class="sky-instrument-label"><span id="sky-field-count" role="status" aria-live="polite"></span></span>
         <span class="sky-top-actions">
-          <span class="mini-seg" role="group" aria-label="Agrupar" id="f-agrupar">
-            <button type="button" data-agrupar="publicador" aria-pressed="true" data-i18n="porpub">Publicador</button>
-            <button type="button" data-agrupar="familia" aria-pressed="false" data-i18n="porfam">Família</button>
-          </span>
+          <span class="mini-seg" role="group" aria-label="Agrupar" id="f-agrupar"></span>
           <button class="text-button" type="button" data-sky-reset data-i18n="recentrar">Recentrar ⌾</button>
+          <button class="exp-btn" type="button" id="exp-grafico" aria-haspopup="menu" aria-expanded="false" data-i18n="exportar">Exportar</button>
         </span>
       </div>
       <div class="model-sky" tabindex="0" role="region" aria-label="Mapa estrelado" id="ceu" aria-describedby="sky-ajuda">
@@ -51,6 +95,7 @@
         <canvas id="sky-canvas-brilho" aria-hidden="true"></canvas>
                 <div class="sky-points" id="sky-points"></div>
         <div class="sky-tip" id="sky-tip" hidden></div>
+        <div class="carga-camada carga-ceu" id="carga-ceu" aria-hidden="true" hidden><span class="c-spin" aria-hidden="true"></span><span class="carga-txt"></span><div class="c-barra-p" aria-hidden="true"><i></i></div></div>
       </div>
       <div class="sky-tools">
         <span class="sky-hint" id="sky-ajuda" data-i18n="hint">Arraste ou aproxime para filtrar a tabela.</span>
@@ -65,14 +110,15 @@
       <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download.</p>
     </div>
     <div class="right-col">
+    <div class="tabs" role="tablist" id="tabs" aria-label="Camadas" data-i18n-aria="tabs_aria">
+      <button type="button" role="tab" id="tab-modelos" data-tab="modelos" aria-selected="true" aria-controls="inicio" tabindex="0" data-i18n="tab_modelos">Modelos</button>
+      <button type="button" role="tab" id="tab-datasets" data-tab="datasets" aria-selected="false" aria-controls="inicio" tabindex="-1" hidden data-i18n="tab_datasets">Datasets</button>
+      <button type="button" role="tab" id="tab-benchmarks" data-tab="benchmarks" aria-selected="false" aria-controls="inicio" tabindex="-1" hidden data-i18n="tab_benchmarks">Benchmarks</button>
+    </div>
     <header class="home-copy">
       <div>
         <div class="home-eyebrow"><span></span><i data-i18n="eyebrow">Modelos no navegador e na borda</i></div>
         <h1 id="home-title">Observatório <span>Web AI</span></h1>
-      </div>
-      <div class="home-actions">
-        <a class="home-primary" href="#mapa" data-i18n="act1">Explorar o mapa ↗</a>
-        <a href="#metodo" data-i18n="act2">Como lemos os dados →</a>
       </div>
     </header>
     <section class="home-results" id="tabela" aria-labelledby="res-titulo">
@@ -80,7 +126,7 @@
         <div><span class="home-section-label" data-i18n="res_label">Modelos</span><h2 id="res-titulo" data-i18n="res_titulo">Quem já roda no navegador</h2></div>
         <a href="#metodo" data-i18n="res_link">Regras ↗</a>
       </div>
-      <div class="home-filters">
+      <div class="home-filters" id="filtros-modelos">
         <div class="segmented" role="group" aria-label="Escopo" id="f-escopo">
           <button type="button" data-escopo="br" aria-pressed="false" data-i18n="br">Brasil</button>
           <button type="button" data-escopo="mundo" aria-pressed="false" data-i18n="mundo">Mundo</button>
@@ -94,10 +140,15 @@
         </div>
         <label class="sel"><span class="sr" data-i18n="f_nat">Natureza do publicador</span>
           <select id="f-nat"></select></label>
+        <label class="sel"><span class="sr" data-i18n="f_fmt">Formatos de build</span>
+          <select id="f-fmt"></select></label>
         <label class="sel search"><span class="sr" data-i18n="buscar">Buscar</span>
           <input id="busca" type="search" placeholder="Buscar" data-i18n-ph="buscar_ph" autocomplete="off"></label>
       </div>
-      <p class="home-average-note" id="resumo-recorte" aria-live="polite"></p>
+      <div class="home-filters" id="filtros-datasets" hidden></div>
+      <div class="home-filters" id="filtros-benchmarks" hidden></div>
+      <p class="home-average-note"><span id="resumo-recorte" aria-live="polite"></span> <button type="button" class="text-button" id="limpar" data-i18n="limpar">Limpar filtros</button> <button class="exp-btn" type="button" id="exp-tabela" aria-haspopup="menu" aria-expanded="false" data-i18n="exportar">Exportar</button></p>
+      <div class="carga-camada" id="carga-camada" role="status" aria-live="polite" hidden><span class="c-spin" aria-hidden="true"></span><span class="carga-txt"></span><div class="c-barra-p" aria-hidden="true"><i></i></div><button type="button" class="carga-retry" hidden data-i18n="tentar">Tentar de novo</button></div>
       <div class="home-average-scroll" tabindex="-1">
         <table class="home-average-table" id="tb"><caption class="sr" data-i18n="res_titulo">Modelos</caption><thead></thead><tbody></tbody></table>
       </div>
@@ -140,6 +191,10 @@
 </aside>
 <script src="config.js"></script>
 <script src="data.js"></script>
+<script>window.__carga&&__carga.etapa(1)</script>
+<script>if(/[?&]fixture=/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>')</script>
+<script src="camadas.js"></script>
+<script src="exportar.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

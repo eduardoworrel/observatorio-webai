@@ -19,7 +19,7 @@ CONFIAVEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAIZ = os.path.abspath(os.environ.get("VALIDAR_RAIZ") or CONFIAVEL)   # VALIDAR_RAIZ: copia do PR; schema e codigo vem sempre do ramo confiavel
 SCHEMA_DIR = os.path.join(CONFIAVEL, "schema")
 HOJE = datetime.date.fromisoformat(os.environ.get("VALIDAR_HOJE") or datetime.date.today().isoformat())
-DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "familia": "familia"}
+DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "familia": "familia", "benchmark": "benchmark"}
 ISO = set("""AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ
 DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP
 KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM
@@ -27,7 +27,7 @@ PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH
 UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW""".split())
 DERIVADOS = {"n_modelos_hf", "n_membros", "n_modelos_mapeados", "modelos_fora_do_corte", "escopo", "origem_lista", "builds", "formatos_proprios", "formatos_navegador",
              "gguf", "gguf_wllama", "gguf_gb", "gguf_origem", "gguf_grande", "via", "gb_navegador", "conversao_de", "downloads", "atualizado", "idioma_pt", "base",
-             "tarefa", "tarefa_inferida", "regra_tarefa", "constelacao", "arestas", "modelos_total"}
+             "n_datasets", "tamanho_total_bytes", "downloads_total", "tarefa", "tarefa_inferida", "regra_tarefa", "constelacao", "arestas", "modelos_total"}
 PROIBIDOS = {"email", "e-mail", "telefone", "celular", "endereco", "endereço", "nascimento", "data_nascimento", "foto", "imagem", "avatar", "cpf", "rg", "genero", "gênero",
              "raca", "raça", "etnia", "religiao", "religião", "orientacao_sexual", "nacionalidade", "idade", "estado_civil", "redes", "instagram", "facebook", "whatsapp"}
 REDES_PESSOAIS = ("facebook.com", "fb.com", "instagram.com", "tiktok.com", "snapchat.com", "wa.me", "whatsapp.com", "t.me", "telegram.me", "x.com", "twitter.com",
@@ -151,7 +151,7 @@ def strings(v, path=()):
         for i, x in enumerate(v): yield from strings(x, path + (i,))
 def urls(v, path=()):
     for p, s in strings(v, path):
-        if s.startswith(("http://", "https://", "mailto:", "tel:")) and p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo", "pagina"):
+        if s.startswith(("http://", "https://", "mailto:", "tel:")) and p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo", "pagina", "site", "leaderboard", "codigo"):
             yield p, s
         elif s.startswith(("mailto:", "tel:")): yield p, s
 def fontes_de(o):
@@ -172,7 +172,7 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
     ent = o.get("entidade")
     # privacidade: padroes em todo texto (exceto urls, conferidas a parte)
     for p, s in strings(o):
-        if p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo"): continue
+        if p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo", "site", "leaderboard", "codigo"): continue
         for cod, rx in PAD.items():
             if rx.search(s): E(p, cod, f"{cod.lower()} detectado em texto: dado pessoal nao entra", "Use so informacao profissional publica; cite a pagina em vez de copiar o contato.")
         m = SENSIVEL.search(s)
@@ -260,6 +260,12 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
         if o.get("origem_cadastro") == "terceiro" and not any((a.get("fonte") or {}).get("tipo") in TIPOS_VINCULO for a in o.get("afiliacoes") or []):
             E(("origem_cadastro",), "TERCEIRO_SEM_FONTE", "cadastro por terceiro exige pagina institucional ou perfil publico que liste a pessoa", "")
         if ent == "pesquisador" and o.get("origem_cadastro") != "coletor" and any(k in o for k in ("brasil", "classe_pais")): E(("classe_pais",), "CAMPO_PROIBIDO", "pesquisador nao tem classe de pais: so afiliacao", "")
+    if ent == "benchmark":
+        c = o.get("criador")
+        if isinstance(c, dict) and not c.get("publicador") and not (c.get("nome") and isinstance(c.get("fonte"), dict)): E(("criador",), "CAMPO_FALTA", "criador: informe o publicador do Hugging Face, ou o nome institucional com a fonte (evidencia)", "")
+        ds = o.get("datasets") or []
+        if len(ds) != len({d.lower() for d in ds if isinstance(d, str)}): E(("datasets",), "ID_DUPLICADO", "dataset repetido na lista", "")
+        if o.get("tipo") == "leaderboard" and not (o.get("links") or {}).get("leaderboard"): E(("links", "leaderboard"), "CAMPO_FALTA", "tipo leaderboard exige links.leaderboard", "")
     if ent == "familia" and o.get("origem") and o["origem"] not in ctx["pubs"]: E(("origem",), "REF_INEXISTENTE", f"publicador {o['origem']!r} nao existe", "")
 
 def carregar_json(arq):
@@ -327,7 +333,7 @@ def verificar_links(arqs):
         if not isinstance(o, dict): continue
         loc = Loc(texto); loc.val(0, ())
         for p, v in walk(o):
-            if isinstance(v, str) and v.startswith("https://") and p and p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo"):
+            if isinstance(v, str) and v.startswith("https://") and p and p[-1] in ("url", "oficial", "instituicao", "hf", "github", "repositorio", "orcid", "scholar", "lattes", "artigo", "site", "leaderboard", "codigo"):
                 if v not in vistos:
                     vistos[v] = status_url(v); time.sleep(0.25)
                 cod = vistos[v]
@@ -394,7 +400,7 @@ def conferir_diff(base):
         print("nao consegui ler o diff:", e, file=sys.stderr); return
     for n in nomes:
         f = os.path.join(RAIZ, n)
-        if re.fullmatch(r"data/(publicadores|modelos|familias|constelacoes|foto)\.json|web/data\.js", n):
+        if re.fullmatch(r"data/(publicadores|modelos|familias|constelacoes|foto|datasets|benchmarks|foto_camadas)\.json|web/data\.js", n):
             ERROS.append(dict(arquivo=n, linha=1, coluna=1, nivel="ERRO", codigo="PR_DERIVADO", mensagem="arquivo derivado: so o coletor altera", dica="Reverta este arquivo; corrija a entidade em data/entidades/.", campo=""))
         elif n.startswith(("scripts/", "schema/", ".github/", "docs/", "LICENSE", "SECURITY", "CODE_OF", "CONTRIBUTING", "PULL_REQUEST")) or n in ("data/remocoes.json",):
             AVISOS.append(dict(arquivo=n, linha=1, coluna=1, nivel="AVISO", codigo="PR_INFRA", mensagem="altera infraestrutura, regras ou documentos: revisao humana obrigatoria", dica="", campo=""))

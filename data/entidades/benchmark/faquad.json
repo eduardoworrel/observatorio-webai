@@ -1,0 +1,36 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "faquad",
+  "nome": "FaQuAD",
+  "sigla": "FaQuAD",
+  "descricao": {
+    "pt": "Compreensão de leitura no domínio do ensino superior brasileiro, no formato do SQuAD.",
+    "en": "Machine reading comprehension in the domain of Brazilian higher education, in the SQuAD format."
+  },
+  "dominio": [
+    "geral"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "question-answering"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "eraldoluis/faquad"
+  ],
+  "links": {
+    "site": "https://huggingface.co/datasets/eraldoluis/faquad"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/eraldoluis/faquad",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "we present FaQuAD: a novel machine reading comprehension dataset in the domain of Brazilian higher education institutions"
+    }
+  ]
+}

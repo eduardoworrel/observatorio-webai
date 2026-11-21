@@ -15,13 +15,14 @@ O Observatório mapeia quem publica modelos de Web AI no Brasil e no mundo. Voc�
 
 | Quero... | Como |
 |---|---|
-| Adicionar publicador, laboratório, pesquisador ou família | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
+| Adicionar publicador, laboratório, pesquisador, família ou benchmark | PR com um arquivo novo em `data/entidades/<tipo>/` (ou o formulário "Adicionar entidade") |
+| Adicionar um benchmark em português ou do Brasil | PR com um arquivo novo em `data/entidades/benchmark/` (modelo `templates/benchmark.json`, ou o formulário "Adicionar benchmark"): nome, domínio, os datasets do Hugging Face que ele aponta e fontes com trecho literal. Os metadados dos datasets (tamanho, downloads, licença) são derivados pelo coletor |
 | Adicionar ou corrigir uma fonte | PR editando o campo `fontes`, ou o formulário "Fonte" |
 | Corrigir um erro | PR editando o arquivo, ou o formulário "Corrigir" |
 | Pedir remoção ou correção de dados de uma pessoa | Formulário "Pedir remoção" ou relato privado na aba Security do repositório (contatos em `docs/PRIVACIDADE.md`) |
 | Propor um campo novo | Formulário "Propor campo"; mudar o padrão é decisão de spec |
 
-Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles. Você indica **quem publica** (usuário ou organização do Hugging Face) com a evidência mínima de país e de natureza; os modelos são sempre derivados pelo coletor a partir das APIs públicas e nunca são inseridos à mão. Depois do merge, os mantenedores rodam a coleta e publicam os dados derivados (seção "Como os dados entram no site" em `docs/GOVERNANCA.md`).
+Não edite `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `datasets.json`, `benchmarks.json`, `foto_camadas.json` nem `web/data.js`: são gerados pelo coletor (status de build, tamanhos, formatos, contagens). A checagem recusa PR que mexe neles. Você indica **quem publica** (usuário ou organização do Hugging Face) com a evidência mínima de país e de natureza; os modelos são sempre derivados pelo coletor a partir das APIs públicas e nunca são inseridos à mão. Depois do merge, os mantenedores rodam a coleta e publicam os dados derivados (seção "Como os dados entram no site" em `docs/GOVERNANCA.md`).
 
 ## Sem saber usar Git: pelo navegador
 
@@ -52,6 +53,10 @@ Python 3.9 ou mais novo, só biblioteca padrão. O validador diz `arquivo:linha:
 1. **Automático (sem julgamento):** formato (schema), ids únicos, URLs bem formadas, datas, campos obrigatórios, fontes mínimas, regras de classificação, ausência de dado pessoal por padrão simples (e-mail, telefone, CEP, nascimento, redes pessoais). Com `--links`, se as páginas respondem; com `--trechos`, se cada trecho citado aparece mesmo na página da fonte.
 2. **Humano:** o mantenedor abre as fontes e confere se dizem o que o arquivo afirma, se a pessoa deve estar mesmo (seção 7 da SPEC) e se o texto é neutro. Meta de resposta: até 14 dias; pode demorar, é trabalho voluntário.
 3. Merge feito por uma pessoa. O site se atualiza na próxima publicação.
+
+## Mudar a interface
+
+A interface é HTML, CSS e JavaScript puros em `web/` (sem etapa de build). Antes de abrir um PR, rode `node scripts/testar-camadas.mjs` (abas, filtros e exportações, com os dados de exemplo de `?fixture=1`) e `node scripts/perf.mjs` (custo por quadro com 500 a 4.000 nós; o mapa deve ficar abaixo de 3 ms por quadro no p95). Os dois precisam de `playwright-core` e do Chrome (`PLAYWRIGHT_CORE` e `CHROME` indicam os caminhos). O adaptador do contrato de datasets e benchmarks é `web/camadas.js`; as exportações estão em `web/exportar.js`. Não acrescente bibliotecas nem requisições externas: a página e os arquivos exportados precisam funcionar offline.
 
 ## Exemplos
 

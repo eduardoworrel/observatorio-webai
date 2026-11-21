@@ -28,6 +28,7 @@ class ApiFalsa(http.server.BaseHTTPRequestHandler):
     autores = {}    # id -> {"nome", "modelos": [...]}
     acessos = []    # (rota, autor)
     inverter = False
+    datasets = []   # itens no formato da listagem de datasets
 
     def log_message(self, *a):
         pass
@@ -57,7 +58,19 @@ class ApiFalsa(http.server.BaseHTTPRequestHandler):
                 ms = list((ApiFalsa.autores.get(autor) or {"modelos": []})["modelos"])
                 return self._json(list(reversed(ms)) if ApiFalsa.inverter else ms)
             return self._json([])
+        if u.path == "/api/datasets":
+            autor, filtro = (q.get("author") or [None])[0], (q.get("filter") or [None])[0]
+            ApiFalsa.acessos.append(("datasets", autor or filtro or "busca"))
+            itens = [x for x in ApiFalsa.datasets if (autor and x["id"].split("/")[0] == autor) or (filtro and filtro in x["tags"])]
+            if (q.get("search") or [None])[0]:
+                itens = [x for x in ApiFalsa.datasets if x["id"].split("/")[0] == autor and q["search"][0].lower() in x["id"].lower()]
+            return self._json(list(reversed(itens)) if ApiFalsa.inverter else itens)
         return self._json([])   # tree/main e demais rotas: vazio
+
+
+def dataset(id_, downloads=0, likes=0, tags=None, descricao="", gated=False, tamanho=1_000_000):
+    return {"id": id_, "tags": tags or [], "downloads": downloads, "likes": likes, "description": descricao, "gated": gated, "private": False,
+            "lastModified": "2026-02-03T00:00:00.000Z", "mainSize": tamanho}
 
 
 def modelo(autor, nome, tarefa="text-generation", params=1_000_000_000, tags=None):
@@ -94,6 +107,8 @@ class Base(unittest.TestCase):
         json.dump({}, open(os.path.join(self.raiz, "seed", "evidencias.json"), "w"))
         json.dump({"spec": "1.0", "itens": []}, open(os.path.join(self.raiz, "data", "remocoes.json"), "w"))
         ApiFalsa.inverter = False
+        ApiFalsa.acessos.clear()
+        ApiFalsa.datasets = []
 
     def por(self, e):
         json.dump(e, open(os.path.join(self.raiz, "data", "entidades", "publicador", e["id"] + ".json"), "w"), ensure_ascii=False, indent=2)
@@ -235,6 +250,107 @@ class TestIncremental(Base):
         self.assertEqual(diff(), "", "recoleta completa com a API em outra ordem deve dar o mesmo arquivo")
         self.assertEqual(self.coletar("--normalizar").returncode, 0)
         self.assertEqual(diff(), "")
+
+
+class TestCamadas(Base):
+    def setUp(self):
+        super().setUp()
+        os.makedirs(os.path.join(self.raiz, "data", "entidades", "benchmark"))
+        self.por(entidade("22h", "teste-br"))
+        bench = json.load(open(os.path.join(REPO, "data", "entidades", "benchmark", "enem.json")))
+        bench["datasets"] = ["externo/ds-bench", "externo/ds-inexistente"]
+        json.dump(bench, open(os.path.join(self.raiz, "data", "entidades", "benchmark", "enem.json"), "w"), ensure_ascii=False)
+        pt = ["language:pt", "license:mit"]
+        ApiFalsa.datasets = [
+            dataset("teste-br/ds-a", 1, 0, ["language:pt", "task_categories:question-answering", "license:apache-2.0", "size_categories:n<1K"], "# Titulo\n\n| Paper | Code |\nConjunto de perguntas e respostas em portugues do Brasil, para avaliacao. Contato: fulano@example.org"),
+            dataset("teste-br/ds-fechado", 900, 9, pt, "Conjunto fechado que nao deve entrar na camada de datasets", gated=True),
+            dataset("outro/ds-pt-popular", 500, 0, pt + ["language:pt-br"], "Conjunto em portugues com muitos downloads para o corte de relevancia"),
+            dataset("outro/ds-pt-curtido", 5, 4, pt, "Conjunto em portugues com poucas baixas e varias curtidas, relevante pelo corte"),
+            dataset("outro/ds-pt-fraco", 5, 0, pt, "Conjunto em portugues sem downloads nem curtidas suficientes"),
+            dataset("outro/ds-sem-meta", 900, 9, ["language:pt"], ""),
+            dataset("outro/ds-en", 900, 9, ["language:en", "license:mit"], "Conjunto em ingles que nao entra pelo idioma nem por benchmark"),
+            dataset("copia/ds-pt-popular", 120, 0, pt, "Conjunto em portugues com muitos downloads para o corte de relevancia"),
+            dataset("externo/ds-bench", 1, 0, ["language:en"], "Conjunto de um benchmark, sem idioma portugues no cartao e poucos downloads"),
+        ]
+
+    def final(self):
+        return {d["id"]: d for d in json.load(open(os.path.join(self.raiz, "data", "datasets.json")))["datasets"]}
+
+    def test_regra_de_relevancia_e_escopo(self):
+        r = self.coletar("--tudo")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        f = self.final()
+        self.assertEqual(set(f), {"teste-br/ds-a", "outro/ds-pt-popular", "outro/ds-pt-curtido", "externo/ds-bench"}, "inclui br, pt com limiar e o dataset do benchmark; exclui fechado, fraco, sem metadados, ingles e duplicata")
+        self.assertEqual(f["teste-br/ds-a"]["escopo"], "br")
+        self.assertEqual(f["outro/ds-pt-popular"]["escopo"], "pt")
+        self.assertTrue(f["outro/ds-pt-popular"]["pt_br"])
+        self.assertEqual(f["externo/ds-bench"]["benchmarks"], ["enem"])
+        self.assertNotIn("fulano@", f["teste-br/ds-a"]["descricao"])
+        self.assertTrue(f["teste-br/ds-a"]["descricao"].startswith("Conjunto de perguntas"))
+        self.assertEqual((f["teste-br/ds-a"]["faixa"], f["teste-br/ds-a"]["linhas_faixa"]), ("1-100MB", "n<1K"))
+        b = json.load(open(os.path.join(self.raiz, "data", "benchmarks.json")))["benchmarks"][0]
+        self.assertEqual((b["n_datasets"], b["downloads_total"]), (1, 1), "o dataset ausente nao conta")
+        js = open(os.path.join(self.raiz, "web", "data.js")).read()
+        d = json.loads(js[len("window.MAPA_DADOS="):-1])
+        self.assertNotIn("builds", d["modelos"][0] if d["modelos"] else {}, "data.js leve: builds ficam em data-builds.js")
+        jd = open(os.path.join(self.raiz, "web", "data-datasets.js")).read()
+        d["datasets"] = json.loads(jd[len("window.MAPA_DADOS.datasets="):-1])
+        d["benchmarks"] = json.loads(open(os.path.join(self.raiz, "web", "data-benchmarks.js")).read()[len("window.MAPA_DADOS.benchmarks="):-1])
+        self.assertEqual(d["datasets"]["colunas"][0], "id")
+        self.assertEqual(len(d["datasets"]["linhas"]), 4)
+        self.assertEqual(d["datasets"]["linhas"][0][14], "br", "ordem: Brasil primeiro")
+        self.assertEqual(d["foto_camadas"]["datasets"]["por_escopo"], {"br": 1, "pt": 3})
+
+    def test_incremental_e_idempotente(self):
+        self.assertEqual(self.coletar("--novos").returncode, 0)
+        antes = self.acessos("datasets", "language:pt")
+        r = self.coletar("--novos", "--cache-dias", "0")
+        self.assertIn("nada a coletar", r.stdout)
+        self.assertEqual(self.acessos("datasets", "language:pt"), antes)
+        subprocess.run(GIT + ["init", "-q"], cwd=self.raiz, check=True)
+        subprocess.run(["git", "add", "-A", "data", "web"], cwd=self.raiz, check=True)
+        subprocess.run(GIT + ["commit", "-q", "-m", "x"], cwd=self.raiz, check=True)
+        ApiFalsa.inverter = True
+        self.coletar("--tudo", "--fresh")
+        out = subprocess.run(["git", "status", "--porcelain", "data", "web"], cwd=self.raiz, capture_output=True, text=True).stdout
+        self.assertEqual(out, "", "recoleta completa em outra ordem da API da o mesmo arquivo")
+
+    def test_benchmark_alterado_e_recoletado_e_arquivado_sai(self):
+        self.coletar("--novos")
+        p = os.path.join(self.raiz, "data", "entidades", "benchmark", "enem.json")
+        b = json.load(open(p))
+        b["datasets"] = ["externo/ds-bench", "outro/ds-pt-popular"]
+        json.dump(b, open(p, "w"), ensure_ascii=False)
+        r = self.coletar("--novos", "--dry-run")
+        self.assertIn("alterado  ds:bench:enem", r.stdout)
+        self.coletar("--novos")
+        self.assertEqual(self.final()["outro/ds-pt-popular"]["benchmarks"], ["enem"])
+        b["status"] = "arquivado"
+        b["arquivo"] = {"em": "2026-11-20", "motivo": "encerrado"}
+        json.dump(b, open(p, "w"), ensure_ascii=False)
+        self.coletar("--tudo")
+        self.assertNotIn("externo/ds-bench", self.final(), "sem benchmark, o dataset fora do idioma sai")
+
+    def test_so_datasets_e_sem_datasets(self):
+        self.coletar("--so-datasets", "--novos")
+        self.assertTrue(os.path.exists(os.path.join(self.raiz, "data", "datasets.json")))
+        self.assertFalse(os.path.exists(os.path.join(self.raiz, "data", "modelos.json")) and False)
+        r = self.coletar("--sem-datasets", "--novos", "--dry-run")
+        self.assertIn("a coletar: 0", r.stdout.split("datasets:")[1])
+
+
+class TestValidadorBenchmark(unittest.TestCase):
+    def test_exemplos_e_rejeitados(self):
+        for args in (["--exemplos"], ["--rejeitados"]):
+            r = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "validar.py"), *args], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stdout[-600:])
+        r = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "validar.py"), "--rejeitados"], capture_output=True, text=True)
+        for n in ("19-benchmark-sem-dominio", "20-benchmark-dominio-invalido", "21-benchmark-campo-derivado", "22-benchmark-fonte-sem-trecho", "23-benchmark-dataset-id-invalido", "24-benchmark-leaderboard-sem-link"):
+            self.assertRegex(r.stdout, rf"ok\s+data/exemplos/rejeitados/{n}")
+
+    def test_benchmarks_reais_validam(self):
+        r = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "validar.py")] + [os.path.join(REPO, "data", "entidades", "benchmark", f) for f in os.listdir(os.path.join(REPO, "data", "entidades", "benchmark"))], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stdout[-800:])
 
 
 class TestInferenciaDeTarefa(unittest.TestCase):

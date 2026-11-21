@@ -1,0 +1,48 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "enem",
+  "nome": "ENEM (Exame Nacional do Ensino Médio)",
+  "sigla": "ENEM",
+  "descricao": {
+    "pt": "Questões de múltipla escolha das duas últimas edições do Exame Nacional do Ensino Médio, para avaliar modelos de texto e de texto com imagem.",
+    "en": "Multiple-choice questions from the last two editions of the Brazilian national secondary-school exam, for text-only and text-and-image models."
+  },
+  "dominio": [
+    "vestibular_educacao"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "multiple-choice",
+    "visual-question-answering"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "maritaca-ai/enem"
+  ],
+  "criador": {
+    "publicador": "maritaca-ai"
+  },
+  "ano": 2023,
+  "links": {
+    "artigo": "https://arxiv.org/abs/2311.14169"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/maritaca-ai/enem",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "all multiple-choice questions from the last two editions of the Exame Nacional do Ensino Médio (ENEM)"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/abs/2311.14169",
+      "acessado": "2026-11-20",
+      "rotulo": "resumo do artigo",
+      "trecho": "we present a comprehensive framework to evaluate language models on entrance exams, which incorporates both textual and visual elements"
+    }
+  ]
+}
