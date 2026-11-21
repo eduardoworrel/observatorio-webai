@@ -24,6 +24,7 @@ Nas arestas e nas listas de créditos, um id de entidade leva o tipo como prefix
 |---|---|---|
 | `id` | texto | kebab-case |
 | `nome`, `sigla` | texto | `sigla` pode ser `null` |
+| `nome_pt`, `aliases` | texto, texto[] | (revisão 1.3, opcionais, só presentes quando existem) nome em português e apelidos; a busca casa todos; a interface em português mostra `nome_pt` quando houver |
 | `pais`, `regiao` | texto | ISO 3166-1 e 3166-2 (`regiao` pode ser `null`) |
 | `tipo` | texto | `universidade`, `instituto`, `empresa`, `governo` ou `outro` |
 | `parte_de` | texto ou `null` | id da instituição maior (por exemplo, uma escola dentro de uma universidade) |
@@ -37,7 +38,7 @@ Nas arestas e nas listas de créditos, um id de entidade leva o tipo como prefix
 
 ## `laboratorios[]`
 
-`id`, `nome`, `sigla`, `instituicao` (id da instituição principal), `pais` (país da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa`, `n_creditados` (modelos com `lab:<id>` em `creditos`) e `fontes`.
+`id`, `nome`, `nome_pt?`, `aliases?`, `sigla`, `instituicao` (id da instituição principal), `pais` (país da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa`, `n_creditados` (modelos com `lab:<id>` em `creditos`) e `fontes`.
 
 ## `vinculos`
 

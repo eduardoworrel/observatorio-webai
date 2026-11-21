@@ -1277,6 +1277,11 @@ def _contagens(ms):
             "por_familia_tarefa": {f: sum(1 for m in ms if m["familia_tarefa"] == f) for f in ("gerador", "codificador")}}
 
 
+def _nomes_extra(e):
+    """Campos opcionais da entidade: nome em portugues e apelidos (so entram nos dados quando existem)."""
+    return {k: e[k] for k in ("nome_pt", "aliases") if e.get(k)}
+
+
 def montar_relacoes(pubs, modelos):
     """Deriva instituicoes, laboratorios, arestas e hierarquia das entidades curadas, e completa publicadores e modelos (in loco)."""
     insts, labs, curados = carregar_entidades("instituicao"), carregar_entidades("laboratorio"), carregar_entidades("publicador")
@@ -1367,12 +1372,12 @@ def montar_relacoes(pubs, modelos):
     L_inst, L_lab = [], []
     for iid, i in sorted(insts.items(), key=lambda kv: kv[0].lower()):
         ps = pubs_da_inst(iid)
-        L_inst.append({"id": iid, "nome": i["nome"], "sigla": i.get("sigla"), "pais": i["pais"], "regiao": i.get("regiao"), "tipo": i["tipo"], "parte_de": i.get("parte_de"),
+        L_inst.append({"id": iid, "nome": i["nome"], **_nomes_extra(i), "sigla": i.get("sigla"), "pais": i["pais"], "regiao": i.get("regiao"), "tipo": i["tipo"], "parte_de": i.get("parte_de"),
                        "labs": sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower), "publicadores": sorted(ps, key=str.lower),
                        **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("inst:" + iid, 0), "fontes": i["fontes"]})
     for lid, l in sorted(labs.items(), key=lambda kv: kv[0].lower()):
         ps = {x for x in lab_pubs.get(lid, set()) if x in mapa}
-        L_lab.append({"id": lid, "nome": l["nome"], "sigla": l.get("sigla"), "instituicao": l["instituicao"], "pais": (insts.get(l["instituicao"]) or {}).get("pais"), "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
+        L_lab.append({"id": lid, "nome": l["nome"], **_nomes_extra(l), "sigla": l.get("sigla"), "instituicao": l["instituicao"], "pais": (insts.get(l["instituicao"]) or {}).get("pais"), "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
                       "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("lab:" + lid, 0), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
     folha = lambda pid: {"tipo": "publicador", "id": pid, "n_modelos": len(por_pub.get(pid, [])), "filhos": []}
     def no_inst(iid, visto=()):

@@ -227,7 +227,7 @@ for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=
   const esperado = lang === 'pt' ? /pesquisador\(a\) no laborat.rio .*CAISA.*\(University of Bonn, Alemanha\)/ : /researcher at the lab .*CAISA.*\(University of Bonn, Germany\)/;
   ok(lab.test(dr.t) && esperado.test(dr.t) && dr.pais && /\(DE\)/.test(dr.t), `[${lang}] drawer do modelo do nicholasKluge: afiliacao, linha do laboratorio com pais e (DE) nos vinculos`);
   await p.click('#drawer [data-ir="inst:uni-bonn"]'); await p.waitForTimeout(500);
-  ok(await p.evaluate(l => /University of Bonn/.test(document.querySelector('#drawer-titulo').textContent) && new RegExp(l === 'pt' ? 'Alemanha \\(DE\\)' : 'Germany \\(DE\\)').test(document.querySelector('#drawer .dr-sub').textContent), lang), `[${lang}] drawer da instituicao mostra o pais`);
+  ok(await p.evaluate(l => (l === 'pt' ? /Universidade de Bonn/ : /University of Bonn/).test(document.querySelector('#drawer-titulo').textContent) && new RegExp(l === 'pt' ? 'Alemanha \\(DE\\)' : 'Germany \\(DE\\)').test(document.querySelector('#drawer .dr-sub').textContent), lang), `[${lang}] drawer da instituicao mostra o pais`);
   ok(!erros.length, `[${lang}] sem erros de script`, erros.join(' | ')); await ctx.close(); }
 
 // 3f) relacionados: linhas tenues nos tres agrupamentos, drawer do publicador, aneis de relacao
@@ -249,6 +249,29 @@ for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=
   await p.click('#drawer .dr-rels [data-ir="pub:Jurema-br"]'); await p.waitForTimeout(500);
   ok(await p.evaluate(() => /Jurema/.test(document.querySelector('#drawer-titulo').textContent) && /NeuralMind/.test(document.querySelector('#drawer').textContent)), `[${lang}] clicar no relacionado abre o drawer dele`);
   ok(!erros.length, `[${lang}] sem erros de script`, erros.join(' | ')); await ctx.close(); }
+
+// 3g) busca por instituicao, laboratorio, sigla e nome em portugues (sem acentos), com etiqueta e atalho
+{ const { p, ctx, erros } = await abrir('?lang=pt'); const total = await p.evaluate(() => window.__obs.modelos);
+  const esperado = await p.evaluate(() => { const D = window.MAPA_DADOS, c = {}; D.modelos.forEach(m => c[m.publicador] = (c[m.publicador] || 0) + 1); const ins = id => D.instituicoes.find(i => i.id === id), soma = ids => ids.reduce((a, x) => a + (c[x] || 0), 0);
+    return { bonn: soma(ins('uni-bonn').publicadores), usp: soma(ins('usp').publicadores), caisa: soma(D.laboratorios.find(l => l.id === 'caisa-b-it').publicadores) }; });
+  const buscar = async q => { await p.fill('#busca', q); await p.waitForTimeout(500); return filtradas(p); };
+  const casos = [['bonn', 'bonn'], ['universidade de bonn', 'bonn'], ['Universidade de BONN', 'bonn'], ['uni bonn', 'bonn'], ['caisa', 'caisa'], ['b-it', 'bonn'], ['usp', 'usp'], ['sao paulo', 'usp'], ['são paulo', 'usp']];
+  for (const [q, k] of casos) { const n = await buscar(q); ok(n >= esperado[k] && n > 0, `busca "${q}": ${n} modelos (>= ${esperado[k]} dos publicadores ligados)`); }
+  await buscar('bonn'); const et = await p.evaluate(() => ({ t: document.querySelector('#busca-inst').innerText.replace(/\s+/g, ' '), vis: !document.querySelector('#busca-inst').hidden }));
+  ok(et.vis && /modelos de publicadores ligados a/.test(et.t) && /Uni Bonn/.test(et.t), `etiqueta da busca por instituicao: "${et.t}"`);
+  await p.click('#busca-inst [data-filtrar-inst="uni-bonn"]'); await p.waitForTimeout(700);
+  const aft = await p.evaluate(() => ({ busca: document.querySelector('#busca').value, inst: document.querySelector('#f-inst').value, n: window.__obs.estrelas.filter(s => s.on).length }));
+  ok(aft.busca === '' && aft.inst === 'uni-bonn' && aft.n === esperado.bonn, `atalho "filtrar por esta instituicao": filtro Instituicao = ${aft.inst}, ${aft.n} modelos`);
+  await p.click('#limpar'); await p.waitForTimeout(500);
+  const trocou = await p.evaluate(() => window.MAPA_REL.instBy['uni-bonn'].nome_pt);
+  ok(trocou === 'Universidade de Bonn', 'dados: nome_pt da University of Bonn');
+  // desempenho da filtragem com todos os modelos
+  const ms = await p.evaluate(async () => { const t = []; for (const q of ['bonn', 'universidade de bonn', 'caisa', 'sao paulo', 'bert', 'qwen portuguese']) { const a = performance.now(); document.querySelector('#busca').value = q; document.querySelector('#busca').dispatchEvent(new Event('input')); await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); t.push(performance.now() - a); } return t; });
+  ok(Math.max(...ms) < 150, `filtragem por busca com ${total} modelos: ${ms.map(x => x.toFixed(0)).join(', ')} ms por consulta, ate o quadro seguinte (< 150 ms)`);
+  ok(!erros.length, 'sem erros de script na busca', erros.join(' | ')); await ctx.close(); }
+{ const { p, ctx } = await abrir('?lang=en#modelos'); await p.fill('#busca', 'universidade de bonn'); await p.waitForTimeout(500); const n = await filtradas(p);
+  const g = await p.evaluate(() => document.querySelector('#f-inst option[value="uni-bonn"]').textContent);
+  ok(n > 0 && /University of Bonn/.test(g), `ingles: a busca em portugues tambem casa (${n} modelos) e o nome exibido e o original ("${g}")`); await ctx.close(); }
 
 // 4) limpar restaura
 { const { p, ctx } = await abrir('?fixture=1#datasets'); const total = await filtradas(p);
