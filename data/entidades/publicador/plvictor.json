@@ -5,15 +5,7 @@
   "nome": "Paulo Victor Souza",
   "tipo": "pessoa",
   "natureza": "independente",
-  "classe_pais": "br_evidencia",
-  "pais": "BR",
-  "evidencia_pais": {
-    "tipo": "perfil_oficial",
-    "url": "https://github.com/plvictor",
-    "acessado": "2026-11-20",
-    "trecho": "descricao no GitHub vinculado: Hey, I’m Paulo! 👋 I’m a Brazilian Full-Stack Developer based in New York, working with HTML, Node.js, CSS, Dart, and always looking for ways to improve. :D",
-    "regra": "E4b: GitHub vinculado cita Brasil"
-  },
+  "classe_pais": "nao_classificado",
   "evidencia_natureza": {
     "classe": "independente",
     "tipo": "perfil_oficial",

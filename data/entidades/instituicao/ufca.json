@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "ufca",
+  "nome": "Universidade Federal do Cariri",
+  "sigla": "UFCA",
+  "tipo": "universidade",
+  "pais": "BR",
+  "regiao": "BR-CE",
+  "links": {
+    "oficial": "https://ufca.edu.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ufca-llms",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil no Hugging Face",
+      "trecho": "Grupo de Pesquisa em LLMs da UFCA"
+    }
+  ]
+}

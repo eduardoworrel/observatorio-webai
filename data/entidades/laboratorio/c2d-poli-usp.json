@@ -4,17 +4,13 @@
   "id": "c2d-poli-usp",
   "nome": "Centro de Ciência de Dados",
   "sigla": "C2D",
-  "instituicao": {
-    "nome": "Universidade de São Paulo",
-    "pais": "BR",
-    "regiao": "BR-SP",
-    "fonte": {
-      "tipo": "site_institucional",
-      "url": "https://c2d.poli.usp.br",
-      "acessado": "2026-11-20",
-      "rotulo": "site do próprio centro",
-      "trecho": "Centro de Ciência de Dados - POLI USP"
-    }
+  "instituicao": "usp",
+  "vinculo_fonte": {
+    "tipo": "site_institucional",
+    "url": "https://c2d.poli.usp.br",
+    "acessado": "2026-11-20",
+    "rotulo": "site do próprio centro",
+    "trecho": "Centro de Ciência de Dados - POLI USP"
   },
   "links": {
     "oficial": "https://c2d.poli.usp.br/"
@@ -27,7 +23,15 @@
       "rotulo": "site oficial"
     }
   ],
-  "publicadores": [
-    "c2d-usp"
+  "parceiras": [
+    {
+      "instituicao": "itau-unibanco",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/c2d-usp",
+        "acessado": "2026-11-20",
+        "trecho": "criado a partir do interesse comum da Escola Politécnica da Universidade de São Paulo e do Banco Itaú-Unibanco"
+      }
+    }
   ]
 }

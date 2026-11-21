@@ -12,7 +12,7 @@
       eyebrow: 'Modelos no navegador e na borda', desc: 'Quem publica modelos de linguagem, no Brasil e no mundo, e quais deles já têm build para rodar no navegador.',
       res_label: 'Modelos', res_titulo: 'Quem já roda no navegador', res_link: 'Regras ↗',
       br: 'Brasil', mundo: 'Mundo', todos: 'Tudo', v_todos: 'Todos', v_nativo: 'Nativo', v_gguf: '+ GGUF', v_nenhum: 'Sem build', f_nat: 'Natureza do publicador', buscar: 'Buscar', buscar_ph: 'Buscar',
-      porpub: 'Publicador', porfam: 'Família', recentrar: 'Recentrar ⌾', hint: 'Arraste ou aproxime para filtrar a tabela.', sky_nota: 'Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download.',
+      porpub: 'Publicador', porfam: 'Família', recentrar: 'Recentrar ⌾', hint: 'Arraste ou aproxime para filtrar a tabela.', sky_nota: 'Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download. Estrelas tênues no fundo são decorativas.',
       p1_t: 'Quem já tem build?<br>Quem não tem?', p1_p: 'Tabela com status, tamanho e fontes de cada modelo.', p2_t: 'E o GGUF?<br>Roda no navegador?', p2_p: 'Via wllama, até um tamanho plausível. Contado à parte.',
       p3_t: 'O que é um modelo<br>brasileiro?', p3_p: 'Criado por brasileiros, com evidência pública por publicador.', m_t: 'Como lemos os dados',
       credito: 'Inspirado no Observatório da Maritaca ↗', privacidade: 'Privacidade', fonte_lic: 'Fonte Atkinson Hyperlegible, licença SIL OFL 1.1.',
@@ -34,11 +34,14 @@
       eyebrow_ds: 'Datasets em português e no mundo', eyebrow_bm: 'Benchmarks de avaliação', esc_br: 'Publicador no Brasil', esc_pt: 'Português (só pelo idioma)', esc_ptbr: 'Marcado pt-BR', link_artigo: 'Artigo', link_site: 'Site', link_leaderboard: 'Leaderboard', link_codigo: 'Código',
       dom_geral: 'Geral', dom_vestibular_educacao: 'Vestibular e educação', dom_juridico: 'Jurídico', dom_saude: 'Saúde', dom_codigo: 'Código', dom_matematica: 'Matemática', dom_extracao_classificacao: 'Extração e classificação', dom_cultura_lingua: 'Cultura e língua', dom_outros: 'Outros',
       tipo_conjunto: 'Conjunto de dados', tipo_avaliacao: 'Avaliação', tipo_leaderboard: 'Leaderboard',
+      porinst: 'Instituição', agrupar: 'Agrupar por', f_tarefa: 'Tarefa', ta_todas: 'Todas', ta_gerador: 'Gerador', ta_codificador: 'Codificador', f_inst: 'Instituição', f_lab: 'Laboratório', c_tarefa: 'Tarefa', c_inst: 'Instituição',
+      vinculos: 'Vínculos', v_inst: 'Instituição', v_lab: 'Laboratório', v_rel: 'Publicadores relacionados', v_membro: 'Membro de', v_cred: 'Créditos do modelo', parte_de: 'parte de', b_nativo: 'Modelos com build nativo', b_gguf: 'Modelos só com GGUF',
+      capa_br: 'Brasil', capa_todos: 'Todos os publicadores', capa_sem: 'Sem o maior publicador', capa_nativo: 'com build nativo', capa_gguf: 'com GGUF via wllama (somado)', capa_ger: 'Geradores com build nativo', capa_cod: 'Codificadores com build nativo', capa_nota: 'Um publicador ({p}) concentra {x}% dos modelos do Brasil.',
       carga_datasets: 'Carregando {n} datasets…', carga_benchmarks: 'Carregando {n} benchmarks…', carga_builds: 'Carregando os builds deste modelo…', carga_erro: 'Não foi possível carregar {x}.', tentar: 'Tentar de novo',
       tabs_aria: 'Camadas', tab_modelos: 'Modelos', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Quem publica dados, e em que idiomas', res_label_bm: 'Benchmarks', res_titulo_bm: 'Como os modelos são avaliados',
       campo_ds: 'datasets no mapa', campo_bm: 'benchmarks no mapa', recorte_ds: 'datasets no recorte', recorte_bm: 'benchmarks no recorte', datasets: 'datasets', benchmarks: 'benchmarks',
-      sky_nota_ds: 'Posição é só organização por grupo; tamanho indica o tamanho do dataset (ou os downloads); brilho e cor indicam idioma e licença.', sky_nota_bm: 'Posição é só organização por domínio; tamanho indica o número de datasets; brilho e cor indicam o idioma. Linhas tênues ligam o benchmark aos seus datasets.',
+      sky_nota_ds: 'Posição é só organização por grupo; tamanho indica o tamanho do dataset (ou os downloads); brilho e cor indicam idioma e licença. Estrelas tênues no fundo são decorativas.', sky_nota_bm: 'Posição é só organização por domínio; tamanho indica o número de datasets; brilho e cor indicam o idioma. Linhas tênues ligam o benchmark aos seus datasets. Estrelas tênues no fundo são decorativas.',
       por_tema: 'Tema', por_dominio: 'Domínio', por_criador: 'Criador', limpar: 'Limpar filtros', exportar: 'Exportar', sem_itens: 'Nenhum item neste recorte.',
       f_fmt: 'Formatos de build', fmt_multi: 'Mais de um formato', f_escopo: 'Escopo', so_pt: 'Português', sem_licenca: 'Sem licença', desconhecido: 'Desconhecido', com_bench: 'Com benchmark', sem_bench: 'Sem benchmark',
       c_dataset: 'Dataset', c_pub: 'Publicador', c_idiomas: 'Idiomas', c_tarefas: 'Tarefas', c_tamanho: 'Tamanho', c_downloads: 'Downloads', c_benchmarks: 'Benchmarks', c_benchmark: 'Benchmark', c_dominio: 'Domínio', c_tipo: 'Tipo', c_ndatasets: 'Datasets', c_ano: 'Ano', c_criador: 'Criador', c_builds: 'Builds',
@@ -55,7 +58,7 @@
       eyebrow: 'Models in the browser and at the edge', desc: 'Who publishes language models, in Brazil and worldwide, and which of them already have a build that runs in the browser.',
       res_label: 'Models', res_titulo: 'Who already runs in the browser', res_link: 'Rules ↗',
       br: 'Brazil', mundo: 'World', todos: 'All', v_todos: 'All', v_nativo: 'Native', v_gguf: '+ GGUF', v_nenhum: 'No build', f_nat: 'Publisher type', buscar: 'Search', buscar_ph: 'Search',
-      porpub: 'Publisher', porfam: 'Family', recentrar: 'Recenter ⌾', hint: 'Drag or zoom to filter the table.', sky_nota: 'Position is only grouping; brightness and color show build status; size shows the download.',
+      porpub: 'Publisher', porfam: 'Family', recentrar: 'Recenter ⌾', hint: 'Drag or zoom to filter the table.', sky_nota: 'Position is only grouping; brightness and color show build status; size shows the download. Faint background stars are decorative.',
       p1_t: 'Who already has a build?<br>Who does not?', p1_p: 'A table with status, size and sources for each model.', p2_t: 'What about GGUF?<br>Does it run in the browser?', p2_p: 'Via wllama, up to a plausible size. Counted separately.',
       p3_t: 'What is a Brazilian<br>model?', p3_p: 'Created by Brazilians, with public evidence per publisher.', m_t: 'How we read the data',
       credito: 'Inspired by the Maritaca Observatory ↗', privacidade: 'Privacy', fonte_lic: 'Atkinson Hyperlegible font, SIL OFL 1.1 license.',
@@ -77,11 +80,14 @@
       eyebrow_ds: 'Datasets in Portuguese and worldwide', eyebrow_bm: 'Evaluation benchmarks', esc_br: 'Publisher in Brazil', esc_pt: 'Portuguese (by language only)', esc_ptbr: 'Marked pt-BR', link_artigo: 'Paper', link_site: 'Website', link_leaderboard: 'Leaderboard', link_codigo: 'Code',
       dom_geral: 'General', dom_vestibular_educacao: 'Entrance exams and education', dom_juridico: 'Legal', dom_saude: 'Health', dom_codigo: 'Code', dom_matematica: 'Math', dom_extracao_classificacao: 'Extraction and classification', dom_cultura_lingua: 'Culture and language', dom_outros: 'Other',
       tipo_conjunto: 'Dataset', tipo_avaliacao: 'Evaluation', tipo_leaderboard: 'Leaderboard',
+      porinst: 'Institution', agrupar: 'Group by', f_tarefa: 'Task', ta_todas: 'All', ta_gerador: 'Generator', ta_codificador: 'Encoder', f_inst: 'Institution', f_lab: 'Laboratory', c_tarefa: 'Task', c_inst: 'Institution',
+      vinculos: 'Links', v_inst: 'Institution', v_lab: 'Laboratory', v_rel: 'Related publishers', v_membro: 'Member of', v_cred: 'Model credits', parte_de: 'part of', b_nativo: 'Models with a native build', b_gguf: 'Models with GGUF only',
+      capa_br: 'Brazil', capa_todos: 'All publishers', capa_sem: 'Without the largest publisher', capa_nativo: 'with a native build', capa_gguf: 'with GGUF via wllama (added)', capa_ger: 'Generators with a native build', capa_cod: 'Encoders with a native build', capa_nota: 'One publisher ({p}) holds {x}% of the models in Brazil.',
       carga_datasets: 'Loading {n} datasets…', carga_benchmarks: 'Loading {n} benchmarks…', carga_builds: 'Loading the builds of this model…', carga_erro: 'Could not load {x}.', tentar: 'Try again',
       tabs_aria: 'Layers', tab_modelos: 'Models', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Who publishes data, and in which languages', res_label_bm: 'Benchmarks', res_titulo_bm: 'How models are evaluated',
       campo_ds: 'datasets on the map', campo_bm: 'benchmarks on the map', recorte_ds: 'datasets in selection', recorte_bm: 'benchmarks in selection', datasets: 'datasets', benchmarks: 'benchmarks',
-      sky_nota_ds: 'Position is only grouping; size shows the dataset size (or downloads); brightness and color show language and license.', sky_nota_bm: 'Position is only grouping by domain; size shows the number of datasets; brightness and color show the language. Faint lines link a benchmark to its datasets.',
+      sky_nota_ds: 'Position is only grouping; size shows the dataset size (or downloads); brightness and color show language and license. Faint background stars are decorative.', sky_nota_bm: 'Position is only grouping by domain; size shows the number of datasets; brightness and color show the language. Faint lines link a benchmark to its datasets. Faint background stars are decorative.',
       por_tema: 'Topic', por_dominio: 'Domain', por_criador: 'Creator', limpar: 'Clear filters', exportar: 'Export', sem_itens: 'No item in this selection.',
       f_fmt: 'Build formats', fmt_multi: 'More than one format', f_escopo: 'Scope', so_pt: 'Portuguese', sem_licenca: 'No license', desconhecido: 'Unknown', com_bench: 'With benchmark', sem_bench: 'Without benchmark',
       c_dataset: 'Dataset', c_pub: 'Publisher', c_idiomas: 'Languages', c_tarefas: 'Tasks', c_tamanho: 'Size', c_downloads: 'Downloads', c_benchmarks: 'Benchmarks', c_benchmark: 'Benchmark', c_dominio: 'Domain', c_tipo: 'Type', c_ndatasets: 'Datasets', c_ano: 'Year', c_criador: 'Creator', c_builds: 'Builds',
@@ -94,7 +100,7 @@
       rodape: 'Hugging Face data from', modelo: 'Model', tarefa: 'Task', evidencias: 'Evidence', ev_pais: 'Country', ev_nat: 'Type', n_mod: 'models mapped', gguf_nota: 'GGUF exists, but is over 4 GB.', fam_t: 'Family', src_perfil_oficial: 'official profile', src_site_institucional: 'institutional site', src_pagina_pessoa: 'personal page', src_artigo: 'paper', src_repositorio: 'repository', src_cartao_modelo: 'model card', src_orgao_fomento: 'funding agency', src_perfil: 'profile', src_cartao: 'model card', src_institucional: 'institutional page', src_curadoria: 'curated list', src_perfil_cartao: 'profile or card'
     }
   };
-  var S = { tab: 'modelos', fmt: '', f: { datasets: { escopo: '', idioma: '', tarefa: '', licenca: '', tamanho: '', publicador: '', bench: '', q: '' }, benchmarks: { dominio: '', idioma: '', tipo: '', tarefa: '', q: '' } }, modoL: { datasets: 'publicador', benchmarks: 'dominio' }, sortL: { modelos: { k: 'via', d: 1 }, datasets: { k: 'downloads', d: -1 }, benchmarks: { k: 'nome', d: 1 } }, lang: 'pt', escopo: 'todos', via: 'todos', nat: 'todas', busca: '', agrupar: 'publicador', sort: { k: 'via', d: 1 }, sel: null, paused: false, zoom: 1, panX: 0, panY: 0, limite: 150 };
+  var S = { tab: 'modelos', fmt: '', tarefa: '', inst: '', lab: '', semMaior: false, f: { datasets: { escopo: '', idioma: '', tarefa: '', licenca: '', tamanho: '', publicador: '', bench: '', q: '' }, benchmarks: { dominio: '', idioma: '', tipo: '', tarefa: '', q: '' } }, modoL: { datasets: 'publicador', benchmarks: 'dominio' }, sortL: { modelos: { k: 'via', d: 1 }, datasets: { k: 'downloads', d: -1 }, benchmarks: { k: 'nome', d: 1 } }, lang: 'pt', escopo: 'todos', via: 'todos', nat: 'todas', busca: '', agrupar: 'publicador', sort: { k: 'via', d: 1 }, sel: null, paused: false, zoom: 1, panX: 0, panY: 0, limite: 150 };
   S.sort = S.sortL.modelos;
   var qs = new URLSearchParams(location.search);
   try { var sl = localStorage.getItem('observatorio-lang'); if (sl) S.lang = sl; } catch (e) {}
@@ -102,6 +108,8 @@
   if (qs.get('escopo')) S.escopo = qs.get('escopo');
   if (qs.get('via')) S.via = qs.get('via');
   if (qs.get('agrupar') === 'familia') S.agrupar = 'familia';
+  if (qs.get('agrupar') === 'instituicao') S.agrupar = 'instituicao';
+  if (qs.get('tarefa') === 'gerador' || qs.get('tarefa') === 'codificador') S.tarefa = qs.get('tarefa');
   if (qs.get('sky')) { var sv = qs.get('sky').split(',').map(Number); if (sv.length === 3 && sv.every(isFinite)) { S.zoom = sv[0]; S.panX = sv[1]; S.panY = sv[2]; } }
   var t = function (k) { return (T[S.lang] && T[S.lang][k]) || k; };
   var tipoFonte = function (x) { var v = T[S.lang] && T[S.lang]['src_' + String(x).replace(/\W+/g, '_')]; return v || String(x).replace(/_/g, ' '); };
@@ -193,6 +201,9 @@
     if (S.via === 'nenhum' && m.via !== 'nenhum') return false;
     if (S.nat !== 'todas' && pubBy[m.publicador].natureza !== S.nat) return false;
     if (S.fmt === 'multi' && m.nfmt < 2) return false;
+    if (S.tarefa && m.ftar !== S.tarefa) return false;
+    if (S.inst && m.insts.indexOf(S.inst) < 0) return false;
+    if (S.lab && m.labsM.indexOf(S.lab) < 0) return false;
     var q = S.busca.trim().toLowerCase();
     if (q && m.id.toLowerCase().indexOf(q) < 0 && pubBy[m.publicador].nome.toLowerCase().indexOf(q) < 0 && m.familia.toLowerCase().indexOf(q) < 0) return false;
     return true;
@@ -206,7 +217,13 @@
     if (m.gguf_wllama) o.gguf = 1;
     return FORMATOS.filter(function (f) { return o[f]; });
   }
-  D.modelos.forEach(function (m) { m.fmts = formatosDe(m); m.nfmt = m.fmts.length; });
+  var REL = window.MAPA_REL || { disponivel: false, inst: [], lab: [], instBy: {}, labBy: {}, pares: [], instDoPub: function () { return []; }, labsDoPub: function () { return []; }, raizDoPub: function () { return null; }, labDoPub: function () { return null; }, famDeTarefa: function (t) { return /^(text-generation|image-text-to-text|any-to-any|text2text-generation)$/.test(t || 'text-generation') ? 'gerador' : 'codificador'; }, rot: function (x) { return x ? (x.sigla || x.nome) : ''; } };
+  var creditosDe = function (m, pref) { return (m.creditos || []).filter(function (c) { return c.indexOf(pref + ':') === 0; }).map(function (c) { return c.slice(pref.length + 1); }); };
+  D.modelos.forEach(function (m) {
+    m.fmts = formatosDe(m); m.nfmt = m.fmts.length; m.ftar = m.familia_tarefa || REL.famDeTarefa(m.tarefa);
+    var is = REL.instDoPub(m.publicador).concat(creditosDe(m, 'inst')), ls = REL.labsDoPub(m.publicador).concat(creditosDe(m, 'lab'));
+    m.insts = is.filter(function (x, i) { return is.indexOf(x) === i; }); m.labsM = ls.filter(function (x, i) { return ls.indexOf(x) === i; });
+  });
   var rotDom = function (x) { var v = T[S.lang]['dom_' + x]; return v || String(x).replace(/_/g, ' '); };
   var rotTipo = function (x) { var v = T[S.lang]['tipo_' + x]; return v || String(x).replace(/_/g, ' '); };
   var CAM = null;
@@ -214,11 +231,17 @@
   var CAMS = {
     modelos: {
       id: 'modelos', por: modBy, itens: function () { return D.modelos; }, passa: passaModelo, cls: viaOf, campo: 'campo', eb: 'eyebrow', recorte: 'recorte', nota: 'sky_nota', rot: 'res_label', tit: 'res_titulo', plural: 'modelos',
-      modos: [['publicador', 'porpub'], ['familia', 'porfam']], modo: function () { return S.agrupar; },
+      modos: function () { return REL.disponivel ? [['publicador', 'porpub'], ['familia', 'porfam'], ['instituicao', 'porinst']] : [['publicador', 'porpub'], ['familia', 'porfam']]; }, modo: function () { return S.agrupar === 'instituicao' && !REL.disponivel ? 'publicador' : S.agrupar; },
       base: function () { return D.modelos.filter(function (m) { return S.escopo === 'todos' || m.escopo === S.escopo; }); },
-      grupo: function (m) { return S.agrupar === 'publicador' ? { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] } : { k: m.familia.toLowerCase(), nome: m.familia, pub: null }; },
-      fam: function (m) { return m.familia; },
-      ord: function (a, b) { return a.familia < b.familia ? -1 : a.familia > b.familia ? 1 : (b.downloads || 0) - (a.downloads || 0); },
+      grupo: function (m) {
+        if (S.agrupar === 'instituicao' && REL.disponivel) { var r = REL.raizDoPub(m.publicador); return r ? { k: 'i:' + r, nome: REL.rot(REL.instBy[r]) || r, pub: null, inst: REL.instBy[r] } : { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] }; }
+        return S.agrupar === 'publicador' ? { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] } : { k: m.familia.toLowerCase(), nome: m.familia, pub: null };
+      },
+      fam: function (m) { return S.agrupar === 'instituicao' ? (REL.labDoPub(m.publicador) || m.publicador) : m.familia; },
+      ord: function (a, b) {
+        if (S.agrupar === 'instituicao') { var la = REL.labDoPub(a.publicador) || '~', lb = REL.labDoPub(b.publicador) || '~'; if (la !== lb) return la < lb ? -1 : 1; if (a.publicador !== b.publicador) return a.publicador < b.publicador ? -1 : 1; }
+        return a.familia < b.familia ? -1 : a.familia > b.familia ? 1 : (b.downloads || 0) - (a.downloads || 0);
+      },
       tam: function (m) { return 1.3 + Math.min(3, Math.sqrt(m.gb_navegador || m.gguf_gb || 0.4) * 1.25); },
       legenda: [['oficial', 'leg_of', 'of'], ['comunidade', 'leg_co', 'co'], ['gguf', 'leg_gg', 'gg'], ['nenhum', 'leg_no', 'no']],
       tip: function (m) { return '<b>' + esc(m.nome) + '</b><br>' + esc(pubBy[m.publicador].nome) + ' · ' + esc(t(viaOf(m))) + (m.gb_navegador ? ' · ' + nf(m.gb_navegador, 2) + ' GB' : ''); }
@@ -250,17 +273,21 @@
   // colunas da tabela por camada: val (ordenacao), td (celula HTML) e txt (texto para exportar)
   var chipFmt = function (m) { return m.fmts.map(function (f) { return '<span class="chip-f f-' + f + '">' + ({ onnx: 'ONNX', mlc: 'MLC', litert: 'LiteRT', gguf: 'GGUF' })[f] + '</span>'; }).join('') || '<span class="chip-f f-0">—</span>'; };
   var fmtNome = { onnx: 'ONNX', mlc: 'MLC', litert: 'LiteRT', gguf: 'GGUF' };
+  var nomesInst = function (ids) { return ids.map(function (id) { return REL.rot(REL.instBy[id]) || id; }).join(', '); };
   CAMS.modelos.cols = [
     { k: 'nome', rot: 'c_modelo', val: function (m) { return m.nome.toLowerCase(); }, td: function (m) { var p = pubBy[m.publicador]; return '<td><span class="mname">' + esc(m.nome) + '</span><small>' + esc(p.nome) + ' · ' + t(p.natureza) + ' · ' + esc(m.familia) + '</small></td>'; }, txt: function (m) { return m.nome + ' (' + pubBy[m.publicador].nome + ')'; } },
+    { k: 'tar', rot: 'c_tarefa', val: function (m) { return m.ftar; }, td: function (m) { return '<td><span class="chip-t t-' + m.ftar + '">' + t('ta_' + m.ftar) + '</span><small>' + esc(m.tarefa || '') + '</small></td>'; }, txt: function (m) { return t('ta_' + m.ftar) + (m.tarefa ? ' (' + m.tarefa + ')' : ''); } },
     { k: 'via', rot: 'c_status', val: function (m) { return ORD[viaOf(m)]; }, td: function (m) { var v = viaOf(m); return '<td><span class="badge ' + v + '">' + t(v) + '</span></td>'; }, txt: function (m) { return t(viaOf(m)); } },
     { k: 'builds', rot: 'c_builds', val: function (m) { return -m.nfmt; }, td: function (m) { return '<td class="c-builds">' + chipFmt(m) + '<small>' + m.nfmt + ' ' + t(m.nfmt === 1 ? 'formato' : 'formatos') + '</small></td>'; }, txt: function (m) { return m.fmts.map(function (f) { return fmtNome[f]; }).join(', ') + ' (' + m.nfmt + ')'; } },
     { k: 'gb', rot: 'c_gb', val: function (m) { return m.gb_navegador == null ? null : m.gb_navegador; }, td: function (m) { return '<td><span class="num">' + nf(m.gb_navegador, 2) + '</span></td>'; }, txt: function (m) { return nf(m.gb_navegador, 2); } },
     { k: 'lic', rot: 'c_lic', val: function (m) { return m.licenca || ''; }, td: function (m) { return '<td><small>' + esc(m.licenca || '—') + '</small></td>'; }, txt: function (m) { return m.licenca || '—'; } },
     { k: 'upd', rot: 'c_upd', val: function (m) { return m.atualizado || ''; }, td: function (m) { return '<td class="nw"><small>' + esc(m.atualizado || '—') + '</small></td>'; }, txt: function (m) { return m.atualizado || '—'; } }
   ];
+  if (REL.disponivel) CAMS.modelos.cols.push({ k: 'inst', rot: 'c_inst', val: function (m) { return nomesInst(m.insts).toLowerCase(); }, td: function (m) { return '<td><small>' + esc(nomesInst(m.insts) || '—') + '</small></td>'; }, txt: function (m) { return nomesInst(m.insts) || '—'; } });
   CAMS.datasets.cols = [
     { k: 'nome', rot: 'c_dataset', val: function (d) { return d.nome.toLowerCase(); }, td: function (d) { return '<td><span class="mname">' + esc(d.nome) + '</span></td>'; }, txt: function (d) { return d.nome; } },
     { k: 'pub', rot: 'c_pub', val: function (d) { return pubNome(d.publicador).toLowerCase(); }, td: function (d) { return '<td><small>' + esc(pubNome(d.publicador)) + '</small></td>'; }, txt: function (d) { return pubNome(d.publicador); } },
+    { k: 'inst', rot: 'c_inst', val: function (d) { return nomesInst(REL.instDoPub(d.publicador)).toLowerCase(); }, td: function (d) { return '<td><small>' + esc(nomesInst(REL.instDoPub(d.publicador)) || '—') + '</small></td>'; }, txt: function (d) { return nomesInst(REL.instDoPub(d.publicador)) || '—'; }, so: 'rel' },
     { k: 'idiomas', rot: 'c_idiomas', val: function (d) { return d.idiomas.join(','); }, td: function (d) { return '<td>' + (d.pt_br ? '<span class="badge oficial">pt-BR</span> ' : '') + '<small>' + esc(d.idiomas.filter(function (i) { return !(d.pt_br && i === 'pt-BR'); }).join(', ')) + '</small></td>'; }, txt: function (d) { return d.idiomas.join(', ') || '—'; } },
     { k: 'tarefas', rot: 'c_tarefas', val: function (d) { return d.tarefas.join(','); }, td: function (d) { return '<td><small>' + esc(d.tarefas.join(', ') || '—') + '</small></td>'; }, txt: function (d) { return d.tarefas.join(', ') || '—'; } },
     { k: 'lic', rot: 'c_lic', val: function (d) { return d.licenca || ''; }, td: function (d) { return '<td><small>' + esc(d.licenca || '—') + '</small></td>'; }, txt: function (d) { return d.licenca || '—'; } },
@@ -269,6 +296,7 @@
     { k: 'upd', rot: 'c_upd', val: function (d) { return d.atualizado || ''; }, td: function (d) { return '<td class="nw"><small>' + esc(d.atualizado || '—') + '</small></td>'; }, txt: function (d) { return d.atualizado || '—'; } },
     { k: 'nb', rot: 'c_benchmarks', val: function (d) { return d.benchmarks.length; }, td: function (d) { return '<td><span class="num">' + d.benchmarks.length + '</span></td>'; }, txt: function (d) { return String(d.benchmarks.length); } }
   ];
+  if (!REL.disponivel) CAMS.datasets.cols = CAMS.datasets.cols.filter(function (c) { return c.so !== 'rel'; });
   CAMS.benchmarks.cols = [
     { k: 'nome', rot: 'c_benchmark', val: function (b) { return (b.sigla || b.nome).toLowerCase(); }, td: function (b) { return '<td><span class="mname">' + esc(b.sigla || b.nome) + '</span>' + (b.sigla ? '<small>' + esc(b.nome) + '</small>' : '') + '</td>'; }, txt: function (b) { return b.sigla ? b.sigla + ' (' + b.nome + ')' : b.nome; } },
     { k: 'dominio', rot: 'c_dominio', val: function (b) { return b.dominio.join(','); }, td: function (b) { return '<td><small>' + esc(b.dominio.map(rotDom).join(', ') || '—') + '</small></td>'; }, txt: function (b) { return b.dominio.map(rotDom).join(', ') || '—'; } },
@@ -286,7 +314,7 @@
 
   // ---------- grupos e layout (determinista) ----------
   function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967296; }
-  var G = [], stars = [];
+  var G = [], stars = [], pubC = {}, subRot = [];
   var montagemId = 0, fatia = function (fn) { if (window.scheduler && scheduler.postTask) scheduler.postTask(fn, { priority: 'user-visible' }); else setTimeout(fn, 0); };
   var ORCAMENTO = 10;   // ms por fatia: camadas grandes montam em varias fatias, sem travar a pagina
   function limparConstelacao() { montagemId++; G = []; stars = []; starOf = {}; grupoPorId = {}; grade = null; listaVis = []; visN = []; visB = []; arestas = { fam: [], outra: [] }; estrelasNenhum = []; estrelasBrilho = []; $('#sky-points').innerHTML = ''; S.noCirculo = []; assinatura = null; estSuja = true; camSuja = true; pintSuja = true; agendar(); }
@@ -307,7 +335,7 @@
     }
     var meu = ++montagemId, base = CAM.base(), map = {}, i = 0, frag = document.createDocumentFragment(), j2 = 0;
     base.forEach(function (m) {
-      var gi = CAM.grupo(m), g = map[gi.k] || (map[gi.k] = { id: gi.k, nome: gi.nome, ms: [], pub: gi.pub || null });
+      var gi = CAM.grupo(m), g = map[gi.k] || (map[gi.k] = { id: gi.k, nome: gi.nome, ms: [], pub: gi.pub || null, inst: gi.inst || null });
       g.ms.push(m);
     });
     var GG = Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.ms.length - a.ms.length || (a.id < b.id ? -1 : 1); });
@@ -336,9 +364,17 @@
         g.u = 0.5 + g.x * k; g.v = 0.5 + g.y * k; g.k = k;
         g.ms.forEach(function (m, j) {
           var st = { m: m, g: g, u: 0.5 + (g.x + g.off[j][0]) * k, v: 0.5 + (g.y + g.off[j][1]) * k, r: CAM.tam(m), xy: [0, 0], on: true, vis: false, dr: false, nf: CAM.id === 'modelos' ? m.nfmt : 1 };
-          st.st = CAM.cls(m); st.idx = stars.length; st.ord = { oficial: 0, comunidade: 1, gguf: 2, nenhum: 3 }[st.st]; stars.push(st); starOf[m.id] = st; (g.stars = g.stars || []).push(st);
+          st.dia = m.ftar === 'codificador'; st.st = CAM.cls(m); st.idx = stars.length; st.ord = { oficial: 0, comunidade: 1, gguf: 2, nenhum: 3 }[st.st]; stars.push(st); starOf[m.id] = st; (g.stars = g.stars || []).push(st);
         });
       });
+      pubC = {}; subRot = [];
+      if (CAM.id === 'modelos' && S.agrupar === 'instituicao' && REL.disponivel) {
+        stars.forEach(function (s) { var c = pubC[s.m.publicador] || (pubC[s.m.publicador] = { u: 0, v: 0, n: 0 }); c.u += s.u; c.v += s.v; c.n++; });
+        G.forEach(function (g) {
+          var por = {}; g.stars.forEach(function (s) { var l = REL.labDoPub(s.m.publicador); if (l) { var o = por[l] || (por[l] = { nome: REL.rot(REL.labBy[l]) || l, u: 0, v: 0, n: 0 }); o.u += s.u; o.v += s.v; o.n++; } });
+          Object.keys(por).forEach(function (l) { subRot.push({ nome: por[l].nome, u: por[l].u / por[l].n, v: por[l].v / por[l].n }); });
+        });
+      }
       rotulos();
     }
     function rotulos() {
@@ -390,7 +426,7 @@
   function paint() { pintSuja = true; agendar(); }
   function marcaAtivos() {
     document.querySelectorAll('.sel select').forEach(function (c) { c.classList.toggle('ativo', c.value !== '' && c.value !== 'todas'); });
-    var f = S.f[S.tab], tem = S.tab === 'modelos' ? (S.escopo !== 'todos' || S.via !== 'todos' || S.nat !== 'todas' || S.busca.trim() !== '' || S.fmt !== '') : Object.keys(f).some(function (k) { return f[k] !== ''; });
+    var f = S.f[S.tab], tem = S.tab === 'modelos' ? (S.escopo !== 'todos' || S.via !== 'todos' || S.nat !== 'todas' || S.busca.trim() !== '' || S.fmt !== '' || S.tarefa !== '' || S.inst !== '' || S.lab !== '') : Object.keys(f).some(function (k) { return f[k] !== ''; });
     var l = $('#limpar'); if (l) l.disabled = !tem;
   }
   function filtrou() { marcaAtivos(); filtroSuja = true; assinatura = null; camSuja = true; estSuja = true; pintSuja = true; agendar(); }
@@ -411,7 +447,8 @@
     ['oficial', 'comunidade', 'gguf', 'nenhum'].forEach(function (v) {
       var c = P[v], core = document.createElement('canvas'); core.width = core.height = 32;
       var cc = core.getContext('2d'); cc.fillStyle = rgba(c, 1); cc.beginPath(); cc.arc(16, 16, 16, 0, 6.2832); cc.fill();
-      spr[v] = { core: core, cor: c };
+      var cd = document.createElement('canvas'); cd.width = cd.height = 32; var dc = cd.getContext('2d'); dc.fillStyle = rgba(c, 1); dc.beginPath(); dc.moveTo(16, 0); dc.lineTo(32, 16); dc.lineTo(16, 32); dc.lineTo(0, 16); dc.closePath(); dc.fill();
+      spr[v] = { core: core, coreD: cd, cor: c };
       if (v !== 'nenhum') {
         var g = document.createElement('canvas'); g.width = g.height = 64; var gc = g.getContext('2d');
         var rg = gc.createRadialGradient(32, 32, 32 * 0.6 / RAZAO[v], 32, 32, 32);
@@ -468,6 +505,33 @@
     return h ^ (n << 20);
   }
 
+  // ---------- campo estelar de fundo: extensao infinita e decorativa do ceu (nao e dado) ----------
+  // Tiles procedurais pre-renderizados em canvas (uma pequena reserva de variantes); a variante de cada tile vem de um hash das
+  // coordenadas (tx, ty), entao qualquer regiao do plano tem estrelas, sem borda e sem repeticao regular. Densidade constante em tela.
+  var CAMPO = { T: 320, NV: 12, PAR: 0.45, pool: null, chave: '' };
+  function hash2(a, b) { var h = Math.imul(a | 0, 374761393) ^ Math.imul(b | 0, 668265263); h = Math.imul(h ^ (h >>> 13), 1274126177); return (h ^ (h >>> 16)) >>> 0; }
+  function criarCampo() {
+    var dpr = Math.min(devicePixelRatio || 1, 2), T = CAMPO.T, pool = [];
+    for (var v = 0; v < CAMPO.NV; v++) {
+      var cv = document.createElement('canvas'); cv.width = cv.height = Math.round(T * dpr); var c = cv.getContext('2d'); c.scale(dpr, dpr);
+      var sd = hash2(v, 7919) || 1, rr = function () { sd = (Math.imul(sd, 1664525) + 1013904223) >>> 0; return sd / 4294967296; };
+      for (var i = 0; i < 52; i++) {
+        var r = 0.5 + Math.pow(rr(), 3) * 0.7, a = 0.3 + rr() * 0.35, x = 2 + rr() * (T - 4), y = 2 + rr() * (T - 4);
+        c.fillStyle = DK ? 'rgba(190,204,255,' + a * 0.8 + ')' : 'rgba(70,84,170,' + a * 0.7 + ')';
+        c.beginPath(); c.arc(x, y, r, 0, 6.2832); c.fill();
+      }
+      pool.push(cv);
+    }
+    CAMPO.pool = pool; CAMPO.chave = (DK ? 'd' : 'l') + dpr;
+  }
+  // desenha o campo em ctx ( ja com a escala do dpr ); ox/oy = deslocamento do campo (paralaxe)
+  function desenharCampo(c, w, h, ox, oy) {
+    if (!CAMPO.pool || CAMPO.chave !== (DK ? 'd' : 'l') + Math.min(devicePixelRatio || 1, 2)) criarCampo();
+    var T = CAMPO.T, i0 = Math.floor(-ox / T), i1 = Math.floor((w - ox) / T), j0 = Math.floor(-oy / T), j1 = Math.floor((h - oy) / T), n = 0;
+    for (var j = j0; j <= j1; j++) for (var i = i0; i <= i1; i++) { c.drawImage(CAMPO.pool[hash2(i, j) % CAMPO.NV], Math.round(i * T + ox), Math.round(j * T + oy), T, T); n++; }
+    return n;
+  }
+
   // camada estatica: ligacoes e estrelas sem build, em bitmap proprio
   function renderEstatica() {
     var dk = DK, sc = Math.sqrt(S.zoom), l = lctx, dpr = canvas.width / W, esc2 = scale();
@@ -485,11 +549,11 @@
       }
     });
     STATS.linhas = n;
-    var core = spr.nenhum.core, al = dk ? 0.5 : 0.6, peq = [[], []], c = spr.nenhum.cor;
+    var core = spr.nenhum.core, coreD = spr.nenhum.coreD, al = dk ? 0.5 : 0.6, peq = [[], []], c = spr.nenhum.cor;
     for (var j = 0; j < visN.length; j++) {
       var s = visN[j], r = s.r * (0.85 + 0.15 * sc) * 0.8;
       if (r < 1.5) { peq[s.on ? 1 : 0].push(s.xy[0] - r, s.xy[1] - r, 2 * r); continue; }   // agregacao visual: ponto
-      l.globalAlpha = al * (s.on ? 1 : 0.1); l.drawImage(core, s.xy[0] - r, s.xy[1] - r, 2 * r, 2 * r);
+      l.globalAlpha = al * (s.on ? 1 : 0.1); if (s.dia) { var rd = r * 1.2; l.drawImage(coreD, s.xy[0] - rd, s.xy[1] - rd, 2 * rd, 2 * rd); } else l.drawImage(core, s.xy[0] - r, s.xy[1] - r, 2 * r, 2 * r);
     }
     [[0, al * 0.1], [1, al]].forEach(function (g) { var arr = peq[g[0]]; if (!arr.length) return; l.globalAlpha = 1; l.fillStyle = rgba(c, g[1]); for (var q = 0; q < arr.length; q += 3) l.fillRect(arr[q], arr[q + 1], arr[q + 2], arr[q + 2]); });
     l.globalAlpha = 1;
@@ -498,7 +562,10 @@
   // mostra a camada estatica, transformada se a camera mudou desde o ultimo render
   function blitEstatica() {
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var dpr = canvas.width / W, k = scale() / snap.sc, tx = (S.panX - snap.px) * scale() + W / 2 - (W / 2) * k, ty = (S.panY - snap.py) * scale() + H / 2 - (H / 2) * k;
+    var dpr = canvas.width / W; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    STATS.campo = desenharCampo(ctx, W, H, S.panX * scale() * CAMPO.PAR, S.panY * scale() * CAMPO.PAR);   // so decorativo: fora de hit-test, busca, filtros e contagens
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    var k = scale() / snap.sc, tx = (S.panX - snap.px) * scale() + W / 2 - (W / 2) * k, ty = (S.panY - snap.py) * scale() + H / 2 - (H / 2) * k;
     ctx.setTransform(dpr * k, 0, 0, dpr * k, dpr * tx, dpr * ty); ctx.drawImage(layer, 0, 0, W, H); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
@@ -514,7 +581,7 @@
       var nfm = s.nf, forte = nfm >= 3 ? 1.7 : nfm === 2 ? 1.35 : 1, larg = nfm >= 3 ? 1.3 : nfm === 2 ? 1.15 : 1;   // mais formatos de build: mais brilho
       var tw = calmo ? 1 : 0.75 + 0.25 * Math.sin(elapsed * 0.0024 + s.u * 40), gr = r * RAZAO[v] * larg, sp = spr[v];
       c.globalAlpha = Math.min(1, ALFA[v] * a * tw * forte); c.drawImage(sp.glow, x - gr, y - gr, 2 * gr, 2 * gr);
-      c.globalAlpha = a; c.drawImage(sp.core, x - r, y - r, 2 * r, 2 * r);
+      c.globalAlpha = a; if (s.dia) { var rd = r * 1.2; c.drawImage(sp.coreD, x - rd, y - rd, 2 * rd, 2 * rd); } else c.drawImage(sp.core, x - r, y - r, 2 * r, 2 * r);
       if (nfm >= 2 && s.on) {   // aneis por sprite; pulso lento com 3 ou mais formatos (parado com movimento reduzido)
         var pu = nfm >= 3 && !calmo ? Math.sin(elapsed * 0.0016 + s.u * 10) : 0, ra = r * (nfm >= 3 ? 3.3 : 2.5) * (1 + 0.06 * pu);
         c.globalAlpha = Math.min(1, (nfm >= 3 ? 0.85 : 0.75) + 0.15 * pu); c.drawImage(sp[nfm >= 3 ? 'anel2' : 'anel1'], x - ra, y - ra, 2 * ra, 2 * ra);
@@ -524,6 +591,14 @@
       }
     }
     c.globalAlpha = 1;
+    if (CAM.id === 'modelos' && S.agrupar === 'instituicao' && REL.disponivel) {   // vinculos "relacionado" (tenues) e sub-rotulos dos laboratorios (com zoom)
+      var col2 = dk ? '215,221,255' : '50,60,150', sc2 = scale(), hx = W / 2 + (S.panX - 0.5) * sc2, hy = H / 2 + (S.panY - 0.5) * sc2;
+      c.lineWidth = 0.9; c.setLineDash([3, 4]); c.strokeStyle = 'rgba(' + col2 + ',.35)'; c.beginPath();
+      REL.pares.forEach(function (p) { var a = pubC[p[0]], b2 = pubC[p[1]]; if (!a || !b2) return; c.moveTo(hx + a.u / a.n * sc2, hy + a.v / a.n * sc2); c.lineTo(hx + b2.u / b2.n * sc2, hy + b2.v / b2.n * sc2); });
+      c.stroke(); c.setLineDash([]);
+      if (S.zoom >= 2.2) { c.font = '600 11px "Atkinson Hyperlegible Next",system-ui,sans-serif'; c.textAlign = 'center'; c.lineWidth = 3; c.strokeStyle = dk ? 'rgba(31,39,83,.85)' : 'rgba(255,255,255,.9)'; c.fillStyle = dk ? '#f4f6ff' : '#171c47';
+        subRot.forEach(function (r) { var x2 = hx + r.u * sc2, y2 = hy + r.v * sc2 - 12; if (x2 < 0 || x2 > W || y2 < 0 || y2 > H) return; c.strokeText(r.nome, x2, y2); c.fillText(r.nome, x2, y2); }); }
+    }
     if (CAM.id === 'benchmarks' && CC.datasets.length) {   // linha tenue do benchmark aos seus datasets: com zoom, ao passar o mouse ou ao selecionar
       var selId = sel && sel.t === 'm' ? sel.id : null, col = dk ? '215,221,255' : '50,60,150';
       c.lineWidth = 0.7;
@@ -637,7 +712,8 @@
       var p = new URLSearchParams(location.search);
       if (S.zoom !== 1 || S.panX !== 0 || S.panY !== 0) p.set('sky', [S.zoom, S.panX, S.panY].map(function (n) { return +n.toFixed(4); }).join(',')); else p.delete('sky');
       ['escopo', 'via'].forEach(function (k) { if (S[k] !== 'todos') p.set(k, S[k]); else p.delete(k); });
-      if (S.agrupar === 'familia') p.set('agrupar', 'familia'); else p.delete('agrupar');
+      if (S.agrupar === 'familia' || S.agrupar === 'instituicao') p.set('agrupar', S.agrupar); else p.delete('agrupar');
+      if (S.tarefa) p.set('tarefa', S.tarefa); else p.delete('tarefa');
       try { history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '') + location.hash); } catch (e) {}
     }, 200);
   }
@@ -735,6 +811,34 @@
     return l.length ? '<h3>' + t('evidencias') + '</h3><ul>' + l.map(li).join('') + '</ul>' : '';
   }
   var badgeLista = function (arr) { return arr.map(function (x) { return '<span class="badge">' + esc(x) + '</span>'; }).join(' '); };
+  var nomeLab = function (id) { var l = REL.labBy[id]; return l ? (l.sigla ? l.sigla + ' · ' + l.nome : l.nome) : id; };
+  var nomeInstFull = function (id) { var i = REL.instBy[id]; return i ? (i.sigla ? i.sigla + ' · ' + i.nome : i.nome) : id; };
+  function vinculosHtml(pid, m) {
+    var o = REL.porPub ? REL.porPub[pid] : null, l = [];
+    if (!REL.disponivel && !(m && (m.creditos || []).length)) return '';
+    if (o && o.inst.length) l.push('<dt>' + t('v_inst') + '</dt><dd><ul>' + o.inst.map(function (id) { return '<li><button type="button" data-ir="inst:' + esc(id) + '">' + esc(nomeInstFull(id)) + '</button></li>'; }).join('') + '</ul></dd>');
+    if (o && o.labs.length) l.push('<dt>' + t('v_lab') + '</dt><dd><ul>' + o.labs.map(function (id) { return '<li>' + esc(nomeLab(id)) + '</li>'; }).join('') + '</ul></dd>');
+    if (o && o.rel.length) l.push('<dt>' + t('v_rel') + '</dt><dd><ul>' + o.rel.map(function (id) { return '<li>' + (pubBy[id] ? '<button type="button" data-ir="pub:' + esc(id) + '">' + esc(pubNome(id)) + '</button>' : esc(id)) + '</li>'; }).join('') + '</ul></dd>');
+    if (o && o.membro.length) l.push('<dt>' + t('v_membro') + '</dt><dd><ul>' + o.membro.map(function (id) { return '<li>' + (pubBy[id] ? '<button type="button" data-ir="pub:' + esc(id) + '">' + esc(pubNome(id)) + '</button>' : esc(id)) + '</li>'; }).join('') + '</ul></dd>');
+    if (m && (m.creditos || []).length) l.push('<dt>' + t('v_cred') + '</dt><dd><ul>' + m.creditos.map(function (c) { var k = c.split(':'); return '<li>' + esc(k[0] === 'lab' ? nomeLab(k.slice(1).join(':')) : nomeInstFull(k.slice(1).join(':'))) + '</li>'; }).join('') + '</ul></dd>');
+    return l.length ? '<h3>' + t('vinculos') + '</h3><dl class="dr-grid dr-vinc">' + l.join('') + '</dl>' : '';
+  }
+  function drawerInst(i, g) {
+    var pubsI = (i.publicadores || []).filter(function (p) { return pubBy[p]; }), labs = (i.labs || []).map(nomeLab), fam = i.por_familia_tarefa || {}, nb = i.n_builds || {};
+    return '<span class="dr-label">' + t('v_inst') + (i.tipo ? ' · ' + esc(i.tipo) : '') + '</span><h2 id="drawer-titulo">' + esc(i.nome) + (i.sigla ? ' (' + esc(i.sigla) + ')' : '') + '</h2><p class="dr-sub">' + esc(i.pais || '') + (i.regiao ? ' · ' + esc(i.regiao) : '') + (i.parte_de ? ' · ' + t('parte_de') + ' ' + esc(nomeInstFull(i.parte_de)) : '') + '</p>' +
+      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + nf(i.n_modelos || 0) + '</dd><dt>' + t('ta_gerador') + '</dt><dd>' + nf(fam.gerador || 0) + '</dd><dt>' + t('ta_codificador') + '</dt><dd>' + nf(fam.codificador || 0) + '</dd><dt>' + t('b_nativo') + '</dt><dd>' + nf(nb.nativo || 0) + '</dd><dt>' + t('b_gguf') + '</dt><dd>' + nf(nb.gguf || 0) + '</dd></dl>' +
+      (labs.length ? '<h3>' + t('v_lab') + '</h3><ul>' + labs.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
+      (pubsI.length ? '<h3>' + t('publicador') + '</h3><ul class="dr-lista">' + pubsI.map(function (p) { return '<li><button type="button" data-ir="pub:' + esc(p) + '">' + esc(pubNome(p)) + '</button></li>'; }).join('') + '</ul>' : '') +
+      ((i.fontes || []).length ? '<h3>' + t('fontes') + '</h3><ul>' + i.fontes.map(function (f) { return li({ rotulo: tipoFonte(f.tipo), url: f.url, acessado: f.acessado, trecho: f.trecho }); }).join('') + '</ul>' : '');
+  }
+  function drawerPublicador(pid) {
+    var p = pubBy[pid]; if (!p) return '';
+    var ms = D.modelos.filter(function (m) { return m.publicador === pid; });
+    return '<span class="dr-label">' + t('publicador') + '</span><h2 id="drawer-titulo">' + esc(p.nome) + '</h2><p class="dr-sub">' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' +
+      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + ms.length + '</dd></dl>' + vinculosHtml(pid, null) + evidHtml(p) +
+      '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + (p.fontes || []).map(li).join('') + '</ul>' +
+      '<h3>' + t('modelos') + '</h3><ul class="dr-lista">' + ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.nome) + '</button></li>'; }).join('') + (ms.length > 60 ? '<li>… +' + (ms.length - 60) + '</li>' : '') + '</ul>';
+  }
   function drawerModelo(m) {
     var p = pubBy[m.publicador], v = viaOf(m), gruposB = {};
     (m.builds || []).forEach(function (b) { (gruposB[b.formato] = gruposB[b.formato] || []).push(b); });
@@ -752,15 +856,15 @@
     return '<span class="dr-label">' + t('modelo') + '</span><h2 id="drawer-titulo">' + esc(m.nome) + '</h2><p class="dr-sub"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.nome) + '</a> · ' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + '</p>' +
       '<p><span class="badge ' + v + '">' + t(v) + '</span> <span class="badge">' + m.nfmt + ' ' + t(m.nfmt === 1 ? 'formato' : 'formatos') + '</span>' + (m.gguf_grande ? ' <span class="badge">' + t('gguf_nota') + '</span>' : '') + '</p>' +
       '<dl class="dr-grid"><dt>' + t('c_gb') + '</dt><dd>' + (m.gb_navegador ? nf(m.gb_navegador, 2) + ' GB' : '—') + '</dd><dt>' + t('c_lic') + '</dt><dd>' + esc(m.licenca || '—') + '</dd><dt>' + t('atualizado') + '</dt><dd>' + esc(m.atualizado || '—') + '</dd>' +
-      '<dt>' + t('parametros') + '</dt><dd>' + (m.parametros_b ? nf(m.parametros_b, 2) + ' B' : '—') + '</dd><dt>' + t('familia') + '</dt><dd>' + esc(m.familia) + '</dd><dt>' + t('tarefa') + '</dt><dd>' + esc(m.tarefa || '—') + '</dd></dl>' +
-      '<p><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + t('abrir_hf') + '</a></p>' + secBuilds + evidHtml(p) +
+      '<dt>' + t('parametros') + '</dt><dd>' + (m.parametros_b ? nf(m.parametros_b, 2) + ' B' : '—') + '</dd><dt>' + t('familia') + '</dt><dd>' + esc(m.familia) + '</dd><dt>' + t('tarefa') + '</dt><dd>' + t('ta_' + m.ftar) + (m.tarefa ? ' (' + esc(m.tarefa) + ')' : '') + '</dd></dl>' +
+      '<p><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + t('abrir_hf') + '</a></p>' + secBuilds + vinculosHtml(m.publicador, m) + evidHtml(p) +
       '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + (m.fontes || []).concat(bl).map(li).join('') + '</ul>';
   }
   function linhaIr(tab, id, rot) { return '<li><button type="button" data-ir="' + tab + ':' + esc(id) + '">' + esc(rot) + '</button></li>'; }
   function drawerDataset(d) {
     var cls = clsDataset(d), bl = d.benchmarks.map(function (id) { return bmBy[id]; }).filter(Boolean), srcs = seguro(d.url) ? [{ rotulo: d.nome, url: d.url, acessado: d.atualizado || D.meta.coletado_em }] : [];
     return '<span class="dr-label">' + t('dataset') + '</span><h2 id="drawer-titulo">' + esc(d.nome) + '</h2><p class="dr-sub">' + esc(pubNome(d.publicador)) + '</p>' +
-      '<p><span class="badge ' + cls + '">' + t('leg_ds_' + ({ oficial: 'of', comunidade: 'co', gguf: 'gg', nenhum: 'no' })[cls]) + '</span></p>' + (d.descricao ? '<p>' + esc(d.descricao) + '</p>' : '') +
+      '<p><span class="badge ' + cls + '">' + t('leg_ds_' + ({ oficial: 'of', comunidade: 'co', gguf: 'gg', nenhum: 'no' })[cls]) + '</span></p>' + (REL.disponivel && REL.instDoPub(d.publicador).length ? '<p class="dr-sub">' + t('v_inst') + ': ' + REL.instDoPub(d.publicador).map(function (id) { return '<button type="button" class="lnk" data-ir="inst:' + esc(id) + '">' + esc(nomeInstFull(id)) + '</button>'; }).join(', ') + '</p>' : '') + (d.descricao ? '<p>' + esc(d.descricao) + '</p>' : '') +
       '<dl class="dr-grid"><dt>' + t('c_idiomas') + '</dt><dd>' + esc(d.idiomas.join(', ') || '—') + '</dd><dt>' + t('c_tarefas') + '</dt><dd>' + esc(d.tarefas.join(', ') || '—') + '</dd><dt>' + t('c_lic') + '</dt><dd>' + esc(d.licenca || '—') + '</dd>' +
       '<dt>' + t('c_tamanho') + '</dt><dd>' + esc(fmtB(d.tamanho_bytes)) + '</dd><dt>' + t('c_downloads') + '</dt><dd>' + nf(d.downloads) + '</dd><dt>Likes</dt><dd>' + nf(d.likes) + '</dd><dt>' + t('atualizado') + '</dt><dd>' + esc(d.atualizado || '—') + '</dd><dt>' + t('escopo') + '</dt><dd>' + esc(d.escopo || '—') + '</dd></dl>' +
       (seguro(d.url) ? '<p><a href="' + esc(d.url) + '" target="_blank" rel="noopener">' + t('abrir_fonte') + '</a></p>' : '') +
@@ -780,16 +884,19 @@
   }
   CAMS.modelos.drawer = drawerModelo; CAMS.datasets.drawer = drawerDataset; CAMS.benchmarks.drawer = drawerBench;
   function drawerGrupo(g) {
+    if (g.inst) return drawerInst(g.inst, g);
     var p = g.pub, cont = {}; g.ms.forEach(function (m) { var c = CAM.cls(m); cont[c] = (cont[c] || 0) + 1; });
     var linhas = CAM.legenda.map(function (l) { return '<dt>' + t(l[1]) + '</dt><dd>' + (cont[l[0]] || 0) + '</dd>'; }).join('');
     return '<span class="dr-label">' + (p ? t('constelacao') : t('fam_t')) + '</span><h2 id="drawer-titulo">' + esc(g.nome) + '</h2>' + (p && p.natureza ? '<p class="dr-sub">' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' : '') +
       '<dl class="dr-grid"><dt>' + t(CAM.plural) + '</dt><dd>' + g.ms.length + '</dd>' + linhas + '</dl>' +
-      (p && p.evidencia_pais ? evidHtml(p) + '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + p.fontes.map(li).join('') + '</ul>' : '') +
+      (p && p.evidencia_pais ? vinculosHtml(p.id, null) + evidHtml(p) + '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + p.fontes.map(li).join('') + '</ul>' : '') +
       '<h3>' + t(CAM.plural) + '</h3><ul class="dr-lista">' + g.ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.sigla || m.nome) + '</button> · ' + t(CAM.legenda.filter(function (l) { return l[0] === CAM.cls(m); })[0][1]) + '</li>'; }).join('') + (g.ms.length > 60 ? '<li>… +' + (g.ms.length - 60) + '</li>' : '') + '</ul>';
   }
   function renderDrawer() {
     var el = $('#drawer-corpo'), s = S.sel; if (!s) return;
     if (s.t === 'm') { var m = CAM.por[s.id]; if (m) { el.innerHTML = CAM.drawer(m); if (CAM.id === 'modelos' && PARTES.builds && !window.MAPA_DETALHES) carregarParte('builds').then(function () { aplicarDetalhes(); if (S.sel && S.sel.id === s.id && drawer.classList.contains('on')) renderDrawer(); }, function () {}); } }
+    else if (s.t === 'p') el.innerHTML = drawerPublicador(s.id);
+    else if (s.t === 'i') { var ii = REL.instBy[s.id]; if (ii) el.innerHTML = drawerInst(ii); }
     else { var g = grupoPorId[s.id]; if (g) el.innerHTML = drawerGrupo(g); }
   }
   function abrirDrawer() {
@@ -808,7 +915,7 @@
   $('#drawer-x').onclick = fecharDrawer; scrim.onclick = fecharDrawer;
   drawer.addEventListener('click', function (e) {
     var b = e.target.closest('[data-abrir]'); if (b) { selecionar({ t: 'm', id: b.dataset.abrir }, opener); return; }
-    var ir = e.target.closest('[data-ir]'); if (ir) { var p = ir.dataset.ir.split(':'), alvo = p.shift(), id = p.join(':'); trocarTab(alvo, undefined, function () { if (CAM.por[id]) selecionar({ t: 'm', id: id }, null); }); }
+    var ir = e.target.closest('[data-ir]'); if (ir) { var p = ir.dataset.ir.split(':'), alvo = p.shift(), id = p.join(':'); if (alvo === 'pub' || alvo === 'inst') { selecionar({ t: alvo === 'pub' ? 'p' : 'i', id: id }, opener); return; } trocarTab(alvo, undefined, function () { if (CAM.por[id]) selecionar({ t: 'm', id: id }, null); }); }
   });
   document.addEventListener('keydown', function (e) {
     if (!drawer.classList.contains('on')) return;
@@ -880,8 +987,31 @@
 
   // ---------- resumo, metodo, textos ----------
   function contarEscopo(ms) { var c = { n: ms.length, nat: 0, gg: 0, no: 0 }; ms.forEach(function (m) { m.via === 'nativo' ? c.nat++ : m.via === 'gguf' ? c.gg++ : c.no++; }); return c; }
+  function contarM(ms) { var c = { modelos: ms.length, so_nativo: 0, nativo_mais_gguf: 0 }; ms.forEach(function (m) { if (m.via === 'nativo') { c.so_nativo++; c.nativo_mais_gguf++; } else if (m.via === 'gguf') c.nativo_mais_gguf++; }); return c; }
+  function maiorBR() {
+    var f = D.foto.sem_maior_publicador; if (f && f.id) return { id: f.id, n: f.modelos };
+    var cnt = {}; D.modelos.forEach(function (m) { if (m.escopo === 'br') cnt[m.publicador] = (cnt[m.publicador] || 0) + 1; });
+    var id = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a]; })[0]; return id ? { id: id, n: cnt[id] } : null;
+  }
+  function capaCont(fam, sem) {   // usa foto.por_familia_tarefa e foto.sem_maior_publicador quando existem; senao, calcula dos modelos
+    var F = D.foto, mb = maiorBR();
+    if (fam && F.por_familia_tarefa && F.por_familia_tarefa[fam] && F.por_familia_tarefa[fam][sem ? 'brasil_sem_maior' : 'brasil']) return F.por_familia_tarefa[fam][sem ? 'brasil_sem_maior' : 'brasil'];
+    if (!fam && sem && F.sem_maior_publicador && F.sem_maior_publicador.brasil) return F.sem_maior_publicador.brasil;
+    if (!fam && !sem && F.brasil && F.brasil.modelos) return F.brasil;
+    return contarM(D.modelos.filter(function (m) { return m.escopo === 'br' && (!fam || m.ftar === fam) && (!sem || !mb || m.publicador !== mb.id); }));
+  }
+  function renderCapa() {
+    var el = $('#capa'); el.hidden = CAM.id !== 'modelos'; if (el.hidden) return;
+    var mb = maiorBR(), sem = S.semMaior && !!mb, c = capaCont('', sem), g = capaCont('gerador', sem), k = capaCont('codificador', sem), todos = capaCont('', false);
+    var pct = mb && todos.modelos ? Math.round(100 * mb.n / todos.modelos) : 0;
+    el.innerHTML = '<div class="capa-topo"><span class="capa-rot">' + t('capa_br') + '</span>' + (mb ? '<span class="segmented" role="group" aria-label="' + esc(t('capa_br')) + '"><button type="button" data-sem="0" aria-pressed="' + (!sem) + '">' + t('capa_todos') + '</button><button type="button" data-sem="1" aria-pressed="' + sem + '">' + t('capa_sem') + '</button></span>' : '') + '</div>' +
+      '<div class="capa-nums"><div><strong>' + nf(c.so_nativo) + ' ' + t('de') + ' ' + nf(c.modelos) + '</strong><span>' + t('capa_nativo') + '</span></div><div><strong>' + nf(c.nativo_mais_gguf) + '</strong><span>' + t('capa_gguf') + '</span></div>' +
+      '<div><strong>' + nf(g.so_nativo) + ' ' + t('de') + ' ' + nf(g.modelos) + '</strong><span>' + t('capa_ger') + '</span></div><div><strong>' + nf(k.so_nativo) + ' ' + t('de') + ' ' + nf(k.modelos) + '</strong><span>' + t('capa_cod') + '</span></div></div>' +
+      (mb ? '<p class="capa-nota">' + t('capa_nota').replace('{p}', esc(pubNome(mb.id))).replace('{x}', nf(pct)) + '</p>' : '');
+  }
+  $('#capa').addEventListener('click', function (e) { var b = e.target.closest('button[data-sem]'); if (!b) return; S.semMaior = b.dataset.sem === '1'; renderCapa(); renderFoto(); });
   function renderFoto() {
-    var br = D.foto.brasil, mu = D.foto.mundo, pn = D.foto.publicadores.brasil_por_natureza || {}, cd = D.foto.candidatos || {};
+    var mbx = maiorBR(), br = capaCont('', S.semMaior && !!mbx), mu = D.foto.mundo, pn = D.foto.publicadores.brasil_por_natureza || {}, cd = D.foto.candidatos || {};
     $('#foto').innerHTML =
       '<div><span>' + t('inv_br') + '</span><strong>' + nf(br.so_nativo) + ' ' + t('de') + ' ' + nf(br.modelos) + '</strong><p>' + t('inv_br_p') + ' <b>' + nf(br.nativo_mais_gguf) + '</b></p></div>' +
       '<div><span>' + t('inv_mu') + '</span><strong>' + nf(mu.so_nativo) + ' ' + t('de') + ' ' + nf(mu.modelos) + '</strong><p>' + t('inv_br_p') + ' <b>' + nf(mu.nativo_mais_gguf) + '</b></p></div>' +
@@ -889,10 +1019,11 @@
     $('#caveat').textContent = t('aviso');
     $('#rodape').textContent = t('rodape') + ' ' + D.meta.coletado_em + ' · ' + nf(D.modelos.length) + ' ' + t('modelos') + ' · ' + nf(D.publicadores.length) + (S.lang === 'pt' ? ' publicadores' : ' publishers');
     $('#metodo-corpo').innerHTML = [1, 2, 3].map(function (i) { return '<div><h3>' + t('m' + i + '_t') + '</h3><p>' + t('m' + i + '_a') + '</p><p>' + t('m' + i + '_b') + '</p><p>' + t('m' + i + '_c') + '</p></div>'; }).join('');
-    renderLegenda();
+    renderLegenda(); renderCapa();
   }
   function renderLegenda() {
     $('#legenda').innerHTML = CAM.legenda.map(function (x) { return '<span><i class="' + x[2] + '"></i>' + t(x[1]) + '</span>'; }).join('') +
+      (CAM.id === 'modelos' ? '<span class="leg-forma"><i class="f-c"></i>' + t('ta_gerador') + ' <i class="f-d"></i>' + t('ta_codificador') + '</span>' : '') +
       (CAM.id === 'modelos' ? '<span class="leg-aneis"><i class="a0"></i><i class="a1"></i><i class="a2"></i>' + t('leg_aneis') + '</span>' : '');
   }
   function textos() {
@@ -938,6 +1069,8 @@
   function filtrosAtivos() {
     var l = [];
     if (S.tab === 'modelos') {
+      l.push(t('agrupar') + ': ' + t({ publicador: 'porpub', familia: 'porfam', instituicao: 'porinst' }[CAM.modo()]));
+      if (S.tarefa) l.push(t('c_tarefa') + ': ' + t('ta_' + S.tarefa)); if (S.inst) l.push(t('f_inst') + ': ' + nomeInstFull(S.inst)); if (S.lab) l.push(t('f_lab') + ': ' + nomeLab(S.lab));
       if (S.escopo !== 'todos') l.push(t('f_escopo') + ': ' + t(S.escopo === 'br' ? 'br' : 'mundo')); if (S.via !== 'todos') l.push(t('c_status') + ': ' + t('v_' + S.via));
       if (S.nat !== 'todas') l.push(t('f_nat') + ': ' + t(S.nat)); if (S.fmt) l.push(t('f_fmt') + ': ' + t('fmt_multi')); if (S.busca.trim()) l.push(t('buscar') + ': ' + S.busca.trim());
     } else { var f = S.f[S.tab]; Object.keys(f).forEach(function (k) { if (f[k] !== '') l.push(t(ROT_F[k]) + ': ' + valorFiltro(k, f[k])); }); }
@@ -945,7 +1078,9 @@
   }
   function rodapeExp() {
     var u = String(window.REPO_URL || '').replace(/\/+$/, '');
-    return [t('exp_fonte') + ': ' + t('rodape') + ' ' + D.meta.coletado_em, 'Observatório Web AI · ' + hoje() + (u ? ' · ' + u : ''), t('exp_lic')];
+    var l = [t('exp_fonte') + ': ' + t('rodape') + ' ' + D.meta.coletado_em];
+    if (S.tab === 'modelos') { var mb = maiorBR(), sem = S.semMaior && !!mb, c = capaCont('', sem); l.push(t('capa_br') + ' (' + t(sem ? 'capa_sem' : 'capa_todos') + '): ' + nf(c.so_nativo) + ' ' + t('de') + ' ' + nf(c.modelos) + ' ' + t('capa_nativo') + '; ' + nf(c.nativo_mais_gguf) + ' ' + t('capa_gguf') + (mb ? '. ' + t('capa_nota').replace('{p}', pubNome(mb.id)).replace('{x}', nf(Math.round(100 * mb.n / Math.max(1, capaCont('', false).modelos)))) : '')); }
+    return l.concat(['Observatório Web AI · ' + hoje() + (u ? ' · ' + u : ''), t('exp_lic')]);
   }
   var nomeItem = function (m) { return m.sigla ? m.sigla + ' · ' + m.nome : m.nome; };
   var rotCls = function (m) { return t(CAM.legenda.filter(function (l) { return l[0] === CAM.cls(m); })[0][1]); };
@@ -957,7 +1092,7 @@
       var x, y, r;
       if (completo) { x = W0 / 2 + (s.u - 0.5) * esc0; y = H0 / 2 + (s.v - 0.5) * esc0; r = s.r; }
       else { if (!s.vis) return; x = s.xy[0]; y = s.xy[1]; r = s.r * (0.85 + 0.15 * sc); }
-      est.push({ x: x, y: y, r: r, c: s.st, t: nomeItem(s.m) + ' · ' + s.g.nome });
+      est.push({ x: x, y: y, r: r, c: s.st, d: !!s.dia, t: nomeItem(s.m) + ' · ' + s.g.nome });
     });
     G.forEach(function (g) {
       var n = g.stars.filter(function (q) { return q.on; }).length; if (!n) return;
@@ -1022,7 +1157,8 @@
   // ---------- modos de agrupamento, filtros por aba, abas ----------
   function renderModos() {
     var modo = CAM.modo();
-    $('#f-agrupar').innerHTML = CAM.modos.map(function (m) { return '<button type="button" data-modo="' + m[0] + '" aria-pressed="' + (m[0] === modo) + '">' + t(m[1]) + '</button>'; }).join('');
+    $('#f-agrupar').setAttribute('aria-label', t('agrupar'));
+    $('#f-agrupar').innerHTML = '<span class="mini-rot">' + t('agrupar') + '</span>' + (typeof CAM.modos === 'function' ? CAM.modos() : CAM.modos).map(function (m) { return '<button type="button" data-modo="' + m[0] + '" aria-pressed="' + (m[0] === modo) + '">' + t(m[1]) + '</button>'; }).join('');
   }
   var selHtml = function (tab, k, rot, ops) {
     var v = S.f[tab][k];
@@ -1031,7 +1167,16 @@
   var buscaHtml = function (tab) { return '<label class="sel search"><span class="sr">' + t('buscar') + '</span><input type="search" data-f="' + tab + '" data-q="1" value="' + esc(S.f[tab].q) + '" placeholder="' + esc(t('buscar_ph')) + '" autocomplete="off"></label>'; };
   var plano = function (a) { var r = []; a.forEach(function (x) { r = r.concat(x); }); return r; };
   var paraOps = function (arr) { return arr.map(function (x) { return [x, x]; }); };
+  function renderRelFiltros() {
+    $('#w-inst').hidden = $('#w-lab').hidden = !REL.disponivel; if (!REL.disponivel) return;
+    var is = REL.inst.slice().sort(function (a, b) { return (REL.rot(a) || '').toLowerCase() < (REL.rot(b) || '').toLowerCase() ? -1 : 1; });
+    $('#f-inst').innerHTML = '<option value="">' + t('f_inst') + '</option>' + is.map(function (i) { return '<option value="' + esc(i.id) + '">' + esc(nomeInstFull(i.id)) + '</option>'; }).join(''); $('#f-inst').value = S.inst;
+    var ls = REL.lab.filter(function (l) { return !S.inst || l.instituicao === S.inst || (l.parceiras || []).indexOf(S.inst) >= 0; });
+    $('#f-lab').innerHTML = '<option value="">' + t('f_lab') + '</option>' + ls.map(function (l) { return '<option value="' + esc(l.id) + '">' + esc(nomeLab(l.id)) + '</option>'; }).join(''); $('#f-lab').value = S.lab;
+    document.querySelectorAll('#f-tarefa button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tarefa === S.tarefa)); });
+  }
   function renderFiltros() {
+    renderRelFiltros(); document.querySelectorAll('#f-tarefa button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tarefa === S.tarefa)); });
     var fm = $('#f-fmt'); if (fm) fm.innerHTML = '<option value="">' + t('f_fmt') + '</option><option value="multi">' + t('fmt_multi') + '</option>';
     if (fm) fm.value = S.fmt;
     if (TEM.datasets) {
@@ -1053,9 +1198,12 @@
     el.addEventListener('input', function (e) { var c = e.target.closest('input[data-q]'); if (!c) return; S.f[c.dataset.f].q = c.value; filtrou(); });
   });
   $('#f-fmt').addEventListener('change', function (e) { S.fmt = e.target.value; filtrou(); });
+  $('#f-inst').addEventListener('change', function (e) { S.inst = e.target.value; var l = REL.labBy[S.lab]; if (S.lab && l && S.inst && l.instituicao !== S.inst && (l.parceiras || []).indexOf(S.inst) < 0) S.lab = ''; renderRelFiltros(); filtrou(); });
+  $('#f-lab').addEventListener('change', function (e) { S.lab = e.target.value; filtrou(); });
+  $('#f-tarefa').addEventListener('click', function (e) { var b = e.target.closest('button[data-tarefa]'); if (!b) return; S.tarefa = b.dataset.tarefa; renderRelFiltros(); filtrou(); });
   document.addEventListener('change', function (e) { if (e.target.matches && e.target.matches('.sel select')) marcaAtivos(); });
   $('#limpar').addEventListener('click', function () {
-    if (S.tab === 'modelos') { S.escopo = 'todos'; S.via = 'todos'; S.nat = 'todas'; S.busca = ''; S.fmt = ''; $('#busca').value = ''; textos(); fecharDrawer(); S.zoom = 1; S.panX = 0; S.panY = 0; tudo(); }
+    if (S.tab === 'modelos') { S.escopo = 'todos'; S.via = 'todos'; S.nat = 'todas'; S.busca = ''; S.fmt = ''; S.tarefa = ''; S.inst = ''; S.lab = ''; $('#busca').value = ''; textos(); fecharDrawer(); S.zoom = 1; S.panX = 0; S.panY = 0; tudo(); }
     else { var f = S.f[S.tab]; Object.keys(f).forEach(function (k) { f[k] = ''; }); renderFiltros(); filtrou(); }
     salvaUrl();
   });

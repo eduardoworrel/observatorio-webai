@@ -87,6 +87,55 @@
         "terceiro",
         "coletor"
       ]
+    },
+    "vinculos": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "alvo",
+          "relacao",
+          "fonte"
+        ],
+        "properties": {
+          "alvo": {
+            "$ref": "comum.schema.json#/$defs/alvo_vinculo"
+          },
+          "relacao": {
+            "enum": [
+              "conta_oficial",
+              "membro",
+              "pesquisador",
+              "projeto"
+            ]
+          },
+          "fonte": {
+            "$ref": "comum.schema.json#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "relacionados": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "publicador",
+          "fonte"
+        ],
+        "properties": {
+          "publicador": {
+            "$ref": "comum.schema.json#/$defs/id_publicador"
+          },
+          "fonte": {
+            "$ref": "comum.schema.json#/$defs/evidencia"
+          }
+        }
+      }
     }
   }
 }

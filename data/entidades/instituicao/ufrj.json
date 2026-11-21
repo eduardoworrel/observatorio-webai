@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "ufrj",
+  "nome": "Universidade Federal do Rio de Janeiro",
+  "sigla": "UFRJ",
+  "tipo": "universidade",
+  "pais": "BR",
+  "regiao": "BR-RJ",
+  "links": {
+    "oficial": "https://www.coppead.ufrj.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/coppead",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil no Hugging Face",
+      "trecho": "graduate school of business of the Federal University of Rio de Janeiro"
+    }
+  ]
+}

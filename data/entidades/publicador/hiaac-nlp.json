@@ -25,6 +25,21 @@
     "hf": "https://huggingface.co/hiaac-nlp",
     "oficial": "https://hiaac.unicamp.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "hiaac-unicamp"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/hiaac-nlp",
+        "acessado": "2026-11-20",
+        "trecho": "Hub de Inteligência Artificial e Arquiteturas Cognitivas"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

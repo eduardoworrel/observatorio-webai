@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "lncc",
+  "nome": "Laboratório Nacional de Computação Científica",
+  "sigla": "LNCC",
+  "tipo": "instituto",
+  "pais": "BR",
+  "regiao": "BR-RJ",
+  "links": {
+    "oficial": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do modelo",
+      "trecho": "Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil)"
+    }
+  ]
+}

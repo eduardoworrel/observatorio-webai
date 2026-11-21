@@ -18,7 +18,7 @@ Pesquisadores e donos de contas são pessoas. A moderação combina **validaçã
 
 ## Como os dados entram no site
 
-A contribuição indica **quem publica** (usuário ou organização do Hugging Face) e a evidência mínima de país e de natureza. Os modelos, os datasets, tamanhos, formatos, status de build e famílias nunca são inseridos à mão: o coletor os deriva das APIs públicas. Nenhuma etapa depende de inteligência artificial.
+A contribuição indica **quem publica** (usuário ou organização do Hugging Face), a evidência mínima de país e de natureza e, quando houver fonte pública, a quais instituições e laboratórios a conta se liga. Os modelos, os datasets, tamanhos, formatos, status de build e famílias nunca são inseridos à mão: o coletor os deriva das APIs públicas. Nenhuma etapa depende de inteligência artificial.
 
 1. **Contribuição por PR.** A pessoa abre um PR com arquivos em `data/entidades/` (um por publicador, seguindo a SPEC). O PR não altera scripts, schema, site nem arquivos derivados.
 2. **Validação mecânica.** O CI roda `validar.py` (schema, ids, URLs, privacidade, regras de classificação, trechos citados). Mostra um status; não aprova nem rejeita.
@@ -29,13 +29,17 @@ A contribuição indica **quem publica** (usuário ou organização do Hugging F
 7. **Commit dos dados derivados.** Se o relatório estiver conforme, os mantenedores fazem o commit de `data/*.json` e `web/data.js` em ramo `coleta-*`, por PR, com revisão humana. A saída é determinística: sem mudança na fonte, o diff é vazio.
 8. **Atualização do site** a partir do `main`.
 
-**Periodicidade.** `coletar.py --novos` a cada lote de PRs fundidos, pelo menos uma vez por semana; `coletar.py --tudo` uma vez por mês, para atualizar contagens, downloads e status de build de todos os publicadores e retirar dos dados quem deixou de ser candidato (entidade arquivada ou removida). Uma coleta de cerca de 200 publicadores novos leva de 15 a 40 minutos com a API anônima (a maior parte do tempo é espera pelo limite de chamadas).
+**Periodicidade.** `coletar.py --novos` a cada lote de PRs fundidos, pelo menos uma vez por semana; `coletar.py --tudo` uma vez por mês, para atualizar contagens, downloads e status de build de todos os publicadores e retirar dos dados quem deixou de ser candidato (entidade arquivada ou removida). As relações (instituições, laboratórios, vínculos, créditos e hierarquia) são recalculadas a cada coleta a partir das entidades, sem consultas extras. Quando a regra de relevância dos modelos muda, a coleta recoleta todos os publicadores. Uma coleta de cerca de 200 publicadores novos leva de 15 a 40 minutos com a API anônima (a maior parte do tempo é espera pelo limite de chamadas).
 
 ## Critérios de entrada
 
 | Entidade | Entra quando |
 |---|---|
 | publicador | tem modelos de linguagem publicados e perfil público; evidência de natureza; país só com evidência |
+| instituição | tem página oficial que a identifique (trecho literal), país e tipo; uma instituição é uma só entidade, com todas as suas contas ligadas por vínculos |
+| vínculo (publicador com laboratório ou instituição) | fonte pública com trecho literal que mostre que a conta pertence, é de membro ou de projeto do alvo; para pessoa, só perfil profissional público ou página institucional (estudante só por autoinscrição) |
+| relacionados (publicador com publicador) | fonte pública que declare o mesmo projeto ou a parceria |
+| crédito de modelo (laboratório ou instituição) | cartão ou página oficial que credite; o modelo continua derivado |
 | laboratório | tem página própria ou institucional que o vincule a uma instituição, e publica ou é citado como autor de modelo ou pesquisa de IA em linguagem |
 | benchmark | tem conjunto público (datasets no Hugging Face) e documentação oficial (artigo, cartão ou site do próprio benchmark) que o descreva; `dominio` obrigatório; trecho literal em cada fonte |
 | pesquisador | página institucional ou perfil profissional público que o liste com vínculo, **e** pelo menos uma publicação ou modelo creditado a ele; estudantes e pessoas sem página só por autoinscrição; menores nunca |

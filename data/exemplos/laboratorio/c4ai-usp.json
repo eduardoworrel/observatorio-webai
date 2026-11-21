@@ -5,18 +5,13 @@
   "id": "c4ai-usp",
   "nome": "Centro de Inteligência Artificial",
   "sigla": "C4AI",
-  "instituicao": {
-    "nome": "Universidade de São Paulo",
-    "pais": "BR",
-    "regiao": "BR-SP",
-    "fonte": {
-      "tipo": "site_institucional",
-      "url": "https://c4ai2023.webhostusp.sti.usp.br/about/",
-      "acessado": "2026-11-20",
-      "trecho": "The Center for Artificial Intelligence (C4AI) of the University of São Paulo, sponsored by IBM and FAPESP, is committed to state-of-art research in Artificial Intelligence"
-    }
+  "instituicao": "usp",
+  "vinculo_fonte": {
+    "tipo": "site_institucional",
+    "url": "https://c4ai2023.webhostusp.sti.usp.br/about/",
+    "acessado": "2026-11-20",
+    "trecho": "The Center for Artificial Intelligence (C4AI) of the University of São Paulo, sponsored by IBM and FAPESP, is committed to state-of-art research in Artificial Intelligence"
   },
-  "publicadores": [],
   "areas": [
     "inteligência artificial"
   ],

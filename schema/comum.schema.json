@@ -251,6 +251,63 @@
           "maxLength": 100
         }
       }
+    },
+    "id_instituicao": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 60
+    },
+    "alvo_vinculo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tipo",
+        "id"
+      ],
+      "properties": {
+        "tipo": {
+          "enum": [
+            "laboratorio",
+            "instituicao"
+          ]
+        },
+        "id": {
+          "$ref": "comum.schema.json#/$defs/id"
+        }
+      }
+    },
+    "modelo_creditado": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modelo",
+        "papel",
+        "fonte"
+      ],
+      "properties": {
+        "modelo": {
+          "$ref": "comum.schema.json#/$defs/id_modelo"
+        },
+        "papel": {
+          "enum": [
+            "desenvolvedor",
+            "financiador",
+            "parceiro",
+            "plataforma"
+          ]
+        },
+        "fonte": {
+          "$ref": "comum.schema.json#/$defs/evidencia"
+        }
+      }
+    },
+    "modelos_creditados": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "$ref": "comum.schema.json#/$defs/modelo_creditado"
+      }
     }
   }
 }

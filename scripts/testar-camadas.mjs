@@ -120,7 +120,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
     await t.p.evaluate(() => document.querySelector('#tab-datasets').click()); await t.p.waitForTimeout(150);
     const i1 = await t.p.evaluate(() => ({ vis: !document.querySelector('#carga-camada').hidden, txt: document.querySelector('#carga-camada .carga-txt').textContent, w: document.querySelector('#carga-camada .c-barra-p i').style.width, tab: window.__obs.estado.tab }));
     await t.p.waitForTimeout(1200); const i2 = await t.p.evaluate(() => document.querySelector('#carga-camada .c-barra-p i').style.width);
-    ok(i1.vis && /Carregando 2\.221 datasets/.test(i1.txt) && i1.tab === 'datasets', `indicador da aba aparece na hora: "${i1.txt}"`);
+    ok(i1.vis && /Carregando [0-9.]+ datasets/.test(i1.txt) && i1.tab === 'datasets', `indicador da aba aparece na hora: "${i1.txt}"`);
     ok(parseFloat(i2) > 0 && parseFloat(i2) < 100, `progresso real da rede lenta (${i1.w || 'indeterminado'} -> ${i2})`);
     await t.p.waitForFunction(() => window.__obs.estrelas.length > 1000, null, { timeout: 60000 }); await t.p.waitForTimeout(300);
     const fim = await t.p.evaluate(() => ({ n: window.__obs.estrelas.length, esperado: window.MAPA_DADOS.datasets.linhas.length, ind: document.querySelector('#carga-camada').hidden, linhas: document.querySelectorAll('#tb tbody tr').length }));
@@ -143,6 +143,72 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
     const r = await p.evaluate(() => ({ carreg: getComputedStyle(document.getElementById('carregando')).display, aviso: [...document.querySelectorAll('.ns-aviso')].map(e => getComputedStyle(e).display + ':' + e.textContent.length) }));
     ok(r.carreg === 'none' && r.aviso.some(a => a.startsWith('block')), 'sem JavaScript: a tela de carregamento some e o aviso aparece'); await ctx.close(); }
   await new Promise(r => srv.close(r)); }
+// 3c) relacoes: instituicao, familia de tarefa, contagens de capa (fixture ?fixture=relacoes sobre os dados reais)
+{ const real = await abrir(''); await real.p.waitForTimeout(500);   // relacoes reais (14 instituicoes) carregadas junto de data.js
+  const D0 = await real.p.evaluate(() => { const D = window.MAPA_DADOS; const c = {}; D.modelos.forEach(m => c[m.publicador] = (c[m.publicador] || 0) + 1); const br = D.modelos.filter(m => D.publicadores.find(p => p.id === m.publicador).escopo === 'br');
+    const top = Object.keys(c).filter(k => D.publicadores.find(p => p.id === k).escopo === 'br').sort((x, y) => c[y] - c[x])[0];
+    return { total: D.modelos.length, br: br.length, mundo: D.modelos.length - br.length, inst: D.instituicoes.length, ger: D.modelos.filter(m => m.familia_tarefa === 'gerador').length, cod: D.modelos.filter(m => m.familia_tarefa === 'codificador').length, semMaior: br.length - c[top], top, nTop: c[top], comModelos: D.instituicoes.filter(i => i.publicadores.some(x => c[x])).length }; });
+  const R = await real.p.evaluate(() => ({ modos: document.querySelectorAll('#f-agrupar [data-modo]').length, capa: !document.querySelector('#capa').hidden, tarefa: !!document.querySelector('#f-tarefa'), estrelas: window.__obs.estrelas.length, desenhadas: window.__obs.stats.estrelas }));
+  ok(R.modos === 3 && R.capa && R.tarefa && R.estrelas === D0.total && R.desenhadas === D0.total && D0.br + D0.mundo === D0.total, `dados reais: ${R.estrelas} estrelas (= ${D0.br} do Brasil + ${D0.mundo} do mundo), tres modos de agrupamento`);
+  await real.p.click('#f-agrupar [data-modo=instituicao]'); await real.p.waitForTimeout(1200);
+  const gi = await real.p.evaluate(() => ({ n: window.__obs.estrelas.length, desenhadas: window.__obs.stats.estrelas, insts: window.__obs.grupos.filter(g => g.inst).length }));
+  ok(gi.n === D0.total && gi.desenhadas === D0.total && gi.insts === D0.comModelos && D0.inst === 14, `agrupado por instituicao: ${gi.n} estrelas (nada removido), ${gi.insts} grupos de instituicao com modelos (${D0.inst} instituicoes no total; as sem conta com modelos ficam de fora)`);
+  const tarefas = await real.p.evaluate(() => ({ g: [...document.querySelectorAll('#tb tbody tr')].length }));
+  await real.p.click('#f-tarefa [data-tarefa=codificador]'); await real.p.waitForTimeout(800); const nc = await filtradas(real.p);
+  await real.p.click('#f-tarefa [data-tarefa=gerador]'); await real.p.waitForTimeout(800); const ng = await filtradas(real.p);
+  ok(nc === D0.cod && ng === D0.ger && nc + ng === D0.total, `Gerador ${ng} + Codificador ${nc} = ${D0.total} (contagens reais dos dados)`);
+  await real.p.click('#f-tarefa [data-tarefa=""]'); await real.p.waitForTimeout(500);
+  const capaN = async () => real.p.evaluate(() => document.querySelector('#capa .capa-nums div').innerText.replace(/\s+/g, ' '));
+  const c1 = await capaN(); await real.p.click('#capa [data-sem="1"]'); await real.p.waitForTimeout(300); const c2 = await capaN();
+  const nota = await real.p.evaluate(() => document.querySelector('#capa .capa-nota').textContent);
+  ok(/1\.277/.test(c1) && new RegExp('de ' + String(D0.semMaior).replace(/(\d)(?=(\d{3})$)/, '$1.')).test(c2) && /concentra/.test(nota) && /64%/.test(nota), `capa: Brasil ${c1} e sem o maior publicador (${D0.top}, ${D0.nTop} modelos) ${c2}; nota "${nota}"`);
+  await real.p.click('#capa [data-sem="1"]'); await real.p.waitForTimeout(200);
+  await real.p.click('#f-agrupar [data-modo=publicador]'); await real.p.fill('#busca', 'Jurema'); await real.p.waitForTimeout(700);
+  await real.p.evaluate(() => document.querySelector('#tb tbody tr').click()); await real.p.waitForTimeout(700);
+  const dj = await real.p.evaluate(() => ({ h: [...document.querySelectorAll('#drawer h3')].map(x => x.textContent), inst: [...document.querySelectorAll('#drawer [data-ir^="inst:"]')].map(x => x.textContent) }));
+  ok(dj.h.includes('Vínculos') && dj.inst.some(x => /NeuralMind/.test(x)), `drawer Vinculos de Jurema-br lista ${dj.inst.join(' e ')}`);
+  await real.p.click('#drawer [data-ir="inst:neuralmind"]'); await real.p.waitForTimeout(500);
+  ok(await real.p.evaluate(() => /NeuralMind/.test(document.querySelector('#drawer-titulo').textContent) && /Jurema/.test(document.querySelector('#drawer').textContent)), 'o link abre o drawer da NeuralMind, que mostra o publicador Jurema'); await real.ctx.close(); }
+{   const { p, ctx, erros } = await abrir('?fixture=relacoes'); await p.waitForTimeout(500);
+  const total = await p.evaluate(() => window.__obs.modelos), ePub = await p.evaluate(() => window.__obs.estrelas.length);
+  await p.click('#f-agrupar [data-modo=instituicao]'); await p.waitForTimeout(900);
+  const eInst = await p.evaluate(() => ({ n: window.__obs.estrelas.length, g: window.__obs.grupos.length, rot: window.__obs.grupos.every(g => g.el && g.el.textContent.length > 0), desenhadas: window.__obs.stats.estrelas }));
+  ok(await p.evaluate(() => document.querySelectorAll('#f-agrupar [data-modo]').length) === 3 && eInst.n === ePub && ePub === total && eInst.desenhadas === total, `nada removido: ${ePub} estrelas por publicador, ${eInst.n} por instituicao (${eInst.g} grupos), ${eInst.desenhadas} desenhadas, ${total} modelos`);
+  // familia de tarefa
+  const cont = await p.evaluate(() => ({ ger: window.MAPA_DADOS.modelos.filter(m => m.ftar === 'gerador').length, cod: window.MAPA_DADOS.modelos.filter(m => m.ftar === 'codificador').length }));
+  await p.click('#f-tarefa [data-tarefa=codificador]'); await p.waitForTimeout(800);
+  const n1 = await filtradas(p), l1 = await linhasTabela(p);
+  ok(cont.cod > 0 && n1 === cont.cod && l1 === cont.cod, `filtro Codificador: ${n1} acesas e ${l1} linhas (= ${cont.cod} codificadores)`);
+  const gh = await baixar(p, '#exp-grafico', 'HTML'); const q = await b.newPage(); await q.goto(pathToFileURL(gh).href);
+  const rg = await q.evaluate(() => ({ losangos: document.querySelectorAll('figure svg path').length, titulos: document.querySelectorAll('figure svg title').length - 1, filtros: document.querySelector('p.f').textContent, rod: document.querySelector('footer').textContent }));
+  ok(rg.titulos === cont.cod && rg.losangos >= cont.cod && /Institui/.test(rg.filtros) && /Codificador/.test(rg.filtros) && /concentra/.test(rg.rod), `HTML do grafico: ${rg.titulos} estrelas, ${rg.losangos} losangos, modo de agrupamento e tarefa nos filtros, nota das contagens no rodape`); await q.close();
+  const th = await baixar(p, '#exp-tabela', 'HTML'); const q2 = await b.newPage(); await q2.goto(pathToFileURL(th).href);
+  const rt = await q2.evaluate(() => ({ linhas: document.querySelectorAll('table tbody tr').length, cab: [...document.querySelectorAll('thead th')].map(x => x.textContent).join('|') }));
+  ok(rt.linhas === cont.cod && /Tarefa/.test(rt.cab) && /Institui/.test(rt.cab), `HTML da tabela: ${rt.linhas} linhas (= ${cont.cod}) com colunas Tarefa e Instituicao`); await q2.close();
+  await p.click('#f-tarefa [data-tarefa=gerador]'); await p.waitForTimeout(700);
+  ok((await filtradas(p)) === cont.ger && cont.ger + cont.cod === total, `filtro Gerador: ${await filtradas(p)} acesas; geradores + codificadores = ${total}`);
+  await p.click('#f-tarefa [data-tarefa=""]'); await p.waitForTimeout(600);
+  // instituicao e laboratorio dependente
+  await p.selectOption('#f-inst', 'fixture-universidade-a'); await p.waitForTimeout(600);
+  const labs = await p.evaluate(() => [...document.querySelectorAll('#f-lab option')].map(o => o.value).filter(Boolean));
+  const nInst = await filtradas(p), nTab = await linhasTabela(p);
+  ok(nInst > 0 && nInst === nTab && labs.length === 2 && labs.every(l => /lab-/.test(l)), `filtro de instituicao: ${nInst} modelos; laboratorio dependente com ${labs.length} opcoes`);
+  await p.selectOption('#f-lab', 'fixture-lab-2'); await p.waitForTimeout(600); ok((await filtradas(p)) < nInst && (await filtradas(p)) > 0, `filtro de laboratorio reduz de ${nInst} para ${await filtradas(p)}`);
+  await p.click('#limpar'); await p.waitForTimeout(600);
+  // capa: com todos e sem o maior publicador
+  const capa = async () => p.evaluate(() => [...document.querySelectorAll('#capa .capa-nums strong')].map(x => x.textContent));
+  const todos = await capa(); await p.click('#capa [data-sem="1"]'); await p.waitForTimeout(300); const sem2 = await capa();
+  ok(todos[0] !== sem2[0] && /concentra/.test(await p.evaluate(() => document.querySelector('#capa .capa-nota').textContent)), `capa: Brasil com todos (${todos[0]}) e sem o maior publicador (${sem2[0]}), com a nota de concentracao`);
+  // drawer: vinculos
+  await p.selectOption('#f-inst', 'fixture-universidade-a'); await p.waitForTimeout(600);
+  await p.evaluate(() => document.querySelector('#tb tbody tr').click()); await p.waitForTimeout(600);
+  const dv = await p.evaluate(() => ({ h: [...document.querySelectorAll('#drawer h3')].map(x => x.textContent), b: document.querySelectorAll('#drawer [data-ir^="inst:"]').length }));
+  ok(dv.h.includes('Vínculos') && dv.b >= 1, 'drawer do modelo tem a secao Vinculos com a instituicao');
+  await p.click('#drawer [data-ir^="inst:"]'); await p.waitForTimeout(500);
+  ok(await p.evaluate(() => /Universidade Exemplo A/.test(document.querySelector('#drawer-titulo').textContent)), 'o link da instituicao abre o drawer da instituicao');
+  ok(!erros.length, 'sem erros de script com as relacoes', erros.join(' | ')); await ctx.close();
+  const dsp = await abrir('?fixture=relacoes#datasets'); await dsp.p.waitForTimeout(600);
+  ok(await dsp.p.evaluate(() => [...document.querySelectorAll('#tb thead th')].some(x => /Institui/.test(x.textContent))), 'aba Datasets tem a coluna Instituicao quando ha relacoes'); await dsp.ctx.close(); }
 
 // 4) limpar restaura
 { const { p, ctx } = await abrir('?fixture=1#datasets'); const total = await filtradas(p);

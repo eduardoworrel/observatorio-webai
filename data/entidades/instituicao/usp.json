@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "usp",
+  "nome": "Universidade de São Paulo",
+  "sigla": "USP",
+  "tipo": "universidade",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "links": {
+    "oficial": "https://www.usp.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://c4ai.inova.usp.br/pt/sobre/",
+      "acessado": "2026-11-20",
+      "rotulo": "site do C4AI",
+      "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
+    }
+  ]
+}

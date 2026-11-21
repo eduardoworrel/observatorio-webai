@@ -372,13 +372,26 @@ class TestInferenciaDeTarefa(unittest.TestCase):
         self.assertEqual(self.inf("monoptt5", ["safetensors", "t5"])[0], "text2text-generation")
         self.assertIn("llama", self.inf("x", ["llama"])[1])
 
+    def test_codificadores_e_familia_de_tarefa(self):
+        self.assertEqual(self.inf("Qwen3-Embedding-0.6B", ["safetensors", "qwen3"])[0], "feature-extraction", "embedding e codificador")
+        self.assertEqual(self.inf("x", ["bert", "pt"])[0], "feature-extraction")
+        self.assertEqual(self.inf("x", ["safetensors", "xlm-roberta"])[0], "feature-extraction")
+        self.assertEqual(self.inf("x", ["llama", "text-classification"])[0], "text-classification")
+        self.assertEqual(self.inf("x", ["sentence-transformers"])[0], "feature-extraction")
+        self.assertEqual(self.inf("modelo-rerank", ["qwen3"])[0], "text-ranking")
+        f = self.c.familia_tarefa
+        for t in ("text-generation", "image-text-to-text", "any-to-any", "text2text-generation"):
+            self.assertEqual(f(t), "gerador")
+        for t in ("fill-mask", "feature-extraction", "sentence-similarity", "text-classification", "token-classification", "question-answering", "zero-shot-classification", "text-ranking"):
+            self.assertEqual(f(t), "codificador")
+        self.assertTrue({"fill-mask", "text-generation"} <= self.c.TAREFAS)
+        self.assertFalse({"automatic-speech-recognition", "text-to-image", "translation", "summarization"} & self.c.TAREFAS)
+
     def test_negativos(self):
-        self.assertIsNone(self.inf("Qwen3-Embedding-0.6B", ["safetensors", "qwen3"]), "embedding")
         self.assertIsNone(self.inf("x-lora", ["peft", "llama"]), "adaptador")
-        self.assertIsNone(self.inf("x", ["bert", "pt"]), "encoder")
-        self.assertIsNone(self.inf("BERTimbau-NER", ["safetensors", "t5"]), "nome de classificador")
-        self.assertIsNone(self.inf("x", ["llama", "text-classification"]), "classificacao")
+        self.assertIsNone(self.inf("BERTimbau-NER", ["safetensors", "t5"]), "nome de classificador sem arquitetura de codificador")
         self.assertIsNone(self.inf("CAPIVARA", ["open_clip", "safetensors"]), "visao")
+        self.assertIsNone(self.inf("x", ["whisper"]), "audio")
         self.assertIsNone(self.inf("x", ["llama"], total=None), "sem tamanho conhecido")
         self.assertIsNone(self.inf("x", ["llama"], pipeline_tag="text-classification"), "ja tem tarefa declarada")
         self.assertIsNone(self.inf("x", ["region:us"]), "sem sinal")
@@ -388,7 +401,7 @@ class TestInferenciaDeTarefa(unittest.TestCase):
         base = dict(downloads=1, lastModified="2026-01-01T00:00:00.000Z")
         ok = dict(id="p/AMP_llama", tags=["safetensors", "llama"], safetensors={"total": 4_000_000_000}, **base)
         grande = dict(id="p/Grande-llama", tags=["safetensors", "llama"], safetensors={"total": 30_000_000_000}, **base)
-        emb = dict(id="p/Emb-embedding", tags=["safetensors", "qwen3"], safetensors={"total": 600_000_000}, **base)
+        emb = dict(id="p/Img-vision", tags=["safetensors", "vit"], safetensors={"total": 600_000_000}, **base)
         antes = c.listar
         c.listar = lambda **k: [ok, grande, emb]
         try:
@@ -401,6 +414,136 @@ class TestInferenciaDeTarefa(unittest.TestCase):
         m = c.construir(xs[0], "p", "br", {}, [])
         self.assertTrue(m["tarefa_inferida"] and m["regra_tarefa"])
         self.assertEqual(m["tarefa"], "text-generation")
+
+
+class TestRelacoes(Base):
+    def setUp(self):
+        super().setUp()
+        for t in ("instituicao", "laboratorio"):
+            os.makedirs(os.path.join(self.raiz, "data", "entidades", t))
+        self.copia("instituicao", "usp", "inst-a")
+        self.copia("instituicao", "unicamp", "inst-b")
+        lab = json.load(open(os.path.join(REPO, "data", "entidades", "laboratorio", "c4ai-usp.json")))
+        lab["id"], lab["instituicao"] = "lab-a", "inst-a"
+        lab["parceiras"] = [{"instituicao": "inst-b", "fonte": lab["vinculo_fonte"]}]
+        json.dump(lab, open(os.path.join(self.raiz, "data", "entidades", "laboratorio", "lab-a.json"), "w"), ensure_ascii=False)
+        ev = json.load(open(os.path.join(ENT, "22h.json")))["evidencia_pais"]
+        ev = {k: v for k, v in ev.items() if k != "regra"}
+        a = entidade("22h", "teste-br", vinculos=[{"alvo": {"tipo": "laboratorio", "id": "lab-a"}, "relacao": "conta_oficial", "fonte": ev}], relacionados=[{"publicador": "teste-fora", "fonte": ev}])
+        b = entidade("google", "teste-fora", vinculos=[{"alvo": {"tipo": "instituicao", "id": "inst-b"}, "relacao": "projeto", "fonte": ev}])
+        c = entidade("22h", "teste-nc", vinculos=[])
+        for e in (a, b, c):
+            self.por(e)
+        ApiFalsa.autores["teste-nc"] = {"nome": "Teste NC", "modelos": [modelo("teste-nc", "enc-1B", tarefa="fill-mask")]}
+
+    def copia(self, tipo, origem, novo):
+        e = json.load(open(os.path.join(REPO, "data", "entidades", tipo, origem + ".json")))
+        e["id"] = novo
+        json.dump(e, open(os.path.join(self.raiz, "data", "entidades", tipo, novo + ".json"), "w"), ensure_ascii=False)
+
+    def dados_js(self):
+        js = open(os.path.join(self.raiz, "web", "data.js")).read()
+        return json.loads(js[len("window.MAPA_DADOS="):-1])
+
+    def test_hierarquia_vinculos_e_contagens(self):
+        self.assertEqual(self.coletar("--tudo").returncode, 0)
+        d = self.dados_js()
+        self.assertEqual(d["contrato_relacoes"], 1)
+        pubs = {p["id"]: p for p in d["publicadores"]}
+        self.assertEqual(pubs["teste-br"]["labs"], ["lab-a"])
+        self.assertEqual(pubs["teste-br"]["instituicoes"], ["inst-a"])
+        self.assertEqual(pubs["teste-br"]["relacionados"], ["teste-fora"])
+        self.assertEqual(pubs["teste-fora"]["relacionados"], ["teste-br"], "relacionado e simetrico")
+        self.assertEqual(pubs["teste-fora"]["instituicoes"], ["inst-b"])
+        self.assertEqual(pubs["teste-nc"]["instituicoes"], [])
+        inst = {i["id"]: i for i in d["instituicoes"]}
+        self.assertEqual(inst["inst-a"]["labs"], ["lab-a"])
+        self.assertEqual(inst["inst-a"]["publicadores"], ["teste-br"])
+        self.assertEqual(inst["inst-a"]["n_modelos"], 2)
+        self.assertEqual(inst["inst-b"]["publicadores"], ["teste-fora"])
+        tipos = {tuple(l[:3]) for l in d["vinculos"]["linhas"]}
+        self.assertIn(("pub:teste-br", "lab:lab-a", "conta_oficial"), tipos)
+        self.assertIn(("pub:teste-br", "pub:teste-fora", "relacionado"), tipos)
+        self.assertIn(("lab:lab-a", "inst:inst-a", "mesma_organizacao"), tipos)
+        self.assertIn(("lab:lab-a", "inst:inst-b", "mesma_organizacao"), tipos, "parceira")
+        self.assertEqual(d["vinculos"]["colunas"], ["de", "para", "tipo", "fonte"])
+        raiz_ids = [(n["tipo"], n["id"]) for n in d["hierarquia"]]
+        self.assertEqual(raiz_ids, [("instituicao", "inst-a"), ("instituicao", "inst-b"), ("publicador", "teste-nc")])
+        self.assertEqual(d["hierarquia"][0]["filhos"][0]["tipo"], "laboratorio")
+        self.assertEqual(d["hierarquia"][0]["filhos"][0]["filhos"][0], {"tipo": "publicador", "id": "teste-br", "n_modelos": 2, "filhos": []})
+        mods = {m["id"]: m for m in d["modelos"]}
+        self.assertEqual(mods["teste-nc/enc-1B"]["familia_tarefa"], "codificador")
+        self.assertEqual(mods["teste-br/alfa-1B"]["familia_tarefa"], "gerador")
+        f = d["foto"]
+        self.assertEqual(f["por_familia_tarefa"]["codificador"]["brasil"]["modelos"], 1)
+        self.assertEqual(f["por_familia_tarefa"]["codificador"]["brasil_sem_maior"]["modelos"], 1)
+        self.assertEqual(f["por_familia_tarefa"]["gerador"]["brasil_sem_maior"]["modelos"], 0)
+        self.assertEqual(f["sem_maior_publicador"]["id"], "teste-br")
+        self.assertEqual(f["sem_maior_publicador"]["brasil"]["modelos"], 1)
+        self.assertEqual(f["brasil"]["modelos"], 3, "foto.brasil conta todos, geradores e codificadores")
+
+    def test_relacoes_sem_rede_e_idempotentes(self):
+        self.coletar("--tudo")
+        r = self.coletar("--novos")
+        self.assertIn("nada a coletar", r.stdout)
+        p = os.path.join(self.raiz, "data", "entidades", "publicador", "teste-nc.json")
+        e = json.load(open(p))
+        e["vinculos"] = [{"alvo": {"tipo": "instituicao", "id": "inst-a"}, "relacao": "membro", "fonte": json.load(open(os.path.join(ENT, "22h.json")))["fontes"][0] | {"trecho": "x y z"}}]
+        json.dump(e, open(p, "w"), ensure_ascii=False)
+        antes = len(ApiFalsa.acessos)
+        r = self.coletar("--novos")
+        self.assertEqual(len(ApiFalsa.acessos), antes, "mudar so as relacoes nao chama a API")
+        self.assertEqual(self.dados_js()["publicadores"][[x["id"] for x in self.dados_js()["publicadores"]].index("teste-nc")]["instituicoes"], ["inst-a"])
+
+    def test_credito_nao_cadastra_modelo(self):
+        self.coletar("--tudo")
+        p = os.path.join(self.raiz, "data", "entidades", "instituicao", "inst-a.json")
+        e = json.load(open(p))
+        fonte = e["fontes"][0]
+        e["modelos_creditados"] = [{"modelo": "teste-br/alfa-1B", "papel": "desenvolvedor", "fonte": fonte}]
+        json.dump(e, open(p, "w"), ensure_ascii=False)
+        self.coletar("--novos")
+        mods = {m["id"]: m for m in self.dados_js()["modelos"]}
+        self.assertEqual(mods["teste-br/alfa-1B"]["creditos"], ["inst:inst-a"])
+        self.assertEqual(mods["teste-br/alfa-1B"]["publicador"], "teste-br", "o dono continua sendo um so")
+        self.assertEqual(mods["teste-br/beta-2B"]["creditos"], [])
+
+
+class TestValidadorRelacoes(unittest.TestCase):
+    def valida(self, entidades):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp, True)
+        for e in entidades:
+            d = os.path.join(tmp, "data", "entidades", e["entidade"])
+            os.makedirs(d, exist_ok=True)
+            json.dump(e, open(os.path.join(d, e["id"] + ".json"), "w"), ensure_ascii=False)
+        env = dict(os.environ, VALIDAR_RAIZ=tmp)
+        r = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "validar.py")], env=env, capture_output=True, text=True)
+        return r.returncode, r.stdout
+
+    def inst(self, id_, pai=None):
+        e = json.load(open(os.path.join(REPO, "data", "entidades", "instituicao", "usp.json")))
+        e["id"] = id_
+        if pai:
+            e["parte_de"] = pai
+        return e
+
+    def test_ciclo_e_inexistente(self):
+        a, b, c = self.inst("inst-a", "inst-b"), self.inst("inst-b", "inst-c"), self.inst("inst-c", "inst-a")
+        rc, out = self.valida([a, b, c])
+        self.assertEqual(rc, 1)
+        self.assertIn("VINCULO_CICLO", out)
+        rc, out = self.valida([self.inst("inst-a", "nao-existe")])
+        self.assertIn("REF_INEXISTENTE", out)
+
+    def test_aceita_hierarquia_valida_e_lab_com_instituicao(self):
+        lab = json.load(open(os.path.join(REPO, "data", "entidades", "laboratorio", "c4ai-usp.json")))
+        lab["instituicao"] = "inst-b"
+        rc, out = self.valida([self.inst("inst-a"), self.inst("inst-b", "inst-a"), lab | {"id": "lab-x"}])
+        self.assertEqual(rc, 0, out)
+        lab["instituicao"] = "inst-sem-cadastro"
+        rc, out = self.valida([self.inst("inst-a"), lab | {"id": "lab-x"}])
+        self.assertIn("REF_INEXISTENTE", out)
 
 
 class TestRotulos(unittest.TestCase):

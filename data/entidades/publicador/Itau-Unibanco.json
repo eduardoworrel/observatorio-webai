@@ -23,6 +23,21 @@
   "links": {
     "hf": "https://huggingface.co/Itau-Unibanco"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "itau-unibanco"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/Itau-Unibanco",
+        "acessado": "2026-11-20",
+        "trecho": "Itaú-Unibanco Team company"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

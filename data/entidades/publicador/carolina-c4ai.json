@@ -25,6 +25,21 @@
     "hf": "https://huggingface.co/carolina-c4ai",
     "oficial": "https://sites.usp.br/corpuscarolina/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "c4ai-usp"
+      },
+      "relacao": "membro",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://sites.usp.br/corpuscarolina/",
+        "acessado": "2026-11-20",
+        "trecho": "membros do Laboratório Virtual de Humanidades Digitais - LaViHD e do Centro de Inteligência Artificial da Universidade de São Paulo - C4AI"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

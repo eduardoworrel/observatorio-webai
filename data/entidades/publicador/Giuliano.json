@@ -4,7 +4,7 @@
   "id": "Giuliano",
   "nome": "Bertoti",
   "tipo": "pessoa",
-  "natureza": "instituicao",
+  "natureza": "nao_classificada",
   "classe_pais": "br_evidencia",
   "pais": "BR",
   "evidencia_pais": {
@@ -13,14 +13,6 @@
     "acessado": "2026-11-20",
     "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: São José dos Campos - SP - Brazil",
     "regra": "E4: GitHub vinculado declara local no Brasil"
-  },
-  "evidencia_natureza": {
-    "classe": "instituicao",
-    "tipo": "perfil_oficial",
-    "url": "https://huggingface.co/Giuliano",
-    "acessado": "2026-11-20",
-    "trecho": "FATEC University",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
   },
   "origem_cadastro": "coletor",
   "links": {

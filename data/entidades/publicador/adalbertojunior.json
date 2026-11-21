@@ -4,7 +4,7 @@
   "id": "adalbertojunior",
   "nome": "Adalberto Ferreira Barbosa Junior",
   "tipo": "pessoa",
-  "natureza": "independente",
+  "natureza": "nao_classificada",
   "classe_pais": "br_evidencia",
   "pais": "BR",
   "evidencia_pais": {
@@ -13,14 +13,6 @@
     "acessado": "2026-11-20",
     "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Goiânia",
     "regra": "E4: GitHub vinculado declara local no Brasil"
-  },
-  "evidencia_natureza": {
-    "classe": "independente",
-    "tipo": "perfil_oficial",
-    "url": "https://huggingface.co/adalbertojunior",
-    "acessado": "2026-11-20",
-    "trecho": "nenhum vinculo institucional ou de empresa declarado no perfil nem nos cartoes lidos (pessoa)",
-    "regra": "N3: ausencia de vinculo declarado (nao prova que nao exista)"
   },
   "origem_cadastro": "coletor",
   "links": {

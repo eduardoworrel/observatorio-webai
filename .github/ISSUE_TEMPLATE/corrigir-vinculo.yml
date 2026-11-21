@@ -1,0 +1,36 @@
+name: Corrigir vínculo / Fix a link
+description: Corrigir ou remover um vínculo existente / Fix or remove an existing link
+labels: ["adicionar", "vinculo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cada vínculo precisa de fonte pública com trecho literal. Para uma pessoa, só perfil profissional público ou página institucional que a liste; nada de e-mail, telefone, endereço ou rede pessoal. Estudantes só por autoinscrição. / Every link needs a public source with a literal quote. For a person, only a public professional profile or institutional page; no e-mail, phone, address or personal network. Students only by self-registration.
+  - type: input
+    id: publicador
+    attributes: {label: "Publicador no Hugging Face (id) / Hugging Face publisher (id)"}
+    validations: {required: true}
+  - type: dropdown
+    id: relacao
+    attributes:
+      label: Relação / Relation
+      options: [conta_oficial, membro, projeto, pesquisador, relacionado a outro publicador]
+    validations: {required: true}
+  - type: input
+    id: alvo
+    attributes: {label: "Laboratório, instituição ou outro publicador (id) / Lab, institution or other publisher (id)"}
+    validations: {required: true}
+  - type: textarea
+    id: fontes
+    attributes:
+      label: Fonte / Source (URL, tipo, o dia em que você abriu a página, trecho literal)
+    validations: {required: true}
+  - type: checkboxes
+    id: confirmo
+    attributes:
+      label: Confirmo / I confirm
+      options:
+        - label: Abri a fonte e ela diz o que escrevi / I opened the source and it says what I wrote
+          required: true
+        - label: Não incluí dado pessoal além do perfil profissional público / No personal data beyond the public professional profile
+          required: true

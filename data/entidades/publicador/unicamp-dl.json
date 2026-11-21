@@ -24,6 +24,21 @@
     "hf": "https://huggingface.co/unicamp-dl",
     "oficial": "https://sites.google.com/unicamp.br/deep-learning-nlp"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "unicamp"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/unicamp-dl",
+        "acessado": "2026-11-20",
+        "trecho": "unicamp-dl university"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

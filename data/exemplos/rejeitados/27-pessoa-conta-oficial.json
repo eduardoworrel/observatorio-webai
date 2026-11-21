@@ -1,0 +1,48 @@
+{
+  "_esperado": [
+    "PESSOA_RELACAO"
+  ],
+  "_motivo": "Pessoa so tem a relacao 'pesquisador'; conta oficial e de grupo.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "rhaymison",
+  "nome": "Rhaymison Cristian",
+  "tipo": "pessoa",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/rhaymisonbetini",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brasil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "origem_cadastro": "coletor",
+  "links": {
+    "hf": "https://huggingface.co/rhaymison"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/rhaymison",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "hailab-pucpr"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/pucpr-br",
+        "acessado": "2026-11-20",
+        "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+      }
+    }
+  ]
+}

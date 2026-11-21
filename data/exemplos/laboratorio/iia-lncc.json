@@ -5,20 +5,13 @@
   "id": "iia-lncc",
   "nome": "Instituto de IA do LNCC",
   "sigla": "IIA-LNCC",
-  "instituicao": {
-    "nome": "Laboratório Nacional de Computação Científica",
-    "pais": "BR",
-    "regiao": "BR-RJ",
-    "fonte": {
-      "tipo": "perfil_oficial",
-      "url": "https://huggingface.co/AIInstituteLNCC",
-      "acessado": "2026-11-20",
-      "trecho": "The AI Institute of LNCC (IIA-LNCC) is an initiative of the National Laboratory for Scientific Computing (LNCC), based in Petrópolis (RJ), Brazil."
-    }
+  "instituicao": "lncc",
+  "vinculo_fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "acessado": "2026-11-20",
+    "trecho": "The AI Institute of LNCC (IIA-LNCC) is an initiative of the National Laboratory for Scientific Computing (LNCC), based in Petrópolis (RJ), Brazil."
   },
-  "publicadores": [
-    "AIInstituteLNCC"
-  ],
   "areas": [
     "inteligência artificial"
   ],

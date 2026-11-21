@@ -13,6 +13,8 @@ Todos os arquivos de exemplo ficam em `data/exemplos/` e têm `"exemplo": true`:
 | `pesquisador/fabio-cozman.json` | Cadastro por terceiro **com** página institucional que o lista; vínculo com laboratório por id; sem e-mail, foto ou local de nascimento. |
 | `pesquisador/joao-paulo-papa.json` | Idem, com perfil institucional de órgão de fomento. |
 | `pesquisador/anna-reali.json` | Idem, página no site do departamento. A página traz e-mail, telefone e sala: nada disso é copiado. |
+| `instituicao/*` | Instituição com `tipo`, país e fonte com trecho literal. |
+| `publicador/exemplo-pessoa.json` | Publicador do tipo pessoa com vínculo `pesquisador` a um laboratório, por autoinscrição e com página pública que a liste. |
 | `benchmark/*` | Benchmark com `dominio`, datasets do Hugging Face e fontes com trecho literal; `n_datasets`, tamanho e downloads são **derivados**. |
 | `familia/*` | Família com nome, descrição `pt`/`en` e fonte. |
 
@@ -45,6 +47,14 @@ Cada um é um arquivo de teste em `data/exemplos/rejeitados/` (pessoas e institu
 | `22-benchmark-fonte-sem-trecho.json` | Fonte de benchmark sem trecho literal. | CAMPO_FALTA |
 | `23-benchmark-dataset-id-invalido.json` | Dataset precisa ser `<publicador>/<nome>`. | FORMATO |
 | `24-benchmark-leaderboard-sem-link.json` | Tipo leaderboard exige `links.leaderboard`. | CAMPO_FALTA |
+| `25-vinculo-instituicao-inexistente.json` | Vínculo para instituição que não existe. | REF_INEXISTENTE |
+| `26-vinculo-sem-fonte.json` | Vínculo sem fonte. | CAMPO_FALTA |
+| `27-pessoa-conta-oficial.json` | Pessoa só tem a relação `pesquisador`. | PESSOA_RELACAO |
+| `28-independente-com-vinculo.json` | Natureza `independente` com vínculo declarado. | INDEPENDENTE |
+| `29-vinculo-com-email.json` | E-mail no trecho de um vínculo. | EMAIL |
+| `30-relacionado-a-si-mesmo.json` | Publicador relacionado a si mesmo. | VINCULO_AUTO |
+| `31-instituicao-parte-de-si-mesma.json` | Instituição parte de si mesma. | VINCULO_AUTO |
+| `32-instituicao-tipo-invalido.json` | Tipo de instituição fora da lista. | VALOR |
 
 ## Rejeitados por revisão humana (o validador não vê)
 

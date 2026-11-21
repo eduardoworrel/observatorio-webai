@@ -107,7 +107,7 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
         </div>
       </div>
       <div class="sky-legend" id="legenda"></div>
-      <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download.</p>
+      <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download. Estrelas tênues no fundo são decorativas.</p>
     </div>
     <div class="right-col">
     <div class="tabs" role="tablist" id="tabs" aria-label="Camadas" data-i18n-aria="tabs_aria">
@@ -126,6 +126,7 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
         <div><span class="home-section-label" data-i18n="res_label">Modelos</span><h2 id="res-titulo" data-i18n="res_titulo">Quem já roda no navegador</h2></div>
         <a href="#metodo" data-i18n="res_link">Regras ↗</a>
       </div>
+      <div class="capa" id="capa" hidden></div>
       <div class="home-filters" id="filtros-modelos">
         <div class="segmented" role="group" aria-label="Escopo" id="f-escopo">
           <button type="button" data-escopo="br" aria-pressed="false" data-i18n="br">Brasil</button>
@@ -140,6 +141,13 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
         </div>
         <label class="sel"><span class="sr" data-i18n="f_nat">Natureza do publicador</span>
           <select id="f-nat"></select></label>
+        <div class="segmented" role="group" aria-label="Tarefa" id="f-tarefa" data-i18n-aria="f_tarefa">
+          <button type="button" data-tarefa="" aria-pressed="true" data-i18n="ta_todas">Todas</button>
+          <button type="button" data-tarefa="gerador" aria-pressed="false" data-i18n="ta_gerador">Gerador</button>
+          <button type="button" data-tarefa="codificador" aria-pressed="false" data-i18n="ta_codificador">Codificador</button>
+        </div>
+        <label class="sel" id="w-inst" hidden><span class="sr" data-i18n="f_inst">Instituição</span><select id="f-inst"></select></label>
+        <label class="sel" id="w-lab" hidden><span class="sr" data-i18n="f_lab">Laboratório</span><select id="f-lab"></select></label>
         <label class="sel"><span class="sr" data-i18n="f_fmt">Formatos de build</span>
           <select id="f-fmt"></select></label>
         <label class="sel search"><span class="sr" data-i18n="buscar">Buscar</span>
@@ -192,7 +200,8 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
 <script src="config.js"></script>
 <script src="data.js"></script>
 <script>window.__carga&&__carga.etapa(1)</script>
-<script>if(/[?&]fixture=/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>')</script>
+<script>if(/[?&]fixture=(1|camadas)\b/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>');if(/[?&]fixture=relacoes/.test(location.search))document.write('<script src="fixtures/relacoes.js"><\/script>')</script>
+<script src="relacoes.js"></script>
 <script src="camadas.js"></script>
 <script src="exportar.js"></script>
 <script src="app.js"></script>

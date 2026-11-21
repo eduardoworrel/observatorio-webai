@@ -1,0 +1,79 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "Jurema-br",
+  "nome": "Jurema",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "site_institucional",
+    "url": "https://neuralmind.ai",
+    "acessado": "2026-11-20",
+    "rotulo": "site da NeuralMind",
+    "trecho": "IA especializada no Direito brasileiro"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "site_institucional",
+    "url": "https://jurema.ai/pt-BR",
+    "acessado": "2026-11-20",
+    "trecho": "NeuralMind DeepTech",
+    "rotulo": "site do Jurema"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "neuralmind"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://neuralmind.ai",
+        "acessado": "2026-11-20",
+        "rotulo": "site da NeuralMind",
+        "trecho": "IA especializada no Direito brasileiro"
+      }
+    },
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "escavador"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://neuralmind.ai",
+        "acessado": "2026-11-20",
+        "rotulo": "site da NeuralMind",
+        "trecho": "Desenvolvimento em parceria com Escavador"
+      }
+    }
+  ],
+  "relacionados": [
+    {
+      "publicador": "neuralmind",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/Jurema-br/Jurema-7B",
+        "acessado": "2026-11-20",
+        "rotulo": "cartão do modelo",
+        "trecho": "Neuralmind's Privacy Policy"
+      }
+    }
+  ],
+  "links": {
+    "hf": "https://huggingface.co/Jurema-br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/Jurema-br",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

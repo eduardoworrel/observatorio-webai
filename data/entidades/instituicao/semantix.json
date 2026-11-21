@@ -1,0 +1,21 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "semantix",
+  "nome": "Semantix",
+  "sigla": "Semantix",
+  "tipo": "empresa",
+  "pais": "BR",
+  "links": {
+    "oficial": "https://semantix.ai"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/semantixai",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil no Hugging Face",
+      "trecho": "Founded in 2010 in Brazil"
+    }
+  ]
+}

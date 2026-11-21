@@ -19,7 +19,7 @@ CONFIAVEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAIZ = os.path.abspath(os.environ.get("VALIDAR_RAIZ") or CONFIAVEL)   # VALIDAR_RAIZ: copia do PR; schema e codigo vem sempre do ramo confiavel
 SCHEMA_DIR = os.path.join(CONFIAVEL, "schema")
 HOJE = datetime.date.fromisoformat(os.environ.get("VALIDAR_HOJE") or datetime.date.today().isoformat())
-DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "familia": "familia", "benchmark": "benchmark"}
+DIRS = {"publicador": "publicador", "laboratorio": "laboratorio", "pesquisador": "pesquisador", "familia": "familia", "benchmark": "benchmark", "instituicao": "instituicao"}
 ISO = set("""AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ
 DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP
 KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM
@@ -27,7 +27,7 @@ PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH
 UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW""".split())
 DERIVADOS = {"n_modelos_hf", "n_membros", "n_modelos_mapeados", "modelos_fora_do_corte", "escopo", "origem_lista", "builds", "formatos_proprios", "formatos_navegador",
              "gguf", "gguf_wllama", "gguf_gb", "gguf_origem", "gguf_grande", "via", "gb_navegador", "conversao_de", "downloads", "atualizado", "idioma_pt", "base",
-             "n_datasets", "tamanho_total_bytes", "downloads_total", "tarefa", "tarefa_inferida", "regra_tarefa", "constelacao", "arestas", "modelos_total"}
+             "publicadores", "labs", "instituicoes", "membro_de", "n_datasets", "tamanho_total_bytes", "downloads_total", "tarefa", "tarefa_inferida", "regra_tarefa", "constelacao", "arestas", "modelos_total"}
 PROIBIDOS = {"email", "e-mail", "telefone", "celular", "endereco", "endereço", "nascimento", "data_nascimento", "foto", "imagem", "avatar", "cpf", "rg", "genero", "gênero",
              "raca", "raça", "etnia", "religiao", "religião", "orientacao_sexual", "nacionalidade", "idade", "estado_civil", "redes", "instagram", "facebook", "whatsapp"}
 REDES_PESSOAIS = ("facebook.com", "fb.com", "instagram.com", "tiktok.com", "snapchat.com", "wa.me", "whatsapp.com", "t.me", "telegram.me", "x.com", "twitter.com",
@@ -168,6 +168,10 @@ def host(u): return (urllib.parse.urlparse(u).hostname or "").lower()
 
 def semantica(arq, o, loc, ctx, rejeitado=False):
     E = lambda p, c, m, d="": emit(arq, loc, tuple(p), "ERRO", c, m, d)
+    def creditos(o):
+        for i, m in enumerate(o.get("modelos_creditados") or []):
+            if m.get("modelo") not in ctx["modelos"]: E(("modelos_creditados", i, "modelo"), "REF_INEXISTENTE", f"modelo {m.get('modelo')!r} nao existe nos dados (o modelo e derivado pelo coletor; nao se cadastra)", "")
+            if (m.get("fonte") or {}).get("tipo") not in TIPOS_VINCULO | {"cartao_modelo", "artigo", "repositorio", None}: E(("modelos_creditados", i, "fonte", "tipo"), "VINCULO_FONTE", "credito: cite o cartao do modelo, o artigo ou a pagina oficial", "")
     W = lambda p, c, m, d="": emit(arq, loc, tuple(p), "AVISO", c, m, d)
     ent = o.get("entidade")
     # privacidade: padroes em todo texto (exceto urls, conferidas a parte)
@@ -244,12 +248,46 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
                     if HOSTS_INST.search(host(u)) or k == "instituicao": E(("links", k), "INDEPENDENTE", f"link institucional ({host(u)}) em publicador 'independente'", "Se ha vinculo declarado, a natureza e 'instituicao' ou 'empresa'.")
             elif nat == "instituicao" and en.get("tipo") not in TIPOS_VINCULO | {"cartao_modelo"}: E(("evidencia_natureza", "tipo"), "NATUREZA_SEM_EVIDENCIA", "instituicao: cite pagina institucional ou perfil", "")
         if tp == "pessoa" and "origem_cadastro" not in o: E(("origem_cadastro",), "CAMPO_FALTA", "publicador pessoa exige origem_cadastro (autoinscricao, terceiro, coletor)", "")
+    if ent == "publicador":
+        tp = o.get("tipo")
+        vs = o.get("vinculos") or []
+        if o.get("natureza") == "independente" and (vs or o.get("relacionados")): E(("natureza",), "INDEPENDENTE", "independente nao tem vinculo declarado: com vinculos, use a natureza que a fonte sustenta ou nao_classificada", "")
+        for i, v in enumerate(vs):
+            al = v.get("alvo") or {}
+            if al.get("tipo") == "laboratorio" and al.get("id") not in ctx["labs"]: E(("vinculos", i, "alvo", "id"), "REF_INEXISTENTE", f"laboratorio {al.get('id')!r} nao existe", "")
+            if al.get("tipo") == "instituicao" and al.get("id") not in ctx["insts"]: E(("vinculos", i, "alvo", "id"), "REF_INEXISTENTE", f"instituicao {al.get('id')!r} nao existe", "")
+            fp = (v.get("fonte") or {}).get("tipo")
+            if tp == "pessoa":
+                if v.get("relacao") != "pesquisador": E(("vinculos", i, "relacao"), "PESSOA_RELACAO", "pessoa so tem a relacao 'pesquisador' (vinculo profissional declarado)", "Conta oficial, membro e projeto sao relacoes de grupos.")
+                if fp not in TIPOS_VINCULO: E(("vinculos", i, "fonte", "tipo"), "VINCULO_FONTE", "vinculo de pessoa: so perfil profissional publico, pagina institucional ou pagina da propria pessoa", "")
+                if o.get("origem_cadastro") != "autoinscricao" and fp not in ("site_institucional", "pagina_pessoa"): E(("vinculos", i, "fonte", "tipo"), "TERCEIRO_SEM_FONTE", "vinculo de pessoa cadastrado por terceiro exige pagina institucional que a liste; sem isso, so por autoinscricao", "")
+            elif v.get("relacao") == "pesquisador": E(("vinculos", i, "relacao"), "PESSOA_RELACAO", "'pesquisador' e a relacao de um publicador do tipo pessoa", "")
+            elif fp not in TIPOS_VINCULO | {"cartao_modelo", "repositorio"}: E(("vinculos", i, "fonte", "tipo"), "VINCULO_FONTE", "vinculo: cite pagina institucional ou perfil oficial", "")
+        for i, r in enumerate(o.get("relacionados") or []):
+            if r.get("publicador") == o.get("id"): E(("relacionados", i, "publicador"), "VINCULO_AUTO", "o publicador nao e relacionado a si mesmo", "")
+            elif r.get("publicador") not in ctx["pubs"]: E(("relacionados", i, "publicador"), "REF_INEXISTENTE", f"publicador {r.get('publicador')!r} nao existe", "")
+            elif tp == "pessoa" or ctx["pubs_tipo"].get(r.get("publicador")) == "pessoa": E(("relacionados", i, "publicador"), "PESSOA_RELACAO", "nao se liga pessoa a pessoa: use o vinculo com laboratorio ou instituicao", "")
     if ent == "laboratorio":
-        pais(("instituicao", "pais"), (o.get("instituicao") or {}).get("pais", "")) if (o.get("instituicao") or {}).get("pais") else None
-        for i, pid in enumerate(o.get("publicadores") or []):
-            if pid not in ctx["pubs"]: E(("publicadores", i), "REF_INEXISTENTE", f"publicador {pid!r} nao existe", "Cadastre o publicador no mesmo PR ou use um id existente.")
-        ft = (o.get("instituicao") or {}).get("fonte") or {}
-        if ft.get("tipo") not in TIPOS_VINCULO | {None}: E(("instituicao", "fonte", "tipo"), "VINCULO_FONTE", "vinculo com a instituicao: cite pagina institucional ou perfil oficial", "")
+        if o.get("instituicao") and o["instituicao"] not in ctx["insts"]: E(("instituicao",), "REF_INEXISTENTE", f"instituicao {o['instituicao']!r} nao existe", "Cadastre a instituicao no mesmo PR (data/entidades/instituicao/) ou use um id existente.")
+        ft = o.get("vinculo_fonte") or {}
+        if ft.get("tipo") not in TIPOS_VINCULO | {"cartao_modelo", None}: E(("vinculo_fonte", "tipo"), "VINCULO_FONTE", "vinculo com a instituicao: cite pagina institucional, perfil oficial ou cartao de modelo", "")
+        for i, pc in enumerate(o.get("parceiras") or []):
+            if pc.get("instituicao") not in ctx["insts"]: E(("parceiras", i, "instituicao"), "REF_INEXISTENTE", f"instituicao {pc.get('instituicao')!r} nao existe", "")
+            elif pc.get("instituicao") == o.get("instituicao"): E(("parceiras", i, "instituicao"), "VINCULO_AUTO", "a instituicao principal nao e parceira de si mesma", "")
+            if (pc.get("fonte") or {}).get("tipo") not in TIPOS_VINCULO | {None}: E(("parceiras", i, "fonte", "tipo"), "VINCULO_FONTE", "parceria: cite pagina institucional ou perfil oficial", "")
+        creditos(o)
+    if ent == "instituicao":
+        if isinstance(o.get("pais"), str): pais(("pais",), o["pais"])
+        pai = o.get("parte_de")
+        if pai:
+            if pai == o.get("id"): E(("parte_de",), "VINCULO_AUTO", "a instituicao nao e parte de si mesma", "")
+            elif pai not in ctx["insts"]: E(("parte_de",), "REF_INEXISTENTE", f"instituicao {pai!r} nao existe", "")
+            else:
+                visto, atual = {o.get("id")}, pai
+                while atual:
+                    if atual in visto: E(("parte_de",), "VINCULO_CICLO", "ciclo em parte_de: a hierarquia de instituicoes nao pode voltar a si mesma", ""); break
+                    visto.add(atual); atual = ctx["inst_pai"].get(atual)
+        creditos(o)
     if ent == "pesquisador":
         for i, a in enumerate(o.get("afiliacoes") or []):
             if isinstance(a.get("pais"), str): pais(("afiliacoes", i, "pais"), a["pais"])
@@ -301,7 +339,7 @@ def validar_arquivos(arqs, rejeitado=False, ctx=None):
 
 def contexto(arqs_ent):
     pubs, mods, fams = indices(); labs = set()
-    ctx = {"ids": {}, "removidos": set(), "pubs": set(pubs), "modelos": set(mods), "fams": set(fams), "labs": set()}
+    ctx = {"ids": {}, "removidos": set(), "pubs": set(pubs), "modelos": set(mods), "fams": set(fams), "labs": set(), "insts": set(), "inst_pai": {}, "pubs_tipo": {}}
     rm = os.path.join(RAIZ, "data", "remocoes.json")
     if os.path.exists(rm):
         o, t = carregar_json(rm)
@@ -313,7 +351,9 @@ def contexto(arqs_ent):
         try: o = json.load(open(a, encoding="utf-8"))
         except Exception: continue
         if not isinstance(o, dict) or not isinstance(o.get("id"), str): continue
-        {"publicador": ctx["pubs"], "laboratorio": ctx["labs"], "familia": ctx["fams"]}.get(o.get("entidade"), set()).add(o["id"])
+        {"publicador": ctx["pubs"], "laboratorio": ctx["labs"], "familia": ctx["fams"], "instituicao": ctx["insts"]}.get(o.get("entidade"), set()).add(o["id"])
+        if o.get("entidade") == "instituicao" and o.get("parte_de"): ctx["inst_pai"][o["id"]] = o["parte_de"]
+        if o.get("entidade") == "publicador": ctx["pubs_tipo"][o["id"]] = o.get("tipo")
     return ctx
 
 def derivados_pii():
