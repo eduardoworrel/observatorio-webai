@@ -262,11 +262,11 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
                 if fp not in TIPOS_VINCULO: E(("vinculos", i, "fonte", "tipo"), "VINCULO_FONTE", "vinculo de pessoa: so perfil profissional publico, pagina institucional ou pagina da propria pessoa", "")
                 if o.get("origem_cadastro") != "autoinscricao" and fp not in ("site_institucional", "pagina_pessoa"): E(("vinculos", i, "fonte", "tipo"), "TERCEIRO_SEM_FONTE", "vinculo de pessoa cadastrado por terceiro exige pagina institucional que a liste; sem isso, so por autoinscricao", "")
             elif v.get("relacao") == "pesquisador": E(("vinculos", i, "relacao"), "PESSOA_RELACAO", "'pesquisador' e a relacao de um publicador do tipo pessoa", "")
-            elif fp not in TIPOS_VINCULO | {"cartao_modelo", "repositorio"}: E(("vinculos", i, "fonte", "tipo"), "VINCULO_FONTE", "vinculo: cite pagina institucional ou perfil oficial", "")
+            elif fp not in TIPOS_VINCULO | {"cartao_modelo", "repositorio", "artigo"}: E(("vinculos", i, "fonte", "tipo"), "VINCULO_FONTE", "vinculo: cite pagina institucional, perfil oficial, cartao de modelo ou artigo que declare a relacao", "")
         for i, r in enumerate(o.get("relacionados") or []):
             if r.get("publicador") == o.get("id"): E(("relacionados", i, "publicador"), "VINCULO_AUTO", "o publicador nao e relacionado a si mesmo", "")
             elif r.get("publicador") not in ctx["pubs"]: E(("relacionados", i, "publicador"), "REF_INEXISTENTE", f"publicador {r.get('publicador')!r} nao existe", "")
-            elif tp == "pessoa" or ctx["pubs_tipo"].get(r.get("publicador")) == "pessoa": E(("relacionados", i, "publicador"), "PESSOA_RELACAO", "nao se liga pessoa a pessoa: use o vinculo com laboratorio ou instituicao", "")
+            elif tp == "pessoa" and ctx["pubs_tipo"].get(r.get("publicador")) == "pessoa": E(("relacionados", i, "publicador"), "PESSOA_RELACAO", "nao se liga pessoa a pessoa: use o vinculo com laboratorio ou instituicao", "")
     if ent == "laboratorio":
         if o.get("instituicao") and o["instituicao"] not in ctx["insts"]: E(("instituicao",), "REF_INEXISTENTE", f"instituicao {o['instituicao']!r} nao existe", "Cadastre a instituicao no mesmo PR (data/entidades/instituicao/) ou use um id existente.")
         ft = o.get("vinculo_fonte") or {}

@@ -1,0 +1,72 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "TucanoBR",
+  "nome": "Tucano",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "fora_br",
+  "pais": "DE",
+  "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2411.07854",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano, afiliação dos autores",
+    "trecho": "Affiliation: Rhenish Friedrich Wilhelm University of Bonn"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/TucanoBR",
+    "acessado": "2026-11-20",
+    "rotulo": "perfil no Hugging Face",
+    "trecho": "Tucano university"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "uni-bonn"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "artigo",
+        "url": "https://arxiv.org/html/2411.07854",
+        "acessado": "2026-11-20",
+        "rotulo": "artigo Tucano, afiliação dos autores",
+        "trecho": "Affiliation: Rhenish Friedrich Wilhelm University of Bonn"
+      }
+    }
+  ],
+  "relacionados": [
+    {
+      "publicador": "nicholasKluge",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://nkluge-correa.github.io/",
+        "acessado": "2026-11-20",
+        "rotulo": "página profissional",
+        "trecho": "I am the principal investigator behind projects like Tucano, ViTucano, TeenyTinyLlama, and Worldwide AI Ethics"
+      }
+    }
+  ],
+  "links": {
+    "hf": "https://huggingface.co/TucanoBR"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/TucanoBR",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/html/2411.07854",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo Tucano: modelos lançados em huggingface.co/TucanoBR",
+      "trecho": "huggingface.co/TucanoBR"
+    }
+  ],
+  "status": "ativo"
+}

@@ -1071,7 +1071,10 @@
    "labs": [
     "caisa-b-it"
    ],
-   "relacionados": [],
+   "relacionados": [
+    "Polygl0t",
+    "TucanoBR"
+   ],
    "afiliado_a": [
     "uni-bonn"
    ],
@@ -1958,6 +1961,52 @@
    "relacionados": []
   },
   {
+   "id": "Polygl0t",
+   "nome": "Polyglot",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2603.03543",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano 2 Cool, agradecimentos",
+    "trecho": "Polyglot is a project supported by Germany's Federal Ministry of Education and Research (BMBF) and North Rhine-Westphalia's Ministry of Culture and Science (MWK) under the TRA Sustainable Futures initiative at the University of Bonn"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Polygl0t",
+    "acessado": "2026-11-20",
+    "rotulo": "perfil no Hugging Face",
+    "trecho": "Polyglot is a project funded by the Federal Ministry of Education and Research (BMBF) and the Ministry of Culture and Science of the State of North Rhine-Westphalia (MWK) as part of TRA Sustainable Futures (University of Bonn)"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 32,
+   "n_membros": 7,
+   "url": "https://huggingface.co/Polygl0t",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Polygl0t",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 32,
+   "instituicoes": [
+    "uni-bonn"
+   ],
+   "labs": [
+    "caisa-b-it"
+   ],
+   "relacionados": [
+    "nicholasKluge",
+    "TucanoBR"
+   ]
+  },
+  {
    "id": "Qwen",
    "nome": "Qwen",
    "tipo": "grupo",
@@ -2031,6 +2080,50 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "TucanoBR",
+   "nome": "Tucano",
+   "tipo": "grupo",
+   "classe_pais": "fora_br",
+   "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2411.07854",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano, afiliação dos autores",
+    "trecho": "Affiliation: Rhenish Friedrich Wilhelm University of Bonn"
+   },
+   "natureza": "instituicao",
+   "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/TucanoBR",
+    "acessado": "2026-11-20",
+    "rotulo": "perfil no Hugging Face",
+    "trecho": "Tucano university"
+   },
+   "escopo": "mundo",
+   "n_modelos_hf": 12,
+   "n_membros": 4,
+   "url": "https://huggingface.co/TucanoBR",
+   "origem_lista": "lista inicial",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/TucanoBR",
+     "acessado": "2026-11-20"
+    }
+   ],
+   "n_modelos_mapeados": 10,
+   "instituicoes": [
+    "uni-bonn"
+   ],
+   "labs": [],
+   "relacionados": [
+    "nicholasKluge",
+    "Polygl0t"
+   ]
   },
   {
    "id": "Xenova",

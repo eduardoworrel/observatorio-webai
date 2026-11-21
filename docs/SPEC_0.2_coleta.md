@@ -112,7 +112,14 @@ Soma dos arquivos da variante mais leve de interesse no repositório do build (A
 
 ### F: família
 
-Nome do modelo-base (tag `base_model` ou, sem ela, o próprio nome), reduzido ao prefixo alfabético mais o primeiro número de versão: `Qwen3.5-4B` → `Qwen3.5`; `Llama-3.1-8B` → `Llama-3.1`; `LFM3-1.7B` → `LFM3`.
+Nome do modelo-base (tag `base_model` ou, sem ela, o próprio nome), dividido em partes por `-` e `_`:
+
+1. A primeira parte, com versão colada ao nome, é a família: `Qwen3.5-4B` → `Qwen3.5`; `LFM3-1.7B` → `LFM3`.
+2. Um número de versão logo depois do nome fecha a família: `Llama-3.1-8B` → `Llama-3.1`; `gemma-2-9b` → `gemma-2`. Gerações diferentes são famílias diferentes (`Qwen2.5` e `Qwen3`; `Llama-2` e `Llama-3`; `gemma` e `gemma-2`).
+3. Tamanho (`7B`, `460m`, `2b4`) e variante conhecida (`base`, `large`, `small`, `tiny`, `mini`, `medium`, `xl`, `xxl`, `cased`, `uncased`) não separam famílias: `TeenyTinyLlama-460m` e `TeenyTinyLlama-160m` são a mesma família, `TeenyTinyLlama`; `Mistral-7B` → `Mistral`.
+4. Depois de uma variante, a palavra seguinte do nome entra na família, e o resto é ignorado: `bert-base-portuguese-cased` e `bert-large-portuguese-cased` → `bert-portuguese`; `bert-base-uncased` → `bert`. Palavras de pós-treino ou de formato (`instruct`, `chat`, `it`, `gguf`, `onnx`, `awq`...) e partes com dígitos (`v2`, `8192`) encerram a família.
+
+O nome de marca de uma família só vem de uma entidade curada `familia` cujo `id` é a chave derivada (por exemplo `bert-portuguese`, nome `BERTimbau`), com fonte e trecho literal do cartão ou do artigo oficial que usa o nome; sem ela, o nome da família é a chave derivada.
 
 ### B: "modelo brasileiro" = criado por brasileiros
 
@@ -123,7 +130,7 @@ Modelo **criado por brasileiros** (pessoa, grupo, empresa ou universidade do Bra
 - **E3**: o cartão de um modelo do publicador traz endereço ou e-mail `.br` (E3a) ou uma linha com afiliação e Brasil, fora de menções ao idioma (E3b, marcada `revisar`);
 - **institucional**: página curada (`seed/evidencias.json`) que responde na coleta e traz o padrão esperado.
 
-Classes: `br_evidencia` (Brasil, com evidência), `nao_classificado` (sem evidência: **não é adivinhado**, e fica fora do mapa) e `fora_br` (lista curada de grandes publicadores internacionais, confiança baixa). Candidatos vêm das entidades curadas, da lista inicial e de buscas na API por termos em português (`pt`, `pt-br`, `ptbr`, `portuguese`, `brasil`, `brazil`...); só entram no mapa os que têm evidência. Os demais ficam em `data/foto.json` (`descartados`), com o motivo. Independentes descobertos fora do Brasil por terem builds de navegador entram como `nao_classificado`.
+Classes: `br_evidencia` (Brasil, com evidência), `nao_classificado` (sem evidência: **não é adivinhado**, e fica fora do mapa) e `fora_br` (lista curada de grandes publicadores internacionais, confiança baixa, ou publicador curado com evidência pública de país fora do Brasil, como a afiliação de autores em artigo ou o agradecimento a uma instituição estrangeira; entra no escopo mundo). Candidatos vêm das entidades curadas, da lista inicial e de buscas na API por termos em português (`pt`, `pt-br`, `ptbr`, `portuguese`, `brasil`, `brazil`...); só entram no mapa os que têm evidência. Os demais ficam em `data/foto.json` (`descartados`), com o motivo. Independentes descobertos fora do Brasil por terem builds de navegador entram como `nao_classificado`.
 
 ### N: natureza do publicador
 

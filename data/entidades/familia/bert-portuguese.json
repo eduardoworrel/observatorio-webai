@@ -1,0 +1,31 @@
+{
+  "spec": "1.0",
+  "entidade": "familia",
+  "id": "bert-portuguese",
+  "nome": "BERTimbau",
+  "origem": "neuralmind",
+  "descricao": {
+    "pt": "Modelos BERT pré-treinados para português do Brasil (base e large) e seus derivados.",
+    "en": "BERT models pretrained for Brazilian Portuguese (base and large) and their derivatives."
+  },
+  "links": {
+    "hf": "https://huggingface.co/neuralmind/bert-base-portuguese-cased"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/neuralmind/bert-base-portuguese-cased",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do BERTimbau Base",
+      "trecho": "BERTimbau Base is a pretrained BERT model for Brazilian Portuguese"
+    },
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/neuralmind/bert-large-portuguese-cased",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do BERTimbau Large",
+      "trecho": "BERTimbau Large is a pretrained BERT model for Brazilian Portuguese"
+    }
+  ],
+  "status": "ativo"
+}

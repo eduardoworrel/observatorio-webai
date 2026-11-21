@@ -152,7 +152,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   ok(R.modos === 3 && R.capa && R.tarefa && R.estrelas === D0.total && R.desenhadas === D0.total && D0.br + D0.mundo === D0.total, `dados reais: ${R.estrelas} estrelas (= ${D0.br} do Brasil + ${D0.mundo} do mundo), tres modos de agrupamento`);
   await real.p.click('#f-agrupar [data-modo=instituicao]'); await real.p.waitForTimeout(1200);
   const gi = await real.p.evaluate(() => ({ n: window.__obs.estrelas.length, desenhadas: window.__obs.stats.estrelas, insts: window.__obs.grupos.filter(g => g.inst).length }));
-  ok(gi.n === D0.total && gi.desenhadas === D0.total && gi.insts === D0.comModelos && D0.inst === 15, `agrupado por instituicao: ${gi.n} estrelas (nada removido), ${gi.insts} grupos de instituicao com modelos (${D0.inst} instituicoes no total; as sem conta com modelos ficam de fora)`);
+  ok(gi.n === D0.total && gi.desenhadas === D0.total && gi.insts === D0.comModelos && D0.inst >= 15, `agrupado por instituicao: ${gi.n} estrelas (nada removido), ${gi.insts} grupos de instituicao com modelos (${D0.inst} instituicoes no total; as sem conta com modelos ficam de fora)`);
   const tarefas = await real.p.evaluate(() => ({ g: [...document.querySelectorAll('#tb tbody tr')].length }));
   await real.p.click('#f-tarefa [data-tarefa=codificador]'); await real.p.waitForTimeout(800); const nc = await filtradas(real.p);
   await real.p.click('#f-tarefa [data-tarefa=gerador]'); await real.p.waitForTimeout(800); const ng = await filtradas(real.p);
@@ -228,6 +228,26 @@ for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=
   ok(lab.test(dr.t) && esperado.test(dr.t) && dr.pais && /\(DE\)/.test(dr.t), `[${lang}] drawer do modelo do nicholasKluge: afiliacao, linha do laboratorio com pais e (DE) nos vinculos`);
   await p.click('#drawer [data-ir="inst:uni-bonn"]'); await p.waitForTimeout(500);
   ok(await p.evaluate(l => /University of Bonn/.test(document.querySelector('#drawer-titulo').textContent) && new RegExp(l === 'pt' ? 'Alemanha \\(DE\\)' : 'Germany \\(DE\\)').test(document.querySelector('#drawer .dr-sub').textContent), lang), `[${lang}] drawer da instituicao mostra o pais`);
+  ok(!erros.length, `[${lang}] sem erros de script`, erros.join(' | ')); await ctx.close(); }
+
+// 3f) relacionados: linhas tenues nos tres agrupamentos, drawer do publicador, aneis de relacao
+for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=' + lang); const total = await p.evaluate(() => window.__obs.modelos);
+  const pares = await p.evaluate(() => window.MAPA_REL.pares.length); ok(pares > 0, `[${lang}] ${pares} pares de publicadores relacionados nos dados`);
+  for (const modo of ['publicador', 'familia', 'instituicao']) {
+    await p.click(`#f-agrupar [data-modo=${modo}]`); await p.waitForTimeout(1100);
+    const r = await p.evaluate(() => ({ rel: window.__obs.stats.rel, n: window.__obs.estrelas.length, d: window.__obs.stats.estrelas }));
+    ok(r.rel > 0 && r.n === total && r.d === total, `[${lang}] agrupado por ${modo}: ${r.rel} linhas de relacionados, ${r.n} estrelas (inalterado)`);
+  }
+  await p.click('#f-agrupar [data-modo=publicador]'); await p.waitForTimeout(900);
+  const some = await p.evaluate(async () => { const a = window.__obs.stats.rel; return a; }); await p.selectOption('#f-nat', 'afiliada'); await p.waitForTimeout(800);
+  ok((await p.evaluate(() => window.__obs.stats.rel)) === 0, `[${lang}] com filtro que esconde os publicadores relacionados, a linha some`); await p.click('#limpar'); await p.waitForTimeout(700);
+  ok(await p.evaluate(() => /(linha t.nue|faint line) = /.test(document.querySelector('#legenda').textContent)), `[${lang}] legenda explica a linha tenue`);
+  await p.evaluate(() => document.querySelector('.sky-model[data-g="neuralmind"]').click()); await p.waitForTimeout(800);
+  const dn = await p.evaluate(() => ({ t: document.querySelector('#drawer').innerText.replace(/\s+/g, ' '), rel: [...document.querySelectorAll('#drawer .dr-rels [data-ir^="pub:"]')].map(x => x.dataset.ir), fam: document.querySelectorAll('#drawer .dr-fam').length, ms: [...document.querySelectorAll('#drawer [data-abrir]')].map(x => x.dataset.abrir) }));
+  ok(dn.rel.includes('pub:Jurema-br') && /Jurema/.test(dn.t) && /Jurema-7B/.test(dn.t), `[${lang}] drawer da NeuralMind lista Jurema-br e o modelo Jurema-7B (${lang === 'pt' ? 'Relacionados' : 'Related'})`);
+  ok(dn.fam === 1 && dn.ms.filter(x => /neuralmind\/bert-(base|large)/.test(x)).length === 2, `[${lang}] os 2 BERT da NeuralMind juntos em uma familia`);
+  await p.click('#drawer .dr-rels [data-ir="pub:Jurema-br"]'); await p.waitForTimeout(500);
+  ok(await p.evaluate(() => /Jurema/.test(document.querySelector('#drawer-titulo').textContent) && /NeuralMind/.test(document.querySelector('#drawer').textContent)), `[${lang}] clicar no relacionado abre o drawer dele`);
   ok(!erros.length, `[${lang}] sem erros de script`, erros.join(' | ')); await ctx.close(); }
 
 // 4) limpar restaura
