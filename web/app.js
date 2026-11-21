@@ -2,8 +2,9 @@
   'use strict';
   var D = window.MAPA_DADOS;
   var $ = function (s, r) { return (r || document).querySelector(s); };
-  var pubBy = {}, modBy = {};
+  var pubBy = {}, modBy = {}, famNome = {};   // famNome: id da familia -> nome curado (ex.: bert-portuguese -> BERTimbau), quando existir nos dados
   D.publicadores.forEach(function (p) { pubBy[p.id] = p; });
+  (D.familias || []).forEach(function (f) { if (f && f.id && f.nome && f.nome !== f.id) famNome[f.id] = f.nome; });
   D.modelos.forEach(function (m) { modBy[m.id] = m; });
 
   var T = {
@@ -18,7 +19,7 @@
       credito: 'Inspirado no Observatório da Maritaca ↗', privacidade: 'Privacidade', fonte_lic: 'Fonte Atkinson Hyperlegible, licença SIL OFL 1.1.',
       c_modelo: 'Modelo', c_status: 'Build', c_gb: 'GB (q4)', c_lic: 'Licença', c_upd: 'Atualizado',
       oficial: 'Nativo · publicador', comunidade: 'Nativo · comunidade', gguf: 'GGUF via wllama', nenhum: 'Sem build', gguf_grande: 'GGUF grande demais',
-      n_todos: 'Todas as naturezas', independente: 'Independente', instituicao: 'Instituição', afiliada: 'Afiliada', afiliada_a: 'Afiliado(a) a', pesq_lab: 'pesquisador(a) no laboratório', pais_DE: 'Alemanha', pais_BR: 'Brasil', empresa: 'Empresa', nao_classificada: 'Natureza não classificada',
+      n_todos: 'Todas as naturezas', independente: 'Independente', instituicao: 'Instituição', afiliada: 'Afiliada', afiliada_a: 'Afiliado(a) a', pesq_lab: 'pesquisador(a) no laboratório', leg_rel: 'linha tênue = relacionados', leg_relanel: 'anel tracejado = publicador relacionado', rel_t: 'Relacionados', rel_nmod: 'modelos', principais: 'Principais', pais_DE: 'Alemanha', pais_BR: 'Brasil', empresa: 'Empresa', nao_classificada: 'Natureza não classificada',
       cl_br_evidencia: 'Brasil (evidência)', cl_nao_classificado: 'Não classificado', cl_fora_br: 'Fora do Brasil',
       campo: 'modelos no mapa', sem_modelos: 'Nenhum modelo neste recorte.', mais: 'Mostrar mais',
       recorte: 'modelos no recorte', so_nativo: 'nativo', nativo_gguf: 'nativo + GGUF', semb: 'sem build',
@@ -51,7 +52,7 @@
       leg_ds_of: 'pt-BR, licença aberta', leg_ds_co: 'pt-BR, outra licença', leg_ds_gg: 'outro idioma, licença aberta', leg_ds_no: 'outro idioma, outra licença',
       leg_bm_of: 'inclui pt-BR', leg_bm_co: 'inclui pt', leg_bm_gg: 'multilíngue sem pt', leg_bm_no: 'outros', leg_aneis: 'mais de um formato de build = mais brilho e anéis (2: um anel; 3 ou mais: dois anéis)',
       exp_png: 'Imagem PNG', exp_svg: 'Imagem SVG', exp_html: 'HTML', exp_filtros: 'Filtros', exp_nenhum: 'nenhum filtro', exp_fonte: 'Fonte dos dados', exp_lic: 'Dados sob licença CC BY 4.0. Gerado no navegador, sem envio de dados.', exp_feito: 'Arquivo gerado:', exp_lista: 'Lista dos itens', exp_legenda_col: 'Classe', exp_item: 'Item', exp_grupo: 'Grupo', exp_enq: 'enquadramento atual',
-      rodape: 'Dados do Hugging Face de', modelo: 'Modelo', tarefa: 'Tarefa', evidencias: 'Evidências', ev_pais: 'País', ev_nat: 'Natureza', n_mod: 'modelos mapeados', gguf_nota: 'GGUF existe, mas passa de 4 GB.', fam_t: 'Família', src_perfil_oficial: 'perfil oficial', src_site_institucional: 'site institucional', src_pagina_pessoa: 'página da pessoa', src_artigo: 'artigo', src_repositorio: 'repositório', src_cartao_modelo: 'cartão do modelo', src_orgao_fomento: 'órgão de fomento', src_perfil: 'perfil', src_cartao: 'cartão do modelo', src_institucional: 'página institucional', src_curadoria: 'lista curada', src_perfil_cartao: 'perfil ou cartão'
+      rodape: 'Dados do Hugging Face de', modelo: 'Modelo', tarefa: 'Tarefa', evidencias: 'Evidências', ev_pais: 'País', ev_nat: 'Natureza', rel_nmod: 'modelos mapeados', gguf_nota: 'GGUF existe, mas passa de 4 GB.', fam_t: 'Família', src_perfil_oficial: 'perfil oficial', src_site_institucional: 'site institucional', src_pagina_pessoa: 'página da pessoa', src_artigo: 'artigo', src_repositorio: 'repositório', src_cartao_modelo: 'cartão do modelo', src_orgao_fomento: 'órgão de fomento', src_perfil: 'perfil', src_cartao: 'cartão do modelo', src_institucional: 'página institucional', src_curadoria: 'lista curada', src_perfil_cartao: 'perfil ou cartão'
     },
     en: {
       skip: 'Skip the map and go to the table', brand_sub: 'of Web AI in Brazil and the world', nav_inicio: 'Home', nav_metodo: 'How we read the data',
@@ -64,7 +65,7 @@
       credito: 'Inspired by the Maritaca Observatory ↗', privacidade: 'Privacy', fonte_lic: 'Atkinson Hyperlegible font, SIL OFL 1.1 license.',
       c_modelo: 'Model', c_status: 'Build', c_gb: 'GB (q4)', c_lic: 'License', c_upd: 'Updated',
       oficial: 'Native · publisher', comunidade: 'Native · community', gguf: 'GGUF via wllama', nenhum: 'No build', gguf_grande: 'GGUF too large',
-      n_todos: 'All types', independente: 'Independent', instituicao: 'Institution', afiliada: 'Affiliated', afiliada_a: 'Affiliated with', pesq_lab: 'researcher at the lab', pais_DE: 'Germany', pais_BR: 'Brazil', empresa: 'Company', nao_classificada: 'Type not classified',
+      n_todos: 'All types', independente: 'Independent', instituicao: 'Institution', afiliada: 'Affiliated', afiliada_a: 'Affiliated with', pesq_lab: 'researcher at the lab', leg_rel: 'faint line = related', leg_relanel: 'dashed ring = related publisher', rel_t: 'Related', rel_nmod: 'models', principais: 'Main models', pais_DE: 'Germany', pais_BR: 'Brazil', empresa: 'Company', nao_classificada: 'Type not classified',
       cl_br_evidencia: 'Brazil (evidence)', cl_nao_classificado: 'Not classified', cl_fora_br: 'Outside Brazil',
       campo: 'models on the map', sem_modelos: 'No model in this selection.', mais: 'Show more',
       recorte: 'models in selection', so_nativo: 'native', nativo_gguf: 'native + GGUF', semb: 'no build',
@@ -97,7 +98,7 @@
       leg_ds_of: 'pt-BR, open license', leg_ds_co: 'pt-BR, other license', leg_ds_gg: 'other language, open license', leg_ds_no: 'other language, other license',
       leg_bm_of: 'includes pt-BR', leg_bm_co: 'includes pt', leg_bm_gg: 'multilingual without pt', leg_bm_no: 'others', leg_aneis: 'more than one build format = more glow and rings (2: one ring; 3 or more: two rings)',
       exp_png: 'PNG image', exp_svg: 'SVG image', exp_html: 'HTML', exp_filtros: 'Filters', exp_nenhum: 'no filter', exp_fonte: 'Data source', exp_lic: 'Data under the CC BY 4.0 license. Generated in the browser, no data is sent.', exp_feito: 'File generated:', exp_lista: 'Item list', exp_legenda_col: 'Class', exp_item: 'Item', exp_grupo: 'Group', exp_enq: 'current framing',
-      rodape: 'Hugging Face data from', modelo: 'Model', tarefa: 'Task', evidencias: 'Evidence', ev_pais: 'Country', ev_nat: 'Type', n_mod: 'models mapped', gguf_nota: 'GGUF exists, but is over 4 GB.', fam_t: 'Family', src_perfil_oficial: 'official profile', src_site_institucional: 'institutional site', src_pagina_pessoa: 'personal page', src_artigo: 'paper', src_repositorio: 'repository', src_cartao_modelo: 'model card', src_orgao_fomento: 'funding agency', src_perfil: 'profile', src_cartao: 'model card', src_institucional: 'institutional page', src_curadoria: 'curated list', src_perfil_cartao: 'profile or card'
+      rodape: 'Hugging Face data from', modelo: 'Model', tarefa: 'Task', evidencias: 'Evidence', ev_pais: 'Country', ev_nat: 'Type', rel_nmod: 'models mapped', gguf_nota: 'GGUF exists, but is over 4 GB.', fam_t: 'Family', src_perfil_oficial: 'official profile', src_site_institucional: 'institutional site', src_pagina_pessoa: 'personal page', src_artigo: 'paper', src_repositorio: 'repository', src_cartao_modelo: 'model card', src_orgao_fomento: 'funding agency', src_perfil: 'profile', src_cartao: 'model card', src_institucional: 'institutional page', src_curadoria: 'curated list', src_perfil_cartao: 'profile or card'
     }
   };
   var S = { tab: 'modelos', fmt: '', tarefa: '', inst: '', lab: '', semMaior: false, f: { datasets: { escopo: '', idioma: '', tarefa: '', licenca: '', tamanho: '', publicador: '', bench: '', q: '' }, benchmarks: { dominio: '', idioma: '', tipo: '', tarefa: '', q: '' } }, modoL: { datasets: 'publicador', benchmarks: 'dominio' }, sortL: { modelos: { k: 'via', d: 1 }, datasets: { k: 'downloads', d: -1 }, benchmarks: { k: 'nome', d: 1 } }, lang: 'pt', escopo: 'todos', via: 'todos', nat: 'todas', busca: '', agrupar: 'publicador', sort: { k: 'via', d: 1 }, sel: null, paused: false, zoom: 1, panX: 0, panY: 0, limite: 150 };
@@ -235,7 +236,7 @@
       base: function () { return D.modelos.filter(function (m) { return S.escopo === 'todos' || m.escopo === S.escopo; }); },
       grupo: function (m) {
         if (S.agrupar === 'instituicao' && REL.disponivel) { var r = REL.raizDoPub(m.publicador); return r ? { k: 'i:' + r, nome: REL.rot(REL.instBy[r]) || r, pub: null, inst: REL.instBy[r] } : { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] }; }
-        return S.agrupar === 'publicador' ? { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] } : { k: m.familia.toLowerCase(), nome: m.familia, pub: null };
+        return S.agrupar === 'publicador' ? { k: m.publicador, nome: pubBy[m.publicador].nome, pub: pubBy[m.publicador] } : { k: m.familia.toLowerCase(), nome: famNome[m.familia] || m.familia, pub: null };
       },
       fam: function (m) { return S.agrupar === 'instituicao' ? (REL.labDoPub(m.publicador) || m.publicador) : m.familia; },
       ord: function (a, b) {
@@ -368,8 +369,8 @@
         });
       });
       pubC = {}; subRot = [];
+      if (CAM.id === 'modelos' && REL.disponivel) stars.forEach(function (s) { var c = pubC[s.m.publicador] || (pubC[s.m.publicador] = { u: 0, v: 0, n: 0, st: [] }); c.u += s.u; c.v += s.v; c.n++; c.st.push(s); });
       if (CAM.id === 'modelos' && S.agrupar === 'instituicao' && REL.disponivel) {
-        stars.forEach(function (s) { var c = pubC[s.m.publicador] || (pubC[s.m.publicador] = { u: 0, v: 0, n: 0 }); c.u += s.u; c.v += s.v; c.n++; });
         G.forEach(function (g) {
           var por = {}; g.stars.forEach(function (s) { var l = REL.labDoPub(s.m.publicador); if (l) { var o = por[l] || (por[l] = { nome: REL.rot(REL.labBy[l]) || l, u: 0, v: 0, n: 0 }); o.u += s.u; o.v += s.v; o.n++; } });
           Object.keys(por).forEach(function (l) { subRot.push({ nome: por[l].nome, u: por[l].u / por[l].n, v: por[l].v / por[l].n }); });
@@ -532,6 +533,24 @@
     return n;
   }
 
+  // relacoes entre publicadores (vinculo "relacionado"): linhas tenues na camada estatica, em qualquer agrupamento
+  var relDe = {};
+  REL.pares.forEach(function (p) { (relDe[p[0]] = relDe[p[0]] || []).push(p[1]); (relDe[p[1]] = relDe[p[1]] || []).push(p[0]); });
+  function centroOn(pid, sc2, hx, hy) {   // centro, em tela, das estrelas acesas do publicador (null se nenhuma)
+    var c = pubC[pid]; if (!c) return null; var u = 0, v = 0, n = 0;
+    for (var i = 0; i < c.st.length; i++) if (c.st[i].on) { u += c.st[i].u; v += c.st[i].v; n++; }
+    return n ? [hx + u / n * sc2, hy + v / n * sc2] : null;
+  }
+  function linhasRel(c, esc2, hx, hy, so, forte) {
+    var R = 4, nl = 0;
+    REL.pares.forEach(function (p) {
+      if (so && p[0] !== so && p[1] !== so) return;
+      var a = centroOn(p[0], esc2, hx, hy), b = centroOn(p[1], esc2, hx, hy); if (!a || !b) return;
+      if ((a[0] < -R && b[0] < -R) || (a[0] > W + R && b[0] > W + R) || (a[1] < -R && b[1] < -R) || (a[1] > H + R && b[1] > H + R)) return;
+      c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); nl++;
+    });
+    return nl;
+  }
   // camada estatica: ligacoes e estrelas sem build, em bitmap proprio
   function renderEstatica() {
     var dk = DK, sc = Math.sqrt(S.zoom), l = lctx, dpr = canvas.width / W, esc2 = scale();
@@ -548,6 +567,9 @@
         l.beginPath(); l.moveTo(ax, ay); l.lineTo(bx, by); l.stroke(); n++;   // um traco por ligacao (o alfa acumula nas ligacoes sobrepostas)
       }
     });
+    if (CAM.id === 'modelos' && REL.disponivel && REL.pares.length) {   // relacionados: linha tracejada tenue entre as constelacoes dos publicadores
+      l.setLineDash([3, 4]); l.lineWidth = 0.9; l.strokeStyle = dk ? 'rgba(215,221,255,.34)' : 'rgba(50,60,150,.36)'; l.beginPath(); STATS.rel = linhasRel(l, esc2, hx, hy); l.stroke(); l.setLineDash([]);
+    } else STATS.rel = 0;
     STATS.linhas = n;
     var core = spr.nenhum.core, coreD = spr.nenhum.coreD, al = dk ? 0.5 : 0.6, peq = [[], []], c = spr.nenhum.cor;
     for (var j = 0; j < visN.length; j++) {
@@ -593,9 +615,6 @@
     c.globalAlpha = 1;
     if (CAM.id === 'modelos' && S.agrupar === 'instituicao' && REL.disponivel) {   // vinculos "relacionado" (tenues) e sub-rotulos dos laboratorios (com zoom)
       var col2 = dk ? '215,221,255' : '50,60,150', sc2 = scale(), hx = W / 2 + (S.panX - 0.5) * sc2, hy = H / 2 + (S.panY - 0.5) * sc2;
-      c.lineWidth = 0.9; c.setLineDash([3, 4]); c.strokeStyle = 'rgba(' + col2 + ',.35)'; c.beginPath();
-      REL.pares.forEach(function (p) { var a = pubC[p[0]], b2 = pubC[p[1]]; if (!a || !b2) return; c.moveTo(hx + a.u / a.n * sc2, hy + a.v / a.n * sc2); c.lineTo(hx + b2.u / b2.n * sc2, hy + b2.v / b2.n * sc2); });
-      c.stroke(); c.setLineDash([]);
       if (S.zoom >= 2.2) { c.font = '600 11px "Atkinson Hyperlegible Next",system-ui,sans-serif'; c.textAlign = 'center'; c.lineWidth = 3; c.strokeStyle = dk ? 'rgba(31,39,83,.85)' : 'rgba(255,255,255,.9)'; c.fillStyle = dk ? '#f4f6ff' : '#171c47';
         subRot.forEach(function (r) { var x2 = hx + r.u * sc2, y2 = hy + r.v * sc2 - 12; if (x2 < 0 || x2 > W || y2 < 0 || y2 > H) return; c.strokeText(r.nome, x2, y2); c.fillText(r.nome, x2, y2); }); }
     }
@@ -610,6 +629,16 @@
           c.strokeStyle = 'rgba(' + col + ',.3)'; c.beginPath(); c.moveTo(s.xy[0], s.xy[1]); c.lineTo(px, py); c.stroke();
           c.fillStyle = 'rgba(' + col + ',.75)'; c.beginPath(); c.arc(px, py, 1.8, 0, 6.2832); c.fill();
         }
+      }
+    }
+    if (CAM.id === 'modelos' && REL.disponivel && REL.pares.length) {   // foco (pairar/selecionar): linha forte e aneis tracejados nas estrelas dos publicadores relacionados
+      var fs = hoverStar || (sel && sel.t === 'm' ? starOf[sel.id] : null), fp = fs ? fs.m.publicador : (sel && sel.t === 'p' ? sel.id : (sel && sel.t === 'g' && grupoPorId[sel.id] && grupoPorId[sel.id].pub ? grupoPorId[sel.id].pub.id : null));
+      if (fp && relDe[fp]) {
+        var sc3 = scale(), hx3 = W / 2 + (S.panX - 0.5) * sc3, hy3 = H / 2 + (S.panY - 0.5) * sc3;
+        c.lineWidth = 1.5; c.strokeStyle = dk ? 'rgba(255,246,207,.75)' : 'rgba(44,51,160,.75)'; c.setLineDash([5, 3]); c.beginPath(); linhasRel(c, sc3, hx3, hy3, fp); c.stroke();
+        c.lineWidth = 1.2; c.setLineDash([2, 3]); c.beginPath(); var nr = 0;
+        relDe[fp].forEach(function (q) { var pc = pubC[q]; if (!pc) return; for (var k2 = 0; k2 < pc.st.length && nr < 150; k2++) { var q2 = pc.st[k2]; if (!q2.on || !q2.dr) continue; var rr2 = q2.r * (0.85 + 0.15 * sc) + 8; c.moveTo(q2.xy[0] + rr2, q2.xy[1]); c.arc(q2.xy[0], q2.xy[1], rr2, 0, 6.2832); nr++; } });
+        c.stroke(); c.setLineDash([]);
       }
     }
     if (busca) { c.strokeStyle = 'rgba(255,111,168,.95)'; c.lineWidth = 1.5; c.beginPath(); for (i = 0; i < listaVis.length; i++) { s = listaVis[i]; if (s.on) { var rb = s.r * (0.85 + 0.15 * sc) + 4; c.moveTo(s.xy[0] + rb, s.xy[1]); c.arc(s.xy[0], s.xy[1], rb, 0, 6.2832); } } c.stroke(); }
@@ -837,18 +866,42 @@
   function drawerInst(i, g) {
     var pubsI = (i.publicadores || []).filter(function (p) { return pubBy[p]; }), labs = (i.labs || []).map(nomeLab), fam = i.por_familia_tarefa || {}, nb = i.n_builds || {};
     return '<span class="dr-label">' + t('v_inst') + (i.tipo ? ' · ' + esc(i.tipo) : '') + '</span><h2 id="drawer-titulo">' + esc(i.nome) + (i.sigla ? ' (' + esc(i.sigla) + ')' : '') + '</h2><p class="dr-sub">' + esc(i.pais ? paisNome(i.pais) + ' (' + i.pais + ')' : '') + (i.regiao ? ' · ' + esc(i.regiao) : '') + (i.parte_de ? ' · ' + t('parte_de') + ' ' + esc(nomeInstFull(i.parte_de)) : '') + '</p>' +
-      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + nf(i.n_modelos || 0) + '</dd><dt>' + t('ta_gerador') + '</dt><dd>' + nf(fam.gerador || 0) + '</dd><dt>' + t('ta_codificador') + '</dt><dd>' + nf(fam.codificador || 0) + '</dd><dt>' + t('b_nativo') + '</dt><dd>' + nf(nb.nativo || 0) + '</dd><dt>' + t('b_gguf') + '</dt><dd>' + nf(nb.gguf || 0) + '</dd></dl>' +
+      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + nf(i.rel_nmodelos || 0) + '</dd><dt>' + t('ta_gerador') + '</dt><dd>' + nf(fam.gerador || 0) + '</dd><dt>' + t('ta_codificador') + '</dt><dd>' + nf(fam.codificador || 0) + '</dd><dt>' + t('b_nativo') + '</dt><dd>' + nf(nb.nativo || 0) + '</dd><dt>' + t('b_gguf') + '</dt><dd>' + nf(nb.gguf || 0) + '</dd></dl>' +
       (labs.length ? '<h3>' + t('v_lab') + '</h3><ul>' + labs.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
       (pubsI.length ? '<h3>' + t('publicador') + '</h3><ul class="dr-lista">' + pubsI.map(function (p) { return '<li><button type="button" data-ir="pub:' + esc(p) + '">' + esc(pubNome(p)) + '</button></li>'; }).join('') + '</ul>' : '') +
       ((i.fontes || []).length ? '<h3>' + t('fontes') + '</h3><ul>' + i.fontes.map(function (f) { return li({ rotulo: tipoFonte(f.tipo), url: f.url, acessado: f.acessado, trecho: f.trecho }); }).join('') + '</ul>' : '');
+  }
+  var tamTok = /^(tiny|mini|small|base|large|xl|xxl|medium|femto|nano|\d+(\.\d+)?[bkm])$/i;
+  function nomeFamilia(ms, fam) {   // nome amigavel de uma familia com varios tamanhos: o que os nomes dos modelos tem em comum, sem os tamanhos
+    var tk = ms.map(function (m) { return m.nome.split('/').pop().split(/[-_]/); }), comum = tk[0].filter(function (w) { return !tamTok.test(w) && tk.every(function (x) { return x.indexOf(w) >= 0; }); });
+    var tam = []; tk.forEach(function (x) { x.forEach(function (w) { if (tamTok.test(w) && tam.indexOf(w) < 0) tam.push(w); }); });
+    return (famNome[fam] || comum.join(' ') || fam) + (tam.length ? ' (' + tam.join(', ') + ')' : '');
+  }
+  function modelosPorFamilia(ms) {
+    var por = {}, ordem = []; ms.forEach(function (m) { if (!por[m.familia]) { por[m.familia] = []; ordem.push(m.familia); } por[m.familia].push(m); });
+    ordem.sort(function (a, b) { return por[b].length - por[a].length || (a < b ? -1 : 1); });
+    var h = '', n = 0, btn = function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.nome) + '</button> · ' + t(CAMS.modelos.legenda.filter(function (l) { return l[0] === CAMS.modelos.cls(m); })[0][1]) + '</li>'; };
+    for (var i = 0; i < ordem.length && n < 60; i++) {
+      var g = por[ordem[i]].slice().sort(function (a, b) { return (b.downloads || 0) - (a.downloads || 0); }).slice(0, 60 - n); n += g.length;
+      h += g.length > 1 ? '<li class="dr-fam"><strong>' + esc(nomeFamilia(por[ordem[i]], ordem[i])) + '</strong> · ' + por[ordem[i]].length + '<ul class="dr-lista">' + g.map(btn).join('') + '</ul></li>' : btn(g[0]);
+    }
+    return h + (ms.length > n ? '<li>… +' + (ms.length - n) + '</li>' : '');
+  }
+  function relacionadosHtml(pid) {
+    var ids = (relDe[pid] || []).filter(function (x, i, a) { return a.indexOf(x) === i && pubBy[x]; }); if (!ids.length) return '';
+    return '<h3>' + t('rel_t') + '</h3><ul class="dr-rels">' + ids.map(function (id) {
+      var ms = D.modelos.filter(function (m) { return m.publicador === id; }).sort(function (a, b) { return (b.downloads || 0) - (a.downloads || 0); }), ins = REL.instDoPub(id).map(function (i) { return REL.rot(REL.instBy[i]) || i; }).join(', ');
+      return '<li><button type="button" data-ir="pub:' + esc(id) + '">' + esc(pubNome(id)) + '</button>' + (ins ? ' · ' + esc(ins) : '') + ' · ' + ms.length + ' ' + t('rel_nmod') +
+        (ms.length ? '<div class="dr-sub">' + t('principais') + ': ' + ms.slice(0, 3).map(function (m) { return '<button type="button" class="lnk" data-abrir="' + esc(m.id) + '">' + esc(m.nome.split('/').pop()) + '</button>'; }).join(', ') + '</div>' : '') + '</li>';
+    }).join('') + '</ul>';
   }
   function drawerPublicador(pid) {
     var p = pubBy[pid]; if (!p) return '';
     var ms = D.modelos.filter(function (m) { return m.publicador === pid; });
     return '<span class="dr-label">' + t('publicador') + '</span><h2 id="drawer-titulo">' + esc(p.nome) + '</h2><p class="dr-sub">' + natTxt(p) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' +
-      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + ms.length + '</dd></dl>' + vinculosHtml(pid, null) + evidHtml(p) +
+      '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + ms.length + '</dd></dl>' + relacionadosHtml(pid) + vinculosHtml(pid, null) + evidHtml(p) +
       '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + (p.fontes || []).map(li).join('') + '</ul>' +
-      '<h3>' + t('modelos') + '</h3><ul class="dr-lista">' + ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.nome) + '</button></li>'; }).join('') + (ms.length > 60 ? '<li>… +' + (ms.length - 60) + '</li>' : '') + '</ul>';
+      '<h3>' + t('modelos') + '</h3><ul class="dr-lista">' + modelosPorFamilia(ms) + '</ul>';
   }
   function drawerModelo(m) {
     var p = pubBy[m.publicador], v = viaOf(m), gruposB = {};
@@ -900,8 +953,8 @@
     var linhas = CAM.legenda.map(function (l) { return '<dt>' + t(l[1]) + '</dt><dd>' + (cont[l[0]] || 0) + '</dd>'; }).join('');
     return '<span class="dr-label">' + (p ? t('constelacao') : t('fam_t')) + '</span><h2 id="drawer-titulo">' + esc(g.nome) + '</h2>' + (p && p.natureza ? '<p class="dr-sub">' + natTxt(p) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' : '') +
       '<dl class="dr-grid"><dt>' + t(CAM.plural) + '</dt><dd>' + g.ms.length + '</dd>' + linhas + '</dl>' +
-      (p && p.evidencia_pais ? vinculosHtml(p.id, null) + evidHtml(p) + '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + p.fontes.map(li).join('') + '</ul>' : '') +
-      '<h3>' + t(CAM.plural) + '</h3><ul class="dr-lista">' + g.ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.sigla || m.nome) + '</button> · ' + t(CAM.legenda.filter(function (l) { return l[0] === CAM.cls(m); })[0][1]) + '</li>'; }).join('') + (g.ms.length > 60 ? '<li>… +' + (g.ms.length - 60) + '</li>' : '') + '</ul>';
+      (p && CAM.id === 'modelos' ? relacionadosHtml(p.id) : '') + (p && p.evidencia_pais ? vinculosHtml(p.id, null) + evidHtml(p) + '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + p.fontes.map(li).join('') + '</ul>' : '') +
+      '<h3>' + t(CAM.plural) + '</h3><ul class="dr-lista">' + (p && CAM.id === 'modelos' ? modelosPorFamilia(g.ms) : g.ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.sigla || m.nome) + '</button> · ' + t(CAM.legenda.filter(function (l) { return l[0] === CAM.cls(m); })[0][1]) + '</li>'; }).join('') + (g.ms.length > 60 ? '<li>… +' + (g.ms.length - 60) + '</li>' : '')) + '</ul>';
   }
   function renderDrawer() {
     var el = $('#drawer-corpo'), s = S.sel; if (!s) return;
@@ -1035,6 +1088,7 @@
   function renderLegenda() {
     $('#legenda').innerHTML = CAM.legenda.map(function (x) { return '<span><i class="' + x[2] + '"></i>' + t(x[1]) + '</span>'; }).join('') +
       (CAM.id === 'modelos' ? '<span class="leg-forma"><i class="f-c"></i>' + t('ta_gerador') + ' <i class="f-d"></i>' + t('ta_codificador') + '</span>' : '') +
+      (CAM.id === 'modelos' && REL.disponivel && REL.pares.length ? '<span class="leg-rel"><i></i>' + t('leg_rel') + ' · <i class="an"></i>' + t('leg_relanel') + '</span>' : '') +
       (CAM.id === 'modelos' ? '<span class="leg-aneis"><i class="a0"></i><i class="a1"></i><i class="a2"></i>' + t('leg_aneis') + '</span>' : '');
   }
   function textos() {

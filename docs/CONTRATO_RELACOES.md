@@ -1,6 +1,6 @@
 # Contrato de dados das relações (instituições, laboratórios, vínculos e família de tarefa)
 
-Versão do contrato: **1** (revisão 1.1: campos acrescentados, sem quebrar a compatibilidade). Complementa [CONTRATO_CAMADAS.md](CONTRATO_CAMADAS.md). Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo cria uma nova versão deste arquivo e muda `window.MAPA_DADOS.contrato_relacoes`.
+Versão do contrato: **1** (revisões 1.1 e 1.2: campos acrescentados, sem quebrar a compatibilidade). Complementa [CONTRATO_CAMADAS.md](CONTRATO_CAMADAS.md). Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo cria uma nova versão deste arquivo e muda `window.MAPA_DADOS.contrato_relacoes`.
 
 `web/fixtures/relacoes.js` define `window.MAPA_RELACOES_FIXTURE` com a mesma forma e `fixture: true`, com dados de exemplo (ids começando em `fixture-`).
 
@@ -32,11 +32,12 @@ Nas arestas e nas listas de créditos, um id de entidade leva o tipo como prefix
 | `n_modelos` | inteiro | modelos dos publicadores da instituição, dos seus laboratórios e das instituições que são parte dela (soma, sem duplicar) |
 | `n_builds` | `{nativo, gguf}` | modelos com build nativo de navegador e modelos só com GGUF via wllama |
 | `por_familia_tarefa` | `{gerador, codificador}` | `n_modelos` por família de tarefa |
+| `n_creditados` | inteiro | (revisão 1.2) modelos creditados à instituição por evidência curada (`creditos` com `inst:<id>`), de qualquer publicador |
 | `fontes` | `[{tipo, url, acessado, trecho}]` | evidências |
 
 ## `laboratorios[]`
 
-`id`, `nome`, `sigla`, `instituicao` (id da instituição principal), `pais` (país da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa` (como acima) e `fontes`.
+`id`, `nome`, `sigla`, `instituicao` (id da instituição principal), `pais` (país da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa`, `n_creditados` (modelos com `lab:<id>` em `creditos`) e `fontes`.
 
 ## `vinculos`
 

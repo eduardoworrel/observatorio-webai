@@ -3,7 +3,7 @@
   "coletado_em": "2026-11-20",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "f30e82cfd322ceea"
+  "assinatura": "15189279466d4af4"
  },
  "instituicoes": [
   {
@@ -27,6 +27,7 @@
     "gerador": 1,
     "codificador": 0
    },
+   "n_creditados": 1,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -34,6 +35,36 @@
      "acessado": "2026-11-20",
      "rotulo": "site do Jurema",
      "trecho": "Escavador Legaltech ... Fundado em Salvador"
+    }
+   ]
+  },
+  {
+   "id": "fapergs",
+   "nome": "Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul",
+   "sigla": "FAPERGS",
+   "pais": "BR",
+   "regiao": "BR-RS",
+   "tipo": "governo",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [],
+   "n_modelos": 0,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 0
+   },
+   "n_creditados": 15,
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://fapergs.rs.gov.br/inicial",
+     "acessado": "2026-11-20",
+     "rotulo": "site oficial",
+     "trecho": "FAPERGS - Fundação de Amparo à pesquisa do Estado do RS"
     }
    ]
   },
@@ -58,6 +89,7 @@
     "gerador": 0,
     "codificador": 3
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -89,6 +121,7 @@
     "gerador": 3,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -121,6 +154,7 @@
     "gerador": 1,
     "codificador": 2
    },
+   "n_creditados": 1,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -154,6 +188,7 @@
     "gerador": 2,
     "codificador": 12
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -185,6 +220,7 @@
     "gerador": 3,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -216,6 +252,7 @@
     "gerador": 10,
     "codificador": 3
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -250,6 +287,7 @@
     "gerador": 2,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -279,6 +317,7 @@
     "gerador": 0,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -310,6 +349,7 @@
     "gerador": 0,
     "codificador": 4
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -341,6 +381,7 @@
     "gerador": 1,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -370,6 +411,7 @@
     "gerador": 0,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -392,17 +434,20 @@
     "caisa-b-it"
    ],
    "publicadores": [
-    "nicholasKluge"
+    "nicholasKluge",
+    "Polygl0t",
+    "TucanoBR"
    ],
-   "n_modelos": 33,
+   "n_modelos": 75,
    "n_builds": {
     "nativo": 1,
-    "gguf": 13
+    "gguf": 29
    },
    "por_familia_tarefa": {
-    "gerador": 17,
-    "codificador": 16
+    "gerador": 48,
+    "codificador": 27
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -436,6 +481,7 @@
     "gerador": 14,
     "codificador": 7
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -471,6 +517,7 @@
     "gerador": 35,
     "codificador": 4
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -504,6 +551,7 @@
     "gerador": 35,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -539,6 +587,7 @@
     "gerador": 0,
     "codificador": 4
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -563,17 +612,19 @@
    "pais": "DE",
    "parceiras": [],
    "publicadores": [
-    "nicholasKluge"
+    "nicholasKluge",
+    "Polygl0t"
    ],
-   "n_modelos": 33,
+   "n_modelos": 65,
    "n_builds": {
     "nativo": 1,
-    "gguf": 13
+    "gguf": 25
    },
    "por_familia_tarefa": {
-    "gerador": 17,
-    "codificador": 16
+    "gerador": 40,
+    "codificador": 25
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "pagina_pessoa",
@@ -611,6 +662,7 @@
     "gerador": 2,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -646,6 +698,7 @@
     "gerador": 2,
     "codificador": 12
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -678,6 +731,7 @@
     "gerador": 0,
     "codificador": 0
    },
+   "n_creditados": 0,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -958,6 +1012,42 @@
    }
   },
   {
+   "de": "pub:Polygl0t",
+   "para": "inst:uni-bonn",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2603.03543",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano 2 Cool, agradecimentos",
+    "trecho": "Polyglot is a project supported by Germany's Federal Ministry of Education and Research (BMBF) and North Rhine-Westphalia's Ministry of Culture and Science (MWK) under the TRA Sustainable Futures initiative at the University of Bonn"
+   }
+  },
+  {
+   "de": "pub:Polygl0t",
+   "para": "lab:caisa-b-it",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2603.03543",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano 2 Cool, autoria e afiliação",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+   }
+  },
+  {
+   "de": "pub:TucanoBR",
+   "para": "inst:uni-bonn",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2411.07854",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano, afiliação dos autores",
+    "trecho": "Affiliation: Rhenish Friedrich Wilhelm University of Bonn"
+   }
+  },
+  {
    "de": "pub:amadeusai",
    "para": "pub:CEIA-UFG",
    "tipo": "relacionado",
@@ -979,6 +1069,42 @@
     "rotulo": "cartão do modelo",
     "trecho": "Neuralmind's Privacy Policy"
    }
+  },
+  {
+   "de": "pub:nicholasKluge",
+   "para": "pub:Polygl0t",
+   "tipo": "relacionado",
+   "fonte": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2603.03543",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano 2 Cool: líder do projeto",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+   }
+  },
+  {
+   "de": "pub:nicholasKluge",
+   "para": "pub:TucanoBR",
+   "tipo": "relacionado",
+   "fonte": {
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
+    "acessado": "2026-11-20",
+    "rotulo": "página profissional",
+    "trecho": "I am the principal investigator behind projects like Tucano, ViTucano, TeenyTinyLlama, and Worldwide AI Ethics"
+   }
+  },
+  {
+   "de": "pub:Polygl0t",
+   "para": "pub:TucanoBR",
+   "tipo": "relacionado",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/TucanoBR",
+    "acessado": "2026-11-20",
+    "rotulo": "perfil da organização TucanoBR",
+    "trecho": "version 2 is already out. Go to our new organization"
+   }
   }
  ],
  "hierarquia": [
@@ -994,6 +1120,12 @@
      "filhos": []
     }
    ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "fapergs",
+   "pais": "BR",
+   "filhos": []
   },
   {
    "tipo": "instituicao",
@@ -1165,8 +1297,26 @@
        "id": "nicholasKluge",
        "n_modelos": 33,
        "filhos": []
+      },
+      {
+       "tipo": "publicador",
+       "id": "Polygl0t",
+       "n_modelos": 32,
+       "filhos": []
       }
      ]
+    },
+    {
+     "tipo": "publicador",
+     "id": "Polygl0t",
+     "n_modelos": 32,
+     "filhos": []
+    },
+    {
+     "tipo": "publicador",
+     "id": "TucanoBR",
+     "n_modelos": 10,
+     "filhos": []
     }
    ]
   },

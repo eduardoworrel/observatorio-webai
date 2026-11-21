@@ -118,12 +118,12 @@
     [
      "AIInstituteLNCC/manaca-1b-base",
      "AIInstituteLNCC/manaca-1b-instruct",
-     "manaca-1"
+     "manaca"
     ],
     [
      "AIInstituteLNCC/manaca-1b-instruct",
      "AIInstituteLNCC/manaca-1b-instruct-2",
-     "manaca-1"
+     "manaca"
     ]
    ]
   },
@@ -464,7 +464,7 @@
     [
      "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
      "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
-     "llama_3.1"
+     "llama-3.1"
     ],
     [
      "c2d-usp/MoP_llama_2_20_percent_compression",
@@ -517,7 +517,7 @@
     [
      "carolina-c4ai/bert-base-portuguese-cased-domain-classifier",
      "carolina-c4ai/bert-large-portuguese-cased-domain-classifier",
-     "bert"
+     "bert-portuguese"
     ]
    ]
   },
@@ -616,22 +616,12 @@
    ],
    "arestas": [
     [
-     "cnmoro/bert-base-portuguese-cased-safetensors",
-     "cnmoro/bert-hash-femto-mlm",
-     "bert"
-    ],
-    [
      "cnmoro/bert-hash-femto-mlm",
      "cnmoro/bert-tiny-embeddings-english-portuguese",
      "bert"
     ],
     [
      "cnmoro/bert-tiny-embeddings-english-portuguese",
-     "cnmoro/bert-tiny-question-classifier",
-     "bert"
-    ],
-    [
-     "cnmoro/bert-tiny-question-classifier",
      "cnmoro/BertMini-Reranker-EnPt",
      "bert"
     ],
@@ -688,7 +678,7 @@
     [
      "cnmoro/Mistral-7B-Portuguese",
      "cnmoro/Mistral-7B-Portuguese-AWQ",
-     "mistral-7"
+     "mistral"
     ],
     [
      "cnmoro/multilingual-e5-small-distilled-16m",
@@ -791,19 +781,29 @@
      "tangled"
     ],
     [
+     "cnmoro/teenytinyllama-160m-text-simplification-ptbr",
+     "cnmoro/TeenyTinyLlama-460m-Summarizer-PTBR",
+     "teenytinyllama"
+    ],
+    [
      "cnmoro/TeenyTinyLlama-460m-Summarizer-PTBR",
      "cnmoro/teenytinyllama-460m-text-simplification-ptbr",
-     "teenytinyllama-460"
+     "teenytinyllama"
+    ],
+    [
+     "cnmoro/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k",
+     "cnmoro/TinyLlama-ContextQuestionPair-Classifier-Reranker",
+     "tinyllama"
     ],
     [
      "cnmoro/Tucano-160m-Portuguese-Instruct",
      "cnmoro/Tucano-160m-Portuguese-Instruct-v2",
-     "tucano-160"
+     "tucano"
     ],
     [
      "cnmoro/Tucano-160m-Portuguese-Instruct-v2",
      "cnmoro/Tucano160m-Reranker-EnPt",
-     "tucano-160"
+     "tucano"
     ]
    ]
   },
@@ -840,12 +840,17 @@
     [
      "dominguesm/canarim-7b",
      "dominguesm/Canarim-7B-Instruct",
-     "canarim-7"
+     "canarim"
     ],
     [
      "dominguesm/Canarim-7B-Instruct",
      "dominguesm/canarim-7b-vestibulaide",
-     "canarim-7"
+     "canarim"
+    ],
+    [
+     "dominguesm/canarim-7b-vestibulaide",
+     "dominguesm/canarim-bert-nheengatu",
+     "canarim"
     ],
     [
      "dominguesm/canarim-bert-nheengatu",
@@ -2055,37 +2060,37 @@
     [
      "g-assismoraes/bbau-semeval25_fold1",
      "g-assismoraes/bbau-semeval25_fold2",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/bbau-semeval25_fold2",
      "g-assismoraes/bbau-semeval25_fold3",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/bbau-semeval25_fold3",
      "g-assismoraes/bbau-semeval25_fold4",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/bbau-semeval25_fold4",
      "g-assismoraes/bbau-semeval25_fold5",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/bbau-semeval25_fold5",
      "g-assismoraes/BERTimbau-geofis",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/BERTimbau-geofis",
      "g-assismoraes/bertimbau-semeval25-fulltrain-translatept-gpt",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/bertimbau-semeval25-fulltrain-translatept-gpt",
      "g-assismoraes/bertimbau2epochs-semeval25-fulltrain-translatept-gpt",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "g-assismoraes/deberta-large-semeval25_EN08_fold1",
@@ -2745,27 +2750,32 @@
     [
      "g-assismoraes/gemma-1b-pt-events-merged",
      "g-assismoraes/gemma-1b-pt-events-merged-25epochs",
-     "gemma-1"
+     "gemma"
     ],
     [
      "g-assismoraes/gemma-1b-pt-events-merged-25epochs",
      "g-assismoraes/gemma-1b-pt-events-merged-50epochs",
-     "gemma-1"
+     "gemma"
     ],
     [
      "g-assismoraes/gemma-1b-pt-events-merged-50epochs",
      "g-assismoraes/gemma-1b-pt-pulpo-merged",
-     "gemma-1"
+     "gemma"
     ],
     [
      "g-assismoraes/gemma-1b-pt-pulpo-merged",
      "g-assismoraes/gemma-1b-pt-simpler-merged",
-     "gemma-1"
+     "gemma"
     ],
     [
      "g-assismoraes/gemma-1b-pt-simpler-merged",
      "g-assismoraes/gemma-1b-pt-ufam-merged",
-     "gemma-1"
+     "gemma"
+    ],
+    [
+     "g-assismoraes/gemma-1b-pt-ufam-merged",
+     "g-assismoraes/gemma-4b-pt-events-merged",
+     "gemma"
     ],
     [
      "g-assismoraes/Gemma3-4B-it-pira-ep3-qairm-ptbr",
@@ -5255,97 +5265,97 @@
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-0middle-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-0middle-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2872",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2872",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-factor",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-factor",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer2",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer2",
      "g-assismoraes/TeenyTinyLlama-460m-embeddingsblend-interpol",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-embeddingsblend-interpol",
      "g-assismoraes/TeenyTinyLlama-460m-interpolated",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-interpolated",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-0middle-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-0middle-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-alpha2875",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-alpha2875",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-myHateBR",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-myHateBR",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det",
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det2",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det2",
      "g-assismoraes/TeenyTinyLlama-460m-zeropadding",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "g-assismoraes/tofu-llama2-7b-forget10-ihl_both",
@@ -5650,62 +5660,62 @@
     [
      "g-assismoraes/tucano-2b4-instruct-pira-original-e50",
      "g-assismoraes/tucano-2b4-instruct-pira-original-e50-tst",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-instruct-pira-original-e50-tst",
      "g-assismoraes/tucano-2b4-instruct-pira-paraphrase-e50",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-instruct-pira-paraphrase-e50",
      "g-assismoraes/tucano-2b4-instruct-pira-paraphrase-e50-tst",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-instruct-pira-paraphrase-e50-tst",
      "g-assismoraes/tucano-2b4-pira-original",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-original",
      "g-assismoraes/tucano-2b4-pira-original-e50",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-original-e50",
      "g-assismoraes/tucano-2b4-pira-original-e50-it",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-original-e50-it",
      "g-assismoraes/tucano-2b4-pira-original-e50-tst",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-original-e50-tst",
      "g-assismoraes/tucano-2b4-pira-original-e50-tst-it",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-original-e50-tst-it",
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50",
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50-it",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50-it",
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst",
-     "tucano-2"
+     "tucano"
     ],
     [
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst",
      "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst-it",
-     "tucano-2"
+     "tucano"
     ]
    ]
   },
@@ -5755,12 +5765,12 @@
     [
      "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
      "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-     "nbr-1"
+     "nbr"
     ],
     [
      "guicybercode/Tucano-630m-GGUF",
      "guicybercode/Tucano-630m-mlx-4bit",
-     "tucano-630"
+     "tucano"
     ]
    ]
   },
@@ -6035,6 +6045,11 @@
      "gemma-4"
     ],
     [
+     "Guilherme34/Jennifer-7bv2",
+     "Guilherme34/Jennifer-uwu-modelnotlora",
+     "jennifer"
+    ],
+    [
      "Guilherme34/Jennifer-uwu-modelnotlora",
      "Guilherme34/Jennifer-v4-model",
      "jennifer"
@@ -6057,7 +6072,7 @@
     [
      "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
      "Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "psychologist-3"
+     "psychologist"
     ],
     [
      "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
@@ -6107,7 +6122,12 @@
     [
      "Guilherme34/Samantha-3b-beta0.1-model-nf4",
      "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "samantha-3"
+     "samantha"
+    ],
+    [
+     "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
+     "Guilherme34/Samantha-hermes3-8b-model-fixed",
+     "samantha"
     ],
     [
      "Guilherme34/Samantha-hermes3-8b-model-fixed",
@@ -6260,17 +6280,17 @@
     [
      "H2IA/HubParser-Base-B",
      "H2IA/HubParser-Base-L",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "H2IA/HubParser-Base-L",
      "H2IA/HubParser-Large-B",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "H2IA/HubParser-Large-B",
      "H2IA/HubParser-Large-L",
-     "bert"
+     "bert-portuguese"
     ]
    ]
   },
@@ -6337,22 +6357,22 @@
     [
      "lucianosb/boto-7B",
      "lucianosb/boto-7B-v1.1",
-     "mistral-7"
+     "mistral"
     ],
     [
      "lucianosb/boto-7B-v1.1",
      "lucianosb/boto-7B-v1.2",
-     "mistral-7"
+     "mistral"
     ],
     [
      "lucianosb/boto-7B-GGUF",
      "lucianosb/boto-7B-v1.1-GGUF",
-     "boto-7"
+     "boto"
     ],
     [
      "lucianosb/boto-7B-v1.1-GGUF",
      "lucianosb/boto-7B-v1.2-GGUF",
-     "boto-7"
+     "boto"
     ],
     [
      "lucianosb/boto-9B",
@@ -6362,7 +6382,7 @@
     [
      "lucianosb/canarim-7B-GGUF",
      "lucianosb/canarim-7B-instruct-GGUF",
-     "canarim-7"
+     "canarim"
     ]
    ]
   },
@@ -6395,7 +6415,7 @@
     [
      "neuralmind/bert-base-portuguese-cased",
      "neuralmind/bert-large-portuguese-cased",
-     "bert"
+     "bert-portuguese"
     ]
    ]
   },
@@ -6460,89 +6480,104 @@
      "gpt2"
     ],
     [
+     "nicholasKluge/Aira-2-portuguese-1B7",
+     "nicholasKluge/Aira-2-portuguese-560M",
+     "bloom"
+    ],
+    [
+     "nicholasKluge/Aira-OPT-125M",
+     "nicholasKluge/Aira-OPT-1B3",
+     "opt"
+    ],
+    [
+     "nicholasKluge/Aira-OPT-1B3",
+     "nicholasKluge/Aira-OPT-350M",
+     "opt"
+    ],
+    [
      "nicholasKluge/Harmless-RewardModel",
      "nicholasKluge/ToxiGuardrail",
      "roberta"
     ],
     [
      "nicholasKluge/Harmless-RewardModelPT",
-     "nicholasKluge/RewardModel",
-     "bert"
-    ],
-    [
-     "nicholasKluge/RewardModel",
      "nicholasKluge/RewardModelPT",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "nicholasKluge/RewardModelPT",
      "nicholasKluge/ToxiGuardrailPT",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-160m",
      "nicholasKluge/TeenyTinyLlama-160m-AgNews",
-     "teenytinyllama-160"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-160m-AgNews",
      "nicholasKluge/TeenyTinyLlama-160m-Assin2",
-     "teenytinyllama-160"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-160m-Assin2",
      "nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
-     "teenytinyllama-160"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
      "nicholasKluge/TeenyTinyLlama-160m-HateBR",
-     "teenytinyllama-160"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-160m-HateBR",
      "nicholasKluge/TeenyTinyLlama-160m-IMDB",
-     "teenytinyllama-160"
+     "teenytinyllama"
+    ],
+    [
+     "nicholasKluge/TeenyTinyLlama-160m-IMDB",
+     "nicholasKluge/TeenyTinyLlama-460m",
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m",
      "nicholasKluge/TeenyTinyLlama-460m-AgNews",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-AgNews",
      "nicholasKluge/TeenyTinyLlama-460m-Assin2",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-Assin2",
      "nicholasKluge/TeenyTinyLlama-460m-awq",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-awq",
      "nicholasKluge/TeenyTinyLlama-460m-Chat",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-Chat",
      "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
      "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
      "nicholasKluge/TeenyTinyLlama-460m-HateBR",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-HateBR",
      "nicholasKluge/TeenyTinyLlama-460m-IMDB",
-     "teenytinyllama-460"
+     "teenytinyllama"
     ]
    ]
   },
@@ -6575,27 +6610,27 @@
     [
      "pucpr-br/sbertimbau_news_2018",
      "pucpr-br/sbertimbau_news_2019",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "pucpr-br/sbertimbau_news_2019",
      "pucpr-br/sbertimbau_news_2020",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "pucpr-br/sbertimbau_news_2020",
      "pucpr-br/sbertimbau_news_2021",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "pucpr-br/sbertimbau_news_2021",
      "pucpr-br/sbertimbau_news_2022",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "pucpr-br/sbertimbau_news_2022",
      "pucpr-br/sbertimbau_news_2023",
-     "bert"
+     "bert-portuguese"
     ],
     [
      "pucpr-br/tempclin-biobertpt-all",
@@ -6630,7 +6665,7 @@
     [
      "recogna-nlp/bode-7b-alpaca-pt-br-gguf",
      "recogna-nlp/bode-7b-alpaca-pt-br-no-peft",
-     "bode-7"
+     "bode"
     ]
    ]
   },
@@ -6657,34 +6692,39 @@
    ],
    "arestas": [
     [
-     "rhaymison/bert-squad-portuguese",
-     "rhaymison/ner-portuguese-br-bert-cased",
-     "bert"
-    ],
-    [
      "rhaymison/cuscuz-7b",
      "rhaymison/Mistral-portuguese-luana-7b",
-     "mistral-7"
+     "mistral"
     ],
     [
      "rhaymison/Mistral-portuguese-luana-7b",
      "rhaymison/Mistral-portuguese-luana-7b-chat",
-     "mistral-7"
+     "mistral"
     ],
     [
-     "rhaymison/cuscuz-com-gemma-2b",
-     "rhaymison/gemma-portuguese-tom-cat-2b-it",
-     "gemma-2"
-    ],
-    [
-     "rhaymison/Llama-3-portuguese-Tom-cat-8b-instruct",
-     "rhaymison/Llama3-portuguese-luana-8b-instruct",
-     "meta"
+     "rhaymison/Mistral-portuguese-luana-7b-chat",
+     "rhaymison/Mistral-portuguese-luana-7b-Mathematics",
+     "mistral"
     ],
     [
      "rhaymison/Mistral-portuguese-luana-7b-Mathematics",
      "rhaymison/Mistral-portuguese-luana-7b-mental-health",
      "mistral"
+    ],
+    [
+     "rhaymison/cuscuz-com-gemma-2b",
+     "rhaymison/gemma-portuguese-luana-2b",
+     "gemma"
+    ],
+    [
+     "rhaymison/gemma-portuguese-luana-2b",
+     "rhaymison/gemma-portuguese-tom-cat-2b-it",
+     "gemma"
+    ],
+    [
+     "rhaymison/Llama-3-portuguese-Tom-cat-8b-instruct",
+     "rhaymison/Llama3-portuguese-luana-8b-instruct",
+     "meta"
     ]
    ]
   },
@@ -6701,7 +6741,7 @@
     [
      "semantixai/Lloro",
      "semantixai/LloroV3",
-     "codellama-7"
+     "codellama"
     ]
    ]
   },
@@ -7340,37 +7380,47 @@
     [
      "allenai/BAR-2x7B-Base",
      "allenai/BAR-2x7B-Code",
-     "bar-2"
+     "bar"
     ],
     [
      "allenai/BAR-2x7B-Code",
      "allenai/BAR-2x7B-Code-SFT",
-     "bar-2"
+     "bar"
     ],
     [
      "allenai/BAR-2x7B-Code-SFT",
      "allenai/BAR-2x7B-Math",
-     "bar-2"
+     "bar"
     ],
     [
      "allenai/BAR-2x7B-Math",
      "allenai/BAR-2x7B-Math-SFT",
-     "bar-2"
+     "bar"
     ],
     [
      "allenai/BAR-2x7B-Math-SFT",
      "allenai/BAR-2x7B-Safety",
-     "bar-2"
+     "bar"
     ],
     [
      "allenai/BAR-2x7B-Safety",
      "allenai/BAR-2x7B-Tool-Use",
-     "bar-2"
+     "bar"
+    ],
+    [
+     "allenai/BAR-2x7B-Tool-Use",
+     "allenai/BAR-7B",
+     "bar"
     ],
     [
      "allenai/bidaf",
      "allenai/bidaf-elmo",
      "bidaf"
+    ],
+    [
+     "allenai/Bolmo-1B",
+     "allenai/Bolmo-7B",
+     "bolmo"
     ],
     [
      "allenai/Bolmo-1B-Stage1",
@@ -7551,6 +7601,16 @@
      "allenai/Olmo-3.1-7B-RL-Zero-Code",
      "allenai/Olmo-3.1-7B-RL-Zero-Math",
      "olmo-3"
+    ],
+    [
+     "allenai/codetulu-2-13b",
+     "allenai/codetulu-2-34b",
+     "codellama"
+    ],
+    [
+     "allenai/codetulu-2-34b",
+     "allenai/codetulu-2-7b",
+     "codellama"
     ],
     [
      "allenai/digital-socrates-13b",
@@ -7795,47 +7855,47 @@
     [
      "allenai/MolmoE-1B-0924",
      "allenai/OLMoE-1B-7B-0125",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0125",
      "allenai/OLMoE-1B-7B-0125-DPO",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0125-DPO",
      "allenai/OLMoE-1B-7B-0125-Instruct",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0125-Instruct",
      "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
      "allenai/OLMoE-1B-7B-0125-SFT",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0125-SFT",
      "allenai/OLMoE-1B-7B-0924",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0924",
      "allenai/OLMoE-1B-7B-0924-Instruct",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/OLMoE-1B-7B-0924-Instruct",
      "allenai/OLMoE-1B-7B-0924-SFT",
-     "olmoe-1"
+     "olmoe"
     ],
     [
      "allenai/MolmoMotion-4B-H1-F32",
      "allenai/MolmoMotion-4B-H3-F30",
-     "molmomotion-4"
+     "molmomotion"
     ],
     [
      "allenai/multicite-multilabel-roberta-large",
@@ -7845,87 +7905,97 @@
     [
      "allenai/OLMo-1B",
      "allenai/OLMo-1B-0724-hf",
-     "olmo-1"
+     "olmo"
     ],
     [
      "allenai/OLMo-1B-0724-hf",
      "allenai/OLMo-1B-hf",
-     "olmo-1"
+     "olmo"
+    ],
+    [
+     "allenai/OLMo-1B-hf",
+     "allenai/OLMo-7B",
+     "olmo"
     ],
     [
      "allenai/OLMo-7B",
      "allenai/OLMo-7B-0424",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0424",
      "allenai/OLMo-7B-0424-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0424-hf",
      "allenai/OLMo-7B-0424-Instruct-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0424-Instruct-hf",
      "allenai/OLMo-7B-0424-SFT-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0424-SFT-hf",
      "allenai/OLMo-7B-0724-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0724-hf",
      "allenai/OLMo-7B-0724-Instruct-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0724-Instruct-hf",
      "allenai/OLMo-7B-0724-SFT-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-0724-SFT-hf",
      "allenai/OLMo-7B-1024-preview",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-1024-preview",
      "allenai/OLMo-7B-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-hf",
      "allenai/OLMo-7B-Instruct",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-Instruct",
      "allenai/OLMo-7B-Instruct-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-Instruct-hf",
      "allenai/OLMo-7B-SFT",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-SFT",
      "allenai/OLMo-7B-SFT-hf",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-SFT-hf",
      "allenai/OLMo-7B-Twin-2T",
-     "olmo-7"
+     "olmo"
     ],
     [
      "allenai/OLMo-7B-Twin-2T",
      "allenai/OLMo-7B-Twin-2T-hf",
-     "olmo-7"
+     "olmo"
+    ],
+    [
+     "allenai/OLMo-7B-Twin-2T-hf",
+     "allenai/Olmo-Hybrid-7B",
+     "olmo"
     ],
     [
      "allenai/Olmo-Hybrid-7B",
@@ -8170,27 +8240,27 @@
     [
      "allenai/paloma-1b-baseline-c4",
      "allenai/paloma-1b-baseline-dolma",
-     "paloma-1"
+     "paloma"
     ],
     [
      "allenai/paloma-1b-baseline-dolma",
      "allenai/paloma-1b-baseline-falcon-refinedweb",
-     "paloma-1"
+     "paloma"
     ],
     [
      "allenai/paloma-1b-baseline-falcon-refinedweb",
      "allenai/paloma-1b-baseline-mc4",
-     "paloma-1"
+     "paloma"
     ],
     [
      "allenai/paloma-1b-baseline-mc4",
      "allenai/paloma-1b-baseline-pile",
-     "paloma-1"
+     "paloma"
     ],
     [
      "allenai/paloma-1b-baseline-pile",
      "allenai/paloma-1b-baseline-redpajama",
-     "paloma-1"
+     "paloma"
     ],
     [
      "allenai/scirepeval_ctrl",
@@ -8198,9 +8268,14 @@
      "scirepeval"
     ],
     [
+     "allenai/scitulu-70b",
+     "allenai/scitulu-7b",
+     "scitulu"
+    ],
+    [
      "allenai/SERA-8B",
      "allenai/SERA-8B-GA",
-     "sera-8"
+     "sera"
     ],
     [
      "allenai/specter2_aug2023refresh_base",
@@ -8211,6 +8286,21 @@
      "allenai/truthfulqa-info-judge-llama2-7B",
      "allenai/truthfulqa-truth-judge-llama2-7B",
      "truthfulqa"
+    ],
+    [
+     "allenai/tulu-13b",
+     "allenai/tulu-30b",
+     "tulu"
+    ],
+    [
+     "allenai/tulu-30b",
+     "allenai/tulu-65b",
+     "tulu"
+    ],
+    [
+     "allenai/tulu-65b",
+     "allenai/tulu-7b",
+     "tulu"
     ],
     [
      "allenai/tulu-v2.5-70b-preference-mix-rm",
@@ -8305,7 +8395,7 @@
     [
      "allenai/WildLlama-7b-assistant-only",
      "allenai/WildLlama-7b-user-assistant",
-     "wildllama-7"
+     "wildllama"
     ]
    ]
   },
@@ -8663,11 +8753,6 @@
    ],
    "arestas": [
     [
-     "google/bigbird-base-trivia-itc",
-     "google/bigbird-roberta-large",
-     "bigbird"
-    ],
-    [
      "google/canine-c",
      "google/canine-s",
      "canine"
@@ -8710,67 +8795,72 @@
     [
      "google/codegemma-2b",
      "google/codegemma-2b-GGUF",
-     "codegemma-2"
+     "codegemma"
     ],
     [
      "google/codegemma-2b-GGUF",
      "google/codegemma-2b-keras",
-     "codegemma-2"
+     "codegemma"
     ],
     [
      "google/codegemma-2b-keras",
      "google/codegemma-2b-pytorch",
-     "codegemma-2"
+     "codegemma"
+    ],
+    [
+     "google/codegemma-2b-pytorch",
+     "google/codegemma-7b",
+     "codegemma"
     ],
     [
      "google/codegemma-7b",
      "google/codegemma-7b-GGUF",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-GGUF",
      "google/codegemma-7b-it",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-it",
      "google/codegemma-7b-it-GGUF",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-it-GGUF",
      "google/codegemma-7b-it-keras",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-it-keras",
      "google/codegemma-7b-it-pytorch",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-it-pytorch",
      "google/codegemma-7b-keras",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/codegemma-7b-keras",
      "google/codegemma-7b-pytorch",
-     "codegemma-7"
+     "codegemma"
     ],
     [
      "google/DiarizationLM-8b-Fisher-v1",
      "google/DiarizationLM-8b-Fisher-v2",
-     "diarizationlm-8"
+     "diarizationlm"
     ],
     [
      "google/electra-base-generator",
      "google/electra-large-generator",
-     "electra"
+     "electra-generator"
     ],
     [
      "google/electra-large-generator",
      "google/electra-small-generator",
-     "electra"
+     "electra-generator"
     ],
     [
      "google/flan-t5-base",
@@ -8893,79 +8983,174 @@
      "gemma-2"
     ],
     [
-     "google/gemma-2-instruct-9b-keras",
-     "google/gemma-2b",
-     "gemma-2"
-    ],
-    [
      "google/gemma-2b",
      "google/gemma-2b-aps-it",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-aps-it",
      "google/gemma-2b-AWQ",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-AWQ",
      "google/gemma-2b-cpp",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-cpp",
      "google/gemma-2b-flax",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-flax",
      "google/gemma-2b-it",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it",
      "google/gemma-2b-it-cpp",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-cpp",
      "google/gemma-2b-it-flax",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-flax",
      "google/gemma-2b-it-keras",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-keras",
      "google/gemma-2b-it-pytorch",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-pytorch",
      "google/gemma-2b-it-sfp-cpp",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-sfp-cpp",
      "google/gemma-2b-it-tflite",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-it-tflite",
      "google/gemma-2b-keras",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-keras",
      "google/gemma-2b-pytorch",
-     "gemma-2"
+     "gemma"
     ],
     [
      "google/gemma-2b-pytorch",
      "google/gemma-2b-sfp-cpp",
-     "gemma-2"
+     "gemma"
+    ],
+    [
+     "google/gemma-2b-sfp-cpp",
+     "google/gemma-3n-E2B",
+     "gemma"
+    ],
+    [
+     "google/gemma-3n-E2B",
+     "google/gemma-3n-E2B-it-litert-lm",
+     "gemma"
+    ],
+    [
+     "google/gemma-3n-E2B-it-litert-lm",
+     "google/gemma-3n-E4B-it",
+     "gemma"
+    ],
+    [
+     "google/gemma-3n-E4B-it",
+     "google/gemma-3n-E4B-it-litert-lm",
+     "gemma"
+    ],
+    [
+     "google/gemma-3n-E4B-it-litert-lm",
+     "google/gemma-7b",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b",
+     "google/gemma-7b-aps-it",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-aps-it",
+     "google/gemma-7b-AWQ",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-AWQ",
+     "google/gemma-7b-cpp",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-cpp",
+     "google/gemma-7b-flax",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-flax",
+     "google/gemma-7b-it",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it",
+     "google/gemma-7b-it-cpp",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-cpp",
+     "google/gemma-7b-it-flax",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-flax",
+     "google/gemma-7b-it-keras",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-keras",
+     "google/gemma-7b-it-pytorch",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-pytorch",
+     "google/gemma-7b-it-quant-pytorch",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-quant-pytorch",
+     "google/gemma-7b-it-sfp-cpp",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-it-sfp-cpp",
+     "google/gemma-7b-keras",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-keras",
+     "google/gemma-7b-pytorch",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-pytorch",
+     "google/gemma-7b-quant-pytorch",
+     "gemma"
+    ],
+    [
+     "google/gemma-7b-quant-pytorch",
+     "google/gemma-7b-sfp-cpp",
+     "gemma"
     ],
     [
      "google/gemma-3-1b-it",
@@ -8999,26 +9184,6 @@
     ],
     [
      "google/gemma-3-4b-pt-qat-q4_0-gguf",
-     "google/gemma-3n-E2B",
-     "gemma-3"
-    ],
-    [
-     "google/gemma-3n-E2B",
-     "google/gemma-3n-E2B-it-litert-lm",
-     "gemma-3"
-    ],
-    [
-     "google/gemma-3n-E2B-it-litert-lm",
-     "google/gemma-3n-E4B-it",
-     "gemma-3"
-    ],
-    [
-     "google/gemma-3n-E4B-it",
-     "google/gemma-3n-E4B-it-litert-lm",
-     "gemma-3"
-    ],
-    [
-     "google/gemma-3n-E4B-it-litert-lm",
      "google/shieldgemma-2-4b-it",
      "gemma-3"
     ],
@@ -9128,81 +9293,6 @@
      "gemma-4"
     ],
     [
-     "google/gemma-7b",
-     "google/gemma-7b-aps-it",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-aps-it",
-     "google/gemma-7b-AWQ",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-AWQ",
-     "google/gemma-7b-cpp",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-cpp",
-     "google/gemma-7b-flax",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-flax",
-     "google/gemma-7b-it",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it",
-     "google/gemma-7b-it-cpp",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-cpp",
-     "google/gemma-7b-it-flax",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-flax",
-     "google/gemma-7b-it-keras",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-keras",
-     "google/gemma-7b-it-pytorch",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-pytorch",
-     "google/gemma-7b-it-quant-pytorch",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-quant-pytorch",
-     "google/gemma-7b-it-sfp-cpp",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-it-sfp-cpp",
-     "google/gemma-7b-keras",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-keras",
-     "google/gemma-7b-pytorch",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-pytorch",
-     "google/gemma-7b-quant-pytorch",
-     "gemma-7"
-    ],
-    [
-     "google/gemma-7b-quant-pytorch",
-     "google/gemma-7b-sfp-cpp",
-     "gemma-7"
-    ],
-    [
      "google/long-t5-local-base",
      "google/long-t5-tglobal-large",
      "long"
@@ -9215,602 +9305,602 @@
     [
      "google/paligemma-3b-ft-ai2d-224",
      "google/paligemma-3b-ft-ai2d-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ai2d-224-jax",
      "google/paligemma-3b-ft-ai2d-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ai2d-448",
      "google/paligemma-3b-ft-ai2d-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ai2d-448-jax",
      "google/paligemma-3b-ft-aokvqa-da-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-da-224",
      "google/paligemma-3b-ft-aokvqa-da-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-da-224-jax",
      "google/paligemma-3b-ft-aokvqa-da-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-da-448",
      "google/paligemma-3b-ft-aokvqa-da-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-da-448-jax",
      "google/paligemma-3b-ft-aokvqa-mc-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-mc-224",
      "google/paligemma-3b-ft-aokvqa-mc-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-mc-224-jax",
      "google/paligemma-3b-ft-aokvqa-mc-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-mc-448",
      "google/paligemma-3b-ft-aokvqa-mc-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-aokvqa-mc-448-jax",
      "google/paligemma-3b-ft-coco35l-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-coco35l-224",
      "google/paligemma-3b-ft-coco35l-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-coco35l-224-jax",
      "google/paligemma-3b-ft-coco35l-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-coco35l-448",
      "google/paligemma-3b-ft-coco35l-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-coco35l-448-jax",
      "google/paligemma-3b-ft-cococap-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-cococap-224",
      "google/paligemma-3b-ft-cococap-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-cococap-224-jax",
      "google/paligemma-3b-ft-cococap-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-cococap-448",
      "google/paligemma-3b-ft-cococap-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-cococap-448-jax",
      "google/paligemma-3b-ft-docvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-224",
      "google/paligemma-3b-ft-docvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-224-jax",
      "google/paligemma-3b-ft-docvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-448",
      "google/paligemma-3b-ft-docvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-448-jax",
      "google/paligemma-3b-ft-docvqa-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-896",
      "google/paligemma-3b-ft-docvqa-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-docvqa-896-jax",
      "google/paligemma-3b-ft-gqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-gqa-224",
      "google/paligemma-3b-ft-gqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-gqa-224-jax",
      "google/paligemma-3b-ft-gqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-gqa-448",
      "google/paligemma-3b-ft-gqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-gqa-448-jax",
      "google/paligemma-3b-ft-infovqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-224",
      "google/paligemma-3b-ft-infovqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-224-jax",
      "google/paligemma-3b-ft-infovqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-448",
      "google/paligemma-3b-ft-infovqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-448-jax",
      "google/paligemma-3b-ft-infovqa-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-896",
      "google/paligemma-3b-ft-infovqa-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-infovqa-896-jax",
      "google/paligemma-3b-ft-nlvr2-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-nlvr2-224",
      "google/paligemma-3b-ft-nlvr2-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-nlvr2-224-jax",
      "google/paligemma-3b-ft-nlvr2-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-nlvr2-448",
      "google/paligemma-3b-ft-nlvr2-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-nlvr2-448-jax",
      "google/paligemma-3b-ft-ocrvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-224",
      "google/paligemma-3b-ft-ocrvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-224-jax",
      "google/paligemma-3b-ft-ocrvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-448",
      "google/paligemma-3b-ft-ocrvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-448-jax",
      "google/paligemma-3b-ft-ocrvqa-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-896",
      "google/paligemma-3b-ft-ocrvqa-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-ocrvqa-896-jax",
      "google/paligemma-3b-ft-okvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-okvqa-224",
      "google/paligemma-3b-ft-okvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-okvqa-224-jax",
      "google/paligemma-3b-ft-okvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-okvqa-448",
      "google/paligemma-3b-ft-okvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-okvqa-448-jax",
      "google/paligemma-3b-ft-refcoco-seg-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-224",
      "google/paligemma-3b-ft-refcoco-seg-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-224-jax",
      "google/paligemma-3b-ft-refcoco-seg-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-448",
      "google/paligemma-3b-ft-refcoco-seg-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-448-jax",
      "google/paligemma-3b-ft-refcoco-seg-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-896",
      "google/paligemma-3b-ft-refcoco-seg-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-refcoco-seg-896-jax",
      "google/paligemma-3b-ft-rsvqa-hr-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-hr-224",
      "google/paligemma-3b-ft-rsvqa-hr-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-hr-224-jax",
      "google/paligemma-3b-ft-rsvqa-hr-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-hr-448",
      "google/paligemma-3b-ft-rsvqa-hr-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-hr-448-jax",
      "google/paligemma-3b-ft-rsvqa-lr-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-lr-224",
      "google/paligemma-3b-ft-rsvqa-lr-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-lr-224-jax",
      "google/paligemma-3b-ft-rsvqa-lr-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-lr-448",
      "google/paligemma-3b-ft-rsvqa-lr-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-rsvqa-lr-448-jax",
      "google/paligemma-3b-ft-scicap-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-scicap-224",
      "google/paligemma-3b-ft-scicap-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-scicap-224-jax",
      "google/paligemma-3b-ft-scicap-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-scicap-448",
      "google/paligemma-3b-ft-scicap-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-scicap-448-jax",
      "google/paligemma-3b-ft-science-qa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-science-qa-224",
      "google/paligemma-3b-ft-science-qa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-science-qa-224-jax",
      "google/paligemma-3b-ft-science-qa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-science-qa-448",
      "google/paligemma-3b-ft-science-qa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-science-qa-448-jax",
      "google/paligemma-3b-ft-screen2words-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-screen2words-224",
      "google/paligemma-3b-ft-screen2words-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-screen2words-224-jax",
      "google/paligemma-3b-ft-screen2words-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-screen2words-448",
      "google/paligemma-3b-ft-screen2words-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-screen2words-448-jax",
      "google/paligemma-3b-ft-stvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-224",
      "google/paligemma-3b-ft-stvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-224-jax",
      "google/paligemma-3b-ft-stvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-448",
      "google/paligemma-3b-ft-stvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-448-jax",
      "google/paligemma-3b-ft-stvqa-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-896",
      "google/paligemma-3b-ft-stvqa-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-stvqa-896-jax",
      "google/paligemma-3b-ft-tallyqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-tallyqa-224",
      "google/paligemma-3b-ft-tallyqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-tallyqa-224-jax",
      "google/paligemma-3b-ft-tallyqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-tallyqa-448",
      "google/paligemma-3b-ft-tallyqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-tallyqa-448-jax",
      "google/paligemma-3b-ft-textcaps-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textcaps-224",
      "google/paligemma-3b-ft-textcaps-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textcaps-224-jax",
      "google/paligemma-3b-ft-textcaps-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textcaps-448",
      "google/paligemma-3b-ft-textcaps-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textcaps-448-jax",
      "google/paligemma-3b-ft-textvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-224",
      "google/paligemma-3b-ft-textvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-224-jax",
      "google/paligemma-3b-ft-textvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-448",
      "google/paligemma-3b-ft-textvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-448-jax",
      "google/paligemma-3b-ft-textvqa-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-896",
      "google/paligemma-3b-ft-textvqa-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-textvqa-896-jax",
      "google/paligemma-3b-ft-vizwizvqa-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vizwizvqa-224",
      "google/paligemma-3b-ft-vizwizvqa-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vizwizvqa-224-jax",
      "google/paligemma-3b-ft-vizwizvqa-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vizwizvqa-448",
      "google/paligemma-3b-ft-vizwizvqa-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vizwizvqa-448-jax",
      "google/paligemma-3b-ft-vqav2-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vqav2-224",
      "google/paligemma-3b-ft-vqav2-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vqav2-224-jax",
      "google/paligemma-3b-ft-vqav2-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vqav2-448",
      "google/paligemma-3b-ft-vqav2-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-vqav2-448-jax",
      "google/paligemma-3b-ft-widgetcap-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-widgetcap-224",
      "google/paligemma-3b-ft-widgetcap-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-widgetcap-224-jax",
      "google/paligemma-3b-ft-widgetcap-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-widgetcap-448",
      "google/paligemma-3b-ft-widgetcap-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-ft-widgetcap-448-jax",
      "google/paligemma-3b-mix-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-mix-224",
      "google/paligemma-3b-mix-224-keras",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-mix-224-keras",
      "google/paligemma-3b-mix-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-mix-448",
      "google/paligemma-3b-mix-448-keras",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-mix-448-keras",
      "google/paligemma-3b-pt-224",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-224",
      "google/paligemma-3b-pt-224-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-224-jax",
      "google/paligemma-3b-pt-224-keras",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-224-keras",
      "google/paligemma-3b-pt-448",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-448",
      "google/paligemma-3b-pt-448-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-448-jax",
      "google/paligemma-3b-pt-448-keras",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-448-keras",
      "google/paligemma-3b-pt-896",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-896",
      "google/paligemma-3b-pt-896-jax",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma-3b-pt-896-jax",
      "google/paligemma-3b-pt-896-keras",
-     "paligemma-3"
+     "paligemma"
     ],
     [
      "google/paligemma2-10b-ft-docci-448",
@@ -10000,27 +10090,37 @@
     [
      "google/recurrentgemma-2b",
      "google/recurrentgemma-2b-flax",
-     "recurrentgemma-2"
+     "recurrentgemma"
     ],
     [
      "google/recurrentgemma-2b-flax",
      "google/recurrentgemma-2b-it",
-     "recurrentgemma-2"
+     "recurrentgemma"
     ],
     [
      "google/recurrentgemma-2b-it",
      "google/recurrentgemma-2b-it-flax",
-     "recurrentgemma-2"
+     "recurrentgemma"
+    ],
+    [
+     "google/recurrentgemma-2b-it-flax",
+     "google/recurrentgemma-9b",
+     "recurrentgemma"
     ],
     [
      "google/recurrentgemma-9b",
      "google/recurrentgemma-9b-it",
-     "recurrentgemma-9"
+     "recurrentgemma"
     ],
     [
      "google/reformer-crime-and-punishment",
      "google/reformer-enwik8",
      "reformer"
+    ],
+    [
+     "google/shieldgemma-2b",
+     "google/shieldgemma-9b",
+     "shieldgemma"
     ],
     [
      "google/t5-11b-ssm-nq",
@@ -10049,93 +10149,78 @@
     ],
     [
      "google/tapas-base",
-     "google/tapas-base-finetuned-tabfact",
-     "tapas"
-    ],
-    [
-     "google/tapas-base-finetuned-tabfact",
-     "google/tapas-base-masklm",
-     "tapas"
-    ],
-    [
-     "google/tapas-base-masklm",
      "google/tapas-large",
      "tapas"
     ],
     [
      "google/tapas-large",
-     "google/tapas-large-finetuned-tabfact",
-     "tapas"
-    ],
-    [
-     "google/tapas-large-finetuned-tabfact",
-     "google/tapas-large-masklm",
-     "tapas"
-    ],
-    [
-     "google/tapas-large-masklm",
      "google/tapas-medium",
      "tapas"
     ],
     [
      "google/tapas-medium",
-     "google/tapas-medium-finetuned-tabfact",
-     "tapas"
-    ],
-    [
-     "google/tapas-medium-finetuned-tabfact",
-     "google/tapas-medium-masklm",
-     "tapas"
-    ],
-    [
-     "google/tapas-medium-masklm",
      "google/tapas-mini",
      "tapas"
     ],
     [
      "google/tapas-mini",
-     "google/tapas-mini-finetuned-tabfact",
-     "tapas"
-    ],
-    [
-     "google/tapas-mini-finetuned-tabfact",
-     "google/tapas-mini-masklm",
-     "tapas"
-    ],
-    [
-     "google/tapas-mini-masklm",
      "google/tapas-small",
      "tapas"
     ],
     [
      "google/tapas-small",
-     "google/tapas-small-finetuned-tabfact",
-     "tapas"
-    ],
-    [
-     "google/tapas-small-finetuned-tabfact",
-     "google/tapas-small-masklm",
-     "tapas"
-    ],
-    [
-     "google/tapas-small-masklm",
      "google/tapas-tiny",
      "tapas"
     ],
     [
-     "google/tapas-tiny",
-     "google/tapas-tiny-finetuned-tabfact",
-     "tapas"
+     "google/tapas-base-finetuned-tabfact",
+     "google/tapas-large-finetuned-tabfact",
+     "tapas-finetuned"
     ],
     [
+     "google/tapas-large-finetuned-tabfact",
+     "google/tapas-medium-finetuned-tabfact",
+     "tapas-finetuned"
+    ],
+    [
+     "google/tapas-medium-finetuned-tabfact",
+     "google/tapas-mini-finetuned-tabfact",
+     "tapas-finetuned"
+    ],
+    [
+     "google/tapas-mini-finetuned-tabfact",
+     "google/tapas-small-finetuned-tabfact",
+     "tapas-finetuned"
+    ],
+    [
+     "google/tapas-small-finetuned-tabfact",
      "google/tapas-tiny-finetuned-tabfact",
+     "tapas-finetuned"
+    ],
+    [
+     "google/tapas-base-masklm",
+     "google/tapas-large-masklm",
+     "tapas-masklm"
+    ],
+    [
+     "google/tapas-large-masklm",
+     "google/tapas-medium-masklm",
+     "tapas-masklm"
+    ],
+    [
+     "google/tapas-medium-masklm",
+     "google/tapas-mini-masklm",
+     "tapas-masklm"
+    ],
+    [
+     "google/tapas-mini-masklm",
+     "google/tapas-small-masklm",
+     "tapas-masklm"
+    ],
+    [
+     "google/tapas-small-masklm",
      "google/tapas-tiny-masklm",
-     "tapas"
-    ],
-    [
-     "google/xtr-base-en",
-     "google/xtr-base-multilingual",
-     "xtr"
+     "tapas-masklm"
     ]
    ]
   },
@@ -10303,42 +10388,52 @@
     [
      "HuggingFaceTB/nanowhale-100m",
      "HuggingFaceTB/nanowhale-100m-base",
-     "nanowhale-100"
+     "nanowhale"
     ],
     [
      "HuggingFaceTB/SmolLM-1.7B",
      "HuggingFaceTB/SmolLM-1.7B-Instruct",
-     "smollm-1.7"
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM-1.7B-Instruct",
      "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF",
-     "smollm-1.7"
+     "smollm"
+    ],
+    [
+     "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF",
+     "HuggingFaceTB/SmolLM-135M",
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM-135M",
      "HuggingFaceTB/SmolLM-135M-Instruct",
-     "smollm-135"
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM-135M-Instruct",
      "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
-     "smollm-135"
+     "smollm"
+    ],
+    [
+     "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
+     "HuggingFaceTB/SmolLM-360M",
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM-360M",
      "HuggingFaceTB/SmolLM-360M-Instruct",
-     "smollm-360"
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM-360M-Instruct",
      "HuggingFaceTB/smollm-360M-instruct-add-basics",
-     "smollm-360"
+     "smollm"
     ],
     [
      "HuggingFaceTB/smollm-360M-instruct-add-basics",
      "HuggingFaceTB/smollm-360M-instruct-v0.2-Q8_0-GGUF",
-     "smollm-360"
+     "smollm"
     ],
     [
      "HuggingFaceTB/SmolLM2-1.7B",
@@ -10442,17 +10537,27 @@
     ],
     [
      "HuggingFaceTB/SmolVLM-256M-Base",
-     "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
-     "smolvlm-256"
+     "HuggingFaceTB/SmolVLM-500M-Base",
+     "smolvlm"
     ],
     [
      "HuggingFaceTB/SmolVLM-500M-Base",
-     "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
-     "smolvlm-500"
+     "HuggingFaceTB/SmolVLM2-2.2B-Base",
+     "smolvlm"
     ],
     [
      "HuggingFaceTB/SmolVLM2-2.2B-Base",
      "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+     "smolvlm"
+    ],
+    [
+     "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+     "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+     "smolvlm"
+    ],
+    [
+     "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+     "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
      "smolvlm"
     ],
     [
@@ -10886,232 +10991,62 @@
     [
      "ibm-granite/granite-3b-code-base-128k",
      "ibm-granite/granite-3b-code-base-2k",
-     "granite-3"
+     "granite"
     ],
     [
      "ibm-granite/granite-3b-code-base-2k",
      "ibm-granite/granite-3b-code-base-2k-GGUF",
-     "granite-3"
+     "granite"
     ],
     [
      "ibm-granite/granite-3b-code-base-2k-GGUF",
      "ibm-granite/granite-3b-code-instruct-128k",
-     "granite-3"
+     "granite"
     ],
     [
      "ibm-granite/granite-3b-code-instruct-128k",
      "ibm-granite/granite-3b-code-instruct-2k",
-     "granite-3"
+     "granite"
     ],
     [
-     "ibm-granite/granite-4.0-1b",
-     "ibm-granite/granite-4.0-1b-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-1b-base",
-     "ibm-granite/granite-4.0-1b-speech-GGUF",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-1b-speech-GGUF",
-     "ibm-granite/granite-4.0-350m",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-350m",
-     "ibm-granite/granite-4.0-350m-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-350m-base",
-     "ibm-granite/granite-4.0-3b-vision",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-3b-vision",
-     "ibm-granite/granite-4.0-h-1b",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-1b",
-     "ibm-granite/granite-4.0-h-1b-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-1b-base",
-     "ibm-granite/granite-4.0-h-350m",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-350m",
-     "ibm-granite/granite-4.0-h-350m-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-350m-base",
-     "ibm-granite/granite-4.0-h-micro",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-micro",
-     "ibm-granite/granite-4.0-h-micro-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-micro-base",
-     "ibm-granite/granite-4.0-h-tiny",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-tiny",
-     "ibm-granite/granite-4.0-h-tiny-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-h-tiny-base",
-     "ibm-granite/granite-4.0-micro",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-micro",
-     "ibm-granite/granite-4.0-micro-base",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-micro-base",
-     "ibm-granite/granite-4.0-tiny-base-preview",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-tiny-base-preview",
-     "ibm-granite/granite-4.0-tiny-preview",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.0-tiny-preview",
-     "ibm-granite/granite-guardian-4.0-3b-toxicity-ja",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-guardian-4.0-3b-toxicity-ja",
-     "ibm-granite/granite-speech-4.1-2b-nar",
-     "granite-4.0"
-    ],
-    [
-     "ibm-granite/granite-4.1-3b",
-     "ibm-granite/granite-4.1-3b-base",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-3b-base",
-     "ibm-granite/granite-4.1-3b-fp8",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-3b-fp8",
-     "ibm-granite/granite-4.1-3b-llmon-preview",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-3b-llmon-preview",
-     "ibm-granite/granite-4.1-8b",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-8b",
-     "ibm-granite/granite-4.1-8b-base",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-8b-base",
-     "ibm-granite/granite-4.1-8b-fp8",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-8b-fp8",
-     "ibm-granite/granite-4.1-8b-llmon-preview",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.1-8b-llmon-preview",
-     "ibm-granite/granite-4.2-3b",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b",
-     "ibm-granite/granite-4.2-8b",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.2-8b",
-     "ibm-granite/granite-guardian-4.1-8b",
-     "granite-4.1"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-fp8",
-     "ibm-granite/granite-4.2-3b-mxfp4",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-mxfp4",
-     "ibm-granite/granite-4.2-3b-nvfp4",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-nvfp4",
-     "ibm-granite/granite-4.2-3b-q4-mlx",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-q4-mlx",
-     "ibm-granite/granite-4.2-3b-q8-mlx",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-q8-mlx",
-     "ibm-granite/granite-4.2-8b-fp8",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-8b-fp8",
-     "ibm-granite/granite-4.2-8b-mxfp4",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-8b-mxfp4",
-     "ibm-granite/granite-4.2-8b-nvfp4",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-8b-nvfp4",
-     "ibm-granite/granite-4.2-8b-q4-mlx",
-     "granite-4.2"
+     "ibm-granite/granite-3b-code-instruct-2k",
+     "ibm-granite/granite-7b-base",
+     "granite"
     ],
     [
      "ibm-granite/granite-7b-base",
      "ibm-granite/granite-7b-instruct",
-     "granite-7"
+     "granite"
+    ],
+    [
+     "ibm-granite/granite-7b-instruct",
+     "ibm-granite/granite-8b-code-base-128k",
+     "granite"
     ],
     [
      "ibm-granite/granite-8b-code-base-128k",
      "ibm-granite/granite-8b-code-base-4k",
-     "granite-8"
+     "granite"
     ],
     [
      "ibm-granite/granite-8b-code-base-4k",
      "ibm-granite/granite-8b-code-base-4k-GGUF",
-     "granite-8"
+     "granite"
     ],
     [
      "ibm-granite/granite-8b-code-base-4k-GGUF",
      "ibm-granite/granite-8b-code-instruct-128k",
-     "granite-8"
+     "granite"
     ],
     [
      "ibm-granite/granite-8b-code-instruct-128k",
      "ibm-granite/granite-8b-code-instruct-4k",
-     "granite-8"
+     "granite"
+    ],
+    [
+     "ibm-granite/granite-8b-code-instruct-4k",
+     "ibm-granite/granite-docling-258M",
+     "granite"
     ],
     [
      "ibm-granite/granite-docling-258M",
@@ -11307,6 +11242,191 @@
      "ibm-granite/granite-vision-3.3-2b-GGUF",
      "ibm-granite/granite-vision-4.1-4b",
      "granite"
+    ],
+    [
+     "ibm-granite/granite-4.0-1b",
+     "ibm-granite/granite-4.0-1b-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-1b-base",
+     "ibm-granite/granite-4.0-1b-speech-GGUF",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-1b-speech-GGUF",
+     "ibm-granite/granite-4.0-350m",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-350m",
+     "ibm-granite/granite-4.0-350m-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-350m-base",
+     "ibm-granite/granite-4.0-3b-vision",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-3b-vision",
+     "ibm-granite/granite-4.0-h-1b",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-1b",
+     "ibm-granite/granite-4.0-h-1b-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-1b-base",
+     "ibm-granite/granite-4.0-h-350m",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-350m",
+     "ibm-granite/granite-4.0-h-350m-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-350m-base",
+     "ibm-granite/granite-4.0-h-micro",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-micro",
+     "ibm-granite/granite-4.0-h-micro-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-micro-base",
+     "ibm-granite/granite-4.0-h-tiny",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-tiny",
+     "ibm-granite/granite-4.0-h-tiny-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-h-tiny-base",
+     "ibm-granite/granite-4.0-micro",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-micro",
+     "ibm-granite/granite-4.0-micro-base",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-micro-base",
+     "ibm-granite/granite-4.0-tiny-base-preview",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-tiny-base-preview",
+     "ibm-granite/granite-4.0-tiny-preview",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.0-tiny-preview",
+     "ibm-granite/granite-guardian-4.0-3b-toxicity-ja",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-guardian-4.0-3b-toxicity-ja",
+     "ibm-granite/granite-speech-4.1-2b-nar",
+     "granite-4.0"
+    ],
+    [
+     "ibm-granite/granite-4.1-3b",
+     "ibm-granite/granite-4.1-3b-base",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-3b-base",
+     "ibm-granite/granite-4.1-3b-fp8",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-3b-fp8",
+     "ibm-granite/granite-4.1-3b-llmon-preview",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-3b-llmon-preview",
+     "ibm-granite/granite-4.1-8b",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-8b",
+     "ibm-granite/granite-4.1-8b-base",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-8b-base",
+     "ibm-granite/granite-4.1-8b-fp8",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-8b-fp8",
+     "ibm-granite/granite-4.1-8b-llmon-preview",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.1-8b-llmon-preview",
+     "ibm-granite/granite-4.2-3b",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b",
+     "ibm-granite/granite-4.2-8b",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.2-8b",
+     "ibm-granite/granite-guardian-4.1-8b",
+     "granite-4.1"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b-fp8",
+     "ibm-granite/granite-4.2-3b-mxfp4",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b-mxfp4",
+     "ibm-granite/granite-4.2-3b-nvfp4",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b-nvfp4",
+     "ibm-granite/granite-4.2-3b-q4-mlx",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b-q4-mlx",
+     "ibm-granite/granite-4.2-3b-q8-mlx",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-3b-q8-mlx",
+     "ibm-granite/granite-4.2-8b-fp8",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-8b-fp8",
+     "ibm-granite/granite-4.2-8b-mxfp4",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-8b-mxfp4",
+     "ibm-granite/granite-4.2-8b-nvfp4",
+     "granite-4.2"
+    ],
+    [
+     "ibm-granite/granite-4.2-8b-nvfp4",
+     "ibm-granite/granite-4.2-8b-q4-mlx",
+     "granite-4.2"
     ]
    ]
   },
@@ -12261,12 +12381,12 @@
     [
      "meta-llama/CodeLlama-7b-hf",
      "meta-llama/CodeLlama-7b-Instruct-hf",
-     "codellama-7"
+     "codellama"
     ],
     [
      "meta-llama/CodeLlama-7b-Instruct-hf",
      "meta-llama/CodeLlama-7b-Python-hf",
-     "codellama-7"
+     "codellama"
     ],
     [
      "meta-llama/Llama-2-13b",
@@ -12676,11 +12796,6 @@
      "biogpt"
     ],
     [
-     "microsoft/BioGPT-Large",
-     "microsoft/BioGPT-Large-PubMedQA",
-     "biogpt"
-    ],
-    [
      "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
      "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
      "biomednlp"
@@ -12736,377 +12851,362 @@
      "bloom"
     ],
     [
-     "microsoft/codebert-base",
-     "microsoft/codebert-base-mlm",
-     "codebert"
-    ],
-    [
      "microsoft/CodeGPT-small-java",
      "microsoft/CodeGPT-small-java-adaptedGPT2",
-     "codegpt"
-    ],
-    [
-     "microsoft/CodeGPT-small-java-adaptedGPT2",
-     "microsoft/CodeGPT-small-py",
-     "codegpt"
+     "codegpt-java"
     ],
     [
      "microsoft/CodeGPT-small-py",
      "microsoft/CodeGPT-small-py-adaptedGPT2",
-     "codegpt"
+     "codegpt-py"
     ],
     [
      "microsoft/Dayhoff-170m-GR",
      "microsoft/Dayhoff-170M-GR-1000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GR-1000",
      "microsoft/Dayhoff-170M-GR-16000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GR-16000",
      "microsoft/Dayhoff-170M-GR-31000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GR-31000",
      "microsoft/Dayhoff-170M-GR-46000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GR-46000",
      "microsoft/Dayhoff-170M-GR-61000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GR-61000",
      "microsoft/Dayhoff-170M-GRS-112000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-112000",
      "microsoft/Dayhoff-170M-GRS-2000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-2000",
      "microsoft/Dayhoff-170M-GRS-26000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-26000",
      "microsoft/Dayhoff-170M-GRS-50000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-50000",
      "microsoft/Dayhoff-170M-GRS-76000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-76000",
      "microsoft/Dayhoff-170M-GRS-SS-110000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-110000",
      "microsoft/Dayhoff-170M-GRS-SS-122000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-122000",
      "microsoft/Dayhoff-170M-GRS-SS-134000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-134000",
      "microsoft/Dayhoff-170M-GRS-SS-14000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-14000",
      "microsoft/Dayhoff-170M-GRS-SS-26000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-26000",
      "microsoft/Dayhoff-170M-GRS-SS-38000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-38000",
      "microsoft/Dayhoff-170M-GRS-SS-50000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-50000",
      "microsoft/Dayhoff-170M-GRS-SS-62000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-62000",
      "microsoft/Dayhoff-170M-GRS-SS-74000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-74000",
      "microsoft/Dayhoff-170M-GRS-SS-86000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-86000",
      "microsoft/Dayhoff-170M-GRS-SS-98000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-GRS-SS-98000",
      "microsoft/Dayhoff-170M-UR-90-31000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR-90-31000",
      "microsoft/Dayhoff-170m-UR50",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170m-UR50",
      "microsoft/Dayhoff-170m-UR50-BRn",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170m-UR50-BRn",
      "microsoft/Dayhoff-170m-UR50-BRq",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170m-UR50-BRq",
      "microsoft/Dayhoff-170m-UR50-BRu",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170m-UR50-BRu",
      "microsoft/Dayhoff-170m-UR90",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170m-UR90",
      "microsoft/Dayhoff-170M-UR90-1000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-1000",
      "microsoft/Dayhoff-170M-UR90-16000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-16000",
      "microsoft/Dayhoff-170M-UR90-31000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-31000",
      "microsoft/Dayhoff-170M-UR90-46000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-46000",
      "microsoft/Dayhoff-170M-UR90-61000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-61000",
      "microsoft/Dayhoff-170M-UR90-HL-10000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-10000",
      "microsoft/Dayhoff-170M-UR90-HL-12000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-12000",
      "microsoft/Dayhoff-170M-UR90-HL-14000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-14000",
      "microsoft/Dayhoff-170M-UR90-HL-16000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-16000",
      "microsoft/Dayhoff-170M-UR90-HL-18000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-18000",
      "microsoft/Dayhoff-170M-UR90-HL-2000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-2000",
      "microsoft/Dayhoff-170M-UR90-HL-20000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-20000",
      "microsoft/Dayhoff-170M-UR90-HL-22000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-22000",
      "microsoft/Dayhoff-170M-UR90-HL-24000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-24000",
      "microsoft/Dayhoff-170M-UR90-HL-26000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-26000",
      "microsoft/Dayhoff-170M-UR90-HL-28000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-28000",
      "microsoft/Dayhoff-170M-UR90-HL-30000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-30000",
      "microsoft/Dayhoff-170M-UR90-HL-32000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-32000",
      "microsoft/Dayhoff-170M-UR90-HL-34000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-34000",
      "microsoft/Dayhoff-170M-UR90-HL-36000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-36000",
      "microsoft/Dayhoff-170M-UR90-HL-38000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-38000",
      "microsoft/Dayhoff-170M-UR90-HL-4000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-4000",
      "microsoft/Dayhoff-170M-UR90-HL-40000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-40000",
      "microsoft/Dayhoff-170M-UR90-HL-42000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-42000",
      "microsoft/Dayhoff-170M-UR90-HL-44000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-44000",
      "microsoft/Dayhoff-170M-UR90-HL-46000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-46000",
      "microsoft/Dayhoff-170M-UR90-HL-48000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-48000",
      "microsoft/Dayhoff-170M-UR90-HL-6000",
-     "dayhoff-170"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-170M-UR90-HL-6000",
      "microsoft/Dayhoff-170M-UR90-HL-8000",
-     "dayhoff-170"
+     "dayhoff"
+    ],
+    [
+     "microsoft/Dayhoff-170M-UR90-HL-8000",
+     "microsoft/Dayhoff-3b-GR-HM",
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM",
      "microsoft/Dayhoff-3b-GR-HM-1000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-1000",
      "microsoft/Dayhoff-3b-GR-HM-11000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-11000",
      "microsoft/Dayhoff-3b-GR-HM-21000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-21000",
      "microsoft/Dayhoff-3b-GR-HM-31000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-31000",
      "microsoft/Dayhoff-3b-GR-HM-41000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-41000",
      "microsoft/Dayhoff-3b-GR-HM-c",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-GR-HM-c",
      "microsoft/Dayhoff-3b-UR90",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-UR90",
      "microsoft/Dayhoff-3b-UR90-10",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-UR90-10",
      "microsoft/Dayhoff-3b-UR90-10000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-UR90-10000",
      "microsoft/Dayhoff-3b-UR90-20350",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/Dayhoff-3b-UR90-20350",
      "microsoft/Dayhoff-3b-UR90-30000",
-     "dayhoff-3"
+     "dayhoff"
     ],
     [
      "microsoft/deberta-base",
-     "microsoft/deberta-base-mnli",
-     "deberta"
-    ],
-    [
-     "microsoft/deberta-base-mnli",
      "microsoft/deberta-large",
      "deberta"
     ],
     [
      "microsoft/deberta-large",
-     "microsoft/deberta-large-mnli",
-     "deberta"
-    ],
-    [
-     "microsoft/deberta-large-mnli",
      "microsoft/deberta-v2-xlarge",
      "deberta"
     ],
@@ -13151,9 +13251,14 @@
      "deberta"
     ],
     [
-     "microsoft/deberta-xlarge",
+     "microsoft/deberta-base-mnli",
+     "microsoft/deberta-large-mnli",
+     "deberta-mnli"
+    ],
+    [
+     "microsoft/deberta-large-mnli",
      "microsoft/deberta-xlarge-mnli",
-     "deberta"
+     "deberta-mnli"
     ],
     [
      "microsoft/DialoGPT-large",
@@ -13213,7 +13318,7 @@
     [
      "microsoft/git-base-vatex",
      "microsoft/git-large-vatex",
-     "git"
+     "git-vatex"
     ],
     [
      "microsoft/GUI-Actor-2B-Qwen2-VL",
@@ -13313,7 +13418,7 @@
     [
      "microsoft/markuplm-base-finetuned-websrc",
      "microsoft/markuplm-large-finetuned-websrc",
-     "markuplm"
+     "markuplm-finetuned"
     ],
     [
      "microsoft/MediPhi",
@@ -13363,7 +13468,7 @@
     [
      "microsoft/mistral-7b-instruct-v0.2-ONNX",
      "microsoft/Sentiment-Analysis-7B",
-     "mistral-7"
+     "mistral"
     ],
     [
      "microsoft/Orca-2-13b",
@@ -13483,12 +13588,7 @@
     [
      "microsoft/Phi-mini-MoE-instruct",
      "microsoft/Phi-tiny-MoE-instruct",
-     "phi"
-    ],
-    [
-     "microsoft/prophetnet-large-uncased",
-     "microsoft/prophetnet-large-uncased-squad-qg",
-     "prophetnet"
+     "phi-moe"
     ],
     [
      "microsoft/rho-math-1b-interpreter-v0.1",
@@ -13516,16 +13616,6 @@
      "udop"
     ],
     [
-     "microsoft/unixcoder-base",
-     "microsoft/unixcoder-base-nine",
-     "unixcoder"
-    ],
-    [
-     "microsoft/unixcoder-base-nine",
-     "microsoft/unixcoder-base-unimodal",
-     "unixcoder"
-    ],
-    [
      "microsoft/wavecoder-ds-6.7b",
      "microsoft/wavecoder-pro-6.7b",
      "wavecoder"
@@ -13537,18 +13627,8 @@
     ],
     [
      "microsoft/wavlm-base",
-     "microsoft/wavlm-base-plus",
-     "wavlm"
-    ],
-    [
-     "microsoft/wavlm-base-plus",
      "microsoft/wavlm-large",
      "wavlm"
-    ],
-    [
-     "microsoft/xdoc-base-funsd",
-     "microsoft/xdoc-base-squad1.1",
-     "xdoc"
     ],
     [
      "microsoft/xdoc-base-squad1.1",
@@ -13611,22 +13691,27 @@
     [
      "mistralai/Mistral-7B-Instruct-v0.1",
      "mistralai/Mistral-7B-Instruct-v0.2",
-     "mistral-7"
+     "mistral"
     ],
     [
      "mistralai/Mistral-7B-Instruct-v0.2",
      "mistralai/Mistral-7B-Instruct-v0.3",
-     "mistral-7"
+     "mistral"
     ],
     [
      "mistralai/Mistral-7B-Instruct-v0.3",
      "mistralai/Mistral-7B-v0.1",
-     "mistral-7"
+     "mistral"
     ],
     [
      "mistralai/Mistral-7B-v0.1",
      "mistralai/Mistral-7B-v0.3",
-     "mistral-7"
+     "mistral"
+    ],
+    [
+     "mistralai/Mistral-7B-v0.3",
+     "mistralai/Mistral-Large-4-1T-A52B",
+     "mistral"
     ]
    ]
   },
@@ -13901,14 +13986,34 @@
    ],
    "arestas": [
     [
+     "nvidia/AceInstruct-1.5B",
+     "nvidia/AceInstruct-7B",
+     "aceinstruct"
+    ],
+    [
+     "nvidia/AceMath-1.5B-Instruct",
+     "nvidia/AceMath-7B-Instruct",
+     "acemath"
+    ],
+    [
      "nvidia/AceMath-7B-Instruct",
      "nvidia/AceMath-7B-RM",
-     "acemath-7"
+     "acemath"
+    ],
+    [
+     "nvidia/AceMath-7B-RM",
+     "nvidia/AceMath-RL-Nemotron-7B",
+     "acemath"
     ],
     [
      "nvidia/AceReason-Nemotron-1.1-7B",
      "nvidia/AceReason-Nemotron-7B",
      "acereason"
+    ],
+    [
+     "nvidia/AMPLIFY_120M",
+     "nvidia/AMPLIFY_350M",
+     "amplify"
     ],
     [
      "nvidia/audio-codec-22khz",
@@ -14278,7 +14383,7 @@
     [
      "nvidia/Hymba-1.5B-Base",
      "nvidia/Hymba-1.5B-Instruct",
-     "hymba-1.5"
+     "hymba"
     ],
     [
      "nvidia/Ising-Calibration-1-35B-A3B",
@@ -14401,12 +14506,22 @@
      "minimax"
     ],
     [
+     "nvidia/Minitron-4B-Base",
+     "nvidia/Minitron-8B-Base",
+     "minitron"
+    ],
+    [
      "nvidia/Mistral-NeMo-Minitron-8B-Base",
      "nvidia/Mistral-NeMo-Minitron-8B-Instruct",
      "mistral"
     ],
     [
      "nvidia/Mistral-NeMo-Minitron-8B-Instruct",
+     "nvidia/OpenMath-Mistral-7B-v0.1-hf",
+     "mistral"
+    ],
+    [
+     "nvidia/OpenMath-Mistral-7B-v0.1-hf",
      "nvidia/Riva-Translate-4B-Instruct",
      "mistral"
     ],
@@ -14423,12 +14538,12 @@
     [
      "nvidia/nemo-nano-codec-22khz-0.6kbps-12.5fps",
      "nvidia/nemo-nano-codec-22khz-1.78kbps-12.5fps",
-     "nemo"
+     "nemo-codec"
     ],
     [
      "nvidia/nemo-nano-codec-22khz-1.78kbps-12.5fps",
      "nvidia/nemo-nano-codec-22khz-1.89kbps-21.5fps",
-     "nemo"
+     "nemo-codec"
     ],
     [
      "nvidia/nemocurator-fineweb-mixtral-edu-classifier",
@@ -14741,6 +14856,11 @@
      "nv"
     ],
     [
+     "nvidia/retro-48b-instruct-4k",
+     "nvidia/retro-8b-instruct-4k",
+     "retro"
+    ],
+    [
      "nvidia/SDLLM-AR-1.7B-Base",
      "nvidia/SDLLM-Duo-1.7B-Base",
      "sdllm"
@@ -14779,6 +14899,152 @@
      "nvidia/VILA-HD-8B-PS3-4K-SigLIP",
      "nvidia/VILA-HD-8B-PS3-4K-SigLIP2",
      "vila"
+    ]
+   ]
+  },
+  {
+   "id": "Polygl0t",
+   "nome": "Polyglot",
+   "escopo": "mundo",
+   "modelos": [
+    "Polygl0t/bengali-banglabert-edu-classifier",
+    "Polygl0t/bengali-banglabert-toxicity-classifier",
+    "Polygl0t/GigaKriya-ablation-EDU-1.5B",
+    "Polygl0t/GigaKriya-ablation-NonEDU-1.5B",
+    "Polygl0t/GigaLekh-ablation-EDU-1.5B",
+    "Polygl0t/GigaLekh-ablation-NonEDU-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-EDU-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-EDU-Synth-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-NonEDU-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-Synth-1.5B",
+    "Polygl0t/hindi-roberta-edu-classifier",
+    "Polygl0t/hindi-roberta-toxicity-classifier",
+    "Polygl0t/LilMoo-v0.1",
+    "Polygl0t/LilMoo-v0.2",
+    "Polygl0t/LilTii-v0.1",
+    "Polygl0t/LilTii-v0.2",
+    "Polygl0t/portuguese-bertabaporu-large-toxicity-classifier",
+    "Polygl0t/portuguese-bertimbau-edu-classifier",
+    "Polygl0t/portuguese-bertimbau-large-edu-classifier",
+    "Polygl0t/portuguese-bertimbau-toxicity-classifier",
+    "Polygl0t/portuguese-qwen3-4b-instruct-quality-classifier",
+    "Polygl0t/portuguese-qwen3-4b-instruct-quality-judge",
+    "Polygl0t/Tucano2-0.6B-Base",
+    "Polygl0t/Tucano2-qwen-0.5B-Base",
+    "Polygl0t/Tucano2-qwen-0.5B-Instruct",
+    "Polygl0t/Tucano2-qwen-0.5B-Think",
+    "Polygl0t/Tucano2-qwen-1.5B-Base",
+    "Polygl0t/Tucano2-qwen-1.5B-Instruct",
+    "Polygl0t/Tucano2-qwen-1.5B-Think",
+    "Polygl0t/Tucano2-qwen-3.7B-Base",
+    "Polygl0t/Tucano2-qwen-3.7B-Instruct",
+    "Polygl0t/Tucano2-qwen-3.7B-Think"
+   ],
+   "arestas": [
+    [
+     "Polygl0t/bengali-banglabert-edu-classifier",
+     "Polygl0t/bengali-banglabert-toxicity-classifier",
+     "banglabert"
+    ],
+    [
+     "Polygl0t/GigaKriya-ablation-EDU-1.5B",
+     "Polygl0t/GigaKriya-ablation-NonEDU-1.5B",
+     "gigakriya"
+    ],
+    [
+     "Polygl0t/GigaLekh-ablation-EDU-1.5B",
+     "Polygl0t/GigaLekh-ablation-NonEDU-1.5B",
+     "gigalekh"
+    ],
+    [
+     "Polygl0t/GigaVerbo-v2-ablation-EDU-1.5B",
+     "Polygl0t/GigaVerbo-v2-ablation-EDU-Synth-1.5B",
+     "gigaverbo"
+    ],
+    [
+     "Polygl0t/GigaVerbo-v2-ablation-EDU-Synth-1.5B",
+     "Polygl0t/GigaVerbo-v2-ablation-NonEDU-1.5B",
+     "gigaverbo"
+    ],
+    [
+     "Polygl0t/GigaVerbo-v2-ablation-NonEDU-1.5B",
+     "Polygl0t/GigaVerbo-v2-ablation-Synth-1.5B",
+     "gigaverbo"
+    ],
+    [
+     "Polygl0t/hindi-roberta-edu-classifier",
+     "Polygl0t/hindi-roberta-toxicity-classifier",
+     "hindi"
+    ],
+    [
+     "Polygl0t/LilMoo-v0.1",
+     "Polygl0t/LilMoo-v0.2",
+     "lilmoo"
+    ],
+    [
+     "Polygl0t/LilTii-v0.1",
+     "Polygl0t/LilTii-v0.2",
+     "liltii"
+    ],
+    [
+     "Polygl0t/portuguese-bertimbau-edu-classifier",
+     "Polygl0t/portuguese-bertimbau-large-edu-classifier",
+     "bert-portuguese"
+    ],
+    [
+     "Polygl0t/portuguese-bertimbau-large-edu-classifier",
+     "Polygl0t/portuguese-bertimbau-toxicity-classifier",
+     "bert-portuguese"
+    ],
+    [
+     "Polygl0t/portuguese-qwen3-4b-instruct-quality-classifier",
+     "Polygl0t/portuguese-qwen3-4b-instruct-quality-judge",
+     "qwen3"
+    ],
+    [
+     "Polygl0t/portuguese-qwen3-4b-instruct-quality-judge",
+     "Polygl0t/Tucano2-qwen-0.5B-Base",
+     "qwen3"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-0.5B-Base",
+     "Polygl0t/Tucano2-qwen-1.5B-Base",
+     "qwen3"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-1.5B-Base",
+     "Polygl0t/Tucano2-qwen-3.7B-Base",
+     "qwen3"
+    ],
+    [
+     "Polygl0t/Tucano2-0.6B-Base",
+     "Polygl0t/Tucano2-qwen-0.5B-Instruct",
+     "tucano2"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-0.5B-Instruct",
+     "Polygl0t/Tucano2-qwen-0.5B-Think",
+     "tucano2"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-0.5B-Think",
+     "Polygl0t/Tucano2-qwen-1.5B-Instruct",
+     "tucano2"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-1.5B-Instruct",
+     "Polygl0t/Tucano2-qwen-1.5B-Think",
+     "tucano2"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-1.5B-Think",
+     "Polygl0t/Tucano2-qwen-3.7B-Instruct",
+     "tucano2"
+    ],
+    [
+     "Polygl0t/Tucano2-qwen-3.7B-Instruct",
+     "Polygl0t/Tucano2-qwen-3.7B-Think",
+     "tucano2"
     ]
    ]
   },
@@ -15029,17 +15295,22 @@
     [
      "Qwen/Qwen-7B",
      "Qwen/Qwen-7B-Chat",
-     "qwen-7"
+     "qwen"
     ],
     [
      "Qwen/Qwen-7B-Chat",
      "Qwen/Qwen-7B-Chat-Int4",
-     "qwen-7"
+     "qwen"
     ],
     [
      "Qwen/Qwen-7B-Chat-Int4",
      "Qwen/Qwen-7B-Chat-Int8",
-     "qwen-7"
+     "qwen"
+    ],
+    [
+     "Qwen/Qwen-7B-Chat-Int8",
+     "Qwen/Qwen-Audio",
+     "qwen"
     ],
     [
      "Qwen/Qwen-Audio",
@@ -16000,6 +16271,65 @@
    "arestas": []
   },
   {
+   "id": "TucanoBR",
+   "nome": "Tucano",
+   "escopo": "mundo",
+   "modelos": [
+    "TucanoBR/BERTimbau-base-text-filter",
+    "TucanoBR/BERTimbau-large-text-filter",
+    "TucanoBR/Tucano-160m",
+    "TucanoBR/Tucano-1b1",
+    "TucanoBR/Tucano-1b1-Instruct",
+    "TucanoBR/Tucano-2b4",
+    "TucanoBR/Tucano-2b4-Instruct",
+    "TucanoBR/Tucano-630m",
+    "TucanoBR/ViTucano-1b5-v1",
+    "TucanoBR/ViTucano-2b8-v1"
+   ],
+   "arestas": [
+    [
+     "TucanoBR/BERTimbau-base-text-filter",
+     "TucanoBR/BERTimbau-large-text-filter",
+     "bertimbau-text"
+    ],
+    [
+     "TucanoBR/Tucano-160m",
+     "TucanoBR/Tucano-1b1",
+     "tucano"
+    ],
+    [
+     "TucanoBR/Tucano-1b1",
+     "TucanoBR/Tucano-1b1-Instruct",
+     "tucano"
+    ],
+    [
+     "TucanoBR/Tucano-1b1-Instruct",
+     "TucanoBR/Tucano-2b4",
+     "tucano"
+    ],
+    [
+     "TucanoBR/Tucano-2b4",
+     "TucanoBR/Tucano-2b4-Instruct",
+     "tucano"
+    ],
+    [
+     "TucanoBR/Tucano-2b4-Instruct",
+     "TucanoBR/Tucano-630m",
+     "tucano"
+    ],
+    [
+     "TucanoBR/Tucano-630m",
+     "TucanoBR/ViTucano-1b5-v1",
+     "tucano"
+    ],
+    [
+     "TucanoBR/ViTucano-1b5-v1",
+     "TucanoBR/ViTucano-2b8-v1",
+     "tucano"
+    ]
+   ]
+  },
+  {
    "id": "Xenova",
    "nome": "Joshua",
    "escopo": "mundo",
@@ -16017,12 +16347,7 @@
     [
      "Xenova/bge-base-en-v1.5",
      "Xenova/bge-small-en-v1.5",
-     "bge"
-    ],
-    [
-     "Xenova/bge-small-en-v1.5",
-     "Xenova/bge-small-zh-v1.5",
-     "bge"
+     "bge-en"
     ]
    ]
   }

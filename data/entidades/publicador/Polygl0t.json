@@ -1,0 +1,96 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "Polygl0t",
+  "nome": "Polyglot",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "fora_br",
+  "pais": "DE",
+  "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2603.03543",
+    "acessado": "2026-11-20",
+    "rotulo": "artigo Tucano 2 Cool, agradecimentos",
+    "trecho": "Polyglot is a project supported by Germany's Federal Ministry of Education and Research (BMBF) and North Rhine-Westphalia's Ministry of Culture and Science (MWK) under the TRA Sustainable Futures initiative at the University of Bonn"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Polygl0t",
+    "acessado": "2026-11-20",
+    "rotulo": "perfil no Hugging Face",
+    "trecho": "Polyglot is a project funded by the Federal Ministry of Education and Research (BMBF) and the Ministry of Culture and Science of the State of North Rhine-Westphalia (MWK) as part of TRA Sustainable Futures (University of Bonn)"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "caisa-b-it"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "artigo",
+        "url": "https://arxiv.org/html/2603.03543",
+        "acessado": "2026-11-20",
+        "rotulo": "artigo Tucano 2 Cool, autoria e afiliação",
+        "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+      }
+    },
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "uni-bonn"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "artigo",
+        "url": "https://arxiv.org/html/2603.03543",
+        "acessado": "2026-11-20",
+        "rotulo": "artigo Tucano 2 Cool, agradecimentos",
+        "trecho": "Polyglot is a project supported by Germany's Federal Ministry of Education and Research (BMBF) and North Rhine-Westphalia's Ministry of Culture and Science (MWK) under the TRA Sustainable Futures initiative at the University of Bonn"
+      }
+    }
+  ],
+  "relacionados": [
+    {
+      "publicador": "nicholasKluge",
+      "fonte": {
+        "tipo": "artigo",
+        "url": "https://arxiv.org/html/2603.03543",
+        "acessado": "2026-11-20",
+        "rotulo": "artigo Tucano 2 Cool: líder do projeto",
+        "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+      }
+    },
+    {
+      "publicador": "TucanoBR",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/TucanoBR",
+        "acessado": "2026-11-20",
+        "rotulo": "perfil da organização TucanoBR",
+        "trecho": "version 2 is already out. Go to our new organization"
+      }
+    }
+  ],
+  "links": {
+    "hf": "https://huggingface.co/Polygl0t"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/Polygl0t",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/html/2603.03543",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo Tucano 2 Cool: modelos lançados em huggingface.co/Polygl0t",
+      "trecho": "please refer to the Polyglot project page: huggingface.co/Polygl0t"
+    }
+  ],
+  "status": "ativo"
+}

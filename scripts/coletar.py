@@ -199,10 +199,37 @@ def base_primaria(tags):
     return b[0] if b else None
 
 
-def familia(rid, tags):
+FAM_IGNORAR = {"base", "large", "small", "tiny", "mini", "medium", "micro", "nano", "xs", "xl", "xxl", "xlarge", "xxlarge", "cased", "uncased"}
+FAM_PARAR = {"instruct", "chat", "it", "sft", "dpo", "orpo", "gguf", "onnx", "mlc", "lora", "merged", "quantized", "awq", "gptq", "exl2", "mlx", "fp16", "bf16", "fp32", "int4", "int8"}
+
+
+def _familia_antiga(rid, tags):
     nome = (base_primaria(tags) or rid).split("/")[-1]
     m = re.match(r"[A-Za-z]+(?:[-_]?\d+(?:\.\d+)?)?", nome)
     return (m.group(0) if m else nome).rstrip("-_")
+
+
+def familia(rid, tags):
+    """Familia pelo nome do modelo-base (SPEC.md regra F). Nome mais numero de versao (Qwen2.5, Llama-3.1) formam a familia; tamanho
+    (7B, 460m) e variante (base, large, cased) nao separam familias; depois de uma variante, as palavras seguintes do nome entram (bert-base-portuguese-cased: bert-portuguese)."""
+    nome = (base_primaria(tags) or rid).split("/")[-1]
+    tokens = [t for t in re.split(r"[-_]", nome) if t]
+    if not tokens or not re.fullmatch(r"[A-Za-z]+(\d+(\.\d+)?)?", tokens[0]):
+        return _familia_antiga(rid, tags)
+    if re.fullmatch(r"[A-Za-z]+\d+(\.\d+)?", tokens[0]):   # versao colada ao nome (Qwen2.5, gpt2, LFM3)
+        return tokens[0]
+    if len(tokens) > 1 and re.fullmatch(r"\d+(\.\d+)?", tokens[1]):   # versao separada (Llama-3.1, gemma-2)
+        return tokens[0] + "-" + tokens[1]
+    saida, qual = [tokens[0]], False
+    for t in tokens[1:]:
+        tl = t.lower()
+        if tl in FAM_IGNORAR:
+            qual = True
+        elif qual and len(saida) == 1 and len(t) > 1 and t.isalpha() and tl not in FAM_PARAR:   # uma palavra depois da variante
+            saida.append(t)
+        else:
+            break
+    return "-".join(saida)
 
 
 def e_build_de(nome_modelo, nome_cand):
@@ -909,6 +936,7 @@ def mesclar(exist, regs, remover=()):
 
 def montar(pubs, modelos, descartados):
     const, fams = [], {}
+    marcas = carregar_entidades("familia")   # nome de marca curado (com fonte) para uma familia derivada
     por_pub = collections.defaultdict(list)
     for m in modelos:
         por_pub[m["publicador"]].append(m)
@@ -920,7 +948,7 @@ def montar(pubs, modelos, descartados):
         arestas = [[l[k], l[k + 1], f] for f, l in por_fam.items() for k in range(len(l) - 1)]
         const.append({"id": p["id"], "nome": p["nome"], "escopo": p["escopo"], "modelos": [m["id"] for m in ms], "arestas": arestas})
     for m in modelos:
-        f = fams.setdefault(m["familia"].lower(), {"id": m["familia"].lower(), "nome": m["familia"], "modelos": [], "publicadores": []})
+        f = fams.setdefault(m["familia"].lower(), {"id": m["familia"].lower(), "nome": (marcas.get(m["familia"].lower()) or {}).get("nome") or m["familia"], "modelos": [], "publicadores": []})
         f["modelos"].append(m["id"])
         if m["publicador"] not in f["publicadores"]:
             f["publicadores"].append(m["publicador"])
@@ -1255,6 +1283,7 @@ def montar_relacoes(pubs, modelos):
     mapa = {p["id"]: p for p in pubs}
     for m in modelos:
         m.setdefault("familia_tarefa", familia_tarefa(m.get("tarefa")))
+        m["familia"] = familia(m["id"], ["base_model:" + m["base"]] if m.get("base") else [])   # a regra F vale para todos os modelos, sem consulta
     # arestas (ids com prefixo); so entre entidades que existem
     arestas = {}
     def aresta(de, para, tipo, fonte):
@@ -1317,6 +1346,7 @@ def montar_relacoes(pubs, modelos):
                 cred[c["modelo"].lower()].append(prefixo + eid)
     for m in modelos:
         m["creditos"] = sorted(set(cred.get(m["id"].lower(), ())))
+    n_cred = collections.Counter(c for m in modelos for c in m["creditos"])
     # hierarquia e contagens
     filhos = collections.defaultdict(list)
     for iid, pi in pai.items():
@@ -1339,11 +1369,11 @@ def montar_relacoes(pubs, modelos):
         ps = pubs_da_inst(iid)
         L_inst.append({"id": iid, "nome": i["nome"], "sigla": i.get("sigla"), "pais": i["pais"], "regiao": i.get("regiao"), "tipo": i["tipo"], "parte_de": i.get("parte_de"),
                        "labs": sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower), "publicadores": sorted(ps, key=str.lower),
-                       **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": i["fontes"]})
+                       **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("inst:" + iid, 0), "fontes": i["fontes"]})
     for lid, l in sorted(labs.items(), key=lambda kv: kv[0].lower()):
         ps = {x for x in lab_pubs.get(lid, set()) if x in mapa}
         L_lab.append({"id": lid, "nome": l["nome"], "sigla": l.get("sigla"), "instituicao": l["instituicao"], "pais": (insts.get(l["instituicao"]) or {}).get("pais"), "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
-                      "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
+                      "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("lab:" + lid, 0), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
     folha = lambda pid: {"tipo": "publicador", "id": pid, "n_modelos": len(por_pub.get(pid, [])), "filhos": []}
     def no_inst(iid, visto=()):
         fs = [{"tipo": "laboratorio", "id": l, "pais": (insts.get(labs[l]["instituicao"]) or {}).get("pais"), "filhos": [folha(x) for x in sorted((y for y in lab_pubs.get(l, ()) if y in mapa), key=str.lower)]} for l in sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower)]

@@ -566,6 +566,68 @@ class TestValidadorRelacoes(unittest.TestCase):
         self.assertIn("REF_INEXISTENTE", out)
 
 
+class TestFamilia(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import coletar
+        cls.f = staticmethod(lambda rid, base=None: coletar.familia(rid, ["base_model:" + base] if base else []))
+
+    def test_tamanho_e_variante_nao_separam(self):
+        f = self.f
+        self.assertEqual(f("neuralmind/bert-base-portuguese-cased"), "bert-portuguese")
+        self.assertEqual(f("neuralmind/bert-large-portuguese-cased"), "bert-portuguese")
+        self.assertEqual(f("x/bert-base-uncased"), "bert")
+        self.assertEqual(f("x/bert-base-portuguese-cased-domain-classifier"), "bert-portuguese")
+        self.assertEqual(f("a/TeenyTinyLlama-460m"), f("a/TeenyTinyLlama-160m"))
+        self.assertEqual(f("a/Mistral-7B-Instruct-v0.2"), "Mistral")
+        self.assertEqual(f("a/Tucano-160m"), f("a/Tucano-2b4"))
+        self.assertEqual(f("x/qualquer-nome", "neuralmind/bert-base-portuguese-cased"), "bert-portuguese", "usa o modelo-base")
+
+    def test_geracoes_diferentes_continuam_distintas(self):
+        f = self.f
+        self.assertNotEqual(f("a/Qwen2.5-7B"), f("a/Qwen3-4B"))
+        self.assertNotEqual(f("a/Llama-2-7b"), f("a/Llama-3-8B"))
+        self.assertNotEqual(f("a/Llama-3-8B"), f("a/Llama-3.1-8B"))
+        self.assertNotEqual(f("a/gemma-2b"), f("a/gemma-2-9b"))
+        self.assertNotEqual(f("a/Tucano-160m"), f("a/Tucano2-0.6B"))
+        self.assertEqual((f("a/Qwen2.5-7B"), f("a/Llama-3.1-8B"), f("a/gemma-2-9b")), ("Qwen2.5", "Llama-3.1", "gemma-2"))
+
+    def test_nome_de_marca_so_de_entidade_curada(self):
+        e = json.load(open(os.path.join(REPO, "data", "entidades", "familia", "bert-portuguese.json")))
+        self.assertEqual((e["id"], e["nome"]), ("bert-portuguese", "BERTimbau"))
+        self.assertTrue(all(f.get("trecho") for f in e["fontes"]))
+        fam = {x["id"]: x for x in json.load(open(os.path.join(REPO, "data", "familias.json")))["familias"]}
+        self.assertEqual(fam["bert-portuguese"]["nome"], "BERTimbau")
+        self.assertEqual(fam["bert"]["nome"], "bert", "sem entidade curada, o nome e a chave derivada")
+
+
+class TestCreditoRealVerificado(unittest.TestCase):
+    def test_modelos_pessoais_e_creditados(self):
+        d = json.load(open(os.path.join(REPO, "data", "relacoes.json")))
+        mods = {m["id"]: m for m in json.load(open(os.path.join(REPO, "data", "modelos.json")))["modelos"]}
+        fap = [i for i in d["instituicoes"] if i["id"] == "fapergs"][0]
+        self.assertEqual(fap["n_creditados"], 15)
+        pessoa = [p for p in json.load(open(os.path.join(REPO, "data", "publicadores.json")))["publicadores"] if p["id"] == "nicholasKluge"][0]
+        self.assertEqual(pessoa["labs"], ["caisa-b-it"], "pessoa afiliada ao laboratorio")
+        self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["creditos"], ["inst:fapergs"])
+        self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["publicador"], "nicholasKluge", "o dono continua sendo um so")
+        self.assertEqual(mods["nicholasKluge/Aira-2-124M"]["creditos"], [], "o que o cartao nao sustenta continua pessoal")
+
+
+class TestRelacionadosPessoaGrupo(TestValidadorRelacoes):
+    def test_pessoa_e_grupo_relacionados_mas_pessoa_com_pessoa_nao(self):
+        ev = {k: v for k, v in json.load(open(os.path.join(ENT, "22h.json")))["evidencia_pais"].items() if k != "regra"}
+        grupo = entidade("22h", "grupo-x", relacionados=[{"publicador": "pessoa-x", "fonte": ev}])
+        pessoa = entidade("rhaymison", "pessoa-x")
+        rc, out = self.valida([grupo, pessoa])
+        self.assertEqual(rc, 0, out)
+        p2 = entidade("rhaymison", "pessoa-y", relacionados=[{"publicador": "pessoa-x", "fonte": ev}], natureza="nao_classificada")
+        p2.pop("evidencia_natureza", None)
+        rc, out = self.valida([pessoa, p2])
+        self.assertIn("PESSOA_RELACAO", out)
+
+
 class TestRotulos(unittest.TestCase):
     def test_tipos_de_fonte_tem_rotulo_em_pt_e_en(self):
         app = open(os.path.join(REPO, "web", "app.js"), encoding="utf-8").read()

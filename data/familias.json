@@ -27,19 +27,10 @@
    ]
   },
   {
-   "id": "aceinstruct-1.5",
-   "nome": "AceInstruct-1.5",
+   "id": "aceinstruct",
+   "nome": "AceInstruct",
    "modelos": [
-    "nvidia/AceInstruct-1.5B"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "aceinstruct-7",
-   "nome": "AceInstruct-7",
-   "modelos": [
+    "nvidia/AceInstruct-1.5B",
     "nvidia/AceInstruct-7B"
    ],
    "publicadores": [
@@ -50,28 +41,10 @@
    "id": "acemath",
    "nome": "AceMath",
    "modelos": [
-    "nvidia/AceMath-RL-Nemotron-7B"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "acemath-1.5",
-   "nome": "AceMath-1.5",
-   "modelos": [
-    "nvidia/AceMath-1.5B-Instruct"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "acemath-7",
-   "nome": "AceMath-7",
-   "modelos": [
+    "nvidia/AceMath-1.5B-Instruct",
     "nvidia/AceMath-7B-Instruct",
-    "nvidia/AceMath-7B-RM"
+    "nvidia/AceMath-7B-RM",
+    "nvidia/AceMath-RL-Nemotron-7B"
    ],
    "publicadores": [
     "nvidia"
@@ -147,8 +120,8 @@
    ]
   },
   {
-   "id": "albertina-100",
-   "nome": "albertina-100",
+   "id": "albertina",
+   "nome": "albertina",
    "modelos": [
     "carolina-c4ai/albertina-100m-ptbr-domain-classifier"
    ],
@@ -218,19 +191,10 @@
    ]
   },
   {
-   "id": "amplify_120",
-   "nome": "AMPLIFY_120",
+   "id": "amplify",
+   "nome": "AMPLIFY",
    "modelos": [
-    "nvidia/AMPLIFY_120M"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "amplify_350",
-   "nome": "AMPLIFY_350",
-   "modelos": [
+    "nvidia/AMPLIFY_120M",
     "nvidia/AMPLIFY_350M"
    ],
    "publicadores": [
@@ -320,8 +284,8 @@
    ]
   },
   {
-   "id": "astabrief_8",
-   "nome": "AstaBrief_8",
+   "id": "astabrief",
+   "nome": "AstaBrief",
    "modelos": [
     "allenai/AstaBrief_8B"
    ],
@@ -341,8 +305,19 @@
    ]
   },
   {
-   "id": "bar-2",
-   "nome": "BAR-2",
+   "id": "banglabert",
+   "nome": "banglabert",
+   "modelos": [
+    "Polygl0t/bengali-banglabert-edu-classifier",
+    "Polygl0t/bengali-banglabert-toxicity-classifier"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "bar",
+   "nome": "BAR",
    "modelos": [
     "allenai/BAR-2x7B-Base",
     "allenai/BAR-2x7B-Code",
@@ -350,16 +325,7 @@
     "allenai/BAR-2x7B-Math",
     "allenai/BAR-2x7B-Math-SFT",
     "allenai/BAR-2x7B-Safety",
-    "allenai/BAR-2x7B-Tool-Use"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "bar-7",
-   "nome": "BAR-7",
-   "modelos": [
+    "allenai/BAR-2x7B-Tool-Use",
     "allenai/BAR-7B"
    ],
    "publicadores": [
@@ -367,8 +333,8 @@
    ]
   },
   {
-   "id": "bee-350",
-   "nome": "bee-350",
+   "id": "bee",
+   "nome": "bee",
    "modelos": [
     "guicybercode/bee-350m-pt-base-GGUF"
    ],
@@ -380,17 +346,40 @@
    "id": "bert",
    "nome": "bert",
    "modelos": [
-    "adalbertojunior/bert-base-portuguese-cased-8192",
-    "carolina-c4ai/bert-base-portuguese-cased-domain-classifier",
-    "carolina-c4ai/bert-large-portuguese-cased-domain-classifier",
-    "cnmoro/bert-base-portuguese-cased-safetensors",
     "cnmoro/bert-hash-femto-mlm",
     "cnmoro/bert-tiny-embeddings-english-portuguese",
-    "cnmoro/bert-tiny-question-classifier",
     "cnmoro/BertMini-Reranker-EnPt",
     "cnmoro/BertTiny-Reranker-EnPt",
     "cnmoro/inference-free-splade-bert-tiny-en-ptbr",
     "dominguesm/bert-restore-punctuation-ptbr",
+    "nicholasKluge/RewardModel",
+    "rhaymison/ner-portuguese-br-bert-cased"
+   ],
+   "publicadores": [
+    "cnmoro",
+    "dominguesm",
+    "nicholasKluge",
+    "rhaymison"
+   ]
+  },
+  {
+   "id": "bert-multilingual",
+   "nome": "bert-multilingual",
+   "modelos": [
+    "Venturus/mBERT-AnonyMED-BR-syn"
+   ],
+   "publicadores": [
+    "Venturus"
+   ]
+  },
+  {
+   "id": "bert-portuguese",
+   "nome": "BERTimbau",
+   "modelos": [
+    "adalbertojunior/bert-base-portuguese-cased-8192",
+    "carolina-c4ai/bert-base-portuguese-cased-domain-classifier",
+    "carolina-c4ai/bert-large-portuguese-cased-domain-classifier",
+    "cnmoro/bert-base-portuguese-cased-safetensors",
     "g-assismoraes/bbau-semeval25_fold1",
     "g-assismoraes/bbau-semeval25_fold2",
     "g-assismoraes/bbau-semeval25_fold3",
@@ -406,7 +395,6 @@
     "neuralmind/bert-base-portuguese-cased",
     "neuralmind/bert-large-portuguese-cased",
     "nicholasKluge/Harmless-RewardModelPT",
-    "nicholasKluge/RewardModel",
     "nicholasKluge/RewardModelPT",
     "nicholasKluge/ToxiGuardrailPT",
     "pucpr-br/sbertimbau_news_2018",
@@ -416,21 +404,52 @@
     "pucpr-br/sbertimbau_news_2022",
     "pucpr-br/sbertimbau_news_2023",
     "rhaymison/bert-squad-portuguese",
-    "rhaymison/ner-portuguese-br-bert-cased",
-    "Venturus/mBERT-AnonyMED-BR-syn"
+    "Polygl0t/portuguese-bertimbau-edu-classifier",
+    "Polygl0t/portuguese-bertimbau-large-edu-classifier",
+    "Polygl0t/portuguese-bertimbau-toxicity-classifier"
    ],
    "publicadores": [
     "adalbertojunior",
     "carolina-c4ai",
     "cnmoro",
-    "dominguesm",
     "g-assismoraes",
     "H2IA",
     "neuralmind",
     "nicholasKluge",
     "pucpr-br",
     "rhaymison",
-    "Venturus"
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "bert-question",
+   "nome": "bert-question",
+   "modelos": [
+    "cnmoro/bert-tiny-question-classifier"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "bertabaporu",
+   "nome": "bertabaporu",
+   "modelos": [
+    "Polygl0t/portuguese-bertabaporu-large-toxicity-classifier"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "bertimbau-text",
+   "nome": "BERTimbau-text",
+   "modelos": [
+    "TucanoBR/BERTimbau-base-text-filter",
+    "TucanoBR/BERTimbau-large-text-filter"
+   ],
+   "publicadores": [
+    "TucanoBR"
    ]
   },
   {
@@ -438,13 +457,30 @@
    "nome": "bge",
    "modelos": [
     "cnmoro/portuguese-bge-m3",
-    "cnmoro/portuguese-en-bge-m3",
+    "cnmoro/portuguese-en-bge-m3"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "bge-en",
+   "nome": "bge-en",
+   "modelos": [
     "Xenova/bge-base-en-v1.5",
-    "Xenova/bge-small-en-v1.5",
+    "Xenova/bge-small-en-v1.5"
+   ],
+   "publicadores": [
+    "Xenova"
+   ]
+  },
+  {
+   "id": "bge-zh",
+   "nome": "bge-zh",
+   "modelos": [
     "Xenova/bge-small-zh-v1.5"
    ],
    "publicadores": [
-    "cnmoro",
     "Xenova"
    ]
   },
@@ -473,8 +509,17 @@
    "id": "bigbird",
    "nome": "bigbird",
    "modelos": [
-    "google/bigbird-base-trivia-itc",
     "google/bigbird-roberta-large"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "bigbird-trivia",
+   "nome": "bigbird-trivia",
+   "modelos": [
+    "google/bigbird-base-trivia-itc"
    ],
    "publicadores": [
     "google"
@@ -495,7 +540,16 @@
    "nome": "biogpt",
    "modelos": [
     "microsoft/biogpt",
-    "microsoft/BioGPT-Large",
+    "microsoft/BioGPT-Large"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "biogpt-pubmedqa",
+   "nome": "BioGPT-PubMedQA",
+   "modelos": [
     "microsoft/BioGPT-Large-PubMedQA"
    ],
    "publicadores": [
@@ -556,46 +610,21 @@
    "id": "bloom",
    "nome": "bloom",
    "modelos": [
+    "joaoalvarenga/bloom-8bit",
+    "nicholasKluge/Aira-2-portuguese-1B7",
+    "nicholasKluge/Aira-2-portuguese-560M",
     "microsoft/bloom-deepspeed-inference-fp16",
     "microsoft/bloom-deepspeed-inference-int8"
    ],
    "publicadores": [
+    "joaoalvarenga",
+    "nicholasKluge",
     "microsoft"
    ]
   },
   {
-   "id": "bloom-1",
-   "nome": "bloom-1",
-   "modelos": [
-    "nicholasKluge/Aira-2-portuguese-1B7"
-   ],
-   "publicadores": [
-    "nicholasKluge"
-   ]
-  },
-  {
-   "id": "bloom-560",
-   "nome": "bloom-560",
-   "modelos": [
-    "nicholasKluge/Aira-2-portuguese-560M"
-   ],
-   "publicadores": [
-    "nicholasKluge"
-   ]
-  },
-  {
-   "id": "bloom-8",
-   "nome": "bloom-8",
-   "modelos": [
-    "joaoalvarenga/bloom-8bit"
-   ],
-   "publicadores": [
-    "joaoalvarenga"
-   ]
-  },
-  {
-   "id": "bode-7",
-   "nome": "bode-7",
+   "id": "bode",
+   "nome": "bode",
    "modelos": [
     "recogna-nlp/bode-7b-alpaca-pt-br-gguf",
     "recogna-nlp/bode-7b-alpaca-pt-br-no-peft"
@@ -605,19 +634,10 @@
    ]
   },
   {
-   "id": "bolmo-1",
-   "nome": "Bolmo-1",
+   "id": "bolmo",
+   "nome": "Bolmo",
    "modelos": [
-    "allenai/Bolmo-1B"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "bolmo-7",
-   "nome": "Bolmo-7",
-   "modelos": [
+    "allenai/Bolmo-1B",
     "allenai/Bolmo-7B"
    ],
    "publicadores": [
@@ -625,8 +645,8 @@
    ]
   },
   {
-   "id": "boto-7",
-   "nome": "boto-7",
+   "id": "boto",
+   "nome": "boto",
    "modelos": [
     "lucianosb/boto-7B-GGUF",
     "lucianosb/boto-7B-v1.1-GGUF",
@@ -648,8 +668,8 @@
    ]
   },
   {
-   "id": "bwen-8",
-   "nome": "Bwen-8",
+   "id": "bwen",
+   "nome": "Bwen",
    "modelos": [
     "allenai/Bwen-8B"
    ],
@@ -670,8 +690,8 @@
    ]
   },
   {
-   "id": "cabrita_7",
-   "nome": "cabrita_7",
+   "id": "cabrita",
+   "nome": "cabrita",
    "modelos": [
     "22h/cabrita_7b_pt_850000"
    ],
@@ -683,20 +703,11 @@
    "id": "canarim",
    "nome": "canarim",
    "modelos": [
-    "dominguesm/canarim-bert-nheengatu",
-    "dominguesm/canarim-bert-postag-nheengatu"
-   ],
-   "publicadores": [
-    "dominguesm"
-   ]
-  },
-  {
-   "id": "canarim-7",
-   "nome": "canarim-7",
-   "modelos": [
     "dominguesm/canarim-7b",
     "dominguesm/Canarim-7B-Instruct",
     "dominguesm/canarim-7b-vestibulaide",
+    "dominguesm/canarim-bert-nheengatu",
+    "dominguesm/canarim-bert-postag-nheengatu",
     "lucianosb/canarim-7B-GGUF",
     "lucianosb/canarim-7B-instruct-GGUF"
    ],
@@ -753,7 +764,16 @@
    "id": "codebert",
    "nome": "codebert",
    "modelos": [
-    "microsoft/codebert-base",
+    "microsoft/codebert-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "codebert-mlm",
+   "nome": "codebert-mlm",
+   "modelos": [
     "microsoft/codebert-base-mlm"
    ],
    "publicadores": [
@@ -768,6 +788,27 @@
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "codegemma",
+   "nome": "codegemma",
+   "modelos": [
+    "google/codegemma-2b",
+    "google/codegemma-2b-GGUF",
+    "google/codegemma-2b-keras",
+    "google/codegemma-2b-pytorch",
+    "google/codegemma-7b",
+    "google/codegemma-7b-GGUF",
+    "google/codegemma-7b-it",
+    "google/codegemma-7b-it-GGUF",
+    "google/codegemma-7b-it-keras",
+    "google/codegemma-7b-it-pytorch",
+    "google/codegemma-7b-keras",
+    "google/codegemma-7b-pytorch"
+   ],
+   "publicadores": [
+    "google"
    ]
   },
   {
@@ -788,41 +829,20 @@
    ]
   },
   {
-   "id": "codegemma-2",
-   "nome": "codegemma-2",
-   "modelos": [
-    "google/codegemma-2b",
-    "google/codegemma-2b-GGUF",
-    "google/codegemma-2b-keras",
-    "google/codegemma-2b-pytorch"
-   ],
-   "publicadores": [
-    "google"
-   ]
-  },
-  {
-   "id": "codegemma-7",
-   "nome": "codegemma-7",
-   "modelos": [
-    "google/codegemma-7b",
-    "google/codegemma-7b-GGUF",
-    "google/codegemma-7b-it",
-    "google/codegemma-7b-it-GGUF",
-    "google/codegemma-7b-it-keras",
-    "google/codegemma-7b-it-pytorch",
-    "google/codegemma-7b-keras",
-    "google/codegemma-7b-pytorch"
-   ],
-   "publicadores": [
-    "google"
-   ]
-  },
-  {
-   "id": "codegpt",
-   "nome": "CodeGPT",
+   "id": "codegpt-java",
+   "nome": "CodeGPT-java",
    "modelos": [
     "microsoft/CodeGPT-small-java",
-    "microsoft/CodeGPT-small-java-adaptedGPT2",
+    "microsoft/CodeGPT-small-java-adaptedGPT2"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "codegpt-py",
+   "nome": "CodeGPT-py",
+   "modelos": [
     "microsoft/CodeGPT-small-py",
     "microsoft/CodeGPT-small-py-adaptedGPT2"
    ],
@@ -831,31 +851,13 @@
    ]
   },
   {
-   "id": "codellama-13",
-   "nome": "CodeLlama-13",
-   "modelos": [
-    "allenai/codetulu-2-13b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "codellama-34",
-   "nome": "CodeLlama-34",
-   "modelos": [
-    "allenai/codetulu-2-34b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "codellama-7",
-   "nome": "CodeLlama-7",
+   "id": "codellama",
+   "nome": "CodeLlama",
    "modelos": [
     "semantixai/Lloro",
     "semantixai/LloroV3",
+    "allenai/codetulu-2-13b",
+    "allenai/codetulu-2-34b",
     "allenai/codetulu-2-7b",
     "meta-llama/CodeLlama-7b-hf",
     "meta-llama/CodeLlama-7b-Instruct-hf",
@@ -884,8 +886,8 @@
    ]
   },
   {
-   "id": "coder-0.5",
-   "nome": "CODER-0.5",
+   "id": "coder",
+   "nome": "CODER",
    "modelos": [
     "Guilherme34/CODER-0.5b_awq"
    ],
@@ -904,8 +906,8 @@
    ]
   },
   {
-   "id": "cosmo-1",
-   "nome": "cosmo-1",
+   "id": "cosmo",
+   "nome": "cosmo",
    "modelos": [
     "HuggingFaceTB/cosmo-1b"
    ],
@@ -952,8 +954,8 @@
    ]
   },
   {
-   "id": "dayhoff-170",
-   "nome": "Dayhoff-170",
+   "id": "dayhoff",
+   "nome": "Dayhoff",
    "modelos": [
     "microsoft/Dayhoff-170m-GR",
     "microsoft/Dayhoff-170M-GR-1000",
@@ -1011,16 +1013,7 @@
     "microsoft/Dayhoff-170M-UR90-HL-46000",
     "microsoft/Dayhoff-170M-UR90-HL-48000",
     "microsoft/Dayhoff-170M-UR90-HL-6000",
-    "microsoft/Dayhoff-170M-UR90-HL-8000"
-   ],
-   "publicadores": [
-    "microsoft"
-   ]
-  },
-  {
-   "id": "dayhoff-3",
-   "nome": "Dayhoff-3",
-   "modelos": [
+    "microsoft/Dayhoff-170M-UR90-HL-8000",
     "microsoft/Dayhoff-3b-GR-HM",
     "microsoft/Dayhoff-3b-GR-HM-1000",
     "microsoft/Dayhoff-3b-GR-HM-11000",
@@ -1091,9 +1084,7 @@
     "g-assismoraes/mdeberta-domain_EN_fold4",
     "g-assismoraes/mdeberta-domain_EN_fold5",
     "microsoft/deberta-base",
-    "microsoft/deberta-base-mnli",
     "microsoft/deberta-large",
-    "microsoft/deberta-large-mnli",
     "microsoft/deberta-v2-xlarge",
     "microsoft/deberta-v2-xlarge-mnli",
     "microsoft/deberta-v2-xxlarge",
@@ -1102,11 +1093,22 @@
     "microsoft/deberta-v3-large",
     "microsoft/deberta-v3-small",
     "microsoft/deberta-v3-xsmall",
-    "microsoft/deberta-xlarge",
-    "microsoft/deberta-xlarge-mnli"
+    "microsoft/deberta-xlarge"
    ],
    "publicadores": [
     "g-assismoraes",
+    "microsoft"
+   ]
+  },
+  {
+   "id": "deberta-mnli",
+   "nome": "deberta-mnli",
+   "modelos": [
+    "microsoft/deberta-base-mnli",
+    "microsoft/deberta-large-mnli",
+    "microsoft/deberta-xlarge-mnli"
+   ],
+   "publicadores": [
     "microsoft"
    ]
   },
@@ -1146,8 +1148,8 @@
    ]
   },
   {
-   "id": "dense_1",
-   "nome": "Dense_1",
+   "id": "dense",
+   "nome": "Dense",
    "modelos": [
     "allenai/Dense_1b_130B"
    ],
@@ -1182,8 +1184,8 @@
    ]
   },
   {
-   "id": "diarizationlm-8",
-   "nome": "DiarizationLM-8",
+   "id": "diarizationlm",
+   "nome": "DiarizationLM",
    "modelos": [
     "google/DiarizationLM-8b-Fisher-v1",
     "google/DiarizationLM-8b-Fisher-v2"
@@ -1330,8 +1332,8 @@
    ]
   },
   {
-   "id": "electra",
-   "nome": "electra",
+   "id": "electra-generator",
+   "nome": "electra-generator",
    "modelos": [
     "google/electra-base-generator",
     "google/electra-large-generator",
@@ -1342,20 +1344,20 @@
    ]
   },
   {
-   "id": "embeddinggemma-2",
-   "nome": "embeddinggemma-2",
+   "id": "embeddinggemma",
+   "nome": "embeddinggemma",
    "modelos": [
-    "google/embeddinggemma-2"
+    "google/embeddinggemma-300m"
    ],
    "publicadores": [
     "google"
    ]
   },
   {
-   "id": "embeddinggemma-300",
-   "nome": "embeddinggemma-300",
+   "id": "embeddinggemma-2",
+   "nome": "embeddinggemma-2",
    "modelos": [
-    "google/embeddinggemma-300m"
+    "google/embeddinggemma-2"
    ],
    "publicadores": [
     "google"
@@ -1419,8 +1421,8 @@
    ]
   },
   {
-   "id": "fara-7",
-   "nome": "Fara-7",
+   "id": "fara",
+   "nome": "Fara",
    "modelos": [
     "microsoft/Fara-7B"
    ],
@@ -1498,8 +1500,8 @@
    ]
   },
   {
-   "id": "functiongemma-270",
-   "nome": "functiongemma-270",
+   "id": "functiongemma",
+   "nome": "functiongemma",
    "modelos": [
     "Guilherme34/functiongemma-mobileactions",
     "google/functiongemma-270m-it"
@@ -1510,8 +1512,8 @@
    ]
   },
   {
-   "id": "gembode-2",
-   "nome": "gembode-2",
+   "id": "gembode",
+   "nome": "gembode",
    "modelos": [
     "recogna-nlp/gembode-2b-it-ultraalpaca"
    ],
@@ -1523,25 +1525,56 @@
    "id": "gemma",
    "nome": "gemma",
    "modelos": [
-    "rhaymison/gemma-portuguese-luana-2b"
-   ],
-   "publicadores": [
-    "rhaymison"
-   ]
-  },
-  {
-   "id": "gemma-1",
-   "nome": "gemma-1",
-   "modelos": [
     "g-assismoraes/gemma-1b-pt-events-merged",
     "g-assismoraes/gemma-1b-pt-events-merged-25epochs",
     "g-assismoraes/gemma-1b-pt-events-merged-50epochs",
     "g-assismoraes/gemma-1b-pt-pulpo-merged",
     "g-assismoraes/gemma-1b-pt-simpler-merged",
-    "g-assismoraes/gemma-1b-pt-ufam-merged"
+    "g-assismoraes/gemma-1b-pt-ufam-merged",
+    "g-assismoraes/gemma-4b-pt-events-merged",
+    "rhaymison/cuscuz-com-gemma-2b",
+    "rhaymison/gemma-portuguese-luana-2b",
+    "rhaymison/gemma-portuguese-tom-cat-2b-it",
+    "google/gemma-2b",
+    "google/gemma-2b-aps-it",
+    "google/gemma-2b-AWQ",
+    "google/gemma-2b-cpp",
+    "google/gemma-2b-flax",
+    "google/gemma-2b-it",
+    "google/gemma-2b-it-cpp",
+    "google/gemma-2b-it-flax",
+    "google/gemma-2b-it-keras",
+    "google/gemma-2b-it-pytorch",
+    "google/gemma-2b-it-sfp-cpp",
+    "google/gemma-2b-it-tflite",
+    "google/gemma-2b-keras",
+    "google/gemma-2b-pytorch",
+    "google/gemma-2b-sfp-cpp",
+    "google/gemma-3n-E2B",
+    "google/gemma-3n-E2B-it-litert-lm",
+    "google/gemma-3n-E4B-it",
+    "google/gemma-3n-E4B-it-litert-lm",
+    "google/gemma-7b",
+    "google/gemma-7b-aps-it",
+    "google/gemma-7b-AWQ",
+    "google/gemma-7b-cpp",
+    "google/gemma-7b-flax",
+    "google/gemma-7b-it",
+    "google/gemma-7b-it-cpp",
+    "google/gemma-7b-it-flax",
+    "google/gemma-7b-it-keras",
+    "google/gemma-7b-it-pytorch",
+    "google/gemma-7b-it-quant-pytorch",
+    "google/gemma-7b-it-sfp-cpp",
+    "google/gemma-7b-keras",
+    "google/gemma-7b-pytorch",
+    "google/gemma-7b-quant-pytorch",
+    "google/gemma-7b-sfp-cpp"
    ],
    "publicadores": [
-    "g-assismoraes"
+    "g-assismoraes",
+    "rhaymison",
+    "google"
    ]
   },
   {
@@ -1566,8 +1599,6 @@
    "modelos": [
     "lucianosb/boto-9B",
     "lucianosb/boto-9B-it",
-    "rhaymison/cuscuz-com-gemma-2b",
-    "rhaymison/gemma-portuguese-tom-cat-2b-it",
     "google/gemma-2-27b-it-pytorch",
     "google/gemma-2-27b-pytorch",
     "google/gemma-2-2b",
@@ -1582,26 +1613,10 @@
     "google/gemma-2-9b-it-pytorch",
     "google/gemma-2-9b-keras",
     "google/gemma-2-9b-pytorch",
-    "google/gemma-2-instruct-9b-keras",
-    "google/gemma-2b",
-    "google/gemma-2b-aps-it",
-    "google/gemma-2b-AWQ",
-    "google/gemma-2b-cpp",
-    "google/gemma-2b-flax",
-    "google/gemma-2b-it",
-    "google/gemma-2b-it-cpp",
-    "google/gemma-2b-it-flax",
-    "google/gemma-2b-it-keras",
-    "google/gemma-2b-it-pytorch",
-    "google/gemma-2b-it-sfp-cpp",
-    "google/gemma-2b-it-tflite",
-    "google/gemma-2b-keras",
-    "google/gemma-2b-pytorch",
-    "google/gemma-2b-sfp-cpp"
+    "google/gemma-2-instruct-9b-keras"
    ],
    "publicadores": [
     "lucianosb",
-    "rhaymison",
     "google"
    ]
   },
@@ -1692,10 +1707,6 @@
     "google/gemma-3-4b-it",
     "google/gemma-3-4b-it-qat-q4_0-gguf",
     "google/gemma-3-4b-pt-qat-q4_0-gguf",
-    "google/gemma-3n-E2B",
-    "google/gemma-3n-E2B-it-litert-lm",
-    "google/gemma-3n-E4B-it",
-    "google/gemma-3n-E4B-it-litert-lm",
     "google/shieldgemma-2-4b-it",
     "mlboydaisuke/gemma-3-270m-it-NPU-LiteRT",
     "nvidia/Nemotron-3-Content-Safety",
@@ -1718,7 +1729,6 @@
    "id": "gemma-4",
    "nome": "gemma-4",
    "modelos": [
-    "g-assismoraes/gemma-4b-pt-events-merged",
     "Guilherme34/Firefly-v4",
     "Guilherme34/Firefly-v4-Beta-2",
     "Guilherme34/Firefly-v5-sft-DONTDOWNLOAD-almostfinished",
@@ -1749,36 +1759,10 @@
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16"
    ],
    "publicadores": [
-    "g-assismoraes",
     "Guilherme34",
     "google",
     "mlboydaisuke",
     "nvidia"
-   ]
-  },
-  {
-   "id": "gemma-7",
-   "nome": "gemma-7",
-   "modelos": [
-    "google/gemma-7b",
-    "google/gemma-7b-aps-it",
-    "google/gemma-7b-AWQ",
-    "google/gemma-7b-cpp",
-    "google/gemma-7b-flax",
-    "google/gemma-7b-it",
-    "google/gemma-7b-it-cpp",
-    "google/gemma-7b-it-flax",
-    "google/gemma-7b-it-keras",
-    "google/gemma-7b-it-pytorch",
-    "google/gemma-7b-it-quant-pytorch",
-    "google/gemma-7b-it-sfp-cpp",
-    "google/gemma-7b-keras",
-    "google/gemma-7b-pytorch",
-    "google/gemma-7b-quant-pytorch",
-    "google/gemma-7b-sfp-cpp"
-   ],
-   "publicadores": [
-    "google"
    ]
   },
   {
@@ -1818,8 +1802,8 @@
    ]
   },
   {
-   "id": "genstruct-7",
-   "nome": "Genstruct-7",
+   "id": "genstruct",
+   "nome": "Genstruct",
    "modelos": [
     "artificialguybr/GenStructDolphin-7B-Slerp"
    ],
@@ -1828,8 +1812,43 @@
    ]
   },
   {
-   "id": "git",
-   "nome": "git",
+   "id": "gigakriya",
+   "nome": "GigaKriya",
+   "modelos": [
+    "Polygl0t/GigaKriya-ablation-EDU-1.5B",
+    "Polygl0t/GigaKriya-ablation-NonEDU-1.5B"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "gigalekh",
+   "nome": "GigaLekh",
+   "modelos": [
+    "Polygl0t/GigaLekh-ablation-EDU-1.5B",
+    "Polygl0t/GigaLekh-ablation-NonEDU-1.5B"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "gigaverbo",
+   "nome": "GigaVerbo",
+   "modelos": [
+    "Polygl0t/GigaVerbo-v2-ablation-EDU-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-EDU-Synth-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-NonEDU-1.5B",
+    "Polygl0t/GigaVerbo-v2-ablation-Synth-1.5B"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "git-vatex",
+   "nome": "git-vatex",
    "modelos": [
     "microsoft/git-base-vatex",
     "microsoft/git-large-vatex"
@@ -1924,6 +1943,18 @@
     "cnmoro/granite-30m-distilled",
     "cnmoro/granite-question-classifier",
     "cnmoro/prompt-router",
+    "ibm-granite/granite-3b-code-base-128k",
+    "ibm-granite/granite-3b-code-base-2k",
+    "ibm-granite/granite-3b-code-base-2k-GGUF",
+    "ibm-granite/granite-3b-code-instruct-128k",
+    "ibm-granite/granite-3b-code-instruct-2k",
+    "ibm-granite/granite-7b-base",
+    "ibm-granite/granite-7b-instruct",
+    "ibm-granite/granite-8b-code-base-128k",
+    "ibm-granite/granite-8b-code-base-4k",
+    "ibm-granite/granite-8b-code-base-4k-GGUF",
+    "ibm-granite/granite-8b-code-instruct-128k",
+    "ibm-granite/granite-8b-code-instruct-4k",
     "ibm-granite/granite-docling-258M",
     "ibm-granite/granite-docling-258M-GGUF",
     "ibm-granite/granite-docling-258M-mlx",
@@ -1967,20 +1998,6 @@
    ],
    "publicadores": [
     "cnmoro",
-    "ibm-granite"
-   ]
-  },
-  {
-   "id": "granite-3",
-   "nome": "granite-3",
-   "modelos": [
-    "ibm-granite/granite-3b-code-base-128k",
-    "ibm-granite/granite-3b-code-base-2k",
-    "ibm-granite/granite-3b-code-base-2k-GGUF",
-    "ibm-granite/granite-3b-code-instruct-128k",
-    "ibm-granite/granite-3b-code-instruct-2k"
-   ],
-   "publicadores": [
     "ibm-granite"
    ]
   },
@@ -2120,31 +2137,6 @@
     "ibm-granite/granite-4.2-8b-mxfp4",
     "ibm-granite/granite-4.2-8b-nvfp4",
     "ibm-granite/granite-4.2-8b-q4-mlx"
-   ],
-   "publicadores": [
-    "ibm-granite"
-   ]
-  },
-  {
-   "id": "granite-7",
-   "nome": "granite-7",
-   "modelos": [
-    "ibm-granite/granite-7b-base",
-    "ibm-granite/granite-7b-instruct"
-   ],
-   "publicadores": [
-    "ibm-granite"
-   ]
-  },
-  {
-   "id": "granite-8",
-   "nome": "granite-8",
-   "modelos": [
-    "ibm-granite/granite-8b-code-base-128k",
-    "ibm-granite/granite-8b-code-base-4k",
-    "ibm-granite/granite-8b-code-base-4k-GGUF",
-    "ibm-granite/granite-8b-code-instruct-128k",
-    "ibm-granite/granite-8b-code-instruct-4k"
    ],
    "publicadores": [
     "ibm-granite"
@@ -2342,6 +2334,17 @@
    ]
   },
   {
+   "id": "hindi",
+   "nome": "hindi",
+   "modelos": [
+    "Polygl0t/hindi-roberta-edu-classifier",
+    "Polygl0t/hindi-roberta-toxicity-classifier"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
    "id": "hvila",
    "nome": "hvila",
    "modelos": [
@@ -2355,8 +2358,8 @@
    ]
   },
   {
-   "id": "hymba-1.5",
-   "nome": "Hymba-1.5",
+   "id": "hymba",
+   "nome": "Hymba",
    "modelos": [
     "nvidia/Hymba-1.5B-Base",
     "nvidia/Hymba-1.5B-Instruct"
@@ -2431,8 +2434,8 @@
    ]
   },
   {
-   "id": "internlmbode-7",
-   "nome": "internlmbode-7",
+   "id": "internlmbode",
+   "nome": "internlmbode",
    "modelos": [
     "recogna-nlp/internlmbode-7b"
    ],
@@ -2468,18 +2471,9 @@
    "id": "jennifer",
    "nome": "Jennifer",
    "modelos": [
+    "Guilherme34/Jennifer-7bv2",
     "Guilherme34/Jennifer-uwu-modelnotlora",
     "Guilherme34/Jennifer-v4-model"
-   ],
-   "publicadores": [
-    "Guilherme34"
-   ]
-  },
-  {
-   "id": "jennifer-7",
-   "nome": "Jennifer-7",
-   "modelos": [
-    "Guilherme34/Jennifer-7bv2"
    ],
    "publicadores": [
     "Guilherme34"
@@ -2496,8 +2490,8 @@
    ]
   },
   {
-   "id": "jeva-9",
-   "nome": "Jeva-9",
+   "id": "jeva",
+   "nome": "Jeva",
    "modelos": [
     "Guilherme34/Jeva-9b-gguf"
    ],
@@ -2812,6 +2806,28 @@
    ]
   },
   {
+   "id": "lilmoo",
+   "nome": "LilMoo",
+   "modelos": [
+    "Polygl0t/LilMoo-v0.1",
+    "Polygl0t/LilMoo-v0.2"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "liltii",
+   "nome": "LilTii",
+   "modelos": [
+    "Polygl0t/LilTii-v0.1",
+    "Polygl0t/LilTii-v0.2"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
    "id": "liquid",
    "nome": "Liquid",
    "modelos": [
@@ -2823,8 +2839,9 @@
   },
   {
    "id": "llama",
-   "nome": "Llama",
+   "nome": "llama",
    "modelos": [
+    "adalbertojunior/llama-1b-edu-10b-neftune",
     "meta-llama/Llama-Guard-3-11B-Vision",
     "meta-llama/Llama-Guard-3-1B",
     "meta-llama/Llama-Guard-3-1B-INT4",
@@ -2841,18 +2858,9 @@
     "nvidia/llama-nemotron-rerank-vl-1b-v2-fp8"
    ],
    "publicadores": [
+    "adalbertojunior",
     "meta-llama",
     "nvidia"
-   ]
-  },
-  {
-   "id": "llama-1",
-   "nome": "llama-1",
-   "modelos": [
-    "adalbertojunior/llama-1b-edu-10b-neftune"
-   ],
-   "publicadores": [
-    "adalbertojunior"
    ]
   },
   {
@@ -2928,6 +2936,8 @@
    "nome": "Llama-3.1",
    "modelos": [
     "ai-eldorado/LlamaEld-3.1-8B-Instruct",
+    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
+    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
     "Guilherme34/ArliAI-RPMax-Formax-v1",
     "recogna-nlp/Bode-3.1-8B-Instruct-full",
     "allenai/Llama-3.1-70B-Instruct-RM-RB2",
@@ -2976,6 +2986,7 @@
    ],
    "publicadores": [
     "ai-eldorado",
+    "c2d-usp",
     "Guilherme34",
     "recogna-nlp",
     "allenai",
@@ -3142,19 +3153,8 @@
    ]
   },
   {
-   "id": "llama_3.1",
-   "nome": "llama_3.1",
-   "modelos": [
-    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
-    "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full"
-   ],
-   "publicadores": [
-    "c2d-usp"
-   ]
-  },
-  {
-   "id": "llamaguard-7",
-   "nome": "LlamaGuard-7",
+   "id": "llamaguard",
+   "nome": "LlamaGuard",
    "modelos": [
     "meta-llama/LlamaGuard-7b"
    ],
@@ -3297,8 +3297,8 @@
    ]
   },
   {
-   "id": "mambarim-110",
-   "nome": "mambarim-110",
+   "id": "mambarim",
+   "nome": "mambarim",
    "modelos": [
     "dominguesm/mambarim-110m"
    ],
@@ -3307,8 +3307,8 @@
    ]
   },
   {
-   "id": "manaca-1",
-   "nome": "manaca-1",
+   "id": "manaca",
+   "nome": "manaca",
    "modelos": [
     "AIInstituteLNCC/manaca-1b-base",
     "AIInstituteLNCC/manaca-1b-instruct",
@@ -3319,8 +3319,8 @@
    ]
   },
   {
-   "id": "markuplm",
-   "nome": "markuplm",
+   "id": "markuplm-finetuned",
+   "nome": "markuplm-finetuned",
    "modelos": [
     "microsoft/markuplm-base-finetuned-websrc",
     "microsoft/markuplm-large-finetuned-websrc"
@@ -3330,8 +3330,8 @@
    ]
   },
   {
-   "id": "mathstral-7",
-   "nome": "Mathstral-7",
+   "id": "mathstral",
+   "nome": "Mathstral",
    "modelos": [
     "mistralai/Mathstral-7B-v0.1"
    ],
@@ -3392,20 +3392,20 @@
    ]
   },
   {
-   "id": "medgemma-1.5",
-   "nome": "medgemma-1.5",
+   "id": "medgemma",
+   "nome": "medgemma",
    "modelos": [
-    "google/medgemma-1.5-4b-it"
+    "google/medgemma-4b-it"
    ],
    "publicadores": [
     "google"
    ]
   },
   {
-   "id": "medgemma-4",
-   "nome": "medgemma-4",
+   "id": "medgemma-1.5",
+   "nome": "medgemma-1.5",
    "modelos": [
-    "google/medgemma-4b-it"
+    "google/medgemma-1.5-4b-it"
    ],
    "publicadores": [
     "google"
@@ -3497,6 +3497,16 @@
    ]
   },
   {
+   "id": "ministral",
+   "nome": "Ministral",
+   "modelos": [
+    "mistralai/Ministral-8B-Instruct-2410"
+   ],
+   "publicadores": [
+    "mistralai"
+   ]
+  },
+  {
    "id": "ministral-3",
    "nome": "Ministral-3",
    "modelos": [
@@ -3515,29 +3525,10 @@
    ]
   },
   {
-   "id": "ministral-8",
-   "nome": "Ministral-8",
+   "id": "minitron",
+   "nome": "Minitron",
    "modelos": [
-    "mistralai/Ministral-8B-Instruct-2410"
-   ],
-   "publicadores": [
-    "mistralai"
-   ]
-  },
-  {
-   "id": "minitron-4",
-   "nome": "Minitron-4",
-   "modelos": [
-    "nvidia/Minitron-4B-Base"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "minitron-8",
-   "nome": "Minitron-8",
-   "modelos": [
+    "nvidia/Minitron-4B-Base",
     "nvidia/Minitron-8B-Base"
    ],
    "publicadores": [
@@ -3546,26 +3537,7 @@
   },
   {
    "id": "mistral",
-   "nome": "Mistral",
-   "modelos": [
-    "rhaymison/Mistral-portuguese-luana-7b-Mathematics",
-    "rhaymison/Mistral-portuguese-luana-7b-mental-health",
-    "mistralai/Mistral-Large-4-1T-A52B",
-    "nvidia/Mistral-NeMo-Minitron-8B-Base",
-    "nvidia/Mistral-NeMo-Minitron-8B-Instruct",
-    "nvidia/Riva-Translate-4B-Instruct",
-    "nvidia/Riva-Translate-4B-Instruct-v1.1",
-    "nvidia/Riva-Translate-4B-Instruct-v2"
-   ],
-   "publicadores": [
-    "rhaymison",
-    "mistralai",
-    "nvidia"
-   ]
-  },
-  {
-   "id": "mistral-7",
-   "nome": "mistral-7",
+   "nome": "mistral",
    "modelos": [
     "adalbertojunior/Mistral-7b-Portuguese-V0.1",
     "artificialguybr/OpenHermesV2-PTBR",
@@ -3578,6 +3550,8 @@
     "rhaymison/cuscuz-7b",
     "rhaymison/Mistral-portuguese-luana-7b",
     "rhaymison/Mistral-portuguese-luana-7b-chat",
+    "rhaymison/Mistral-portuguese-luana-7b-Mathematics",
+    "rhaymison/Mistral-portuguese-luana-7b-mental-health",
     "microsoft/mistral-7b-instruct-v0.2-ONNX",
     "microsoft/Sentiment-Analysis-7B",
     "mistralai/Mistral-7B-Instruct-v0.1",
@@ -3585,7 +3559,13 @@
     "mistralai/Mistral-7B-Instruct-v0.3",
     "mistralai/Mistral-7B-v0.1",
     "mistralai/Mistral-7B-v0.3",
-    "nvidia/OpenMath-Mistral-7B-v0.1-hf"
+    "mistralai/Mistral-Large-4-1T-A52B",
+    "nvidia/Mistral-NeMo-Minitron-8B-Base",
+    "nvidia/Mistral-NeMo-Minitron-8B-Instruct",
+    "nvidia/OpenMath-Mistral-7B-v0.1-hf",
+    "nvidia/Riva-Translate-4B-Instruct",
+    "nvidia/Riva-Translate-4B-Instruct-v1.1",
+    "nvidia/Riva-Translate-4B-Instruct-v2"
    ],
    "publicadores": [
     "adalbertojunior",
@@ -3650,8 +3630,8 @@
    ]
   },
   {
-   "id": "molmomotion-4",
-   "nome": "MolmoMotion-4",
+   "id": "molmomotion",
+   "nome": "MolmoMotion",
    "modelos": [
     "allenai/MolmoMotion-4B-H1-F32",
     "allenai/MolmoMotion-4B-H3-F30"
@@ -3661,8 +3641,8 @@
    ]
   },
   {
-   "id": "molmopoint-8",
-   "nome": "MolmoPoint-8",
+   "id": "molmopoint",
+   "nome": "MolmoPoint",
    "modelos": [
     "allenai/MolmoPoint-GUI-8B"
    ],
@@ -3799,8 +3779,8 @@
    ]
   },
   {
-   "id": "nanowhale-100",
-   "nome": "nanowhale-100",
+   "id": "nanowhale",
+   "nome": "nanowhale",
    "modelos": [
     "HuggingFaceTB/nanowhale-100m",
     "HuggingFaceTB/nanowhale-100m-base"
@@ -3820,8 +3800,8 @@
    ]
   },
   {
-   "id": "nbr-1",
-   "nome": "NBR-1",
+   "id": "nbr",
+   "nome": "NBR",
    "modelos": [
     "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
     "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit"
@@ -3831,8 +3811,8 @@
    ]
   },
   {
-   "id": "nemo",
-   "nome": "nemo",
+   "id": "nemo-codec",
+   "nome": "nemo-codec",
    "modelos": [
     "nvidia/nemo-nano-codec-22khz-0.6kbps-12.5fps",
     "nvidia/nemo-nano-codec-22khz-1.78kbps-12.5fps",
@@ -4036,25 +4016,32 @@
   },
   {
    "id": "olmo",
-   "nome": "Olmo",
+   "nome": "OLMo",
    "modelos": [
+    "allenai/OLMo-1B",
+    "allenai/OLMo-1B-0724-hf",
+    "allenai/OLMo-1B-hf",
+    "allenai/OLMo-7B",
+    "allenai/OLMo-7B-0424",
+    "allenai/OLMo-7B-0424-hf",
+    "allenai/OLMo-7B-0424-Instruct-hf",
+    "allenai/OLMo-7B-0424-SFT-hf",
+    "allenai/OLMo-7B-0724-hf",
+    "allenai/OLMo-7B-0724-Instruct-hf",
+    "allenai/OLMo-7B-0724-SFT-hf",
+    "allenai/OLMo-7B-1024-preview",
+    "allenai/OLMo-7B-hf",
+    "allenai/OLMo-7B-Instruct",
+    "allenai/OLMo-7B-Instruct-hf",
+    "allenai/OLMo-7B-SFT",
+    "allenai/OLMo-7B-SFT-hf",
+    "allenai/OLMo-7B-Twin-2T",
+    "allenai/OLMo-7B-Twin-2T-hf",
     "allenai/Olmo-Hybrid-7B",
     "allenai/Olmo-Hybrid-Instruct-DPO-7B",
     "allenai/Olmo-Hybrid-Instruct-SFT-7B",
     "allenai/Olmo-Hybrid-Think-SFT-7B",
     "allenai/OLMo-Ladder-760M-0.5xC"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "olmo-1",
-   "nome": "OLMo-1",
-   "modelos": [
-    "allenai/OLMo-1B",
-    "allenai/OLMo-1B-0724-hf",
-    "allenai/OLMo-1B-hf"
    ],
    "publicadores": [
     "allenai"
@@ -4117,33 +4104,8 @@
    ]
   },
   {
-   "id": "olmo-7",
-   "nome": "OLMo-7",
-   "modelos": [
-    "allenai/OLMo-7B",
-    "allenai/OLMo-7B-0424",
-    "allenai/OLMo-7B-0424-hf",
-    "allenai/OLMo-7B-0424-Instruct-hf",
-    "allenai/OLMo-7B-0424-SFT-hf",
-    "allenai/OLMo-7B-0724-hf",
-    "allenai/OLMo-7B-0724-Instruct-hf",
-    "allenai/OLMo-7B-0724-SFT-hf",
-    "allenai/OLMo-7B-1024-preview",
-    "allenai/OLMo-7B-hf",
-    "allenai/OLMo-7B-Instruct",
-    "allenai/OLMo-7B-Instruct-hf",
-    "allenai/OLMo-7B-SFT",
-    "allenai/OLMo-7B-SFT-hf",
-    "allenai/OLMo-7B-Twin-2T",
-    "allenai/OLMo-7B-Twin-2T-hf"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "olmocr-7",
-   "nome": "olmOCR-7",
+   "id": "olmocr",
+   "nome": "olmOCR",
    "modelos": [
     "allenai/olmOCR-7B-0225-preview-GGUF"
    ],
@@ -4152,8 +4114,8 @@
    ]
   },
   {
-   "id": "olmoe-1",
-   "nome": "OLMoE-1",
+   "id": "olmoe",
+   "nome": "OLMoE",
    "modelos": [
     "allenai/MolmoE-1B-0924",
     "allenai/OLMoE-1B-7B-0125",
@@ -4245,29 +4207,11 @@
    ]
   },
   {
-   "id": "opt-1.3",
-   "nome": "opt-1.3",
+   "id": "opt",
+   "nome": "opt",
    "modelos": [
-    "nicholasKluge/Aira-OPT-1B3"
-   ],
-   "publicadores": [
-    "nicholasKluge"
-   ]
-  },
-  {
-   "id": "opt-125",
-   "nome": "opt-125",
-   "modelos": [
-    "nicholasKluge/Aira-OPT-125M"
-   ],
-   "publicadores": [
-    "nicholasKluge"
-   ]
-  },
-  {
-   "id": "opt-350",
-   "nome": "opt-350",
-   "modelos": [
+    "nicholasKluge/Aira-OPT-125M",
+    "nicholasKluge/Aira-OPT-1B3",
     "nicholasKluge/Aira-OPT-350M"
    ],
    "publicadores": [
@@ -4296,8 +4240,8 @@
    ]
   },
   {
-   "id": "paligemma-3",
-   "nome": "paligemma-3",
+   "id": "paligemma",
+   "nome": "paligemma",
    "modelos": [
     "google/paligemma-3b-ft-ai2d-224",
     "google/paligemma-3b-ft-ai2d-224-jax",
@@ -4473,8 +4417,8 @@
    ]
   },
   {
-   "id": "paloma-1",
-   "nome": "paloma-1",
+   "id": "paloma",
+   "nome": "paloma",
    "modelos": [
     "allenai/paloma-1b-baseline-c4",
     "allenai/paloma-1b-baseline-dolma",
@@ -4501,13 +4445,10 @@
    "id": "phi",
    "nome": "phi",
    "modelos": [
-    "recogna-nlp/phi-bode-2-ultraalpaca",
-    "microsoft/Phi-mini-MoE-instruct",
-    "microsoft/Phi-tiny-MoE-instruct"
+    "recogna-nlp/phi-bode-2-ultraalpaca"
    ],
    "publicadores": [
-    "recogna-nlp",
-    "microsoft"
+    "recogna-nlp"
    ]
   },
   {
@@ -4596,20 +4537,31 @@
    ]
   },
   {
-   "id": "phibode-3",
-   "nome": "phibode-3",
+   "id": "phi-moe",
+   "nome": "Phi-MoE",
    "modelos": [
-    "recogna-nlp/phibode-3-mini-4k-ultraalpaca"
+    "microsoft/Phi-mini-MoE-instruct",
+    "microsoft/Phi-tiny-MoE-instruct"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "phibode-1",
+   "nome": "phibode-1",
+   "modelos": [
+    "recogna-nlp/phibode_1_5_ultraalpaca"
    ],
    "publicadores": [
     "recogna-nlp"
    ]
   },
   {
-   "id": "phibode_1",
-   "nome": "phibode_1",
+   "id": "phibode-3",
+   "nome": "phibode-3",
    "modelos": [
-    "recogna-nlp/phibode_1_5_ultraalpaca"
+    "recogna-nlp/phibode-3-mini-4k-ultraalpaca"
    ],
    "publicadores": [
     "recogna-nlp"
@@ -4689,7 +4641,16 @@
    "id": "prophetnet",
    "nome": "prophetnet",
    "modelos": [
-    "microsoft/prophetnet-large-uncased",
+    "microsoft/prophetnet-large-uncased"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "prophetnet-squad",
+   "nome": "prophetnet-squad",
+   "modelos": [
     "microsoft/prophetnet-large-uncased-squad-qg"
    ],
    "publicadores": [
@@ -4697,8 +4658,8 @@
    ]
   },
   {
-   "id": "psychologist-3",
-   "nome": "Psychologist-3",
+   "id": "psychologist",
+   "nome": "Psychologist",
    "modelos": [
     "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
     "Guilherme34/Psychologist-GGUF-3b-Q8_0"
@@ -4766,6 +4727,10 @@
    "id": "qwen",
    "nome": "Qwen",
    "modelos": [
+    "Qwen/Qwen-7B",
+    "Qwen/Qwen-7B-Chat",
+    "Qwen/Qwen-7B-Chat-Int4",
+    "Qwen/Qwen-7B-Chat-Int8",
     "Qwen/Qwen-Audio",
     "Qwen/Qwen-Audio-Chat",
     "Qwen/Qwen-Image-2.1-PE-I2I",
@@ -4798,19 +4763,6 @@
    ],
    "publicadores": [
     "Guilherme34"
-   ]
-  },
-  {
-   "id": "qwen-7",
-   "nome": "Qwen-7",
-   "modelos": [
-    "Qwen/Qwen-7B",
-    "Qwen/Qwen-7B-Chat",
-    "Qwen/Qwen-7B-Chat-Int4",
-    "Qwen/Qwen-7B-Chat-Int8"
-   ],
-   "publicadores": [
-    "Qwen"
    ]
   },
   {
@@ -5348,6 +5300,11 @@
     "nvidia/Qwen3-Nemotron-8B-BRRM",
     "nvidia/Qwen3-Next-80B-A3B-Instruct-NVFP4",
     "nvidia/Qwen3-Next-80B-A3B-Thinking-NVFP4",
+    "Polygl0t/portuguese-qwen3-4b-instruct-quality-classifier",
+    "Polygl0t/portuguese-qwen3-4b-instruct-quality-judge",
+    "Polygl0t/Tucano2-qwen-0.5B-Base",
+    "Polygl0t/Tucano2-qwen-1.5B-Base",
+    "Polygl0t/Tucano2-qwen-3.7B-Base",
     "Qwen/Qwen3-0.6B",
     "Qwen/Qwen3-0.6B-Base",
     "Qwen/Qwen3-0.6B-FP8",
@@ -5430,6 +5387,7 @@
     "microsoft",
     "mlboydaisuke",
     "nvidia",
+    "Polygl0t",
     "Qwen"
    ]
   },
@@ -5502,8 +5460,8 @@
    ]
   },
   {
-   "id": "reasoner-8",
-   "nome": "Reasoner-8",
+   "id": "reasoner",
+   "nome": "Reasoner",
    "modelos": [
     "Guilherme34/Reasoner-8B"
    ],
@@ -5534,22 +5492,13 @@
    ]
   },
   {
-   "id": "recurrentgemma-2",
-   "nome": "recurrentgemma-2",
+   "id": "recurrentgemma",
+   "nome": "recurrentgemma",
    "modelos": [
     "google/recurrentgemma-2b",
     "google/recurrentgemma-2b-flax",
     "google/recurrentgemma-2b-it",
-    "google/recurrentgemma-2b-it-flax"
-   ],
-   "publicadores": [
-    "google"
-   ]
-  },
-  {
-   "id": "recurrentgemma-9",
-   "nome": "recurrentgemma-9",
-   "modelos": [
+    "google/recurrentgemma-2b-it-flax",
     "google/recurrentgemma-9b",
     "google/recurrentgemma-9b-it"
    ],
@@ -5569,19 +5518,10 @@
    ]
   },
   {
-   "id": "retro-48",
-   "nome": "retro-48",
+   "id": "retro",
+   "nome": "retro",
    "modelos": [
-    "nvidia/retro-48b-instruct-4k"
-   ],
-   "publicadores": [
-    "nvidia"
-   ]
-  },
-  {
-   "id": "retro-8",
-   "nome": "retro-8",
-   "modelos": [
+    "nvidia/retro-48b-instruct-4k",
     "nvidia/retro-8b-instruct-4k"
    ],
    "publicadores": [
@@ -5647,8 +5587,8 @@
    ]
   },
   {
-   "id": "sabia-7",
-   "nome": "sabia-7",
+   "id": "sabia",
+   "nome": "sabia",
    "modelos": [
     "lucianosb/sabia-7b-GGUF",
     "maritaca-ai/sabia-7b"
@@ -5673,6 +5613,8 @@
    "id": "samantha",
    "nome": "Samantha",
    "modelos": [
+    "Guilherme34/Samantha-3b-beta0.1-model-nf4",
+    "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
     "Guilherme34/Samantha-hermes3-8b-model-fixed",
     "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
     "Guilherme34/Samantha-MistralPy-7b-modelnotlora",
@@ -5700,17 +5642,6 @@
     "Guilherme34/Samantha-v7-4b-lesscensored",
     "Guilherme34/Samantha-vision-v2-GGUF",
     "Guilherme34/Samantha-vision-v2-ggufrecommended"
-   ],
-   "publicadores": [
-    "Guilherme34"
-   ]
-  },
-  {
-   "id": "samantha-3",
-   "nome": "Samantha-3",
-   "modelos": [
-    "Guilherme34/Samantha-3b-beta0.1-model-nf4",
-    "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF"
    ],
    "publicadores": [
     "Guilherme34"
@@ -5789,20 +5720,11 @@
    ]
   },
   {
-   "id": "scitulu-7",
-   "nome": "scitulu-7",
+   "id": "scitulu",
+   "nome": "scitulu",
    "modelos": [
+    "allenai/scitulu-70b",
     "allenai/scitulu-7b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "scitulu-70",
-   "nome": "scitulu-70",
-   "modelos": [
-    "allenai/scitulu-70b"
    ],
    "publicadores": [
     "allenai"
@@ -5822,8 +5744,8 @@
    ]
   },
   {
-   "id": "sera-8",
-   "nome": "SERA-8",
+   "id": "sera",
+   "nome": "SERA",
    "modelos": [
     "allenai/SERA-8B",
     "allenai/SERA-8B-GA"
@@ -5833,19 +5755,10 @@
    ]
   },
   {
-   "id": "shieldgemma-2",
-   "nome": "shieldgemma-2",
+   "id": "shieldgemma",
+   "nome": "shieldgemma",
    "modelos": [
-    "google/shieldgemma-2b"
-   ],
-   "publicadores": [
-    "google"
-   ]
-  },
-  {
-   "id": "shieldgemma-9",
-   "nome": "shieldgemma-9",
-   "modelos": [
+    "google/shieldgemma-2b",
     "google/shieldgemma-9b"
    ],
    "publicadores": [
@@ -5853,33 +5766,15 @@
    ]
   },
   {
-   "id": "smollm-1.7",
-   "nome": "SmolLM-1.7",
+   "id": "smollm",
+   "nome": "SmolLM",
    "modelos": [
     "HuggingFaceTB/SmolLM-1.7B",
     "HuggingFaceTB/SmolLM-1.7B-Instruct",
-    "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF"
-   ],
-   "publicadores": [
-    "HuggingFaceTB"
-   ]
-  },
-  {
-   "id": "smollm-135",
-   "nome": "SmolLM-135",
-   "modelos": [
+    "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-135M",
     "HuggingFaceTB/SmolLM-135M-Instruct",
-    "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF"
-   ],
-   "publicadores": [
-    "HuggingFaceTB"
-   ]
-  },
-  {
-   "id": "smollm-360",
-   "nome": "SmolLM-360",
-   "modelos": [
+    "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-360M",
     "HuggingFaceTB/SmolLM-360M-Instruct",
     "HuggingFaceTB/smollm-360M-instruct-add-basics",
@@ -5935,29 +5830,11 @@
    "id": "smolvlm",
    "nome": "SmolVLM",
    "modelos": [
-    "HuggingFaceTB/SmolVLM2-2.2B-Base",
-    "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
-   ],
-   "publicadores": [
-    "HuggingFaceTB"
-   ]
-  },
-  {
-   "id": "smolvlm-256",
-   "nome": "SmolVLM-256",
-   "modelos": [
     "HuggingFaceTB/SmolVLM-256M-Base",
-    "HuggingFaceTB/SmolVLM2-256M-Video-Instruct"
-   ],
-   "publicadores": [
-    "HuggingFaceTB"
-   ]
-  },
-  {
-   "id": "smolvlm-500",
-   "nome": "SmolVLM-500",
-   "modelos": [
     "HuggingFaceTB/SmolVLM-500M-Base",
+    "HuggingFaceTB/SmolVLM2-2.2B-Base",
+    "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
     "HuggingFaceTB/SmolVLM2-500M-Video-Instruct"
    ],
    "publicadores": [
@@ -6042,8 +5919,8 @@
    ]
   },
   {
-   "id": "stdmoe_1",
-   "nome": "StdMoE_1",
+   "id": "stdmoe",
+   "nome": "StdMoE",
    "modelos": [
     "allenai/StdMoE_1b4b_130B"
    ],
@@ -6101,22 +5978,40 @@
    "nome": "tapas",
    "modelos": [
     "google/tapas-base",
-    "google/tapas-base-finetuned-tabfact",
-    "google/tapas-base-masklm",
     "google/tapas-large",
-    "google/tapas-large-finetuned-tabfact",
-    "google/tapas-large-masklm",
     "google/tapas-medium",
-    "google/tapas-medium-finetuned-tabfact",
-    "google/tapas-medium-masklm",
     "google/tapas-mini",
-    "google/tapas-mini-finetuned-tabfact",
-    "google/tapas-mini-masklm",
     "google/tapas-small",
+    "google/tapas-tiny"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "tapas-finetuned",
+   "nome": "tapas-finetuned",
+   "modelos": [
+    "google/tapas-base-finetuned-tabfact",
+    "google/tapas-large-finetuned-tabfact",
+    "google/tapas-medium-finetuned-tabfact",
+    "google/tapas-mini-finetuned-tabfact",
     "google/tapas-small-finetuned-tabfact",
+    "google/tapas-tiny-finetuned-tabfact"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "tapas-masklm",
+   "nome": "tapas-masklm",
+   "modelos": [
+    "google/tapas-base-masklm",
+    "google/tapas-large-masklm",
+    "google/tapas-medium-masklm",
+    "google/tapas-mini-masklm",
     "google/tapas-small-masklm",
-    "google/tapas-tiny",
-    "google/tapas-tiny-finetuned-tabfact",
     "google/tapas-tiny-masklm"
    ],
    "publicadores": [
@@ -6124,8 +6019,8 @@
    ]
   },
   {
-   "id": "tapex",
-   "nome": "tapex",
+   "id": "tapex-finetuned",
+   "nome": "tapex-finetuned",
    "modelos": [
     "microsoft/tapex-base-finetuned-tabfact"
    ],
@@ -6134,26 +6029,10 @@
    ]
   },
   {
-   "id": "teenytinyllama-160",
-   "nome": "teenytinyllama-160",
+   "id": "teenytinyllama",
+   "nome": "teenytinyllama",
    "modelos": [
     "cnmoro/teenytinyllama-160m-text-simplification-ptbr",
-    "nicholasKluge/TeenyTinyLlama-160m",
-    "nicholasKluge/TeenyTinyLlama-160m-AgNews",
-    "nicholasKluge/TeenyTinyLlama-160m-Assin2",
-    "nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
-    "nicholasKluge/TeenyTinyLlama-160m-HateBR",
-    "nicholasKluge/TeenyTinyLlama-160m-IMDB"
-   ],
-   "publicadores": [
-    "cnmoro",
-    "nicholasKluge"
-   ]
-  },
-  {
-   "id": "teenytinyllama-460",
-   "nome": "TeenyTinyLlama-460",
-   "modelos": [
     "cnmoro/TeenyTinyLlama-460m-Summarizer-PTBR",
     "cnmoro/teenytinyllama-460m-text-simplification-ptbr",
     "g-assismoraes/TeenyTinyLlama-460m-deconv",
@@ -6176,6 +6055,12 @@
     "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det",
     "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det2",
     "g-assismoraes/TeenyTinyLlama-460m-zeropadding",
+    "nicholasKluge/TeenyTinyLlama-160m",
+    "nicholasKluge/TeenyTinyLlama-160m-AgNews",
+    "nicholasKluge/TeenyTinyLlama-160m-Assin2",
+    "nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
+    "nicholasKluge/TeenyTinyLlama-160m-HateBR",
+    "nicholasKluge/TeenyTinyLlama-160m-IMDB",
     "nicholasKluge/TeenyTinyLlama-460m",
     "nicholasKluge/TeenyTinyLlama-460m-AgNews",
     "nicholasKluge/TeenyTinyLlama-460m-Assin2",
@@ -6243,17 +6128,8 @@
    "id": "tinyllama",
    "nome": "TinyLlama",
    "modelos": [
-    "cnmoro/TinyLlama-ContextQuestionPair-Classifier-Reranker"
-   ],
-   "publicadores": [
-    "cnmoro"
-   ]
-  },
-  {
-   "id": "tinyllama-1.1",
-   "nome": "TinyLlama-1.1",
-   "modelos": [
     "cnmoro/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k",
+    "cnmoro/TinyLlama-ContextQuestionPair-Classifier-Reranker",
     "nicholasKluge/Aira-2-1B1"
    ],
    "publicadores": [
@@ -6350,8 +6226,8 @@
    ]
   },
   {
-   "id": "translategemma-4",
-   "nome": "translategemma-4",
+   "id": "translategemma",
+   "nome": "translategemma",
    "modelos": [
     "google/translategemma-4b-it"
    ],
@@ -6371,21 +6247,12 @@
    ]
   },
   {
-   "id": "tucano-160",
-   "nome": "Tucano-160",
+   "id": "tucano",
+   "nome": "Tucano",
    "modelos": [
     "cnmoro/Tucano-160m-Portuguese-Instruct",
     "cnmoro/Tucano-160m-Portuguese-Instruct-v2",
-    "cnmoro/Tucano160m-Reranker-EnPt"
-   ],
-   "publicadores": [
-    "cnmoro"
-   ]
-  },
-  {
-   "id": "tucano-2",
-   "nome": "tucano-2",
-   "modelos": [
+    "cnmoro/Tucano160m-Reranker-EnPt",
     "g-assismoraes/tucano-2b4-instruct-pira-original-e50",
     "g-assismoraes/tucano-2b4-instruct-pira-original-e50-tst",
     "g-assismoraes/tucano-2b4-instruct-pira-paraphrase-e50",
@@ -6398,28 +6265,49 @@
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50",
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50-it",
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst",
-    "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst-it"
-   ],
-   "publicadores": [
-    "g-assismoraes"
-   ]
-  },
-  {
-   "id": "tucano-630",
-   "nome": "Tucano-630",
-   "modelos": [
+    "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst-it",
     "guicybercode/Tucano-630m-GGUF",
-    "guicybercode/Tucano-630m-mlx-4bit"
+    "guicybercode/Tucano-630m-mlx-4bit",
+    "TucanoBR/Tucano-160m",
+    "TucanoBR/Tucano-1b1",
+    "TucanoBR/Tucano-1b1-Instruct",
+    "TucanoBR/Tucano-2b4",
+    "TucanoBR/Tucano-2b4-Instruct",
+    "TucanoBR/Tucano-630m",
+    "TucanoBR/ViTucano-1b5-v1",
+    "TucanoBR/ViTucano-2b8-v1"
    ],
    "publicadores": [
-    "guicybercode"
+    "cnmoro",
+    "g-assismoraes",
+    "guicybercode",
+    "TucanoBR"
    ]
   },
   {
-   "id": "tulu-13",
-   "nome": "tulu-13",
+   "id": "tucano2",
+   "nome": "Tucano2",
    "modelos": [
-    "allenai/tulu-13b"
+    "Polygl0t/Tucano2-0.6B-Base",
+    "Polygl0t/Tucano2-qwen-0.5B-Instruct",
+    "Polygl0t/Tucano2-qwen-0.5B-Think",
+    "Polygl0t/Tucano2-qwen-1.5B-Instruct",
+    "Polygl0t/Tucano2-qwen-1.5B-Think",
+    "Polygl0t/Tucano2-qwen-3.7B-Instruct",
+    "Polygl0t/Tucano2-qwen-3.7B-Think"
+   ],
+   "publicadores": [
+    "Polygl0t"
+   ]
+  },
+  {
+   "id": "tulu",
+   "nome": "tulu",
+   "modelos": [
+    "allenai/tulu-13b",
+    "allenai/tulu-30b",
+    "allenai/tulu-65b",
+    "allenai/tulu-7b"
    ],
    "publicadores": [
     "allenai"
@@ -6453,38 +6341,8 @@
    ]
   },
   {
-   "id": "tulu-30",
-   "nome": "tulu-30",
-   "modelos": [
-    "allenai/tulu-30b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "tulu-65",
-   "nome": "tulu-65",
-   "modelos": [
-    "allenai/tulu-65b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "tulu-7",
-   "nome": "tulu-7",
-   "modelos": [
-    "allenai/tulu-7b"
-   ],
-   "publicadores": [
-    "allenai"
-   ]
-  },
-  {
-   "id": "twil-8",
-   "nome": "TwIL-8",
+   "id": "twil",
+   "nome": "TwIL",
    "modelos": [
     "Guilherme34/TwIL-8B-Abliterated-Uncensored"
    ],
@@ -6493,8 +6351,8 @@
    ]
   },
   {
-   "id": "txgemma-9",
-   "nome": "txgemma-9",
+   "id": "txgemma",
+   "nome": "txgemma",
    "modelos": [
     "google/txgemma-9b-chat"
    ],
@@ -6538,8 +6396,26 @@
    "id": "unixcoder",
    "nome": "unixcoder",
    "modelos": [
-    "microsoft/unixcoder-base",
-    "microsoft/unixcoder-base-nine",
+    "microsoft/unixcoder-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "unixcoder-nine",
+   "nome": "unixcoder-nine",
+   "modelos": [
+    "microsoft/unixcoder-base-nine"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "unixcoder-unimodal",
+   "nome": "unixcoder-unimodal",
+   "modelos": [
     "microsoft/unixcoder-base-unimodal"
    ],
    "publicadores": [
@@ -6603,8 +6479,17 @@
    "nome": "wavlm",
    "modelos": [
     "microsoft/wavlm-base",
-    "microsoft/wavlm-base-plus",
     "microsoft/wavlm-large"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "wavlm-plus",
+   "nome": "wavlm-plus",
+   "modelos": [
+    "microsoft/wavlm-base-plus"
    ],
    "publicadores": [
     "microsoft"
@@ -6621,8 +6506,8 @@
    ]
   },
   {
-   "id": "wildllama-7",
-   "nome": "WildLlama-7",
+   "id": "wildllama",
+   "nome": "WildLlama",
    "modelos": [
     "allenai/WildLlama-7b-assistant-only",
     "allenai/WildLlama-7b-user-assistant"
@@ -6635,9 +6520,18 @@
    "id": "xdoc",
    "nome": "xdoc",
    "modelos": [
-    "microsoft/xdoc-base-funsd",
     "microsoft/xdoc-base-squad1.1",
     "microsoft/xdoc-base-squad2.0"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "xdoc-funsd",
+   "nome": "xdoc-funsd",
+   "modelos": [
+    "microsoft/xdoc-base-funsd"
    ],
    "publicadores": [
     "microsoft"
@@ -6654,10 +6548,19 @@
    ]
   },
   {
-   "id": "xtr",
-   "nome": "xtr",
+   "id": "xtr-en",
+   "nome": "xtr-en",
    "modelos": [
-    "google/xtr-base-en",
+    "google/xtr-base-en"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "xtr-multilingual",
+   "nome": "xtr-multilingual",
+   "modelos": [
     "google/xtr-base-multilingual"
    ],
    "publicadores": [

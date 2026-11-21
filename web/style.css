@@ -364,3 +364,10 @@ td.nw{white-space:nowrap}
 .carga-camada.erro .c-spin{display:none}
 .carga-ceu{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:4;width:min(320px,86%);background:var(--drawer-bg,var(--paper));margin:0}
 @media(prefers-reduced-motion:reduce){.carga-camada .c-spin,.carga-camada .c-barra-p.indet i{animation:none}.carga-camada .c-barra-p i{transition:none}}
+
+/* relacionados: legenda, drawer */
+.leg-rel{display:inline-flex;align-items:center;gap:6px}
+.leg-rel i{display:inline-block;width:18px;height:0;border-top:1.5px dashed var(--soft)}
+.leg-rel i.an{width:10px;height:10px;border:1.5px dotted var(--soft);border-radius:50%}
+.dr-rels{margin:0;padding-left:16px}.dr-rels li{margin:0 0 8px}
+.dr-fam{list-style:none;margin-left:-16px}.dr-fam ul{margin:4px 0 8px;padding-left:16px}

@@ -14,14 +14,14 @@
   "nativo_mais_gguf": 147
  },
  "mundo": {
-  "modelos": 1756,
+  "modelos": 1798,
   "nativo_oficial": 112,
   "nativo_comunidade": 257,
-  "so_gguf_wllama": 232,
+  "so_gguf_wllama": 248,
   "gguf_grande_sem_nativo": 242,
-  "nenhum": 1155,
+  "nenhum": 1181,
   "so_nativo": 369,
-  "nativo_mais_gguf": 601
+  "nativo_mais_gguf": 617
  },
  "brasil_independentes": {
   "modelos": 168,
@@ -69,7 +69,7 @@
  },
  "publicadores": {
   "brasil": 35,
-  "mundo": 18,
+  "mundo": 20,
   "brasil_por_natureza": {
    "independente": 8,
    "instituicao": 13,
@@ -78,11 +78,11 @@
   }
  },
  "candidatos": {
-  "avaliados": 177,
+  "avaliados": 175,
   "classificados_brasil": 35,
-  "descartados": 142,
+  "descartados": 140,
   "descartados_por_motivo": {
-   "sem evidencia publica de ser do Brasil": 135,
+   "sem evidencia publica de ser do Brasil": 133,
    "sem modelos no corte": 6,
    "nao encontrado na API": 1
   }
@@ -1030,13 +1030,6 @@
    ]
   },
   {
-   "id": "Polygl0t",
-   "origem": "lista inicial",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
-  },
-  {
    "id": "PORTULAN",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -1232,13 +1225,6 @@
    ]
   },
   {
-   "id": "TucanoBR",
-   "origem": "lista inicial",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
-  },
-  {
    "id": "ufmg-digital-pathology",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 1 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
@@ -1364,14 +1350,14 @@
     "nativo_mais_gguf": 129
    },
    "mundo": {
-    "modelos": 1488,
+    "modelos": 1519,
     "nativo_oficial": 97,
     "nativo_comunidade": 222,
-    "so_gguf_wllama": 215,
+    "so_gguf_wllama": 231,
     "gguf_grande_sem_nativo": 235,
-    "nenhum": 954,
+    "nenhum": 969,
     "so_nativo": 319,
-    "nativo_mais_gguf": 534
+    "nativo_mais_gguf": 550
    },
    "brasil_sem_maior": {
     "modelos": 337,
@@ -1396,12 +1382,12 @@
     "nativo_mais_gguf": 18
    },
    "mundo": {
-    "modelos": 268,
+    "modelos": 279,
     "nativo_oficial": 15,
     "nativo_comunidade": 35,
     "so_gguf_wllama": 17,
     "gguf_grande_sem_nativo": 7,
-    "nenhum": 201,
+    "nenhum": 212,
     "so_nativo": 50,
     "nativo_mais_gguf": 67
    },
@@ -1433,7 +1419,7 @@
   "publicadores_brasil": 34
  },
  "instituicoes_por_pais": {
-  "BR": 14,
+  "BR": 15,
   "DE": 1
  }
 }
