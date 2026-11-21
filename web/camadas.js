@@ -2,8 +2,7 @@
 // Entrada: window.MAPA_DADOS.datasets ({colunas, linhas[]}) e .benchmarks (lista de objetos); sem essas chaves, as abas ficam ocultas.
 // Com ?fixture=1 usa a fixture de teste (window.MAPA_CAMADAS_FIXTURE, dados de exemplo) no lugar dos dados.
 (function () {
-  var D = window.MAPA_DADOS || {}, fx = /[?&]fixture=/.test(location.search) && window.MAPA_CAMADAS_FIXTURE;
-  var src = fx ? fx : { datasets: D.datasets, benchmarks: D.benchmarks, foto_camadas: D.foto_camadas };
+  var fx = /[?&]fixture=/.test(location.search) && window.MAPA_CAMADAS_FIXTURE;
   var arr = function (x) { return Array.isArray(x) ? x : (x == null || x === '' ? [] : [x]); };
   var num = function (x) { var n = Number(x); return x !== null && x !== '' && x !== undefined && isFinite(n) ? n : null; };
   var str = function (x) { return x == null ? '' : String(x); };
@@ -26,7 +25,13 @@
       idiomas: arr(b.idiomas).map(str), tarefas: arr(b.tarefas).map(str), tipo: str(b.tipo), datasets: arr(b.datasets).map(str), criador: str(cr), ano: num(b.ano),
       links: b.links && typeof b.links === 'object' ? b.links : {}, fontes: arr(b.fontes).filter(function (f) { return f && f.url; }), n_datasets: num(b.n_datasets), downloads_total: num(b.downloads_total) || 0 };
   }
-  var ds = linhasDeDatasets(src.datasets).filter(function (d) { return d && d.id; }).map(dataset);
-  var bm = arr(src.benchmarks).filter(function (b) { return b && b.id; }).map(benchmark);
-  window.MAPA_CAMADAS = { datasets: ds, benchmarks: bm, foto: src.foto_camadas || null, fixture: !!fx };
+  // Le (de novo) os dados da pagina: chamada na carga e depois que as partes sob demanda (data-datasets.js, data-benchmarks.js) chegam.
+  function ler() {
+    var D = window.MAPA_DADOS || {}, src = fx ? fx : { datasets: D.datasets, benchmarks: D.benchmarks, foto_camadas: D.foto_camadas };
+    var ds = linhasDeDatasets(src.datasets).filter(function (d) { return d && d.id; }).map(dataset);
+    var bm = arr(src.benchmarks).filter(function (b) { return b && b.id; }).map(benchmark);
+    return { datasets: ds, benchmarks: bm, foto: src.foto_camadas || null, fixture: !!fx };
+  }
+  window.MAPA_CAMADAS_LER = ler;
+  window.MAPA_CAMADAS = ler();
 })();

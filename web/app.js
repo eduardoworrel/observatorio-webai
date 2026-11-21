@@ -34,6 +34,7 @@
       eyebrow_ds: 'Datasets em português e no mundo', eyebrow_bm: 'Benchmarks de avaliação', esc_br: 'Publicador no Brasil', esc_pt: 'Português (só pelo idioma)', esc_ptbr: 'Marcado pt-BR', link_artigo: 'Artigo', link_site: 'Site', link_leaderboard: 'Leaderboard', link_codigo: 'Código',
       dom_geral: 'Geral', dom_vestibular_educacao: 'Vestibular e educação', dom_juridico: 'Jurídico', dom_saude: 'Saúde', dom_codigo: 'Código', dom_matematica: 'Matemática', dom_extracao_classificacao: 'Extração e classificação', dom_cultura_lingua: 'Cultura e língua', dom_outros: 'Outros',
       tipo_conjunto: 'Conjunto de dados', tipo_avaliacao: 'Avaliação', tipo_leaderboard: 'Leaderboard',
+      carga_datasets: 'Carregando {n} datasets…', carga_benchmarks: 'Carregando {n} benchmarks…', carga_builds: 'Carregando os builds deste modelo…', carga_erro: 'Não foi possível carregar {x}.', tentar: 'Tentar de novo',
       tabs_aria: 'Camadas', tab_modelos: 'Modelos', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Quem publica dados, e em que idiomas', res_label_bm: 'Benchmarks', res_titulo_bm: 'Como os modelos são avaliados',
       campo_ds: 'datasets no mapa', campo_bm: 'benchmarks no mapa', recorte_ds: 'datasets no recorte', recorte_bm: 'benchmarks no recorte', datasets: 'datasets', benchmarks: 'benchmarks',
@@ -76,6 +77,7 @@
       eyebrow_ds: 'Datasets in Portuguese and worldwide', eyebrow_bm: 'Evaluation benchmarks', esc_br: 'Publisher in Brazil', esc_pt: 'Portuguese (by language only)', esc_ptbr: 'Marked pt-BR', link_artigo: 'Paper', link_site: 'Website', link_leaderboard: 'Leaderboard', link_codigo: 'Code',
       dom_geral: 'General', dom_vestibular_educacao: 'Entrance exams and education', dom_juridico: 'Legal', dom_saude: 'Health', dom_codigo: 'Code', dom_matematica: 'Math', dom_extracao_classificacao: 'Extraction and classification', dom_cultura_lingua: 'Culture and language', dom_outros: 'Other',
       tipo_conjunto: 'Dataset', tipo_avaliacao: 'Evaluation', tipo_leaderboard: 'Leaderboard',
+      carga_datasets: 'Loading {n} datasets…', carga_benchmarks: 'Loading {n} benchmarks…', carga_builds: 'Loading the builds of this model…', carga_erro: 'Could not load {x}.', tentar: 'Try again',
       tabs_aria: 'Layers', tab_modelos: 'Models', tab_datasets: 'Datasets', tab_benchmarks: 'Benchmarks',
       res_label_ds: 'Datasets', res_titulo_ds: 'Who publishes data, and in which languages', res_label_bm: 'Benchmarks', res_titulo_bm: 'How models are evaluated',
       campo_ds: 'datasets on the map', campo_bm: 'benchmarks on the map', recorte_ds: 'datasets in selection', recorte_bm: 'benchmarks in selection', datasets: 'datasets', benchmarks: 'benchmarks',
@@ -116,10 +118,45 @@
 
 
   // ---------- camadas (abas): modelos, datasets e benchmarks ----------
+  // ---------- partes dos dados, sob demanda ----------
+  // data.js traz o necessario para a aba Modelos; datasets, benchmarks e os builds de cada modelo vem de arquivos proprios (D.partes),
+  // baixados quando a aba e aberta (ou em ociosidade, depois do primeiro desenho). Com D.partes_bytes o progresso e real.
+  var PARTES = D.partes || {}, parteEstado = {};
+  var parteCarregada = function (n) { return n === 'builds' ? !!window.MAPA_DETALHES : n === 'datasets' ? !!D.datasets : n === 'benchmarks' ? !!D.benchmarks : true; };
+  function baixarParte(url, total, prog) {
+    return new Promise(function (ok, erro) {
+      function porTag(u, blob) { var el = document.createElement('script'); el.src = u; el.onload = function () { if (blob) URL.revokeObjectURL(u); ok(); }; el.onerror = function () { erro(new Error('falha ao carregar ' + url)); }; document.head.appendChild(el); }
+      if (/^https?:$/.test(location.protocol) && window.fetch && window.ReadableStream && total) {
+        fetch(url).then(function (r) {
+          if (!r.ok || !r.body) throw new Error('http ' + r.status);
+          var rd = r.body.getReader(), pedacos = [], rec = 0;
+          (function ler() { return rd.read().then(function (x) { if (x.done) { if (prog) prog(1); porTag(URL.createObjectURL(new Blob(pedacos, { type: 'text/javascript' })), true); return; } pedacos.push(x.value); rec += x.value.length; if (prog) prog(Math.min(0.99, rec / total)); return ler(); }); })();
+        }).catch(erro);
+      } else porTag(url, false);
+    });
+  }
+  function carregarParte(n, onProg) {
+    if (parteCarregada(n)) return Promise.resolve();
+    var e = parteEstado[n];
+    if (e) { if (onProg) e.cbs.push(onProg); return e.promessa; }
+    e = parteEstado[n] = { cbs: onProg ? [onProg] : [] };
+    if (!PARTES[n]) return Promise.reject(new Error('sem arquivo para ' + n));
+    e.promessa = baixarParte(PARTES[n], (D.partes_bytes || {})[n], function (f) { e.cbs.forEach(function (cb) { cb(f); }); }).catch(function (err) { parteEstado[n] = null; throw err; });
+    return e.promessa;
+  }
+  function aplicarDetalhes() {
+    var det = window.MAPA_DETALHES; if (!det) return;
+    D.modelos.forEach(function (m) { var d = det[m.id]; if (d) { m.builds = d.builds; m.fontes = d.fontes; } });
+  }
   var CC = window.MAPA_CAMADAS || { datasets: [], benchmarks: [] };
-  var dsBy = {}, bmBy = {};
-  CC.datasets.forEach(function (d) { dsBy[d.id] = d; }); CC.benchmarks.forEach(function (b) { bmBy[b.id] = b; });
-  var TEM = { modelos: true, datasets: CC.datasets.length > 0, benchmarks: CC.benchmarks.length > 0 };
+  var dsBy = {}, bmBy = {}, TEM = { modelos: true, datasets: false, benchmarks: false };
+  function prepararCamadas() {
+    if (window.MAPA_CAMADAS_LER) { var novo = window.MAPA_CAMADAS_LER(); if (!CC.datasets.length && novo.datasets.length) CC.datasets = novo.datasets; if (!CC.benchmarks.length && novo.benchmarks.length) CC.benchmarks = novo.benchmarks; CC.foto = novo.foto; CC.fixture = novo.fixture; }
+    Object.keys(dsBy).forEach(function (k) { delete dsBy[k]; }); Object.keys(bmBy).forEach(function (k) { delete bmBy[k]; });
+    CC.datasets.forEach(function (d) { dsBy[d.id] = d; d.nfmt = 1; }); CC.benchmarks.forEach(function (b) { bmBy[b.id] = b; b.nfmt = 1; });
+    TEM.datasets = CC.datasets.length > 0 || !!(PARTES.datasets && !D.datasets); TEM.benchmarks = CC.benchmarks.length > 0 || !!(PARTES.benchmarks && !D.benchmarks);
+  }
+  prepararCamadas();
   var pubNome = function (id) { return pubBy[id] ? pubBy[id].nome : id; };
   var seguro = function (u) { return /^https?:\/\//i.test(String(u || '')) ? String(u) : ''; };
   var licAberta = function (l) { return !!l && /^(cc0|cc-by|apache|mit|bsd|odc|odbl|pddl|unlicense|mpl|openrail|gpl|lgpl|agpl)/i.test(l) && !/-n[cd]\b/i.test(l); };
@@ -165,12 +202,11 @@
   // diversidade de builds: formatos distintos prontos para o navegador entre onnx, mlc, litert e gguf via wllama (0 a 4)
   var FORMATOS = ['onnx', 'mlc', 'litert', 'gguf'];
   function formatosDe(m) {
-    var o = {}; (m.builds || []).forEach(function (b) { if (b.formato === 'onnx' || b.formato === 'mlc' || b.formato === 'litert') o[b.formato] = 1; });
+    var o = {}; (m.builds ? m.builds.map(function (b) { return b.formato; }) : (m.formatos_navegador || [])).forEach(function (f) { if (f === 'onnx' || f === 'mlc' || f === 'litert') o[f] = 1; });
     if (m.gguf_wllama) o.gguf = 1;
     return FORMATOS.filter(function (f) { return o[f]; });
   }
   D.modelos.forEach(function (m) { m.fmts = formatosDe(m); m.nfmt = m.fmts.length; });
-  CC.datasets.forEach(function (d) { d.nfmt = 1; }); CC.benchmarks.forEach(function (b) { b.nfmt = 1; });
   var rotDom = function (x) { var v = T[S.lang]['dom_' + x]; return v || String(x).replace(/_/g, ' '); };
   var rotTipo = function (x) { var v = T[S.lang]['tipo_' + x]; return v || String(x).replace(/_/g, ' '); };
   var CAM = null;
@@ -251,44 +287,78 @@
   // ---------- grupos e layout (determinista) ----------
   function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967296; }
   var G = [], stars = [];
-  function montar() {
-    var base = CAM.base(), map = {};
+  var montagemId = 0, fatia = function (fn) { if (window.scheduler && scheduler.postTask) scheduler.postTask(fn, { priority: 'user-visible' }); else setTimeout(fn, 0); };
+  var ORCAMENTO = 10;   // ms por fatia: camadas grandes montam em varias fatias, sem travar a pagina
+  function limparConstelacao() { montagemId++; G = []; stars = []; starOf = {}; grupoPorId = {}; grade = null; listaVis = []; visN = []; visB = []; arestas = { fam: [], outra: [] }; estrelasNenhum = []; estrelasBrilho = []; $('#sky-points').innerHTML = ''; S.noCirculo = []; assinatura = null; estSuja = true; camSuja = true; pintSuja = true; agendar(); }
+  function montar(cb) {
+    var CEL_P = 64, malha = {};   // malha espacial dos circulos ja colocados: a conferencia olha so as celulas proximas (mesmo resultado, bem mais rapido)
+    var cel = function (v) { return Math.floor(v / CEL_P); };
+    function livre(px, py, R) {
+      var r = R + 8, x0 = cel(px - r), x1 = cel(px + r), y0 = cel(py - r), y1 = cel(py + r);
+      for (var cx = x0; cx <= x1; cx++) for (var cy = y0; cy <= y1; cy++) {
+        var l = malha[cx + ',' + cy]; if (!l) continue;
+        for (var q = 0; q < l.length; q++) { var p = l[q]; if (!(Math.hypot(p.x - px, p.y - py) > p.R + R + 8)) return false; }
+      }
+      return true;
+    }
+    function ocupar(px, py, R) {
+      var p = { x: px, y: py, R: R }, x0 = cel(px - R), x1 = cel(px + R), y0 = cel(py - R), y1 = cel(py + R);
+      for (var cx = x0; cx <= x1; cx++) for (var cy = y0; cy <= y1; cy++) (malha[cx + ',' + cy] = malha[cx + ',' + cy] || []).push(p);
+    }
+    var meu = ++montagemId, base = CAM.base(), map = {}, i = 0, frag = document.createDocumentFragment(), j2 = 0;
     base.forEach(function (m) {
       var gi = CAM.grupo(m), g = map[gi.k] || (map[gi.k] = { id: gi.k, nome: gi.nome, ms: [], pub: gi.pub || null });
       g.ms.push(m);
     });
-    G = Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.ms.length - a.ms.length || (a.id < b.id ? -1 : 1); });
-    var placed = [];
-    G.forEach(function (g) {
-      g.ms.sort(CAM.ord);
-      var R = 20 + 13 * Math.sqrt(g.ms.length); g.R = R;
-      g.off = g.ms.map(function (m, i) { var a = i * 2.39996 + hash(g.id) * 6.28, r = 12 * Math.sqrt(i + 0.6); return [Math.cos(a) * r, Math.sin(a) * r]; });
-      var ang = hash(g.id + 'a') * 6.28, rad = 0, ok = false, px = 0, py = 0, n = 0;
-      while (!ok && n < 6000) {
-        px = Math.cos(ang) * rad; py = Math.sin(ang) * rad;
-        ok = placed.every(function (p) { return Math.hypot(p.x - px, p.y - py) > p.R + R + 8; });
-        ang += 0.5; rad += 0.8; n++;
+    var GG = Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.ms.length - a.ms.length || (a.id < b.id ? -1 : 1); });
+    function colocar() {
+      var t0 = performance.now();
+      while (i < GG.length && (GG.length < 150 || performance.now() - t0 < ORCAMENTO)) {
+        var g = GG[i++];
+        g.ms.sort(CAM.ord);
+        var R = 20 + 13 * Math.sqrt(g.ms.length); g.R = R;
+        g.off = g.ms.map(function (m, j) { var a = j * 2.39996 + hash(g.id) * 6.28, r = 12 * Math.sqrt(j + 0.6); return [Math.cos(a) * r, Math.sin(a) * r]; });
+        var ang = hash(g.id + 'a') * 6.28, rad = 0, ok = false, px = 0, py = 0, n = 0;
+        while (!ok && n < 6000) {
+          px = Math.cos(ang) * rad; py = Math.sin(ang) * rad;
+          ok = livre(px, py, R);
+          ang += 0.5; rad += 0.8; n++;
+        }
+        g.x = px; g.y = py; ocupar(px, py, R);
       }
-      g.x = px; g.y = py; placed.push({ x: px, y: py, R: R });
-    });
-    var rmax = 1; G.forEach(function (g) { rmax = Math.max(rmax, Math.hypot(g.x, g.y) + g.R); });
-    var k = 0.47 / rmax; stars = []; starOf = {}; grupoPorId = {};
-    G.forEach(function (g) {
-      g.u = 0.5 + g.x * k; g.v = 0.5 + g.y * k; g.k = k;
-      g.ms.forEach(function (m, i) {
-        var st = { m: m, g: g, u: 0.5 + (g.x + g.off[i][0]) * k, v: 0.5 + (g.y + g.off[i][1]) * k, r: CAM.tam(m), xy: [0, 0], on: true, vis: false, dr: false, nf: CAM.id === 'modelos' ? m.nfmt : 1 };
-        st.st = CAM.cls(m); st.idx = stars.length; st.ord = { oficial: 0, comunidade: 1, gguf: 2, nenhum: 3 }[st.st]; stars.push(st); starOf[m.id] = st; (g.stars = g.stars || []).push(st);
+      if (meu !== montagemId) return;
+      if (i < GG.length) fatia(colocar); else estrelasEGrupos();
+    }
+    function estrelasEGrupos() {
+      G = GG; var rmax = 1; G.forEach(function (g) { rmax = Math.max(rmax, Math.hypot(g.x, g.y) + g.R); });
+      var k = 0.47 / rmax; stars = []; starOf = {}; grupoPorId = {};
+      G.forEach(function (g) {
+        g.u = 0.5 + g.x * k; g.v = 0.5 + g.y * k; g.k = k;
+        g.ms.forEach(function (m, j) {
+          var st = { m: m, g: g, u: 0.5 + (g.x + g.off[j][0]) * k, v: 0.5 + (g.y + g.off[j][1]) * k, r: CAM.tam(m), xy: [0, 0], on: true, vis: false, dr: false, nf: CAM.id === 'modelos' ? m.nfmt : 1 };
+          st.st = CAM.cls(m); st.idx = stars.length; st.ord = { oficial: 0, comunidade: 1, gguf: 2, nenhum: 3 }[st.st]; stars.push(st); starOf[m.id] = st; (g.stars = g.stars || []).push(st);
+        });
       });
-    });
-    var host = $('#sky-points'); host.innerHTML = '';
-    G.forEach(function (g) {
-      var b = document.createElement('button'); b.className = 'sky-model'; b.type = 'button'; b.dataset.g = g.id; b.setAttribute('aria-pressed', 'false');
-      if (g.pub && g.pub.natureza === 'independente') b.classList.add('ind');
-      b.innerHTML = '<span class="sky-name">' + esc(g.nome) + ' · ' + g.ms.length + '</span>';
-      b.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural));
-      host.appendChild(b); g.el = b; g.nome_el = b.firstChild; grupoPorId[g.id] = g;
-    });
-    stage.classList.toggle('grande', G.length > 120); montarGrade(); medirRotulos(); filtroSuja = true; assinatura = null; estSuja = true; snap = null;
+      rotulos();
+    }
+    function rotulos() {
+      var t0 = performance.now();
+      while (j2 < G.length && (G.length < 150 || performance.now() - t0 < ORCAMENTO)) {
+        var g = G[j2++], b = document.createElement('button'); b.className = 'sky-model'; b.type = 'button'; b.dataset.g = g.id; b.setAttribute('aria-pressed', 'false');
+        if (g.pub && g.pub.natureza === 'independente') b.classList.add('ind');
+        b.innerHTML = '<span class="sky-name">' + esc(g.nome) + ' · ' + g.ms.length + '</span>';
+        b.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural));
+        frag.appendChild(b); g.el = b; g.nome_el = b.firstChild; grupoPorId[g.id] = g;
+      }
+      if (meu !== montagemId) return;
+      if (j2 < G.length) fatia(rotulos); else concluir();
+    }
+    function concluir() {
+      var host = $('#sky-points'); host.innerHTML = ''; host.appendChild(frag);
+      stage.classList.toggle('grande', G.length > 120); montarGrade(); medirRotulos(); filtroSuja = true; assinatura = null; estSuja = true; snap = null;
+      if (cb) cb();
+    }
+    colocar();
   }
   function medirRotulos() {
     stage.classList.remove('grande');   // sem display:none, para medir todos
@@ -378,6 +448,7 @@
   // culling pela grade: so as celulas dentro da janela; define vis (dentro) e dr (dentro com margem de 4 px)
   function projetar() {
     bounds();
+    if (!grade) { for (var q = 0; q < listaVis.length; q++) { listaVis[q].vis = false; listaVis[q].dr = false; } listaVis.length = 0; visN.length = 0; visB.length = 0; return 0; }
     var sc = scale(), hx = W / 2 + (S.panX - 0.5) * sc, hy = H / 2 + (S.panY - 0.5) * sc, h = 17, n = 0, i;
     for (i = 0; i < listaVis.length; i++) { listaVis[i].vis = false; listaVis[i].dr = false; }
     listaVis.length = 0; visN.length = 0; visB.length = 0;
@@ -453,7 +524,7 @@
       }
     }
     c.globalAlpha = 1;
-    if (CAM.id === 'benchmarks' && TEM.datasets) {   // linha tenue do benchmark aos seus datasets: com zoom, ao passar o mouse ou ao selecionar
+    if (CAM.id === 'benchmarks' && CC.datasets.length) {   // linha tenue do benchmark aos seus datasets: com zoom, ao passar o mouse ou ao selecionar
       var selId = sel && sel.t === 'm' ? sel.id : null, col = dk ? '215,221,255' : '50,60,150';
       c.lineWidth = 0.7;
       for (i = 0; i < listaVis.length; i++) {
@@ -525,6 +596,7 @@
 
   function loop(now) {
     frame = 0;
+    if (!spr.nenhum) criarSprites();
     if (zAnim) passoZoom(now);
     var dt = Math.min(now - (last || now), 80);
     var anima = !document.hidden && visivel && !S.paused && !reduced.matches, desenhou = false;
@@ -669,7 +741,8 @@
     var secBuilds = '<h3>' + t('builds') + ' (' + m.nfmt + ' ' + t(m.nfmt === 1 ? 'formato' : 'formatos') + ')</h3>';
     if (m.nfmt >= 2) secBuilds += '<p class="note-aneis">' + t(m.nfmt >= 3 ? 'aneis_2' : 'aneis_1') + '</p>';
     var tem = FORMATOS.filter(function (f) { return gruposB[f]; });
-    if (!tem.length) secBuilds += '<p>' + t('sem_builds_det') + ' <a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + t('abrir_hf') + '</a></p>';
+    if (!m.builds && PARTES.builds && !window.MAPA_DETALHES) secBuilds += '<p>' + t('carga_builds') + '</p>';
+    else if (!tem.length) secBuilds += '<p>' + t('sem_builds_det') + ' <a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + t('abrir_hf') + '</a></p>';
     tem.forEach(function (f) {
       secBuilds += '<h4>' + fmtNome[f] + (f === 'gguf' && !m.gguf_wllama ? ' · ' + t('gguf_nao_conta') : '') + '</h4><ul>' + gruposB[f].map(function (b) {
         return '<li><a href="' + esc(seguro(b.url)) + '" target="_blank" rel="noopener">' + esc(b.repo) + '</a> · ' + (b.oficial ? t('origem_oficial') : t('origem_comunidade')) + ' · ' + esc(b.autor || '') + ' · ' + (b.gb ? nf(b.gb, 2) + ' GB' : t('gb_nao_medido')) + '</li>';
@@ -681,7 +754,7 @@
       '<dl class="dr-grid"><dt>' + t('c_gb') + '</dt><dd>' + (m.gb_navegador ? nf(m.gb_navegador, 2) + ' GB' : '—') + '</dd><dt>' + t('c_lic') + '</dt><dd>' + esc(m.licenca || '—') + '</dd><dt>' + t('atualizado') + '</dt><dd>' + esc(m.atualizado || '—') + '</dd>' +
       '<dt>' + t('parametros') + '</dt><dd>' + (m.parametros_b ? nf(m.parametros_b, 2) + ' B' : '—') + '</dd><dt>' + t('familia') + '</dt><dd>' + esc(m.familia) + '</dd><dt>' + t('tarefa') + '</dt><dd>' + esc(m.tarefa || '—') + '</dd></dl>' +
       '<p><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + t('abrir_hf') + '</a></p>' + secBuilds + evidHtml(p) +
-      '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + m.fontes.concat(bl).map(li).join('') + '</ul>';
+      '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + (m.fontes || []).concat(bl).map(li).join('') + '</ul>';
   }
   function linhaIr(tab, id, rot) { return '<li><button type="button" data-ir="' + tab + ':' + esc(id) + '">' + esc(rot) + '</button></li>'; }
   function drawerDataset(d) {
@@ -716,7 +789,7 @@
   }
   function renderDrawer() {
     var el = $('#drawer-corpo'), s = S.sel; if (!s) return;
-    if (s.t === 'm') { var m = CAM.por[s.id]; if (m) el.innerHTML = CAM.drawer(m); }
+    if (s.t === 'm') { var m = CAM.por[s.id]; if (m) { el.innerHTML = CAM.drawer(m); if (CAM.id === 'modelos' && PARTES.builds && !window.MAPA_DETALHES) carregarParte('builds').then(function () { aplicarDetalhes(); if (S.sel && S.sel.id === s.id && drawer.classList.contains('on')) renderDrawer(); }, function () {}); } }
     else { var g = grupoPorId[s.id]; if (g) el.innerHTML = drawerGrupo(g); }
   }
   function abrirDrawer() {
@@ -735,7 +808,7 @@
   $('#drawer-x').onclick = fecharDrawer; scrim.onclick = fecharDrawer;
   drawer.addEventListener('click', function (e) {
     var b = e.target.closest('[data-abrir]'); if (b) { selecionar({ t: 'm', id: b.dataset.abrir }, opener); return; }
-    var ir = e.target.closest('[data-ir]'); if (ir) { var p = ir.dataset.ir.split(':'), alvo = p.shift(), id = p.join(':'); trocarTab(alvo); setTimeout(function () { if (CAM.por[id]) selecionar({ t: 'm', id: id }, null); }, 60); }
+    var ir = e.target.closest('[data-ir]'); if (ir) { var p = ir.dataset.ir.split(':'), alvo = p.shift(), id = p.join(':'); trocarTab(alvo, undefined, function () { if (CAM.por[id]) selecionar({ t: 'm', id: id }, null); }); }
   });
   document.addEventListener('keydown', function (e) {
     if (!drawer.classList.contains('on')) return;
@@ -834,7 +907,7 @@
     renderModos(); renderFiltros(); marcaAtivos(); var ff = $('#f-fmt'); if (ff) ff.value = S.fmt;
     var mot = $('[data-sky-motion]'); mot.setAttribute('aria-label', S.paused ? (S.lang === 'pt' ? 'Retomar animação' : 'Resume animation') : (S.lang === 'pt' ? 'Pausar animação' : 'Pause animation'));
   }
-  function tudo() { textos(); renderFoto(); montar(); G.forEach(function (g) { g.el.firstChild.textContent = g.nome + ' · ' + g.ms.length; g.el.setAttribute('aria-label', g.nome + ', ' + g.ms.length + ' ' + t(CAM.plural)); }); renderLegenda(); assinatura = null; if (S.sel) renderDrawer(); resize(); }
+  function tudo(cb) { textos(); renderFoto(); montar(function () { renderLegenda(); assinatura = null; if (S.sel) renderDrawer(); resize(); if (cb) cb(); }); }
 
   document.querySelectorAll('[data-lang]').forEach(function (b) { b.onclick = function () { S.lang = b.dataset.lang; try { localStorage.setItem('observatorio-lang', S.lang); } catch (e) {} textos(); renderFoto(); assinatura = null; if (S.sel) renderDrawer(); if (S.tab === 'benchmarks') tudo(); else { medirRotulos(); posicionar(); } }; });
   document.querySelectorAll('[data-escopo]').forEach(function (b) { b.onclick = function () { S.escopo = b.dataset.escopo; fecharDrawer(); S.zoom = 1; S.panX = 0; S.panY = 0; tudo(); salvaUrl(); }; });
@@ -996,13 +1069,34 @@
     $('.home-eyebrow i').dataset.i18n = CAM.eb; tit.dataset.i18n = CAM.tit; rot.dataset.i18n = CAM.rot; nota.dataset.i18n = CAM.nota; cap.dataset.i18n = CAM.tit;
     $('#caveat').hidden = S.tab !== 'modelos';
   }
-  function trocarTab(id, doHash) {
-    if (!TEM[id]) id = 'modelos';
-    if (id === S.tab && CAM === CAMS[id] && stars.length) { atualizarTabsUI(); return; }
-    fecharDrawer(); S.tab = id; CAM = CAMS[id]; S.sort = S.sortL[id]; S.sel = null; S.zoom = 1; S.panX = 0; S.panY = 0; S.limite = 150; S.noCirculo = [];
-    atualizarTabsUI(); textos(); tudo();
-    if (doHash !== false) { var h = '#' + id; if (location.hash !== h && !(id === 'modelos' && !location.hash)) { try { history.pushState(null, '', location.pathname + location.search + (id === 'modelos' ? '' : h)); } catch (e) { location.hash = h; } } }
+  // indicador de carga da aba (pequeno, na area da aba): imediato, com progresso real e estado de erro
+  var cargaEl = $('#carga-camada'), cargaCeu = $('#carga-ceu');
+  function textoCarga(parte) { var tot = D.foto_camadas && D.foto_camadas[parte] ? D.foto_camadas[parte].total : null; return t('carga_' + parte).replace('{n}', tot != null ? nf(tot) : ''); }
+  function mostrarCarga(parte, frac, erro) {
+    var txt = erro ? t('carga_erro').replace('{x}', t(parte)) : textoCarga(parte) + (frac != null && frac > 0 ? ' ' + Math.round(frac * 100) + '%' : '');
+    [cargaEl, cargaCeu].forEach(function (e) {
+      e.hidden = false; e.classList.toggle('erro', !!erro); e.querySelector('.carga-txt').textContent = txt;
+      var p = e.querySelector('.c-barra-p'); p.hidden = !!erro; p.classList.toggle('indet', frac == null); p.firstChild.style.width = frac != null ? Math.round(frac * 100) + '%' : '';
+      var rt = e.querySelector('.carga-retry'); if (rt) rt.hidden = !erro;
+    });
+    $('.home-average-scroll').hidden = true; $('#resumo-recorte').textContent = '';
+    if (erro) cargaEl.querySelector('.carga-retry').focus({ preventScroll: true });
   }
+  function ocultarCarga() { cargaEl.hidden = true; cargaCeu.hidden = true; $('.home-average-scroll').hidden = false; }
+  function atualizarHash(id, doHash) { if (doHash !== false) { var h = '#' + id; if (location.hash !== h && !(id === 'modelos' && !location.hash)) { try { history.pushState(null, '', location.pathname + location.search + (id === 'modelos' ? '' : h)); } catch (e) { location.hash = h; } } } }
+  function trocarTab(id, doHash, depois) {
+    if (!TEM[id]) id = 'modelos';
+    if (id === S.tab && CAM === CAMS[id] && stars.length) { atualizarTabsUI(); if (depois) depois(); return; }
+    fecharDrawer(); S.tab = id; CAM = CAMS[id]; S.sort = S.sortL[id]; S.sel = null; S.zoom = 1; S.panX = 0; S.panY = 0; S.limite = 150; S.noCirculo = [];
+    limparConstelacao(); atualizarHash(id, doHash); atualizarTabsUI(); textos();
+    var parte = id === 'datasets' || id === 'benchmarks' ? id : null;
+    function concluir() { if (S.tab !== id) return; ocultarCarga(); atualizarTabsUI(); textos(); tudo(depois); }
+    if (parte && !parteCarregada(parte) && !CC[parte].length) {
+      mostrarCarga(parte, null, false);   // indicador antes de qualquer trabalho pesado
+      carregarParte(parte, function (f) { if (S.tab === id) mostrarCarga(parte, f, false); }).then(function () { prepararCamadas(); concluir(); }, function () { if (S.tab === id) mostrarCarga(parte, null, true); });
+    } else { prepararCamadas(); concluir(); }
+  }
+  cargaEl.querySelector('.carga-retry').addEventListener('click', function () { var id = S.tab; S.tab = 'modelos'; CAM = CAMS.modelos; trocarTab(id, false); });
   $('#tabs').addEventListener('click', function (e) { var b = e.target.closest('[role=tab]'); if (b && !b.hidden) trocarTab(b.dataset.tab); });
   $('#tabs').addEventListener('keydown', function (e) {
     var abas = [].slice.call(document.querySelectorAll('#tabs [role=tab]')).filter(function (b) { return !b.hidden; }), i = abas.indexOf(document.activeElement); if (i < 0) return;
@@ -1013,8 +1107,33 @@
   window.addEventListener('hashchange', function () { var a = abaDoHash(); if (a && a !== S.tab) trocarTab(a, false); else if (!location.hash && S.tab !== 'modelos') trocarTab('modelos', false); });
   window.addEventListener('popstate', function () { var a = abaDoHash() || 'modelos'; if (a !== S.tab) trocarTab(a, false); });
 
-  (function () { var a = abaDoHash(); if (a && TEM[a]) { S.tab = a; CAM = CAMS[a]; S.sort = S.sortL[a]; } atualizarTabsUI(); })();
-  tudo();
+  // carga inicial: so o necessario para a aba pedida; o resto, em ociosidade depois do primeiro desenho
+  function prefetchOcioso() {
+    if (/[?&]prefetch=0/.test(location.search)) return;
+    var c = navigator.connection; if (c && (c.saveData || /2g/.test(c.effectiveType || ''))) return;
+    var ric = window.requestIdleCallback || function (f) { setTimeout(f, 1500); }, fila = ['builds', 'datasets', 'benchmarks'].filter(function (n) { return PARTES[n] && !parteCarregada(n); });
+    (function prox() {
+      var n = fila.shift(); if (!n) return;
+      ric(function () {
+        carregarParte(n).then(function () { if (n === 'builds') aplicarDetalhes(); else { prepararCamadas(); atualizarTabsUI(); paint(); } prox(); }, prox);
+      }, { timeout: 6000 });
+    })();
+  }
+  (function () {
+    var a = abaDoHash(), inicial = a && (a === 'datasets' || a === 'benchmarks') && TEM[a] && !parteCarregada(a) && !CC[a].length ? a : null;
+    function iniciar() {
+      if (a && TEM[a]) { S.tab = a; CAM = CAMS[a]; S.sort = S.sortL[a]; }
+      atualizarTabsUI();
+      tudo(function () {
+        if (window.__carga) __carga.etapa(2);
+        requestAnimationFrame(function () { requestAnimationFrame(function () { if (window.__carga) __carga.fim(); prefetchOcioso(); }); });
+      });
+    }
+    if (inicial) {
+      var msg = $('#c-msg'), prog = $('#c-prog'); if (msg) msg.textContent = textoCarga(inicial);
+      carregarParte(inicial, function (f) { if (prog) prog.style.width = Math.round(8 + 32 * f) + '%'; }).then(function () { prepararCamadas(); iniciar(); }, function () { a = null; iniciar(); });
+    } else iniciar();
+  })();
   // gancho de medicao e de conferencia (somente leitura)
   window.__obs = { get estrelas() { return stars; }, get grupos() { return G; }, get estado() { return S; }, get stats() { return STATS; }, get modelos() { return D.modelos.length; }, achar: function (x, y) { return achar(x, y); } };
 })();

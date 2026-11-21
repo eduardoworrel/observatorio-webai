@@ -934,7 +934,7 @@ def gravar(meta, pacote, foto, camadas=None):
     saidas[os.path.join("data", "datasets.json")] = json.dumps({"meta": meta_c, "datasets": ds}, ensure_ascii=False, indent=1)
     saidas[os.path.join("data", "benchmarks.json")] = json.dumps({"meta": meta, "benchmarks": bs}, ensure_ascii=False, indent=1)
     saidas[os.path.join("data", "foto_camadas.json")] = json.dumps(foto_c, ensure_ascii=False, indent=1)
-    saidas[os.path.join("web", "data.js")] = "window.MAPA_DADOS=" + json.dumps(dict(meta=meta, foto=foto, **pacote, datasets=compactar_datasets(ds), benchmarks=bs, foto_camadas=foto_c, contrato_camadas=1), ensure_ascii=False, separators=(",", ":")) + ";"
+    saidas.update(arquivos_web(meta, foto, pacote, ds, bs, foto_c))
     mudou = []
     for rel, conteudo in saidas.items():
         caminho = os.path.join(RAIZ, rel)
@@ -1162,6 +1162,24 @@ def montar_camadas(raw, bench, br_ids):
             "benchmarks": {"total": len(bs), "por_dominio": dict(sorted(collections.Counter(d for b in bs for d in b["dominio"]).items())),
                            "por_tipo": dict(sorted(collections.Counter(b["tipo"] for b in bs).items()))}}
     return final, bs, foto
+
+
+def arquivos_web(meta, foto, pacote, ds, bs, foto_c):
+    """Arquivos de web/: data.js traz o necessario para a aba Modelos; datasets, benchmarks e os builds e fontes de cada modelo
+    ficam em arquivos proprios, carregados sob demanda pela interface. window.MAPA_DADOS continua com as mesmas chaves depois de carregados."""
+    dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
+    leves, detalhes = [], {}
+    for m in pacote["modelos"]:
+        leves.append({k: v for k, v in m.items() if k not in ("builds", "fontes")})
+        detalhes[m["id"]] = {"builds": m["builds"], "fontes": m["fontes"]}
+    partes = {"builds": "data-builds.js", "datasets": "data-datasets.js", "benchmarks": "data-benchmarks.js"}
+    w = lambda nome: os.path.join("web", nome)
+    extras = {w("data-builds.js"): "window.MAPA_DETALHES=" + dump(detalhes) + ";",
+              w("data-datasets.js"): "window.MAPA_DADOS.datasets=" + dump(compactar_datasets(ds)) + ";",
+              w("data-benchmarks.js"): "window.MAPA_DADOS.benchmarks=" + dump(bs) + ";"}
+    tamanhos = {nome: len(extras[w(arq)].encode("utf-8")) for nome, arq in partes.items()}   # bytes brutos: a interface mostra o progresso real
+    nucleo = dict(meta=meta, foto=foto, **dict(pacote, modelos=leves), foto_camadas=foto_c, contrato_camadas=1, partes=partes, partes_bytes=tamanhos)
+    return dict({w("data.js"): "window.MAPA_DADOS=" + dump(nucleo) + ";"}, **extras)
 
 
 def compactar_datasets(final):

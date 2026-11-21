@@ -330,3 +330,17 @@ td.nw{white-space:nowrap}
   .segmented button{flex:1 1 auto;padding:0 8px}
   .language-switch button{padding:0 9px}
 }
+
+/* indicador de carga das abas */
+.carga-camada{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:var(--ctl-fs,14px);color:var(--ink);margin:0 0 10px}
+.carga-camada[hidden]{display:none}
+.carga-camada .c-barra-p{flex:1 1 120px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;min-width:100px}
+.carga-camada .c-barra-p i{display:block;height:100%;width:0;background:var(--accent);border-radius:3px;transition:width .3s}
+.carga-camada .c-barra-p.indet i{width:35%;animation:c-vai2 1.2s ease-in-out infinite}
+@keyframes c-vai2{0%{margin-left:-35%}100%{margin-left:100%}}
+.carga-camada .c-spin{width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:c-giro .8s linear infinite;flex:0 0 auto}
+@keyframes c-giro{to{transform:rotate(360deg)}}
+.carga-camada.erro{border-color:var(--focus)}
+.carga-camada.erro .c-spin{display:none}
+.carga-ceu{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:4;width:min(320px,86%);background:var(--drawer-bg,var(--paper));margin:0}
+@media(prefers-reduced-motion:reduce){.carga-camada .c-spin,.carga-camada .c-barra-p.indet i{animation:none}.carga-camada .c-barra-p i{transition:none}}

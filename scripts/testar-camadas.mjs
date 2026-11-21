@@ -8,6 +8,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
+import http from 'http';
 const raiz = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const pw = createRequire(import.meta.url)(process.env.PLAYWRIGHT_CORE || 'playwright-core');
 const b = await pw.chromium.launch({ executablePath: process.env.CHROME || undefined });
@@ -18,7 +19,7 @@ const ok = (c, msg, det = '') => { console.log((c ? 'ok    ' : 'FALHA ') + msg +
 const abrir = async (q = '', semCamadas = false) => {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
   const p = await ctx.newPage();
-  if (semCamadas) await p.addInitScript(() => { let d = null; Object.defineProperty(window, 'MAPA_DADOS', { configurable: true, get() { return d; }, set(v) { delete v.datasets; delete v.benchmarks; d = v; } }); }); const erros = []; p.on('pageerror', e => erros.push(e.message));
+  if (semCamadas) await p.addInitScript(() => { let d = null; Object.defineProperty(window, 'MAPA_DADOS', { configurable: true, get() { return d; }, set(v) { delete v.datasets; delete v.benchmarks; delete v.partes; d = v; } }); }); const erros = []; p.on('pageerror', e => erros.push(e.message));
   await p.goto(pagina + q); await p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await p.waitForTimeout(900);
   return { p, ctx, erros };
 };
@@ -92,6 +93,56 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   const semModelo = await p.evaluate(() => { const D = window.MAPA_DADOS, pubs = new Set(D.publicadores.map(x => x.id)); return window.__obs.grupos.filter(g => !pubs.has(g.id)).length; });
   ok(semModelo > 0, `agrupamento por publicador funciona tambem para ${semModelo} publicadores sem modelos no mapa`);
   ok(!erros.length, 'sem erros de script com os dados reais', erros.join(' | ')); await ctx.close(); }
+
+// 3d) carregamento: tela de carregamento, partes sob demanda, rede lenta, erro e nova tentativa (servidor HTTP local)
+{ const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
+  const srv = http.createServer((req, res) => { let u = decodeURIComponent(req.url.split('?')[0]); if (u.endsWith('/')) u += 'index.html'; const f = path.join(raiz, 'web', u);
+    if (!f.startsWith(path.join(raiz, 'web')) || !fs.existsSync(f)) { res.writeHead(404); return res.end(); }
+    res.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream', 'content-length': fs.statSync(f).size, 'cache-control': 'no-store' }); fs.createReadStream(f).pipe(res); });
+  await new Promise(r => srv.listen(0, '127.0.0.1', r)); const base = `http://127.0.0.1:${srv.address().port}/`;
+  const abrirHttp = async (q = '', opc = {}) => { const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, ...opc }); const p = await ctx.newPage(); const pedidos = []; p.on('request', r => pedidos.push(r.url().replace(base, '')));
+    const erros = []; p.on('pageerror', e => erros.push(e.message)); return { ctx, p, pedidos, erros, ir: (o) => p.goto(base + q, o) }; };
+  const FALTA_FONTE = /font|woff|CORS|ERR_FAILED/i;
+  // 1) tela de carregamento desde o primeiro quadro, com os dados atrasados
+  { const t = await abrirHttp('?prefetch=0'); await t.p.route('**/data.js', async r => { await new Promise(x => setTimeout(x, 1500)); r.continue(); });
+    await t.ir({ waitUntil: 'commit' }); await t.p.waitForTimeout(500);
+    const l = await t.p.evaluate(() => { const e = document.getElementById('carregando'); return e ? { visivel: getComputedStyle(e).display !== 'none' && e.getBoundingClientRect().height > 100, role: e.getAttribute('role'), live: e.getAttribute('aria-live'), msg: document.getElementById('c-msg').textContent, etapa: document.getElementById('c-etapa').textContent, html: window.__carga.t.html } : null; });
+    ok(l && l.visivel && l.role === 'status' && l.live === 'polite' && /Carregando modelos, datasets e benchmarks/.test(l.msg) && /Baixando dados/.test(l.etapa), `tela de carregamento visivel antes dos dados (inline em ${l && l.html} ms): "${l && l.msg}" / "${l && l.etapa}"`);
+    await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await t.p.waitForTimeout(900);
+    const f = await t.p.evaluate(() => ({ some: !document.getElementById('carregando'), t: window.__carga.t }));
+    ok(f.some && f.t.pronto > f.t.etapa1, `a tela some depois do primeiro desenho (etapas em ms: ${JSON.stringify(f.t)})`);
+    const dados = t.pedidos.filter(x => /^data/.test(x)); ok(dados.length === 1 && dados[0].startsWith('data.js'), `com prefetch desligado, so ${dados.join(', ')} foi pedido na carga inicial`);
+    const tam = fs.statSync(path.join(raiz, 'web', 'data.js')).size; ok(tam < 4e6, `data.js inicial tem ${(tam / 1e6).toFixed(2)} MB brutos (< 4 MB)`);
+    await t.ctx.close(); }
+  // 2) rede lenta: indicador imediato, progresso real, estrelas completas
+  { const t = await abrirHttp('?prefetch=0'); await t.ir(); await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await t.p.waitForTimeout(500);
+    const cdp = await t.ctx.newCDPSession(t.p); await cdp.send('Network.enable'); await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 120, downloadThroughput: 250 * 1024, uploadThroughput: 250 * 1024 });
+    await t.p.evaluate(() => document.querySelector('#tab-datasets').click()); await t.p.waitForTimeout(150);
+    const i1 = await t.p.evaluate(() => ({ vis: !document.querySelector('#carga-camada').hidden, txt: document.querySelector('#carga-camada .carga-txt').textContent, w: document.querySelector('#carga-camada .c-barra-p i').style.width, tab: window.__obs.estado.tab }));
+    await t.p.waitForTimeout(1200); const i2 = await t.p.evaluate(() => document.querySelector('#carga-camada .c-barra-p i').style.width);
+    ok(i1.vis && /Carregando 2\.221 datasets/.test(i1.txt) && i1.tab === 'datasets', `indicador da aba aparece na hora: "${i1.txt}"`);
+    ok(parseFloat(i2) > 0 && parseFloat(i2) < 100, `progresso real da rede lenta (${i1.w || 'indeterminado'} -> ${i2})`);
+    await t.p.waitForFunction(() => window.__obs.estrelas.length > 1000, null, { timeout: 60000 }); await t.p.waitForTimeout(300);
+    const fim = await t.p.evaluate(() => ({ n: window.__obs.estrelas.length, esperado: window.MAPA_DADOS.datasets.linhas.length, ind: document.querySelector('#carga-camada').hidden, linhas: document.querySelectorAll('#tb tbody tr').length }));
+    ok(fim.n === fim.esperado && fim.ind && fim.linhas === 150, `datasets carregados: ${fim.n} estrelas (= ${fim.esperado} nos dados), indicador some, tabela com ${fim.linhas} linhas`);
+    ok(!t.erros.filter(e => !FALTA_FONTE.test(e)).length, 'sem erros de script na rede lenta', t.erros.join(' | ')); await t.ctx.close(); }
+  // 3) erro e nova tentativa
+  { const t = await abrirHttp('?prefetch=0'); await t.p.route('**/data-benchmarks.js', r => r.abort()); await t.ir(); await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0);
+    await t.p.evaluate(() => document.querySelector('#tab-benchmarks').click()); await t.p.waitForTimeout(800);
+    const e1 = await t.p.evaluate(() => ({ txt: document.querySelector('#carga-camada .carga-txt').textContent, botao: !document.querySelector('#carga-camada .carga-retry').hidden }));
+    ok(/N.o foi poss.vel carregar/.test(e1.txt) && e1.botao, `estado de erro com botao Tentar de novo: "${e1.txt}"`);
+    await t.p.unroute('**/data-benchmarks.js'); await t.p.click('#carga-camada .carga-retry'); await t.p.waitForFunction(() => window.__obs.estrelas.length === 10, null, { timeout: 15000 });
+    ok(await t.p.evaluate(() => document.querySelector('#carga-camada').hidden), 'Tentar de novo carrega os 10 benchmarks e esconde o indicador'); await t.ctx.close(); }
+  // 4) builds do drawer sob demanda
+  { const t = await abrirHttp('?prefetch=0'); await t.ir(); await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await t.p.waitForTimeout(500);
+    ok(!t.pedidos.some(x => /data-builds/.test(x)), 'os builds dos modelos nao sao pedidos na carga inicial');
+    await t.p.evaluate(() => document.querySelector('#tb tbody tr').click()); await t.p.waitForFunction(() => /ONNX|MLC|LiteRT|GGUF/.test(document.querySelector('#drawer-corpo').textContent), null, { timeout: 20000 });
+    ok(t.pedidos.some(x => /data-builds/.test(x)), 'abrir o drawer baixa os builds do modelo e a lista aparece'); await t.ctx.close(); }
+  // 5) sem JavaScript: aviso no lugar da tela de carregamento
+  { const ctx = await b.newContext({ javaScriptEnabled: false }); const p = await ctx.newPage(); await p.goto(base);
+    const r = await p.evaluate(() => ({ carreg: getComputedStyle(document.getElementById('carregando')).display, aviso: [...document.querySelectorAll('.ns-aviso')].map(e => getComputedStyle(e).display + ':' + e.textContent.length) }));
+    ok(r.carreg === 'none' && r.aviso.some(a => a.startsWith('block')), 'sem JavaScript: a tela de carregamento some e o aviso aparece'); await ctx.close(); }
+  await new Promise(r => srv.close(r)); }
 
 // 4) limpar restaura
 { const { p, ctx } = await abrir('?fixture=1#datasets'); const total = await filtradas(p);
