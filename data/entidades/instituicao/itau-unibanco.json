@@ -1,0 +1,21 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "itau-unibanco",
+  "nome": "Itaú-Unibanco",
+  "sigla": "Itaú-Unibanco",
+  "tipo": "empresa",
+  "pais": "BR",
+  "links": {
+    "oficial": "https://www.itau.com.br"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/c2d-usp",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil do C2D no Hugging Face",
+      "trecho": "Banco Itaú-Unibanco"
+    }
+  ]
+}

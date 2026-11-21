@@ -81,6 +81,57 @@ if os.path.exists(os.path.join(R, "data", "datasets.json")):
             if x not in bid: err(f"dataset {d['id']}: benchmark desconhecido {x}")
     if fc["datasets"]["total"] != len(dss) or fc["benchmarks"]["total"] != len(bms): err("foto_camadas nao soma")
     if sum(fc["datasets"]["por_escopo"].values()) != len(dss): err("foto_camadas: escopos nao somam")
+if os.path.exists(os.path.join(R, "data", "relacoes.json")):
+    rl = L("relacoes")
+    iids = {i["id"] for i in rl["instituicoes"]}; lids = {l["id"] for l in rl["laboratorios"]}; pids = {p["id"] for p in pubs}
+    nos = {"inst": iids, "lab": lids, "pub": pids}
+    for m in mods:
+        if m.get("familia_tarefa") not in ("gerador", "codificador"): err(f"modelo {m['id']}: familia_tarefa")
+        for c in m.get("creditos", []):
+            t, _, i = c.partition(":")
+            if i not in nos.get(t, set()): err(f"modelo {m['id']}: credito desconhecido {c}")
+    for v in rl["vinculos"]:
+        for x in (v["de"], v["para"]):
+            t, _, i = x.partition(":")
+            if i not in nos.get(t, set()): err(f"vinculo com no desconhecido {x}")
+        if v["tipo"] not in ("conta_oficial", "membro", "pesquisador", "projeto", "relacionado", "mesma_organizacao"): err("vinculo: tipo " + v["tipo"])
+        if not URL.match(v["fonte"].get("url", "")) or not ISO.match(v["fonte"].get("acessado", "")) or not v["fonte"].get("trecho"): err(f"vinculo {v['de']} -> {v['para']}: fonte incompleta")
+    pai = {i["id"]: i.get("parte_de") for i in rl["instituicoes"]}
+    for i in rl["instituicoes"]:
+        x, vistos = i["id"], set()
+        while pai.get(x):
+            if pai[x] in vistos or pai[x] == i["id"]: err("ciclo em parte_de: " + i["id"]); break
+            vistos.add(pai[x]); x = pai[x]
+        if i["parte_de"] and i["parte_de"] not in iids: err(f"instituicao {i['id']}: parte_de desconhecida")
+        for l in i["labs"]:
+            if l not in lids: err(f"instituicao {i['id']}: lab desconhecido {l}")
+        for p in i["publicadores"]:
+            if p not in pids: err(f"instituicao {i['id']}: publicador desconhecido {p}")
+        fontes(i, "instituicao " + i["id"])
+    for l in rl["laboratorios"]:
+        if l["instituicao"] not in iids: err(f"laboratorio {l['id']}: instituicao desconhecida")
+        fontes(l, "laboratorio " + l["id"])
+    def percorre(n, antes=()):
+        if n["tipo"] == "instituicao" and n["id"] not in iids: err("hierarquia: instituicao " + n["id"])
+        if n["tipo"] == "laboratorio" and n["id"] not in lids: err("hierarquia: laboratorio " + n["id"])
+        if n["tipo"] == "publicador" and n["id"] not in pids: err("hierarquia: publicador " + n["id"])
+        for f in n["filhos"]:
+            percorre(f)
+    for n in rl["hierarquia"]: percorre(n)
+    for p in pubs:
+        for k in ("instituicoes", "labs", "relacionados"):
+            if k not in p: err(f"publicador {p['id']}: falta {k}")
+        for i in p.get("instituicoes", []):
+            if i not in iids: err(f"publicador {p['id']}: instituicao {i}")
+        for l in p.get("labs", []):
+            if l not in lids: err(f"publicador {p['id']}: lab {l}")
+        for q in p.get("relacionados", []):
+            if q not in pids: err(f"publicador {p['id']}: relacionado {q}")
+    fp = foto.get("por_familia_tarefa", {})
+    for esc in ("brasil", "mundo"):
+        if sum(fp[f][esc]["modelos"] for f in ("gerador", "codificador")) != foto[esc]["modelos"]: err("foto por familia nao soma: " + esc)
+    ms = foto["sem_maior_publicador"]
+    if ms["id"] and ms["brasil"]["modelos"] + ms["modelos"] != foto["brasil"]["modelos"]: err("foto sem_maior_publicador nao soma")
 if erros:
     print("\n".join(erros[:60])); print(len(erros), "erros"); sys.exit(1)
-print(f"ok: {len(pubs)} publicadores, {len(mods)} modelos, {len(const)} constelacoes" + (f", {len(dss)} datasets, {len(bms)} benchmarks" if os.path.exists(os.path.join(R, "data", "datasets.json")) else ""))
+print(f"ok: {len(pubs)} publicadores, {len(mods)} modelos, {len(const)} constelacoes" + (f", {len(dss)} datasets, {len(bms)} benchmarks" if os.path.exists(os.path.join(R, "data", "datasets.json")) else "") + (f", {len(rl['instituicoes'])} instituicoes, {len(rl['vinculos'])} vinculos" if os.path.exists(os.path.join(R, "data", "relacoes.json")) else ""))

@@ -24,6 +24,21 @@
     "hf": "https://huggingface.co/H2IA",
     "oficial": "https://ia.ufpel.edu.br"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "ufpel"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/H2IA",
+        "acessado": "2026-11-20",
+        "trecho": "Hub de Inovação em Inteligência Artificial - UFPel"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

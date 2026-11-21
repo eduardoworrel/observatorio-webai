@@ -1,0 +1,37 @@
+name: Adicionar instituição / Add an institution
+description: Universidade, instituto, empresa ou órgão que reúne laboratórios e contas no Hugging Face / University, institute, company or agency that groups labs and Hugging Face accounts
+labels: ["adicionar", "instituicao"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Só informação pública sobre a organização, com fonte e trecho literal. A decisão é sempre humana. / Public information about the organization only, with a source and a literal quote. The decision is always human.
+  - type: input
+    id: nome
+    attributes: {label: "Nome e sigla / Name and acronym"}
+    validations: {required: true}
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo / Type
+      options: [universidade, instituto, empresa, governo, outro]
+    validations: {required: true}
+  - type: input
+    id: pais
+    attributes: {label: "País e região (ISO, por exemplo BR e BR-SP) / Country and region"}
+    validations: {required: true}
+  - type: textarea
+    id: fontes
+    attributes:
+      label: Fontes / Sources (URL, tipo, o dia em que você abriu a página, trecho literal)
+      description: "Tipos: perfil_oficial, site_institucional, artigo, repositorio, cartao_modelo. Cada fonte precisa de um trecho copiado da página."
+    validations: {required: true}
+  - type: checkboxes
+    id: confirmo
+    attributes:
+      label: Confirmo / I confirm
+      options:
+        - label: Abri cada fonte e ela diz o que escrevi / I opened every source and it says what I wrote
+          required: true
+        - label: Aceito que o texto fique em CC BY 4.0 / I accept CC BY 4.0 for the text
+          required: true

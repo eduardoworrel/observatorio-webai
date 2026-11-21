@@ -11,7 +11,7 @@ Imprime e grava em .relatorios/ (ignorado pelo Git). So leitura dos dados; nenhu
 import argparse, collections, datetime, json, os, subprocess, sys, urllib.request
 
 RAIZ_PADRAO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ARQS = {"publicadores": "publicadores", "modelos": "modelos", "foto": None, "datasets": None, "benchmarks": None}
+ARQS = {"publicadores": "publicadores", "modelos": "modelos", "foto": None, "datasets": None, "benchmarks": None, "relacoes": None}
 QUEDA_PUB, QUEDA_TOTAL = 0.30, 0.10   # queda relativa que vira anomalia (publicador com 3+ modelos; total)
 
 
@@ -40,7 +40,8 @@ def carregar(raiz, ref):
             "mods": {m["id"]: m for m in saida["modelos"].get("modelos", [])},
             "foto": saida["foto"],
             "ds": {x["id"]: x for x in saida["datasets"].get("datasets", [])},
-            "bench": {x["id"]: x for x in saida["benchmarks"].get("benchmarks", [])}}
+            "bench": {x["id"]: x for x in saida["benchmarks"].get("benchmarks", [])},
+            "rel": saida["relacoes"]}
 
 
 def _cont(pubs, mods):
@@ -152,6 +153,18 @@ def texto(r, a, d, antes_nome, chamadas=None, urls_ruins=()):
     for i in r["ds_removidos"][:60]:
         ap(f"  - {i}")
     ap(f"== Benchmarks novos ({len(r['bench_novos'])}): " + ", ".join(r["bench_novos"]) + f"; removidos ({len(r['bench_removidos'])}): " + ", ".join(r["bench_removidos"]))
+    ra, rd, fa, fd = a["rel"], d["rel"], a["foto"], d["foto"]
+    ap(f"== Instituicoes: {len(ra.get('instituicoes', []))} -> {len(rd.get('instituicoes', []))}; laboratorios: {len(ra.get('laboratorios', []))} -> {len(rd.get('laboratorios', []))}; vinculos: {len(ra.get('vinculos', []))} -> {len(rd.get('vinculos', []))}")
+    for i in rd.get("instituicoes", []):
+        ap(f"  {i['id']}: {len(i['publicadores'])} publicador(es), {i['n_modelos']} modelo(s), builds nativos {i['n_builds']['nativo']}, so GGUF {i['n_builds']['gguf']}, geradores {i['por_familia_tarefa']['gerador']}, codificadores {i['por_familia_tarefa']['codificador']}")
+    for esc in ("brasil", "mundo"):
+        for f in ("gerador", "codificador"):
+            x, y = (fa.get("por_familia_tarefa") or {}).get(f, {}).get(esc), (fd.get("por_familia_tarefa") or {}).get(f, {}).get(esc)
+            if y:
+                ap(f"  {esc} {f}: " + "; ".join(f"{k} {(x or {}).get(k, '-')} -> {y[k]}" for k in ("modelos", "so_nativo", "so_gguf_wllama", "nativo_mais_gguf")))
+    sm = fd.get("sem_maior_publicador")
+    if sm and sm.get("id"):
+        ap(f"  sem o maior publicador ({sm['id']}, {sm['modelos']} modelos): Brasil {sm['brasil']['modelos']} modelos, nativo {sm['brasil']['so_nativo']}, nativo+GGUF {sm['brasil']['nativo_mais_gguf']}")
     ap(f"== Mudancas de status de build ({len(r['status'])})")
     for i, s0, s1, v0, v1 in r["status"]:
         ap(f"  {i}: status {s0} -> {s1}; via {v0} -> {v1}")

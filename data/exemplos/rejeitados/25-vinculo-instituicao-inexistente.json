@@ -1,0 +1,55 @@
+{
+  "_esperado": [
+    "REF_INEXISTENTE"
+  ],
+  "_motivo": "Vinculo para instituicao que nao existe.",
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "pucpr-br",
+  "nome": "Pontifícia Universidade Católica do Paraná",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-PR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "Pontifícia Universidade Católica do Paraná university https://www.pucpr.br/"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "Pontifícia Universidade Católica do Paraná university https://www.pucpr.br/"
+  },
+  "links": {
+    "hf": "https://huggingface.co/pucpr-br",
+    "oficial": "https://www.pucpr.br/"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "instituicao-que-nao-existe"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/pucpr-br",
+        "acessado": "2026-11-20",
+        "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+      }
+    }
+  ],
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/pucpr-br",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ]
+}

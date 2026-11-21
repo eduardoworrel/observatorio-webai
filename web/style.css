@@ -326,6 +326,31 @@ td.nw{white-space:nowrap}
   .language-switch button{padding:0 9px}
 }
 
+/* relacoes: capa, tarefa, vinculos */
+.capa{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;margin:0 0 12px}
+.capa-topo{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.capa-rot{font-size:var(--ui-2xs);letter-spacing:.13em;text-transform:uppercase;color:var(--soft)}
+.capa-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px 14px}
+.capa-nums div{display:flex;flex-direction:column}
+.capa-nums strong{font-weight:400;font-size:22px;letter-spacing:var(--tr-display);color:var(--accent-ink)}
+.capa-nums span{font-size:12px;color:var(--muted);line-height:1.35}
+.capa-nota{font-size:12px;color:var(--muted);margin:8px 0 0}
+.chip-t{display:inline-block;border:1px solid var(--ctl-bd);border-radius:4px;padding:0 6px;font-size:11px;background:var(--surface);color:var(--ink)}
+.chip-t.t-codificador{border-style:dashed;border-radius:2px}
+.leg-forma{display:inline-flex;align-items:center;gap:6px}
+.leg-forma i{display:inline-block;width:10px;height:10px;background:var(--c-of)}
+.leg-forma i.f-c{border-radius:50%}
+.leg-forma i.f-d{transform:rotate(45deg) scale(.85)}
+.dr-vinc ul{margin:0;padding-left:16px}
+.dr-vinc dd{margin:0 0 6px}
+.lnk,.dr-vinc button{font:inherit;font-size:inherit;border:0;background:none;color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px;padding:0;cursor:pointer;text-align:left}
+#f-tarefa{align-self:center}
+#tb[data-camada=modelos]{min-width:860px}
+@media(max-width:760px){.capa-nums strong{font-size:19px}}
+
+.mini-rot{font-size:12px;color:var(--muted);padding:0 8px 0 6px;align-self:center}
+.dr-grid dt::first-letter{text-transform:uppercase}
+
 /* indicador de carga das abas */
 .carga-camada{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:var(--ctl-fs,14px);color:var(--ink);margin:0 0 10px}
 .carga-camada[hidden]{display:none}

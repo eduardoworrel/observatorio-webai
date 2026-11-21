@@ -25,6 +25,21 @@
   "links": {
     "hf": "https://huggingface.co/ceia-research"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "ceia-ufg"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/ceia-research/lumi-4b",
+        "acessado": "2026-11-20",
+        "trecho": "developed by the NLP team at CEIA/UFG"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

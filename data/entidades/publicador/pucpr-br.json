@@ -25,6 +25,21 @@
     "hf": "https://huggingface.co/pucpr-br",
     "oficial": "https://www.pucpr.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "hailab-pucpr"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/pucpr-br",
+        "acessado": "2026-11-20",
+        "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

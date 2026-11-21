@@ -5,20 +5,13 @@
   "id": "ceia-ufg",
   "nome": "Centro de Excelência em Inteligência Artificial",
   "sigla": "CEIA",
-  "instituicao": {
-    "nome": "Universidade Federal de Goiás",
-    "pais": "BR",
-    "regiao": "BR-GO",
-    "fonte": {
-      "tipo": "site_institucional",
-      "url": "https://ceia.ufg.br/",
-      "acessado": "2026-11-20",
-      "trecho": "O Centro de Excelência em Inteligência Artificial (CEIA) da Universidade Federal de Goiás (UFG) é um polo de inovação"
-    }
+  "instituicao": "ufg",
+  "vinculo_fonte": {
+    "tipo": "site_institucional",
+    "url": "https://ceia.ufg.br/",
+    "acessado": "2026-11-20",
+    "trecho": "O Centro de Excelência em Inteligência Artificial (CEIA) da Universidade Federal de Goiás (UFG) é um polo de inovação"
   },
-  "publicadores": [
-    "CEIA-UFG"
-  ],
   "areas": [
     "inteligência artificial"
   ],

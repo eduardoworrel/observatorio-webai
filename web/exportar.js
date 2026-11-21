@@ -9,6 +9,8 @@
   var rgb = function (c) { return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')'; };
   var n1 = function (x) { return Math.round(x * 10) / 10; };
 
+  function losango(x, y, r, cor, op) { return '<path d="M' + n1(x) + ' ' + n1(y - r) + 'L' + n1(x + r) + ' ' + n1(y) + 'L' + n1(x) + ' ' + n1(y + r) + 'L' + n1(x - r) + ' ' + n1(y) + 'Z" fill="' + cor + '" opacity="' + op + '"/>'; }
+
   function defs(id) {
     var d = '<linearGradient id="' + id + 'bg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#2c376d"/><stop offset="0.55" stop-color="#262f60"/><stop offset="1" stop-color="#1f2753"/></linearGradient>';
     ['oficial', 'comunidade', 'gguf'].forEach(function (v) {
@@ -36,8 +38,8 @@
       var v = e.c, c = COR[v] || COR.nenhum, t = '<title>' + esc(e.t) + '</title>';
       if (v !== 'nenhum') {
         var gr = e.r * RAZAO[v];
-        s += '<g><circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(gr) + '" fill="url(#' + id + v + ')" opacity="' + ALFA[v] + '"/><circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(e.r) + '" fill="' + rgb(c) + '"/>' + t + '</g>';
-      } else s += '<circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(e.r * 0.8) + '" fill="' + rgb(c) + '" opacity="0.55">' + t + '</circle>';
+        s += '<g><circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(gr) + '" fill="url(#' + id + v + ')" opacity="' + ALFA[v] + '"/>' + (e.d ? losango(e.x, e.y, e.r * 1.2, rgb(c), 1) : '<circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(e.r) + '" fill="' + rgb(c) + '"/>') + t + '</g>';
+      } else s += e.d ? '<g>' + losango(e.x, e.y, e.r * 0.96, rgb(c), 0.55) + t + '</g>' : '<circle cx="' + n1(e.x) + '" cy="' + n1(e.y) + '" r="' + n1(e.r * 0.8) + '" fill="' + rgb(c) + '" opacity="0.55">' + t + '</circle>';
     });
     (snap.ligacoes || []).forEach(function (l) { s += '<line x1="' + n1(l[0]) + '" y1="' + n1(l[1]) + '" x2="' + n1(l[2]) + '" y2="' + n1(l[3]) + '" stroke="#d7ddff" stroke-opacity="0.25" stroke-width="0.7"/>'; });
     snap.rotulos.forEach(function (r) { s += '<text x="' + n1(r.x) + '" y="' + n1(r.y) + '" text-anchor="middle" fill="#f4f6ff" font-size="11" stroke="#1f2753" stroke-width="3" paint-order="stroke" stroke-linejoin="round">' + esc(r.t) + '</text>'; });

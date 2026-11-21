@@ -10,6 +10,7 @@
     "id",
     "nome",
     "instituicao",
+    "vinculo_fonte",
     "links",
     "fontes"
   ],
@@ -51,36 +52,7 @@
       "maxLength": 20
     },
     "instituicao": {
-      "type": "object",
-      "required": [
-        "nome",
-        "pais",
-        "fonte"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "nome": {
-          "type": "string",
-          "minLength": 2,
-          "maxLength": 160
-        },
-        "pais": {
-          "$ref": "comum.schema.json#/$defs/pais"
-        },
-        "regiao": {
-          "$ref": "comum.schema.json#/$defs/regiao"
-        },
-        "fonte": {
-          "$ref": "comum.schema.json#/$defs/evidencia"
-        }
-      }
-    },
-    "publicadores": {
-      "type": "array",
-      "maxItems": 10,
-      "items": {
-        "$ref": "comum.schema.json#/$defs/id_publicador"
-      }
+      "$ref": "comum.schema.json#/$defs/id_instituicao"
     },
     "areas": {
       "type": "array",
@@ -90,6 +62,32 @@
         "minLength": 2,
         "maxLength": 40
       }
+    },
+    "vinculo_fonte": {
+      "$ref": "comum.schema.json#/$defs/evidencia"
+    },
+    "parceiras": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "instituicao",
+          "fonte"
+        ],
+        "properties": {
+          "instituicao": {
+            "$ref": "comum.schema.json#/$defs/id_instituicao"
+          },
+          "fonte": {
+            "$ref": "comum.schema.json#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "modelos_creditados": {
+      "$ref": "comum.schema.json#/$defs/modelos_creditados"
     }
   }
 }

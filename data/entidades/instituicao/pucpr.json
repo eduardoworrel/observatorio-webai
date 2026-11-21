@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "pucpr",
+  "nome": "Pontifícia Universidade Católica do Paraná",
+  "sigla": "PUCPR",
+  "tipo": "universidade",
+  "pais": "BR",
+  "regiao": "BR-PR",
+  "links": {
+    "oficial": "https://www.pucpr.br/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/pucpr-br",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil no Hugging Face",
+      "trecho": "Pontifícia Universidade Católica do Paraná"
+    }
+  ]
+}

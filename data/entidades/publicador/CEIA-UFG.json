@@ -26,6 +26,32 @@
   "links": {
     "hf": "https://huggingface.co/CEIA-UFG"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "ceia-ufg"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+        "acessado": "2026-11-20",
+        "trecho": "Center of Excellence in Artificial Intelligence (CEIA)"
+      }
+    }
+  ],
+  "relacionados": [
+    {
+      "publicador": "amadeusai",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+        "acessado": "2026-11-20",
+        "trecho": "developed through a partnership between"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

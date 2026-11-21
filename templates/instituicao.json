@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "sigla-da-instituicao",
+  "nome": "Nome da instituicao",
+  "sigla": "SIGLA",
+  "tipo": "universidade",
+  "pais": "BR",
+  "regiao": "BR-XX",
+  "links": {
+    "oficial": "https://EXEMPLO"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://EXEMPLO",
+      "acessado": "AAAA-MM-DD",
+      "rotulo": "pagina oficial",
+      "trecho": "copie aqui a frase curta da pagina que identifica a instituicao"
+    }
+  ]
+}

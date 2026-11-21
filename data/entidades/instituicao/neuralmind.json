@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "neuralmind",
+  "nome": "NeuralMind Inteligência Artificial",
+  "sigla": "NeuralMind",
+  "tipo": "empresa",
+  "pais": "BR",
+  "regiao": "BR-SP",
+  "links": {
+    "oficial": "https://www.neuralmind.ai"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://github.com/neuralmind-ai",
+      "acessado": "2026-11-20",
+      "rotulo": "perfil no GitHub",
+      "trecho": "Campinas, SP, Brazil"
+    }
+  ],
+  "modelos_creditados": [
+    {
+      "modelo": "Jurema-br/Jurema-7B",
+      "papel": "desenvolvedor",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/Jurema-br/Jurema-7B",
+        "acessado": "2026-11-20",
+        "rotulo": "cartão do modelo",
+        "trecho": "Neuralmind's Privacy Policy"
+      }
+    }
+  ]
+}

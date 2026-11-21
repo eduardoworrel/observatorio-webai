@@ -4,17 +4,13 @@
   "id": "c4ai-usp",
   "nome": "Centro de Inteligência Artificial",
   "sigla": "C4AI",
-  "instituicao": {
-    "nome": "Universidade de São Paulo",
-    "pais": "BR",
-    "regiao": "BR-SP",
-    "fonte": {
-      "tipo": "site_institucional",
-      "url": "https://c4ai.inova.usp.br/pt/sobre/",
-      "acessado": "2026-11-20",
-      "rotulo": "site do próprio centro",
-      "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
-    }
+  "instituicao": "usp",
+  "vinculo_fonte": {
+    "tipo": "site_institucional",
+    "url": "https://c4ai.inova.usp.br/pt/sobre/",
+    "acessado": "2026-11-20",
+    "rotulo": "site do próprio centro",
+    "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
   },
   "links": {
     "oficial": "https://c4ai.inova.usp.br/"
@@ -26,9 +22,5 @@
       "acessado": "2026-11-20",
       "rotulo": "site oficial"
     }
-  ],
-  "publicadores": [
-    "c4ai-usp",
-    "carolina-c4ai"
   ]
 }

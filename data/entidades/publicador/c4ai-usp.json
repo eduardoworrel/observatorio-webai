@@ -26,6 +26,21 @@
     "github": "https://github.com/C4AI",
     "oficial": "https://c4ai.inova.usp.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "c4ai-usp"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://github.com/C4AI",
+        "acessado": "2026-11-20",
+        "trecho": "Based at the Universidade de São Paulo"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

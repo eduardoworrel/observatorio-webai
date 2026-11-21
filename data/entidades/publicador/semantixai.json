@@ -24,6 +24,21 @@
     "hf": "https://huggingface.co/semantixai",
     "oficial": "https://semantix.ai"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "semantix"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/semantixai",
+        "acessado": "2026-11-20",
+        "trecho": "Semantix company"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

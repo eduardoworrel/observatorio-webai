@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "instituicao.schema.json",
+  "title": "instituicao (SPEC 1.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec",
+    "entidade",
+    "id",
+    "nome",
+    "tipo",
+    "pais",
+    "links",
+    "fontes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "entidade": {
+      "const": "instituicao"
+    },
+    "exemplo": {
+      "type": "boolean"
+    },
+    "status": {
+      "$ref": "comum.schema.json#/$defs/status"
+    },
+    "arquivo": {
+      "$ref": "comum.schema.json#/$defs/arquivo"
+    },
+    "descricao": {
+      "$ref": "comum.schema.json#/$defs/texto_i18n"
+    },
+    "links": {
+      "$ref": "comum.schema.json#/$defs/links"
+    },
+    "fontes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "$ref": "comum.schema.json#/$defs/evidencia"
+      }
+    },
+    "id": {
+      "$ref": "comum.schema.json#/$defs/id"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 160
+    },
+    "sigla": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "tipo": {
+      "enum": [
+        "universidade",
+        "instituto",
+        "empresa",
+        "governo",
+        "outro"
+      ]
+    },
+    "pais": {
+      "$ref": "comum.schema.json#/$defs/pais"
+    },
+    "regiao": {
+      "$ref": "comum.schema.json#/$defs/regiao"
+    },
+    "parte_de": {
+      "$ref": "comum.schema.json#/$defs/id_instituicao"
+    },
+    "modelos_creditados": {
+      "$ref": "comum.schema.json#/$defs/modelos_creditados"
+    }
+  }
+}

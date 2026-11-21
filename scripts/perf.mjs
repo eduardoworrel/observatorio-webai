@@ -17,6 +17,7 @@ const NS = arg('n', '500,1000,2000,4000').split(',').map(Number);
 const DPR = Number(arg('dpr', '2'));
 const VW = Number(arg('vw', '1440')), VH = Number(arg('vh', '900'));
 const ROTULO = arg('rotulo', 'medida');
+const Q = arg('q', '');   // parametros da URL (por exemplo ?fixture=relacoes&agrupar=instituicao)
 const ABA = arg('aba', '');   // datasets ou benchmarks: troca de aba antes de medir (dados reais da aba, sem sinteticos)
 const SAIDA = arg('saida', path.join(raiz, 'ref', `perf-${ROTULO}.json`));
 const CHROME = process.env.CHROME || undefined;
@@ -64,7 +65,7 @@ async function cenario(browser, N) {
   await cdp.send('Performance.enable');
   const r = { n: N };
   const t0 = Date.now();
-  await page.goto(URL_PAGINA, { waitUntil: 'domcontentloaded' });
+  await page.goto(URL_PAGINA + Q, { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => window.__obs && window.__obs.estrelas.length > 0 && window.__obs.stats.estrelas > 0, null, { timeout: 120000 });
   await page.waitForTimeout(600);
   r.carga = await page.evaluate(() => ({ pronto_ms: Math.round(performance.now()), tarefas_longas: window.__p.long.filter(d => d > 50).length, maior_tarefa_ms: Math.round(Math.max(0, ...window.__p.long)), soma_tarefas_longas_ms: Math.round(window.__p.long.reduce((a, b) => a + b, 0)) }));

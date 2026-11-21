@@ -25,6 +25,21 @@
     "hf": "https://huggingface.co/c2d-usp",
     "oficial": "https://c2d.poli.usp.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "c2d-poli-usp"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/c2d-usp",
+        "acessado": "2026-11-20",
+        "trecho": "Centro de Ciência de Dados"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

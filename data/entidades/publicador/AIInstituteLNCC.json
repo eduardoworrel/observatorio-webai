@@ -25,6 +25,21 @@
   "links": {
     "hf": "https://huggingface.co/AIInstituteLNCC"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "lncc"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/AIInstituteLNCC",
+        "acessado": "2026-11-20",
+        "trecho": "LNCC"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

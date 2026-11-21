@@ -1,0 +1,44 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "exemplo-pessoa",
+  "nome": "Pessoa de exemplo",
+  "tipo": "pessoa",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/rhaymisonbetini",
+    "acessado": "2026-11-20",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Brasil",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+  },
+  "origem_cadastro": "autoinscricao",
+  "links": {
+    "hf": "https://huggingface.co/exemplo-pessoa"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/exemplo-pessoa",
+      "acessado": "2026-11-20"
+    }
+  ],
+  "exemplo": true,
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "hailab-pucpr"
+      },
+      "relacao": "pesquisador",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://huggingface.co/exemplo-pessoa",
+        "acessado": "2026-11-20",
+        "trecho": "Pesquisadora do HAILab-PUCPR"
+      }
+    }
+  ]
+}

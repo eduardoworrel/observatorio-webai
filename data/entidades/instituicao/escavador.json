@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "escavador",
+  "nome": "Escavador",
+  "sigla": "Escavador",
+  "tipo": "empresa",
+  "pais": "BR",
+  "regiao": "BR-BA",
+  "links": {
+    "oficial": "https://jurema.ai/pt-BR"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://jurema.ai/pt-BR",
+      "acessado": "2026-11-20",
+      "rotulo": "site do Jurema",
+      "trecho": "Escavador Legaltech ... Fundado em Salvador"
+    }
+  ],
+  "modelos_creditados": [
+    {
+      "modelo": "Jurema-br/Jurema-7B",
+      "papel": "parceiro",
+      "fonte": {
+        "tipo": "site_institucional",
+        "url": "https://neuralmind.ai",
+        "acessado": "2026-11-20",
+        "rotulo": "site da NeuralMind",
+        "trecho": "Desenvolvimento em parceria com Escavador"
+      }
+    }
+  ]
+}

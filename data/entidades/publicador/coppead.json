@@ -25,6 +25,21 @@
     "hf": "https://huggingface.co/coppead",
     "oficial": "https://www.coppead.ufrj.br"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "ufrj"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/coppead",
+        "acessado": "2026-11-20",
+        "trecho": "graduate school of business of the Federal University of Rio de Janeiro"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

@@ -4,7 +4,7 @@
   "id": "neuralmind",
   "nome": "NeuralMind Inteligência Artificial",
   "tipo": "grupo",
-  "natureza": "nao_classificada",
+  "natureza": "empresa",
   "classe_pais": "br_evidencia",
   "pais": "BR",
   "regiao": "BR-SP",
@@ -19,6 +19,21 @@
     "github": "https://github.com/neuralmind-ai",
     "oficial": "https://www.neuralmind.ai"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "neuralmind"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://github.com/neuralmind-ai",
+        "acessado": "2026-11-20",
+        "trecho": "Deep Learning for NLP"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",
@@ -34,5 +49,13 @@
       "trecho": "[BERTimbau repository](https://github.com/neuralmind-ai/portuguese-bert/)"
     }
   ],
-  "status": "ativo"
+  "status": "ativo",
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "site_institucional",
+    "url": "https://jurema.ai/pt-BR",
+    "acessado": "2026-11-20",
+    "trecho": "NeuralMind DeepTech",
+    "rotulo": "site do Jurema"
+  }
 }

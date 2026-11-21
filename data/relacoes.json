@@ -1,0 +1,1323 @@
+{
+ "meta": {
+  "coletado_em": "2026-11-20",
+  "fonte": "Hugging Face API publica",
+  "versao_spec": "1.0",
+  "assinatura": "c2cd4a32d40bb92c"
+ },
+ "instituicoes": [
+  {
+   "id": "escavador",
+   "nome": "Escavador",
+   "sigla": "Escavador",
+   "pais": "BR",
+   "regiao": "BR-BA",
+   "tipo": "empresa",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "Jurema-br"
+   ],
+   "n_modelos": 1,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 1,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://jurema.ai/pt-BR",
+     "acessado": "2026-11-20",
+     "rotulo": "site do Jurema",
+     "trecho": "Escavador Legaltech ... Fundado em Salvador"
+    }
+   ]
+  },
+  {
+   "id": "itau-unibanco",
+   "nome": "Itaú-Unibanco",
+   "sigla": "Itaú-Unibanco",
+   "pais": "BR",
+   "regiao": null,
+   "tipo": "empresa",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "Itau-Unibanco"
+   ],
+   "n_modelos": 3,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 3
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/c2d-usp",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil do C2D no Hugging Face",
+     "trecho": "Banco Itaú-Unibanco"
+    }
+   ]
+  },
+  {
+   "id": "lncc",
+   "nome": "Laboratório Nacional de Computação Científica",
+   "sigla": "LNCC",
+   "pais": "BR",
+   "regiao": "BR-RJ",
+   "tipo": "instituto",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "AIInstituteLNCC"
+   ],
+   "n_modelos": 3,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 1
+   },
+   "por_familia_tarefa": {
+    "gerador": 3,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/recogna-nlp/bode-13b-alpaca-pt-br",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo",
+     "trecho": "Laboratório Nacional de Computação Científica (LNCC/MCTI, Brasil)"
+    }
+   ]
+  },
+  {
+   "id": "neuralmind",
+   "nome": "NeuralMind Inteligência Artificial",
+   "sigla": "NeuralMind",
+   "pais": "BR",
+   "regiao": "BR-SP",
+   "tipo": "empresa",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "Jurema-br",
+    "neuralmind"
+   ],
+   "n_modelos": 3,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 1,
+    "codificador": 2
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://github.com/neuralmind-ai",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no GitHub",
+     "trecho": "Campinas, SP, Brazil"
+    }
+   ]
+  },
+  {
+   "id": "pucpr",
+   "nome": "Pontifícia Universidade Católica do Paraná",
+   "sigla": "PUCPR",
+   "pais": "BR",
+   "regiao": "BR-PR",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "hailab-pucpr"
+   ],
+   "publicadores": [
+    "pucpr-br"
+   ],
+   "n_modelos": 14,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 1
+   },
+   "por_familia_tarefa": {
+    "gerador": 2,
+    "codificador": 12
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/pucpr-br",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "Pontifícia Universidade Católica do Paraná"
+    }
+   ]
+  },
+  {
+   "id": "semantix",
+   "nome": "Semantix",
+   "sigla": "Semantix",
+   "pais": "BR",
+   "regiao": null,
+   "tipo": "empresa",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "semantixai"
+   ],
+   "n_modelos": 3,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 3,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/semantixai",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "Founded in 2010 in Brazil"
+    }
+   ]
+  },
+  {
+   "id": "ufca",
+   "nome": "Universidade Federal do Cariri",
+   "sigla": "UFCA",
+   "pais": "BR",
+   "regiao": "BR-CE",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "ufca-llms"
+   ],
+   "n_modelos": 13,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 1
+   },
+   "por_familia_tarefa": {
+    "gerador": 10,
+    "codificador": 3
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/ufca-llms",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "Grupo de Pesquisa em LLMs da UFCA"
+    }
+   ]
+  },
+  {
+   "id": "ufg",
+   "nome": "Universidade Federal de Goiás",
+   "sigla": "UFG",
+   "pais": "BR",
+   "regiao": "BR-GO",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "ceia-ufg"
+   ],
+   "publicadores": [
+    "ceia-research",
+    "CEIA-UFG"
+   ],
+   "n_modelos": 2,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 2
+   },
+   "por_familia_tarefa": {
+    "gerador": 2,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo",
+     "trecho": "Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)"
+    }
+   ]
+  },
+  {
+   "id": "ufmg",
+   "nome": "Universidade Federal de Minas Gerais",
+   "sigla": "UFMG",
+   "pais": "BR",
+   "regiao": "BR-MG",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [],
+   "n_modelos": 0,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/ufmg-digital-pathology",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "Patologia Digital UFMG"
+    }
+   ]
+  },
+  {
+   "id": "ufpel",
+   "nome": "Universidade Federal de Pelotas",
+   "sigla": "UFPel",
+   "pais": "BR",
+   "regiao": "BR-RS",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "H2IA"
+   ],
+   "n_modelos": 4,
+   "n_builds": {
+    "nativo": 4,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 4
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/H2IA",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "Hub de Inovação em Inteligência Artificial - UFPel"
+    }
+   ]
+  },
+  {
+   "id": "ufrj",
+   "nome": "Universidade Federal do Rio de Janeiro",
+   "sigla": "UFRJ",
+   "pais": "BR",
+   "regiao": "BR-RJ",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [
+    "coppead"
+   ],
+   "n_modelos": 1,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 1
+   },
+   "por_familia_tarefa": {
+    "gerador": 1,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/coppead",
+     "acessado": "2026-11-20",
+     "rotulo": "perfil no Hugging Face",
+     "trecho": "graduate school of business of the Federal University of Rio de Janeiro"
+    }
+   ]
+  },
+  {
+   "id": "uneb",
+   "nome": "Universidade do Estado da Bahia",
+   "sigla": "UNEB",
+   "pais": "BR",
+   "regiao": "BR-BA",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [],
+   "publicadores": [],
+   "n_modelos": 0,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://acso.uneb.br/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do centro",
+     "trecho": "UNEB"
+    }
+   ]
+  },
+  {
+   "id": "unicamp",
+   "nome": "Universidade Estadual de Campinas",
+   "sigla": "Unicamp",
+   "pais": "BR",
+   "regiao": "BR-SP",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "hiaac-unicamp"
+   ],
+   "publicadores": [
+    "unicamp-dl"
+   ],
+   "n_modelos": 21,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 14,
+    "codificador": 7
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://hiaac.unicamp.br/about-the-hub/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do H.IAAC",
+     "trecho": "Universidade Estadual de Campinas"
+    }
+   ]
+  },
+  {
+   "id": "usp",
+   "nome": "Universidade de São Paulo",
+   "sigla": "USP",
+   "pais": "BR",
+   "regiao": "BR-SP",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "c2d-poli-usp",
+    "c4ai-usp"
+   ],
+   "publicadores": [
+    "c2d-usp",
+    "carolina-c4ai"
+   ],
+   "n_modelos": 39,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 2
+   },
+   "por_familia_tarefa": {
+    "gerador": 35,
+    "codificador": 4
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://c4ai.inova.usp.br/pt/sobre/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do C4AI",
+     "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
+    }
+   ]
+  }
+ ],
+ "laboratorios": [
+  {
+   "id": "c2d-poli-usp",
+   "nome": "Centro de Ciência de Dados",
+   "sigla": "C2D",
+   "instituicao": "usp",
+   "parceiras": [
+    "itau-unibanco"
+   ],
+   "publicadores": [
+    "c2d-usp"
+   ],
+   "n_modelos": 35,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 2
+   },
+   "por_familia_tarefa": {
+    "gerador": 35,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://c2d.poli.usp.br",
+     "acessado": "2026-11-20",
+     "rotulo": "site do próprio centro",
+     "trecho": "Centro de Ciência de Dados - POLI USP"
+    },
+    {
+     "tipo": "site_institucional",
+     "url": "https://c2d.poli.usp.br/",
+     "acessado": "2026-11-20",
+     "rotulo": "site oficial"
+    }
+   ]
+  },
+  {
+   "id": "c4ai-usp",
+   "nome": "Centro de Inteligência Artificial",
+   "sigla": "C4AI",
+   "instituicao": "usp",
+   "parceiras": [],
+   "publicadores": [
+    "carolina-c4ai"
+   ],
+   "n_modelos": 4,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 4
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://c4ai.inova.usp.br/pt/sobre/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do próprio centro",
+     "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
+    },
+    {
+     "tipo": "site_institucional",
+     "url": "https://c4ai.inova.usp.br/",
+     "acessado": "2026-11-20",
+     "rotulo": "site oficial"
+    }
+   ]
+  },
+  {
+   "id": "ceia-ufg",
+   "nome": "Centro de Excelência em Inteligência Artificial",
+   "sigla": "CEIA",
+   "instituicao": "ufg",
+   "parceiras": [],
+   "publicadores": [
+    "ceia-research",
+    "CEIA-UFG"
+   ],
+   "n_modelos": 2,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 2
+   },
+   "por_familia_tarefa": {
+    "gerador": 2,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo",
+     "trecho": "Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)"
+    },
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo Gaia"
+    }
+   ]
+  },
+  {
+   "id": "hailab-pucpr",
+   "nome": "Health Artificial Intelligence Lab",
+   "sigla": "HAILab",
+   "instituicao": "pucpr",
+   "parceiras": [],
+   "publicadores": [
+    "pucpr-br"
+   ],
+   "n_modelos": 14,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 1
+   },
+   "por_familia_tarefa": {
+    "gerador": 2,
+    "codificador": 12
+   },
+   "fontes": [
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/pucpr-br",
+     "acessado": "2026-11-20",
+     "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+    },
+    {
+     "tipo": "perfil_oficial",
+     "url": "https://huggingface.co/pucpr-br",
+     "acessado": "2026-11-20",
+     "rotulo": "Organização no Hugging Face"
+    }
+   ]
+  },
+  {
+   "id": "hiaac-unicamp",
+   "nome": "Hub de Inteligência Artificial e Arquiteturas Cognitivas",
+   "sigla": "H.IAAC",
+   "instituicao": "unicamp",
+   "parceiras": [],
+   "publicadores": [],
+   "n_modelos": 0,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 0,
+    "codificador": 0
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://hiaac.unicamp.br/about-the-hub/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do próprio centro",
+     "trecho": "H.IAAC, Hub de Inteligência Artificial e Arquiteturas Cognitivas - Universidade Estadual de Campinas"
+    },
+    {
+     "tipo": "site_institucional",
+     "url": "https://hiaac.unicamp.br/",
+     "acessado": "2026-11-20",
+     "rotulo": "site oficial"
+    }
+   ]
+  }
+ ],
+ "vinculos": [
+  {
+   "de": "pub:AIInstituteLNCC",
+   "para": "inst:lncc",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/AIInstituteLNCC",
+    "acessado": "2026-11-20",
+    "trecho": "LNCC"
+   }
+  },
+  {
+   "de": "pub:c2d-usp",
+   "para": "lab:c2d-poli-usp",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "Centro de Ciência de Dados"
+   }
+  },
+  {
+   "de": "pub:ceia-research",
+   "para": "lab:ceia-ufg",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/ceia-research/lumi-4b",
+    "acessado": "2026-11-20",
+    "trecho": "developed by the NLP team at CEIA/UFG"
+   }
+  },
+  {
+   "de": "pub:CEIA-UFG",
+   "para": "lab:ceia-ufg",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "acessado": "2026-11-20",
+    "trecho": "Center of Excellence in Artificial Intelligence (CEIA)"
+   }
+  },
+  {
+   "de": "pub:coppead",
+   "para": "inst:ufrj",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/coppead",
+    "acessado": "2026-11-20",
+    "trecho": "graduate school of business of the Federal University of Rio de Janeiro"
+   }
+  },
+  {
+   "de": "pub:H2IA",
+   "para": "inst:ufpel",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/H2IA",
+    "acessado": "2026-11-20",
+    "trecho": "Hub de Inovação em Inteligência Artificial - UFPel"
+   }
+  },
+  {
+   "de": "pub:Itau-Unibanco",
+   "para": "inst:itau-unibanco",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/Itau-Unibanco",
+    "acessado": "2026-11-20",
+    "trecho": "Itaú-Unibanco Team company"
+   }
+  },
+  {
+   "de": "pub:neuralmind",
+   "para": "inst:neuralmind",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/neuralmind-ai",
+    "acessado": "2026-11-20",
+    "trecho": "Deep Learning for NLP"
+   }
+  },
+  {
+   "de": "pub:pucpr-br",
+   "para": "lab:hailab-pucpr",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+   }
+  },
+  {
+   "de": "pub:semantixai",
+   "para": "inst:semantix",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/semantixai",
+    "acessado": "2026-11-20",
+    "trecho": "Semantix company"
+   }
+  },
+  {
+   "de": "pub:ufca-llms",
+   "para": "inst:ufca",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/ufca-llms",
+    "acessado": "2026-11-20",
+    "trecho": "Grupo de Pesquisa em LLMs da UFCA"
+   }
+  },
+  {
+   "de": "pub:unicamp-dl",
+   "para": "inst:unicamp",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/unicamp-dl",
+    "acessado": "2026-11-20",
+    "trecho": "unicamp-dl university"
+   }
+  },
+  {
+   "de": "pub:carolina-c4ai",
+   "para": "lab:c4ai-usp",
+   "tipo": "membro",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://sites.usp.br/corpuscarolina/",
+    "acessado": "2026-11-20",
+    "trecho": "membros do Laboratório Virtual de Humanidades Digitais - LaViHD e do Centro de Inteligência Artificial da Universidade de São Paulo - C4AI"
+   }
+  },
+  {
+   "de": "lab:c2d-poli-usp",
+   "para": "inst:itau-unibanco",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/c2d-usp",
+    "acessado": "2026-11-20",
+    "trecho": "criado a partir do interesse comum da Escola Politécnica da Universidade de São Paulo e do Banco Itaú-Unibanco"
+   }
+  },
+  {
+   "de": "lab:c2d-poli-usp",
+   "para": "inst:usp",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://c2d.poli.usp.br",
+    "acessado": "2026-11-20",
+    "rotulo": "site do próprio centro",
+    "trecho": "Centro de Ciência de Dados - POLI USP"
+   }
+  },
+  {
+   "de": "lab:c4ai-usp",
+   "para": "inst:usp",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://c4ai.inova.usp.br/pt/sobre/",
+    "acessado": "2026-11-20",
+    "rotulo": "site do próprio centro",
+    "trecho": "A instituição sede é a Universidade de São Paulo (USP)"
+   }
+  },
+  {
+   "de": "lab:ceia-ufg",
+   "para": "inst:ufg",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo",
+    "trecho": "Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)"
+   }
+  },
+  {
+   "de": "lab:hailab-pucpr",
+   "para": "inst:pucpr",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "perfil_oficial",
+    "url": "https://huggingface.co/pucpr-br",
+    "acessado": "2026-11-20",
+    "trecho": "HAILab-PUCPR - Health Artificial Intelligence Lab from PUCPR"
+   }
+  },
+  {
+   "de": "lab:hiaac-unicamp",
+   "para": "inst:unicamp",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://hiaac.unicamp.br/about-the-hub/",
+    "acessado": "2026-11-20",
+    "rotulo": "site do próprio centro",
+    "trecho": "H.IAAC, Hub de Inteligência Artificial e Arquiteturas Cognitivas - Universidade Estadual de Campinas"
+   }
+  },
+  {
+   "de": "pub:Jurema-br",
+   "para": "inst:escavador",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://neuralmind.ai",
+    "acessado": "2026-11-20",
+    "rotulo": "site da NeuralMind",
+    "trecho": "Desenvolvimento em parceria com Escavador"
+   }
+  },
+  {
+   "de": "pub:Jurema-br",
+   "para": "inst:neuralmind",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "site_institucional",
+    "url": "https://neuralmind.ai",
+    "acessado": "2026-11-20",
+    "rotulo": "site da NeuralMind",
+    "trecho": "IA especializada no Direito brasileiro"
+   }
+  },
+  {
+   "de": "pub:amadeusai",
+   "para": "pub:CEIA-UFG",
+   "tipo": "relacionado",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "acessado": "2026-11-20",
+    "trecho": "developed through a partnership between"
+   }
+  },
+  {
+   "de": "pub:Jurema-br",
+   "para": "pub:neuralmind",
+   "tipo": "relacionado",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/Jurema-br/Jurema-7B",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo",
+    "trecho": "Neuralmind's Privacy Policy"
+   }
+  }
+ ],
+ "hierarquia": [
+  {
+   "tipo": "instituicao",
+   "id": "escavador",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "Jurema-br",
+     "n_modelos": 1,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "itau-unibanco",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "Itau-Unibanco",
+     "n_modelos": 3,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "lncc",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "AIInstituteLNCC",
+     "n_modelos": 3,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "neuralmind",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "Jurema-br",
+     "n_modelos": 1,
+     "filhos": []
+    },
+    {
+     "tipo": "publicador",
+     "id": "neuralmind",
+     "n_modelos": 2,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "pucpr",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "hailab-pucpr",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "pucpr-br",
+       "n_modelos": 14,
+       "filhos": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "semantix",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "semantixai",
+     "n_modelos": 3,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ufca",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "ufca-llms",
+     "n_modelos": 13,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ufg",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "ceia-ufg",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "ceia-research",
+       "n_modelos": 1,
+       "filhos": []
+      },
+      {
+       "tipo": "publicador",
+       "id": "CEIA-UFG",
+       "n_modelos": 1,
+       "filhos": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ufmg",
+   "filhos": []
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ufpel",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "H2IA",
+     "n_modelos": 4,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ufrj",
+   "filhos": [
+    {
+     "tipo": "publicador",
+     "id": "coppead",
+     "n_modelos": 1,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "uneb",
+   "filhos": []
+  },
+  {
+   "tipo": "instituicao",
+   "id": "unicamp",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "hiaac-unicamp",
+     "filhos": []
+    },
+    {
+     "tipo": "publicador",
+     "id": "unicamp-dl",
+     "n_modelos": 21,
+     "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "usp",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "c2d-poli-usp",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "c2d-usp",
+       "n_modelos": 35,
+       "filhos": []
+      }
+     ]
+    },
+    {
+     "tipo": "laboratorio",
+     "id": "c4ai-usp",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "carolina-c4ai",
+       "n_modelos": 4,
+       "filhos": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "publicador",
+   "id": "22h",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "adalbertojunior",
+   "n_modelos": 26,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "ai-eldorado",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "allenai",
+   "n_modelos": 283,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "althayr",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "amadeusai",
+   "n_modelos": 18,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "artificialguybr",
+   "n_modelos": 15,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "cnmoro",
+   "n_modelos": 69,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "daveycodez",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "dominguesm",
+   "n_modelos": 14,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "FMendonca",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "g-assismoraes",
+   "n_modelos": 822,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Giuliano",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "google",
+   "n_modelos": 329,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "guicybercode",
+   "n_modelos": 10,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Guilherme34",
+   "n_modelos": 108,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "hbfreed",
+   "n_modelos": 4,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "HuggingFaceTB",
+   "n_modelos": 71,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "ibm-granite",
+   "n_modelos": 139,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "joaoalvarenga",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "JonathanColetti",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "KrynexLabs",
+   "n_modelos": 7,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "LiquidAI",
+   "n_modelos": 145,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "locriani",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "lucianosb",
+   "n_modelos": 13,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "maritaca-ai",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "meta-llama",
+   "n_modelos": 36,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "microsoft",
+   "n_modelos": 248,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "mistralai",
+   "n_modelos": 14,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "mlboydaisuke",
+   "n_modelos": 8,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "nicholasKluge",
+   "n_modelos": 33,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "nvidia",
+   "n_modelos": 247,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Qwen",
+   "n_modelos": 207,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "recogna-nlp",
+   "n_modelos": 11,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "rhaymison",
+   "n_modelos": 15,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "sallani",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Venturus",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "wilsondesouza",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Xenova",
+   "n_modelos": 8,
+   "filhos": []
+  }
+ ]
+}

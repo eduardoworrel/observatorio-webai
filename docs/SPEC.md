@@ -1,6 +1,6 @@
 # Observatório: padrão de dados, versão 1.0
 
-*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: publisher, lab, researcher, family and benchmark (models and datasets are always derived by the collector, never contributed). One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
+*English summary: this is the data standard for community contributions to the Observatório (Web AI in Brazil and the world). Entities: institution, lab, publisher, researcher, family and benchmark; relations between them (publisher to lab or institution, related publishers, credits) are curated with sources; models and datasets are always derived by the collector, never contributed. One JSON file per entity under `data/entidades/`, every claim backed by at least one public source (type + URL + access date), generated fields are read-only, researchers are people and follow strict privacy rules (section 7). Validated mechanically by `scripts/validar.py`; every decision is human. Data: CC BY 4.0. Code: MIT.*
 
 As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `schema/` e `scripts/validar.py` implementam este texto; se divergirem dele, é um defeito de um dos dois.
 
@@ -9,7 +9,7 @@ As palavras DEVE, NÃO DEVE e PODE seguem o uso da RFC 2119. Os schemas em `sche
 | Camada | Onde | Quem escreve | Contribuição pode alterar? |
 |---|---|---|---|
 | **Curada** | `data/entidades/<tipo>/` | pessoas (por pull request), revisão humana | sim |
-| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `datasets.json`, `benchmarks.json`, `foto_camadas.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
+| **Derivada** | `data/publicadores.json`, `modelos.json`, `familias.json`, `constelacoes.json`, `foto.json`, `datasets.json`, `benchmarks.json`, `foto_camadas.json`, `relacoes.json`, `web/data.js` | só `scripts/coletar.py` (API pública do Hugging Face, regras da seção 9), executado por um mantenedor | **não**. PR que altera arquivo derivado falha na checagem (`PR_DERIVADO`); a exceção é o PR de dados derivados, em ramo `coleta-*`, aberto por um mantenedor depois da coleta e revisado como qualquer outro |
 | **Exemplos** | `data/exemplos/` | mantenedor | só para ensinar o formato; nunca entram nos dados oficiais |
 | **Remoções** | `data/remocoes.json` | mantenedor | não (seção 8) |
 
@@ -23,16 +23,21 @@ Por que arquivos curados separados dos gerados: `modelos.json` tem 6 MB e é reg
 publicador ──< modelo >── familia           (derivado: constelação = publicador + seus modelos)
    │              ▲
    │              └── pesquisador.modelos[]  (afirmação do pesquisador, com fonte)
-laboratorio ─ instituição (objeto: nome, país, fonte)
+instituicao ─ parte_de ─ instituicao       (hierarquia, sem ciclos)
+   ▲
+laboratorio ─ instituicao (id) + parceiras[]     (cada vínculo com fonte)
    ▲
    └── pesquisador.afiliacoes[].laboratorio (afirmação do pesquisador, com fonte)
-laboratorio.publicadores[] ─ contas que o laboratório usa para publicar
+publicador.vinculos[] ─ laboratorio ou instituicao   (conta_oficial, membro, pesquisador, projeto; com fonte)
+publicador.relacionados[] ─ publicador              (mesmo projeto ou parceria; com fonte)
+laboratorio|instituicao.modelos_creditados[] ─ modelo derivado (crédito, com fonte; não cadastra o modelo)
 benchmark.datasets[] ─ datasets do Hugging Face que o benchmark aponta (derivado: metadados do dataset)
 publicador ──< dataset                      (derivado: datasets públicos do publicador)
 ```
 
 - **publicador**: quem publica modelos: pessoa independente, grupo, empresa, universidade ou outra organização. É a chave da constelação.
-- **laboratorio**: laboratório ou grupo de pesquisa **vinculado a uma instituição**.
+- **instituicao**: universidade, instituto, empresa, órgão de governo ou outra organização que reúne laboratórios e contas de publicação (seção 4.10).
+- **laboratorio**: laboratório ou grupo de pesquisa **vinculado a uma instituição** (por id).
 - **pesquisador**: pessoa com vínculo profissional público. Ver seção 7.
 - **modelo**: um modelo de linguagem. É sempre derivado pelo coletor a partir do Hugging Face; não existe arquivo curado de modelo.
 - **familia**: linhagem de modelos (regra F). O arquivo curado dá nome, descrição e fonte.
@@ -78,7 +83,7 @@ Campos desconhecidos são erro. Em todos: `spec` (obrigatório, `"1.0"`), `entid
 
 ### 4.3 laboratorio
 
-`id`, `nome`, `sigla`; `instituicao` obrigatória: `{nome, pais, regiao?, fonte}` em que `fonte` é evidência de que o laboratório pertence à instituição (tipo `site_institucional`, `perfil_oficial` ou `pagina_pessoa`); `publicadores[]` (ids de publicador existentes); `areas[]` (até 8 termos de até 40 caracteres); `links`; `fontes`.
+`id`, `nome`, `sigla?`; `instituicao` obrigatória (id de uma instituição existente, seção 4.10); `vinculo_fonte` obrigatória, evidência (4.7) de que o laboratório pertence à instituição (tipo `site_institucional`, `perfil_oficial`, `pagina_pessoa` ou `cartao_modelo`); `parceiras[]` opcional, `{instituicao, fonte}` para instituições parceiras (por exemplo um centro mantido por uma universidade e uma empresa); `modelos_creditados[]` opcional (4.11); `areas[]` (até 8 termos de até 40 caracteres); `links`; `fontes`. Os publicadores de um laboratório **não** ficam no arquivo do laboratório: a relação vive no arquivo do publicador (4.11) e o laboratório mostra a lista inversa, calculada (`CAMPO_DERIVADO`).
 
 ### 4.4 pesquisador
 
@@ -113,6 +118,20 @@ Não há arquivo curado de dataset. Cada dataset tem `id` (`<publicador>/<nome>`
 
 `id` (kebab-case), `nome`, `sigla?`, `descricao` (`pt` e `en`, 1 a 2 linhas), `dominio[]` (obrigatório; um ou mais de `geral`, `vestibular_educacao`, `juridico`, `saude`, `codigo`, `matematica`, `extracao_classificacao`, `cultura_lingua`, `outros`), `idiomas[]`, `tarefas[]`, `tipo` (`conjunto`, `avaliacao` ou `leaderboard`; `leaderboard` exige `links.leaderboard`), `datasets[]` (ids do Hugging Face, `<publicador>/<nome>`), `criador?` (`publicador` do Hugging Face, ou `nome` institucional com `fonte`), `ano?`, `links` (`artigo`, `site`, `leaderboard`, `codigo`; pelo menos um) e `fontes` (pelo menos uma, **cada uma com trecho literal** da página, como as demais evidências da seção 4.7). Campos derivados (`n_datasets`, `tamanho_total_bytes`, `downloads_total`) são calculados pelo coletor a partir dos datasets que a coleta encontra; um dataset citado que não existe, é privado ou tem acesso restrito não conta e aparece no relatório da coleta.
 
+### 4.10 instituicao
+
+`id` (kebab-case), `nome`, `sigla?`, `tipo` (`universidade`, `instituto`, `empresa`, `governo` ou `outro`), `pais` (ISO 3166-1), `regiao?`, `parte_de?` (id de outra instituição; a hierarquia não pode ter ciclos, `VINCULO_CICLO`), `modelos_creditados[]` opcional (4.11), `links`, `descricao?` e `fontes` (pelo menos uma, **cada uma com trecho literal** que identifica a instituição, como nas demais evidências da seção 4.7). Uma instituição é uma só, mesmo com várias contas no Hugging Face: as contas se ligam a ela pelos vínculos (4.11), sem duplicar a entidade.
+
+### 4.11 vínculos, relacionados e créditos
+
+Cada relação muitos-para-muitos vive num só arquivo, o do seu dono, com fonte e trecho literal.
+
+- **`publicador.vinculos[]`**: `{alvo: {tipo: laboratorio|instituicao, id}, relacao, fonte}`. `relacao` é `conta_oficial` (a conta pertence ao alvo), `membro` (a conta é de uma unidade ou membro do alvo), `projeto` (a conta é de um projeto conduzido pelo alvo) ou `pesquisador` (só para `tipo: pessoa`). O alvo precisa existir (`REF_INEXISTENTE`) e o vínculo sem fonte é recusado.
+- **`publicador.relacionados[]`**: `{publicador, fonte}`. Liga duas contas do mesmo projeto ou de uma parceria declarada por fonte pública. Simétrica: basta declarar em um dos lados. Não se liga pessoa a pessoa nem um publicador a si mesmo.
+- **`modelos_creditados[]`** (em laboratório ou instituição): `{modelo, papel, fonte}`, `papel` em `desenvolvedor`, `financiador`, `parceiro` ou `plataforma`. É uma afirmação do laboratório ou da instituição com fonte (por exemplo, o cartão do modelo); **não cadastra o modelo**, que continua derivado e com um só dono, o publicador da conta. O modelo citado precisa existir nos dados derivados.
+- **Pessoas.** O vínculo de um publicador do tipo pessoa com um laboratório ou instituição é um atributo do próprio publicador, sem página de pessoa, e só existe com evidência pública profissional (perfil profissional público, página institucional ou página da própria pessoa); cadastro por terceiro exige página institucional que a liste, e estudante só por autoinscrição (seção 7). Nunca se publica dado pessoal além disso. Os dados derivados trazem, para uma conta de pessoa, apenas as organizações curadas das quais ela é membro pública no Hugging Face (`membro_de`), sem nomes nem contas de outras pessoas; isso é um sinal para o mantenedor e não afiliação.
+- **Derivados.** O coletor calcula, a partir dessas relações, `instituicoes[]`, `labs[]` e `relacionados[]` de cada publicador, as contagens por laboratório e instituição (modelos, builds nativos, GGUF e família de tarefa) e a hierarquia instituição > laboratório > publicador (arquivo `data/relacoes.json`). Builds de terceiros continuam ligados ao modelo original pela regra R, sem virar modelos novos.
+
 ## 5. Referências mínimas
 
 1. **Toda entidade tem `fontes` com pelo menos 1 fonte** (tipo, URL, data de acesso). Sem fonte, sem arquivo (`FONTE_FALTA`).
@@ -140,8 +159,10 @@ Os campos `classe_pais` e `natureza` de um arquivo curado têm **precedência** 
 
 - `instituicao`: universidade ou instituto; evidência em página institucional ou perfil.
 - `empresa`: perfil ou página institucional declara empresa.
-- `independente`: pessoa, ou grupo pequeno, **sem vínculo institucional ou de empresa declarado** na fonte citada. A ausência de vínculo declarado não prova que não exista, e o trecho diz isso. Mecânico: link de domínio `.edu`, `.edu.br`, `.gov.br`, `.ac.*` num publicador `independente` falha (`INDEPENDENTE`).
+- `independente`: pessoa, ou grupo pequeno, **sem nenhum vínculo curado** (`vinculos[]` ou `relacionados[]` vazios) e **sem vínculo institucional ou de empresa declarado** na fonte citada. A ausência de vínculo declarado não prova que não exista, e o trecho diz isso. Mecânico: link de domínio `.edu`, `.edu.br`, `.gov.br`, `.ac.*` num publicador `independente` falha (`INDEPENDENTE`).
 - `nao_classificada`: o resto. É o valor correto na dúvida.
+
+Quando a fonte mostra vínculo profissional declarado e ele não está publicado como vínculo, a natureza não é `independente`: fica `nao_classificada`. A natureza de uma conta com vínculo a uma instituição é a que a fonte sustenta para a própria conta, e não a da instituição.
 
 Disputa ("não sou brasileiro", "não sou independente"): ver `docs/GOVERNANCA.md`. A palavra do próprio titular sobre si prevalece sobre a regra.
 
@@ -188,7 +209,7 @@ Entidades `arquivado` e exemplos não são coletados. Contas em `data/remocoes.j
 
 ### 9.3 Filtro de relevância (quais modelos sobem para a página)
 
-1. **Tarefa:** modelos de linguagem, isto é, `pipeline_tag` em `text-generation`, `image-text-to-text`, `any-to-any` ou `text2text-generation`. Quando o repositório não declara `pipeline_tag`, a tarefa é **inferida por regra**, só com campos da listagem da API (tags, nome e tamanho dos pesos; nenhum peso é baixado): (a) o tamanho precisa ser conhecido (`safetensors.total` ou `gguf.total`); (b) a tag de arquitetura ou de tarefa indica linguagem, isto é, arquitetura causal (`llama`, `mistral`, `gemma`, `qwen`, `phi`, `gpt2`, `gpt_neox`, `falcon` e semelhantes) ou tag `text-generation`, `text-generation-inference` ou `conversational` dão `text-generation`; arquitetura sequência-para-sequência (`t5`, `mt5`, `bart`, `pegasus` e semelhantes) ou tag `text2text-generation` dão `text2text-generation`; (c) ficam de fora adaptadores (LoRA/PEFT), modelos de embedding, reranqueamento, classificação, reconhecimento de entidades, codificadores (`bert`, `roberta` e semelhantes), visão e áudio, por tag ou por nome; (d) vale o corte de tamanho do item 2. O modelo inferido traz `tarefa_inferida: true` e `regra_tarefa` com a regra usada, para conferência. Sem sinal, o repositório não entra.
+1. **Tarefa e família de tarefa:** cada modelo tem `familia_tarefa`. **Gerador** é `pipeline_tag` em `text-generation`, `image-text-to-text`, `any-to-any` ou `text2text-generation`. **Codificador** é `pipeline_tag` em `fill-mask`, `feature-extraction`, `sentence-similarity`, `text-classification`, `token-classification`, `question-answering`, `zero-shot-classification` ou `text-ranking`. Voz, imagem pura, tradução, sumarização e outras tarefas ficam fora. Quando o repositório não declara `pipeline_tag`, a tarefa é **inferida por regra**, só com campos da listagem da API (tags, nome e tamanho dos pesos; nenhum peso é baixado): (a) o tamanho precisa ser conhecido (`safetensors.total` ou `gguf.total`); (b) arquitetura causal (`llama`, `mistral`, `gemma`, `qwen`, `phi`, `gpt2`, `gpt_neox`, `falcon` e semelhantes) ou tag `text-generation`, `text-generation-inference` ou `conversational` dão `text-generation`; arquitetura sequência-para-sequência (`t5`, `mt5`, `bart`, `pegasus` e semelhantes) ou tag `text2text-generation` dão `text2text-generation`; arquitetura de codificador (`bert`, `roberta`, `deberta`, `electra`, `albert`, `distilbert`, `xlm-roberta` e semelhantes), biblioteca `sentence-transformers` ou tag de tarefa de codificador dão a tarefa de codificador correspondente (`feature-extraction` quando só a arquitetura indica); nome com `embed` ou `rerank` numa arquitetura de linguagem dá `feature-extraction` ou `text-ranking`; (c) ficam de fora adaptadores (LoRA/PEFT), visão e áudio, e nomes de classificadores ou detectores sem arquitetura de codificador; (d) vale o corte de tamanho do item 2. O modelo inferido traz `tarefa_inferida: true` e `regra_tarefa`. Sem sinal, o repositório não entra. O status de build (nativo, GGUF) vale para as duas famílias.
 2. **Tamanho:** até 12 bilhões de parâmetros (`safetensors.total`, ou `gguf.total`); sem informação de tamanho, o modelo fica, com `parametros_b` nulo.
 3. **Sem adaptadores:** LoRA/PEFT (tags `peft`, `lora` ou `base_model:adapter`) não contam, pois não rodam sozinhos.
 4. **Sem duplicatas (regra R):** repositório que é só outro formato ou quantização (ONNX, MLC, LiteRT, GGUF) de um modelo do mesmo publicador vira **build** desse modelo, não modelo novo. Builds de terceiros são ligados ao modelo de origem pelo nome e pela relação `base_model:quantized`; conversões de terceiros só aparecem como modelo próprio para publicadores do mundo sem classificação, com `conversao_de`.
@@ -210,6 +231,10 @@ O coletor deriva a camada de datasets por unidades, cada uma com checkpoint: os 
 
 A ordem é estável: Brasil antes de português, `downloads` decrescente, `id`. Rodar a coleta duas vezes sem mudança na fonte não altera nenhum arquivo.
 
+### 9.6 Contagens publicadas
+
+`foto.brasil` e `foto.mundo` contam todos os modelos do mapa, geradores e codificadores. `foto.por_familia_tarefa` repete as contagens por família. Como um único publicador pode concentrar muitos modelos de experimento, a foto traz também `foto.sem_maior_publicador` e, por família, `brasil_sem_maior`: as contagens do Brasil sem o publicador de mais modelos, sempre ao lado das contagens com todos. Mudar a regra de relevância muda `foto.regra_filtro`, e a coleta incremental recoleta todos os publicadores.
+
 ## 10. Texto, idiomas, licenças
 
 - Nomes próprios não se traduzem. Descrições: `pt` e `en`; basta um idioma, o outro fica como pendência.
@@ -225,4 +250,4 @@ A ordem é estável: Brasil antes de português, `downloads` decrescente, `id`. 
 
 ## 12. Códigos do validador
 
-`JSON`, `ENTIDADE`, `TIPO`, `VALOR`, `FORMATO`, `LIMITE`, `MIN_ITENS`, `MAX_ITENS`, `CAMPO_FALTA`, `CAMPO_DESCONHECIDO`, `CAMPO_DERIVADO`, `CAMPO_PROIBIDO`, `FONTE_FALTA`, `FONTE_REPETIDA`, `FONTE_VELHA`, `DATA_FUTURA`, `URL`, `URL_BUSCA`, `REDE_PESSOAL`, `FOTO`, `EMAIL`, `TELEFONE`, `CPF`, `ENDERECO`, `NASCIMENTO`, `SENSIVEL`, `PAIS_INVALIDO`, `BR_REGRA`, `NAO_CLASSIFICADO`, `NATUREZA_SEM_EVIDENCIA`, `NATUREZA_INCOERENTE`, `INDEPENDENTE`, `VINCULO_FONTE`, `TERCEIRO_SEM_FONTE`, `REF_INEXISTENTE`, `ID_ARQUIVO`, `ID_DUPLICADO`, `EXEMPLO_MARCA`, `ARQUIVO`, `REMOVIDO`, `PR_DERIVADO`, `PR_INFRA`, `LINK_QUEBRADO`, `LINK_INCERTO`, `TRECHO_AUSENTE`, `TRECHO_NAO_VERIFICADO`. Todos são erros, exceto `SENSIVEL`, `URL_BUSCA`, `FONTE_REPETIDA`, `PR_INFRA`, `LINK_INCERTO`, `TRECHO_NAO_VERIFICADO` e `FONTE_VELHA` entre 180 e 365 dias, que são avisos. Os casos em `data/exemplos/rejeitados/` testam o validador (`python3 scripts/validar.py --rejeitados`).
+`JSON`, `ENTIDADE`, `TIPO`, `VALOR`, `FORMATO`, `LIMITE`, `MIN_ITENS`, `MAX_ITENS`, `CAMPO_FALTA`, `CAMPO_DESCONHECIDO`, `CAMPO_DERIVADO`, `CAMPO_PROIBIDO`, `FONTE_FALTA`, `FONTE_REPETIDA`, `FONTE_VELHA`, `DATA_FUTURA`, `URL`, `URL_BUSCA`, `REDE_PESSOAL`, `FOTO`, `EMAIL`, `TELEFONE`, `CPF`, `ENDERECO`, `NASCIMENTO`, `SENSIVEL`, `PAIS_INVALIDO`, `BR_REGRA`, `NAO_CLASSIFICADO`, `NATUREZA_SEM_EVIDENCIA`, `NATUREZA_INCOERENTE`, `INDEPENDENTE`, `VINCULO_FONTE`, `TERCEIRO_SEM_FONTE`, `REF_INEXISTENTE`, `ID_ARQUIVO`, `ID_DUPLICADO`, `EXEMPLO_MARCA`, `ARQUIVO`, `REMOVIDO`, `PR_DERIVADO`, `PR_INFRA`, `LINK_QUEBRADO`, `LINK_INCERTO`, `TRECHO_AUSENTE`, `TRECHO_NAO_VERIFICADO`, `VINCULO_CICLO`, `VINCULO_AUTO`, `PESSOA_RELACAO`. Todos são erros, exceto `SENSIVEL`, `URL_BUSCA`, `FONTE_REPETIDA`, `PR_INFRA`, `LINK_INCERTO`, `TRECHO_NAO_VERIFICADO` e `FONTE_VELHA` entre 180 e 365 dias, que são avisos. Os casos em `data/exemplos/rejeitados/` testam o validador (`python3 scripts/validar.py --rejeitados`).

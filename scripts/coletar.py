@@ -27,7 +27,14 @@ RAIZ = os.path.abspath(os.environ.get("COLETOR_RAIZ") or os.path.dirname(os.path
 API = os.environ.get("COLETOR_API") or "https://huggingface.co/api"
 HOJE = datetime.date.today().isoformat()
 UA = "observatorio-coletor/1.0 (leitura publica)"
-TAREFAS = {"text-generation", "image-text-to-text", "any-to-any", "text2text-generation"}
+TAREFAS_GERADOR = {"text-generation", "image-text-to-text", "any-to-any", "text2text-generation"}
+TAREFAS_CODIFICADOR = {"fill-mask", "feature-extraction", "sentence-similarity", "text-classification", "token-classification", "question-answering", "zero-shot-classification", "text-ranking"}
+TAREFAS = TAREFAS_GERADOR | TAREFAS_CODIFICADOR
+
+
+def familia_tarefa(tarefa):
+    """gerador ou codificador, pela tarefa (SPEC.md secao 9.3)."""
+    return "gerador" if tarefa in TAREFAS_GERADOR else "codificador"
 NAVEGADOR = ("onnx", "mlc", "litert")
 EXPAND = ["tags", "downloads", "likes", "pipeline_tag", "lastModified", "safetensors", "createdAt", "gguf"]
 MAX_B = 12.0           # corte de parametros (bilhoes)
@@ -36,6 +43,7 @@ PAUSA = float(os.environ.get("COLETOR_PAUSA") or 0.55)
 JANELA_S, JANELA_MAX = 300, 480   # a API anonima aceita 500 chamadas por 5 min; ficamos abaixo
 CACHE_DIAS = 3.0
 MAX_INDEP_MUNDO = 8
+REGRA_FILTRO = 2   # versao da regra de relevancia dos modelos (SPEC.md secao 9.3); mudou: todos os publicadores sao recoletados
 REMOVIDOS = set()  # sha256(id em minusculas) de data/remocoes.json (SPEC 1.0, secao 8)
 
 
@@ -291,7 +299,7 @@ def indice_navegador(orgs, max_pag):
         for x in listar(max_paginas=max_pag, author=org, limit=100):
             add(x)
     for filtro in ("transformers.js", "mlc-llm", "litert"):
-        for tarefa in ("text-generation", "image-text-to-text"):
+        for tarefa in (("text-generation", "image-text-to-text", "feature-extraction", "fill-mask", "text-classification", "token-classification", "sentence-similarity") if filtro == "transformers.js" else ("text-generation", "image-text-to-text")):
             print(f"  indice: filtro {filtro} / {tarefa}", file=sys.stderr)
             for x in listar(max_paginas=8, filter=filtro, pipeline_tag=tarefa, sort="downloads", direction=-1, limit=100):
                 add(x)
@@ -338,7 +346,7 @@ def perfil(pid):
 def info_publicador(pid):
     u, _ = get(f"{API}/users/{pid}/overview")
     if u:
-        return {"tipo": "pessoa", "nome": u.get("fullname") or pid, "n_modelos": u.get("numModels"), "n_membros": None, "verificado": False}
+        return {"tipo": "pessoa", "nome": u.get("fullname") or pid, "n_modelos": u.get("numModels"), "n_membros": None, "verificado": False, "orgs": [o.get("name") for o in u.get("orgs") or [] if o.get("name")]}
     o, _ = get(f"{API}/organizations/{pid}/overview")
     if o:
         return {"tipo": "grupo", "nome": o.get("fullname") or pid, "n_modelos": o.get("numModels"), "n_membros": o.get("numUsers"), "verificado": bool(o.get("isVerified"))}
@@ -432,28 +440,43 @@ ARQ_CAUSAL = {"llama", "mistral", "mixtral", "gemma", "gemma2", "gemma3", "gemma
 ARQ_SEQ2SEQ = {"t5", "mt5", "umt5", "longt5", "bart", "mbart", "pegasus", "led", "ul2", "flan-t5", "byt5", "m2m_100", "marian"}
 TAGS_CAUSAL = {"text-generation", "text-generation-inference", "conversational", "causal-lm"}
 TAGS_SEQ2SEQ = {"text2text-generation", "seq2seq"}
-NAO_LINGUAGEM_TAG = re.compile(r"^(sentence-transformers|feature-extraction|sentence-similarity|text-classification|token-classification|fill-mask|question-answering|"
-                               r"image-classification|object-detection|automatic-speech-recognition|text-to-image|open_clip|clip|bert|roberta|distilbert|electra|deberta|deberta-v2|xlm-roberta|albert|vit|whisper|wav2vec2)$")
-NAO_LINGUAGEM_NOME = re.compile(r"embed|rerank|reward|\bclip\b|classif|\bner\b|sentiment|bertimbau|\bbert\b|roberta|sbert|colbert|whisper|wav2vec|detect", re.I)
+ARQ_CODIFICADOR = {"bert", "roberta", "deberta", "deberta-v2", "electra", "albert", "distilbert", "xlm-roberta", "camembert", "mpnet", "modernbert", "xlm", "flaubert", "ernie", "megatron-bert", "nomic_bert", "xlm-roberta-xl"}
+TAGS_CODIFICADOR = {"fill-mask", "feature-extraction", "sentence-similarity", "text-classification", "token-classification", "question-answering", "zero-shot-classification", "text-ranking"}
+VISAO_AUDIO_TAG = re.compile(r"^(image-classification|object-detection|automatic-speech-recognition|text-to-image|text-to-speech|image-segmentation|open_clip|clip|vit|whisper|wav2vec2|audio-classification|image-to-text)$")
+NAO_LINGUAGEM_NOME = re.compile(r"reward|\bclip\b|classif|\bner\b|sentiment|whisper|wav2vec|detect", re.I)
 
 
 def inferir_tarefa(x):
     """Tarefa de modelo sem pipeline_tag, por regra e so com campos da listagem (tags, nome, safetensors/gguf). Devolve (tarefa, regra) ou None.
-    Exige tamanho conhecido; exclui adaptadores, embedding, classificacao, visao e audio puros."""
+    Exige tamanho conhecido; exclui adaptadores, visao e audio; separa geradores (arquitetura causal ou sequencia-para-sequencia) de codificadores (encoders, embedding, reranqueamento)."""
     if x.get("pipeline_tag") or e_adaptador(x):
         return None
     tags = {t.lower() for t in x.get("tags", [])}
+    nome = x["id"].split("/")[-1]
     if not params_b(x):
         return None   # sem safetensors.total nem gguf.total nao ha como confirmar que e um modelo de pesos de linguagem dentro do corte
-    if tags & {t for t in tags if NAO_LINGUAGEM_TAG.match(t)} or NAO_LINGUAGEM_NOME.search(x["id"].split("/")[-1]):
+    if any(VISAO_AUDIO_TAG.match(t) for t in tags) or re.search(r"\bclip\b|whisper|wav2vec", nome, re.I):
         return None
+    cod = tags & TAGS_CODIFICADOR
+    if cod:
+        return sorted(cod)[0], "tag de tarefa de codificador (" + sorted(cod)[0] + ") + pesos medidos"
+    if "sentence-transformers" in tags:
+        return "feature-extraction", "biblioteca de embeddings de sentencas + pesos medidos"
     if tags & TAGS_SEQ2SEQ:
         return "text2text-generation", "tag de tarefa de texto para texto + pesos medidos"
+    if NAO_LINGUAGEM_NOME.search(nome) and not tags & ARQ_CODIFICADOR:
+        return None
     if tags & ARQ_SEQ2SEQ:
         return "text2text-generation", "arquitetura sequencia-para-sequencia (" + sorted(tags & ARQ_SEQ2SEQ)[0] + ") + pesos medidos"
-    if tags & TAGS_CAUSAL:
-        return "text-generation", "tag de geracao de texto + pesos medidos"
-    if tags & ARQ_CAUSAL:
+    if tags & ARQ_CODIFICADOR:
+        return "feature-extraction", "arquitetura de codificador (" + sorted(tags & ARQ_CODIFICADOR)[0] + ") + pesos medidos"
+    if tags & TAGS_CAUSAL or tags & ARQ_CAUSAL:
+        if re.search(r"embed", nome, re.I):
+            return "feature-extraction", "arquitetura de linguagem com nome de embedding + pesos medidos"
+        if re.search(r"rerank", nome, re.I):
+            return "text-ranking", "arquitetura de linguagem com nome de reranqueamento + pesos medidos"
+        if tags & TAGS_CAUSAL:
+            return "text-generation", "tag de geracao de texto + pesos medidos"
         return "text-generation", "arquitetura de linguagem causal (" + sorted(tags & ARQ_CAUSAL)[0] + ") + pesos medidos"
     return None
 
@@ -489,7 +512,7 @@ def modelos_do_publicador(pid):
 
 def construir(x, pub, escopo, idx, puros_do_pub, ev_extra=None):
     rid, tags, nome = x["id"], x.get("tags", []), x["id"].split("/")[-1]
-    m = {"id": rid, "nome": nome, "publicador": pub, "escopo": escopo, "familia": familia(rid, tags), "tarefa": x.get("pipeline_tag"), "licenca": licenca(tags),
+    m = {"id": rid, "nome": nome, "publicador": pub, "escopo": escopo, "familia": familia(rid, tags), "tarefa": x.get("pipeline_tag"), "familia_tarefa": familia_tarefa(x.get("pipeline_tag")), "licenca": licenca(tags),
          "parametros_b": params_b(x), "downloads": x.get("downloads"), "atualizado": (x.get("lastModified") or "")[:10], "idioma_pt": marca_pt(tags, rid),
          "url": f"https://huggingface.co/{rid}", "base": base_primaria(tags), "formatos_proprios": formatos(rid, tags), "builds": []}
     if x.get("tarefa_inferida"):
@@ -614,7 +637,7 @@ def escopo_de(ent):
 
 def assinatura(c):
     e = c.get("curado") or {}
-    nucleo = [c["escopo"], c.get("tipo"), e.get("classe_pais"), e.get("natureza"), e.get("nome"), e.get("tipo"), e.get("evidencia_pais"), e.get("evidencia_natureza")]
+    nucleo = [REGRA_FILTRO, c["escopo"], c.get("tipo"), e.get("classe_pais"), e.get("natureza"), e.get("nome"), e.get("tipo"), e.get("evidencia_pais"), e.get("evidencia_natureza")]
     return hashlib.sha1(json.dumps(nucleo, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
 
 
@@ -643,7 +666,7 @@ def carregar_existente():
     pubs = (carregar_json(os.path.join(RAIZ, "data", "publicadores.json"), {}) or {}).get("publicadores", [])
     mods = (carregar_json(os.path.join(RAIZ, "data", "modelos.json"), {}) or {}).get("modelos", [])
     foto = carregar_json(os.path.join(RAIZ, "data", "foto.json"), {}) or {}
-    return {"pubs": {p["id"].lower(): p for p in pubs}, "modelos": mods, "desc": {d["id"].lower(): d for d in foto.get("descartados", [])}}
+    return {"pubs": {p["id"].lower(): p for p in pubs}, "modelos": mods, "desc": {d["id"].lower(): d for d in foto.get("descartados", [])}, "regra": foto.get("regra_filtro")}
 
 
 def _chk(pid):
@@ -674,6 +697,8 @@ def situacao(c, exist, dias):
     p, d = exist["pubs"].get(k), exist["desc"].get(k)
     if not p and not d:
         return "novo"
+    if exist.get("regra") != REGRA_FILTRO and (exist["pubs"] or exist["desc"]):
+        return "regra"
     if p and c.get("curado") and diverge(c["curado"], p):
         return "alterado"
     if c.get("curado") and not p and d and not d["motivo"].startswith("sem modelos no corte"):
@@ -704,7 +729,17 @@ def _perfil_fonte(pid):
     return [{"rotulo": "Perfil no Hugging Face", "url": f"https://huggingface.co/{pid}", "acessado": HOJE}]
 
 
+CURADOS_ID = {}   # id em minusculas -> id dos publicadores curados (preenchido em main)
+
+
 def _pub(pid, nome, tipo, classe, ev_pais, nat, ev_nat, escopo, info, origem, fora, n):
+    d = _pub_base(pid, nome, tipo, classe, ev_pais, nat, ev_nat, escopo, info, origem, fora, n)
+    if tipo == "pessoa":   # so as organizacoes curadas de que a conta e membro publico; nenhum nome de pessoa
+        d["membro_de"] = sorted({CURADOS_ID[o.lower()] for o in info.get("orgs") or [] if o.lower() in CURADOS_ID and CURADOS_ID[o.lower()] != pid})
+    return d
+
+
+def _pub_base(pid, nome, tipo, classe, ev_pais, nat, ev_nat, escopo, info, origem, fora, n):
     return {"id": pid, "nome": nome, "tipo": tipo, "classe_pais": classe, "evidencia_pais": ev_pais, "natureza": nat, "evidencia_natureza": ev_nat,
             "escopo": escopo, "n_modelos_hf": info["n_modelos"], "n_membros": info["n_membros"], "url": f"https://huggingface.co/{pid}",
             "origem_lista": origem, "modelos_fora_do_corte": fora, "fontes": _perfil_fonte(pid), "n_modelos_mapeados": n}
@@ -901,7 +936,7 @@ def montar(pubs, modelos, descartados):
     n_br = sum(1 for p in pubs if p["escopo"] == "br")
     data = max([p["fontes"][0]["acessado"] for p in pubs if p.get("fontes")] or [HOJE])
     foto = {"data": data, "regra_gguf": f"GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate {CORTE_GGUF_GB:g} GB",
-            "corte_parametros_b": MAX_B,
+            "corte_parametros_b": MAX_B, "regra_filtro": REGRA_FILTRO,
             "brasil": contar(br), "mundo": contar(mu),
             "brasil_independentes": contar(nat(br, "independente")), "brasil_instituicoes": contar(nat(br, "instituicao")), "brasil_empresas": contar(nat(br, "empresa")), "brasil_natureza_nao_classificada": contar(nat(br, "nao_classificada")),
             "maior_publicador_br": (lambda c: {"id": c[0][0], "modelos": c[0][1]} if c else None)(sorted(((p, sum(1 for m in br if m["publicador"] == p)) for p in set(m["publicador"] for m in br)), key=lambda x: (-x[1], x[0].lower()))),
@@ -913,6 +948,12 @@ def montar(pubs, modelos, descartados):
                           "GGUF via wllama conta a parte, com corte de tamanho; ONNX, MLC e LiteRT sao nativos de navegador.",
                           "Builds nativos de terceiros sao achados por regra de nome no indice das organizacoes de runtime e das buscas por tag; podem faltar os de nomes fora do padrao.",
                           "Modelos de linguagem ate %gB, todos os de cada publicador classificado; publicador sem evidencia de ser do Brasil fica fora do mapa." % MAX_B]}
+    por_pub_br = collections.Counter(m["publicador"] for m in br)
+    maior = sorted(por_pub_br.items(), key=lambda kv: (-kv[1], kv[0].lower()))[0] if por_pub_br else None
+    sem = [m for m in br if not maior or m["publicador"] != maior[0]]
+    foto["por_familia_tarefa"] = {f: {"brasil": contar([m for m in br if m["familia_tarefa"] == f]), "mundo": contar([m for m in mu if m["familia_tarefa"] == f]),
+                                      "brasil_sem_maior": contar([m for m in sem if m["familia_tarefa"] == f])} for f in ("gerador", "codificador")}
+    foto["sem_maior_publicador"] = {"id": maior[0] if maior else None, "modelos": maior[1] if maior else 0, "brasil": contar(sem), "publicadores_brasil": len(por_pub_br) - (1 if maior else 0)}
     meta = {"coletado_em": data, "fonte": "Hugging Face API publica", "versao_spec": "1.0"}
     return meta, {"publicadores": pubs, "modelos": modelos, "constelacoes": const, "familias": [fams[k] for k in sorted(fams)]}, foto
 
@@ -925,16 +966,18 @@ def camadas_atuais():
     return d["datasets"], b, f, d["unidades"]
 
 
-def gravar(meta, pacote, foto, camadas=None):
+def gravar(meta, pacote, foto, camadas=None, rel=None):
     """Grava so o que mudou (diff vazio quando nada muda). Devolve os arquivos alterados."""
     ds, bs, foto_c, unidades = camadas or camadas_atuais()
+    rel = rel or (carregar_json(os.path.join(RAIZ, "data", "relacoes.json"), {}) or {"instituicoes": [], "laboratorios": [], "vinculos": [], "hierarquia": []})
     meta_c = dict(meta, coletado_em=max([r["fontes"][0]["acessado"] for r in ds if r.get("fontes")] or [meta["coletado_em"]]), unidades=unidades)
     saidas = {os.path.join("data", nome + ".json"): json.dumps({"meta": meta, nome: obj}, ensure_ascii=False, indent=1) for nome, obj in pacote.items()}
     saidas[os.path.join("data", "foto.json")] = json.dumps(foto, ensure_ascii=False, indent=1)
     saidas[os.path.join("data", "datasets.json")] = json.dumps({"meta": meta_c, "datasets": ds}, ensure_ascii=False, indent=1)
     saidas[os.path.join("data", "benchmarks.json")] = json.dumps({"meta": meta, "benchmarks": bs}, ensure_ascii=False, indent=1)
+    saidas[os.path.join("data", "relacoes.json")] = json.dumps({"meta": dict(meta, assinatura=rel.get("assinatura")), "instituicoes": rel["instituicoes"], "laboratorios": rel["laboratorios"], "vinculos": rel["vinculos"], "hierarquia": rel["hierarquia"]}, ensure_ascii=False, indent=1)
     saidas[os.path.join("data", "foto_camadas.json")] = json.dumps(foto_c, ensure_ascii=False, indent=1)
-    saidas.update(arquivos_web(meta, foto, pacote, ds, bs, foto_c))
+    saidas.update(arquivos_web(meta, foto, pacote, ds, bs, foto_c, rel))
     mudou = []
     for rel, conteudo in saidas.items():
         caminho = os.path.join(RAIZ, rel)
@@ -1164,7 +1207,7 @@ def montar_camadas(raw, bench, br_ids):
     return final, bs, foto
 
 
-def arquivos_web(meta, foto, pacote, ds, bs, foto_c):
+def arquivos_web(meta, foto, pacote, ds, bs, foto_c, rel=None):
     """Arquivos de web/: data.js traz o necessario para a aba Modelos; datasets, benchmarks e os builds e fontes de cada modelo
     ficam em arquivos proprios, carregados sob demanda pela interface. window.MAPA_DADOS continua com as mesmas chaves depois de carregados."""
     dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
@@ -1179,6 +1222,8 @@ def arquivos_web(meta, foto, pacote, ds, bs, foto_c):
               w("data-benchmarks.js"): "window.MAPA_DADOS.benchmarks=" + dump(bs) + ";"}
     tamanhos = {nome: len(extras[w(arq)].encode("utf-8")) for nome, arq in partes.items()}   # bytes brutos: a interface mostra o progresso real
     nucleo = dict(meta=meta, foto=foto, **dict(pacote, modelos=leves), foto_camadas=foto_c, contrato_camadas=1, partes=partes, partes_bytes=tamanhos)
+    if rel is not None:   # relacoes (instituicoes, laboratorios, vinculos): parte pequena, fica no arquivo inicial
+        nucleo.update(instituicoes=rel["instituicoes"], laboratorios=rel["laboratorios"], vinculos=compactar_vinculos(rel["vinculos"]), hierarquia=rel["hierarquia"], contrato_relacoes=1)
     return dict({w("data.js"): "window.MAPA_DADOS=" + dump(nucleo) + ";"}, **extras)
 
 
@@ -1186,6 +1231,138 @@ def compactar_datasets(final):
     linhas = [[r["id"], r["publicador"], r["nome"], r["descricao"], r["idiomas"], r["pt_br"], r["tarefas"], r["licenca"], r["tamanho_bytes"], r["faixa"], r["linhas_faixa"],
                r["downloads"], r["likes"], r["atualizado"], r["escopo"], r["benchmarks"]] for r in final]
     return {"colunas": COLUNAS_DS, "linhas": linhas}
+
+
+# ---------- relacoes: instituicoes, laboratorios, vinculos e hierarquia (SPEC.md secoes 4.10 a 4.12) ----------
+def carregar_entidades(tipo):
+    pasta = os.path.join(RAIZ, "data", "entidades", tipo)
+    saida = {}
+    for nome in sorted(os.listdir(pasta)) if os.path.isdir(pasta) else []:
+        e = carregar_json(os.path.join(pasta, nome)) if nome.endswith(".json") else None
+        if isinstance(e, dict) and e.get("entidade") == tipo and e.get("id") and e.get("status") != "arquivado" and not e.get("exemplo") and e["id"] not in EXCLUIR:
+            saida[e["id"]] = e
+    return saida
+
+
+def _contagens(ms):
+    return {"n_modelos": len(ms), "n_builds": {"nativo": sum(1 for m in ms if m["via"] == "nativo"), "gguf": sum(1 for m in ms if m["via"] == "gguf")},
+            "por_familia_tarefa": {f: sum(1 for m in ms if m["familia_tarefa"] == f) for f in ("gerador", "codificador")}}
+
+
+def montar_relacoes(pubs, modelos):
+    """Deriva instituicoes, laboratorios, arestas e hierarquia das entidades curadas, e completa publicadores e modelos (in loco)."""
+    insts, labs, curados = carregar_entidades("instituicao"), carregar_entidades("laboratorio"), carregar_entidades("publicador")
+    mapa = {p["id"]: p for p in pubs}
+    for m in modelos:
+        m.setdefault("familia_tarefa", familia_tarefa(m.get("tarefa")))
+    # arestas (ids com prefixo); so entre entidades que existem
+    arestas = {}
+    def aresta(de, para, tipo, fonte):
+        arestas.setdefault((tipo, de, para), fonte)
+    for pid, e in sorted(curados.items(), key=lambda kv: kv[0].lower()):
+        if pid not in mapa:
+            continue
+        for v in e.get("vinculos") or []:
+            al = v["alvo"]
+            if (al["tipo"] == "laboratorio" and al["id"] in labs) or (al["tipo"] == "instituicao" and al["id"] in insts):
+                aresta("pub:" + pid, ("lab:" if al["tipo"] == "laboratorio" else "inst:") + al["id"], v["relacao"], v["fonte"])
+        for r in e.get("relacionados") or []:
+            if r["publicador"] in mapa:
+                a, b = sorted([pid, r["publicador"]], key=str.lower)
+                aresta("pub:" + a, "pub:" + b, "relacionado", r["fonte"])
+    for lid, l in labs.items():
+        if l["instituicao"] in insts:
+            aresta("lab:" + lid, "inst:" + l["instituicao"], "mesma_organizacao", l["vinculo_fonte"])
+        for pc in l.get("parceiras") or []:
+            if pc["instituicao"] in insts:
+                aresta("lab:" + lid, "inst:" + pc["instituicao"], "mesma_organizacao", pc["fonte"])
+    for iid, i in insts.items():
+        if i.get("parte_de") in insts:
+            aresta("inst:" + iid, "inst:" + i["parte_de"], "mesma_organizacao", i["fontes"][0])
+    pub_lab, pub_inst, lab_pubs = collections.defaultdict(set), collections.defaultdict(set), collections.defaultdict(set)
+    for (tipo, de, para), _ in arestas.items():
+        if de.startswith("pub:") and para.startswith("lab:"):
+            pub_lab[de[4:]].add(para[4:]); lab_pubs[para[4:]].add(de[4:])
+        elif de.startswith("pub:") and para.startswith("inst:"):
+            pub_inst[de[4:]].add(para[5:])
+    pai = {iid: i["parte_de"] for iid, i in insts.items() if i.get("parte_de") in insts}
+    def ancestrais(x):
+        out = []
+        while x in pai and pai[x] not in out:
+            x = pai[x]; out.append(x)
+        return out
+    por_pub = collections.defaultdict(list)
+    for m in modelos:
+        por_pub[m["publicador"]].append(m)
+    # relacionados e instituicoes de cada publicador
+    rel_pub = collections.defaultdict(set)
+    for (tipo, de, para), _ in arestas.items():
+        if tipo == "relacionado":
+            rel_pub[de[4:]].add(para[4:]); rel_pub[para[4:]].add(de[4:])
+    for p in pubs:
+        ls = set(pub_lab.get(p["id"], ()))
+        iis = set(pub_inst.get(p["id"], ())) | {labs[l]["instituicao"] for l in ls if labs[l]["instituicao"] in insts}
+        iis |= {a for x in list(iis) for a in ancestrais(x)}
+        p["instituicoes"], p["labs"], p["relacionados"] = sorted(iis, key=str.lower), sorted(ls, key=str.lower), sorted(rel_pub.get(p["id"], ()), key=str.lower)
+        if p["tipo"] != "pessoa":
+            p.pop("membro_de", None)
+    # creditos nos modelos
+    cred = collections.defaultdict(list)
+    for prefixo, ents in (("lab:", labs), ("inst:", insts)):
+        for eid, e in ents.items():
+            for c in e.get("modelos_creditados") or []:
+                cred[c["modelo"].lower()].append(prefixo + eid)
+    for m in modelos:
+        m["creditos"] = sorted(set(cred.get(m["id"].lower(), ())))
+    # hierarquia e contagens
+    filhos = collections.defaultdict(list)
+    for iid, pi in pai.items():
+        filhos[pi].append(iid)
+    def pubs_da_inst(iid, visto=()):
+        r = set(pub_inst_rev.get(iid, ()))
+        for l, lab in labs.items():
+            if lab["instituicao"] == iid:
+                r |= lab_pubs.get(l, set())
+        for f in filhos.get(iid, []):
+            if f not in visto:
+                r |= pubs_da_inst(f, visto + (iid,))
+        return {x for x in r if x in mapa}
+    pub_inst_rev = collections.defaultdict(set)
+    for pid, ii in pub_inst.items():
+        for x in ii:
+            pub_inst_rev[x].add(pid)
+    L_inst, L_lab = [], []
+    for iid, i in sorted(insts.items(), key=lambda kv: kv[0].lower()):
+        ps = pubs_da_inst(iid)
+        L_inst.append({"id": iid, "nome": i["nome"], "sigla": i.get("sigla"), "pais": i["pais"], "regiao": i.get("regiao"), "tipo": i["tipo"], "parte_de": i.get("parte_de"),
+                       "labs": sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower), "publicadores": sorted(ps, key=str.lower),
+                       **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": i["fontes"]})
+    for lid, l in sorted(labs.items(), key=lambda kv: kv[0].lower()):
+        ps = {x for x in lab_pubs.get(lid, set()) if x in mapa}
+        L_lab.append({"id": lid, "nome": l["nome"], "sigla": l.get("sigla"), "instituicao": l["instituicao"], "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
+                      "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
+    folha = lambda pid: {"tipo": "publicador", "id": pid, "n_modelos": len(por_pub.get(pid, [])), "filhos": []}
+    def no_inst(iid, visto=()):
+        fs = [{"tipo": "laboratorio", "id": l, "filhos": [folha(x) for x in sorted((y for y in lab_pubs.get(l, ()) if y in mapa), key=str.lower)]} for l in sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower)]
+        fs += [no_inst(f, visto + (iid,)) for f in sorted(filhos.get(iid, []), key=str.lower) if f not in visto]
+        fs += [folha(x) for x in sorted((y for y in pub_inst_rev.get(iid, ()) if y in mapa), key=str.lower)]
+        return {"tipo": "instituicao", "id": iid, "filhos": fs}
+    raizes = [no_inst(iid) for iid in sorted(insts, key=str.lower) if iid not in pai]
+    ligados = {x for i in L_inst for x in i["publicadores"]}
+    raizes += [folha(p["id"]) for p in sorted(pubs, key=lambda p: p["id"].lower()) if p["id"] not in ligados]
+    V = [{"de": de, "para": para, "tipo": tipo, "fonte": f} for (tipo, de, para), f in sorted(arestas.items(), key=lambda kv: (kv[0][0], kv[0][1].lower(), kv[0][2].lower()))]
+    return {"instituicoes": L_inst, "laboratorios": L_lab, "vinculos": V, "hierarquia": raizes, "assinatura": assinatura_relacoes()}
+
+
+def assinatura_relacoes():
+    """Resumo das entidades que alimentam as relacoes: se mudar, as relacoes sao refeitas (sem rede)."""
+    ents = {t: carregar_entidades(t) for t in ("instituicao", "laboratorio", "publicador")}
+    nucleo = [ents["instituicao"], ents["laboratorio"], {k: [e.get("vinculos"), e.get("relacionados")] for k, e in ents["publicador"].items()}]
+    return hashlib.sha1(json.dumps(nucleo, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+
+
+def compactar_vinculos(v):
+    return {"colunas": ["de", "para", "tipo", "fonte"], "linhas": [[x["de"], x["para"], x["tipo"], x["fonte"]["url"]] for x in v]}
 
 
 # ---------- execucao ----------
@@ -1228,11 +1405,15 @@ def main():
         EXCLUIR.update(l.strip() for l in open(caminho_ex) if l.strip())
     REMOVIDOS.update(i["sha256"] for i in (carregar_json(os.path.join(RAIZ, "data", "remocoes.json"), {}) or {}).get("itens", []))
     exist = carregar_existente()
+    CURADOS_ID.update({k.lower(): k for k in carregar_curados()})
     if a.normalizar:
         for m in exist["modelos"]:
             m["builds"].sort(key=lambda b: (b["formato"], b["repo"]))
-        meta, pacote, foto = montar(*mesclar(exist, []))
-        print("normalizado; arquivos alterados:", gravar(meta, pacote, foto) or "nenhum")
+        pubs_n, mods_n, desc_n = mesclar(exist, [])
+        rel = montar_relacoes(pubs_n, mods_n)
+        meta, pacote, foto = montar(pubs_n, mods_n, desc_n)
+        foto["regra_filtro"] = exist.get("regra")
+        print("normalizado; arquivos alterados:", gravar(meta, pacote, foto, None, rel) or "nenhum")
         return
     cands = candidatos_locais(seed, carregar_curados(), exist)
     modo = "--so" if a.so else "--novos" if a.novos else "--tudo"
@@ -1287,7 +1468,8 @@ def main():
         print(f"estimativa: ~{ch} chamadas, ~{ch / 100:.0f} min na API anonima, mais o indice de builds (~50 chamadas) se o cache expirou. Nao inclui a descoberta por busca.")
         return
     ads, _ = alvos_ds(br_ids)
-    if not alvos and not ads and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
+    rel_antes = ((carregar_json(os.path.join(RAIZ, "data", "relacoes.json"), {}) or {}).get("meta") or {}).get("assinatura")
+    if not alvos and not ads and rel_antes == assinatura_relacoes() and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
         print(f"{modo}: nada a coletar ({len(cands)} candidatos em dia). Nenhum arquivo alterado.")
         return
 
@@ -1336,7 +1518,10 @@ def main():
                 remover.add(k)
     guardar_antes()
     pubs, modelos, desc = mesclar(exist, regs, remover)
+    rel = montar_relacoes(pubs, modelos)
     meta, pacote, foto = montar(pubs, modelos, desc)
+    if a.so or a.so_datasets or len(regs) < len(alvos):   # a regra so e marcada como aplicada quando todos os candidatos foram coletados
+        foto["regra_filtro"] = exist.get("regra")
 
     # camada de datasets e benchmarks: unidades incrementais, com checkpoint
     br_ids = {c["id"] for c in cands.values() if c["curado"] and c["escopo"] == "br"} | {p["id"] for p in pubs if p["escopo"] == "br"}
@@ -1369,7 +1554,7 @@ def main():
         sys.exit(130)
     raw, unidades = mesclar_ds(exist_ds, resultados, set(todas_ds), bench, a.tudo and not a.sem_datasets)
     camadas = montar_camadas(raw, bench, br_ids) + (unidades,)
-    mudou = gravar(meta, pacote, foto, camadas)
+    mudou = gravar(meta, pacote, foto, camadas, rel)
     log(f"coleta concluida em {(time.time() - t_ini) / 60:.1f} min; chamadas de rede: {estado['rede']}, do cache: {estado['cache']}")
     print(json.dumps({"coletados": len(regs), "unidades_datasets": len(resultados), "arquivos_alterados": mudou, **{k: foto[k] for k in ("brasil", "mundo")}, "camadas": camadas[2]}, ensure_ascii=False, indent=1))
     if mudou:

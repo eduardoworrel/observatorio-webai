@@ -17,6 +17,21 @@
     "hf": "https://huggingface.co/acso",
     "oficial": "https://acso.uneb.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "uneb"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/acso",
+        "acessado": "2026-11-20",
+        "trecho": "UNEB"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

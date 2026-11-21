@@ -6,6 +6,17 @@
  },
  "familias": [
   {
+   "id": "01-v2",
+   "nome": "01-v2",
+   "modelos": [
+    "Guilherme34/01-v2",
+    "Guilherme34/01-v2-Q4_0-GGUF"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
    "id": "3b-de-ft-research_release",
    "nome": "3b-de-ft-research_release",
    "modelos": [
@@ -78,6 +89,31 @@
    ]
   },
   {
+   "id": "agnews",
+   "nome": "AgNews",
+   "modelos": [
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-deconv-mantainscore-0final-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-interpol-mantainscore-0final-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-interpol-mantainscore-0middle-tuned",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-0final-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-0final-run2",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run2",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run1",
+    "g-assismoraes/AgNews-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run2"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
    "id": "ahxt",
    "nome": "ahxt",
    "modelos": [
@@ -102,10 +138,52 @@
    "nome": "Aira-2",
    "modelos": [
     "guicybercode/Aira-2-portuguese-124M-GGUF",
-    "guicybercode/Aira-2-portuguese-124M-mlx-4bit"
+    "guicybercode/Aira-2-portuguese-124M-mlx-4bit",
+    "nicholasKluge/Aira-2-124M-DPO"
    ],
    "publicadores": [
-    "guicybercode"
+    "guicybercode",
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "albertina-100",
+   "nome": "albertina-100",
+   "modelos": [
+    "carolina-c4ai/albertina-100m-ptbr-domain-classifier"
+   ],
+   "publicadores": [
+    "carolina-c4ai"
+   ]
+  },
+  {
+   "id": "albertina-900",
+   "nome": "albertina-900",
+   "modelos": [
+    "carolina-c4ai/albertina-900-ptbr-domain-classifier"
+   ],
+   "publicadores": [
+    "carolina-c4ai"
+   ]
+  },
+  {
+   "id": "all",
+   "nome": "all",
+   "modelos": [
+    "Xenova/all-MiniLM-L6-v2"
+   ],
+   "publicadores": [
+    "Xenova"
+   ]
+  },
+  {
+   "id": "alpajudge",
+   "nome": "alpajudge",
+   "modelos": [
+    "nvidia/alpajudge"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -140,6 +218,108 @@
    ]
   },
   {
+   "id": "amplify_120",
+   "nome": "AMPLIFY_120",
+   "modelos": [
+    "nvidia/AMPLIFY_120M"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "amplify_350",
+   "nome": "AMPLIFY_350",
+   "modelos": [
+    "nvidia/AMPLIFY_350M"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "aspire",
+   "nome": "aspire",
+   "modelos": [
+    "allenai/aspire-biencoder-biomed-scib",
+    "allenai/aspire-biencoder-biomed-spec",
+    "allenai/aspire-biencoder-compsci-spec",
+    "allenai/aspire-contextualsentence-multim-biomed",
+    "allenai/aspire-contextualsentence-multim-compsci",
+    "allenai/aspire-contextualsentence-singlem-biomed",
+    "allenai/aspire-contextualsentence-singlem-compsci",
+    "allenai/aspire-sentence-embedder"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "assin2",
+   "nome": "Assin2",
+   "modelos": [
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run10",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run3",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run4",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run5",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run6",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run7",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run8",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0final-run9",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run10",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run3",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run4",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run5",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run6",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run7",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run8",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-0middle-run9",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-0final-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run10",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run3",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run4",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run5",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run6",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run7",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run8",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-deconv-middlefinal-run9",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-0final-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-0final-tuned",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-0final-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run2",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-alpha-0final-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run1",
+    "g-assismoraes/Assin2-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run2"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
    "id": "astabrief_8",
    "nome": "AstaBrief_8",
    "modelos": [
@@ -147,6 +327,17 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "audio",
+   "nome": "audio",
+   "modelos": [
+    "nvidia/audio-codec-22khz",
+    "nvidia/audio-codec-44khz"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -186,6 +377,78 @@
    ]
   },
   {
+   "id": "bert",
+   "nome": "bert",
+   "modelos": [
+    "adalbertojunior/bert-base-portuguese-cased-8192",
+    "carolina-c4ai/bert-base-portuguese-cased-domain-classifier",
+    "carolina-c4ai/bert-large-portuguese-cased-domain-classifier",
+    "cnmoro/bert-base-portuguese-cased-safetensors",
+    "cnmoro/bert-hash-femto-mlm",
+    "cnmoro/bert-tiny-embeddings-english-portuguese",
+    "cnmoro/bert-tiny-question-classifier",
+    "cnmoro/BertMini-Reranker-EnPt",
+    "cnmoro/BertTiny-Reranker-EnPt",
+    "cnmoro/inference-free-splade-bert-tiny-en-ptbr",
+    "dominguesm/bert-restore-punctuation-ptbr",
+    "g-assismoraes/bbau-semeval25_fold1",
+    "g-assismoraes/bbau-semeval25_fold2",
+    "g-assismoraes/bbau-semeval25_fold3",
+    "g-assismoraes/bbau-semeval25_fold4",
+    "g-assismoraes/bbau-semeval25_fold5",
+    "g-assismoraes/BERTimbau-geofis",
+    "g-assismoraes/bertimbau-semeval25-fulltrain-translatept-gpt",
+    "g-assismoraes/bertimbau2epochs-semeval25-fulltrain-translatept-gpt",
+    "H2IA/HubParser-Base-B",
+    "H2IA/HubParser-Base-L",
+    "H2IA/HubParser-Large-B",
+    "H2IA/HubParser-Large-L",
+    "neuralmind/bert-base-portuguese-cased",
+    "neuralmind/bert-large-portuguese-cased",
+    "nicholasKluge/Harmless-RewardModelPT",
+    "nicholasKluge/RewardModel",
+    "nicholasKluge/RewardModelPT",
+    "nicholasKluge/ToxiGuardrailPT",
+    "pucpr-br/sbertimbau_news_2018",
+    "pucpr-br/sbertimbau_news_2019",
+    "pucpr-br/sbertimbau_news_2020",
+    "pucpr-br/sbertimbau_news_2021",
+    "pucpr-br/sbertimbau_news_2022",
+    "pucpr-br/sbertimbau_news_2023",
+    "rhaymison/bert-squad-portuguese",
+    "rhaymison/ner-portuguese-br-bert-cased",
+    "Venturus/mBERT-AnonyMED-BR-syn"
+   ],
+   "publicadores": [
+    "adalbertojunior",
+    "carolina-c4ai",
+    "cnmoro",
+    "dominguesm",
+    "g-assismoraes",
+    "H2IA",
+    "neuralmind",
+    "nicholasKluge",
+    "pucpr-br",
+    "rhaymison",
+    "Venturus"
+   ]
+  },
+  {
+   "id": "bge",
+   "nome": "bge",
+   "modelos": [
+    "cnmoro/portuguese-bge-m3",
+    "cnmoro/portuguese-en-bge-m3",
+    "Xenova/bge-base-en-v1.5",
+    "Xenova/bge-small-en-v1.5",
+    "Xenova/bge-small-zh-v1.5"
+   ],
+   "publicadores": [
+    "cnmoro",
+    "Xenova"
+   ]
+  },
+  {
    "id": "bhaskara",
    "nome": "bhaskara",
    "modelos": [
@@ -193,6 +456,38 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "bidaf",
+   "nome": "bidaf",
+   "modelos": [
+    "allenai/bidaf",
+    "allenai/bidaf-elmo"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "bigbird",
+   "nome": "bigbird",
+   "modelos": [
+    "google/bigbird-base-trivia-itc",
+    "google/bigbird-roberta-large"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "biobertpt",
+   "nome": "biobertpt",
+   "modelos": [
+    "adalbertojunior/test-medner"
+   ],
+   "publicadores": [
+    "adalbertojunior"
    ]
   },
   {
@@ -208,15 +503,84 @@
    ]
   },
   {
+   "id": "biomednlp",
+   "nome": "BiomedNLP",
+   "modelos": [
+    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
+    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+    "microsoft/BiomedNLP-BiomedBERT-large-uncased-abstract",
+    "microsoft/BiomedNLP-BiomedELECTRA-large-uncased-abstract",
+    "microsoft/BiomedNLP-KRISSBERT-PubMed-UMLS-EL"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "biomedvlp",
+   "nome": "BiomedVLP",
+   "modelos": [
+    "microsoft/BiomedVLP-BioViL-T",
+    "microsoft/BiomedVLP-CXR-BERT-general",
+    "microsoft/BiomedVLP-CXR-BERT-specialized"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
    "id": "bitnet",
    "nome": "bitnet",
    "modelos": [
     "microsoft/bitnet-b1.58-2B-4T",
     "microsoft/bitnet-b1.58-2B-4T-bf16",
-    "microsoft/bitnet-b1.58-2B-4T-gguf"
+    "microsoft/bitnet-b1.58-2B-4T-gguf",
+    "microsoft/bitnet-embedding-0.6b",
+    "microsoft/bitnet-embedding-270m"
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "blink",
+   "nome": "blink",
+   "modelos": [
+    "cnmoro/blink-latin-26M"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "bloom",
+   "nome": "bloom",
+   "modelos": [
+    "microsoft/bloom-deepspeed-inference-fp16",
+    "microsoft/bloom-deepspeed-inference-int8"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "bloom-1",
+   "nome": "bloom-1",
+   "modelos": [
+    "nicholasKluge/Aira-2-portuguese-1B7"
+   ],
+   "publicadores": [
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "bloom-560",
+   "nome": "bloom-560",
+   "modelos": [
+    "nicholasKluge/Aira-2-portuguese-560M"
+   ],
+   "publicadores": [
+    "nicholasKluge"
    ]
   },
   {
@@ -265,7 +629,8 @@
    "nome": "boto-7",
    "modelos": [
     "lucianosb/boto-7B-GGUF",
-    "lucianosb/boto-7B-v1.1-GGUF"
+    "lucianosb/boto-7B-v1.1-GGUF",
+    "lucianosb/boto-7B-v1.2-GGUF"
    ],
    "publicadores": [
     "lucianosb"
@@ -293,6 +658,18 @@
    ]
   },
   {
+   "id": "c",
+   "nome": "C",
+   "modelos": [
+    "nvidia/C-RADIO",
+    "nvidia/C-RADIOv4-H",
+    "nvidia/C-RADIOv4-SO400M"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "cabrita_7",
    "nome": "cabrita_7",
    "modelos": [
@@ -300,6 +677,17 @@
    ],
    "publicadores": [
     "22h"
+   ]
+  },
+  {
+   "id": "canarim",
+   "nome": "canarim",
+   "modelos": [
+    "dominguesm/canarim-bert-nheengatu",
+    "dominguesm/canarim-bert-postag-nheengatu"
+   ],
+   "publicadores": [
+    "dominguesm"
    ]
   },
   {
@@ -318,13 +706,68 @@
    ]
   },
   {
+   "id": "canine",
+   "nome": "canine",
+   "modelos": [
+    "google/canine-c",
+    "google/canine-s"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "cardiobertpt",
+   "nome": "cardiobertpt",
+   "modelos": [
+    "pucpr-br/cardiobertpt"
+   ],
+   "publicadores": [
+    "pucpr-br"
+   ]
+  },
+  {
    "id": "clip",
    "nome": "clip",
    "modelos": [
+    "adalbertojunior/clip-rpt",
     "allenai/Molmo-7B-O-0924"
    ],
    "publicadores": [
+    "adalbertojunior",
     "allenai"
+   ]
+  },
+  {
+   "id": "co",
+   "nome": "co",
+   "modelos": [
+    "cnmoro/inference-free-splade-co-condenser-en-ptbr",
+    "cnmoro/inference-free-splade-co-condenser-en-ptbr-v2"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "codebert",
+   "nome": "codebert",
+   "modelos": [
+    "microsoft/codebert-base",
+    "microsoft/codebert-base-mlm"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "codeexecutor",
+   "nome": "codeexecutor",
+   "modelos": [
+    "microsoft/codeexecutor"
+   ],
+   "publicadores": [
+    "microsoft"
    ]
   },
   {
@@ -451,6 +894,16 @@
    ]
   },
   {
+   "id": "content",
+   "nome": "content",
+   "modelos": [
+    "nvidia/content-type-classifier-deberta"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "cosmo-1",
    "nome": "cosmo-1",
    "modelos": [
@@ -468,6 +921,16 @@
    ],
    "publicadores": [
     "Guilherme34"
+   ]
+  },
+  {
+   "id": "custom",
+   "nome": "custom",
+   "modelos": [
+    "cnmoro/custom-model2vec-tokenlearn-medium"
+   ],
+   "publicadores": [
+    "cnmoro"
    ]
   },
   {
@@ -576,9 +1039,83 @@
    ]
   },
   {
+   "id": "db",
+   "nome": "db",
+   "modelos": [
+    "adalbertojunior/db-msm"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
+   "id": "deberta",
+   "nome": "deberta",
+   "modelos": [
+    "g-assismoraes/deberta-large-semeval25_EN08_fold1",
+    "g-assismoraes/deberta-large-semeval25_EN08_fold2",
+    "g-assismoraes/deberta-large-semeval25_EN08_fold3",
+    "g-assismoraes/deberta-large-semeval25_EN08_fold4",
+    "g-assismoraes/deberta-large-semeval25_EN08_fold5",
+    "g-assismoraes/deberta-semeval25-fulltrain-en",
+    "g-assismoraes/deberta-semeval25_EN08_CC_fold1",
+    "g-assismoraes/deberta-semeval25_EN08_CC_fold2",
+    "g-assismoraes/deberta-semeval25_EN08_CC_fold3",
+    "g-assismoraes/deberta-semeval25_EN08_CC_fold4",
+    "g-assismoraes/deberta-semeval25_EN08_CC_fold5",
+    "g-assismoraes/deberta-semeval25_EN08_fold1",
+    "g-assismoraes/deberta-semeval25_EN08_fold2",
+    "g-assismoraes/deberta-semeval25_EN08_fold3",
+    "g-assismoraes/deberta-semeval25_EN08_fold4",
+    "g-assismoraes/deberta-semeval25_EN08_fold5",
+    "g-assismoraes/deberta-semeval25_EN08_WAR_fold1",
+    "g-assismoraes/deberta-semeval25_EN08_WAR_fold2",
+    "g-assismoraes/deberta-semeval25_EN08_WAR_fold3",
+    "g-assismoraes/deberta-semeval25_EN08_WAR_fold4",
+    "g-assismoraes/deberta-semeval25_EN08_WAR_fold5",
+    "g-assismoraes/deberta-semeval25_justEN08_fold1",
+    "g-assismoraes/deberta-semeval25_justEN08_fold2",
+    "g-assismoraes/deberta-semeval25_justEN08_fold3",
+    "g-assismoraes/deberta-semeval25_justEN08_fold4",
+    "g-assismoraes/deberta-semeval25_justEN08_fold5",
+    "g-assismoraes/deberta-semeval25_noHINDI08_fold1",
+    "g-assismoraes/deberta-semeval25_noHINDI08_fold2",
+    "g-assismoraes/deberta-semeval25_noHINDI08_fold3",
+    "g-assismoraes/deberta-semeval25_noHINDI08_fold4",
+    "g-assismoraes/deberta-semeval25_noHINDI08_fold5",
+    "g-assismoraes/deberta-semeval25task10-aya2en",
+    "g-assismoraes/deberta-semeval25task10-gpt2en",
+    "g-assismoraes/mdeberta-domain_EN_fold1",
+    "g-assismoraes/mdeberta-domain_EN_fold2",
+    "g-assismoraes/mdeberta-domain_EN_fold3",
+    "g-assismoraes/mdeberta-domain_EN_fold4",
+    "g-assismoraes/mdeberta-domain_EN_fold5",
+    "microsoft/deberta-base",
+    "microsoft/deberta-base-mnli",
+    "microsoft/deberta-large",
+    "microsoft/deberta-large-mnli",
+    "microsoft/deberta-v2-xlarge",
+    "microsoft/deberta-v2-xlarge-mnli",
+    "microsoft/deberta-v2-xxlarge",
+    "microsoft/deberta-v2-xxlarge-mnli",
+    "microsoft/deberta-v3-base",
+    "microsoft/deberta-v3-large",
+    "microsoft/deberta-v3-small",
+    "microsoft/deberta-v3-xsmall",
+    "microsoft/deberta-xlarge",
+    "microsoft/deberta-xlarge-mnli"
+   ],
+   "publicadores": [
+    "g-assismoraes",
+    "microsoft"
+   ]
+  },
+  {
    "id": "deepseek",
    "nome": "DeepSeek",
    "modelos": [
+    "nvidia/DLER-R1-1.5B-Research",
+    "nvidia/DLER-R1-7B-Research",
     "nvidia/Nemotron-Research-Reasoning-Qwen-1.5B"
    ],
    "publicadores": [
@@ -631,10 +1168,25 @@
    ]
   },
   {
+   "id": "dialogrpt",
+   "nome": "DialogRPT",
+   "modelos": [
+    "microsoft/DialogRPT-depth",
+    "microsoft/DialogRPT-human-vs-machine",
+    "microsoft/DialogRPT-human-vs-rand",
+    "microsoft/DialogRPT-updown",
+    "microsoft/DialogRPT-width"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
    "id": "diarizationlm-8",
    "nome": "DiarizationLM-8",
    "modelos": [
-    "google/DiarizationLM-8b-Fisher-v1"
+    "google/DiarizationLM-8b-Fisher-v1",
+    "google/DiarizationLM-8b-Fisher-v2"
    ],
    "publicadores": [
     "google"
@@ -652,15 +1204,35 @@
    ]
   },
   {
+   "id": "distilbert",
+   "nome": "distilbert",
+   "modelos": [
+    "adalbertojunior/distilbert-portuguese-cased",
+    "cnmoro/micro-bertim-embeddings"
+   ],
+   "publicadores": [
+    "adalbertojunior",
+    "cnmoro"
+   ]
+  },
+  {
    "id": "distilgpt2",
    "nome": "distilgpt2",
    "modelos": [
-    "microsoft/chatbench-distilgpt2",
-    "Xenova/distilgpt2"
+    "microsoft/chatbench-distilgpt2"
    ],
    "publicadores": [
-    "microsoft",
-    "Xenova"
+    "microsoft"
+   ]
+  },
+  {
+   "id": "distill",
+   "nome": "distill",
+   "modelos": [
+    "adalbertojunior/distill-bge-retromae"
+   ],
+   "publicadores": [
+    "adalbertojunior"
    ]
   },
   {
@@ -674,6 +1246,28 @@
    ]
   },
   {
+   "id": "dolphin",
+   "nome": "dolphin",
+   "modelos": [
+    "adalbertojunior/dolphin_portuguese_legal_1.0-Q8_0-GGUF"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
+   "id": "domain",
+   "nome": "domain",
+   "modelos": [
+    "cnmoro/domain-labeler-enpt",
+    "nvidia/domain-classifier"
+   ],
+   "publicadores": [
+    "cnmoro",
+    "nvidia"
+   ]
+  },
+  {
    "id": "doutor",
    "nome": "doutor",
    "modelos": [
@@ -681,6 +1275,27 @@
    ],
    "publicadores": [
     "recogna-nlp"
+   ]
+  },
+  {
+   "id": "dragon",
+   "nome": "dragon",
+   "modelos": [
+    "nvidia/dragon-multiturn-context-encoder",
+    "nvidia/dragon-multiturn-query-encoder"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "drug",
+   "nome": "drug",
+   "modelos": [
+    "allenai/drug_combinations_lm_pubmedbert"
+   ],
+   "publicadores": [
+    "allenai"
    ]
   },
   {
@@ -694,11 +1309,67 @@
    ]
   },
   {
+   "id": "e",
+   "nome": "E",
+   "modelos": [
+    "nvidia/E-RADIO"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "efficient",
    "nome": "Efficient",
    "modelos": [
     "nvidia/Efficient-DLM-4B",
     "nvidia/Efficient-DLM-8B"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "electra",
+   "nome": "electra",
+   "modelos": [
+    "google/electra-base-generator",
+    "google/electra-large-generator",
+    "google/electra-small-generator"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "embeddinggemma-2",
+   "nome": "embeddinggemma-2",
+   "modelos": [
+    "google/embeddinggemma-2"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "embeddinggemma-300",
+   "nome": "embeddinggemma-300",
+   "modelos": [
+    "google/embeddinggemma-300m"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "esm2",
+   "nome": "esm2",
+   "modelos": [
+    "nvidia/esm2_t12_35M_UR50D",
+    "nvidia/esm2_t30_150M_UR50D",
+    "nvidia/esm2_t33_650M_UR50D",
+    "nvidia/esm2_t36_3B_UR50D",
+    "nvidia/esm2_t6_8M_UR50D"
    ],
    "publicadores": [
     "nvidia"
@@ -725,6 +1396,29 @@
    ]
   },
   {
+   "id": "faquad",
+   "nome": "FaQuAD",
+   "modelos": [
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-deconv-mantainscore-0final-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-deconv-mantainscore-0middle-tuned",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-interpol-mantainscore-0final-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-tuned",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-mantainscore-0final-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run1",
+    "g-assismoraes/FaQuAD-NLI-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run1"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
    "id": "fara-7",
    "nome": "Fara-7",
    "modelos": [
@@ -738,18 +1432,40 @@
    "id": "firefly",
    "nome": "Firefly",
    "modelos": [
+    "Guilherme34/Firefly-Q4_0-GGUF",
+    "Guilherme34/Firefly-Q8_0-GGUF",
     "Guilherme34/Firefly-V2",
     "Guilherme34/Firefly-V2-abliterated",
     "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
+    "Guilherme34/Firefly-V2-Q8_0-GGUF",
     "Guilherme34/Firefly-V2.5",
+    "Guilherme34/Firefly-V2Q-Think-RP-GGUF",
     "Guilherme34/Firefly-V3",
     "Guilherme34/Firefly-V3.2",
     "Guilherme34/Firefly-V3.2-1-dontdownload",
+    "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
+    "Guilherme34/Firefly-v4-BetterGGUF",
+    "Guilherme34/Firefly-v4-BetterGGUF-iMatrix",
     "Guilherme34/Firefly-v5",
+    "Guilherme34/Firefly-v5-Beta-gguf",
     "Guilherme34/Firefly-v6-DONTDOWNLOAD-STILLONPROGRESS"
    ],
    "publicadores": [
     "Guilherme34"
+   ]
+  },
+  {
+   "id": "flan",
+   "nome": "flan",
+   "modelos": [
+    "google/flan-t5-base",
+    "google/flan-t5-large",
+    "google/flan-t5-small",
+    "google/flan-t5-xl",
+    "google/flan-t5-xxl"
+   ],
+   "publicadores": [
+    "google"
    ]
   },
   {
@@ -896,6 +1612,8 @@
     "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
     "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
     "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
+    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
     "g-assismoraes/gemma-1b-it-agnews",
     "g-assismoraes/gemma-1b-it-assin2",
     "g-assismoraes/gemma-1b-it-faquad",
@@ -973,7 +1691,6 @@
     "google/gemma-3-270m-it",
     "google/gemma-3-4b-it",
     "google/gemma-3-4b-it-qat-q4_0-gguf",
-    "google/gemma-3-4b-pt",
     "google/gemma-3-4b-pt-qat-q4_0-gguf",
     "google/gemma-3n-E2B",
     "google/gemma-3n-E2B-it-litert-lm",
@@ -988,6 +1705,7 @@
    "publicadores": [
     "althayr",
     "CEIA-UFG",
+    "cnmoro",
     "g-assismoraes",
     "Guilherme34",
     "google",
@@ -1026,6 +1744,7 @@
     "google/gemma-4-E4B-it-qat-q4_0-gguf",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized-assistant",
+    "google/gemma-4-E4B-it-qat-w4a16-ct",
     "mlboydaisuke/gemma-4-E2B-it-litert-lm-rope-composite",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16"
    ],
@@ -1086,6 +1805,19 @@
    ]
   },
   {
+   "id": "geneformer",
+   "nome": "geneformer",
+   "modelos": [
+    "nvidia/geneformer_V1_10M",
+    "nvidia/geneformer_V2_104M",
+    "nvidia/geneformer_V2_104M_CLcancer",
+    "nvidia/geneformer_V2_316M"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "genstruct-7",
    "nome": "Genstruct-7",
    "modelos": [
@@ -1104,6 +1836,30 @@
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "gliclass",
+   "nome": "gliclass",
+   "modelos": [
+    "cnmoro/gliclass-base-v3.0-onnx",
+    "cnmoro/gliclass-edge-v3.0-onnx",
+    "cnmoro/gliclass-large-v3.0-onnx",
+    "cnmoro/gliclass-modern-large-v3.0-onnx",
+    "cnmoro/gliclass-x-base-onnx"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "gliner",
+   "nome": "gliner",
+   "modelos": [
+    "nvidia/gliner-PII"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -1141,10 +1897,14 @@
    "id": "gpt2",
    "nome": "gpt2",
    "modelos": [
-    "Xenova/gpt2"
+    "nicholasKluge/Aira-2-124M",
+    "nicholasKluge/Aira-2-1B5",
+    "nicholasKluge/Aira-2-355M",
+    "nicholasKluge/Aira-2-774M",
+    "nicholasKluge/Aira-2-portuguese-124M"
    ],
    "publicadores": [
-    "Xenova"
+    "nicholasKluge"
    ]
   },
   {
@@ -1161,8 +1921,22 @@
    "id": "granite",
    "nome": "granite",
    "modelos": [
+    "cnmoro/granite-30m-distilled",
+    "cnmoro/granite-question-classifier",
+    "cnmoro/prompt-router",
     "ibm-granite/granite-docling-258M",
+    "ibm-granite/granite-docling-258M-GGUF",
     "ibm-granite/granite-docling-258M-mlx",
+    "ibm-granite/granite-embedding-107m-multilingual",
+    "ibm-granite/granite-embedding-125m-english",
+    "ibm-granite/granite-embedding-278m-multilingual",
+    "ibm-granite/granite-embedding-30m-english",
+    "ibm-granite/granite-embedding-30m-sparse",
+    "ibm-granite/granite-embedding-311m-multilingual-r2",
+    "ibm-granite/granite-embedding-97m-multilingual-r2",
+    "ibm-granite/granite-embedding-english-r2",
+    "ibm-granite/granite-embedding-reranker-english-r2",
+    "ibm-granite/granite-embedding-small-english-r2",
     "ibm-granite/granite-guardian-3.0-2b",
     "ibm-granite/granite-guardian-3.0-8b",
     "ibm-granite/granite-guardian-3.1-2b",
@@ -1173,7 +1947,12 @@
     "ibm-granite/granite-guardian-3.2-5b-lora-harm-categories",
     "ibm-granite/granite-guardian-3.2-5b-lora-harm-correction",
     "ibm-granite/granite-guardian-3.3-8b",
+    "ibm-granite/granite-guardian-hap-125m",
+    "ibm-granite/granite-guardian-hap-38m",
     "ibm-granite/granite-rag-3.0-8b-lora",
+    "ibm-granite/granite-speech-4.1-2b-GGUF",
+    "ibm-granite/granite-speech-4.1-2b-plus-GGUF",
+    "ibm-granite/granite-speech-5.0-2b-GGUF",
     "ibm-granite/granite-swash-2b",
     "ibm-granite/granite-swash-3b-a600m",
     "ibm-granite/granite-switch-4.1-3b-preview",
@@ -1181,9 +1960,13 @@
     "ibm-granite/granite-switch-4.1-8b-preview",
     "ibm-granite/granite-uncertainty-3.0-8b-lora",
     "ibm-granite/granite-vision-3.3-2b-chart2csv-preview",
+    "ibm-granite/granite-vision-3.3-2b-chart2csv-preview-GGUF",
+    "ibm-granite/granite-vision-3.3-2b-embedding",
+    "ibm-granite/granite-vision-3.3-2b-GGUF",
     "ibm-granite/granite-vision-4.1-4b"
    ],
    "publicadores": [
+    "cnmoro",
     "ibm-granite"
    ]
   },
@@ -1281,6 +2064,7 @@
    "modelos": [
     "ibm-granite/granite-4.0-1b",
     "ibm-granite/granite-4.0-1b-base",
+    "ibm-granite/granite-4.0-1b-speech-GGUF",
     "ibm-granite/granite-4.0-350m",
     "ibm-granite/granite-4.0-350m-base",
     "ibm-granite/granite-4.0-3b-vision",
@@ -1296,7 +2080,8 @@
     "ibm-granite/granite-4.0-micro-base",
     "ibm-granite/granite-4.0-tiny-base-preview",
     "ibm-granite/granite-4.0-tiny-preview",
-    "ibm-granite/granite-guardian-4.0-3b-toxicity-ja"
+    "ibm-granite/granite-guardian-4.0-3b-toxicity-ja",
+    "ibm-granite/granite-speech-4.1-2b-nar"
    ],
    "publicadores": [
     "ibm-granite"
@@ -1329,9 +2114,12 @@
     "ibm-granite/granite-4.2-3b-fp8",
     "ibm-granite/granite-4.2-3b-mxfp4",
     "ibm-granite/granite-4.2-3b-nvfp4",
+    "ibm-granite/granite-4.2-3b-q4-mlx",
+    "ibm-granite/granite-4.2-3b-q8-mlx",
     "ibm-granite/granite-4.2-8b-fp8",
     "ibm-granite/granite-4.2-8b-mxfp4",
-    "ibm-granite/granite-4.2-8b-nvfp4"
+    "ibm-granite/granite-4.2-8b-nvfp4",
+    "ibm-granite/granite-4.2-8b-q4-mlx"
    ],
    "publicadores": [
     "ibm-granite"
@@ -1363,6 +2151,187 @@
    ]
   },
   {
+   "id": "graphcodebert",
+   "nome": "graphcodebert",
+   "modelos": [
+    "microsoft/graphcodebert-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "groupvit",
+   "nome": "groupvit",
+   "modelos": [
+    "nvidia/groupvit-gcc-redcaps",
+    "nvidia/groupvit-gcc-yfcc"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "gte",
+   "nome": "gte",
+   "modelos": [
+    "Xenova/gte-small"
+   ],
+   "publicadores": [
+    "Xenova"
+   ]
+  },
+  {
+   "id": "harrier",
+   "nome": "harrier",
+   "modelos": [
+    "microsoft/harrier-oss-v1-0.6b",
+    "microsoft/harrier-oss-v1-270m"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "hatebr",
+   "nome": "HateBR",
+   "modelos": [
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0final-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-0middle-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-deconv-middlefinal-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0final-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-0middle-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0final-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0final-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0final-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0final-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-interpol-middlefinal-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0final-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-0middle-run9",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-0final-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-0final-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-basetuned-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-basetuned-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-tuned",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run1",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run10",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run2",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run3",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run4",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run5",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run6",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run7",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run8",
+    "g-assismoraes/HateBR-TeenyTinyLlama-460m-sdv-middlefinal-run9"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
+   "id": "hebclip",
+   "nome": "hebclip",
+   "modelos": [
+    "nvidia/hebclip-model"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "hermes-3",
    "nome": "Hermes-3",
    "modelos": [
@@ -1370,6 +2339,19 @@
    ],
    "publicadores": [
     "wilsondesouza"
+   ]
+  },
+  {
+   "id": "hvila",
+   "nome": "hvila",
+   "modelos": [
+    "allenai/hvila-block-layoutlm-finetuned-docbank",
+    "allenai/hvila-block-layoutlm-finetuned-grotoap2",
+    "allenai/hvila-row-layoutlm-finetuned-docbank",
+    "allenai/hvila-row-layoutlm-finetuned-grotoap2"
+   ],
+   "publicadores": [
+    "allenai"
    ]
   },
   {
@@ -1381,6 +2363,51 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "imdb",
+   "nome": "IMDB",
+   "modelos": [
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-0final-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-0final-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-0middle-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-deconv-mantainscore-middlefinal-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-0final-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-0final-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-interpol-mantainscore-middlefinal-tuned",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0final-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-0middle-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-interpol-mantainscore-middlefinal-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-0final-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-0final-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-0middle-run2",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run1",
+    "g-assismoraes/IMDB-TeenyTinyLlama-460m-sdv-mantainscore-middlefinal-run2"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
+   "id": "infoxlm",
+   "nome": "infoxlm",
+   "modelos": [
+    "microsoft/infoxlm-base",
+    "microsoft/infoxlm-large"
+   ],
+   "publicadores": [
+    "microsoft"
    ]
   },
   {
@@ -1414,6 +2441,30 @@
    ]
   },
   {
+   "id": "ivila",
+   "nome": "ivila",
+   "modelos": [
+    "allenai/ivila-block-layoutlm-finetuned-docbank",
+    "allenai/ivila-block-layoutlm-finetuned-grotoap2",
+    "allenai/ivila-block-layoutlm-finetuned-s2vl-v2",
+    "allenai/ivila-row-layoutlm-finetuned-s2vl-v2"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "jabuticabert",
+   "nome": "JabuticaBERT",
+   "modelos": [
+    "amadeusai/JabuticaBERT-Large",
+    "amadeusai/JabuticaBERT-XSmall"
+   ],
+   "publicadores": [
+    "amadeusai"
+   ]
+  },
+  {
    "id": "jennifer",
    "nome": "Jennifer",
    "modelos": [
@@ -1439,6 +2490,16 @@
    "nome": "Jenniferv2",
    "modelos": [
     "Guilherme34/Jenniferv2-gptq4bit"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
+   "id": "jeva-9",
+   "nome": "Jeva-9",
+   "modelos": [
+    "Guilherme34/Jeva-9b-gguf"
    ],
    "publicadores": [
     "Guilherme34"
@@ -1515,16 +2576,6 @@
    ]
   },
   {
-   "id": "lamini",
-   "nome": "LaMini",
-   "modelos": [
-    "Xenova/LaMini-GPT-124M"
-   ],
-   "publicadores": [
-    "Xenova"
-   ]
-  },
-  {
    "id": "layer",
    "nome": "layer",
    "modelos": [
@@ -1536,11 +2587,54 @@
    ]
   },
   {
+   "id": "led",
+   "nome": "led",
+   "modelos": [
+    "allenai/led-base-16384-ms2"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "legal",
+   "nome": "legal",
+   "modelos": [
+    "dominguesm/legal-bert-base-cased-ptbr",
+    "dominguesm/legal-bert-ner-base-cased-ptbr"
+   ],
+   "publicadores": [
+    "dominguesm"
+   ]
+  },
+  {
+   "id": "lexicalembed",
+   "nome": "LexicalEmbed",
+   "modelos": [
+    "cnmoro/LexicalEmbed-Base"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "lfm",
+   "nome": "LFM",
+   "modelos": [
+    "cnmoro/LFM-Q4-GGUFS"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
    "id": "lfm2",
    "nome": "LFM2",
    "modelos": [
+    "cnmoro/LFM2-PTBR-imatrix-Quants",
     "LiquidAI/LFM2-1.2B",
     "LiquidAI/LFM2-1.2B-Extract",
+    "LiquidAI/LFM2-1.2B-Longevity",
     "LiquidAI/LFM2-1.2B-RAG",
     "LiquidAI/LFM2-1.2B-Tool",
     "LiquidAI/LFM2-2.6B",
@@ -1553,11 +2647,14 @@
     "LiquidAI/LFM2-350M-PII-Extract-JP",
     "LiquidAI/LFM2-700M",
     "LiquidAI/LFM2-8B-A1B",
+    "LiquidAI/LFM2-Audio-1.5B-GGUF",
+    "LiquidAI/LFM2-ColBERT-350M",
     "LiquidAI/LFM2-VL-1.6B",
     "LiquidAI/LFM2-VL-3B",
     "LiquidAI/LFM2-VL-450M"
    ],
    "publicadores": [
+    "cnmoro",
     "LiquidAI"
    ]
   },
@@ -1630,7 +2727,17 @@
     "LiquidAI/LFM2.5-8B-A1B-MLX-6bit",
     "LiquidAI/LFM2.5-8B-A1B-MLX-8bit",
     "LiquidAI/LFM2.5-8B-A1B-MLX-bf16",
+    "LiquidAI/LFM2.5-Audio-1.5B-GGUF",
+    "LiquidAI/LFM2.5-Audio-1.5B-GGUF-LEAP",
+    "LiquidAI/LFM2.5-ColBERT-350M",
+    "LiquidAI/LFM2.5-Embedding-350M",
+    "LiquidAI/LFM2.5-Encoder-230M",
+    "LiquidAI/LFM2.5-Encoder-350M",
     "LiquidAI/LFM2.5-Encoder-350M-Diffusion",
+    "LiquidAI/LFM2.5-Encoder-350M-PII-Detector",
+    "LiquidAI/LFM2.5-Encoder-350M-Policy-Linter",
+    "LiquidAI/LFM2.5-Encoder-350M-Prompt-Router",
+    "LiquidAI/LFM2.5-Encoder-350M-Spellchecker",
     "LiquidAI/LFM2.5-VL-1.6B",
     "LiquidAI/LFM2.5-VL-1.6B-Extract",
     "LiquidAI/LFM2.5-VL-3B",
@@ -1659,6 +2766,7 @@
    "nome": "LFM3",
    "modelos": [
     "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
+    "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
     "daveycodez/LFM3-1.7B-Web-ONNX",
     "LiquidAI/d1-2B",
     "LiquidAI/LFM3-1.7B",
@@ -1694,6 +2802,26 @@
    ]
   },
   {
+   "id": "lidstral",
+   "nome": "LIDstral",
+   "modelos": [
+    "mistralai/LIDstral-Arabic"
+   ],
+   "publicadores": [
+    "mistralai"
+   ]
+  },
+  {
+   "id": "liquid",
+   "nome": "Liquid",
+   "modelos": [
+    "LiquidAI/Liquid-Codec"
+   ],
+   "publicadores": [
+    "LiquidAI"
+   ]
+  },
+  {
    "id": "llama",
    "nome": "Llama",
    "modelos": [
@@ -1701,10 +2829,20 @@
     "meta-llama/Llama-Guard-3-1B",
     "meta-llama/Llama-Guard-3-1B-INT4",
     "meta-llama/Llama-Guard-3-8B-INT8",
-    "meta-llama/Llama-Guard-4-12B"
+    "meta-llama/Llama-Guard-4-12B",
+    "meta-llama/Llama-Prompt-Guard-2-22M",
+    "meta-llama/Llama-Prompt-Guard-2-86M",
+    "nvidia/llama-embed-nemotron-8b",
+    "nvidia/llama-nemotron-embed-1b-v2",
+    "nvidia/llama-nemotron-embed-vl-1b-v2",
+    "nvidia/llama-nemotron-embed-vl-1b-v2-fp8",
+    "nvidia/llama-nemotron-rerank-1b-v2",
+    "nvidia/llama-nemotron-rerank-vl-1b-v2",
+    "nvidia/llama-nemotron-rerank-vl-1b-v2-fp8"
    ],
    "publicadores": [
-    "meta-llama"
+    "meta-llama",
+    "nvidia"
    ]
   },
   {
@@ -1722,6 +2860,9 @@
    "nome": "Llama-2",
    "modelos": [
     "c2d-usp/AMP_llama_2_30.03_percent_compression",
+    "g-assismoraes/tofu-llama2-7b-reset-embed",
+    "g-assismoraes/tofu-llama2-7b-reset-embed-head",
+    "g-assismoraes/tofu-llama2-7b-reset-head",
     "Giuliano/llama-2-7b-chat-periquito-pt-br",
     "Giuliano/llama-2-7b-periquito-pt-br",
     "lucianosb/llama-2-7b-langchain-chat-GGUF",
@@ -1747,6 +2888,7 @@
    ],
    "publicadores": [
     "c2d-usp",
+    "g-assismoraes",
     "Giuliano",
     "lucianosb",
     "pucpr-br",
@@ -1760,6 +2902,7 @@
    "nome": "Llama-3",
    "modelos": [
     "adalbertojunior/Llama-3-8B-Dolphin-Portuguese",
+    "adalbertojunior/Llama-3-8B-Dolphin-Portuguese-GGUF",
     "adalbertojunior/Llama-3-8B-Dolphin-Portuguese-v0.2",
     "adalbertojunior/Llama-3-8B-Dolphin-Portuguese-v0.3",
     "adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.1",
@@ -1769,7 +2912,11 @@
     "adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.4",
     "allenai/Llama-3-8B-Instruct-Analyzer",
     "allenai/Llama-3-Blama-8B",
-    "allenai/llama-3-tulu-2-dpo-8b"
+    "allenai/llama-3-tulu-2-8b-uf-mean-rm",
+    "allenai/llama-3-tulu-2-dpo-8b",
+    "allenai/llama-3-tulu-v2.5-8b-uf-mean-70b-uf-rm",
+    "allenai/llama-3-tulu-v2.5-8b-uf-mean-70b-uf-rm-mixed-prompts",
+    "allenai/llama-3-tulu-v2.5-8b-uf-mean-8b-uf-rm"
    ],
    "publicadores": [
     "adalbertojunior",
@@ -1782,15 +2929,27 @@
    "modelos": [
     "ai-eldorado/LlamaEld-3.1-8B-Instruct",
     "Guilherme34/ArliAI-RPMax-Formax-v1",
+    "recogna-nlp/Bode-3.1-8B-Instruct-full",
+    "allenai/Llama-3.1-70B-Instruct-RM-RB2",
+    "allenai/Llama-3.1-8B-Base-RM-RB2",
+    "allenai/Llama-3.1-8B-Instruct-RM-RB2",
+    "allenai/llama-3.1-tulu-2-8b",
+    "allenai/llama-3.1-tulu-2-8b-uf-mean-rm",
+    "allenai/llama-3.1-tulu-2-dpo-8b",
     "allenai/Llama-3.1-Tulu-3-405B-DPO",
     "allenai/Llama-3.1-Tulu-3-405B-SFT",
+    "allenai/Llama-3.1-Tulu-3-70B-SFT-RM-RB2",
     "allenai/Llama-3.1-Tulu-3-8B",
     "allenai/Llama-3.1-Tulu-3-8B-DPO",
+    "allenai/Llama-3.1-Tulu-3-8B-DPO-RM-RB2",
+    "allenai/Llama-3.1-Tulu-3-8B-RL-RM-RB2",
+    "allenai/Llama-3.1-Tulu-3-8B-RM",
     "allenai/Llama-3.1-Tulu-3-8B-SFT",
     "allenai/Llama-3.1-Tulu-3-8B-SFT-no-math-data",
     "allenai/Llama-3.1-Tulu-3-8B-SFT-no-persona-data",
     "allenai/Llama-3.1-Tulu-3-8B-SFT-no-safety-data",
     "allenai/Llama-3.1-Tulu-3-8B-SFT-no-wildchat-data",
+    "allenai/Llama-3.1-Tulu-3-8B-SFT-RM-RB2",
     "allenai/Llama-3.1-Tulu-3.1-8B",
     "meta-llama/Llama-3.1-8B",
     "meta-llama/Llama-3.1-8B-Instruct",
@@ -1798,7 +2957,10 @@
     "microsoft/HARC-Llama-3.1-8B-Instruct",
     "microsoft/UserLM-2.0",
     "microsoft/UserLM-8b",
+    "nvidia/DLER-Llama-Nemotron-8B-Merge-Research",
     "nvidia/Llama-3.1-8B-Instruct-FP8",
+    "nvidia/Llama-3.1-8B-Instruct-NVFP4",
+    "nvidia/Llama-3.1-8B-Medusa-FP8",
     "nvidia/Llama-3.1-Minitron-4B-Depth-Base",
     "nvidia/Llama-3.1-Minitron-4B-Width-Base",
     "nvidia/Llama-3.1-Nemotron-8B-UltraLong-1M-Instruct",
@@ -1815,6 +2977,7 @@
    "publicadores": [
     "ai-eldorado",
     "Guilherme34",
+    "recogna-nlp",
     "allenai",
     "meta-llama",
     "microsoft",
@@ -1878,12 +3041,35 @@
     "g-assismoraes/Llama-3.2-3B-Instruct-fpi-alpha2.0-var-imdb",
     "g-assismoraes/Llama-3.2-3B-Instruct-hatebr",
     "g-assismoraes/Llama-3.2-3B-Instruct-imdb",
+    "g-assismoraes/llama-music_fold_1",
+    "g-assismoraes/llama-music_fold_10",
+    "g-assismoraes/llama-music_fold_2",
+    "g-assismoraes/llama-music_fold_3",
+    "g-assismoraes/llama-music_fold_4",
+    "g-assismoraes/llama-music_fold_5",
+    "g-assismoraes/llama-music_fold_6",
+    "g-assismoraes/llama-music_fold_7",
+    "g-assismoraes/llama-music_fold_8",
+    "g-assismoraes/llama-music_fold_9",
+    "Guilherme34/Firefly",
     "Guilherme34/Llama-3.2-11b-vision-uncensored-notlora",
     "Guilherme34/Lumina",
     "Guilherme34/poke-test-model-base",
     "Guilherme34/Psychologist-3b",
     "Guilherme34/Psychologist-3b-beta",
     "Guilherme34/Samantha-3b-beta0.1-model",
+    "HuggingFaceTB/finemath-ablation-3plus-160B",
+    "HuggingFaceTB/finemath-ablation-4plus-160B",
+    "HuggingFaceTB/finemath-ablation-finemath-3plus",
+    "HuggingFaceTB/finemath-ablation-finemath-4plus",
+    "HuggingFaceTB/finemath-ablation-finemath-infimath-3plus",
+    "HuggingFaceTB/finemath-ablation-finemath-infimath-4plus",
+    "HuggingFaceTB/finemath-ablation-fwedu",
+    "HuggingFaceTB/finemath-ablation-infiwebmath",
+    "HuggingFaceTB/finemath-ablation-infiwebmath-3plus",
+    "HuggingFaceTB/finemath-ablation-infiwebmath-4plus",
+    "HuggingFaceTB/finemath-ablation-owm",
+    "HuggingFaceTB/FineMath-Llama-3B",
     "meta-llama/Llama-3.2-11B-Vision",
     "meta-llama/Llama-3.2-11B-Vision-Instruct",
     "meta-llama/Llama-3.2-1B",
@@ -1894,14 +3080,17 @@
     "meta-llama/Llama-3.2-3B-Instruct",
     "meta-llama/Llama-3.2-3B-Instruct-QLORA_INT4_EO8",
     "meta-llama/Llama-3.2-3B-Instruct-SpinQuant_INT4_EO8",
-    "mlboydaisuke/Llama-3.2-3B-Instruct-LiteRT"
+    "mlboydaisuke/Llama-3.2-3B-Instruct-LiteRT",
+    "nvidia/llama-nv-embed-reasoning-3b"
    ],
    "publicadores": [
     "artificialguybr",
     "g-assismoraes",
     "Guilherme34",
+    "HuggingFaceTB",
     "meta-llama",
-    "mlboydaisuke"
+    "mlboydaisuke",
+    "nvidia"
    ]
   },
   {
@@ -1915,6 +3104,16 @@
    ]
   },
   {
+   "id": "llama-4",
+   "nome": "Llama-4",
+   "modelos": [
+    "nvidia/Llama-4-Maverick-17B-128E-Eagle3"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "llama2",
    "nome": "llama2",
    "modelos": [
@@ -1922,15 +3121,12 @@
     "allenai/llama2-7b-WildJailbreak",
     "microsoft/Llama2-7b-WhoIsHarryPotter",
     "nvidia/Llama2-13B-SteerLM-RM",
-    "nvidia/Llama2-70B-SteerLM-Chat",
-    "Xenova/llama2.c-stories110M",
-    "Xenova/llama2.c-stories15M"
+    "nvidia/Llama2-70B-SteerLM-Chat"
    ],
    "publicadores": [
     "allenai",
     "microsoft",
-    "nvidia",
-    "Xenova"
+    "nvidia"
    ]
   },
   {
@@ -1978,6 +3174,84 @@
    ]
   },
   {
+   "id": "llm2",
+   "nome": "LLM2",
+   "modelos": [
+    "microsoft/LLM2CLIP-Llama-3-8B-Instruct-CC-Finetuned",
+    "microsoft/LLM2CLIP-Llama-3.2-1B-Instruct-CC-Finetuned",
+    "microsoft/LLM2CLIP-Llama3.1-8B-siglip2-so400m-patch14-224",
+    "microsoft/LLM2CLIP-Openai-B-16",
+    "microsoft/LLM2CLIP-Openai-L-14-224",
+    "microsoft/LLM2CLIP-Openai-L-14-336"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "llmlingua-2",
+   "nome": "llmlingua-2",
+   "modelos": [
+    "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+    "microsoft/llmlingua-2-xlm-roberta-large-meetingbank"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "long",
+   "nome": "long",
+   "modelos": [
+    "google/long-t5-local-base",
+    "google/long-t5-tglobal-large"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "longcoder",
+   "nome": "longcoder",
+   "modelos": [
+    "microsoft/longcoder-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "longformer",
+   "nome": "longformer",
+   "modelos": [
+    "allenai/longformer-large-4096-finetuned-triviaqa",
+    "allenai/longformer-scico"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "low",
+   "nome": "low",
+   "modelos": [
+    "nvidia/low-frame-rate-speech-codec-22khz"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "macaw",
+   "nome": "macaw",
+   "modelos": [
+    "allenai/macaw-large"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
    "id": "madlad400",
    "nome": "madlad400",
    "modelos": [
@@ -2002,7 +3276,8 @@
    "id": "maira-2",
    "nome": "maira-2",
    "modelos": [
-    "microsoft/maira-2"
+    "microsoft/maira-2",
+    "microsoft/maira-2-sae"
    ],
    "publicadores": [
     "microsoft"
@@ -2044,6 +3319,79 @@
    ]
   },
   {
+   "id": "markuplm",
+   "nome": "markuplm",
+   "modelos": [
+    "microsoft/markuplm-base-finetuned-websrc",
+    "microsoft/markuplm-large-finetuned-websrc"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "mathstral-7",
+   "nome": "Mathstral-7",
+   "modelos": [
+    "mistralai/Mathstral-7B-v0.1"
+   ],
+   "publicadores": [
+    "mistralai"
+   ]
+  },
+  {
+   "id": "mdeberta",
+   "nome": "mdeberta",
+   "modelos": [
+    "g-assismoraes/mdeberta-domain_fold1",
+    "g-assismoraes/mdeberta-domain_fold2",
+    "g-assismoraes/mdeberta-domain_fold3",
+    "g-assismoraes/mdeberta-domain_fold4",
+    "g-assismoraes/mdeberta-domain_fold5",
+    "g-assismoraes/mdeberta-semeval25_fold1",
+    "g-assismoraes/mdeberta-semeval25_fold2",
+    "g-assismoraes/mdeberta-semeval25_fold3",
+    "g-assismoraes/mdeberta-semeval25_fold4",
+    "g-assismoraes/mdeberta-semeval25_fold5",
+    "g-assismoraes/mdeberta-semeval25_maxf1_fold1",
+    "g-assismoraes/mdeberta-semeval25_maxf1_fold2",
+    "g-assismoraes/mdeberta-semeval25_maxf1_fold3",
+    "g-assismoraes/mdeberta-semeval25_maxf1_fold5",
+    "g-assismoraes/mdeberta-semeval25_narratives09_fold1",
+    "g-assismoraes/mdeberta-semeval25_narratives09_fold2",
+    "g-assismoraes/mdeberta-semeval25_narratives09_fold3",
+    "g-assismoraes/mdeberta-semeval25_narratives09_fold4",
+    "g-assismoraes/mdeberta-semeval25_narratives09_fold5",
+    "g-assismoraes/mdeberta-semeval25_narratives09_maxf1_fold1",
+    "g-assismoraes/mdeberta-semeval25_narratives09_maxf1_fold2",
+    "g-assismoraes/mdeberta-semeval25_narratives09_maxf1_fold3",
+    "g-assismoraes/mdeberta-semeval25_narratives09_maxf1_fold4",
+    "g-assismoraes/mdeberta-semeval25_narratives09_maxf1_fold5",
+    "g-assismoraes/mdeberta-semeval25_narratives_fold1",
+    "g-assismoraes/mdeberta-semeval25_narratives_fold2",
+    "g-assismoraes/mdeberta-semeval25_narratives_fold3",
+    "g-assismoraes/mdeberta-semeval25_narratives_fold4",
+    "g-assismoraes/mdeberta-semeval25_narratives_fold5",
+    "g-assismoraes/mdeberta-semeval25_thresh05_fold1",
+    "g-assismoraes/mdeberta-semeval25_thresh05_fold2",
+    "g-assismoraes/mdeberta-semeval25_thresh05_fold3",
+    "g-assismoraes/mdeberta-semeval25_thresh05_fold4",
+    "g-assismoraes/mdeberta-semeval25_thresh05_fold5",
+    "g-assismoraes/mdeberta-semeval25_thresh07_fold1",
+    "g-assismoraes/mdeberta-semeval25_thresh07_fold2",
+    "g-assismoraes/mdeberta-semeval25_thresh07_fold3",
+    "g-assismoraes/mdeberta-semeval25_thresh07_fold4",
+    "g-assismoraes/mdeberta-semeval25_thresh07_fold5",
+    "g-assismoraes/mdeberta-semeval25task10",
+    "g-assismoraes/mdeberta-semeval25task10-domain",
+    "microsoft/mdeberta-v3-base"
+   ],
+   "publicadores": [
+    "g-assismoraes",
+    "microsoft"
+   ]
+  },
+  {
    "id": "medgemma-1.5",
    "nome": "medgemma-1.5",
    "modelos": [
@@ -2061,6 +3409,17 @@
    ],
    "publicadores": [
     "google"
+   ]
+  },
+  {
+   "id": "mel",
+   "nome": "mel",
+   "modelos": [
+    "nvidia/mel-codec-22khz",
+    "nvidia/mel-codec-44khz"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -2117,6 +3476,16 @@
    ]
   },
   {
+   "id": "minilm",
+   "nome": "MiniLM",
+   "modelos": [
+    "microsoft/MiniLM-L12-H384-uncased"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
    "id": "minimax",
    "nome": "MiniMax",
    "modelos": [
@@ -2131,7 +3500,25 @@
    "id": "ministral-3",
    "nome": "Ministral-3",
    "modelos": [
-    "mistralai/Ministral-3-3B-Instruct-2512-ONNX"
+    "mistralai/Ministral-3-3B-Instruct-2512-GGUF",
+    "mistralai/Ministral-3-3B-Instruct-2512-ONNX",
+    "mistralai/Ministral-3-3B-Reasoning-2512-GGUF",
+    "mistralai/Ministral-3-8B-Instruct-2512-GGUF",
+    "mistralai/Ministral-3-8B-Reasoning-2512-GGUF",
+    "nvidia/Nemotron-3-Embed-1B-BF16",
+    "nvidia/Nemotron-3-Embed-8B-BF16",
+    "nvidia/Nemotron-3.5-Rerank-8B-BF16"
+   ],
+   "publicadores": [
+    "mistralai",
+    "nvidia"
+   ]
+  },
+  {
+   "id": "ministral-8",
+   "nome": "Ministral-8",
+   "modelos": [
+    "mistralai/Ministral-8B-Instruct-2410"
    ],
    "publicadores": [
     "mistralai"
@@ -2195,7 +3582,9 @@
     "microsoft/Sentiment-Analysis-7B",
     "mistralai/Mistral-7B-Instruct-v0.1",
     "mistralai/Mistral-7B-Instruct-v0.2",
+    "mistralai/Mistral-7B-Instruct-v0.3",
     "mistralai/Mistral-7B-v0.1",
+    "mistralai/Mistral-7B-v0.3",
     "nvidia/OpenMath-Mistral-7B-v0.1-hf"
    ],
    "publicadores": [
@@ -2208,6 +3597,46 @@
     "microsoft",
     "mistralai",
     "nvidia"
+   ]
+  },
+  {
+   "id": "mminilm",
+   "nome": "mMiniLM",
+   "modelos": [
+    "unicamp-dl/mMiniLM-L6-v2-en-msmarco",
+    "unicamp-dl/mMiniLM-L6-v2-en-pt-msmarco-v1",
+    "unicamp-dl/mMiniLM-L6-v2-en-pt-msmarco-v2",
+    "unicamp-dl/mMiniLM-L6-v2-mmarco-v1",
+    "unicamp-dl/mMiniLM-L6-v2-mmarco-v2",
+    "unicamp-dl/mMiniLM-L6-v2-pt-msmarco-v1",
+    "unicamp-dl/mMiniLM-L6-v2-pt-v2"
+   ],
+   "publicadores": [
+    "unicamp-dl"
+   ]
+  },
+  {
+   "id": "modernbert",
+   "nome": "ModernBERT",
+   "modelos": [
+    "adalbertojunior/ModernBERT-base",
+    "adalbertojunior/ModernBERT-base-exp1"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
+   "id": "modernjabuticabert",
+   "nome": "modernJabuticaBERT",
+   "modelos": [
+    "amadeusai/modernJabuticaBERT-Base-1k",
+    "amadeusai/modernJabuticaBERT-Base-8k",
+    "amadeusai/modernJabuticaBERT-Large-1k",
+    "amadeusai/modernJabuticaBERT-large-8k"
+   ],
+   "publicadores": [
+    "amadeusai"
    ]
   },
   {
@@ -2259,6 +3688,16 @@
    ]
   },
   {
+   "id": "mpnet",
+   "nome": "mpnet",
+   "modelos": [
+    "microsoft/mpnet-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
    "id": "mrcompliance",
    "nome": "MrCompliance",
    "modelos": [
@@ -2266,6 +3705,67 @@
    ],
    "publicadores": [
     "sallani"
+   ]
+  },
+  {
+   "id": "mrpt",
+   "nome": "mrpt",
+   "modelos": [
+    "adalbertojunior/mrpt"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
+   "id": "ms",
+   "nome": "ms",
+   "modelos": [
+    "Xenova/ms-marco-MiniLM-L-6-v2"
+   ],
+   "publicadores": [
+    "Xenova"
+   ]
+  },
+  {
+   "id": "multicite",
+   "nome": "multicite",
+   "modelos": [
+    "allenai/multicite-multilabel-roberta-large",
+    "allenai/multicite-multilabel-scibert"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "multilingual",
+   "nome": "multilingual",
+   "modelos": [
+    "cnmoro/multilingual-e5-small-distilled-16m",
+    "cnmoro/portuguese-multilingual-e5-small",
+    "HuggingFaceTB/finemath-classifier",
+    "microsoft/Multilingual-MiniLM-L12-H384",
+    "nvidia/multilingual-domain-classifier",
+    "Xenova/multilingual-e5-small"
+   ],
+   "publicadores": [
+    "cnmoro",
+    "HuggingFaceTB",
+    "microsoft",
+    "nvidia",
+    "Xenova"
+   ]
+  },
+  {
+   "id": "muril",
+   "nome": "muril",
+   "modelos": [
+    "google/muril-base-cased",
+    "google/muril-large-cased"
+   ],
+   "publicadores": [
+    "google"
    ]
   },
   {
@@ -2289,6 +3789,16 @@
    ]
   },
   {
+   "id": "nanoranker",
+   "nome": "Nanoranker",
+   "modelos": [
+    "cnmoro/Nanoranker"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
    "id": "nanowhale-100",
    "nome": "nanowhale-100",
    "modelos": [
@@ -2300,6 +3810,16 @@
    ]
   },
   {
+   "id": "naqanet",
+   "nome": "naqanet",
+   "modelos": [
+    "allenai/naqanet"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
    "id": "nbr-1",
    "nome": "NBR-1",
    "modelos": [
@@ -2308,6 +3828,29 @@
    ],
    "publicadores": [
     "guicybercode"
+   ]
+  },
+  {
+   "id": "nemo",
+   "nome": "nemo",
+   "modelos": [
+    "nvidia/nemo-nano-codec-22khz-0.6kbps-12.5fps",
+    "nvidia/nemo-nano-codec-22khz-1.78kbps-12.5fps",
+    "nvidia/nemo-nano-codec-22khz-1.89kbps-21.5fps"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "nemocurator",
+   "nome": "nemocurator",
+   "modelos": [
+    "nvidia/nemocurator-fineweb-mixtral-edu-classifier",
+    "nvidia/nemocurator-fineweb-nemotron-4-edu-classifier"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -2353,7 +3896,8 @@
     "nvidia/nemotron-3-8b-chat-4k-rlhf",
     "nvidia/nemotron-3-8b-chat-4k-sft",
     "nvidia/nemotron-3-8b-chat-4k-steerlm",
-    "nvidia/nemotron-3-8b-qa-4k"
+    "nvidia/nemotron-3-8b-qa-4k",
+    "nvidia/Nemotron-3-Embed-1B-NVFP4"
    ],
    "publicadores": [
     "nvidia"
@@ -2363,10 +3907,31 @@
    "id": "nemotron-3.5",
    "nome": "Nemotron-3.5",
    "modelos": [
+    "nvidia/Nemotron-3.5-Content-Safety",
     "nvidia/Nemotron-3.5-Parse"
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "nemotron-4",
+   "nome": "Nemotron-4",
+   "modelos": [
+    "nvidia/Nemotron-4-Mini-Hindi-4B-Instruct"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "ner",
+   "nome": "ner",
+   "modelos": [
+    "Venturus/BERTimbau-AnonyMED-BR"
+   ],
+   "publicadores": [
+    "Venturus"
    ]
   },
   {
@@ -2380,11 +3945,44 @@
    ]
   },
   {
+   "id": "nomic",
+   "nome": "nomic",
+   "modelos": [
+    "cnmoro/nomic-embed-text-v2-moe-distilled-high-quality",
+    "cnmoro/portuguese-nomic-embed-text-v2-moe",
+    "cnmoro/static-nomic-384-pten",
+    "cnmoro/static-nomic-384-pten-v2",
+    "cnmoro/static-nomic-384-pten-v2-st",
+    "cnmoro/static-nomic-eng-ptbr",
+    "cnmoro/static-nomic-eng-ptbr-large",
+    "cnmoro/static-nomic-eng-ptbr-tiny"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "norberto",
+   "nome": "NorBERTo",
+   "modelos": [
+    "Itau-Unibanco/NorBERTo",
+    "Itau-Unibanco/NorBERTo-base",
+    "Itau-Unibanco/NorBERTo-large"
+   ],
+   "publicadores": [
+    "Itau-Unibanco"
+   ]
+  },
+  {
    "id": "nv",
    "nome": "NV",
    "modelos": [
+    "nvidia/NV-Embed-v1",
+    "nvidia/NV-Embed-v2",
+    "nvidia/NV-EmbedCode-7b-v1",
     "nvidia/NV-Llama2-13B-RLHF-RM",
-    "nvidia/NV-Llama2-70B-RLHF-Chat"
+    "nvidia/NV-Llama2-70B-RLHF-Chat",
+    "nvidia/NV-Retriever-v1"
    ],
    "publicadores": [
     "nvidia"
@@ -2443,7 +4041,8 @@
     "allenai/Olmo-Hybrid-7B",
     "allenai/Olmo-Hybrid-Instruct-DPO-7B",
     "allenai/Olmo-Hybrid-Instruct-SFT-7B",
-    "allenai/Olmo-Hybrid-Think-SFT-7B"
+    "allenai/Olmo-Hybrid-Think-SFT-7B",
+    "allenai/OLMo-Ladder-760M-0.5xC"
    ],
    "publicadores": [
     "allenai"
@@ -2478,6 +4077,7 @@
     "allenai/OLMo-2-1124-13B-RM",
     "allenai/OLMo-2-1124-13B-SFT",
     "allenai/OLMo-2-1124-13B-SFT-Preview",
+    "allenai/OLMo-2-1124-7B",
     "allenai/OLMo-2-1124-7B-DPO",
     "allenai/OLMo-2-1124-7B-DPO-Preview",
     "allenai/OLMo-2-1124-7B-Instruct",
@@ -2528,6 +4128,7 @@
     "allenai/OLMo-7B-0724-hf",
     "allenai/OLMo-7B-0724-Instruct-hf",
     "allenai/OLMo-7B-0724-SFT-hf",
+    "allenai/OLMo-7B-1024-preview",
     "allenai/OLMo-7B-hf",
     "allenai/OLMo-7B-Instruct",
     "allenai/OLMo-7B-Instruct-hf",
@@ -2541,6 +4142,16 @@
    ]
   },
   {
+   "id": "olmocr-7",
+   "nome": "olmOCR-7",
+   "modelos": [
+    "allenai/olmOCR-7B-0225-preview-GGUF"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
    "id": "olmoe-1",
    "nome": "OLMoE-1",
    "modelos": [
@@ -2548,12 +4159,24 @@
     "allenai/OLMoE-1B-7B-0125",
     "allenai/OLMoE-1B-7B-0125-DPO",
     "allenai/OLMoE-1B-7B-0125-Instruct",
+    "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
     "allenai/OLMoE-1B-7B-0125-SFT",
     "allenai/OLMoE-1B-7B-0924",
-    "allenai/OLMoE-1B-7B-0924-Instruct"
+    "allenai/OLMoE-1B-7B-0924-Instruct",
+    "allenai/OLMoE-1B-7B-0924-SFT"
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "omni",
+   "nome": "omni",
+   "modelos": [
+    "nvidia/omni-embed-nemotron-3b"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -2564,6 +4187,16 @@
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "omnivinci",
+   "nome": "omnivinci",
+   "modelos": [
+    "nvidia/omnivinci"
+   ],
+   "publicadores": [
+    "nvidia"
    ]
   },
   {
@@ -2609,6 +4242,36 @@
     "22h",
     "lucianosb",
     "allenai"
+   ]
+  },
+  {
+   "id": "opt-1.3",
+   "nome": "opt-1.3",
+   "modelos": [
+    "nicholasKluge/Aira-OPT-1B3"
+   ],
+   "publicadores": [
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "opt-125",
+   "nome": "opt-125",
+   "modelos": [
+    "nicholasKluge/Aira-OPT-125M"
+   ],
+   "publicadores": [
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "opt-350",
+   "nome": "opt-350",
+   "modelos": [
+    "nicholasKluge/Aira-OPT-350M"
+   ],
+   "publicadores": [
+    "nicholasKluge"
    ]
   },
   {
@@ -2825,6 +4488,16 @@
    ]
   },
   {
+   "id": "paraphrase",
+   "nome": "paraphrase",
+   "modelos": [
+    "Xenova/paraphrase-multilingual-MiniLM-L12-v2"
+   ],
+   "publicadores": [
+    "Xenova"
+   ]
+  },
+  {
    "id": "phi",
    "nome": "phi",
    "modelos": [
@@ -2914,10 +4587,12 @@
    "modelos": [
     "microsoft/Phi-4-mini-flash-reasoning",
     "microsoft/Phi-4-mini-instruct",
-    "microsoft/Phi-4-mini-reasoning"
+    "microsoft/Phi-4-mini-reasoning",
+    "nvidia/Phi-4-reasoning-plus-NVFP4"
    ],
    "publicadores": [
-    "microsoft"
+    "microsoft",
+    "nvidia"
    ]
   },
   {
@@ -2951,6 +4626,28 @@
    ]
   },
   {
+   "id": "positive",
+   "nome": "positive",
+   "modelos": [
+    "dominguesm/positive-reframing-en",
+    "dominguesm/positive-reframing-ptbr"
+   ],
+   "publicadores": [
+    "dominguesm"
+   ]
+  },
+  {
+   "id": "postagger",
+   "nome": "postagger",
+   "modelos": [
+    "pucpr-br/postagger-bio-english",
+    "pucpr-br/postagger-bio-portuguese"
+   ],
+   "publicadores": [
+    "pucpr-br"
+   ]
+  },
+  {
    "id": "praact",
    "nome": "praact",
    "modelos": [
@@ -2969,6 +4666,16 @@
    ]
   },
   {
+   "id": "prompt",
+   "nome": "Prompt",
+   "modelos": [
+    "meta-llama/Prompt-Guard-86M"
+   ],
+   "publicadores": [
+    "meta-llama"
+   ]
+  },
+  {
    "id": "promptist",
    "nome": "Promptist",
    "modelos": [
@@ -2979,9 +4686,42 @@
    ]
   },
   {
+   "id": "prophetnet",
+   "nome": "prophetnet",
+   "modelos": [
+    "microsoft/prophetnet-large-uncased",
+    "microsoft/prophetnet-large-uncased-squad-qg"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "psychologist-3",
+   "nome": "Psychologist-3",
+   "modelos": [
+    "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
+    "Guilherme34/Psychologist-GGUF-3b-Q8_0"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
+   "id": "pt",
+   "nome": "pt",
+   "modelos": [
+    "dominguesm/pt_core_news_trf"
+   ],
+   "publicadores": [
+    "dominguesm"
+   ]
+  },
+  {
    "id": "ptt5",
    "nome": "ptt5",
    "modelos": [
+    "cnmoro/ptt5-small-named-entity-recognition",
     "cnmoro/ptt5_small_portuguese_summarizer",
     "unicamp-dl/monoptt5-3b",
     "unicamp-dl/monoptt5-base",
@@ -3013,11 +4753,22 @@
    ]
   },
   {
+   "id": "quality",
+   "nome": "quality",
+   "modelos": [
+    "nvidia/quality-classifier-deberta"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
    "id": "qwen",
    "nome": "Qwen",
    "modelos": [
     "Qwen/Qwen-Audio",
     "Qwen/Qwen-Audio-Chat",
+    "Qwen/Qwen-Image-2.1-PE-I2I",
     "Qwen/Qwen-VL",
     "Qwen/Qwen-VL-Chat",
     "Qwen/Qwen-VL-Chat-Int4"
@@ -3090,13 +4841,11 @@
     "Qwen/Qwen1.5-7B-Chat-AWQ",
     "Qwen/Qwen1.5-7B-Chat-GGUF",
     "Qwen/Qwen1.5-7B-Chat-GPTQ-Int4",
-    "Qwen/Qwen1.5-7B-Chat-GPTQ-Int8",
-    "Xenova/Qwen1.5-0.5B-Chat"
+    "Qwen/Qwen1.5-7B-Chat-GPTQ-Int8"
    ],
    "publicadores": [
     "rhaymison",
-    "Qwen",
-    "Xenova"
+    "Qwen"
    ]
   },
   {
@@ -3222,6 +4971,7 @@
     "g-assismoraes/Qwen2.5-3B-Instruct-fpi-alpha2.5-var-faquad",
     "g-assismoraes/Qwen2.5-3B-Instruct-fpi-alpha2.5-var-hatebr",
     "g-assismoraes/Qwen2.5-3B-Instruct-fpi-alpha2.5-var-imdb",
+    "Jurema-br/Jurema-7B",
     "allenai/olmOCR-2-7B-1025",
     "allenai/olmOCR-2-7B-1025-FP8",
     "allenai/olmOCR-7B-0725",
@@ -3297,6 +5047,8 @@
     "Qwen/Qwen2.5-Math-1.5B-Instruct",
     "Qwen/Qwen2.5-Math-7B",
     "Qwen/Qwen2.5-Math-7B-Instruct",
+    "Qwen/Qwen2.5-Math-7B-PRM800K",
+    "Qwen/Qwen2.5-Math-PRM-7B",
     "Qwen/Qwen2.5-Omni-3B",
     "Qwen/Qwen2.5-Omni-7B",
     "Qwen/Qwen2.5-Omni-7B-AWQ",
@@ -3311,6 +5063,7 @@
     "artificialguybr",
     "cnmoro",
     "g-assismoraes",
+    "Jurema-br",
     "allenai",
     "microsoft",
     "mlboydaisuke",
@@ -3322,6 +5075,7 @@
    "id": "qwen3",
    "nome": "Qwen3",
    "modelos": [
+    "cnmoro/Qwen3-7B-A3B-REAP-PTBR",
     "coppead/causalista-4b",
     "FMendonca/qwen3-1.7b-agente-suporte-ptbr-gguf",
     "g-assismoraes/Qwen3-1.7B-agnews",
@@ -3336,6 +5090,14 @@
     "g-assismoraes/Qwen3-1.7B-Base-hatebr-ep50",
     "g-assismoraes/Qwen3-1.7B-Base-hatebr-ep80",
     "g-assismoraes/Qwen3-1.7B-Base-imdb",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp1",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp1-LR1e-4",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp2",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp2-LR1e-4",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp3-LR1e-4",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp4-LR1e-4",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp5-LR1e-4",
+    "g-assismoraes/Qwen3-1.7B-CCC-merged-cp6-LR1e-4",
     "g-assismoraes/Qwen3-1.7B-CCC-merged-cp6-LR1e-4-irm",
     "g-assismoraes/Qwen3-1.7B-faquad",
     "g-assismoraes/Qwen3-1.7B-hatebr",
@@ -3410,6 +5172,7 @@
     "g-assismoraes/Qwen3-4B-Base-hatebr-ep5",
     "g-assismoraes/Qwen3-4B-Base-hatebr-ep50",
     "g-assismoraes/Qwen3-4B-Base-imdb",
+    "g-assismoraes/Qwen3-4B-Base-imdb-merged",
     "g-assismoraes/Qwen3-4B-Base-interp-base-alpha0.1-var-hatebr",
     "g-assismoraes/Qwen3-4B-Base-interp-perm-alpha0.1-var-hatebr",
     "g-assismoraes/Qwen3-4B-Base-interp-perm-alpha0.5-var-agnews",
@@ -3445,6 +5208,7 @@
     "g-assismoraes/Qwen3-4B-CCC-merged",
     "g-assismoraes/Qwen3-4B-CCC-merged-clora-v1",
     "g-assismoraes/Qwen3-4B-CCC-merged-clora-v2",
+    "g-assismoraes/Qwen3-4B-CCC-merged-cp075",
     "g-assismoraes/Qwen3-4B-esg",
     "g-assismoraes/Qwen3-4B-esg-ep3",
     "g-assismoraes/Qwen3-4B-ESG-IRM-instruct-qa",
@@ -3528,6 +5292,13 @@
     "g-assismoraes/Qwen3-4B-pira-IRM-QA-ep3-qairm",
     "g-assismoraes/Qwen3-4B-Pira-merged",
     "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
+    "Guilherme34/qwen3-conscious-fullmodel",
+    "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
+    "Guilherme34/qwen3-conscious-fullmodel-v2",
+    "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
+    "ufca-llms/jua-4B-legal-only",
+    "ufca-llms/jua-4B-mixed",
+    "ufca-llms/Qwen3-Embedding-0.6B-jua-V2",
     "allenai/AstaBrief_8B_SFT",
     "allenai/Bwen-8B-Stage1",
     "allenai/intent-aware-lfqa-qwen3-4b-baseline",
@@ -3547,6 +5318,7 @@
     "allenai/MolmoWeb-8B-Native",
     "allenai/MolmoWeb-Pretrained-4B",
     "allenai/MolmoWeb-Pretrained-8B",
+    "allenai/tmax-sft-8b",
     "HuggingFaceTB/qwen3-1.7b-gsm8k-sft",
     "locriani/qwen3-1.7b-base-onnx",
     "microsoft/AesCode-8B",
@@ -3562,7 +5334,6 @@
     "nvidia/EGM-8B-SFT",
     "nvidia/Nemotron-Orchestrator-8B",
     "nvidia/Nemotron-Research-GooseReason-4B-Instruct",
-    "nvidia/PixelUMM",
     "nvidia/Privasis-Cleaner-0.6B",
     "nvidia/Privasis-Cleaner-4B",
     "nvidia/Qwen3-14B-NVFP4",
@@ -3570,6 +5341,7 @@
     "nvidia/Qwen3-235B-A22B-Thinking-2507-Eagle3",
     "nvidia/Qwen3-235B-A22B-Thinking-2507-FP4-Eagle3",
     "nvidia/Qwen3-30B-A3B-Thinking-2507-Eagle3",
+    "nvidia/Qwen3-8B-DMS-8x",
     "nvidia/Qwen3-8B-FP8",
     "nvidia/Qwen3-8B-NVFP4",
     "nvidia/Qwen3-Nemotron-14B-BRRM",
@@ -3613,6 +5385,13 @@
     "Qwen/Qwen3-8B-MLX-6bit",
     "Qwen/Qwen3-8B-MLX-8bit",
     "Qwen/Qwen3-8B-MLX-bf16",
+    "Qwen/Qwen3-Embedding-0.6B",
+    "Qwen/Qwen3-Embedding-4B",
+    "Qwen/Qwen3-Embedding-8B",
+    "Qwen/Qwen3-ForcedAligner-0.6B-hf",
+    "Qwen/Qwen3-Reranker-0.6B",
+    "Qwen/Qwen3-Reranker-4B",
+    "Qwen/Qwen3-Reranker-8B",
     "Qwen/Qwen3-VL-2B-Instruct",
     "Qwen/Qwen3-VL-2B-Instruct-FP8",
     "Qwen/Qwen3-VL-2B-Thinking",
@@ -3625,17 +5404,26 @@
     "Qwen/Qwen3-VL-8B-Instruct-FP8",
     "Qwen/Qwen3-VL-8B-Thinking",
     "Qwen/Qwen3-VL-8B-Thinking-FP8",
+    "Qwen/Qwen3-VL-Embedding-2B",
+    "Qwen/Qwen3-VL-Embedding-8B",
+    "Qwen/Qwen3-VL-Reranker-2B",
+    "Qwen/Qwen3-VL-Reranker-8B",
     "Qwen/Qwen3Guard-Gen-0.6B",
     "Qwen/Qwen3Guard-Gen-4B",
     "Qwen/Qwen3Guard-Gen-8B",
+    "Qwen/Qwen3Guard-Stream-0.6B",
+    "Qwen/Qwen3Guard-Stream-4B",
+    "Qwen/Qwen3Guard-Stream-8B",
     "Qwen/WebWorld-32B",
     "Qwen/WebWorld-8B"
    ],
    "publicadores": [
+    "cnmoro",
     "coppead",
     "FMendonca",
     "g-assismoraes",
     "Guilherme34",
+    "ufca-llms",
     "allenai",
     "HuggingFaceTB",
     "locriani",
@@ -3694,10 +5482,52 @@
    ]
   },
   {
+   "id": "radiov2",
+   "nome": "RADIOv2",
+   "modelos": [
+    "nvidia/RADIOv2-bigG"
+   ],
+   "publicadores": [
+    "nvidia"
+   ]
+  },
+  {
+   "id": "reacc",
+   "nome": "reacc",
+   "modelos": [
+    "microsoft/reacc-py-retriever"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "reasoner-8",
+   "nome": "Reasoner-8",
+   "modelos": [
+    "Guilherme34/Reasoner-8B"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
+   "id": "reasoning",
+   "nome": "Reasoning",
+   "modelos": [
+    "Guilherme34/Reasoning-test-merged"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
    "id": "reasoning-2.6",
    "nome": "Reasoning-2.6",
    "modelos": [
-    "Guilherme34/Reasoning-2.6-fixed"
+    "Guilherme34/Reasoning-2.6-1b",
+    "Guilherme34/Reasoning-2.6-fixed",
+    "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF"
    ],
    "publicadores": [
     "Guilherme34"
@@ -3772,10 +5602,42 @@
    ]
   },
   {
+   "id": "roberta",
+   "nome": "roberta",
+   "modelos": [
+    "nicholasKluge/Harmless-RewardModel",
+    "nicholasKluge/ToxiGuardrail"
+   ],
+   "publicadores": [
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "robertalexpt",
+   "nome": "RoBERTaLexPT",
+   "modelos": [
+    "adalbertojunior/RoBERTaLexPT-base-8k"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
+   "id": "rpt",
+   "nome": "rpt",
+   "modelos": [
+    "adalbertojunior/rpt"
+   ],
+   "publicadores": [
+    "adalbertojunior"
+   ]
+  },
+  {
    "id": "s5",
    "nome": "S5",
    "modelos": [
     "Guilherme34/S5-nano-uncensored",
+    "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
     "maritaca-ai/S5-nano",
     "maritaca-ai/S5-nano-FP8"
    ],
@@ -3811,16 +5673,22 @@
    "id": "samantha",
    "nome": "Samantha",
    "modelos": [
+    "Guilherme34/Samantha-hermes3-8b-model-fixed",
+    "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
     "Guilherme34/Samantha-MistralPy-7b-modelnotlora",
     "Guilherme34/Samantha-moondream",
     "Guilherme34/Samantha-multimodal-v2-model",
     "Guilherme34/Samantha-omni",
     "Guilherme34/Samantha-OS1-7bv2-modelnotlora",
+    "Guilherme34/Samantha-OSONE-7b-gguf",
     "Guilherme34/Samantha-phi3",
+    "Guilherme34/Samantha-phi3-GGUF",
     "Guilherme34/Samantha-Phixtral-2x2_8",
     "Guilherme34/Samantha-qwen-0.5b",
     "Guilherme34/Samantha-qwen-0.5b-ptbr",
+    "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
     "Guilherme34/Samantha-qwen-vision-0.5b",
+    "Guilherme34/Samantha-raw-mergenotlora",
     "Guilherme34/Samantha-test",
     "Guilherme34/Samantha-tinyllama-1.1b-v2-modelnotlora",
     "Guilherme34/Samantha-tinyllama-1.1b-v2-modelnotloranotquantized",
@@ -3828,7 +5696,21 @@
     "Guilherme34/Samantha-v5-wizardlm2",
     "Guilherme34/Samantha-v6",
     "Guilherme34/Samantha-v6.5",
+    "Guilherme34/Samantha-v7-4b",
+    "Guilherme34/Samantha-v7-4b-lesscensored",
+    "Guilherme34/Samantha-vision-v2-GGUF",
     "Guilherme34/Samantha-vision-v2-ggufrecommended"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
+   "id": "samantha-3",
+   "nome": "Samantha-3",
+   "modelos": [
+    "Guilherme34/Samantha-3b-beta0.1-model-nf4",
+    "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF"
    ],
    "publicadores": [
     "Guilherme34"
@@ -3878,10 +5760,32 @@
    "id": "samful",
    "nome": "Samful",
    "modelos": [
-    "Guilherme34/Samful"
+    "Guilherme34/Samful",
+    "Guilherme34/Samful-Q8_0-GGUF"
    ],
    "publicadores": [
     "Guilherme34"
+   ]
+  },
+  {
+   "id": "scibert",
+   "nome": "scibert",
+   "modelos": [
+    "allenai/scibert_scivocab_uncased_field_of_study"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "scirepeval",
+   "nome": "scirepeval",
+   "modelos": [
+    "allenai/scirepeval_ctrl",
+    "allenai/scirepeval_pals"
+   ],
+   "publicadores": [
+    "allenai"
    ]
   },
   {
@@ -3918,6 +5822,17 @@
    ]
   },
   {
+   "id": "sera-8",
+   "nome": "SERA-8",
+   "modelos": [
+    "allenai/SERA-8B",
+    "allenai/SERA-8B-GA"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
    "id": "shieldgemma-2",
    "nome": "shieldgemma-2",
    "modelos": [
@@ -3942,7 +5857,8 @@
    "nome": "SmolLM-1.7",
    "modelos": [
     "HuggingFaceTB/SmolLM-1.7B",
-    "HuggingFaceTB/SmolLM-1.7B-Instruct"
+    "HuggingFaceTB/SmolLM-1.7B-Instruct",
+    "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF"
    ],
    "publicadores": [
     "HuggingFaceTB"
@@ -3953,7 +5869,8 @@
    "nome": "SmolLM-135",
    "modelos": [
     "HuggingFaceTB/SmolLM-135M",
-    "HuggingFaceTB/SmolLM-135M-Instruct"
+    "HuggingFaceTB/SmolLM-135M-Instruct",
+    "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF"
    ],
    "publicadores": [
     "HuggingFaceTB"
@@ -3965,7 +5882,8 @@
    "modelos": [
     "HuggingFaceTB/SmolLM-360M",
     "HuggingFaceTB/SmolLM-360M-Instruct",
-    "HuggingFaceTB/smollm-360M-instruct-add-basics"
+    "HuggingFaceTB/smollm-360M-instruct-add-basics",
+    "HuggingFaceTB/smollm-360M-instruct-v0.2-Q8_0-GGUF"
    ],
    "publicadores": [
     "HuggingFaceTB"
@@ -3980,11 +5898,14 @@
     "HuggingFaceTB/SmolLM2-1.7B-Instruct-16k",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct-Q8-mlx",
+    "HuggingFaceTB/SmolLM2-1.7B-sft-only",
     "HuggingFaceTB/SmolLM2-135M",
     "HuggingFaceTB/SmolLM2-135M-Instruct",
     "HuggingFaceTB/SmolLM2-135M-Instruct-Q8-mlx",
+    "HuggingFaceTB/smollm2-135M-SFT-Only",
     "HuggingFaceTB/SmolLM2-360M",
     "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "HuggingFaceTB/SmolLM2-360M-Instruct-GGUF",
     "HuggingFaceTB/SmolLM2-360M-Instruct-Q8-mlx",
     "HuggingFaceTB/SmolVLM-256M-Instruct",
     "HuggingFaceTB/SmolVLM-500M-Instruct",
@@ -4044,6 +5965,83 @@
    ]
   },
   {
+   "id": "snowflake",
+   "nome": "snowflake",
+   "modelos": [
+    "cnmoro/snowflake-arctic-embed-m-v2.0-cpu",
+    "HuggingFaceTB/python-edu-scorer"
+   ],
+   "publicadores": [
+    "cnmoro",
+    "HuggingFaceTB"
+   ]
+  },
+  {
+   "id": "specter",
+   "nome": "specter",
+   "modelos": [
+    "allenai/specter"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "specter2",
+   "nome": "specter2",
+   "modelos": [
+    "allenai/specter2_aug2023refresh_base",
+    "allenai/specter2_base"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "sportsbert",
+   "nome": "SportsBERT",
+   "modelos": [
+    "microsoft/SportsBERT"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "starencoder",
+   "nome": "starencoder",
+   "modelos": [
+    "HuggingFaceTB/stack-edu-classifier-c",
+    "HuggingFaceTB/stack-edu-classifier-cpp",
+    "HuggingFaceTB/stack-edu-classifier-csharp",
+    "HuggingFaceTB/stack-edu-classifier-go",
+    "HuggingFaceTB/stack-edu-classifier-java",
+    "HuggingFaceTB/stack-edu-classifier-javascript",
+    "HuggingFaceTB/stack-edu-classifier-markdown",
+    "HuggingFaceTB/stack-edu-classifier-php",
+    "HuggingFaceTB/stack-edu-classifier-python",
+    "HuggingFaceTB/stack-edu-classifier-ruby",
+    "HuggingFaceTB/stack-edu-classifier-rust",
+    "HuggingFaceTB/stack-edu-classifier-shell",
+    "HuggingFaceTB/stack-edu-classifier-sql",
+    "HuggingFaceTB/stack-edu-classifier-swift",
+    "HuggingFaceTB/stack-edu-classifier-typescript"
+   ],
+   "publicadores": [
+    "HuggingFaceTB"
+   ]
+  },
+  {
+   "id": "static",
+   "nome": "static",
+   "modelos": [
+    "cnmoro/static-retrieval-distilbert-ptbr"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
    "id": "stdmoe_1",
    "nome": "StdMoE_1",
    "modelos": [
@@ -4054,9 +6052,21 @@
    ]
   },
   {
+   "id": "switch",
+   "nome": "switch",
+   "modelos": [
+    "google/switch-base-32"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
    "id": "t5",
    "nome": "t5",
    "modelos": [
+    "adalbertojunior/t5-v1_1-xxl-encoder-bf16-distill",
+    "cnmoro/t5-small-named-entity-recognition",
     "unicamp-dl/ptt5-v2-3b",
     "unicamp-dl/ptt5-v2-base",
     "unicamp-dl/ptt5-v2-large",
@@ -4069,18 +6079,75 @@
     "google/t5-xxl-ssm-nq"
    ],
    "publicadores": [
+    "adalbertojunior",
+    "cnmoro",
     "unicamp-dl",
     "google"
+   ]
+  },
+  {
+   "id": "tangled",
+   "nome": "tangled",
+   "modelos": [
+    "cnmoro/tangled-llama-33m-32k-instruct-v0.1-fix",
+    "cnmoro/TangledLlama33m-Reranker-EnPt"
+   ],
+   "publicadores": [
+    "cnmoro"
+   ]
+  },
+  {
+   "id": "tapas",
+   "nome": "tapas",
+   "modelos": [
+    "google/tapas-base",
+    "google/tapas-base-finetuned-tabfact",
+    "google/tapas-base-masklm",
+    "google/tapas-large",
+    "google/tapas-large-finetuned-tabfact",
+    "google/tapas-large-masklm",
+    "google/tapas-medium",
+    "google/tapas-medium-finetuned-tabfact",
+    "google/tapas-medium-masklm",
+    "google/tapas-mini",
+    "google/tapas-mini-finetuned-tabfact",
+    "google/tapas-mini-masklm",
+    "google/tapas-small",
+    "google/tapas-small-finetuned-tabfact",
+    "google/tapas-small-masklm",
+    "google/tapas-tiny",
+    "google/tapas-tiny-finetuned-tabfact",
+    "google/tapas-tiny-masklm"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "tapex",
+   "nome": "tapex",
+   "modelos": [
+    "microsoft/tapex-base-finetuned-tabfact"
+   ],
+   "publicadores": [
+    "microsoft"
    ]
   },
   {
    "id": "teenytinyllama-160",
    "nome": "teenytinyllama-160",
    "modelos": [
-    "cnmoro/teenytinyllama-160m-text-simplification-ptbr"
+    "cnmoro/teenytinyllama-160m-text-simplification-ptbr",
+    "nicholasKluge/TeenyTinyLlama-160m",
+    "nicholasKluge/TeenyTinyLlama-160m-AgNews",
+    "nicholasKluge/TeenyTinyLlama-160m-Assin2",
+    "nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
+    "nicholasKluge/TeenyTinyLlama-160m-HateBR",
+    "nicholasKluge/TeenyTinyLlama-160m-IMDB"
    ],
    "publicadores": [
-    "cnmoro"
+    "cnmoro",
+    "nicholasKluge"
    ]
   },
   {
@@ -4088,10 +6155,53 @@
    "nome": "TeenyTinyLlama-460",
    "modelos": [
     "cnmoro/TeenyTinyLlama-460m-Summarizer-PTBR",
-    "cnmoro/teenytinyllama-460m-text-simplification-ptbr"
+    "cnmoro/teenytinyllama-460m-text-simplification-ptbr",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-0middle-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-alpha2872",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-factor",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-interpol-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-deconv-middlefinal-scorelayer2",
+    "g-assismoraes/TeenyTinyLlama-460m-embeddingsblend-interpol",
+    "g-assismoraes/TeenyTinyLlama-460m-interpolated",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-0middle-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-alpha2875",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-myHateBR",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-interpol-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det",
+    "g-assismoraes/TeenyTinyLlama-460m-sdv-middlefinal-scorelayer-det2",
+    "g-assismoraes/TeenyTinyLlama-460m-zeropadding",
+    "nicholasKluge/TeenyTinyLlama-460m",
+    "nicholasKluge/TeenyTinyLlama-460m-AgNews",
+    "nicholasKluge/TeenyTinyLlama-460m-Assin2",
+    "nicholasKluge/TeenyTinyLlama-460m-awq",
+    "nicholasKluge/TeenyTinyLlama-460m-Chat",
+    "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
+    "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
+    "nicholasKluge/TeenyTinyLlama-460m-HateBR",
+    "nicholasKluge/TeenyTinyLlama-460m-IMDB"
    ],
    "publicadores": [
-    "cnmoro"
+    "cnmoro",
+    "g-assismoraes",
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "tempclin",
+   "nome": "tempclin",
+   "modelos": [
+    "pucpr-br/tempclin-biobertpt-all",
+    "pucpr-br/tempclin-biobertpt-bio",
+    "pucpr-br/tempclin-biobertpt-clin"
+   ],
+   "publicadores": [
+    "pucpr-br"
    ]
   },
   {
@@ -4102,61 +6212,6 @@
    ],
    "publicadores": [
     "locriani"
-   ]
-  },
-  {
-   "id": "theo-10",
-   "nome": "Theo-10",
-   "modelos": [
-    "plvictor/Theo-10M-PTBR-Base",
-    "plvictor/Theo-10M-PTBR-Chat"
-   ],
-   "publicadores": [
-    "plvictor"
-   ]
-  },
-  {
-   "id": "theo-25",
-   "nome": "Theo-25",
-   "modelos": [
-    "plvictor/Theo-25M-PTBR-Base",
-    "plvictor/Theo-25M-PTBR-Chat"
-   ],
-   "publicadores": [
-    "plvictor"
-   ]
-  },
-  {
-   "id": "theo-50",
-   "nome": "Theo-50",
-   "modelos": [
-    "plvictor/Theo-50M-PTBR-Base",
-    "plvictor/Theo-50M-PTBR-Chat"
-   ],
-   "publicadores": [
-    "plvictor"
-   ]
-  },
-  {
-   "id": "theo-500",
-   "nome": "Theo-500",
-   "modelos": [
-    "plvictor/Theo-500M-Base",
-    "plvictor/Theo-500M-Chat"
-   ],
-   "publicadores": [
-    "plvictor"
-   ]
-  },
-  {
-   "id": "theo-78",
-   "nome": "Theo-78",
-   "modelos": [
-    "plvictor/Theo-78M-PTBR-Base",
-    "plvictor/Theo-78M-PTBR-Chat"
-   ],
-   "publicadores": [
-    "plvictor"
    ]
   },
   {
@@ -4177,24 +6232,121 @@
     "hbfreed/tiny-dark-stories-big",
     "hbfreed/tiny-dark-stories-medium",
     "hbfreed/tiny-dark-stories-small",
-    "hbfreed/tiny-dark-stories-tiny",
-    "Xenova/tiny-random-Florence2ForConditionalGeneration",
-    "Xenova/tiny-random-LlavaForConditionalGeneration"
+    "hbfreed/tiny-dark-stories-tiny"
    ],
    "publicadores": [
     "dominguesm",
-    "hbfreed",
-    "Xenova"
+    "hbfreed"
+   ]
+  },
+  {
+   "id": "tinyllama",
+   "nome": "TinyLlama",
+   "modelos": [
+    "cnmoro/TinyLlama-ContextQuestionPair-Classifier-Reranker"
+   ],
+   "publicadores": [
+    "cnmoro"
    ]
   },
   {
    "id": "tinyllama-1.1",
    "nome": "TinyLlama-1.1",
    "modelos": [
-    "cnmoro/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k"
+    "cnmoro/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k",
+    "nicholasKluge/Aira-2-1B1"
    ],
    "publicadores": [
-    "cnmoro"
+    "cnmoro",
+    "nicholasKluge"
+   ]
+  },
+  {
+   "id": "tmax",
+   "nome": "tmax",
+   "modelos": [
+    "allenai/tmax-8b"
+   ],
+   "publicadores": [
+    "allenai"
+   ]
+  },
+  {
+   "id": "tofu",
+   "nome": "tofu",
+   "modelos": [
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_both",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_embed",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_head",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch01",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch02",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch03",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch04",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch05",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch06",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch07",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch08",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch09",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch10",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch11",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch12",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch13",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch14",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch15",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch16",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch17",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch18",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch19",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_both-epoch20",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_embed",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch01",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch02",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch03",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch04",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch05",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch06",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch07",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch08",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch09",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch10",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch11",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch12",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch13",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch14",
+    "g-assismoraes/tofu-llama2-7b-forget10-ihl_reset_head-epoch15",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch01",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch02",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch03",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch04",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch05",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch06",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch07",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch08",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch09",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch10",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch11",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch12",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch13",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch14",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch15",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch16",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch17",
+    "g-assismoraes/tofu-phi-1_5-forget10-ihl_embed-epoch18"
+   ],
+   "publicadores": [
+    "g-assismoraes"
+   ]
+  },
+  {
+   "id": "transformer",
+   "nome": "transformer",
+   "modelos": [
+    "allenai/transformer_qa"
+   ],
+   "publicadores": [
+    "allenai"
    ]
   },
   {
@@ -4223,7 +6375,8 @@
    "nome": "Tucano-160",
    "modelos": [
     "cnmoro/Tucano-160m-Portuguese-Instruct",
-    "cnmoro/Tucano-160m-Portuguese-Instruct-v2"
+    "cnmoro/Tucano-160m-Portuguese-Instruct-v2",
+    "cnmoro/Tucano160m-Reranker-EnPt"
    ],
    "publicadores": [
     "cnmoro"
@@ -4276,6 +6429,7 @@
    "id": "tulu-2",
    "nome": "tulu-2",
    "modelos": [
+    "allenai/tulu-v2.5-70b-preference-mix-rm",
     "allenai/tulu-v2.5-dpo-13b-alpacafarm-gpt4-pref",
     "allenai/tulu-v2.5-dpo-13b-alpacafarm-human-pref",
     "allenai/tulu-v2.5-dpo-13b-capybara",
@@ -4329,6 +6483,16 @@
    ]
   },
   {
+   "id": "twil-8",
+   "nome": "TwIL-8",
+   "modelos": [
+    "Guilherme34/TwIL-8B-Abliterated-Uncensored"
+   ],
+   "publicadores": [
+    "Guilherme34"
+   ]
+  },
+  {
    "id": "txgemma-9",
    "nome": "txgemma-9",
    "modelos": [
@@ -4361,9 +6525,43 @@
    ]
   },
   {
-   "id": "vila",
-   "nome": "VILA",
+   "id": "unihanlm",
+   "nome": "unihanlm",
    "modelos": [
+    "microsoft/unihanlm-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "unixcoder",
+   "nome": "unixcoder",
+   "modelos": [
+    "microsoft/unixcoder-base",
+    "microsoft/unixcoder-base-nine",
+    "microsoft/unixcoder-base-unimodal"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "vibevoice",
+   "nome": "VibeVoice",
+   "modelos": [
+    "microsoft/VibeVoice-AcousticTokenizer"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "vila",
+   "nome": "vila",
+   "modelos": [
+    "allenai/vila-roberta-large-s2vl-internal",
+    "allenai/vila-scibert-cased-s2vl",
     "nvidia/VILA-HD-8B-PS3-1.5K-C-RADIOv2",
     "nvidia/VILA-HD-8B-PS3-1.5K-SigLIP",
     "nvidia/VILA-HD-8B-PS3-1.5K-SigLIP2",
@@ -4372,6 +6570,7 @@
     "nvidia/VILA-HD-8B-PS3-4K-SigLIP2"
    ],
    "publicadores": [
+    "allenai",
     "nvidia"
    ]
   },
@@ -4400,6 +6599,18 @@
    ]
   },
   {
+   "id": "wavlm",
+   "nome": "wavlm",
+   "modelos": [
+    "microsoft/wavlm-base",
+    "microsoft/wavlm-base-plus",
+    "microsoft/wavlm-large"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
    "id": "wildguard",
    "nome": "wildguard",
    "modelos": [
@@ -4418,6 +6629,51 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "xdoc",
+   "nome": "xdoc",
+   "modelos": [
+    "microsoft/xdoc-base-funsd",
+    "microsoft/xdoc-base-squad1.1",
+    "microsoft/xdoc-base-squad2.0"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "xlm",
+   "nome": "xlm",
+   "modelos": [
+    "microsoft/xlm-align-base"
+   ],
+   "publicadores": [
+    "microsoft"
+   ]
+  },
+  {
+   "id": "xtr",
+   "nome": "xtr",
+   "modelos": [
+    "google/xtr-base-en",
+    "google/xtr-base-multilingual"
+   ],
+   "publicadores": [
+    "google"
+   ]
+  },
+  {
+   "id": "xtremedistil",
+   "nome": "xtremedistil",
+   "modelos": [
+    "microsoft/xtremedistil-l12-h384-uncased",
+    "microsoft/xtremedistil-l6-h256-uncased",
+    "microsoft/xtremedistil-l6-h384-uncased"
+   ],
+   "publicadores": [
+    "microsoft"
    ]
   },
   {

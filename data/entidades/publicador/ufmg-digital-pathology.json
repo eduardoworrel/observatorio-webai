@@ -24,6 +24,21 @@
     "hf": "https://huggingface.co/ufmg-digital-pathology",
     "oficial": "https://www.ufmg.br/"
   },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "ufmg"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "perfil_oficial",
+        "url": "https://huggingface.co/ufmg-digital-pathology",
+        "acessado": "2026-11-20",
+        "trecho": "Patologia Digital UFMG"
+      }
+    }
+  ],
   "fontes": [
     {
       "tipo": "perfil_oficial",

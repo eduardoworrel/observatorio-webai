@@ -2,7 +2,7 @@
 // Entrada: window.MAPA_DADOS.datasets ({colunas, linhas[]}) e .benchmarks (lista de objetos); sem essas chaves, as abas ficam ocultas.
 // Com ?fixture=1 usa a fixture de teste (window.MAPA_CAMADAS_FIXTURE, dados de exemplo) no lugar dos dados.
 (function () {
-  var fx = /[?&]fixture=/.test(location.search) && window.MAPA_CAMADAS_FIXTURE;
+  var fx = /[?&]fixture=(1|camadas)\b/.test(location.search) && window.MAPA_CAMADAS_FIXTURE;
   var arr = function (x) { return Array.isArray(x) ? x : (x == null || x === '' ? [] : [x]); };
   var num = function (x) { var n = Number(x); return x !== null && x !== '' && x !== undefined && isFinite(n) ? n : null; };
   var str = function (x) { return x == null ? '' : String(x); };

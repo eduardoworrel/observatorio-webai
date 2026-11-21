@@ -1,0 +1,26 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "ceia-ufg",
+  "nome": "Centro de Excelência em Inteligência Artificial",
+  "sigla": "CEIA",
+  "instituicao": "ufg",
+  "vinculo_fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo",
+    "trecho": "Center of Excellence in Artificial Intelligence (CEIA) at the Federal University of Goiás (UFG)"
+  },
+  "links": {
+    "hf": "https://huggingface.co/CEIA-UFG"
+  },
+  "fontes": [
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do modelo Gaia"
+    }
+  ]
+}
