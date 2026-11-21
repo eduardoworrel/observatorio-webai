@@ -1431,5 +1431,9 @@
    "nativo_mais_gguf": 146
   },
   "publicadores_brasil": 34
+ },
+ "instituicoes_por_pais": {
+  "BR": 14,
+  "DE": 1
  }
 }

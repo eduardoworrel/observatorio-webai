@@ -127,6 +127,9 @@ if os.path.exists(os.path.join(R, "data", "relacoes.json")):
             if l not in lids: err(f"publicador {p['id']}: lab {l}")
         for q in p.get("relacionados", []):
             if q not in pids: err(f"publicador {p['id']}: relacionado {q}")
+    for l in rl["laboratorios"]:
+        if l.get("pais") != next((i["pais"] for i in rl["instituicoes"] if i["id"] == l["instituicao"]), None): err(f"laboratorio {l['id']}: pais diferente da instituicao")
+    if sum(foto.get("instituicoes_por_pais", {}).values()) != len(rl["instituicoes"]): err("foto instituicoes_por_pais nao soma")
     fp = foto.get("por_familia_tarefa", {})
     for esc in ("brasil", "mundo"):
         if sum(fp[f][esc]["modelos"] for f in ("gerador", "codificador")) != foto[esc]["modelos"]: err("foto por familia nao soma: " + esc)

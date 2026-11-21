@@ -1,0 +1,55 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "nicholasKluge",
+  "nome": "Nicholas Kluge Corrêa",
+  "tipo": "pessoa",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo: fomento de agência brasileira",
+    "trecho": "a project supported by FAPERGS - ( Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul ), Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
+    "acessado": "2026-11-20",
+    "rotulo": "página profissional",
+    "trecho": "a postdoc researcher at the Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab, at the University of Bonn (Germany)"
+  },
+  "origem_cadastro": "terceiro",
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "caisa-b-it"
+      },
+      "relacao": "pesquisador",
+      "fonte": {
+        "tipo": "pagina_pessoa",
+        "url": "https://nkluge-correa.github.io/",
+        "acessado": "2026-11-20",
+        "rotulo": "página profissional",
+        "trecho": "a postdoc researcher at the Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab, at the University of Bonn (Germany)"
+      }
+    }
+  ],
+  "links": {
+    "hf": "https://huggingface.co/nicholasKluge",
+    "oficial": "https://nkluge-correa.github.io/"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/nicholasKluge",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

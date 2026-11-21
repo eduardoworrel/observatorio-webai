@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "uni-bonn",
+  "nome": "University of Bonn",
+  "sigla": "Uni Bonn",
+  "tipo": "universidade",
+  "pais": "DE",
+  "regiao": "DE-NW",
+  "links": {
+    "oficial": "https://www.uni-bonn.de/en"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.uni-bonn.de/en",
+      "acessado": "2026-11-20",
+      "rotulo": "site oficial",
+      "trecho": "University of Bonn"
+    }
+  ]
+}

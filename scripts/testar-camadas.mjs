@@ -152,7 +152,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   ok(R.modos === 3 && R.capa && R.tarefa && R.estrelas === D0.total && R.desenhadas === D0.total && D0.br + D0.mundo === D0.total, `dados reais: ${R.estrelas} estrelas (= ${D0.br} do Brasil + ${D0.mundo} do mundo), tres modos de agrupamento`);
   await real.p.click('#f-agrupar [data-modo=instituicao]'); await real.p.waitForTimeout(1200);
   const gi = await real.p.evaluate(() => ({ n: window.__obs.estrelas.length, desenhadas: window.__obs.stats.estrelas, insts: window.__obs.grupos.filter(g => g.inst).length }));
-  ok(gi.n === D0.total && gi.desenhadas === D0.total && gi.insts === D0.comModelos && D0.inst === 14, `agrupado por instituicao: ${gi.n} estrelas (nada removido), ${gi.insts} grupos de instituicao com modelos (${D0.inst} instituicoes no total; as sem conta com modelos ficam de fora)`);
+  ok(gi.n === D0.total && gi.desenhadas === D0.total && gi.insts === D0.comModelos && D0.inst === 15, `agrupado por instituicao: ${gi.n} estrelas (nada removido), ${gi.insts} grupos de instituicao com modelos (${D0.inst} instituicoes no total; as sem conta com modelos ficam de fora)`);
   const tarefas = await real.p.evaluate(() => ({ g: [...document.querySelectorAll('#tb tbody tr')].length }));
   await real.p.click('#f-tarefa [data-tarefa=codificador]'); await real.p.waitForTimeout(800); const nc = await filtradas(real.p);
   await real.p.click('#f-tarefa [data-tarefa=gerador]'); await real.p.waitForTimeout(800); const ng = await filtradas(real.p);
@@ -209,6 +209,26 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   ok(!erros.length, 'sem erros de script com as relacoes', erros.join(' | ')); await ctx.close();
   const dsp = await abrir('?fixture=relacoes#datasets'); await dsp.p.waitForTimeout(600);
   ok(await dsp.p.evaluate(() => [...document.querySelectorAll('#tb thead th')].some(x => /Institui/.test(x.textContent))), 'aba Datasets tem a coluna Instituicao quando ha relacoes'); await dsp.ctx.close(); }
+
+// 3e) pessoa afiliada a instituicao: rotulo, filtro, pais e drawer do vinculo (contrato 1.1)
+for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=' + lang); const total = await p.evaluate(() => window.__obs.modelos);
+  const D1 = await p.evaluate(() => { const D = window.MAPA_DADOS, af = D.publicadores.filter(x => x.natureza_rotulo === 'afiliada'); return { af: af.map(x => x.id), nAf: D.modelos.filter(m => af.some(x => x.id === m.publicador)).length, nInst: D.modelos.filter(m => D.publicadores.find(x => x.id === m.publicador).natureza === 'instituicao' && D.publicadores.find(x => x.id === m.publicador).natureza_rotulo !== 'afiliada').length }; });
+  const lab = lang === 'pt' ? /Afiliado\(a\) a Uni Bonn/ : /Affiliated with Uni Bonn/;
+  const opts = await p.evaluate(() => [...document.querySelectorAll('#f-nat option')].map(o => o.value + '=' + o.textContent));
+  ok(opts.some(o => o.startsWith('afiliada=')) && opts.some(o => o.startsWith('instituicao=')), `[${lang}] filtro de natureza tem Afiliada e Instituicao distintas (${opts.join(', ')})`);
+  await p.selectOption('#f-nat', 'afiliada'); await p.waitForTimeout(700);
+  const na = await filtradas(p); ok(D1.af.length === 1 && na === D1.nAf && na > 0, `[${lang}] filtro Afiliada: ${na} modelos acesos (= ${D1.nAf} do publicador ${D1.af.join(',')})`);
+  const linha = await p.evaluate(() => document.querySelector('#tb tbody tr small').textContent); ok(lab.test(linha), `[${lang}] tabela: "${linha}"`);
+  await p.selectOption('#f-nat', 'instituicao'); await p.waitForTimeout(700); const ni = await filtradas(p);
+  ok(ni === D1.nInst && ni > 0, `[${lang}] filtro Instituicao exclui a pessoa afiliada: ${ni} modelos (organizacoes)`);
+  await p.click('#limpar'); await p.waitForTimeout(500); ok((await p.evaluate(() => window.__obs.estrelas.length)) === total && (await p.evaluate(() => window.__obs.stats.estrelas)) === total, `[${lang}] contagem de estrelas de modelos inalterada: ${total}`);
+  await p.fill('#busca', 'nicholas'); await p.waitForTimeout(600); await p.evaluate(() => document.querySelector('#tb tbody tr').click()); await p.waitForTimeout(700);
+  const dr = await p.evaluate(() => ({ t: document.querySelector('#drawer').innerText.replace(/\s+/g, ' '), pais: !!document.querySelector('#drawer .dr-afil') }));
+  const esperado = lang === 'pt' ? /pesquisador\(a\) no laborat.rio .*CAISA.*\(University of Bonn, Alemanha\)/ : /researcher at the lab .*CAISA.*\(University of Bonn, Germany\)/;
+  ok(lab.test(dr.t) && esperado.test(dr.t) && dr.pais && /\(DE\)/.test(dr.t), `[${lang}] drawer do modelo do nicholasKluge: afiliacao, linha do laboratorio com pais e (DE) nos vinculos`);
+  await p.click('#drawer [data-ir="inst:uni-bonn"]'); await p.waitForTimeout(500);
+  ok(await p.evaluate(l => /University of Bonn/.test(document.querySelector('#drawer-titulo').textContent) && new RegExp(l === 'pt' ? 'Alemanha \\(DE\\)' : 'Germany \\(DE\\)').test(document.querySelector('#drawer .dr-sub').textContent), lang), `[${lang}] drawer da instituicao mostra o pais`);
+  ok(!erros.length, `[${lang}] sem erros de script`, erros.join(' | ')); await ctx.close(); }
 
 // 4) limpar restaura
 { const { p, ctx } = await abrir('?fixture=1#datasets'); const total = await filtradas(p);
