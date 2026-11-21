@@ -10,7 +10,7 @@
     pt: {
       skip: 'Pular o mapa e ir para a tabela', brand_sub: 'de Web AI no Brasil e no mundo', nav_inicio: 'Início', nav_metodo: 'Como lemos os dados',
       eyebrow: 'Modelos no navegador e na borda', desc: 'Quem publica modelos de linguagem, no Brasil e no mundo, e quais deles já têm build para rodar no navegador.',
-      act1: 'Explorar o mapa ↗', act2: 'Como lemos os dados →', res_label: 'Modelos', res_titulo: 'Quem já roda no navegador', res_link: 'Regras ↗',
+      res_label: 'Modelos', res_titulo: 'Quem já roda no navegador', res_link: 'Regras ↗',
       br: 'Brasil', mundo: 'Mundo', todos: 'Tudo', v_todos: 'Todos', v_nativo: 'Nativo', v_gguf: '+ GGUF', v_nenhum: 'Sem build', f_nat: 'Natureza do publicador', buscar: 'Buscar', buscar_ph: 'Buscar',
       porpub: 'Publicador', porfam: 'Família', recentrar: 'Recentrar ⌾', hint: 'Arraste ou aproxime para filtrar a tabela.', sky_nota: 'Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download.',
       p1_t: 'Quem já tem build?<br>Quem não tem?', p1_p: 'Tabela com status, tamanho e fontes de cada modelo.', p2_t: 'E o GGUF?<br>Roda no navegador?', p2_p: 'Via wllama, até um tamanho plausível. Contado à parte.',
@@ -53,7 +53,7 @@
     en: {
       skip: 'Skip the map and go to the table', brand_sub: 'of Web AI in Brazil and the world', nav_inicio: 'Home', nav_metodo: 'How we read the data',
       eyebrow: 'Models in the browser and at the edge', desc: 'Who publishes language models, in Brazil and worldwide, and which of them already have a build that runs in the browser.',
-      act1: 'Explore the map ↗', act2: 'How we read the data →', res_label: 'Models', res_titulo: 'Who already runs in the browser', res_link: 'Rules ↗',
+      res_label: 'Models', res_titulo: 'Who already runs in the browser', res_link: 'Rules ↗',
       br: 'Brazil', mundo: 'World', todos: 'All', v_todos: 'All', v_nativo: 'Native', v_gguf: '+ GGUF', v_nenhum: 'No build', f_nat: 'Publisher type', buscar: 'Search', buscar_ph: 'Search',
       porpub: 'Publisher', porfam: 'Family', recentrar: 'Recenter ⌾', hint: 'Drag or zoom to filter the table.', sky_nota: 'Position is only grouping; brightness and color show build status; size shows the download.',
       p1_t: 'Who already has a build?<br>Who does not?', p1_p: 'A table with status, size and sources for each model.', p2_t: 'What about GGUF?<br>Does it run in the browser?', p2_p: 'Via wllama, up to a plausible size. Counted separately.',

@@ -62,10 +62,6 @@ main{max-width:1500px;margin:auto;padding:0 32px 35px;min-height:70vh}
 #home-title{font-size:clamp(30px,3vw,45px);font-weight:400;letter-spacing:var(--tr-display);line-height:1.15;margin:0 0 8px}
 #home-title span{color:var(--accent)}
 .home-description{font-size:12px;color:var(--muted);max-width:600px;line-height:1.7}
-.home-actions{display:flex;gap:15px;align-items:center;flex-shrink:0;font-size:11px}
-.home-actions a{text-decoration:none}
-.home-primary{background:var(--brand);color:#fff;border-radius:5px;padding:13px 17px}
-.home-primary:hover{background:var(--brand-hover)}
 .home-results{min-width:0;width:100%;align-self:start}
 .home-results-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:10px}
 .home-results-heading h2{margin:5px 0 13px;font-size:22px;font-weight:400;letter-spacing:var(--tr-display)}
@@ -168,13 +164,12 @@ main{max-width:1500px;margin:auto;padding:0 32px 35px;min-height:70vh}
 .footer-credit a{color:var(--accent-ink)}
 
 
-@media (max-width:1050px){.observatory-home{gap:20px}.home-actions{flex-direction:column;align-items:flex-start;gap:9px}}
+@media (max-width:1050px){.observatory-home{gap:20px}}
 @media (max-width:760px){
   main{padding:0 16px 20px}
   .observatory-home{display:flex;flex-direction:column;gap:16px}
   .home-copy{flex-direction:column;align-items:flex-start;gap:13px}
   #home-title{font-size:33px}
-  .home-actions{flex-direction:row;align-items:center}.home-primary{padding:10px 13px}
   .home-results-heading h2{font-size:20px}
   .home-average-table{min-width:460px}
   .sky-stage{position:static;height:auto;min-height:0;max-width:560px;width:100%;margin:0 auto}.model-sky{flex:none;height:min(92vw,520px)}.right-col{padding-top:21px}
