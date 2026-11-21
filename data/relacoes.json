@@ -3,7 +3,7 @@
   "coletado_em": "2026-11-20",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "15189279466d4af4"
+  "assinatura": "b64f5a1500cc8ec7"
  },
  "instituicoes": [
   {
@@ -425,6 +425,7 @@
   {
    "id": "uni-bonn",
    "nome": "University of Bonn",
+   "nome_pt": "Universidade de Bonn",
    "sigla": "Uni Bonn",
    "pais": "DE",
    "regiao": "DE-NW",
@@ -607,6 +608,7 @@
   {
    "id": "caisa-b-it",
    "nome": "Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+   "nome_pt": "Centro Internacional Bonn-Aachen de Tecnologia da Informação (b-it) / CAISA Lab",
    "sigla": "CAISA",
    "instituicao": "uni-bonn",
    "pais": "DE",

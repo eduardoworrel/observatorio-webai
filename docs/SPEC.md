@@ -83,7 +83,7 @@ Campos desconhecidos são erro. Em todos: `spec` (obrigatório, `"1.0"`), `entid
 
 ### 4.3 laboratorio
 
-`id`, `nome`, `sigla?`; `instituicao` obrigatória (id de uma instituição existente, seção 4.10); `vinculo_fonte` obrigatória, evidência (4.7) de que o laboratório pertence à instituição (tipo `site_institucional`, `perfil_oficial`, `pagina_pessoa` ou `cartao_modelo`); `parceiras[]` opcional, `{instituicao, fonte}` para instituições parceiras (por exemplo um centro mantido por uma universidade e uma empresa); `modelos_creditados[]` opcional (4.11); `areas[]` (até 8 termos de até 40 caracteres); `links`; `fontes`. Os publicadores de um laboratório **não** ficam no arquivo do laboratório: a relação vive no arquivo do publicador (4.11) e o laboratório mostra a lista inversa, calculada (`CAMPO_DERIVADO`).
+`id`, `nome`, `nome_pt?`, `aliases?` (como na 4.10), `sigla?`; `instituicao` obrigatória (id de uma instituição existente, seção 4.10); `vinculo_fonte` obrigatória, evidência (4.7) de que o laboratório pertence à instituição (tipo `site_institucional`, `perfil_oficial`, `pagina_pessoa` ou `cartao_modelo`); `parceiras[]` opcional, `{instituicao, fonte}` para instituições parceiras (por exemplo um centro mantido por uma universidade e uma empresa); `modelos_creditados[]` opcional (4.11); `areas[]` (até 8 termos de até 40 caracteres); `links`; `fontes`. Os publicadores de um laboratório **não** ficam no arquivo do laboratório: a relação vive no arquivo do publicador (4.11) e o laboratório mostra a lista inversa, calculada (`CAMPO_DERIVADO`).
 
 ### 4.4 pesquisador
 
@@ -120,7 +120,7 @@ Não há arquivo curado de dataset. Cada dataset tem `id` (`<publicador>/<nome>`
 
 ### 4.10 instituicao
 
-`id` (kebab-case), `nome`, `sigla?`, `tipo` (`universidade`, `instituto`, `empresa`, `governo` ou `outro`), `pais` (ISO 3166-1), `regiao?`, `parte_de?` (id de outra instituição; a hierarquia não pode ter ciclos, `VINCULO_CICLO`), `modelos_creditados[]` opcional (4.11), `links`, `descricao?` e `fontes` (pelo menos uma, **cada uma com trecho literal** que identifica a instituição, como nas demais evidências da seção 4.7). Uma instituição é uma só, mesmo com várias contas no Hugging Face: as contas se ligam a ela pelos vínculos (4.11), sem duplicar a entidade.
+`id` (kebab-case), `nome`, `nome_pt?` (nome em português, só quando confirmado em fonte pública ou tradução inequívoca), `aliases?` (até 8 apelidos documentados em fonte pública; nunca inventados), `sigla?`, `tipo` (`universidade`, `instituto`, `empresa`, `governo` ou `outro`), `pais` (ISO 3166-1), `regiao?`, `parte_de?` (id de outra instituição; a hierarquia não pode ter ciclos, `VINCULO_CICLO`), `modelos_creditados[]` opcional (4.11), `links`, `descricao?` e `fontes` (pelo menos uma, **cada uma com trecho literal** que identifica a instituição, como nas demais evidências da seção 4.7). Uma instituição é uma só, mesmo com várias contas no Hugging Face: as contas se ligam a ela pelos vínculos (4.11), sem duplicar a entidade.
 
 ### 4.11 vínculos, relacionados e créditos
 

@@ -88,6 +88,20 @@
     },
     "modelos_creditados": {
       "$ref": "comum.schema.json#/$defs/modelos_creditados"
+    },
+    "nome_pt": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 160
+    },
+    "aliases": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80
+      }
     }
   }
 }

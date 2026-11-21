@@ -3,6 +3,7 @@
   "entidade": "laboratorio",
   "id": "sigla-instituicao",
   "nome": "Nome do laboratorio ou grupo",
+  "nome_pt": "Nome em portugues (opcional; so se confirmado em fonte publica)",
   "sigla": "SIGLA",
   "instituicao": "id-da-instituicao",
   "areas": [

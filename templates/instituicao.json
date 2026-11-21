@@ -3,6 +3,7 @@
   "entidade": "instituicao",
   "id": "sigla-da-instituicao",
   "nome": "Nome da instituicao",
+  "nome_pt": "Nome em portugues (opcional; so se confirmado em fonte publica)",
   "sigla": "SIGLA",
   "tipo": "universidade",
   "pais": "BR",
