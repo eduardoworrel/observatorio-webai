@@ -68,7 +68,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "ai-eldorado",
@@ -179,7 +181,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "amadeusai",
@@ -258,7 +262,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "c2d-usp",
@@ -462,7 +468,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "coppead",
@@ -541,7 +549,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "FMendonca",
@@ -581,7 +591,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "g-assismoraes",
@@ -614,7 +626,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "Giuliano",
@@ -647,7 +661,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "guicybercode",
@@ -680,7 +696,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "Guilherme34",
@@ -720,7 +738,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "H2IA",
@@ -838,7 +858,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "Jurema-br",
@@ -922,7 +944,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "maritaca-ai",
@@ -1011,20 +1035,20 @@
    "tipo": "pessoa",
    "classe_pais": "br_evidencia",
    "evidencia_pais": {
-    "tipo": "cartao",
-    "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Chat",
-    "trecho": "ndação de Amparo à Pesquisa do Estado do Rio Grande do Sul](https://fapergs.rs.gov.br/inicial)), Brazil. ## License TeenyTinyLlama-460m-Chat is ",
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m",
     "acessado": "2026-11-20",
-    "regra": "E3a: cartao do modelo com endereco .br"
+    "rotulo": "cartão do modelo: fomento de agência brasileira",
+    "trecho": "a project supported by FAPERGS - ( Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul ), Brazil"
    },
    "natureza": "instituicao",
    "evidencia_natureza": {
     "classe": "instituicao",
-    "tipo": "perfil/cartao",
-    "url": "https://huggingface.co/nicholasKluge",
-    "trecho": "University of Bonn",
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
     "acessado": "2026-11-20",
-    "regra": "N1: vinculo institucional declarado (universidade, instituto, dominio edu/gov.br)"
+    "rotulo": "página profissional",
+    "trecho": "a postdoc researcher at the Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab, at the University of Bonn (Germany)"
    },
    "escopo": "br",
    "n_modelos_hf": 33,
@@ -1041,9 +1065,17 @@
    ],
    "n_modelos_mapeados": 33,
    "membro_de": [],
-   "instituicoes": [],
-   "labs": [],
-   "relacionados": []
+   "instituicoes": [
+    "uni-bonn"
+   ],
+   "labs": [
+    "caisa-b-it"
+   ],
+   "relacionados": [],
+   "afiliado_a": [
+    "uni-bonn"
+   ],
+   "natureza_rotulo": "afiliada"
   },
   {
    "id": "pucpr-br",
@@ -1164,7 +1196,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "semantixai",
@@ -1352,7 +1386,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "allenai",
@@ -1425,7 +1461,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "google",
@@ -1498,7 +1536,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "HuggingFaceTB",
@@ -1610,7 +1650,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "KrynexLabs",
@@ -1644,7 +1686,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "LiquidAI",
@@ -1717,7 +1761,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "meta-llama",
@@ -1868,7 +1914,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "nvidia",
@@ -1980,7 +2028,9 @@
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   },
   {
    "id": "Xenova",
@@ -2016,7 +2066,9 @@
    ],
    "instituicoes": [],
    "labs": [],
-   "relacionados": []
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "independente"
   }
  ]
 }

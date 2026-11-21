@@ -1,0 +1,27 @@
+{
+  "spec": "1.0",
+  "entidade": "laboratorio",
+  "id": "caisa-b-it",
+  "nome": "Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+  "sigla": "CAISA",
+  "instituicao": "uni-bonn",
+  "vinculo_fonte": {
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
+    "acessado": "2026-11-20",
+    "rotulo": "página profissional de pesquisador do laboratório",
+    "trecho": "CAISA Lab, at the University of Bonn (Germany)"
+  },
+  "links": {
+    "oficial": "https://www.b-it-center.de/"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.b-it-center.de/",
+      "acessado": "2026-11-20",
+      "rotulo": "site do b-it",
+      "trecho": "Bonn-Aachen International Center for Information Technology"
+    }
+  ]
+}

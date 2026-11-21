@@ -18,7 +18,7 @@
       credito: 'Inspirado no Observatório da Maritaca ↗', privacidade: 'Privacidade', fonte_lic: 'Fonte Atkinson Hyperlegible, licença SIL OFL 1.1.',
       c_modelo: 'Modelo', c_status: 'Build', c_gb: 'GB (q4)', c_lic: 'Licença', c_upd: 'Atualizado',
       oficial: 'Nativo · publicador', comunidade: 'Nativo · comunidade', gguf: 'GGUF via wllama', nenhum: 'Sem build', gguf_grande: 'GGUF grande demais',
-      n_todos: 'Todas as naturezas', independente: 'Independente', instituicao: 'Instituição', empresa: 'Empresa', nao_classificada: 'Natureza não classificada',
+      n_todos: 'Todas as naturezas', independente: 'Independente', instituicao: 'Instituição', afiliada: 'Afiliada', afiliada_a: 'Afiliado(a) a', pesq_lab: 'pesquisador(a) no laboratório', pais_DE: 'Alemanha', pais_BR: 'Brasil', empresa: 'Empresa', nao_classificada: 'Natureza não classificada',
       cl_br_evidencia: 'Brasil (evidência)', cl_nao_classificado: 'Não classificado', cl_fora_br: 'Fora do Brasil',
       campo: 'modelos no mapa', sem_modelos: 'Nenhum modelo neste recorte.', mais: 'Mostrar mais',
       recorte: 'modelos no recorte', so_nativo: 'nativo', nativo_gguf: 'nativo + GGUF', semb: 'sem build',
@@ -64,7 +64,7 @@
       credito: 'Inspired by the Maritaca Observatory ↗', privacidade: 'Privacy', fonte_lic: 'Atkinson Hyperlegible font, SIL OFL 1.1 license.',
       c_modelo: 'Model', c_status: 'Build', c_gb: 'GB (q4)', c_lic: 'License', c_upd: 'Updated',
       oficial: 'Native · publisher', comunidade: 'Native · community', gguf: 'GGUF via wllama', nenhum: 'No build', gguf_grande: 'GGUF too large',
-      n_todos: 'All types', independente: 'Independent', instituicao: 'Institution', empresa: 'Company', nao_classificada: 'Type not classified',
+      n_todos: 'All types', independente: 'Independent', instituicao: 'Institution', afiliada: 'Affiliated', afiliada_a: 'Affiliated with', pesq_lab: 'researcher at the lab', pais_DE: 'Germany', pais_BR: 'Brazil', empresa: 'Company', nao_classificada: 'Type not classified',
       cl_br_evidencia: 'Brazil (evidence)', cl_nao_classificado: 'Not classified', cl_fora_br: 'Outside Brazil',
       campo: 'models on the map', sem_modelos: 'No model in this selection.', mais: 'Show more',
       recorte: 'models in selection', so_nativo: 'native', nativo_gguf: 'native + GGUF', semb: 'no build',
@@ -199,7 +199,7 @@
     if (S.via === 'nativo' && m.via !== 'nativo') return false;
     if (S.via === 'gguf' && m.via === 'nenhum') return false;
     if (S.via === 'nenhum' && m.via !== 'nenhum') return false;
-    if (S.nat !== 'todas' && pubBy[m.publicador].natureza !== S.nat) return false;
+    if (S.nat !== 'todas' && natRot(pubBy[m.publicador]) !== S.nat) return false;
     if (S.fmt === 'multi' && m.nfmt < 2) return false;
     if (S.tarefa && m.ftar !== S.tarefa) return false;
     if (S.inst && m.insts.indexOf(S.inst) < 0) return false;
@@ -275,7 +275,7 @@
   var fmtNome = { onnx: 'ONNX', mlc: 'MLC', litert: 'LiteRT', gguf: 'GGUF' };
   var nomesInst = function (ids) { return ids.map(function (id) { return REL.rot(REL.instBy[id]) || id; }).join(', '); };
   CAMS.modelos.cols = [
-    { k: 'nome', rot: 'c_modelo', val: function (m) { return m.nome.toLowerCase(); }, td: function (m) { var p = pubBy[m.publicador]; return '<td><span class="mname">' + esc(m.nome) + '</span><small>' + esc(p.nome) + ' · ' + t(p.natureza) + ' · ' + esc(m.familia) + '</small></td>'; }, txt: function (m) { return m.nome + ' (' + pubBy[m.publicador].nome + ')'; } },
+    { k: 'nome', rot: 'c_modelo', val: function (m) { return m.nome.toLowerCase(); }, td: function (m) { var p = pubBy[m.publicador]; return '<td><span class="mname">' + esc(m.nome) + '</span><small>' + esc(p.nome) + ' · ' + natTxt(p) + ' · ' + esc(m.familia) + '</small></td>'; }, txt: function (m) { return m.nome + ' (' + pubBy[m.publicador].nome + ')'; } },
     { k: 'tar', rot: 'c_tarefa', val: function (m) { return m.ftar; }, td: function (m) { return '<td><span class="chip-t t-' + m.ftar + '">' + t('ta_' + m.ftar) + '</span><small>' + esc(m.tarefa || '') + '</small></td>'; }, txt: function (m) { return t('ta_' + m.ftar) + (m.tarefa ? ' (' + m.tarefa + ')' : ''); } },
     { k: 'via', rot: 'c_status', val: function (m) { return ORD[viaOf(m)]; }, td: function (m) { var v = viaOf(m); return '<td><span class="badge ' + v + '">' + t(v) + '</span></td>'; }, txt: function (m) { return t(viaOf(m)); } },
     { k: 'builds', rot: 'c_builds', val: function (m) { return -m.nfmt; }, td: function (m) { return '<td class="c-builds">' + chipFmt(m) + '<small>' + m.nfmt + ' ' + t(m.nfmt === 1 ? 'formato' : 'formatos') + '</small></td>'; }, txt: function (m) { return m.fmts.map(function (f) { return fmtNome[f]; }).join(', ') + ' (' + m.nfmt + ')'; } },
@@ -807,12 +807,21 @@
   function evidHtml(p) {
     var l = [];
     if (p.evidencia_pais) l.push({ rotulo: t('ev_pais') + ': ' + t('cl_' + p.classe_pais) + ' (' + tipoFonte(p.evidencia_pais.tipo) + ')', url: p.evidencia_pais.url, acessado: p.evidencia_pais.acessado, trecho: p.evidencia_pais.trecho });
-    if (p.evidencia_natureza) l.push({ rotulo: t('ev_nat') + ': ' + t(p.natureza), url: p.evidencia_natureza.url, acessado: p.evidencia_natureza.acessado, trecho: p.evidencia_natureza.trecho });
+    if (p.evidencia_natureza) l.push({ rotulo: t('ev_nat') + ': ' + natTxt(p), url: p.evidencia_natureza.url, acessado: p.evidencia_natureza.acessado, trecho: p.evidencia_natureza.trecho });
     return l.length ? '<h3>' + t('evidencias') + '</h3><ul>' + l.map(li).join('') + '</ul>' : '';
   }
+  // natureza de publicador pessoa com instituicao: "Afiliado(a) a <instituicao>" (natureza_rotulo/afiliado_a do contrato 1.1)
+  var natRot = function (p) { return p && p.natureza_rotulo === 'afiliada' ? 'afiliada' : (p ? p.natureza : ''); };
+  function natTxt(p) {
+    if (!p) return '';
+    if (natRot(p) !== 'afiliada') return t(p.natureza);
+    var nomes = (p.afiliado_a || []).map(function (id) { var i = REL.instBy[id]; return i ? (i.sigla || i.nome) : id; });
+    return t('afiliada_a') + (nomes.length ? ' ' + nomes.join(', ') : '');
+  }
+  var paisNome = function (c) { var k = 'pais_' + c; return T[S.lang][k] || c; };
   var badgeLista = function (arr) { return arr.map(function (x) { return '<span class="badge">' + esc(x) + '</span>'; }).join(' '); };
-  var nomeLab = function (id) { var l = REL.labBy[id]; return l ? (l.sigla ? l.sigla + ' · ' + l.nome : l.nome) : id; };
-  var nomeInstFull = function (id) { var i = REL.instBy[id]; return i ? (i.sigla ? i.sigla + ' · ' + i.nome : i.nome) : id; };
+  var nomeLab = function (id) { var l = REL.labBy[id]; return l ? (l.sigla ? l.sigla + ' · ' + l.nome : l.nome) + (l.pais ? ' (' + l.pais + ')' : '') : id; };
+  var nomeInstFull = function (id) { var i = REL.instBy[id]; return i ? (i.sigla ? i.sigla + ' · ' + i.nome : i.nome) + (i.pais ? ' (' + i.pais + ')' : '') : id; };
   function vinculosHtml(pid, m) {
     var o = REL.porPub ? REL.porPub[pid] : null, l = [];
     if (!REL.disponivel && !(m && (m.creditos || []).length)) return '';
@@ -821,11 +830,13 @@
     if (o && o.rel.length) l.push('<dt>' + t('v_rel') + '</dt><dd><ul>' + o.rel.map(function (id) { return '<li>' + (pubBy[id] ? '<button type="button" data-ir="pub:' + esc(id) + '">' + esc(pubNome(id)) + '</button>' : esc(id)) + '</li>'; }).join('') + '</ul></dd>');
     if (o && o.membro.length) l.push('<dt>' + t('v_membro') + '</dt><dd><ul>' + o.membro.map(function (id) { return '<li>' + (pubBy[id] ? '<button type="button" data-ir="pub:' + esc(id) + '">' + esc(pubNome(id)) + '</button>' : esc(id)) + '</li>'; }).join('') + '</ul></dd>');
     if (m && (m.creditos || []).length) l.push('<dt>' + t('v_cred') + '</dt><dd><ul>' + m.creditos.map(function (c) { var k = c.split(':'); return '<li>' + esc(k[0] === 'lab' ? nomeLab(k.slice(1).join(':')) : nomeInstFull(k.slice(1).join(':'))) + '</li>'; }).join('') + '</ul></dd>');
-    return l.length ? '<h3>' + t('vinculos') + '</h3><dl class="dr-grid dr-vinc">' + l.join('') + '</dl>' : '';
+    var pp = pubBy[pid], lb = o && o.labs.length ? REL.labBy[o.labs[0]] : null, ins = lb && lb.instituicao ? REL.instBy[lb.instituicao] : (o && o.inst.length ? REL.instBy[o.inst[0]] : null);
+    var linha = pp && natRot(pp) === 'afiliada' && ins ? '<p class="dr-sub dr-afil">' + (lb ? t('pesq_lab') + ' ' + esc(lb.nome) : natTxt(pp)) + ' (' + esc(ins.nome) + (ins.pais ? ', ' + esc(paisNome(ins.pais)) : '') + ')</p>' : '';
+    return l.length ? '<h3>' + t('vinculos') + '</h3>' + linha + '<dl class="dr-grid dr-vinc">' + l.join('') + '</dl>' : '';
   }
   function drawerInst(i, g) {
     var pubsI = (i.publicadores || []).filter(function (p) { return pubBy[p]; }), labs = (i.labs || []).map(nomeLab), fam = i.por_familia_tarefa || {}, nb = i.n_builds || {};
-    return '<span class="dr-label">' + t('v_inst') + (i.tipo ? ' · ' + esc(i.tipo) : '') + '</span><h2 id="drawer-titulo">' + esc(i.nome) + (i.sigla ? ' (' + esc(i.sigla) + ')' : '') + '</h2><p class="dr-sub">' + esc(i.pais || '') + (i.regiao ? ' · ' + esc(i.regiao) : '') + (i.parte_de ? ' · ' + t('parte_de') + ' ' + esc(nomeInstFull(i.parte_de)) : '') + '</p>' +
+    return '<span class="dr-label">' + t('v_inst') + (i.tipo ? ' · ' + esc(i.tipo) : '') + '</span><h2 id="drawer-titulo">' + esc(i.nome) + (i.sigla ? ' (' + esc(i.sigla) + ')' : '') + '</h2><p class="dr-sub">' + esc(i.pais ? paisNome(i.pais) + ' (' + i.pais + ')' : '') + (i.regiao ? ' · ' + esc(i.regiao) : '') + (i.parte_de ? ' · ' + t('parte_de') + ' ' + esc(nomeInstFull(i.parte_de)) : '') + '</p>' +
       '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + nf(i.n_modelos || 0) + '</dd><dt>' + t('ta_gerador') + '</dt><dd>' + nf(fam.gerador || 0) + '</dd><dt>' + t('ta_codificador') + '</dt><dd>' + nf(fam.codificador || 0) + '</dd><dt>' + t('b_nativo') + '</dt><dd>' + nf(nb.nativo || 0) + '</dd><dt>' + t('b_gguf') + '</dt><dd>' + nf(nb.gguf || 0) + '</dd></dl>' +
       (labs.length ? '<h3>' + t('v_lab') + '</h3><ul>' + labs.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
       (pubsI.length ? '<h3>' + t('publicador') + '</h3><ul class="dr-lista">' + pubsI.map(function (p) { return '<li><button type="button" data-ir="pub:' + esc(p) + '">' + esc(pubNome(p)) + '</button></li>'; }).join('') + '</ul>' : '') +
@@ -834,7 +845,7 @@
   function drawerPublicador(pid) {
     var p = pubBy[pid]; if (!p) return '';
     var ms = D.modelos.filter(function (m) { return m.publicador === pid; });
-    return '<span class="dr-label">' + t('publicador') + '</span><h2 id="drawer-titulo">' + esc(p.nome) + '</h2><p class="dr-sub">' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' +
+    return '<span class="dr-label">' + t('publicador') + '</span><h2 id="drawer-titulo">' + esc(p.nome) + '</h2><p class="dr-sub">' + natTxt(p) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' +
       '<dl class="dr-grid"><dt>' + t('modelos') + '</dt><dd>' + ms.length + '</dd></dl>' + vinculosHtml(pid, null) + evidHtml(p) +
       '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + (p.fontes || []).map(li).join('') + '</ul>' +
       '<h3>' + t('modelos') + '</h3><ul class="dr-lista">' + ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.nome) + '</button></li>'; }).join('') + (ms.length > 60 ? '<li>… +' + (ms.length - 60) + '</li>' : '') + '</ul>';
@@ -853,7 +864,7 @@
       }).join('') + '</ul>';
     });
     var bl = (m.builds || []).filter(function (b) { return b.destaque; }).map(function (b) { return { rotulo: b.formato.toUpperCase() + ' · ' + (b.oficial ? t('oficial') : t('comunidade')) + ' · ' + b.repo + (b.gb ? ' · ' + nf(b.gb, 2) + ' GB' : ''), url: b.url, acessado: D.meta.coletado_em }; });
-    return '<span class="dr-label">' + t('modelo') + '</span><h2 id="drawer-titulo">' + esc(m.nome) + '</h2><p class="dr-sub"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.nome) + '</a> · ' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + '</p>' +
+    return '<span class="dr-label">' + t('modelo') + '</span><h2 id="drawer-titulo">' + esc(m.nome) + '</h2><p class="dr-sub"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.nome) + '</a> · ' + natTxt(p) + ' · ' + t('cl_' + p.classe_pais) + '</p>' +
       '<p><span class="badge ' + v + '">' + t(v) + '</span> <span class="badge">' + m.nfmt + ' ' + t(m.nfmt === 1 ? 'formato' : 'formatos') + '</span>' + (m.gguf_grande ? ' <span class="badge">' + t('gguf_nota') + '</span>' : '') + '</p>' +
       '<dl class="dr-grid"><dt>' + t('c_gb') + '</dt><dd>' + (m.gb_navegador ? nf(m.gb_navegador, 2) + ' GB' : '—') + '</dd><dt>' + t('c_lic') + '</dt><dd>' + esc(m.licenca || '—') + '</dd><dt>' + t('atualizado') + '</dt><dd>' + esc(m.atualizado || '—') + '</dd>' +
       '<dt>' + t('parametros') + '</dt><dd>' + (m.parametros_b ? nf(m.parametros_b, 2) + ' B' : '—') + '</dd><dt>' + t('familia') + '</dt><dd>' + esc(m.familia) + '</dd><dt>' + t('tarefa') + '</dt><dd>' + t('ta_' + m.ftar) + (m.tarefa ? ' (' + esc(m.tarefa) + ')' : '') + '</dd></dl>' +
@@ -887,7 +898,7 @@
     if (g.inst) return drawerInst(g.inst, g);
     var p = g.pub, cont = {}; g.ms.forEach(function (m) { var c = CAM.cls(m); cont[c] = (cont[c] || 0) + 1; });
     var linhas = CAM.legenda.map(function (l) { return '<dt>' + t(l[1]) + '</dt><dd>' + (cont[l[0]] || 0) + '</dd>'; }).join('');
-    return '<span class="dr-label">' + (p ? t('constelacao') : t('fam_t')) + '</span><h2 id="drawer-titulo">' + esc(g.nome) + '</h2>' + (p && p.natureza ? '<p class="dr-sub">' + t(p.natureza) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' : '') +
+    return '<span class="dr-label">' + (p ? t('constelacao') : t('fam_t')) + '</span><h2 id="drawer-titulo">' + esc(g.nome) + '</h2>' + (p && p.natureza ? '<p class="dr-sub">' + natTxt(p) + ' · ' + t('cl_' + p.classe_pais) + ' · <a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t('perfil_hf') + '</a></p>' : '') +
       '<dl class="dr-grid"><dt>' + t(CAM.plural) + '</dt><dd>' + g.ms.length + '</dd>' + linhas + '</dl>' +
       (p && p.evidencia_pais ? vinculosHtml(p.id, null) + evidHtml(p) + '<h3>' + t('fontes') + ' (' + D.meta.coletado_em + ')</h3><ul>' + p.fontes.map(li).join('') + '</ul>' : '') +
       '<h3>' + t(CAM.plural) + '</h3><ul class="dr-lista">' + g.ms.slice(0, 60).map(function (m) { return '<li><button type="button" data-abrir="' + esc(m.id) + '">' + esc(m.sigla || m.nome) + '</button> · ' + t(CAM.legenda.filter(function (l) { return l[0] === CAM.cls(m); })[0][1]) + '</li>'; }).join('') + (g.ms.length > 60 ? '<li>… +' + (g.ms.length - 60) + '</li>' : '') + '</ul>';
@@ -1031,7 +1042,7 @@
     document.querySelectorAll('[data-i18n]').forEach(function (e) { var v = t(e.dataset.i18n); if (/<br>/.test(v)) e.innerHTML = v; else e.textContent = v; });
     document.querySelectorAll('[data-i18n-ph]').forEach(function (e) { e.placeholder = t(e.dataset.i18nPh); });
     document.querySelectorAll('[data-i18n-aria]').forEach(function (e) { e.setAttribute('aria-label', t(e.dataset.i18nAria)); });
-    var sel = $('#f-nat'), cur = S.nat; sel.innerHTML = ['todas', 'independente', 'instituicao', 'empresa', 'nao_classificada'].map(function (k) { return '<option value="' + k + '"' + (k === cur ? ' selected' : '') + '>' + (k === 'todas' ? t('n_todos') : t(k)) + '</option>'; }).join('');
+    var sel = $('#f-nat'), cur = S.nat; sel.innerHTML = ['todas', 'independente', 'instituicao', 'afiliada', 'empresa', 'nao_classificada'].map(function (k) { return '<option value="' + k + '"' + (k === cur ? ' selected' : '') + '>' + (k === 'todas' ? t('n_todos') : t(k)) + '</option>'; }).join('');
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === S.lang)); });
     document.querySelectorAll('[data-escopo]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.escopo === S.escopo)); });
     document.querySelectorAll('[data-via]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.via === S.via)); });

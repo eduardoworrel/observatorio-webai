@@ -1306,6 +1306,9 @@ def montar_relacoes(pubs, modelos):
         p["instituicoes"], p["labs"], p["relacionados"] = sorted(iis, key=str.lower), sorted(ls, key=str.lower), sorted(rel_pub.get(p["id"], ()), key=str.lower)
         if p["tipo"] != "pessoa":
             p.pop("membro_de", None)
+        else:   # a interface diz "afiliado(a) a <instituicao>" em vez de "Instituicao" para uma pessoa
+            p["afiliado_a"] = p["instituicoes"] if p["natureza"] in ("instituicao", "empresa") else []
+            p["natureza_rotulo"] = "afiliada" if p["natureza"] in ("instituicao", "empresa") else p["natureza"]
     # creditos nos modelos
     cred = collections.defaultdict(list)
     for prefixo, ents in (("lab:", labs), ("inst:", insts)):
@@ -1339,19 +1342,20 @@ def montar_relacoes(pubs, modelos):
                        **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": i["fontes"]})
     for lid, l in sorted(labs.items(), key=lambda kv: kv[0].lower()):
         ps = {x for x in lab_pubs.get(lid, set()) if x in mapa}
-        L_lab.append({"id": lid, "nome": l["nome"], "sigla": l.get("sigla"), "instituicao": l["instituicao"], "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
+        L_lab.append({"id": lid, "nome": l["nome"], "sigla": l.get("sigla"), "instituicao": l["instituicao"], "pais": (insts.get(l["instituicao"]) or {}).get("pais"), "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
                       "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
     folha = lambda pid: {"tipo": "publicador", "id": pid, "n_modelos": len(por_pub.get(pid, [])), "filhos": []}
     def no_inst(iid, visto=()):
-        fs = [{"tipo": "laboratorio", "id": l, "filhos": [folha(x) for x in sorted((y for y in lab_pubs.get(l, ()) if y in mapa), key=str.lower)]} for l in sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower)]
+        fs = [{"tipo": "laboratorio", "id": l, "pais": (insts.get(labs[l]["instituicao"]) or {}).get("pais"), "filhos": [folha(x) for x in sorted((y for y in lab_pubs.get(l, ()) if y in mapa), key=str.lower)]} for l in sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower)]
         fs += [no_inst(f, visto + (iid,)) for f in sorted(filhos.get(iid, []), key=str.lower) if f not in visto]
         fs += [folha(x) for x in sorted((y for y in pub_inst_rev.get(iid, ()) if y in mapa), key=str.lower)]
-        return {"tipo": "instituicao", "id": iid, "filhos": fs}
+        return {"tipo": "instituicao", "id": iid, "pais": insts[iid]["pais"], "filhos": fs}
     raizes = [no_inst(iid) for iid in sorted(insts, key=str.lower) if iid not in pai]
     ligados = {x for i in L_inst for x in i["publicadores"]}
     raizes += [folha(p["id"]) for p in sorted(pubs, key=lambda p: p["id"].lower()) if p["id"] not in ligados]
     V = [{"de": de, "para": para, "tipo": tipo, "fonte": f} for (tipo, de, para), f in sorted(arestas.items(), key=lambda kv: (kv[0][0], kv[0][1].lower(), kv[0][2].lower()))]
-    return {"instituicoes": L_inst, "laboratorios": L_lab, "vinculos": V, "hierarquia": raizes, "assinatura": assinatura_relacoes()}
+    return {"instituicoes": L_inst, "laboratorios": L_lab, "vinculos": V, "hierarquia": raizes, "assinatura": assinatura_relacoes(),
+            "por_pais": dict(sorted(collections.Counter(i["pais"] for i in L_inst).items()))}
 
 
 def assinatura_relacoes():
@@ -1413,6 +1417,7 @@ def main():
         rel = montar_relacoes(pubs_n, mods_n)
         meta, pacote, foto = montar(pubs_n, mods_n, desc_n)
         foto["regra_filtro"] = exist.get("regra")
+        foto["instituicoes_por_pais"] = rel["por_pais"]
         print("normalizado; arquivos alterados:", gravar(meta, pacote, foto, None, rel) or "nenhum")
         return
     cands = candidatos_locais(seed, carregar_curados(), exist)
@@ -1520,6 +1525,7 @@ def main():
     pubs, modelos, desc = mesclar(exist, regs, remover)
     rel = montar_relacoes(pubs, modelos)
     meta, pacote, foto = montar(pubs, modelos, desc)
+    foto["instituicoes_por_pais"] = rel["por_pais"]
     if a.so or a.so_datasets or len(regs) < len(alvos):   # a regra so e marcada como aplicada quando todos os candidatos foram coletados
         foto["regra_filtro"] = exist.get("regra")
 

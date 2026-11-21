@@ -3,7 +3,7 @@
   "coletado_em": "2026-11-20",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "c2cd4a32d40bb92c"
+  "assinatura": "f30e82cfd322ceea"
  },
  "instituicoes": [
   {
@@ -381,6 +381,39 @@
    ]
   },
   {
+   "id": "uni-bonn",
+   "nome": "University of Bonn",
+   "sigla": "Uni Bonn",
+   "pais": "DE",
+   "regiao": "DE-NW",
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "caisa-b-it"
+   ],
+   "publicadores": [
+    "nicholasKluge"
+   ],
+   "n_modelos": 33,
+   "n_builds": {
+    "nativo": 1,
+    "gguf": 13
+   },
+   "por_familia_tarefa": {
+    "gerador": 17,
+    "codificador": 16
+   },
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://www.uni-bonn.de/en",
+     "acessado": "2026-11-20",
+     "rotulo": "site oficial",
+     "trecho": "University of Bonn"
+    }
+   ]
+  },
+  {
    "id": "unicamp",
    "nome": "Universidade Estadual de Campinas",
    "sigla": "Unicamp",
@@ -455,6 +488,7 @@
    "nome": "Centro de Ciência de Dados",
    "sigla": "C2D",
    "instituicao": "usp",
+   "pais": "BR",
    "parceiras": [
     "itau-unibanco"
    ],
@@ -491,6 +525,7 @@
    "nome": "Centro de Inteligência Artificial",
    "sigla": "C4AI",
    "instituicao": "usp",
+   "pais": "BR",
    "parceiras": [],
    "publicadores": [
     "carolina-c4ai"
@@ -521,10 +556,47 @@
    ]
   },
   {
+   "id": "caisa-b-it",
+   "nome": "Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+   "sigla": "CAISA",
+   "instituicao": "uni-bonn",
+   "pais": "DE",
+   "parceiras": [],
+   "publicadores": [
+    "nicholasKluge"
+   ],
+   "n_modelos": 33,
+   "n_builds": {
+    "nativo": 1,
+    "gguf": 13
+   },
+   "por_familia_tarefa": {
+    "gerador": 17,
+    "codificador": 16
+   },
+   "fontes": [
+    {
+     "tipo": "pagina_pessoa",
+     "url": "https://nkluge-correa.github.io/",
+     "acessado": "2026-11-20",
+     "rotulo": "página profissional de pesquisador do laboratório",
+     "trecho": "CAISA Lab, at the University of Bonn (Germany)"
+    },
+    {
+     "tipo": "site_institucional",
+     "url": "https://www.b-it-center.de/",
+     "acessado": "2026-11-20",
+     "rotulo": "site do b-it",
+     "trecho": "Bonn-Aachen International Center for Information Technology"
+    }
+   ]
+  },
+  {
    "id": "ceia-ufg",
    "nome": "Centro de Excelência em Inteligência Artificial",
    "sigla": "CEIA",
    "instituicao": "ufg",
+   "pais": "BR",
    "parceiras": [],
    "publicadores": [
     "ceia-research",
@@ -560,6 +632,7 @@
    "nome": "Health Artificial Intelligence Lab",
    "sigla": "HAILab",
    "instituicao": "pucpr",
+   "pais": "BR",
    "parceiras": [],
    "publicadores": [
     "pucpr-br"
@@ -593,6 +666,7 @@
    "nome": "Hub de Inteligência Artificial e Arquiteturas Cognitivas",
    "sigla": "H.IAAC",
    "instituicao": "unicamp",
+   "pais": "BR",
    "parceiras": [],
    "publicadores": [],
    "n_modelos": 0,
@@ -801,6 +875,18 @@
    }
   },
   {
+   "de": "lab:caisa-b-it",
+   "para": "inst:uni-bonn",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
+    "acessado": "2026-11-20",
+    "rotulo": "página profissional de pesquisador do laboratório",
+    "trecho": "CAISA Lab, at the University of Bonn (Germany)"
+   }
+  },
+  {
    "de": "lab:ceia-ufg",
    "para": "inst:ufg",
    "tipo": "mesma_organizacao",
@@ -833,6 +919,18 @@
     "acessado": "2026-11-20",
     "rotulo": "site do próprio centro",
     "trecho": "H.IAAC, Hub de Inteligência Artificial e Arquiteturas Cognitivas - Universidade Estadual de Campinas"
+   }
+  },
+  {
+   "de": "pub:nicholasKluge",
+   "para": "lab:caisa-b-it",
+   "tipo": "pesquisador",
+   "fonte": {
+    "tipo": "pagina_pessoa",
+    "url": "https://nkluge-correa.github.io/",
+    "acessado": "2026-11-20",
+    "rotulo": "página profissional",
+    "trecho": "a postdoc researcher at the Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab, at the University of Bonn (Germany)"
    }
   },
   {
@@ -887,6 +985,7 @@
   {
    "tipo": "instituicao",
    "id": "escavador",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -899,6 +998,7 @@
   {
    "tipo": "instituicao",
    "id": "itau-unibanco",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -911,6 +1011,7 @@
   {
    "tipo": "instituicao",
    "id": "lncc",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -923,6 +1024,7 @@
   {
    "tipo": "instituicao",
    "id": "neuralmind",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -941,10 +1043,12 @@
   {
    "tipo": "instituicao",
    "id": "pucpr",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "laboratorio",
      "id": "hailab-pucpr",
+     "pais": "BR",
      "filhos": [
       {
        "tipo": "publicador",
@@ -959,6 +1063,7 @@
   {
    "tipo": "instituicao",
    "id": "semantix",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -971,6 +1076,7 @@
   {
    "tipo": "instituicao",
    "id": "ufca",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -983,10 +1089,12 @@
   {
    "tipo": "instituicao",
    "id": "ufg",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "laboratorio",
      "id": "ceia-ufg",
+     "pais": "BR",
      "filhos": [
       {
        "tipo": "publicador",
@@ -1007,11 +1115,13 @@
   {
    "tipo": "instituicao",
    "id": "ufmg",
+   "pais": "BR",
    "filhos": []
   },
   {
    "tipo": "instituicao",
    "id": "ufpel",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -1024,6 +1134,7 @@
   {
    "tipo": "instituicao",
    "id": "ufrj",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "publicador",
@@ -1036,15 +1147,38 @@
   {
    "tipo": "instituicao",
    "id": "uneb",
+   "pais": "BR",
    "filhos": []
   },
   {
    "tipo": "instituicao",
+   "id": "uni-bonn",
+   "pais": "DE",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "caisa-b-it",
+     "pais": "DE",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "nicholasKluge",
+       "n_modelos": 33,
+       "filhos": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
    "id": "unicamp",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "laboratorio",
      "id": "hiaac-unicamp",
+     "pais": "BR",
      "filhos": []
     },
     {
@@ -1058,10 +1192,12 @@
   {
    "tipo": "instituicao",
    "id": "usp",
+   "pais": "BR",
    "filhos": [
     {
      "tipo": "laboratorio",
      "id": "c2d-poli-usp",
+     "pais": "BR",
      "filhos": [
       {
        "tipo": "publicador",
@@ -1074,6 +1210,7 @@
     {
      "tipo": "laboratorio",
      "id": "c4ai-usp",
+     "pais": "BR",
      "filhos": [
       {
        "tipo": "publicador",
@@ -1263,12 +1400,6 @@
    "tipo": "publicador",
    "id": "mlboydaisuke",
    "n_modelos": 8,
-   "filhos": []
-  },
-  {
-   "tipo": "publicador",
-   "id": "nicholasKluge",
-   "n_modelos": 33,
    "filhos": []
   },
   {

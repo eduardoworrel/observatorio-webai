@@ -482,6 +482,26 @@ class TestRelacoes(Base):
         self.assertEqual(f["sem_maior_publicador"]["brasil"]["modelos"], 1)
         self.assertEqual(f["brasil"]["modelos"], 3, "foto.brasil conta todos, geradores e codificadores")
 
+    def test_pessoa_afiliada_e_instituicao_no_exterior(self):
+        ev = {k: v for k, v in json.load(open(os.path.join(ENT, "22h.json")))["evidencia_pais"].items() if k != "regra"}
+        inst = json.load(open(os.path.join(self.raiz, "data", "entidades", "instituicao", "inst-b.json")))
+        inst["pais"], inst["regiao"] = "DE", "DE-NW"
+        json.dump(inst, open(os.path.join(self.raiz, "data", "entidades", "instituicao", "inst-b.json"), "w"), ensure_ascii=False)
+        pes = entidade("rhaymison", "teste-pes", natureza="instituicao", evidencia_natureza={"classe": "instituicao", **{k: v for k, v in ev.items()}},
+                       vinculos=[{"alvo": {"tipo": "instituicao", "id": "inst-b"}, "relacao": "pesquisador", "fonte": ev}])
+        self.por(pes)
+        ApiFalsa.autores["teste-pes"] = {"nome": "Pessoa", "modelos": [modelo("teste-pes", "p-1B")]}
+        self.coletar("--tudo")
+        d = self.dados_js()
+        p = {x["id"]: x for x in d["publicadores"]}["teste-pes"]
+        self.assertEqual((p["natureza"], p["natureza_rotulo"], p["afiliado_a"]), ("instituicao", "afiliada", ["inst-b"]))
+        self.assertEqual({x["id"]: x for x in d["publicadores"]}["teste-br"].get("natureza_rotulo"), None, "so para pessoa")
+        self.assertEqual(p["classe_pais"], "br_evidencia")
+        no = [n for n in d["hierarquia"] if n["id"] == "inst-b"][0]
+        self.assertEqual(no["pais"], "DE")
+        self.assertEqual({i["id"]: i["pais"] for i in d["instituicoes"]}["inst-b"], "DE")
+        self.assertEqual(d["foto"]["instituicoes_por_pais"], {"BR": 1, "DE": 1})
+
     def test_relacoes_sem_rede_e_idempotentes(self):
         self.coletar("--tudo")
         r = self.coletar("--novos")

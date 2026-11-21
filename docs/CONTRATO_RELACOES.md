@@ -1,6 +1,6 @@
 # Contrato de dados das relações (instituições, laboratórios, vínculos e família de tarefa)
 
-Versão do contrato: **1**. Complementa [CONTRATO_CAMADAS.md](CONTRATO_CAMADAS.md). Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo cria uma nova versão deste arquivo e muda `window.MAPA_DADOS.contrato_relacoes`.
+Versão do contrato: **1** (revisão 1.1: campos acrescentados, sem quebrar a compatibilidade). Complementa [CONTRATO_CAMADAS.md](CONTRATO_CAMADAS.md). Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo cria uma nova versão deste arquivo e muda `window.MAPA_DADOS.contrato_relacoes`.
 
 `web/fixtures/relacoes.js` define `window.MAPA_RELACOES_FIXTURE` com a mesma forma e `fixture: true`, com dados de exemplo (ids começando em `fixture-`).
 
@@ -36,7 +36,7 @@ Nas arestas e nas listas de créditos, um id de entidade leva o tipo como prefix
 
 ## `laboratorios[]`
 
-`id`, `nome`, `sigla`, `instituicao` (id da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa` (como acima) e `fontes`.
+`id`, `nome`, `sigla`, `instituicao` (id da instituição principal), `pais` (país da instituição principal), `parceiras` (ids de instituições parceiras), `publicadores` (ids), `n_modelos`, `n_builds`, `por_familia_tarefa` (como acima) e `fontes`.
 
 ## `vinculos`
 
@@ -61,6 +61,8 @@ Lista de nós `{tipo, id, filhos}`:
 - `tipo: "laboratorio"` → filhos `publicador`;
 - `tipo: "publicador"` → folha, com `n_modelos`. Os ids dos modelos estão em `constelacoes[]` (um item por publicador, como antes).
 
+Nós `instituicao` e `laboratorio` trazem `pais` (ISO 3166-1 da instituição). Uma instituição no exterior pode agrupar publicadores com classe `br_evidencia`: o país da instituição e a classe de país do publicador são independentes.
+
 Publicadores sem instituição nem laboratório aparecem como nós `publicador` na raiz, depois das instituições. A ordem é estável: instituições por `id` sem diferenciar maiúsculas, depois publicadores por `id`.
 
 ## Mudanças em `modelos[]`
@@ -80,6 +82,8 @@ Publicadores sem instituição nem laboratório aparecem como nós `publicador` 
 | `labs` | texto[] | ids de laboratórios ligados |
 | `relacionados` | texto[] | ids de outros publicadores ligados por `relacionado` |
 | `membro_de` | texto[] | só para `tipo: "pessoa"`: ids de publicadores curados (organizações) de que a pessoa é membro público; não há nomes nem contas de outras pessoas |
+| `natureza_rotulo` | texto | só para `tipo: "pessoa"`: `afiliada` quando a natureza é `instituicao` ou `empresa`; nos demais casos repete `natureza`. A interface usa para não rotular uma pessoa como "Instituição" |
+| `afiliado_a` | texto[] | só para `tipo: "pessoa"`: ids de instituições (de `instituicoes[]`) a que a pessoa se afilia; a interface mostra "afiliado(a) a <nome da instituição>"; `[]` se a natureza não é `instituicao` ou `empresa` |
 | `natureza` | texto | coerente com os vínculos (SPEC, regra N): `independente` só sem vínculo curado |
 
 ## Mudanças em `foto`
@@ -97,7 +101,7 @@ foto.sem_maior_publicador = {
 }
 ```
 
-`<contagem>` tem a forma de `foto.brasil` (`modelos`, `nativo_oficial`, `nativo_comunidade`, `so_gguf_wllama`, `nenhum`, `so_nativo`, `nativo_mais_gguf`, ...). `foto.regra_filtro` é a versão da regra de relevância dos modelos. A interface mostra os dois jeitos: com todos e sem o maior publicador.
+`<contagem>` tem a forma de `foto.brasil` (`modelos`, `nativo_oficial`, `nativo_comunidade`, `so_gguf_wllama`, `nenhum`, `so_nativo`, `nativo_mais_gguf`, ...). `foto.instituicoes_por_pais` conta as instituições por país (`{"BR": n, "DE": n}`). `foto.regra_filtro` é a versão da regra de relevância dos modelos. A interface mostra os dois jeitos: com todos e sem o maior publicador.
 
 ## Ordem
 
