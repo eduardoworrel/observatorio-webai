@@ -58,6 +58,22 @@
    "formatos_proprios": [],
    "builds": [
     {
+     "repo": "lucianosb/open-cabrita3b-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/open-cabrita3b-GGUF",
+     "atualizado": "2023-08-28",
+     "downloads": 401,
+     "proprio": false,
+     "gb": 2.08,
+     "variante": "opencabrita3b-q4_0.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/22h/open-cabrita3b"
+    },
+    {
      "repo": "mradermacher/open-cabrita3b-GGUF",
      "autor": "mradermacher",
      "formato": "gguf",
@@ -89,11 +105,11 @@
    "status": "sem_build",
    "gguf": true,
    "gguf_wllama": true,
-   "gguf_gb": 2.69,
+   "gguf_gb": 2.08,
    "gguf_origem": "comunidade",
    "gguf_grande": false,
    "via": "gguf",
-   "gb_navegador": 2.69,
+   "gb_navegador": 2.08,
    "formatos_navegador": [],
    "fontes": [
     {
@@ -103,13 +119,18 @@
     },
     {
      "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/lucianosb/open-cabrita3b-GGUF",
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/open-cabrita3b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/open-cabrita3b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -146,7 +167,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/bert-base-portuguese-cased-8192",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -181,7 +202,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/clip-rpt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -216,7 +237,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/db-msm",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -251,7 +272,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/distilbert-portuguese-cased",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -288,7 +309,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/distill-bge-retromae",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -342,7 +363,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/dolphin_portuguese_legal_1.0-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -377,7 +398,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/DUSMistral",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -412,7 +433,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/llama-1b-edu-10b-neftune",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -490,22 +511,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Dolphin-Portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Dolphin-Portuguese-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Dolphin-Portuguese-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -559,7 +580,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Dolphin-Portuguese-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -637,22 +658,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Dolphin-Portuguese-v0.2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-v0.2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Dolphin-Portuguese-v0.2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Dolphin-Portuguese-v0.2-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -730,22 +751,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Dolphin-Portuguese-v0.3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/brazilianslib/Llama-3-8B-Dolphin-Portuguese-v0.3-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Dolphin-Portuguese-v0.3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/waltervix/Llama-3-8B-Dolphin-Portuguese-v0.3-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -809,17 +830,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Instruct-Portuguese-v0.1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-Portuguese-v0.1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -869,12 +890,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-Portuguese-v0.2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -924,12 +945,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.2-fft",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-Portuguese-v0.2-fft-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -993,17 +1014,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Instruct-Portuguese-v0.3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-Portuguese-v0.3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1067,17 +1088,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Llama-3-8B-Instruct-Portuguese-v0.4",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-Llama-3-8B-Instruct-Portuguese-v0.4-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-Portuguese-v0.4-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1127,12 +1148,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/Mistral-7b-Portuguese-V0.1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Mistral-7b-Portuguese-V0.1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1186,12 +1207,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/ModernBERT-base",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (da comunidade)",
      "url": "https://huggingface.co/onnx-community/ModernBERT-base-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1228,7 +1249,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/ModernBERT-base-exp1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1263,7 +1284,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/mrpt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1313,12 +1334,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/NeuralDaredevil-Dolphin-Portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/featherless-ai-quants/adalbertojunior-NeuralDaredevil-Dolphin-Portuguese-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1355,7 +1376,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/RoBERTaLexPT-base-8k",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1390,7 +1411,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/rpt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1427,7 +1448,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/t5-v1_1-xxl-encoder-bf16-distill",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1462,7 +1483,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior/test-medner",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -1889,110 +1910,6 @@
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/alfaneo/jurisbert-base-portuguese-uncased",
      "acessado": "2026-11-21"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-   "nome": "Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-   "publicador": "althayr",
-   "escopo": "br",
-   "familia": "Gemma-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "gemma",
-   "parametros_b": 3.88,
-   "downloads": 44,
-   "atualizado": "2025-06-14",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-   "base": "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "autor": "althayr",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "atualizado": "2025-06-14",
-     "downloads": 44,
-     "proprio": true,
-     "gb": 7.77,
-     "variante": "Gemma-3-Gaia-PT-BR-4b-it.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "nome": "Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "publicador": "althayr",
-   "escopo": "br",
-   "familia": "Gemma-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "gemma",
-   "parametros_b": 3.88,
-   "downloads": 51,
-   "atualizado": "2025-06-14",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "base": "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "autor": "althayr",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "atualizado": "2025-06-14",
-     "downloads": 51,
-     "proprio": true,
-     "gb": 4.13,
-     "variante": "Gemma-3-Gaia-PT-BR-4b-it_Q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "acessado": "2026-11-20"
     }
    ],
    "creditos": []
@@ -4574,7 +4491,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_1_20_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4611,7 +4528,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4648,7 +4565,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_1_epoch",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4685,7 +4602,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4722,7 +4639,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_3_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4759,7 +4676,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_4_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4796,7 +4713,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_random",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4833,7 +4750,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_21.02_percent_compression_reversed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4870,7 +4787,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4907,7 +4824,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_1_epoch",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4944,7 +4861,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -4981,7 +4898,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_3_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5018,7 +4935,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_4_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5055,7 +4972,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_random",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5092,7 +5009,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30.03_percent_compression_reversed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5129,7 +5046,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5166,7 +5083,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30_percent_compression_only_MHA",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5203,7 +5120,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_30_percent_compression_only_MLP",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5240,7 +5157,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_9.01_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5277,7 +5194,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_9.01_percent_compression_random",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5314,7 +5231,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_llama_2_9.01_percent_compression_reversed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5351,7 +5268,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_phi_1.5_30_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5388,7 +5305,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/AMP_phi_2_30_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5442,7 +5359,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/layer_wise_lora_llava_1.5_7B_scienceqa_1epoch_GGUF_Q4_K_M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5496,7 +5413,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/layer_wise_lora_qwen_3_2B_scienceqa_1epoch_GGUF_Q4_K_M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5533,7 +5450,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_5_percent_cov_match_random_search",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5570,7 +5487,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5607,7 +5524,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_2_20_percent_compression",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5644,7 +5561,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_2_20_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5681,7 +5598,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_2_30_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5718,7 +5635,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_2_40_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5755,7 +5672,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_3_20_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5792,7 +5709,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_3_30_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5829,7 +5746,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llama_3_40_percent_compression_2_epochs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -5883,7 +5800,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/c2d-usp/MoP_llava_1.5_40_percent_compression_2_epochs_GGUF_Q4_K_M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6315,17 +6232,17 @@
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/IPedro/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Gemma-3-Gaia-PT-BR-4b-it-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6375,12 +6292,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/ahxt_llama2_xs_460M_experimental_ptbr_instruct",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/ahxt_llama2_xs_460M_experimental_ptbr_instruct-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6417,7 +6334,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/bert-base-portuguese-cased-safetensors",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6452,7 +6369,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/bert-hash-femto-mlm",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6487,7 +6404,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/bert-tiny-embeddings-english-portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6541,7 +6458,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/bert-tiny-question-classifier",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6576,7 +6493,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/BertMini-Reranker-EnPt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6611,7 +6528,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/BertTiny-Reranker-EnPt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6646,7 +6563,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/blink-latin-26M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6683,7 +6600,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/custom-model2vec-tokenlearn-medium",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -6718,405 +6635,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/domain-labeler-enpt",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-   "nome": "Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "Gemma-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "gemma",
-   "parametros_b": 3.88,
-   "downloads": 61,
-   "atualizado": "2025-06-12",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-   "base": "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-     "autor": "cnmoro",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-     "atualizado": "2025-06-12",
-     "downloads": 61,
-     "proprio": true,
-     "gb": 2.49,
-     "variante": "gemma-3-gaia-pt-br-4b-it-q4_k_m.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 2.49,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 2.49,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "nome": "Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "Gemma-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "gemma",
-   "parametros_b": 3.88,
-   "downloads": 27,
-   "atualizado": "2025-06-12",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-   "base": "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "autor": "cnmoro",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "atualizado": "2025-06-12",
-     "downloads": 27,
-     "proprio": true,
-     "gb": 4.13,
-     "variante": "gemma-3-gaia-pt-br-4b-it-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/gliclass-base-v3.0-onnx",
-   "nome": "gliclass-base-v3.0-onnx",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "gliclass",
-   "tarefa": "text-classification",
-   "familia_tarefa": "codificador",
-   "licenca": null,
-   "parametros_b": null,
-   "downloads": 0,
-   "atualizado": "2025-07-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/cnmoro/gliclass-base-v3.0-onnx",
-   "base": "knowledgator/gliclass-base-v3.0",
-   "formatos_proprios": [
-    "onnx"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/gliclass-base-v3.0-onnx",
-     "autor": "cnmoro",
-     "formato": "onnx",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/gliclass-base-v3.0-onnx",
-     "atualizado": "2025-07-30",
-     "downloads": 0,
-     "proprio": true,
-     "gb": 0.99,
-     "variante": "unico",
-     "destaque": true
-    }
-   ],
-   "status": "oficial",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nativo",
-   "gb_navegador": 0.99,
-   "formatos_navegador": [
-    "onnx"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/gliclass-base-v3.0-onnx",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/gliclass-edge-v3.0-onnx",
-   "nome": "gliclass-edge-v3.0-onnx",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "gliclass",
-   "tarefa": "text-classification",
-   "familia_tarefa": "codificador",
-   "licenca": null,
-   "parametros_b": null,
-   "downloads": 0,
-   "atualizado": "2025-07-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/cnmoro/gliclass-edge-v3.0-onnx",
-   "base": "knowledgator/gliclass-edge-v3.0",
-   "formatos_proprios": [
-    "onnx"
-   ],
-   "builds": [
-    {
-     "repo": "litert-community/GLiClass-Edge-v3.0-LiteRT",
-     "autor": "litert-community",
-     "formato": "litert",
-     "oficial": false,
-     "runtime_org": true,
-     "url": "https://huggingface.co/litert-community/GLiClass-Edge-v3.0-LiteRT",
-     "atualizado": "2026-11-17",
-     "downloads": 257,
-     "proprio": false,
-     "gb": 0.03,
-     "variante": "gliclass_edge_v3_s128_wfp16.tflite",
-     "destaque": true
-    },
-    {
-     "repo": "cnmoro/gliclass-edge-v3.0-onnx",
-     "autor": "cnmoro",
-     "formato": "onnx",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/gliclass-edge-v3.0-onnx",
-     "atualizado": "2025-07-30",
-     "downloads": 0,
-     "proprio": true,
-     "gb": 0.16,
-     "variante": "unico",
-     "destaque": true
-    }
-   ],
-   "status": "oficial",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nativo",
-   "gb_navegador": 0.03,
-   "formatos_navegador": [
-    "litert",
-    "onnx"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/gliclass-edge-v3.0-onnx",
-     "acessado": "2026-11-20"
-    },
-    {
-     "rotulo": "Build litert (da comunidade)",
-     "url": "https://huggingface.co/litert-community/GLiClass-Edge-v3.0-LiteRT",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/gliclass-large-v3.0-onnx",
-   "nome": "gliclass-large-v3.0-onnx",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "gliclass",
-   "tarefa": "text-classification",
-   "familia_tarefa": "codificador",
-   "licenca": null,
-   "parametros_b": null,
-   "downloads": 0,
-   "atualizado": "2025-07-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/cnmoro/gliclass-large-v3.0-onnx",
-   "base": "knowledgator/gliclass-large-v3.0",
-   "formatos_proprios": [
-    "onnx"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/gliclass-large-v3.0-onnx",
-     "autor": "cnmoro",
-     "formato": "onnx",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/gliclass-large-v3.0-onnx",
-     "atualizado": "2025-07-30",
-     "downloads": 0,
-     "proprio": true,
-     "gb": 2.4,
-     "variante": "unico",
-     "destaque": true
-    }
-   ],
-   "status": "oficial",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nativo",
-   "gb_navegador": 2.4,
-   "formatos_navegador": [
-    "onnx"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/gliclass-large-v3.0-onnx",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/gliclass-modern-large-v3.0-onnx",
-   "nome": "gliclass-modern-large-v3.0-onnx",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "gliclass",
-   "tarefa": "text-classification",
-   "familia_tarefa": "codificador",
-   "licenca": null,
-   "parametros_b": null,
-   "downloads": 0,
-   "atualizado": "2025-07-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/cnmoro/gliclass-modern-large-v3.0-onnx",
-   "base": "knowledgator/gliclass-modern-large-v3.0",
-   "formatos_proprios": [
-    "onnx"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/gliclass-modern-large-v3.0-onnx",
-     "autor": "cnmoro",
-     "formato": "onnx",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/gliclass-modern-large-v3.0-onnx",
-     "atualizado": "2025-07-30",
-     "downloads": 0,
-     "proprio": true,
-     "gb": 2.0,
-     "variante": "unico",
-     "destaque": true
-    }
-   ],
-   "status": "oficial",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nativo",
-   "gb_navegador": 2.0,
-   "formatos_navegador": [
-    "onnx"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/gliclass-modern-large-v3.0-onnx",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/gliclass-x-base-onnx",
-   "nome": "gliclass-x-base-onnx",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "gliclass",
-   "tarefa": "text-classification",
-   "familia_tarefa": "codificador",
-   "licenca": null,
-   "parametros_b": null,
-   "downloads": 0,
-   "atualizado": "2025-07-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/cnmoro/gliclass-x-base-onnx",
-   "base": "knowledgator/gliclass-x-base",
-   "formatos_proprios": [
-    "onnx"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/gliclass-x-base-onnx",
-     "autor": "cnmoro",
-     "formato": "onnx",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/gliclass-x-base-onnx",
-     "atualizado": "2025-07-30",
-     "downloads": 0,
-     "proprio": true,
-     "gb": 1.46,
-     "variante": "unico",
-     "destaque": true
-    }
-   ],
-   "status": "oficial",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nativo",
-   "gb_navegador": 1.46,
-   "formatos_navegador": [
-    "onnx"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/gliclass-x-base-onnx",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7153,7 +6672,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/granite-30m-distilled",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7188,7 +6707,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/granite-question-classifier",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7223,7 +6742,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/inference-free-splade-bert-tiny-en-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7258,7 +6777,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/inference-free-splade-co-condenser-en-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7293,7 +6812,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/inference-free-splade-co-condenser-en-ptbr-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7328,7 +6847,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/LexicalEmbed-Base",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7399,7 +6918,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/LFM-Q4-GGUFS",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7453,7 +6972,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/LFM2-PTBR-imatrix-Quants",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7488,7 +7007,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/micro-bertim-embeddings",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7538,12 +7057,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Mistral-7B-Portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Mistral-7B-Portuguese-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7578,7 +7097,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Mistral-7B-Portuguese-AWQ",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7615,7 +7134,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/multilingual-e5-small-distilled-16m",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7650,7 +7169,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Nanoranker",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7685,7 +7204,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/nomic-embed-text-v2-moe-distilled-high-quality",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7720,7 +7239,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/portuguese-bge-m3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7755,7 +7274,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/portuguese-en-bge-m3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7790,7 +7309,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/portuguese-multilingual-e5-small",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7825,7 +7344,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/portuguese-nomic-embed-text-v2-moe",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7860,7 +7379,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/prompt-router",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7897,7 +7416,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/ptt5-small-named-entity-recognition",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7932,7 +7451,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/ptt5_small_portuguese_summarizer",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -7996,17 +7515,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen0.5b-RagSemanticChunker",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen0.5b-RagSemanticChunker-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen0.5b-RagSemanticChunker-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8070,69 +7589,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Chunk-Compressor",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Chunk-Compressor-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-   "nome": "Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "Qwen2.5",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "mit",
-   "parametros_b": 0.49,
-   "downloads": 2,
-   "atualizado": "2025-02-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-   "base": "cnmoro/Qwen2.5-0.5B-Chunk-Compressor",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-     "autor": "cnmoro",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-     "atualizado": "2025-02-22",
-     "downloads": 2,
-     "proprio": true,
-     "gb": 0.53,
-     "variante": "qwen2.5-0.5b-chunk-compressor-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.53,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.53,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8182,12 +7649,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Portuguese-Hybrid-Reasoning",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Portuguese-Hybrid-Reasoning-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8237,12 +7704,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Portuguese-Prompt-Decomposer",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Portuguese-Prompt-Decomposer-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8292,12 +7759,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Portuguese-v1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Portuguese-v1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8347,12 +7814,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Portuguese-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Portuguese-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8430,74 +7897,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Rag-Thinking",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Rag-Thinking-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Qwen2.5-0.5B-Rag-Thinking-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-   "nome": "Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-   "publicador": "cnmoro",
-   "escopo": "br",
-   "familia": "Qwen2.5",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "mit",
-   "parametros_b": 0.49,
-   "downloads": 6,
-   "atualizado": "2025-02-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-   "base": "cnmoro/Qwen2.5-0.5B-Rag-Thinking",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-     "autor": "cnmoro",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-     "atualizado": "2025-02-22",
-     "downloads": 6,
-     "proprio": true,
-     "gb": 0.53,
-     "variante": "qwen2.5-0.5b-rag-thinking-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.53,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.53,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8549,12 +7964,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen3-7B-A3B-REAP-PTBR",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/cnmoro/Qwen3-7B-A3B-REAP-PTBR-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8606,7 +8021,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen3.5-2B-Pruned-English-Portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8641,7 +8056,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Qwen3b-RagSemanticChunker",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8676,7 +8091,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/snowflake-arctic-embed-m-v2.0-cpu",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8711,7 +8126,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-384-pten",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8746,7 +8161,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-384-pten-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8781,7 +8196,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-384-pten-v2-st",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8816,7 +8231,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-eng-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8851,7 +8266,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-eng-ptbr-large",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8886,7 +8301,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-nomic-eng-ptbr-tiny",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8921,7 +8336,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/static-retrieval-distilbert-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8958,7 +8373,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/t5-small-named-entity-recognition",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -8995,7 +8410,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/tangled-llama-33m-32k-instruct-v0.1-fix",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9047,12 +8462,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/TangledLlama33m-Reranker-EnPt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (do publicador)",
      "url": "https://huggingface.co/cnmoro/TangledLlama33m-Reranker-EnPt-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9087,7 +8502,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/teenytinyllama-160m-text-simplification-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9122,7 +8537,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/TeenyTinyLlama-460m-Summarizer-PTBR",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9157,7 +8572,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/teenytinyllama-460m-text-simplification-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9207,12 +8622,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/TinyLlama-1.1B-intermediate-1.5T-PTBR-Instruct-v3-8k-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9247,7 +8662,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/TinyLlama-ContextQuestionPair-Classifier-Reranker",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9299,12 +8714,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Tucano-160m-Portuguese-Instruct",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (do publicador)",
      "url": "https://huggingface.co/cnmoro/Tucano-160m-Portuguese-Instruct-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9354,12 +8769,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Tucano-160m-Portuguese-Instruct-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Tucano-160m-Portuguese-Instruct-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9394,7 +8809,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/cnmoro/Tucano160m-Reranker-EnPt",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9503,7 +8918,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/bert-restore-punctuation-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9525,6 +8940,22 @@
    "base": null,
    "formatos_proprios": [],
    "builds": [
+    {
+     "repo": "lucianosb/canarim-7B-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/canarim-7B-GGUF",
+     "atualizado": "2023-11-21",
+     "downloads": 273,
+     "proprio": false,
+     "gb": 4.08,
+     "variante": "canarim7b-q4_k_m.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/dominguesm/canarim-7b"
+    },
     {
      "repo": "mradermacher/canarim-7b-GGUF",
      "autor": "mradermacher",
@@ -9567,17 +8998,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/canarim-7b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/lucianosb/canarim-7B-GGUF",
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/canarim-7b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/canarim-7b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9599,6 +9035,22 @@
    "base": null,
    "formatos_proprios": [],
    "builds": [
+    {
+     "repo": "lucianosb/canarim-7B-instruct-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/canarim-7B-instruct-GGUF",
+     "atualizado": "2023-11-21",
+     "downloads": 218,
+     "proprio": false,
+     "gb": 4.08,
+     "variante": "canarim7b-instruct-q4_k_m.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/dominguesm/Canarim-7B-Instruct"
+    },
     {
      "repo": "mradermacher/Canarim-7B-Instruct-GGUF",
      "autor": "mradermacher",
@@ -9641,17 +9093,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/Canarim-7B-Instruct",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/lucianosb/canarim-7B-instruct-GGUF",
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Canarim-7B-Instruct-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Canarim-7B-Instruct-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9715,17 +9172,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/canarim-7b-vestibulaide",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/canarim-7b-vestibulaide-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/canarim-7b-vestibulaide-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9760,7 +9217,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/canarim-bert-nheengatu",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9795,7 +9252,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/canarim-bert-postag-nheengatu",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9830,7 +9287,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/legal-bert-base-cased-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9882,12 +9339,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/legal-bert-ner-base-cased-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (da comunidade)",
      "url": "https://huggingface.co/augustaklug/legal-bert-ner-base-cased-ptbr-onnx",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -9922,80 +9379,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/mambarim-110m",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-   "nome": "NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-   "publicador": "dominguesm",
-   "escopo": "br",
-   "familia": "NVIDIA",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "other",
-   "parametros_b": 8.89,
-   "downloads": 668,
-   "atualizado": "2025-08-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-   "base": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-     "autor": "dominguesm",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-     "atualizado": "2025-08-30",
-     "downloads": 668,
-     "proprio": true,
-     "gb": 6.53,
-     "variante": "nemotron-nano-9b-v2-q4_k_m.gguf",
-     "destaque": true
-    },
-    {
-     "repo": "litert-community/NVIDIA-Nemotron-Nano-9B-v2",
-     "autor": "litert-community",
-     "formato": "litert",
-     "oficial": false,
-     "runtime_org": true,
-     "url": "https://huggingface.co/litert-community/NVIDIA-Nemotron-Nano-9B-v2",
-     "atualizado": "2026-11-20",
-     "downloads": 646,
-     "proprio": false,
-     "gb": 5.59,
-     "variante": "NVIDIA-Nemotron-Nano-9B-v2_int4.litertlm",
-     "destaque": true
-    }
-   ],
-   "status": "comunidade",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nativo",
-   "gb_navegador": 5.59,
-   "formatos_navegador": [
-    "litert"
-   ],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-     "acessado": "2026-11-20"
-    },
-    {
-     "rotulo": "Build litert (da comunidade)",
-     "url": "https://huggingface.co/litert-community/NVIDIA-Nemotron-Nano-9B-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -10032,7 +9416,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/positive-reframing-en",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -10069,7 +9453,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/positive-reframing-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -10104,7 +9488,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/pt_core_news_trf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -10139,7 +9523,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/dominguesm/tiny-random-canarim",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -10370,7 +9754,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/FMendonca/qwen3-1.7b-agente-suporte-ptbr-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -39412,145 +38796,6 @@
    "creditos": []
   },
   {
-   "id": "guicybercode/Aira-2-portuguese-124M-GGUF",
-   "nome": "Aira-2-portuguese-124M-GGUF",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "Aira-2",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.12,
-   "downloads": 160,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-GGUF",
-   "base": "nicholasKluge/Aira-2-portuguese-124M",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "guicybercode/Aira-2-portuguese-124M-GGUF",
-     "autor": "guicybercode",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-GGUF",
-     "atualizado": "2026-10-22",
-     "downloads": 160,
-     "proprio": true,
-     "gb": 0.09,
-     "variante": "Aira-2-portuguese-124M-Q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.09,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.09,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/Aira-2-portuguese-124M-mlx-4bit",
-   "nome": "Aira-2-portuguese-124M-mlx-4bit",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "Aira-2",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.12,
-   "downloads": 44,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-mlx-4bit",
-   "base": "nicholasKluge/Aira-2-portuguese-124M",
-   "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-mlx-4bit",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/bee-350m-pt-base-GGUF",
-   "nome": "bee-350m-pt-base-GGUF",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "bee",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.35,
-   "downloads": 184,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/bee-350m-pt-base-GGUF",
-   "base": "BrCamp/bee-350m-pt-base",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "guicybercode/bee-350m-pt-base-GGUF",
-     "autor": "guicybercode",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/guicybercode/bee-350m-pt-base-GGUF",
-     "atualizado": "2026-10-22",
-     "downloads": 184,
-     "proprio": true,
-     "gb": 0.25,
-     "variante": "bee-350m-pt-base-Q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.25,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.25,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/bee-350m-pt-base-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
    "id": "guicybercode/br-sovereign-llm-research",
    "nome": "br-sovereign-llm-research",
    "publicador": "guicybercode",
@@ -39580,7 +38825,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/guicybercode/br-sovereign-llm-research",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -39615,181 +38860,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/guicybercode/br-sovereign-llm-smoke",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-   "nome": "NBR-1B-Portuguese-MCQ-GGUF",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "NBR",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 1.28,
-   "downloads": 87,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-   "base": "limajr/NBR-1B-Portuguese-MCQ",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-     "autor": "guicybercode",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-     "atualizado": "2026-10-22",
-     "downloads": 87,
-     "proprio": true,
-     "gb": 0.84,
-     "variante": "NBR-1B-Portuguese-MCQ-Q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.84,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.84,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-   "nome": "NBR-1B-Portuguese-MCQ-mlx-4bit",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "NBR",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 1.28,
-   "downloads": 41,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-   "base": "limajr/NBR-1B-Portuguese-MCQ",
-   "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/Tucano-630m-GGUF",
-   "nome": "Tucano-630m-GGUF",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "Tucano",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.63,
-   "downloads": 123,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/Tucano-630m-GGUF",
-   "base": "TucanoBR/Tucano-630m",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "guicybercode/Tucano-630m-GGUF",
-     "autor": "guicybercode",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/guicybercode/Tucano-630m-GGUF",
-     "atualizado": "2026-10-22",
-     "downloads": 123,
-     "proprio": true,
-     "gb": 0.39,
-     "variante": "Tucano-630m-Q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.39,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.39,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/Tucano-630m-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "guicybercode/Tucano-630m-mlx-4bit",
-   "nome": "Tucano-630m-mlx-4bit",
-   "publicador": "guicybercode",
-   "escopo": "br",
-   "familia": "Tucano",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.63,
-   "downloads": 34,
-   "atualizado": "2026-10-22",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/guicybercode/Tucano-630m-mlx-4bit",
-   "base": "TucanoBR/Tucano-630m",
-   "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/guicybercode/Tucano-630m-mlx-4bit",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -39824,7 +38895,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/guicybercode/zh-news-gpt-20m",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -39904,76 +38975,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/01-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/01-v2-Q4_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/01-v2-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/01-v2-Q6_K-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/01-v2-Q4_0-GGUF",
-   "nome": "01-v2-Q4_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "01-v2",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 8.03,
-   "downloads": 9,
-   "atualizado": "2024-12-27",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/01-v2-Q4_0-GGUF",
-   "base": "Guilherme34/01-v2",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/01-v2-Q4_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/01-v2-Q4_0-GGUF",
-     "atualizado": "2024-12-27",
-     "downloads": 9,
-     "proprio": true,
-     "gb": 4.66,
-     "variante": "01-v2-q4_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/01-v2-Q4_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40062,22 +39079,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/ArliAI-RPMax-Formax-v1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/ArliAI-RPMax-Formax-v1-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/ArliAI-RPMax-Formax-v1-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/ArliAI-RPMax-Formax-v1-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40112,7 +39129,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/backup-medra-4b-ablit",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40147,7 +39164,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/CODER-0.5b_awq",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40197,64 +39214,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Curious-Alpha-dontdownload",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-   "nome": "Curious-Alpha-dontdownload-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Curious",
-   "tarefa": "image-text-to-text",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 4.33,
-   "downloads": 18,
-   "atualizado": "2026-06-13",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-   "base": "Guilherme34/Curious-Alpha-dontdownload",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-     "atualizado": "2026-06-13",
-     "downloads": 18,
-     "proprio": true,
-     "gb": 4.61,
-     "variante": "curious-alpha-dontdownload-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40367,130 +39332,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-Q4_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Firefly-Q4_0-GGUF",
-   "nome": "Firefly-Q4_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Firefly",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 3.21,
-   "downloads": 16,
-   "atualizado": "2025-11-23",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Firefly-Q4_0-GGUF",
-   "base": "Guilherme34/Firefly",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Firefly-Q4_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Firefly-Q4_0-GGUF",
-     "atualizado": "2025-11-23",
-     "downloads": 16,
-     "proprio": true,
-     "gb": 1.92,
-     "variante": "firefly-q4_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 1.92,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 1.92,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Firefly-Q4_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Firefly-Q8_0-GGUF",
-   "nome": "Firefly-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Firefly",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 3.21,
-   "downloads": 14,
-   "atualizado": "2025-11-23",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Firefly-Q8_0-GGUF",
-   "base": "Guilherme34/Firefly",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Firefly-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Firefly-Q8_0-GGUF",
-     "atualizado": "2025-11-23",
-     "downloads": 14,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "firefly-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Firefly-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40554,17 +39411,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V1.5Q-Beta",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V1.5Q-Beta-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V1.5Q-Beta-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40628,17 +39485,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V1Q-Beta",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V1Q-Beta-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V1Q-Beta-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40738,22 +39595,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -40831,128 +39688,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2-abliterated",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2-abliterated-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2-abliterated-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-   "nome": "Firefly-V2-abliterated-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Firefly",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 3.61,
-   "downloads": 26,
-   "atualizado": "2025-12-07",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-   "base": "Guilherme34/Firefly-V2-abliterated",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "atualizado": "2025-12-07",
-     "downloads": 26,
-     "proprio": true,
-     "gb": 3.84,
-     "variante": "firefly-v2-abliterated-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.84,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.84,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Firefly-V2-Q8_0-GGUF",
-   "nome": "Firefly-V2-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Firefly",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 3.21,
-   "downloads": 9,
-   "atualizado": "2025-11-24",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q8_0-GGUF",
-   "base": "Guilherme34/Firefly-V2",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Firefly-V2-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q8_0-GGUF",
-     "atualizado": "2025-11-24",
-     "downloads": 9,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "firefly-v2-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Firefly-V2-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41041,22 +39792,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2.5",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2.5-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2.5-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2.5-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41145,22 +39896,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2Q-NonThinking-RP",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-NonThinking-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-NonThinking-RP-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-NonThinking-RP-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41238,22 +39989,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2Q-Think-RP-BETA",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-Think-RP-BETA-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-Think-RP-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V2Q-Think-RP-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41307,7 +40058,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V2Q-Think-RP-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41371,17 +40122,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V3-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41459,22 +40210,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V3.2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V3.2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-V3.2-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41509,61 +40260,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-V3.2-1-dontdownload",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-   "nome": "Firefly-V3.2-Alpha-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Firefly",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 3.21,
-   "downloads": 20,
-   "atualizado": "2026-07-06",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-   "base": "Guilherme34/Firefly-V3.2",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-     "atualizado": "2026-07-06",
-     "downloads": 20,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "firefly-v3.2-alpha-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41652,22 +40349,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-BetterGGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-BetterGGUF-iMatrix",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v4-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41731,17 +40428,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-Beta-2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v4-Beta-2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v4-Beta-2-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41809,12 +40506,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-BetterGGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-BetterGGUF-iMatrix",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41868,7 +40565,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v4-BetterGGUF-iMatrix",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41932,17 +40629,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v5",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v5-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v5-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -41996,7 +40693,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v5-Beta-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42031,7 +40728,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v5-sft-DONTDOWNLOAD-almostfinished",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42066,7 +40763,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v5-sft-DONTDOWNLOAD-STILLDOING",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42130,17 +40827,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Firefly-v6-DONTDOWNLOAD-STILLONPROGRESS",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v6-DONTDOWNLOAD-STILLONPROGRESS-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Firefly-v6-DONTDOWNLOAD-STILLONPROGRESS-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42190,12 +40887,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/functiongemma-mobileactions",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/functiongemma-mobileactions-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42245,12 +40942,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/gemma-3-sentient",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/gemma-3-sentient-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42285,7 +40982,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Jennifer-7bv2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42320,7 +41017,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Jennifer-uwu-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42355,7 +41052,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Jennifer-v4-model",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42390,7 +41087,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Jenniferv2-gptq4bit",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42444,7 +41141,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Jeva-9b-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42508,123 +41205,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/LFM2.5-2.6B-Abliterated-Advanced",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/LFM2.5-2.6B-Abliterated-Advanced-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/LFM2.5-2.6B-Abliterated-Advanced-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-   "nome": "LFM3-1.7B-Looped-HiddenCoT-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "LFM3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 2.7,
-   "downloads": 364,
-   "atualizado": "2026-11-02",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-   "base": "LiquidAI/LFM3-1.7B",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-     "atualizado": "2026-11-02",
-     "downloads": 364,
-     "proprio": true,
-     "gb": 2.23,
-     "variante": "lfm3-v21-Q6_K.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 2.23,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 2.23,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-   "nome": "LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "LFM3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 2.7,
-   "downloads": 626,
-   "atualizado": "2026-11-02",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-   "base": "LiquidAI/LFM3-Omni-2B",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-     "atualizado": "2026-11-02",
-     "downloads": 626,
-     "proprio": true,
-     "gb": 1.99,
-     "variante": "LFM3-Omni-2B-Looped-Latent-v2.1-Q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 1.99,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 1.99,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42659,7 +41250,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Llama-3.2-11b-vision-uncensored-notlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42725,17 +41316,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Lumina",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Lumina-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Lumina-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42799,17 +41390,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/MiniAGI",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/MiniAGI-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/MiniAGI-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -42909,74 +41500,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-   "nome": "MiniAGI-selfimprove-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "MiniAGI",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 7.62,
-   "downloads": 30,
-   "atualizado": "2025-12-21",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-   "base": "Guilherme34/MiniAGI-selfimprove",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-     "atualizado": "2025-12-21",
-     "downloads": 30,
-     "proprio": true,
-     "gb": 8.1,
-     "variante": "miniagi-selfimprove-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43011,7 +41550,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/nanochat-d32-retrained-hf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43075,17 +41614,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Orpheus-multilingual-merged",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Orpheus-multilingual-merged-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Orpheus-multilingual-merged-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43135,12 +41674,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/poke-test-model-base",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/poke-test-model-base-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43229,22 +41768,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Psychologist-3b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Psychologist-3b-GGUF-Q4_K_M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Psychologist-3b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43308,125 +41847,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-   "nome": "Psychologist-3b-beta-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Psychologist",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama3.2",
-   "parametros_b": 3.21,
-   "downloads": 9,
-   "atualizado": "2025-08-26",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-   "base": "Guilherme34/Psychologist-3b-beta",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-     "atualizado": "2025-08-26",
-     "downloads": 9,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "psychologist-3b-beta-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Psychologist-GGUF-3b-Q8_0",
-   "nome": "Psychologist-GGUF-3b-Q8_0",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Psychologist",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama3.2",
-   "parametros_b": 3.21,
-   "downloads": 3,
-   "atualizado": "2025-08-25",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Psychologist-GGUF-3b-Q8_0",
-   "base": "Guilherme34/Psychologist-3b",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "atualizado": "2025-08-25",
-     "downloads": 3,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "psychologist-romanian-hf-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43490,121 +41921,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-   "nome": "Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Qwen-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 4.02,
-   "downloads": 21,
-   "atualizado": "2025-11-19",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-   "base": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-     "atualizado": "2025-11-19",
-     "downloads": 21,
-     "proprio": true,
-     "gb": 2.37,
-     "variante": "qwen-3-4b-samantha-2.0-stillintraining-step-1400-q4_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 2.37,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 2.37,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-   "nome": "Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Qwen-3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 4.02,
-   "downloads": 19,
-   "atualizado": "2025-11-19",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-   "base": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-     "atualizado": "2025-11-19",
-     "downloads": 19,
-     "proprio": true,
-     "gb": 4.28,
-     "variante": "qwen-3-4b-samantha-2.0-stillintraining-step-1400-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43670,71 +41997,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/qwen3-conscious-fullmodel-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-   "nome": "qwen3-conscious-fullmodel-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "qwen3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 0.6,
-   "downloads": 10,
-   "atualizado": "2025-04-29",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-   "base": "Guilherme34/qwen3-conscious-fullmodel",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-     "atualizado": "2025-04-29",
-     "downloads": 10,
-     "proprio": true,
-     "gb": 0.64,
-     "variante": "qwen3-conscious-fullmodel-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.64,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.64,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43800,71 +42073,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/qwen3-conscious-fullmodel-v2-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-   "nome": "qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "qwen3",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 0.6,
-   "downloads": 1,
-   "atualizado": "2025-05-03",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-   "base": "Guilherme34/qwen3-conscious-fullmodel-v2",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-     "atualizado": "2025-05-03",
-     "downloads": 1,
-     "proprio": true,
-     "gb": 0.64,
-     "variante": "qwen3-conscious-fullmodel-v2-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.64,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.64,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43930,17 +42149,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Reasoner-8B",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Reasoner-8B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Reasoner-8B-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -43977,7 +42196,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-1b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44077,76 +42296,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-   "nome": "Reasoning-2.6-fixed-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Reasoning-2.6",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 1.24,
-   "downloads": 5,
-   "atualizado": "2024-10-30",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-   "base": "Guilherme34/Reasoning-2.6-fixed",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-     "atualizado": "2024-10-30",
-     "downloads": 5,
-     "proprio": true,
-     "gb": 1.32,
-     "variante": "reasoning-2.6-fixed-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 1.32,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 1.32,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44212,17 +42377,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Reasoning-test-merged",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Reasoning-test-merged-Q4_K_S-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Reasoning-test-merged-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44311,76 +42476,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/S5-nano-uncensored-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-   "nome": "S5-nano-uncensored-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "S5",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 4.33,
-   "downloads": 101,
-   "atualizado": "2026-11-09",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-   "base": "Guilherme34/S5-nano-uncensored",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-     "atualizado": "2026-11-09",
-     "downloads": 101,
-     "proprio": true,
-     "gb": 4.61,
-     "variante": "s5-nano-uncensored-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44430,64 +42541,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/sadtest",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/sadtest-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/sadtest-Q8_0-GGUF",
-   "nome": "sadtest-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "sadtest",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama3.2",
-   "parametros_b": 3.21,
-   "downloads": 20,
-   "atualizado": "2026-01-05",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/Guilherme34/sadtest-Q8_0-GGUF",
-   "base": "Guilherme34/sadtest",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/sadtest-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/sadtest-Q8_0-GGUF",
-     "atualizado": "2026-01-05",
-     "downloads": 20,
-     "proprio": true,
-     "gb": 3.42,
-     "variante": "sadtest-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.42,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.42,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/sadtest-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44569,17 +42628,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-3b-beta0.1-model-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44633,61 +42692,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model-nf4",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-   "nome": "Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Samantha",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama3.2",
-   "parametros_b": 3.21,
-   "downloads": 11,
-   "atualizado": "2025-08-20",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-   "base": "Guilherme34/Samantha-3b-beta0.1-model",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "atualizado": "2025-08-20",
-     "downloads": 11,
-     "proprio": true,
-     "gb": 2.02,
-     "variante": "samantha-3b-beta0.1-model-q4_k_m.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 2.02,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 2.02,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44778,76 +42783,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-hermes3-8b-model-fixed-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-   "nome": "Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Samantha",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 8.03,
-   "downloads": 6,
-   "atualizado": "2024-08-18",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-   "base": "Guilherme34/Samantha-hermes3-8b-model-fixed",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-     "atualizado": "2024-08-18",
-     "downloads": 6,
-     "proprio": true,
-     "gb": 8.54,
-     "variante": "samantha-hermes3-8b-model-fixed-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44897,12 +42848,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-MistralPy-7b-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-MistralPy-7b-modelnotlora-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44937,7 +42888,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-moondream",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -44972,7 +42923,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-multimodal-v2-model",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45007,7 +42958,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-omni",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45042,7 +42993,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-OS1-7bv2-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45096,7 +43047,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-OSONE-7b-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45146,12 +43097,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-phi3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-phi3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45205,7 +43156,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-phi3-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45240,7 +43191,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-Phixtral-2x2_8",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45304,17 +43255,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-qwen-0.5b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-qwen-0.5b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45392,76 +43343,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b-ptbr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-qwen-0.5b-ptbr-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-qwen-0.5b-ptbr-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-   "nome": "Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Samantha",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 0.49,
-   "downloads": 29,
-   "atualizado": "2024-07-19",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-   "base": "Guilherme34/Samantha-qwen-0.5b-ptbr",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-     "atualizado": "2024-07-19",
-     "downloads": 29,
-     "proprio": true,
-     "gb": 0.53,
-     "variante": "samantha-qwen-0.5b-ptbr-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 0.53,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 0.53,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45496,7 +43393,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-qwen-vision-0.5b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45533,7 +43430,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-raw-mergenotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45583,12 +43480,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-test",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-test-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45623,7 +43520,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-tinyllama-1.1b-v2-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45673,12 +43570,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-tinyllama-1.1b-v2-modelnotloranotquantized",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-tinyllama-1.1b-v2-modelnotloranotquantized-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45713,7 +43610,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45763,12 +43660,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v5-wizardlm2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v5-wizardlm2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45846,22 +43743,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v6",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-v6-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v6-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v6-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -45939,22 +43836,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v6.5",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-v6.5-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v6.5-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v6.5-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46034,22 +43931,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v7-4b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-v7-4b-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v7-4b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v7-4b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46129,76 +44026,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-v7-4b-lesscensored",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-v7-4b-lesscensored-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v7-4b-lesscensored-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samantha-v7-4b-lesscensored-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Samantha-vision-v2-GGUF",
-   "nome": "Samantha-vision-v2-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Samantha",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 8.03,
-   "downloads": 146,
-   "atualizado": "2025-01-01",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Samantha-vision-v2-GGUF",
-   "base": "Guilherme34/Samantha-vision-v2-ggufrecommended",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Samantha-vision-v2-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Samantha-vision-v2-GGUF",
-     "atualizado": "2025-01-01",
-     "downloads": 146,
-     "proprio": true,
-     "gb": 4.92,
-     "variante": "samantha-test-2-notrecomended-q4_k_m.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Samantha-vision-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46248,12 +44091,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samantha-vision-v2-ggufrecommended",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samantha-vision-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46288,7 +44131,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/SamanthaCode-v1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46323,7 +44166,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samanthav2-2.7b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46387,17 +44230,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samanthav2.5-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samanthav2.5-modelnotlora-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Samanthav2.5-modelnotlora-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46432,7 +44275,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samanthavision-modelnotlora",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46532,76 +44375,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/Samful",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samful-Q4_K_M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samful-Q6_K-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/Samful-Q8_0-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "Guilherme34/Samful-Q8_0-GGUF",
-   "nome": "Samful-Q8_0-GGUF",
-   "publicador": "Guilherme34",
-   "escopo": "br",
-   "familia": "Samful",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 4.02,
-   "downloads": 4,
-   "atualizado": "2025-11-19",
-   "idioma_pt": false,
-   "url": "https://huggingface.co/Guilherme34/Samful-Q8_0-GGUF",
-   "base": "Guilherme34/Samful",
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "Guilherme34/Samful-Q8_0-GGUF",
-     "autor": "Guilherme34",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/Guilherme34/Samful-Q8_0-GGUF",
-     "atualizado": "2025-11-19",
-     "downloads": 4,
-     "proprio": true,
-     "gb": 4.28,
-     "variante": "samful-q8_0.gguf",
-     "destaque": true
-    }
-   ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/Guilherme34/Samful-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -46703,22 +44492,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/Guilherme34/TwIL-8B-Abliterated-Uncensored",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/Guilherme34/TwIL-8B-Abliterated-Uncensored-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/TwIL-8B-Abliterated-Uncensored-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/TwIL-8B-Abliterated-Uncensored-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47178,6 +44967,114 @@
    ]
   },
   {
+   "id": "lucianfialho/atos-de-fala-ptbr",
+   "nome": "atos-de-fala-ptbr",
+   "publicador": "lucianfialho",
+   "escopo": "br",
+   "familia": "bert-portuguese",
+   "tarefa": "token-classification",
+   "familia_tarefa": "codificador",
+   "licenca": "mit",
+   "parametros_b": 0.11,
+   "downloads": 36,
+   "atualizado": "2026-06-07",
+   "idioma_pt": true,
+   "url": "https://huggingface.co/lucianfialho/atos-de-fala-ptbr",
+   "base": "neuralmind/bert-base-portuguese-cased",
+   "formatos_proprios": [
+    "onnx"
+   ],
+   "builds": [
+    {
+     "repo": "lucianfialho/atos-de-fala-ptbr",
+     "autor": "lucianfialho",
+     "formato": "onnx",
+     "oficial": true,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianfialho/atos-de-fala-ptbr",
+     "atualizado": "2026-06-07",
+     "downloads": 36,
+     "proprio": true,
+     "gb": 0.11,
+     "variante": "quantized",
+     "destaque": true
+    }
+   ],
+   "status": "oficial",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nativo",
+   "gb_navegador": 0.11,
+   "formatos_navegador": [
+    "onnx"
+   ],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/lucianfialho/atos-de-fala-ptbr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "creditos": []
+  },
+  {
+   "id": "lucianfialho/privacy-filter-br",
+   "nome": "privacy-filter-br",
+   "publicador": "lucianfialho",
+   "escopo": "br",
+   "familia": "bert-portuguese",
+   "tarefa": "token-classification",
+   "familia_tarefa": "codificador",
+   "licenca": "apache-2.0",
+   "parametros_b": 0.11,
+   "downloads": 42,
+   "atualizado": "2026-06-03",
+   "idioma_pt": true,
+   "url": "https://huggingface.co/lucianfialho/privacy-filter-br",
+   "base": "neuralmind/bert-base-portuguese-cased",
+   "formatos_proprios": [
+    "onnx"
+   ],
+   "builds": [
+    {
+     "repo": "lucianfialho/privacy-filter-br",
+     "autor": "lucianfialho",
+     "formato": "onnx",
+     "oficial": true,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianfialho/privacy-filter-br",
+     "atualizado": "2026-06-03",
+     "downloads": 42,
+     "proprio": true,
+     "gb": 0.11,
+     "variante": "int8",
+     "destaque": true
+    }
+   ],
+   "status": "oficial",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nativo",
+   "gb_navegador": 0.11,
+   "formatos_navegador": [
+    "onnx"
+   ],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/lucianfialho/privacy-filter-br",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "creditos": []
+  },
+  {
    "id": "lucianosb/boto-7B",
    "nome": "boto-7B",
    "publicador": "lucianosb",
@@ -47194,6 +45091,22 @@
    "base": "unsloth/mistral-7b-bnb-4bit",
    "formatos_proprios": [],
    "builds": [
+    {
+     "repo": "lucianosb/boto-7B-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": true,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/boto-7B-GGUF",
+     "atualizado": "2024-04-16",
+     "downloads": 432,
+     "proprio": false,
+     "gb": 4.37,
+     "variante": "boto-7B-q4_K_M.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/lucianosb/boto-7B"
+    },
     {
      "repo": "mradermacher/boto-7B-GGUF",
      "autor": "mradermacher",
@@ -47236,69 +45149,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/lucianosb/boto-7B",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (do publicador)",
+     "url": "https://huggingface.co/lucianosb/boto-7B-GGUF",
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/boto-7B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/boto-7B-i1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/boto-7B-GGUF",
-   "nome": "boto-7B-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "boto",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 7.24,
-   "downloads": 432,
-   "atualizado": "2024-04-16",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/boto-7B-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/boto-7B-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/boto-7B-GGUF",
-     "atualizado": "2024-04-16",
-     "downloads": 432,
-     "proprio": true,
-     "gb": 4.37,
-     "variante": "boto-7B-q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/boto-7B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47320,6 +45186,22 @@
    "base": "unsloth/mistral-7b-bnb-4bit",
    "formatos_proprios": [],
    "builds": [
+    {
+     "repo": "lucianosb/boto-7B-v1.1-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": true,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/boto-7B-v1.1-GGUF",
+     "atualizado": "2024-04-23",
+     "downloads": 157,
+     "proprio": false,
+     "gb": 4.37,
+     "variante": "boto-7B-v1_1-q4_K_M.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/lucianosb/boto-7B-v1.1"
+    },
     {
      "repo": "mradermacher/boto-7B-v1.1-GGUF",
      "autor": "mradermacher",
@@ -47348,64 +45230,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/lucianosb/boto-7B-v1.1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (do publicador)",
+     "url": "https://huggingface.co/lucianosb/boto-7B-v1.1-GGUF",
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/boto-7B-v1.1-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/boto-7B-v1.1-GGUF",
-   "nome": "boto-7B-v1.1-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "boto",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 7.24,
-   "downloads": 157,
-   "atualizado": "2024-04-23",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/boto-7B-v1.1-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/boto-7B-v1.1-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/boto-7B-v1.1-GGUF",
-     "atualizado": "2024-04-23",
-     "downloads": 157,
-     "proprio": true,
-     "gb": 4.37,
-     "variante": "boto-7B-v1_1-q4_K_M.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/boto-7B-v1.1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47426,43 +45261,6 @@
    "url": "https://huggingface.co/lucianosb/boto-7B-v1.2",
    "base": "unsloth/mistral-7b-instruct-v0.3-bnb-4bit",
    "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/boto-7B-v1.2",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/boto-7B-v1.2-GGUF",
-   "nome": "boto-7B-v1.2-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "boto",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 7.25,
-   "downloads": 218,
-   "atualizado": "2024-05-23",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/boto-7B-v1.2-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
    "builds": [
     {
      "repo": "lucianosb/boto-7B-v1.2-GGUF",
@@ -47473,14 +45271,14 @@
      "url": "https://huggingface.co/lucianosb/boto-7B-v1.2-GGUF",
      "atualizado": "2024-05-23",
      "downloads": 218,
-     "proprio": true,
+     "proprio": false,
      "gb": 4.37,
      "variante": "boto-7B-v1.2-GGUF-unsloth.Q4_K_M.gguf",
-     "destaque": true
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "- Modelo Original: [Boto-7B v1.2](https://huggingface.co/lucianosb/boto-7B-v1.2)"
     }
    ],
-   "tarefa_inferida": true,
-   "regra_tarefa": "tag de geracao de texto + pesos medidos",
    "status": "sem_build",
    "gguf": true,
    "gguf_wllama": false,
@@ -47493,8 +45291,13 @@
    "fontes": [
     {
      "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/lucianosb/boto-7B-v1.2",
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/lucianosb/boto-7B-v1.2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47572,22 +45375,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/lucianosb/boto-9B",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/lucianosb/boto-9B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/boto-9B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/boto-9B-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47622,111 +45425,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/lucianosb/boto-9B-it",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/canarim-7B-GGUF",
-   "nome": "canarim-7B-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "canarim",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama2",
-   "parametros_b": 6.74,
-   "downloads": 273,
-   "atualizado": "2023-11-21",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/canarim-7B-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/canarim-7B-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/canarim-7B-GGUF",
-     "atualizado": "2023-11-21",
-     "downloads": 273,
-     "proprio": true,
-     "gb": 4.08,
-     "variante": "canarim7b-q4_k_m.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/canarim-7B-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/canarim-7B-instruct-GGUF",
-   "nome": "canarim-7B-instruct-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "canarim",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "llama2",
-   "parametros_b": 6.74,
-   "downloads": 218,
-   "atualizado": "2023-11-21",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/canarim-7B-instruct-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/canarim-7B-instruct-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/canarim-7B-instruct-GGUF",
-     "atualizado": "2023-11-21",
-     "downloads": 218,
-     "proprio": true,
-     "gb": 4.08,
-     "variante": "canarim7b-instruct-q4_k_m.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/canarim-7B-instruct-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -47778,111 +45477,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/lucianosb/llama-2-7b-langchain-chat-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/open-cabrita3b-GGUF",
-   "nome": "open-cabrita3b-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "open",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 3.55,
-   "downloads": 401,
-   "atualizado": "2023-08-28",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/open-cabrita3b-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/open-cabrita3b-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/open-cabrita3b-GGUF",
-     "atualizado": "2023-08-28",
-     "downloads": 401,
-     "proprio": true,
-     "gb": 2.08,
-     "variante": "opencabrita3b-q4_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 2.08,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 2.08,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/open-cabrita3b-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": []
-  },
-  {
-   "id": "lucianosb/sabia-7b-GGUF",
-   "nome": "sabia-7b-GGUF",
-   "publicador": "lucianosb",
-   "escopo": "br",
-   "familia": "sabia",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": null,
-   "parametros_b": 6.74,
-   "downloads": 314,
-   "atualizado": "2023-11-09",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/lucianosb/sabia-7b-GGUF",
-   "base": null,
-   "formatos_proprios": [
-    "gguf"
-   ],
-   "builds": [
-    {
-     "repo": "lucianosb/sabia-7b-GGUF",
-     "autor": "lucianosb",
-     "formato": "gguf",
-     "oficial": true,
-     "runtime_org": false,
-     "url": "https://huggingface.co/lucianosb/sabia-7b-GGUF",
-     "atualizado": "2023-11-09",
-     "downloads": 314,
-     "proprio": true,
-     "gb": 3.83,
-     "variante": "sabia7b-q4_0.gguf",
-     "destaque": true
-    }
-   ],
-   "status": "sem_build",
-   "gguf": true,
-   "gguf_wllama": true,
-   "gguf_gb": 3.83,
-   "gguf_origem": "oficial",
-   "gguf_grande": false,
-   "via": "gguf",
-   "gb_navegador": 3.83,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/lucianosb/sabia-7b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48058,6 +45653,22 @@
      "destaque": true
     },
     {
+     "repo": "lucianosb/sabia-7b-GGUF",
+     "autor": "lucianosb",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/lucianosb/sabia-7b-GGUF",
+     "atualizado": "2023-11-09",
+     "downloads": 314,
+     "proprio": false,
+     "gb": 3.83,
+     "variante": "sabia7b-q4_0.gguf",
+     "destaque": true,
+     "grau": "inferido",
+     "trecho": "model_link: https://huggingface.co/maritaca-ai/sabia-7b"
+    },
+    {
      "repo": "mradermacher/sabia-7b-GGUF",
      "autor": "mradermacher",
      "formato": "gguf",
@@ -48088,12 +45699,12 @@
    ],
    "status": "sem_build",
    "gguf": true,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": true,
-   "via": "nenhum",
-   "gb_navegador": null,
+   "gguf_wllama": true,
+   "gguf_gb": 3.83,
+   "gguf_origem": "comunidade",
+   "gguf_grande": false,
+   "via": "gguf",
+   "gb_navegador": 3.83,
    "formatos_navegador": [],
    "fontes": [
     {
@@ -48104,17 +45715,22 @@
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/TheBloke/sabia-7B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/lucianosb/sabia-7b-GGUF",
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/sabia-7b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/sabia-7b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48483,22 +46099,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-124M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/Felladrin/gguf-Aira-2-124M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-124M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-124M-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48587,22 +46203,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-124M-DPO",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/Felladrin/gguf-sharded-Aira-2-124M-DPO",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-124M-DPO-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-124M-DPO-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48702,22 +46318,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-1B1",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/Aira-2-1B1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-1B1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-1B1-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48781,17 +46397,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-1B5",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-1B5-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/tensorblock/Aira-2-1B5-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48880,22 +46496,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-355M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/Felladrin/gguf-sharded-Aira-2-355M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-355M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-355M-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -48973,22 +46589,22 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-774M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-774M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-774M-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/tensorblock/Aira-2-774M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49038,12 +46654,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-portuguese-124M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/guicybercode/Aira-2-portuguese-124M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49078,7 +46694,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-portuguese-1B7",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49142,17 +46758,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-2-portuguese-560M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-portuguese-560M-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Aira-2-portuguese-560M-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49187,7 +46803,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-OPT-125M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49222,7 +46838,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-OPT-1B3",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49257,7 +46873,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Aira-OPT-350M",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49307,12 +46923,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Harmless-RewardModel",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Harmless-RewardModel-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49347,7 +46963,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/Harmless-RewardModelPT",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49382,7 +46998,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/RewardModel",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49417,7 +47033,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/RewardModelPT",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -49481,17 +47097,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/TeenyTinyLlama-160m-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/tensorblock/TeenyTinyLlama-160m-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49528,7 +47144,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m-AgNews",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49565,7 +47181,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m-Assin2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49602,7 +47218,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m-FaQuAD-NLI",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49639,7 +47255,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m-HateBR",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49676,7 +47292,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-160m-IMDB",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49728,12 +47344,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/TeenyTinyLlama-460m-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49770,7 +47386,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-AgNews",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49807,44 +47423,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Assin2",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": [
-    "inst:fapergs"
-   ]
-  },
-  {
-   "id": "nicholasKluge/TeenyTinyLlama-460m-awq",
-   "nome": "TeenyTinyLlama-460m-awq",
-   "publicador": "nicholasKluge",
-   "escopo": "br",
-   "familia": "TeenyTinyLlama",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.47,
-   "downloads": 27,
-   "atualizado": "2025-01-15",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-awq",
-   "base": "nicholasKluge/TeenyTinyLlama-460m",
-   "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-awq",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49910,54 +47489,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Chat",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/afrideva/TeenyTinyLlama-460m-Chat-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/tensorblock/TeenyTinyLlama-460m-Chat-GGUF",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "creditos": [
-    "inst:fapergs"
-   ]
-  },
-  {
-   "id": "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-   "nome": "TeenyTinyLlama-460m-Chat-awq",
-   "publicador": "nicholasKluge",
-   "escopo": "br",
-   "familia": "TeenyTinyLlama",
-   "tarefa": "text-generation",
-   "familia_tarefa": "gerador",
-   "licenca": "apache-2.0",
-   "parametros_b": 0.47,
-   "downloads": 20,
-   "atualizado": "2025-01-15",
-   "idioma_pt": true,
-   "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-   "base": "nicholasKluge/TeenyTinyLlama-460m",
-   "formatos_proprios": [],
-   "builds": [],
-   "status": "sem_build",
-   "gguf": false,
-   "gguf_wllama": false,
-   "gguf_gb": null,
-   "gguf_origem": null,
-   "gguf_grande": false,
-   "via": "nenhum",
-   "gb_navegador": null,
-   "formatos_navegador": [],
-   "fontes": [
-    {
-     "rotulo": "Modelo no Hugging Face",
-     "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -49994,7 +47536,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -50031,7 +47573,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-HateBR",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -50068,7 +47610,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-IMDB",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": [
@@ -50120,12 +47662,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/ToxiGuardrail",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/ToxiGuardrail-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -50177,12 +47719,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge/ToxiGuardrailPT",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (da comunidade)",
      "url": "https://huggingface.co/onnx-community/ToxiGuardrailPT-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52026,17 +49568,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/Bode-3.1-8B-Instruct-full",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/WigWago/Bode-3.1-8B-Instruct-full-Q8_0-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/Bode-3.1-8B-Instruct-full-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52088,7 +49630,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/bode-7b-alpaca-pt-br-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52123,7 +49665,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/bode-7b-alpaca-pt-br-no-peft",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52158,7 +49700,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/doutor-bode-v2-2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52208,12 +49750,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/gembode-2b-it-ultraalpaca",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/gembode-2b-it-ultraalpaca-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52277,17 +49819,17 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/internlm-chatbode-7b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/internlm-chatbode-7b-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/mradermacher/internlm-chatbode-7b-i1-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52322,7 +49864,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/internlm2-chat-1_8b-ultracabrita",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52357,7 +49899,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/internlmbode-7b",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52392,7 +49934,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/phi-bode-2-ultraalpaca",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52442,12 +49984,12 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/phibode-3-mini-4k-ultraalpaca",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/tensorblock/phibode-3-mini-4k-ultraalpaca-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -52482,7 +50024,7 @@
     {
      "rotulo": "Modelo no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp/phibode_1_5_ultraalpaca",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -149803,32 +147345,32 @@
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/AtomicChat/LFM3-1.7B-Uncensored-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/turintech/LFM3-1.7B-Artemis-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build litert (da comunidade)",
      "url": "https://huggingface.co/litert-community/LFM3-1.7B-LiteRT",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build mlc (da comunidade)",
      "url": "https://huggingface.co/CharlZKP/LFM3-1.7B-MLC",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (do publicador)",
      "url": "https://huggingface.co/LiquidAI/LFM3-1.7B-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -151053,27 +148595,27 @@
     {
      "rotulo": "Build gguf (do publicador)",
      "url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/abliter8-ai/lfm3-2b-omni-abliter8-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/ggml-org/LFM3-Omni-2B-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build litert (da comunidade)",
      "url": "https://huggingface.co/litert-community/LFM3-Omni-2B-LiteRT",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build onnx (do publicador)",
      "url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B-ONNX",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -207396,22 +204938,22 @@
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/bartowski/nvidia_NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/second-state/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/weathermanj/NVIDIA-Nemotron-Nano-9B-v2-gguf",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     },
     {
      "rotulo": "Build litert (da comunidade)",
      "url": "https://huggingface.co/litert-community/NVIDIA-Nemotron-Nano-9B-v2",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []
@@ -272096,7 +269638,7 @@
     {
      "rotulo": "Build gguf (da comunidade)",
      "url": "https://huggingface.co/guicybercode/Tucano-630m-GGUF",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "creditos": []

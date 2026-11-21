@@ -131,17 +131,6 @@
       }
     },
     {
-      "modelo": "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-      "papel": "financiador",
-      "fonte": {
-        "tipo": "cartao_modelo",
-        "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-        "acessado": "2026-11-20",
-        "rotulo": "cartão do modelo",
-        "trecho": "a project supported by FAPERGS - ( Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul ), Brazil"
-      }
-    },
-    {
       "modelo": "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
       "papel": "financiador",
       "fonte": {
@@ -169,17 +158,6 @@
       "fonte": {
         "tipo": "cartao_modelo",
         "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-IMDB",
-        "acessado": "2026-11-20",
-        "rotulo": "cartão do modelo",
-        "trecho": "a project supported by FAPERGS - ( Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul ), Brazil"
-      }
-    },
-    {
-      "modelo": "nicholasKluge/TeenyTinyLlama-460m-awq",
-      "papel": "financiador",
-      "fonte": {
-        "tipo": "cartao_modelo",
-        "url": "https://huggingface.co/nicholasKluge/TeenyTinyLlama-460m-awq",
         "acessado": "2026-11-20",
         "rotulo": "cartão do modelo",
         "trecho": "a project supported by FAPERGS - ( Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul ), Brazil"

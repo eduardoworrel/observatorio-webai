@@ -61,7 +61,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/adalbertojunior",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 26,
@@ -212,10 +212,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/althayr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 2,
+   "n_modelos_mapeados": 0,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -365,7 +365,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/c2d-usp",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 35,
@@ -531,10 +531,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/cnmoro",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 69,
+   "n_modelos_mapeados": 60,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -612,10 +612,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/dominguesm",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 14,
+   "n_modelos_mapeados": 13,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -724,7 +724,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/FMendonca",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -829,10 +829,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/guicybercode",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 10,
+   "n_modelos_mapeados": 3,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -871,10 +871,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Guilherme34",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 108,
+   "n_modelos_mapeados": 84,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -1047,6 +1047,41 @@
    ]
   },
   {
+   "id": "lucianfialho",
+   "nome": "Lucian Fialho",
+   "tipo": "pessoa",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/lucianfialho",
+    "acessado": "2026-11-21",
+    "trecho": "localizacao no GitHub vinculado ao perfil do Hugging Face: Rio de Janeiro",
+    "regra": "E4: GitHub vinculado declara local no Brasil"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 2,
+   "n_membros": null,
+   "url": "https://huggingface.co/lucianfialho",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/lucianfialho",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
    "id": "lucianosb",
    "nome": "Luciano Santa Brígida",
    "tipo": "pessoa",
@@ -1077,10 +1112,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/lucianosb",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 13,
+   "n_modelos_mapeados": 6,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
@@ -1238,11 +1273,14 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/nicholasKluge",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 33,
-   "membro_de": [],
+   "n_modelos_mapeados": 31,
+   "membro_de": [
+    "Polygl0t",
+    "TucanoBR"
+   ],
    "instituicoes": [
     "uni-bonn"
    ],
@@ -1405,7 +1443,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/recogna-nlp",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 11,

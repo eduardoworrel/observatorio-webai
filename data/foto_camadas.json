@@ -1,19 +1,19 @@
 {
  "datasets": {
-  "total": 2265,
+  "total": 2268,
   "por_escopo": {
-   "br": 309,
+   "br": 312,
    "pt": 1956
   },
-  "pt_br": 263,
+  "pt_br": 265,
   "por_faixa": {
-   "1-100MB": 736,
+   "1-100MB": 738,
    "1-10GB": 415,
-   "100MB-1GB": 435,
+   "100MB-1GB": 436,
    "<1MB": 255,
    ">10GB": 424
   },
-  "downloads_total": 6498413
+  "downloads_total": 6498796
  },
  "benchmarks": {
   "total": 16,

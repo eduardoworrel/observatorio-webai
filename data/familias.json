@@ -9,8 +9,7 @@
    "id": "01-v2",
    "nome": "01-v2",
    "modelos": [
-    "Guilherme34/01-v2",
-    "Guilherme34/01-v2-Q4_0-GGUF"
+    "Guilherme34/01-v2"
    ],
    "publicadores": [
     "Guilherme34"
@@ -110,12 +109,9 @@
    "id": "aira-2",
    "nome": "Aira-2",
    "modelos": [
-    "guicybercode/Aira-2-portuguese-124M-GGUF",
-    "guicybercode/Aira-2-portuguese-124M-mlx-4bit",
     "nicholasKluge/Aira-2-124M-DPO"
    ],
    "publicadores": [
-    "guicybercode",
     "nicholasKluge"
    ]
   },
@@ -343,16 +339,6 @@
    ]
   },
   {
-   "id": "bee",
-   "nome": "bee",
-   "modelos": [
-    "guicybercode/bee-350m-pt-base-GGUF"
-   ],
-   "publicadores": [
-    "guicybercode"
-   ]
-  },
-  {
    "id": "bert",
    "nome": "bert",
    "modelos": [
@@ -409,6 +395,8 @@
     "H2IA/HubParser-Base-L",
     "H2IA/HubParser-Large-B",
     "H2IA/HubParser-Large-L",
+    "lucianfialho/atos-de-fala-ptbr",
+    "lucianfialho/privacy-filter-br",
     "neuralmind/bert-base-portuguese-cased",
     "neuralmind/bert-large-portuguese-cased",
     "nicholasKluge/Harmless-RewardModelPT",
@@ -432,6 +420,7 @@
     "cnmoro",
     "g-assismoraes",
     "H2IA",
+    "lucianfialho",
     "neuralmind",
     "nicholasKluge",
     "pucpr-br",
@@ -727,18 +716,6 @@
    ]
   },
   {
-   "id": "boto",
-   "nome": "boto",
-   "modelos": [
-    "lucianosb/boto-7B-GGUF",
-    "lucianosb/boto-7B-v1.1-GGUF",
-    "lucianosb/boto-7B-v1.2-GGUF"
-   ],
-   "publicadores": [
-    "lucianosb"
-   ]
-  },
-  {
    "id": "br",
    "nome": "br",
    "modelos": [
@@ -819,13 +796,10 @@
     "dominguesm/Canarim-7B-Instruct",
     "dominguesm/canarim-7b-vestibulaide",
     "dominguesm/canarim-bert-nheengatu",
-    "dominguesm/canarim-bert-postag-nheengatu",
-    "lucianosb/canarim-7B-GGUF",
-    "lucianosb/canarim-7B-instruct-GGUF"
+    "dominguesm/canarim-bert-postag-nheengatu"
    ],
    "publicadores": [
-    "dominguesm",
-    "lucianosb"
+    "dominguesm"
    ]
   },
   {
@@ -1067,16 +1041,6 @@
    ],
    "publicadores": [
     "HuggingFaceTB"
-   ]
-  },
-  {
-   "id": "curious",
-   "nome": "Curious",
-   "modelos": [
-    "Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF"
-   ],
-   "publicadores": [
-    "Guilherme34"
    ]
   },
   {
@@ -1610,18 +1574,13 @@
    "id": "firefly",
    "nome": "Firefly",
    "modelos": [
-    "Guilherme34/Firefly-Q4_0-GGUF",
-    "Guilherme34/Firefly-Q8_0-GGUF",
     "Guilherme34/Firefly-V2",
     "Guilherme34/Firefly-V2-abliterated",
-    "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-    "Guilherme34/Firefly-V2-Q8_0-GGUF",
     "Guilherme34/Firefly-V2.5",
     "Guilherme34/Firefly-V2Q-Think-RP-GGUF",
     "Guilherme34/Firefly-V3",
     "Guilherme34/Firefly-V3.2",
     "Guilherme34/Firefly-V3.2-1-dontdownload",
-    "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
     "Guilherme34/Firefly-v4-BetterGGUF",
     "Guilherme34/Firefly-v4-BetterGGUF-iMatrix",
     "Guilherme34/Firefly-v5",
@@ -1798,13 +1757,9 @@
   },
   {
    "id": "gemma-3",
-   "nome": "Gemma-3",
+   "nome": "gemma-3",
    "modelos": [
-    "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-    "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
     "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
-    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
     "g-assismoraes/gemma-1b-it-agnews",
     "g-assismoraes/gemma-1b-it-assin2",
     "g-assismoraes/gemma-1b-it-faquad",
@@ -1890,9 +1845,7 @@
     "sallani/PrivaMesh-Edge"
    ],
    "publicadores": [
-    "althayr",
     "CEIA-UFG",
-    "cnmoro",
     "g-assismoraes",
     "Guilherme34",
     "google",
@@ -2043,20 +1996,6 @@
    ],
    "publicadores": [
     "microsoft"
-   ]
-  },
-  {
-   "id": "gliclass",
-   "nome": "gliclass",
-   "modelos": [
-    "cnmoro/gliclass-base-v3.0-onnx",
-    "cnmoro/gliclass-edge-v3.0-onnx",
-    "cnmoro/gliclass-large-v3.0-onnx",
-    "cnmoro/gliclass-modern-large-v3.0-onnx",
-    "cnmoro/gliclass-x-base-onnx"
-   ],
-   "publicadores": [
-    "cnmoro"
    ]
   },
   {
@@ -2994,8 +2933,6 @@
    "id": "lfm3",
    "nome": "LFM3",
    "modelos": [
-    "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-    "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
     "daveycodez/LFM3-1.7B-Web-ONNX",
     "LiquidAI/d1-2B",
     "LiquidAI/LFM3-1.7B",
@@ -3025,7 +2962,6 @@
     "LiquidAI/LFM3-VL-2B-NVFP4"
    ],
    "publicadores": [
-    "Guilherme34",
     "daveycodez",
     "LiquidAI"
    ]
@@ -3713,8 +3649,7 @@
    "nome": "MiniAGI",
    "modelos": [
     "Guilherme34/MiniAGI",
-    "Guilherme34/MiniAGI-selfimprove",
-    "Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF"
+    "Guilherme34/MiniAGI-selfimprove"
    ],
    "publicadores": [
     "Guilherme34"
@@ -4057,17 +3992,6 @@
    ]
   },
   {
-   "id": "nbr",
-   "nome": "NBR",
-   "modelos": [
-    "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-    "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit"
-   ],
-   "publicadores": [
-    "guicybercode"
-   ]
-  },
-  {
    "id": "nemo-codec",
    "nome": "nemo-codec",
    "modelos": [
@@ -4233,7 +4157,6 @@
    "nome": "NVIDIA",
    "modelos": [
     "ceia-research/lumi-4b",
-    "dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
     "nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8",
@@ -4260,7 +4183,6 @@
    ],
    "publicadores": [
     "ceia-research",
-    "dominguesm",
     "nvidia"
    ]
   },
@@ -4426,7 +4348,6 @@
    "nome": "open",
    "modelos": [
     "22h/open-cabrita3b",
-    "lucianosb/open-cabrita3b-GGUF",
     "allenai/open-instruct-baize-13b",
     "allenai/open-instruct-baize-7b",
     "allenai/open-instruct-code-alpaca-13b",
@@ -4462,7 +4383,6 @@
    ],
    "publicadores": [
     "22h",
-    "lucianosb",
     "allenai"
    ]
   },
@@ -4938,17 +4858,6 @@
    ]
   },
   {
-   "id": "psychologist",
-   "nome": "Psychologist",
-   "modelos": [
-    "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-    "Guilherme34/Psychologist-GGUF-3b-Q8_0"
-   ],
-   "publicadores": [
-    "Guilherme34"
-   ]
-  },
-  {
    "id": "pt",
    "nome": "pt",
    "modelos": [
@@ -5034,17 +4943,6 @@
    ],
    "publicadores": [
     "Qwen"
-   ]
-  },
-  {
-   "id": "qwen-3",
-   "nome": "Qwen-3",
-   "modelos": [
-    "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-    "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF"
-   ],
-   "publicadores": [
-    "Guilherme34"
    ]
   },
   {
@@ -5159,13 +5057,11 @@
     "artificialguybr/Qwen2.5-0.5B-OpenHermes2.5",
     "cnmoro/Qwen0.5b-RagSemanticChunker",
     "cnmoro/Qwen2.5-0.5B-Chunk-Compressor",
-    "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
     "cnmoro/Qwen2.5-0.5B-Portuguese-Hybrid-Reasoning",
     "cnmoro/Qwen2.5-0.5B-Portuguese-Prompt-Decomposer",
     "cnmoro/Qwen2.5-0.5B-Portuguese-v1",
     "cnmoro/Qwen2.5-0.5B-Portuguese-v2",
     "cnmoro/Qwen2.5-0.5B-Rag-Thinking",
-    "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
     "cnmoro/Qwen3b-RagSemanticChunker",
     "g-assismoraes/Qwen-Qwen2.5-1.5B-Instruct-agnews",
     "g-assismoraes/Qwen-Qwen2.5-1.5B-Instruct-assin2",
@@ -5529,9 +5425,7 @@
     "g-assismoraes/Qwen3-4B-Pira-merged",
     "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
     "Guilherme34/qwen3-conscious-fullmodel",
-    "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
     "Guilherme34/qwen3-conscious-fullmodel-v2",
-    "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
     "ufca-llms/jua-4B-legal-only",
     "ufca-llms/jua-4B-mixed",
     "ufca-llms/Qwen3-Embedding-0.6B-jua-V2",
@@ -5768,8 +5662,7 @@
    "nome": "Reasoning-2.6",
    "modelos": [
     "Guilherme34/Reasoning-2.6-1b",
-    "Guilherme34/Reasoning-2.6-fixed",
-    "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF"
+    "Guilherme34/Reasoning-2.6-fixed"
    ],
    "publicadores": [
     "Guilherme34"
@@ -5873,7 +5766,6 @@
    "nome": "S5",
    "modelos": [
     "Guilherme34/S5-nano-uncensored",
-    "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
     "maritaca-ai/S5-nano",
     "maritaca-ai/S5-nano-FP8"
    ],
@@ -5886,11 +5778,9 @@
    "id": "sabia",
    "nome": "sabia",
    "modelos": [
-    "lucianosb/sabia-7b-GGUF",
     "maritaca-ai/sabia-7b"
    ],
    "publicadores": [
-    "lucianosb",
     "maritaca-ai"
    ]
   },
@@ -5898,8 +5788,7 @@
    "id": "sadtest",
    "nome": "sadtest",
    "modelos": [
-    "Guilherme34/sadtest",
-    "Guilherme34/sadtest-Q8_0-GGUF"
+    "Guilherme34/sadtest"
    ],
    "publicadores": [
     "Guilherme34"
@@ -5910,9 +5799,7 @@
    "nome": "Samantha",
    "modelos": [
     "Guilherme34/Samantha-3b-beta0.1-model-nf4",
-    "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
     "Guilherme34/Samantha-hermes3-8b-model-fixed",
-    "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
     "Guilherme34/Samantha-MistralPy-7b-modelnotlora",
     "Guilherme34/Samantha-moondream",
     "Guilherme34/Samantha-multimodal-v2-model",
@@ -5924,7 +5811,6 @@
     "Guilherme34/Samantha-Phixtral-2x2_8",
     "Guilherme34/Samantha-qwen-0.5b",
     "Guilherme34/Samantha-qwen-0.5b-ptbr",
-    "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
     "Guilherme34/Samantha-qwen-vision-0.5b",
     "Guilherme34/Samantha-raw-mergenotlora",
     "Guilherme34/Samantha-test",
@@ -5936,7 +5822,6 @@
     "Guilherme34/Samantha-v6.5",
     "Guilherme34/Samantha-v7-4b",
     "Guilherme34/Samantha-v7-4b-lesscensored",
-    "Guilherme34/Samantha-vision-v2-GGUF",
     "Guilherme34/Samantha-vision-v2-ggufrecommended"
    ],
    "publicadores": [
@@ -5987,8 +5872,7 @@
    "id": "samful",
    "nome": "Samful",
    "modelos": [
-    "Guilherme34/Samful",
-    "Guilherme34/Samful-Q8_0-GGUF"
+    "Guilherme34/Samful"
    ],
    "publicadores": [
     "Guilherme34"
@@ -6385,9 +6269,7 @@
     "nicholasKluge/TeenyTinyLlama-460m",
     "nicholasKluge/TeenyTinyLlama-460m-AgNews",
     "nicholasKluge/TeenyTinyLlama-460m-Assin2",
-    "nicholasKluge/TeenyTinyLlama-460m-awq",
     "nicholasKluge/TeenyTinyLlama-460m-Chat",
-    "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
     "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
     "nicholasKluge/TeenyTinyLlama-460m-HateBR",
     "nicholasKluge/TeenyTinyLlama-460m-IMDB"
@@ -6589,8 +6471,6 @@
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50-it",
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst",
     "g-assismoraes/tucano-2b4-pira-paraphrase-e50-tst-it",
-    "guicybercode/Tucano-630m-GGUF",
-    "guicybercode/Tucano-630m-mlx-4bit",
     "TucanoBR/Tucano-160m",
     "TucanoBR/Tucano-1b1",
     "TucanoBR/Tucano-1b1-Instruct",
@@ -6603,7 +6483,6 @@
    "publicadores": [
     "cnmoro",
     "g-assismoraes",
-    "guicybercode",
     "TucanoBR"
    ]
   },

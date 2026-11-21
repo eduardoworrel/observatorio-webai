@@ -3,7 +3,7 @@
   "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "1ea498b6a6d10ba0"
+  "assinatura": "dd743ffb3565ebe6"
  },
  "instituicoes": [
   {
@@ -57,7 +57,7 @@
     "gerador": 0,
     "codificador": 0
    },
-   "n_creditados": 15,
+   "n_creditados": 13,
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -475,13 +475,13 @@
     "Polygl0t",
     "TucanoBR"
    ],
-   "n_modelos": 75,
+   "n_modelos": 73,
    "n_builds": {
     "nativo": 1,
     "gguf": 29
    },
    "por_familia_tarefa": {
-    "gerador": 48,
+    "gerador": 46,
     "codificador": 27
    },
    "n_creditados": 0,
@@ -653,13 +653,13 @@
     "nicholasKluge",
     "Polygl0t"
    ],
-   "n_modelos": 65,
+   "n_modelos": 63,
    "n_builds": {
     "nativo": 1,
     "gguf": 25
    },
    "por_familia_tarefa": {
-    "gerador": 40,
+    "gerador": 38,
     "codificador": 25
    },
    "n_creditados": 0,
@@ -1430,7 +1430,7 @@
       {
        "tipo": "publicador",
        "id": "nicholasKluge",
-       "n_modelos": 33,
+       "n_modelos": 31,
        "filhos": []
       },
       {
@@ -1540,7 +1540,7 @@
   {
    "tipo": "publicador",
    "id": "althayr",
-   "n_modelos": 2,
+   "n_modelos": 0,
    "filhos": []
   },
   {
@@ -1564,7 +1564,7 @@
   {
    "tipo": "publicador",
    "id": "cnmoro",
-   "n_modelos": 69,
+   "n_modelos": 60,
    "filhos": []
   },
   {
@@ -1576,7 +1576,7 @@
   {
    "tipo": "publicador",
    "id": "dominguesm",
-   "n_modelos": 14,
+   "n_modelos": 13,
    "filhos": []
   },
   {
@@ -1618,13 +1618,13 @@
   {
    "tipo": "publicador",
    "id": "guicybercode",
-   "n_modelos": 10,
+   "n_modelos": 3,
    "filhos": []
   },
   {
    "tipo": "publicador",
    "id": "Guilherme34",
-   "n_modelos": 108,
+   "n_modelos": 84,
    "filhos": []
   },
   {
@@ -1677,8 +1677,14 @@
   },
   {
    "tipo": "publicador",
+   "id": "lucianfialho",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "lucianosb",
-   "n_modelos": 13,
+   "n_modelos": 6,
    "filhos": []
   },
   {

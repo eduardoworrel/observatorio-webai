@@ -237,6 +237,125 @@ def e_build_de(nome_modelo, nome_cand):
     return len(c) > len(m) and c[: len(m)] == m and all(TOK_FMT.match(x) for x in c[len(m):])
 
 
+# ---------- conversao fiel: build do modelo original, nao modelo novo (SPEC 0.2, regra C) ----------
+CONV_CHAVE = {"gguf", "ggufs", "awq", "gptq", "exl2", "mlx", "onnx", "mlc", "litert", "litertlm", "quantized"}
+FMT_EXTRA = CONV_CHAVE | {"4bit", "8bit", "bnb", "imatrix", "i1", "fp8", "int4", "int8"}
+REF_HF = re.compile(r"([A-Za-z0-9][A-Za-z0-9_.-]*)/([A-Za-z0-9][A-Za-z0-9_.-]*)")
+
+
+def _tok_fmt(t):
+    return bool(TOK_FMT.match(t)) or t in FMT_EXTRA or bool(re.fullmatch(r"i?q\d.*|\d+bit|w\d+a\d+|f\d+", t))
+
+
+def nome_sem_formato(nome):
+    saida, ant = [], False
+    for t in toks(nome):
+        f = _tok_fmt(t) or (ant and t.isdigit())   # q8_0: o 0 pertence a marca
+        if not f:
+            saida.append(t)
+        ant = f
+    return saida
+
+
+def classificar_conversao(x, pub):
+    """Decide, por regra objetiva, se um repositorio e conversao fiel (formato ou quantizacao) de OUTRO modelo.
+    Devolve None (nao parece conversao) ou {"grau", "original", "trecho"} com grau:
+      declarado  : a tag base_model:quantized:X do cartao, ou base_model:X cujo nome, sem marcas de formato, e o de X;
+      inferido   : o nome sem marcas de formato e o de um repositorio X que o texto do cartao cita (id ou link), X existe e e de outra conta;
+      nao_determinado : o nome tem marca de conversao e nada disso se confirmou (o repositorio continua como esta)."""
+    rid, tags = x["id"], x.get("tags", [])
+    nome = rid.split("/")[-1]
+    tk = toks(nome)
+    if not (set(tk) & CONV_CHAVE):
+        return None
+    if any(re.match(r"base_model:(finetune|adapter|merge):", t) for t in tags):
+        return None   # a propria tag diz que e derivado, nao conversao
+    n = nome_sem_formato(nome)
+    for t in tags:
+        m = re.match(r"base_model:quantized:(.+)$", t)
+        if m and m.group(1).lower() != rid.lower():
+            return {"grau": "declarado", "original": m.group(1), "trecho": t}
+    b = base_primaria(tags)
+    if b and b.lower() != rid.lower() and nome_sem_formato(b.split("/")[-1]) == n:
+        return {"grau": "declarado", "original": b, "trecho": "base_model:" + b}
+    cartao = texto(f"https://huggingface.co/{rid}/raw/main/README.md")
+    for linha in cartao.splitlines():
+        for a, nm in REF_HF.findall(re.sub(r"https?://(?:www\.)?huggingface\.co/", "", linha)):
+            if a.lower() in ("datasets", "spaces", "models", "huggingface", "blog", "docs", "collections", "organizations"):
+                continue
+            ref = nome_sem_formato(nm)
+            if ref and (ref == n or n == toks(a) + ref):
+                d, _ = get(f"{API}/models/{a}/{nm}")
+                if isinstance(d, dict) and d.get("id") and d["id"].lower() != rid.lower():
+                    return {"grau": "inferido", "original": d["id"], "trecho": sem_pii(re.sub(r"\s+", " ", linha).strip())[:240]}
+    return {"grau": "nao_determinado", "original": None, "trecho": None}
+
+
+def recalcular_builds(m):
+    """Resumo de builds do modelo (status, GGUF, via, gb), sem rede, a partir dos builds ja medidos."""
+    por_fmt = {}
+    for b in sorted(m["builds"], key=lambda b: (not b["oficial"], not b["runtime_org"], -(b.get("downloads") or 0))):
+        por_fmt.setdefault(b["formato"], []).append(b)
+    gg = por_fmt.get("gguf", [])
+    gg_ok = None
+    for b in gg[:3]:
+        if b.get("gb") is not None and b["gb"] <= CORTE_GGUF_GB and (gg_ok is None or b["gb"] < gg_ok["gb"]):
+            gg_ok = b
+    nav = [b for b in m["builds"] if b["formato"] in NAVEGADOR]
+    m["status"] = "oficial" if any(b["oficial"] for b in nav) else "comunidade" if nav else "sem_build"
+    m["gguf"] = bool(gg)
+    m["gguf_wllama"] = gg_ok is not None
+    m["gguf_gb"] = gg_ok["gb"] if gg_ok else None
+    m["gguf_origem"] = ("oficial" if gg_ok["oficial"] else "comunidade") if gg_ok else None
+    m["gguf_grande"] = bool(gg) and gg_ok is None and any(b.get("gb") for b in gg[:3])
+    m["via"] = "nativo" if nav else ("gguf" if gg_ok else "nenhum")
+    gbs = [b["gb"] for f in NAVEGADOR for b in por_fmt.get(f, [])[:1] if b.get("gb")]
+    m["gb_navegador"] = min(gbs) if gbs else (m["gguf_gb"] if gg_ok else None)
+    m["formatos_navegador"] = sorted({b["formato"] for b in nav})
+    m["fontes"] = [f for f in m["fontes"] if not f["rotulo"].startswith("Build ")] + \
+        [{"rotulo": f"Build {b['formato']} ({'do publicador' if b['oficial'] else 'da comunidade'})", "url": b["url"], "acessado": HOJE}
+         for b in m["builds"] if b.get("destaque") and not b.get("proprio")][:8]
+
+
+def reatribuir_conversoes(pubs, modelos):
+    """Conversao fiel nao e modelo novo: vira build do original (autor do build = quem converteu) e sai da lista de modelos.
+    Original fora do mapa: a conversao de um publicador do Brasil sai (nao e modelo brasileiro); a de publicador do mundo continua (regra existente).
+    Devolve (modelos, relatorio)."""
+    por_id = {m["id"].lower(): m for m in modelos}
+    mover, rel = [], {"movidos": [], "sem_original_no_mapa": [], "nao_determinado": []}
+    for m in modelos:
+        c = m.get("conversao")
+        if not c:
+            continue
+        if c["grau"] == "nao_determinado":
+            rel["nao_determinado"].append({"id": m["id"], "publicador": m["publicador"], "escopo": m["escopo"]})
+            continue
+        o = por_id.get(c["original"].lower())
+        if o is not None and o is not m:
+            for b in m["builds"]:
+                if not b.get("proprio"):
+                    continue
+                if any(x["repo"] == b["repo"] and x["formato"] == b["formato"] for x in o["builds"]):
+                    continue
+                nb = dict(b, autor=m["publicador"], oficial=m["publicador"] == o["publicador"], proprio=False, runtime_org=False, grau=c["grau"], trecho=c["trecho"])
+                o["builds"].append(nb)
+            o["builds"].sort(key=lambda b: (b["formato"], b["repo"]))
+            recalcular_builds(o)
+            mover.append(m["id"])
+            rel["movidos"].append({"id": m["id"], "para": o["id"], "porter": m["publicador"], "grau": c["grau"], "escopo_antes": m["escopo"], "escopo_original": o["escopo"]})
+        elif m["escopo"] == "br" and c["original"].split("/")[0].lower() != m["publicador"].lower():   # original proprio fora do mapa: continua modelo do publicador
+            mover.append(m["id"])
+            rel["sem_original_no_mapa"].append({"id": m["id"], "original": c["original"], "publicador": m["publicador"], "grau": c["grau"]})
+    sai = set(mover)
+    saida = [m for m in modelos if m["id"] not in sai]
+    cont = collections.Counter(m["publicador"] for m in saida)
+    for p in pubs:
+        p["n_modelos_mapeados"] = cont.get(p["id"], 0)
+    for m in saida:
+        m.pop("conversao", None)
+    return saida, rel
+
+
 def marca_pt(tags, rid):
     return "pt" in tags or bool(re.search(r"pt-?br|portugu|brasil|brazil", rid, re.I))
 
@@ -546,6 +665,9 @@ def construir(x, pub, escopo, idx, puros_do_pub, ev_extra=None):
         m["tarefa_inferida"], m["regra_tarefa"] = True, x["regra_tarefa"]
     if ev_extra:
         m.update(ev_extra)
+    conv = classificar_conversao(x, pub)
+    if conv:
+        m["conversao"] = conv
     vistos = set()
     def add(repo, autor, f, atualizado, downloads, proprio=False, tag_org=False):
         if (repo, f) in vistos:
@@ -974,6 +1096,7 @@ def montar(pubs, modelos, descartados):
             "descartados": descartados,
             "ressalvas": ["Build existe nao quer dizer que roda: nao ha execucao neste mapa.",
                           "GGUF via wllama conta a parte, com corte de tamanho; ONNX, MLC e LiteRT sao nativos de navegador.",
+                          "Conversao fiel de outro modelo (GGUF, AWQ, ONNX...) e build do original, nao modelo novo; quem converteu e o autor do build.",
                           "Builds nativos de terceiros sao achados por regra de nome no indice das organizacoes de runtime e das buscas por tag; podem faltar os de nomes fora do padrao.",
                           "Modelos de linguagem ate %gB, todos os de cada publicador classificado; publicador sem evidencia de ser do Brasil fica fora do mapa." % MAX_B]}
     por_pub_br = collections.Counter(m["publicador"] for m in br)
@@ -1558,6 +1681,8 @@ def main():
                 remover.add(k)
     guardar_antes()
     pubs, modelos, desc = mesclar(exist, regs, remover)
+    modelos, rel_conv = reatribuir_conversoes(pubs, modelos)
+    _atomico(os.path.join(RAIZ, ".relatorios", f"atribuicao-{HOJE}.json"), json.dumps(rel_conv, ensure_ascii=False, indent=1))
     rel = montar_relacoes(pubs, modelos)
     meta, pacote, foto = montar(pubs, modelos, desc)
     foto["instituicoes_por_pais"] = rel["por_pais"]
