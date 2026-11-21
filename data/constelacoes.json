@@ -151,17 +151,8 @@
    "id": "althayr",
    "nome": "Althayr Nazaret",
    "escopo": "br",
-   "modelos": [
-    "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-    "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF"
-   ],
-   "arestas": [
-    [
-     "althayr/Gemma-3-Gaia-PT-BR-4b-it-GGUF",
-     "althayr/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "gemma-3"
-    ]
-   ]
+   "modelos": [],
+   "arestas": []
   },
   {
    "id": "amadeusai",
@@ -588,13 +579,6 @@
     "cnmoro/blink-latin-26M",
     "cnmoro/custom-model2vec-tokenlearn-medium",
     "cnmoro/domain-labeler-enpt",
-    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-    "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-    "cnmoro/gliclass-base-v3.0-onnx",
-    "cnmoro/gliclass-edge-v3.0-onnx",
-    "cnmoro/gliclass-large-v3.0-onnx",
-    "cnmoro/gliclass-modern-large-v3.0-onnx",
-    "cnmoro/gliclass-x-base-onnx",
     "cnmoro/granite-30m-distilled",
     "cnmoro/granite-question-classifier",
     "cnmoro/inference-free-splade-bert-tiny-en-ptbr",
@@ -618,13 +602,11 @@
     "cnmoro/ptt5_small_portuguese_summarizer",
     "cnmoro/Qwen0.5b-RagSemanticChunker",
     "cnmoro/Qwen2.5-0.5B-Chunk-Compressor",
-    "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
     "cnmoro/Qwen2.5-0.5B-Portuguese-Hybrid-Reasoning",
     "cnmoro/Qwen2.5-0.5B-Portuguese-Prompt-Decomposer",
     "cnmoro/Qwen2.5-0.5B-Portuguese-v1",
     "cnmoro/Qwen2.5-0.5B-Portuguese-v2",
     "cnmoro/Qwen2.5-0.5B-Rag-Thinking",
-    "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
     "cnmoro/Qwen3-7B-A3B-REAP-PTBR",
     "cnmoro/Qwen3.5-2B-Pruned-English-Portuguese",
     "cnmoro/Qwen3b-RagSemanticChunker",
@@ -668,31 +650,6 @@
      "cnmoro/BertTiny-Reranker-EnPt",
      "cnmoro/inference-free-splade-bert-tiny-en-ptbr",
      "bert"
-    ],
-    [
-     "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q4_K_M-GGUF",
-     "cnmoro/Gemma-3-Gaia-PT-BR-4b-it-Q8_0-GGUF",
-     "gemma-3"
-    ],
-    [
-     "cnmoro/gliclass-base-v3.0-onnx",
-     "cnmoro/gliclass-edge-v3.0-onnx",
-     "gliclass"
-    ],
-    [
-     "cnmoro/gliclass-edge-v3.0-onnx",
-     "cnmoro/gliclass-large-v3.0-onnx",
-     "gliclass"
-    ],
-    [
-     "cnmoro/gliclass-large-v3.0-onnx",
-     "cnmoro/gliclass-modern-large-v3.0-onnx",
-     "gliclass"
-    ],
-    [
-     "cnmoro/gliclass-modern-large-v3.0-onnx",
-     "cnmoro/gliclass-x-base-onnx",
-     "gliclass"
     ],
     [
      "cnmoro/granite-30m-distilled",
@@ -771,11 +728,6 @@
     ],
     [
      "cnmoro/Qwen2.5-0.5B-Chunk-Compressor",
-     "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
-     "qwen2.5"
-    ],
-    [
-     "cnmoro/Qwen2.5-0.5B-Chunk-Compressor-Q8_0-GGUF",
      "cnmoro/Qwen2.5-0.5B-Portuguese-Hybrid-Reasoning",
      "qwen2.5"
     ],
@@ -801,11 +753,6 @@
     ],
     [
      "cnmoro/Qwen2.5-0.5B-Rag-Thinking",
-     "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
-     "qwen2.5"
-    ],
-    [
-     "cnmoro/Qwen2.5-0.5B-Rag-Thinking-Q8_0-GGUF",
      "cnmoro/Qwen3b-RagSemanticChunker",
      "qwen2.5"
     ],
@@ -864,7 +811,6 @@
     "dominguesm/legal-bert-base-cased-ptbr",
     "dominguesm/legal-bert-ner-base-cased-ptbr",
     "dominguesm/mambarim-110m",
-    "dominguesm/NVIDIA-Nemotron-Nano-9B-v2-GGUF",
     "dominguesm/positive-reframing-en",
     "dominguesm/positive-reframing-ptbr",
     "dominguesm/pt_core_news_trf",
@@ -5794,37 +5740,15 @@
    "nome": "Guilherme Monteiro",
    "escopo": "br",
    "modelos": [
-    "guicybercode/Aira-2-portuguese-124M-GGUF",
-    "guicybercode/Aira-2-portuguese-124M-mlx-4bit",
-    "guicybercode/bee-350m-pt-base-GGUF",
     "guicybercode/br-sovereign-llm-research",
     "guicybercode/br-sovereign-llm-smoke",
-    "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-    "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-    "guicybercode/Tucano-630m-GGUF",
-    "guicybercode/Tucano-630m-mlx-4bit",
     "guicybercode/zh-news-gpt-20m"
    ],
    "arestas": [
     [
-     "guicybercode/Aira-2-portuguese-124M-GGUF",
-     "guicybercode/Aira-2-portuguese-124M-mlx-4bit",
-     "aira-2"
-    ],
-    [
      "guicybercode/br-sovereign-llm-research",
      "guicybercode/br-sovereign-llm-smoke",
      "br"
-    ],
-    [
-     "guicybercode/NBR-1B-Portuguese-MCQ-GGUF",
-     "guicybercode/NBR-1B-Portuguese-MCQ-mlx-4bit",
-     "nbr"
-    ],
-    [
-     "guicybercode/Tucano-630m-GGUF",
-     "guicybercode/Tucano-630m-mlx-4bit",
-     "tucano"
     ]
    ]
   },
@@ -5834,21 +5758,15 @@
    "escopo": "br",
    "modelos": [
     "Guilherme34/01-v2",
-    "Guilherme34/01-v2-Q4_0-GGUF",
     "Guilherme34/ArliAI-RPMax-Formax-v1",
     "Guilherme34/backup-medra-4b-ablit",
     "Guilherme34/CODER-0.5b_awq",
     "Guilherme34/Curious-Alpha-dontdownload",
-    "Guilherme34/Curious-Alpha-dontdownload-Q8_0-GGUF",
     "Guilherme34/Firefly",
-    "Guilherme34/Firefly-Q4_0-GGUF",
-    "Guilherme34/Firefly-Q8_0-GGUF",
     "Guilherme34/Firefly-V1.5Q-Beta",
     "Guilherme34/Firefly-V1Q-Beta",
     "Guilherme34/Firefly-V2",
     "Guilherme34/Firefly-V2-abliterated",
-    "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-    "Guilherme34/Firefly-V2-Q8_0-GGUF",
     "Guilherme34/Firefly-V2.5",
     "Guilherme34/Firefly-V2Q-NonThinking-RP",
     "Guilherme34/Firefly-V2Q-Think-RP-BETA",
@@ -5856,7 +5774,6 @@
     "Guilherme34/Firefly-V3",
     "Guilherme34/Firefly-V3.2",
     "Guilherme34/Firefly-V3.2-1-dontdownload",
-    "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
     "Guilherme34/Firefly-v4",
     "Guilherme34/Firefly-v4-Beta-2",
     "Guilherme34/Firefly-v4-BetterGGUF",
@@ -5874,41 +5791,27 @@
     "Guilherme34/Jenniferv2-gptq4bit",
     "Guilherme34/Jeva-9b-gguf",
     "Guilherme34/LFM2.5-2.6B-Abliterated-Advanced",
-    "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-    "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
     "Guilherme34/Llama-3.2-11b-vision-uncensored-notlora",
     "Guilherme34/Lumina",
     "Guilherme34/MiniAGI",
     "Guilherme34/MiniAGI-selfimprove",
-    "Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
     "Guilherme34/nanochat-d32-retrained-hf",
     "Guilherme34/Orpheus-multilingual-merged",
     "Guilherme34/poke-test-model-base",
     "Guilherme34/Psychologist-3b",
     "Guilherme34/Psychologist-3b-beta",
-    "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-    "Guilherme34/Psychologist-GGUF-3b-Q8_0",
     "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
-    "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-    "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
     "Guilherme34/qwen3-conscious-fullmodel",
-    "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
     "Guilherme34/qwen3-conscious-fullmodel-v2",
-    "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
     "Guilherme34/Reasoner-8B",
     "Guilherme34/Reasoning-2.6-1b",
     "Guilherme34/Reasoning-2.6-fixed",
-    "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
     "Guilherme34/Reasoning-test-merged",
     "Guilherme34/S5-nano-uncensored",
-    "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
     "Guilherme34/sadtest",
-    "Guilherme34/sadtest-Q8_0-GGUF",
     "Guilherme34/Samantha-3b-beta0.1-model",
     "Guilherme34/Samantha-3b-beta0.1-model-nf4",
-    "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
     "Guilherme34/Samantha-hermes3-8b-model-fixed",
-    "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
     "Guilherme34/Samantha-MistralPy-7b-modelnotlora",
     "Guilherme34/Samantha-moondream",
     "Guilherme34/Samantha-multimodal-v2-model",
@@ -5920,7 +5823,6 @@
     "Guilherme34/Samantha-Phixtral-2x2_8",
     "Guilherme34/Samantha-qwen-0.5b",
     "Guilherme34/Samantha-qwen-0.5b-ptbr",
-    "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
     "Guilherme34/Samantha-qwen-vision-0.5b",
     "Guilherme34/Samantha-raw-mergenotlora",
     "Guilherme34/Samantha-test",
@@ -5932,22 +5834,15 @@
     "Guilherme34/Samantha-v6.5",
     "Guilherme34/Samantha-v7-4b",
     "Guilherme34/Samantha-v7-4b-lesscensored",
-    "Guilherme34/Samantha-vision-v2-GGUF",
     "Guilherme34/Samantha-vision-v2-ggufrecommended",
     "Guilherme34/SamanthaCode-v1",
     "Guilherme34/Samanthav2-2.7b",
     "Guilherme34/Samanthav2.5-modelnotlora",
     "Guilherme34/Samanthavision-modelnotlora",
     "Guilherme34/Samful",
-    "Guilherme34/Samful-Q8_0-GGUF",
     "Guilherme34/TwIL-8B-Abliterated-Uncensored"
    ],
    "arestas": [
-    [
-     "Guilherme34/01-v2",
-     "Guilherme34/01-v2-Q4_0-GGUF",
-     "01-v2"
-    ],
     [
      "Guilherme34/backup-medra-4b-ablit",
      "Guilherme34/gemma-3-sentient",
@@ -6004,32 +5899,12 @@
      "llama-3.2"
     ],
     [
-     "Guilherme34/Firefly-Q4_0-GGUF",
-     "Guilherme34/Firefly-Q8_0-GGUF",
-     "firefly"
-    ],
-    [
-     "Guilherme34/Firefly-Q8_0-GGUF",
-     "Guilherme34/Firefly-V2",
-     "firefly"
-    ],
-    [
      "Guilherme34/Firefly-V2",
      "Guilherme34/Firefly-V2-abliterated",
      "firefly"
     ],
     [
      "Guilherme34/Firefly-V2-abliterated",
-     "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "firefly"
-    ],
-    [
-     "Guilherme34/Firefly-V2-abliterated-Q8_0-GGUF",
-     "Guilherme34/Firefly-V2-Q8_0-GGUF",
-     "firefly"
-    ],
-    [
-     "Guilherme34/Firefly-V2-Q8_0-GGUF",
      "Guilherme34/Firefly-V2.5",
      "firefly"
     ],
@@ -6055,11 +5930,6 @@
     ],
     [
      "Guilherme34/Firefly-V3.2-1-dontdownload",
-     "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
-     "firefly"
-    ],
-    [
-     "Guilherme34/Firefly-V3.2-Alpha-Q8_0-GGUF",
      "Guilherme34/Firefly-v4-BetterGGUF",
      "firefly"
     ],
@@ -6109,24 +5979,9 @@
      "jennifer"
     ],
     [
-     "Guilherme34/LFM3-1.7B-Looped-HiddenCoT-GGUF",
-     "Guilherme34/LFM3-Omni-2B-Looped-Latent-v2.1-GGUF",
-     "lfm3"
-    ],
-    [
      "Guilherme34/MiniAGI",
      "Guilherme34/MiniAGI-selfimprove",
      "miniagi"
-    ],
-    [
-     "Guilherme34/MiniAGI-selfimprove",
-     "Guilherme34/MiniAGI-selfimprove-Q8_0-GGUF",
-     "miniagi"
-    ],
-    [
-     "Guilherme34/Psychologist-3b-beta-Q8_0-GGUF",
-     "Guilherme34/Psychologist-GGUF-3b-Q8_0",
-     "psychologist"
     ],
     [
      "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400",
@@ -6135,23 +5990,8 @@
     ],
     [
      "Guilherme34/qwen3-conscious-fullmodel",
-     "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
-     "qwen3"
-    ],
-    [
-     "Guilherme34/qwen3-conscious-fullmodel-Q8_0-GGUF",
      "Guilherme34/qwen3-conscious-fullmodel-v2",
      "qwen3"
-    ],
-    [
-     "Guilherme34/qwen3-conscious-fullmodel-v2",
-     "Guilherme34/qwen3-conscious-fullmodel-v2-Q8_0-GGUF",
-     "qwen3"
-    ],
-    [
-     "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q4_0-GGUF",
-     "Guilherme34/Qwen-3-4B-Samantha-2.0-stillintraining-step-1400-Q8_0-GGUF",
-     "qwen-3"
     ],
     [
      "Guilherme34/Reasoning-2.6-1b",
@@ -6159,37 +5999,12 @@
      "reasoning-2.6"
     ],
     [
-     "Guilherme34/Reasoning-2.6-fixed",
-     "Guilherme34/Reasoning-2.6-fixed-Q8_0-GGUF",
-     "reasoning-2.6"
-    ],
-    [
-     "Guilherme34/S5-nano-uncensored",
-     "Guilherme34/S5-nano-uncensored-Q8_0-GGUF",
-     "s5"
-    ],
-    [
-     "Guilherme34/sadtest",
-     "Guilherme34/sadtest-Q8_0-GGUF",
-     "sadtest"
-    ],
-    [
      "Guilherme34/Samantha-3b-beta0.1-model-nf4",
-     "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
-     "samantha"
-    ],
-    [
-     "Guilherme34/Samantha-3b-beta0.1-model-Q4_K_M-GGUF",
      "Guilherme34/Samantha-hermes3-8b-model-fixed",
      "samantha"
     ],
     [
      "Guilherme34/Samantha-hermes3-8b-model-fixed",
-     "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
-     "samantha"
-    ],
-    [
-     "Guilherme34/Samantha-hermes3-8b-model-fixed-Q8_0-GGUF",
      "Guilherme34/Samantha-MistralPy-7b-modelnotlora",
      "samantha"
     ],
@@ -6245,11 +6060,6 @@
     ],
     [
      "Guilherme34/Samantha-qwen-0.5b-ptbr",
-     "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
-     "samantha"
-    ],
-    [
-     "Guilherme34/Samantha-qwen-0.5b-ptbr-Q8_0-GGUF",
      "Guilherme34/Samantha-qwen-vision-0.5b",
      "samantha"
     ],
@@ -6305,18 +6115,8 @@
     ],
     [
      "Guilherme34/Samantha-v7-4b-lesscensored",
-     "Guilherme34/Samantha-vision-v2-GGUF",
-     "samantha"
-    ],
-    [
-     "Guilherme34/Samantha-vision-v2-GGUF",
      "Guilherme34/Samantha-vision-v2-ggufrecommended",
      "samantha"
-    ],
-    [
-     "Guilherme34/Samful",
-     "Guilherme34/Samful-Q8_0-GGUF",
-     "samful"
     ]
    ]
   },
@@ -6389,23 +6189,32 @@
    "arestas": []
   },
   {
+   "id": "lucianfialho",
+   "nome": "Lucian Fialho",
+   "escopo": "br",
+   "modelos": [
+    "lucianfialho/atos-de-fala-ptbr",
+    "lucianfialho/privacy-filter-br"
+   ],
+   "arestas": [
+    [
+     "lucianfialho/atos-de-fala-ptbr",
+     "lucianfialho/privacy-filter-br",
+     "bert-portuguese"
+    ]
+   ]
+  },
+  {
    "id": "lucianosb",
    "nome": "Luciano Santa Brígida",
    "escopo": "br",
    "modelos": [
     "lucianosb/boto-7B",
-    "lucianosb/boto-7B-GGUF",
     "lucianosb/boto-7B-v1.1",
-    "lucianosb/boto-7B-v1.1-GGUF",
     "lucianosb/boto-7B-v1.2",
-    "lucianosb/boto-7B-v1.2-GGUF",
     "lucianosb/boto-9B",
     "lucianosb/boto-9B-it",
-    "lucianosb/canarim-7B-GGUF",
-    "lucianosb/canarim-7B-instruct-GGUF",
-    "lucianosb/llama-2-7b-langchain-chat-GGUF",
-    "lucianosb/open-cabrita3b-GGUF",
-    "lucianosb/sabia-7b-GGUF"
+    "lucianosb/llama-2-7b-langchain-chat-GGUF"
    ],
    "arestas": [
     [
@@ -6419,24 +6228,9 @@
      "mistral"
     ],
     [
-     "lucianosb/boto-7B-GGUF",
-     "lucianosb/boto-7B-v1.1-GGUF",
-     "boto"
-    ],
-    [
-     "lucianosb/boto-7B-v1.1-GGUF",
-     "lucianosb/boto-7B-v1.2-GGUF",
-     "boto"
-    ],
-    [
      "lucianosb/boto-9B",
      "lucianosb/boto-9B-it",
      "gemma-2"
-    ],
-    [
-     "lucianosb/canarim-7B-GGUF",
-     "lucianosb/canarim-7B-instruct-GGUF",
-     "canarim"
     ]
    ]
   },
@@ -6523,9 +6317,7 @@
     "nicholasKluge/TeenyTinyLlama-460m",
     "nicholasKluge/TeenyTinyLlama-460m-AgNews",
     "nicholasKluge/TeenyTinyLlama-460m-Assin2",
-    "nicholasKluge/TeenyTinyLlama-460m-awq",
     "nicholasKluge/TeenyTinyLlama-460m-Chat",
-    "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
     "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
     "nicholasKluge/TeenyTinyLlama-460m-HateBR",
     "nicholasKluge/TeenyTinyLlama-460m-IMDB",
@@ -6625,21 +6417,11 @@
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-Assin2",
-     "nicholasKluge/TeenyTinyLlama-460m-awq",
-     "teenytinyllama"
-    ],
-    [
-     "nicholasKluge/TeenyTinyLlama-460m-awq",
      "nicholasKluge/TeenyTinyLlama-460m-Chat",
      "teenytinyllama"
     ],
     [
      "nicholasKluge/TeenyTinyLlama-460m-Chat",
-     "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
-     "teenytinyllama"
-    ],
-    [
-     "nicholasKluge/TeenyTinyLlama-460m-Chat-awq",
      "nicholasKluge/TeenyTinyLlama-460m-FaQuAD-NLI",
      "teenytinyllama"
     ],

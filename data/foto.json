@@ -4,14 +4,14 @@
  "corte_parametros_b": 12.0,
  "regra_filtro": 2,
  "brasil": {
-  "modelos": 1339,
-  "nativo_oficial": 16,
-  "nativo_comunidade": 4,
-  "so_gguf_wllama": 129,
-  "gguf_grande_sem_nativo": 80,
-  "nenhum": 1190,
-  "so_nativo": 20,
-  "nativo_mais_gguf": 149
+  "modelos": 1289,
+  "nativo_oficial": 13,
+  "nativo_comunidade": 3,
+  "so_gguf_wllama": 105,
+  "gguf_grande_sem_nativo": 64,
+  "nenhum": 1168,
+  "so_nativo": 16,
+  "nativo_mais_gguf": 121
  },
  "mundo": {
   "modelos": 1817,
@@ -24,22 +24,22 @@
   "nativo_mais_gguf": 617
  },
  "brasil_independentes": {
-  "modelos": 168,
+  "modelos": 136,
   "nativo_oficial": 3,
-  "nativo_comunidade": 2,
-  "so_gguf_wllama": 73,
-  "gguf_grande_sem_nativo": 47,
-  "nenhum": 90,
-  "so_nativo": 5,
-  "nativo_mais_gguf": 78
+  "nativo_comunidade": 1,
+  "so_gguf_wllama": 55,
+  "gguf_grande_sem_nativo": 35,
+  "nenhum": 77,
+  "so_nativo": 4,
+  "nativo_mais_gguf": 59
  },
  "brasil_instituicoes": {
-  "modelos": 169,
+  "modelos": 167,
   "nativo_oficial": 4,
   "nativo_comunidade": 1,
   "so_gguf_wllama": 23,
   "gguf_grande_sem_nativo": 5,
-  "nenhum": 141,
+  "nenhum": 139,
   "so_nativo": 5,
   "nativo_mais_gguf": 28
  },
@@ -47,21 +47,21 @@
   "modelos": 36,
   "nativo_oficial": 0,
   "nativo_comunidade": 0,
-  "so_gguf_wllama": 10,
-  "gguf_grande_sem_nativo": 5,
-  "nenhum": 26,
+  "so_gguf_wllama": 11,
+  "gguf_grande_sem_nativo": 4,
+  "nenhum": 25,
   "so_nativo": 0,
-  "nativo_mais_gguf": 10
+  "nativo_mais_gguf": 11
  },
  "brasil_natureza_nao_classificada": {
-  "modelos": 966,
-  "nativo_oficial": 9,
+  "modelos": 950,
+  "nativo_oficial": 6,
   "nativo_comunidade": 1,
-  "so_gguf_wllama": 23,
-  "gguf_grande_sem_nativo": 23,
-  "nenhum": 933,
-  "so_nativo": 10,
-  "nativo_mais_gguf": 33
+  "so_gguf_wllama": 16,
+  "gguf_grande_sem_nativo": 20,
+  "nenhum": 927,
+  "so_nativo": 7,
+  "nativo_mais_gguf": 23
  },
  "maior_publicador_br": {
   "id": "g-assismoraes",
@@ -74,12 +74,12 @@
    "independente": 8,
    "instituicao": 15,
    "empresa": 7,
-   "nao_classificada": 15
+   "nao_classificada": 16
   }
  },
  "candidatos": {
-  "avaliados": 184,
-  "classificados_brasil": 45,
+  "avaliados": 185,
+  "classificados_brasil": 46,
   "descartados": 139,
   "descartados_por_motivo": {
    "sem evidencia publica de ser do Brasil": 132,
@@ -1324,20 +1324,21 @@
  "ressalvas": [
   "Build existe nao quer dizer que roda: nao ha execucao neste mapa.",
   "GGUF via wllama conta a parte, com corte de tamanho; ONNX, MLC e LiteRT sao nativos de navegador.",
+  "Conversao fiel de outro modelo (GGUF, AWQ, ONNX...) e build do original, nao modelo novo; quem converteu e o autor do build.",
   "Builds nativos de terceiros sao achados por regra de nome no indice das organizacoes de runtime e das buscas por tag; podem faltar os de nomes fora do padrao.",
   "Modelos de linguagem ate 12B, todos os de cada publicador classificado; publicador sem evidencia de ser do Brasil fica fora do mapa."
  ],
  "por_familia_tarefa": {
   "gerador": {
    "brasil": {
-    "modelos": 818,
+    "modelos": 771,
     "nativo_oficial": 4,
-    "nativo_comunidade": 1,
-    "so_gguf_wllama": 126,
-    "gguf_grande_sem_nativo": 80,
-    "nenhum": 687,
-    "so_nativo": 5,
-    "nativo_mais_gguf": 131
+    "nativo_comunidade": 0,
+    "so_gguf_wllama": 102,
+    "gguf_grande_sem_nativo": 64,
+    "nenhum": 665,
+    "so_nativo": 4,
+    "nativo_mais_gguf": 106
    },
    "mundo": {
     "modelos": 1523,
@@ -1350,26 +1351,26 @@
     "nativo_mais_gguf": 550
    },
    "brasil_sem_maior": {
-    "modelos": 350,
+    "modelos": 303,
     "nativo_oficial": 4,
-    "nativo_comunidade": 1,
-    "so_gguf_wllama": 125,
-    "gguf_grande_sem_nativo": 80,
-    "nenhum": 220,
-    "so_nativo": 5,
-    "nativo_mais_gguf": 130
+    "nativo_comunidade": 0,
+    "so_gguf_wllama": 101,
+    "gguf_grande_sem_nativo": 64,
+    "nenhum": 198,
+    "so_nativo": 4,
+    "nativo_mais_gguf": 105
    }
   },
   "codificador": {
    "brasil": {
-    "modelos": 521,
-    "nativo_oficial": 12,
+    "modelos": 518,
+    "nativo_oficial": 9,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
     "nenhum": 503,
-    "so_nativo": 15,
-    "nativo_mais_gguf": 18
+    "so_nativo": 12,
+    "nativo_mais_gguf": 15
    },
    "mundo": {
     "modelos": 294,
@@ -1382,14 +1383,14 @@
     "nativo_mais_gguf": 67
    },
    "brasil_sem_maior": {
-    "modelos": 167,
-    "nativo_oficial": 12,
+    "modelos": 164,
+    "nativo_oficial": 9,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
     "nenhum": 149,
-    "so_nativo": 15,
-    "nativo_mais_gguf": 18
+    "so_nativo": 12,
+    "nativo_mais_gguf": 15
    }
   }
  },
@@ -1397,14 +1398,14 @@
   "id": "g-assismoraes",
   "modelos": 822,
   "brasil": {
-   "modelos": 517,
-   "nativo_oficial": 16,
-   "nativo_comunidade": 4,
-   "so_gguf_wllama": 128,
-   "gguf_grande_sem_nativo": 80,
-   "nenhum": 369,
-   "so_nativo": 20,
-   "nativo_mais_gguf": 148
+   "modelos": 467,
+   "nativo_oficial": 13,
+   "nativo_comunidade": 3,
+   "so_gguf_wllama": 104,
+   "gguf_grande_sem_nativo": 64,
+   "nenhum": 347,
+   "so_nativo": 16,
+   "nativo_mais_gguf": 120
   },
   "publicadores_brasil": 44
  },

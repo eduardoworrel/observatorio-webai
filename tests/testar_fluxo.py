@@ -607,7 +607,7 @@ class TestCreditoRealVerificado(unittest.TestCase):
         d = json.load(open(os.path.join(REPO, "data", "relacoes.json")))
         mods = {m["id"]: m for m in json.load(open(os.path.join(REPO, "data", "modelos.json")))["modelos"]}
         fap = [i for i in d["instituicoes"] if i["id"] == "fapergs"][0]
-        self.assertEqual(fap["n_creditados"], 15)
+        self.assertEqual(fap["n_creditados"], 13)
         pessoa = [p for p in json.load(open(os.path.join(REPO, "data", "publicadores.json")))["publicadores"] if p["id"] == "nicholasKluge"][0]
         self.assertEqual(pessoa["labs"], ["caisa-b-it"], "pessoa afiliada ao laboratorio")
         self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["creditos"], ["inst:fapergs"])
@@ -689,6 +689,41 @@ class TestProcessarPR(unittest.TestCase):
         self.assertEqual(self.sh("git", "worktree", "list", cwd=trabalho).stdout.count("\n"), 1)
         r = subprocess.run(["bash", "scripts/processar_pr.sh", "abc"], cwd=trabalho, env=env, capture_output=True, text=True)
         self.assertEqual(r.returncode, 3)
+
+
+class TestConversaoFiel(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import coletar
+        cls.c = coletar
+
+    def test_nome_sem_formato(self):
+        self.assertEqual(self.c.nome_sem_formato("sabia-7b-GGUF"), ["sabia", "7b"])
+        self.assertEqual(self.c.nome_sem_formato("Tucano-630m-mlx-4bit"), ["tucano", "630m"])
+        self.assertEqual(self.c.nome_sem_formato("Firefly-Q8_0-GGUF"), ["firefly"])
+
+    def test_declarado_pela_tag(self):
+        r = self.c.classificar_conversao({"id": "a/modelo-x-GGUF", "tags": ["gguf", "base_model:quantized:b/modelo-x"]}, "a")
+        self.assertEqual((r["grau"], r["original"]), ("declarado", "b/modelo-x"))
+
+    def test_derivado_nao_e_conversao(self):
+        self.assertIsNone(self.c.classificar_conversao({"id": "a/modelo-x-GGUF", "tags": ["gguf", "base_model:finetune:b/modelo-x"]}, "a"))
+
+    def test_nome_sem_marca_nao_e_conversao(self):
+        self.assertIsNone(self.c.classificar_conversao({"id": "a/modelo-y", "tags": ["base_model:quantized:b/modelo-y"]}, "a"))
+
+    def test_reatribuir_move_o_build_e_remove_a_entrada(self):
+        orig = {"id": "b/modelo-x", "publicador": "b", "escopo": "br", "builds": [], "fontes": [], "familia_tarefa": "gerador"}
+        conv = {"id": "a/modelo-x-GGUF", "publicador": "a", "escopo": "br", "fontes": [], "conversao": {"grau": "declarado", "original": "b/modelo-x", "trecho": "base_model:quantized:b/modelo-x"},
+                "builds": [{"repo": "a/modelo-x-GGUF", "autor": "a", "formato": "gguf", "oficial": True, "runtime_org": False, "proprio": True, "gb": 2.0, "downloads": 5, "destaque": True, "url": "u"}]}
+        pubs = [{"id": "a"}, {"id": "b"}]
+        saida, rel = self.c.reatribuir_conversoes(pubs, [orig, conv])
+        self.assertEqual([m["id"] for m in saida], ["b/modelo-x"])
+        b = saida[0]["builds"][0]
+        self.assertEqual((b["autor"], b["oficial"], b["grau"]), ("a", False, "declarado"))
+        self.assertTrue(saida[0]["gguf_wllama"])
+        self.assertEqual(rel["movidos"][0]["para"], "b/modelo-x")
 
 
 if __name__ == "__main__":

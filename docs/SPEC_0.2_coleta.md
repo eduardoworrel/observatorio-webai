@@ -87,6 +87,16 @@ Formatos **de navegador**: `onnx`, `mlc`, `litert`. `gguf` fica à parte (precis
 
 Um repositório candidato é build do modelo M se, depois do nome de M (separado em partes por `-`, `_`, `.`), restarem apenas marcas de formato ou quantização (`onnx`, `mlc`, `gguf`, `litert`, `q4f16`, `q4_k_m`, `int4`, `web`, `webgpu`, `qat`, `mobile`...). Versões diferentes (`-Instruct`, `-Base`) são modelos diferentes. Candidatos vêm de um índice dos repositórios de formato de navegador: todas as publicações das organizações de runtime (`onnx-community`, `mlc-ai`, `litert-community`) e das buscas por tag (`transformers.js`, `mlc-llm`, `litert`) para texto, indexados pelo nome sem marcas de formato; mais os repositórios de formato do próprio publicador.
 
+### C: conversão fiel é build do original, não modelo novo
+
+Um repositório cujo nome carrega marca de conversão (`gguf`, `awq`, `gptq`, `exl2`, `mlx`, `onnx`, `mlc`, `litert`, `quantized`) e que converte os mesmos pesos de outro modelo **não é modelo novo**: é build do modelo original, e a conta que converteu é o autor do build (o crédito), nunca o autor do modelo. A lista de modelos e os rankings mostram o original. Cada build movido registra o grau de evidência:
+
+- **declarado**: a tag `base_model:quantized:X` do cartão, ou `base_model:X` cujo nome, sem marcas de formato, é o de X.
+- **inferido**: o nome, sem marcas de formato, é o de um repositório X que o texto do cartão cita (id ou link); X existe e é de outra conta ou do mesmo publicador. O trecho do cartão fica no build (`trecho`).
+- **não determinado**: o nome tem marca de conversão e nenhuma das duas evidências se confirmou. O repositório continua como está e entra no relatório da coleta.
+
+Tags `base_model:finetune`, `adapter` ou `merge` excluem a conversão (é derivado). Quando o original está no mapa, o build vai para ele (autor = quem converteu) e a entrada duplicada sai dos modelos; o escopo do modelo é o do publicador do original. Quando o original não está no mapa (fora do corte, fechado, publicador sem classificação) e é de outra conta, a conversão de um publicador do Brasil não é modelo brasileiro e sai; a de publicador do mundo segue a regra existente (`conversao_de`). Se o original é do próprio publicador e não está no mapa, o repositório continua como modelo dele. A regra é geral, sem lista de repositórios.
+
 ### S: status do build nativo
 
 - **oficial** (build do publicador): existe build nativo (`onnx`, `mlc`, `litert`) em repositório do próprio publicador (inclui o caso de o modelo já ser publicado nesse formato).

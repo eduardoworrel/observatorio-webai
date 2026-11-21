@@ -204,6 +204,10 @@
     "em": "2026-11-20",
     "sig": ""
    },
+   "ds:pub:lucianfialho": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
    "ds:pub:lucianosb": {
     "em": "2026-11-20",
     "sig": ""
@@ -2368,6 +2372,39 @@
    ]
   },
   {
+   "id": "lucianfialho/synthetic-attribution-benchmark",
+   "publicador": "lucianfialho",
+   "nome": "synthetic-attribution-benchmark",
+   "descricao": "Synthetic Multi-Touch Attribution Benchmark",
+   "idiomas": [
+    "en"
+   ],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [
+    "tabular-classification"
+   ],
+   "licenca": "cc-by-4.0",
+   "tamanho_bytes": 19169882,
+   "faixa": "1-100MB",
+   "linhas_faixa": "n<1K",
+   "downloads": 229,
+   "likes": 0,
+   "atualizado": "2026-09-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/lucianfialho/synthetic-attribution-benchmark",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:lucianfialho"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "recogna-nlp/drbode240_dataset",
    "publicador": "recogna-nlp",
    "nome": "drbode240_dataset",
@@ -4436,6 +4473,39 @@
    "benchmarks": []
   },
   {
+   "id": "lucianfialho/privacy-filter-br-dataset",
+   "publicador": "lucianfialho",
+   "nome": "privacy-filter-br-dataset",
+   "descricao": "Synthetic Portuguese (BR) PII detection dataset used to fine-tune the privacy-filter-br NER model. 22 PII categories, BIOES tagging compatible.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "token-classification"
+   ],
+   "licenca": "apache-2.0",
+   "tamanho_bytes": 253195791,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "100K<n<1M",
+   "downloads": 79,
+   "likes": 0,
+   "atualizado": "2026-05-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/lucianfialho/privacy-filter-br-dataset",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:lucianfialho"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "eduagarcia/MilkQA",
    "publicador": "eduagarcia",
    "nome": "MilkQA",
@@ -4466,6 +4536,39 @@
    "u": [
     "ds:pt",
     "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "lucianfialho/atos-de-fala-ptbr-dataset",
+   "publicador": "lucianfialho",
+   "nome": "atos-de-fala-ptbr-dataset",
+   "descricao": "Dataset de atos de fala (speech acts) anotados em nível de span para o",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "token-classification"
+   ],
+   "licenca": "cc-by-4.0",
+   "tamanho_bytes": 1305108,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 75,
+   "likes": 1,
+   "atualizado": "2026-06-06",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/lucianfialho/atos-de-fala-ptbr-dataset",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:lucianfialho"
    ],
    "escopo": "br",
    "benchmarks": []
