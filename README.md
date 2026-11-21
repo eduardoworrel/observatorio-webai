@@ -41,4 +41,4 @@ Você pode acrescentar ou corrigir **publicadores, instituições, laboratórios
 
 ## Licenças e crédito
 
-Dados em CC BY 4.0 ([LICENSE-DATA](LICENSE-DATA)); código em MIT ([LICENSE](LICENSE)). Interface inspirada no Observatório da Maritaca (https://observatorio.maritaca.ai/), reescrita à mão, sem copiar arquivos, textos, marca ou dados; o código da interface é original, escrito à mão. Fonte Atkinson Hyperlegible Next e Mono (SIL OFL 1.1).
+Dados em CC BY 4.0 ([LICENSE-DATA](LICENSE-DATA)); código em MIT ([LICENSE](LICENSE)). Interface inspirada no Observatório da Maritaca (https://observatorio.maritaca.ai/), reescrita à mão, sem copiar arquivos, textos, marca ou dados; o código da interface é original, escrito à mão. Fonte Atkinson Hyperlegible Next e Mono (SIL OFL 1.1). A cobertura de modelos, conjuntos de dados e avaliações em português foi conferida com três fontes públicas, citadas como inspiração em [docs/GOVERNANCA.md](docs/GOVERNANCA.md): o artigo "Exploring Brazil's LLM Fauna" (J. Braz. Comput. Soc.), o mapeamento sistemático "Language Models for Portuguese" (arXiv:2608.18138) e a lista "Language Models for Portuguese" do KEML (C4AI-USP).

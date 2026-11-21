@@ -1,0 +1,46 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "porsimplessent",
+  "nome": "PorSimplesSent",
+  "sigla": "PorSimplesSent",
+  "descricao": {
+    "pt": "Pares e trios de sentenças alinhadas em português, em três níveis de simplificação, para avaliar a legibilidade de sentenças.",
+    "en": "Aligned Portuguese sentence pairs and triplets at three simplification levels, to assess sentence readability."
+  },
+  "dominio": [
+    "cultura_lingua"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "sentence-pair-classification"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "ruanchaves/porsimplessent"
+  ],
+  "ano": 2018,
+  "links": {
+    "site": "https://huggingface.co/datasets/ruanchaves/porsimplessent",
+    "artigo": "https://aclanthology.org/C18-1034/",
+    "codigo": "https://github.com/sidleal/porsimplessent"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/ruanchaves/porsimplessent",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "PorSimplesSent is a Portuguese corpus of aligned sentence pairs and triplets"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://aclanthology.org/C18-1034/",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo (ACL Anthology)",
+      "trecho": "A Nontrivial Sentence Corpus for the Task of Sentence Readability Assessment in Portuguese"
+    }
+  ]
+}

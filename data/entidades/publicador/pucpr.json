@@ -1,0 +1,57 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "pucpr",
+  "nome": "PUC PR",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-PR",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/pucpr/biobertpt-all",
+    "acessado": "2026-11-20",
+    "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/pucpr/biobertpt-all",
+    "acessado": "2026-11-20",
+    "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
+  },
+  "links": {
+    "hf": "https://huggingface.co/pucpr"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "instituicao",
+        "id": "pucpr"
+      },
+      "relacao": "conta_oficial",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/pucpr/biobertpt-all",
+        "acessado": "2026-11-20",
+        "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
+      }
+    }
+  ],
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/pucpr",
+      "acessado": "2026-11-20",
+      "rotulo": "Perfil no Hugging Face"
+    },
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/pucpr/biobertpt-all",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão do modelo pucpr/biobertpt-all"
+    }
+  ],
+  "status": "ativo"
+}

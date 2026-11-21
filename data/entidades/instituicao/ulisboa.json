@@ -1,0 +1,22 @@
+{
+  "spec": "1.0",
+  "entidade": "instituicao",
+  "id": "ulisboa",
+  "nome": "Universidade de Lisboa",
+  "nome_pt": "Universidade de Lisboa",
+  "sigla": "ULisboa",
+  "tipo": "universidade",
+  "pais": "PT",
+  "links": {
+    "oficial": "https://www.ulisboa.pt/en"
+  },
+  "fontes": [
+    {
+      "tipo": "site_institucional",
+      "url": "https://www.ulisboa.pt/en",
+      "acessado": "2026-11-21",
+      "rotulo": "site oficial",
+      "trecho": "Universidade de Lisboa"
+    }
+  ]
+}

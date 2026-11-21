@@ -1,0 +1,56 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "PORTULAN",
+  "nome": "PORTULAN",
+  "tipo": "grupo",
+  "natureza": "instituicao",
+  "classe_pais": "fora_br",
+  "pais": "PT",
+  "evidencia_pais": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+  },
+  "evidencia_natureza": {
+    "classe": "instituicao",
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "trecho": "PORTULAN CLARIN—Research Infrastructure for the Science and Technology of Language, funded by Lisboa 2020"
+  },
+  "links": {
+    "hf": "https://huggingface.co/PORTULAN"
+  },
+  "vinculos": [
+    {
+      "alvo": {
+        "tipo": "laboratorio",
+        "id": "nlx-ulisboa"
+      },
+      "relacao": "projeto",
+      "fonte": {
+        "tipo": "cartao_modelo",
+        "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+        "acessado": "2026-11-20",
+        "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+      }
+    }
+  ],
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/PORTULAN",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    },
+    {
+      "tipo": "cartao_modelo",
+      "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+      "acessado": "2026-11-20",
+      "rotulo": "Cartão do modelo PORTULAN/gervasio-8b-portuguese-ptpt-decoder"
+    }
+  ],
+  "status": "ativo"
+}

@@ -1,9 +1,9 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "b64f5a1500cc8ec7"
+  "assinatura": "1ea498b6a6d10ba0"
  },
  "instituicoes": [
   {
@@ -177,16 +177,17 @@
     "hailab-pucpr"
    ],
    "publicadores": [
+    "pucpr",
     "pucpr-br"
    ],
-   "n_modelos": 14,
+   "n_modelos": 34,
    "n_builds": {
     "nativo": 0,
     "gguf": 1
    },
    "por_familia_tarefa": {
-    "gerador": 2,
-    "codificador": 12
+    "gerador": 3,
+    "codificador": 31
    },
    "n_creditados": 0,
    "fontes": [
@@ -389,6 +390,41 @@
      "acessado": "2026-11-20",
      "rotulo": "perfil no Hugging Face",
      "trecho": "graduate school of business of the Federal University of Rio de Janeiro"
+    }
+   ]
+  },
+  {
+   "id": "ulisboa",
+   "nome": "Universidade de Lisboa",
+   "nome_pt": "Universidade de Lisboa",
+   "sigla": "ULisboa",
+   "pais": "PT",
+   "regiao": null,
+   "tipo": "universidade",
+   "parte_de": null,
+   "labs": [
+    "nlx-ulisboa"
+   ],
+   "publicadores": [
+    "PORTULAN"
+   ],
+   "n_modelos": 19,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 4,
+    "codificador": 15
+   },
+   "n_creditados": 0,
+   "fontes": [
+    {
+     "tipo": "site_institucional",
+     "url": "https://www.ulisboa.pt/en",
+     "acessado": "2026-11-21",
+     "rotulo": "site oficial",
+     "trecho": "Universidade de Lisboa"
     }
    ]
   },
@@ -749,6 +785,43 @@
      "rotulo": "site oficial"
     }
    ]
+  },
+  {
+   "id": "nlx-ulisboa",
+   "nome": "NLX - Natural Language and Speech Group",
+   "sigla": "NLX",
+   "instituicao": "ulisboa",
+   "pais": "PT",
+   "parceiras": [],
+   "publicadores": [
+    "PORTULAN"
+   ],
+   "n_modelos": 19,
+   "n_builds": {
+    "nativo": 0,
+    "gguf": 0
+   },
+   "por_familia_tarefa": {
+    "gerador": 4,
+    "codificador": 15
+   },
+   "n_creditados": 0,
+   "fontes": [
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+     "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+    },
+    {
+     "tipo": "cartao_modelo",
+     "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do modelo",
+     "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+    }
+   ]
   }
  ],
  "vinculos": [
@@ -838,6 +911,17 @@
     "url": "https://github.com/neuralmind-ai",
     "acessado": "2026-11-20",
     "trecho": "Deep Learning for NLP"
+   }
+  },
+  {
+   "de": "pub:pucpr",
+   "para": "inst:pucpr",
+   "tipo": "conta_oficial",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/pucpr/biobertpt-all",
+    "acessado": "2026-11-20",
+    "trecho": "BioBERTpt was developed by researchers from the Pontifical Catholic University of Paraná (PUCPR), Brazil"
    }
   },
   {
@@ -978,6 +1062,18 @@
    }
   },
   {
+   "de": "lab:nlx-ulisboa",
+   "para": "inst:ulisboa",
+   "tipo": "mesma_organizacao",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "rotulo": "cartão do modelo PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
+   }
+  },
+  {
    "de": "pub:nicholasKluge",
    "para": "lab:caisa-b-it",
    "tipo": "pesquisador",
@@ -1035,6 +1131,17 @@
     "acessado": "2026-11-20",
     "rotulo": "artigo Tucano 2 Cool, autoria e afiliação",
     "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+   }
+  },
+  {
+   "de": "pub:PORTULAN",
+   "para": "lab:nlx-ulisboa",
+   "tipo": "projeto",
+   "fonte": {
+    "tipo": "cartao_modelo",
+    "url": "https://huggingface.co/PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "acessado": "2026-11-20",
+    "trecho": "Gervásio 8B PTPT is developed by NLX-Natural Language and Speech Group, at the University of Lisbon, Faculty of Sciences, Department of Informatics, Portugal."
    }
   },
   {
@@ -1191,6 +1298,12 @@
        "filhos": []
       }
      ]
+    },
+    {
+     "tipo": "publicador",
+     "id": "pucpr",
+     "n_modelos": 20,
+     "filhos": []
     }
    ]
   },
@@ -1275,6 +1388,26 @@
      "id": "coppead",
      "n_modelos": 1,
      "filhos": []
+    }
+   ]
+  },
+  {
+   "tipo": "instituicao",
+   "id": "ulisboa",
+   "pais": "PT",
+   "filhos": [
+    {
+     "tipo": "laboratorio",
+     "id": "nlx-ulisboa",
+     "pais": "PT",
+     "filhos": [
+      {
+       "tipo": "publicador",
+       "id": "PORTULAN",
+       "n_modelos": 19,
+       "filhos": []
+      }
+     ]
     }
    ]
   },
@@ -1394,6 +1527,12 @@
   },
   {
    "tipo": "publicador",
+   "id": "alfaneo",
+   "n_modelos": 6,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "allenai",
    "n_modelos": 283,
    "filhos": []
@@ -1418,6 +1557,12 @@
   },
   {
    "tipo": "publicador",
+   "id": "botbotrobotics",
+   "n_modelos": 6,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "cnmoro",
    "n_modelos": 69,
    "filhos": []
@@ -1432,6 +1577,18 @@
    "tipo": "publicador",
    "id": "dominguesm",
    "n_modelos": 14,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "eduagarcia",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "felipeoes",
+   "n_modelos": 2,
    "filhos": []
   },
   {
@@ -1532,6 +1689,12 @@
   },
   {
    "tipo": "publicador",
+   "id": "melll-uff",
+   "n_modelos": 6,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "meta-llama",
    "n_modelos": 36,
    "filhos": []
@@ -1562,6 +1725,12 @@
   },
   {
    "tipo": "publicador",
+   "id": "pierreguillou",
+   "n_modelos": 14,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "Qwen",
    "n_modelos": 207,
    "filhos": []
@@ -1580,6 +1749,18 @@
   },
   {
    "tipo": "publicador",
+   "id": "ricardoz",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "sagui-nlp",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "sallani",
    "n_modelos": 3,
    "filhos": []
@@ -1588,6 +1769,12 @@
    "tipo": "publicador",
    "id": "Venturus",
    "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "wandgibaut",
+   "n_modelos": 2,
    "filhos": []
   },
   {

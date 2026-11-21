@@ -1,0 +1,51 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "extraglue",
+  "nome": "ExtraGLUE",
+  "sigla": "ExtraGLUE",
+  "descricao": {
+    "pt": "Tradução automática de tarefas do GLUE e do SuperGLUE para o português europeu e o do Brasil (14 tarefas de compreensão de linguagem).",
+    "en": "Automatic translation of GLUE and SuperGLUE tasks into European and Brazilian Portuguese (14 language understanding tasks)."
+  },
+  "dominio": [
+    "geral"
+  ],
+  "idiomas": [
+    "pt-BR",
+    "pt-PT"
+  ],
+  "tarefas": [
+    "text-classification",
+    "sentence-similarity",
+    "question-answering"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "PORTULAN/extraglue"
+  ],
+  "criador": {
+    "nome": "PORTULAN CLARIN",
+    "fonte": {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/PORTULAN/extraglue",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "PORTULAN CLARIN—Research Infrastructure for the Science and Technology of Language"
+    }
+  },
+  "ano": 2024,
+  "links": {
+    "site": "https://huggingface.co/datasets/PORTULAN/extraglue",
+    "artigo": "https://aclanthology.org/2024.bucc-1.3"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/PORTULAN/extraglue",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "ExtraGLUE is a Portuguese dataset obtained by the automatic translation of some of the tasks in the GLUE and SuperGLUE benchmarks."
+    }
+  ]
+}

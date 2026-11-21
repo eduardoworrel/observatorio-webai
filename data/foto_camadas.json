@@ -1,32 +1,34 @@
 {
  "datasets": {
-  "total": 2229,
+  "total": 2265,
   "por_escopo": {
-   "br": 255,
-   "pt": 1974
+   "br": 309,
+   "pt": 1956
   },
-  "pt_br": 259,
+  "pt_br": 263,
   "por_faixa": {
-   "1-100MB": 725,
-   "1-10GB": 408,
-   "100MB-1GB": 424,
-   "<1MB": 251,
-   ">10GB": 421
+   "1-100MB": 736,
+   "1-10GB": 415,
+   "100MB-1GB": 435,
+   "<1MB": 255,
+   ">10GB": 424
   },
-  "downloads_total": 6489329
+  "downloads_total": 6498413
  },
  "benchmarks": {
-  "total": 10,
+  "total": 16,
   "por_dominio": {
-   "cultura_lingua": 1,
-   "extracao_classificacao": 6,
-   "geral": 1,
+   "cultura_lingua": 2,
+   "extracao_classificacao": 7,
+   "geral": 3,
    "juridico": 2,
+   "outros": 2,
    "vestibular_educacao": 2
   },
   "por_tipo": {
    "avaliacao": 1,
-   "conjunto": 9
+   "conjunto": 14,
+   "leaderboard": 1
   }
  }
 }

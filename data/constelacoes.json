@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -124,6 +124,26 @@
      "AIInstituteLNCC/manaca-1b-instruct",
      "AIInstituteLNCC/manaca-1b-instruct-2",
      "manaca"
+    ]
+   ]
+  },
+  {
+   "id": "alfaneo",
+   "nome": "Alfaneo AI",
+   "escopo": "br",
+   "modelos": [
+    "alfaneo/bert-base-multilingual-sts",
+    "alfaneo/bertimbau-base-portuguese-sts",
+    "alfaneo/bertimbaulaw-base-portuguese-cased",
+    "alfaneo/bertimbaulaw-base-portuguese-sts",
+    "alfaneo/jurisbert-base-portuguese-sts",
+    "alfaneo/jurisbert-base-portuguese-uncased"
+   ],
+   "arestas": [
+    [
+     "alfaneo/jurisbert-base-portuguese-sts",
+     "alfaneo/jurisbert-base-portuguese-uncased",
+     "jurisbert-portuguese"
     ]
    ]
   },
@@ -308,6 +328,20 @@
      "qwen2.5"
     ]
    ]
+  },
+  {
+   "id": "botbotrobotics",
+   "nome": "BotBot",
+   "escopo": "br",
+   "modelos": [
+    "botbotrobotics/Cabra",
+    "botbotrobotics/cabra13b",
+    "botbotrobotics/CabraLlama3-8b",
+    "botbotrobotics/CabraMistral-v3-7b-32k",
+    "botbotrobotics/CabraMistral7b",
+    "botbotrobotics/CabraQwen7b"
+   ],
+   "arestas": []
   },
   {
    "id": "c2d-usp",
@@ -868,6 +902,26 @@
      "positive"
     ]
    ]
+  },
+  {
+   "id": "eduagarcia",
+   "nome": "eduagarcia",
+   "escopo": "br",
+   "modelos": [
+    "eduagarcia/RoBERTaCrawlPT-base",
+    "eduagarcia/RoBERTaLexPT-base"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "felipeoes",
+   "nome": "Felipe Oliveira",
+   "escopo": "br",
+   "modelos": [
+    "felipeoes/cocoruta-2-8b",
+    "felipeoes/cocoruta-7b"
+   ],
+   "arestas": []
   },
   {
    "id": "FMendonca",
@@ -6404,6 +6458,26 @@
    ]
   },
   {
+   "id": "melll-uff",
+   "nome": "Machine and Language Learning Lab at Universidade Federal Fluminense",
+   "escopo": "br",
+   "modelos": [
+    "melll-uff/bertweetbr",
+    "melll-uff/itd_bert",
+    "melll-uff/itd_longformer",
+    "melll-uff/longformer",
+    "melll-uff/pt-br_simcse",
+    "melll-uff/sbert_ptbr"
+   ],
+   "arestas": [
+    [
+     "melll-uff/itd_bert",
+     "melll-uff/itd_longformer",
+     "itd"
+    ]
+   ]
+  },
+  {
    "id": "neuralmind",
    "nome": "NeuralMind Inteligência Artificial",
    "escopo": "br",
@@ -6582,6 +6656,158 @@
    ]
   },
   {
+   "id": "pierreguillou",
+   "nome": "Pierre Guillou",
+   "escopo": "br",
+   "modelos": [
+    "pierreguillou/bert-base-cased-pt-lenerbr",
+    "pierreguillou/bert-base-cased-squad-v1.1-portuguese",
+    "pierreguillou/bert-large-cased-pt-lenerbr",
+    "pierreguillou/bert-large-cased-squad-v1.1-portuguese",
+    "pierreguillou/gpt2-small-portuguese",
+    "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+    "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512",
+    "pierreguillou/layoutxlm-finetuned-xfund-fr",
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-funsd-iob-original",
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+    "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512",
+    "pierreguillou/llama-2-7b-hf-text2image-prompts-Liege-test",
+    "pierreguillou/ner-bert-base-cased-pt-lenerbr",
+    "pierreguillou/ner-bert-large-cased-pt-lenerbr"
+   ],
+   "arestas": [
+    [
+     "pierreguillou/bert-base-cased-pt-lenerbr",
+     "pierreguillou/bert-large-cased-pt-lenerbr",
+     "bert-pt"
+    ],
+    [
+     "pierreguillou/bert-base-cased-squad-v1.1-portuguese",
+     "pierreguillou/bert-large-cased-squad-v1.1-portuguese",
+     "bert-squad"
+    ],
+    [
+     "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+     "pierreguillou/layout-xlm-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512",
+     "layout"
+    ],
+    [
+     "pierreguillou/lilt-xlm-roberta-base-finetuned-funsd-iob-original",
+     "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+     "lilt"
+    ],
+    [
+     "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-linelevel-ml384",
+     "pierreguillou/lilt-xlm-roberta-base-finetuned-with-DocLayNet-base-at-paragraphlevel-ml512",
+     "lilt"
+    ],
+    [
+     "pierreguillou/ner-bert-base-cased-pt-lenerbr",
+     "pierreguillou/ner-bert-large-cased-pt-lenerbr",
+     "ner"
+    ]
+   ]
+  },
+  {
+   "id": "pucpr",
+   "nome": "PUC PR",
+   "escopo": "br",
+   "modelos": [
+    "pucpr/biobertpt-all",
+    "pucpr/biobertpt-bio",
+    "pucpr/biobertpt-clin",
+    "pucpr/bioBERTpt-squad-v1.1-portuguese",
+    "pucpr/clinicalnerpt-chemical",
+    "pucpr/clinicalnerpt-diagnostic",
+    "pucpr/clinicalnerpt-disease",
+    "pucpr/clinicalnerpt-disorder",
+    "pucpr/clinicalnerpt-finding",
+    "pucpr/clinicalnerpt-healthcare",
+    "pucpr/clinicalnerpt-laboratory",
+    "pucpr/clinicalnerpt-medical",
+    "pucpr/clinicalnerpt-pharmacologic",
+    "pucpr/clinicalnerpt-procedure",
+    "pucpr/clinicalnerpt-quantitative",
+    "pucpr/clinicalnerpt-sign",
+    "pucpr/clinicalnerpt-therapeutic",
+    "pucpr/eHelpBERTpt",
+    "pucpr/gpt2-bio-pt",
+    "pucpr/tempclin-biobertpt-all"
+   ],
+   "arestas": [
+    [
+     "pucpr/biobertpt-all",
+     "pucpr/biobertpt-bio",
+     "bert-multilingual"
+    ],
+    [
+     "pucpr/biobertpt-bio",
+     "pucpr/biobertpt-clin",
+     "bert-multilingual"
+    ],
+    [
+     "pucpr/clinicalnerpt-chemical",
+     "pucpr/clinicalnerpt-diagnostic",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-diagnostic",
+     "pucpr/clinicalnerpt-disease",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-disease",
+     "pucpr/clinicalnerpt-disorder",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-disorder",
+     "pucpr/clinicalnerpt-finding",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-finding",
+     "pucpr/clinicalnerpt-healthcare",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-healthcare",
+     "pucpr/clinicalnerpt-laboratory",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-laboratory",
+     "pucpr/clinicalnerpt-medical",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-medical",
+     "pucpr/clinicalnerpt-pharmacologic",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-pharmacologic",
+     "pucpr/clinicalnerpt-procedure",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-procedure",
+     "pucpr/clinicalnerpt-quantitative",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-quantitative",
+     "pucpr/clinicalnerpt-sign",
+     "clinicalnerpt"
+    ],
+    [
+     "pucpr/clinicalnerpt-sign",
+     "pucpr/clinicalnerpt-therapeutic",
+     "clinicalnerpt"
+    ]
+   ]
+  },
+  {
    "id": "pucpr-br",
    "nome": "Pontifícia Universidade Católica do Paraná",
    "escopo": "br",
@@ -6725,6 +6951,37 @@
      "rhaymison/Llama-3-portuguese-Tom-cat-8b-instruct",
      "rhaymison/Llama3-portuguese-luana-8b-instruct",
      "meta"
+    ]
+   ]
+  },
+  {
+   "id": "ricardoz",
+   "nome": "Ricardo Zago",
+   "escopo": "br",
+   "modelos": [
+    "ricardoz/BERTugues-base-portuguese-cased"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "sagui-nlp",
+   "nome": "Sagui NLP",
+   "escopo": "br",
+   "modelos": [
+    "sagui-nlp/debertinha-ptbr-xsmall",
+    "sagui-nlp/debertinha-ptbr-xsmall-assin2-sts",
+    "sagui-nlp/debertinha-ptbr-xsmall-lenerbr"
+   ],
+   "arestas": [
+    [
+     "sagui-nlp/debertinha-ptbr-xsmall",
+     "sagui-nlp/debertinha-ptbr-xsmall-assin2-sts",
+     "debertinha"
+    ],
+    [
+     "sagui-nlp/debertinha-ptbr-xsmall-assin2-sts",
+     "sagui-nlp/debertinha-ptbr-xsmall-lenerbr",
+     "debertinha"
     ]
    ]
   },
@@ -6945,6 +7202,16 @@
     "Venturus/BERTimbau-AnonyMED-BR",
     "Venturus/mBERT-AnonyMED-BR-syn",
     "Venturus/ptt5-v2-AnonyMED-BR"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "wandgibaut",
+   "nome": "Wandemberg Gibaut",
+   "escopo": "br",
+   "modelos": [
+    "wandgibaut/opus-mt-en-de-finetuned-en-to-de",
+    "wandgibaut/periquito-3B"
    ],
    "arestas": []
   },
@@ -15045,6 +15312,109 @@
      "Polygl0t/Tucano2-qwen-3.7B-Instruct",
      "Polygl0t/Tucano2-qwen-3.7B-Think",
      "tucano2"
+    ]
+   ]
+  },
+  {
+   "id": "PORTULAN",
+   "nome": "PORTULAN",
+   "escopo": "mundo",
+   "modelos": [
+    "PORTULAN/albertina-100m-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-100m-portuguese-ptpt-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptbr-encoder-256",
+    "PORTULAN/albertina-1b5-portuguese-ptpt-encoder",
+    "PORTULAN/albertina-1b5-portuguese-ptpt-encoder-256",
+    "PORTULAN/albertina-900m-portuguese-ptbr-encoder",
+    "PORTULAN/albertina-900m-portuguese-ptbr-encoder-brwac",
+    "PORTULAN/albertina-900m-portuguese-ptpt-encoder",
+    "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
+    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit",
+    "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
+    "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder-ir",
+    "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder",
+    "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder-ir"
+   ],
+   "arestas": [
+    [
+     "PORTULAN/albertina-100m-portuguese-ptbr-encoder",
+     "PORTULAN/albertina-100m-portuguese-ptpt-encoder",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-100m-portuguese-ptpt-encoder",
+     "PORTULAN/albertina-1b5-portuguese-ptbr-encoder",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-1b5-portuguese-ptbr-encoder",
+     "PORTULAN/albertina-1b5-portuguese-ptbr-encoder-256",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-1b5-portuguese-ptbr-encoder-256",
+     "PORTULAN/albertina-1b5-portuguese-ptpt-encoder",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-1b5-portuguese-ptpt-encoder",
+     "PORTULAN/albertina-1b5-portuguese-ptpt-encoder-256",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-1b5-portuguese-ptpt-encoder-256",
+     "PORTULAN/albertina-900m-portuguese-ptbr-encoder",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-900m-portuguese-ptbr-encoder",
+     "PORTULAN/albertina-900m-portuguese-ptbr-encoder-brwac",
+     "albertina"
+    ],
+    [
+     "PORTULAN/albertina-900m-portuguese-ptbr-encoder-brwac",
+     "PORTULAN/albertina-900m-portuguese-ptpt-encoder",
+     "albertina"
+    ],
+    [
+     "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
+     "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
+     "gervasio"
+    ],
+    [
+     "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
+     "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit",
+     "gervasio"
+    ],
+    [
+     "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder",
+     "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
+     "serafim"
+    ],
+    [
+     "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
+     "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder",
+     "serafim"
+    ],
+    [
+     "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder",
+     "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder-ir",
+     "serafim"
+    ],
+    [
+     "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder-ir",
+     "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder",
+     "serafim"
+    ],
+    [
+     "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder",
+     "PORTULAN/serafim-900m-portuguese-pt-sentence-encoder-ir",
+     "serafim"
     ]
    ]
   },

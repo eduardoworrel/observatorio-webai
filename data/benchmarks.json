@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -169,6 +169,58 @@
    "downloads_total": 3439
   },
   {
+   "id": "extraglue",
+   "nome": "ExtraGLUE",
+   "sigla": "ExtraGLUE",
+   "descricao": {
+    "pt": "Tradução automática de tarefas do GLUE e do SuperGLUE para o português europeu e o do Brasil (14 tarefas de compreensão de linguagem).",
+    "en": "Automatic translation of GLUE and SuperGLUE tasks into European and Brazilian Portuguese (14 language understanding tasks)."
+   },
+   "dominio": [
+    "geral"
+   ],
+   "idiomas": [
+    "pt-BR",
+    "pt-PT"
+   ],
+   "tarefas": [
+    "text-classification",
+    "sentence-similarity",
+    "question-answering"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "PORTULAN/extraglue"
+   ],
+   "criador": {
+    "nome": "PORTULAN CLARIN",
+    "fonte": {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/PORTULAN/extraglue",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "PORTULAN CLARIN—Research Infrastructure for the Science and Technology of Language"
+    }
+   },
+   "ano": 2024,
+   "links": {
+    "site": "https://huggingface.co/datasets/PORTULAN/extraglue",
+    "artigo": "https://aclanthology.org/2024.bucc-1.3"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/PORTULAN/extraglue",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "ExtraGLUE is a Portuguese dataset obtained by the automatic translation of some of the tasks in the GLUE and SuperGLUE benchmarks."
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 328163110,
+   "downloads_total": 740
+  },
+  {
    "id": "faquad",
    "nome": "FaQuAD",
    "sigla": "FaQuAD",
@@ -328,6 +380,248 @@
    "n_datasets": 1,
    "tamanho_total_bytes": 390654,
    "downloads_total": 244
+  },
+  {
+   "id": "open-pt-llm-leaderboard",
+   "nome": "Open Portuguese LLM Leaderboard",
+   "sigla": "Open PT LLM",
+   "descricao": {
+    "pt": "Quadro de avaliação de LLMs em tarefas em português (ENEM, BLUEX, OAB, ASSIN 2, FaQuAD, HateBR, PT Hate Speech, TweetSentBR); arquivado, sem novos envios.",
+    "en": "Leaderboard of LLMs on Portuguese tasks (ENEM, BLUEX, OAB, ASSIN 2, FaQuAD, HateBR, PT Hate Speech, TweetSentBR); archived, no new submissions."
+   },
+   "dominio": [
+    "geral"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-generation"
+   ],
+   "tipo": "leaderboard",
+   "datasets": [
+    "eduagarcia/enem_challenge",
+    "eduagarcia-temp/BLUEX_without_images",
+    "eduagarcia/oab_exams",
+    "eduagarcia/portuguese_benchmark",
+    "ruanchaves/faquad-nli",
+    "eduagarcia/tweetsentbr_fewshot"
+   ],
+   "criador": {
+    "publicador": "eduagarcia"
+   },
+   "links": {
+    "leaderboard": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard/raw/main/README.md",
+     "acessado": "2026-11-20",
+     "rotulo": "README do espaço",
+     "trecho": "short_description: Archived benchmark of open LLMs in Portuguese"
+    },
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard/raw/main/tasks_config/pt_config.yaml",
+     "acessado": "2026-11-20",
+     "rotulo": "configuração de tarefas",
+     "trecho": "LEADERBOARD_NAME: \"Open Portuguese LLM Leaderboard\""
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/html/2608.18138",
+     "acessado": "2026-11-20",
+     "rotulo": "artigo (mapeamento sistemático)",
+     "trecho": "via the Open Portuguese LLM Leaderboard"
+    }
+   ],
+   "n_datasets": 6,
+   "tamanho_total_bytes": 13568143,
+   "downloads_total": 5098
+  },
+  {
+   "id": "pira",
+   "nome": "Pirá 2.0",
+   "sigla": "Pirá",
+   "descricao": {
+    "pt": "Perguntas e respostas bilíngues (português e inglês) sobre o oceano, a costa brasileira e as mudanças climáticas, com textos de apoio.",
+    "en": "Bilingual (Portuguese and English) question answering about the ocean, the Brazilian coast and climate change, with supporting texts."
+   },
+   "dominio": [
+    "outros"
+   ],
+   "idiomas": [
+    "pt",
+    "en"
+   ],
+   "tarefas": [
+    "question-answering"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "paulopirozelli/pira"
+   ],
+   "ano": 2023,
+   "links": {
+    "site": "https://huggingface.co/datasets/paulopirozelli/pira",
+    "artigo": "https://arxiv.org/abs/2309.10945",
+    "codigo": "https://github.com/C4AI/Pira"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/paulopirozelli/pira",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "Pirá is a crowdsourced reading comprehension dataset on the ocean, the Brazilian coast, and climate change."
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://arxiv.org/abs/2309.10945",
+     "acessado": "2026-11-20",
+     "rotulo": "artigo (arXiv)",
+     "trecho": "Benchmarks for Pirá 2.0, a Reading Comprehension Dataset about the Ocean, the Brazilian Coast, and Climate Change"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 8201365,
+   "downloads_total": 682
+  },
+  {
+   "id": "porsimplessent",
+   "nome": "PorSimplesSent",
+   "sigla": "PorSimplesSent",
+   "descricao": {
+    "pt": "Pares e trios de sentenças alinhadas em português, em três níveis de simplificação, para avaliar a legibilidade de sentenças.",
+    "en": "Aligned Portuguese sentence pairs and triplets at three simplification levels, to assess sentence readability."
+   },
+   "dominio": [
+    "cultura_lingua"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "sentence-pair-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "ruanchaves/porsimplessent"
+   ],
+   "ano": 2018,
+   "links": {
+    "site": "https://huggingface.co/datasets/ruanchaves/porsimplessent",
+    "artigo": "https://aclanthology.org/C18-1034/",
+    "codigo": "https://github.com/sidleal/porsimplessent"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/ruanchaves/porsimplessent",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "PorSimplesSent is a Portuguese corpus of aligned sentence pairs and triplets"
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://aclanthology.org/C18-1034/",
+     "acessado": "2026-11-20",
+     "rotulo": "artigo (ACL Anthology)",
+     "trecho": "A Nontrivial Sentence Corpus for the Task of Sentence Readability Assessment in Portuguese"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 12001,
+   "downloads_total": 45
+  },
+  {
+   "id": "pt-hate-speech",
+   "nome": "Portuguese Hate Speech Dataset",
+   "sigla": "PT Hate Speech",
+   "descricao": {
+    "pt": "Tweets em português com anotação binária (discurso de ódio ou não), para detecção de discurso de ódio.",
+    "en": "Portuguese tweets with binary annotation (hate or no-hate), for hate speech detection."
+   },
+   "dominio": [
+    "extracao_classificacao"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "text-classification"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "hate-speech-portuguese/hate_speech_portuguese"
+   ],
+   "ano": 2019,
+   "links": {
+    "site": "https://huggingface.co/datasets/hate-speech-portuguese/hate_speech_portuguese",
+    "artigo": "https://aclanthology.org/W19-3510/",
+    "codigo": "https://github.com/paulafortuna/Portuguese-Hate-Speech-Dataset"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/hate-speech-portuguese/hate_speech_portuguese",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "Portuguese dataset for hate speech detection composed of 5,668 tweets with binary annotations"
+    },
+    {
+     "tipo": "artigo",
+     "url": "https://aclanthology.org/W19-3510/",
+     "acessado": "2026-11-20",
+     "rotulo": "artigo (ACL Anthology)",
+     "trecho": "A Hierarchically-Labeled Portuguese Hate Speech Dataset"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 10695,
+   "downloads_total": 254
+  },
+  {
+   "id": "recognasumm",
+   "nome": "RecognaSumm",
+   "sigla": "RecognaSumm",
+   "descricao": {
+    "pt": "Notícias em português coletadas de agências e portais, com resumos, para sumarização automática de texto.",
+    "en": "Portuguese news from agencies and online portals, with summaries, for automatic text summarization."
+   },
+   "dominio": [
+    "outros"
+   ],
+   "idiomas": [
+    "pt"
+   ],
+   "tarefas": [
+    "summarization"
+   ],
+   "tipo": "conjunto",
+   "datasets": [
+    "recogna-nlp/recognasumm"
+   ],
+   "criador": {
+    "publicador": "recogna-nlp"
+   },
+   "ano": 2024,
+   "links": {
+    "site": "https://huggingface.co/datasets/recogna-nlp/recognasumm"
+   },
+   "fontes": [
+    {
+     "tipo": "repositorio",
+     "url": "https://huggingface.co/datasets/recogna-nlp/recognasumm",
+     "acessado": "2026-11-20",
+     "rotulo": "cartão do dataset",
+     "trecho": "RecognaSumm is a novel and comprehensive database specifically designed for the task of automatic text summarization in Portuguese"
+    }
+   ],
+   "n_datasets": 1,
+   "tamanho_total_bytes": 655538579,
+   "downloads_total": 285
   },
   {
    "id": "sib-200",

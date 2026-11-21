@@ -1,0 +1,39 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "alfaneo",
+  "nome": "Alfaneo AI",
+  "tipo": "grupo",
+  "natureza": "empresa",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "regiao": "BR-MS",
+  "evidencia_pais": {
+    "tipo": "perfil_oficial",
+    "url": "https://github.com/alfaneo-ai",
+    "acessado": "2026-11-20",
+    "rotulo": "localização declarada no GitHub vinculado ao perfil do Hugging Face",
+    "trecho": "Campo Grande - MS, Brazil"
+  },
+  "evidencia_natureza": {
+    "classe": "empresa",
+    "tipo": "site_institucional",
+    "url": "https://alfaneo.ai",
+    "acessado": "2026-11-20",
+    "trecho": "A liderança da nossa empresa é composta por especialistas apaixonados por IA."
+  },
+  "links": {
+    "hf": "https://huggingface.co/alfaneo",
+    "github": "https://github.com/alfaneo-ai",
+    "oficial": "https://alfaneo.ai"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/alfaneo",
+      "acessado": "2026-11-20",
+      "rotulo": "Organização no Hugging Face"
+    }
+  ],
+  "status": "ativo"
+}

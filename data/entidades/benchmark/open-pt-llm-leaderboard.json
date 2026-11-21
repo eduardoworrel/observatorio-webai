@@ -1,0 +1,58 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "open-pt-llm-leaderboard",
+  "nome": "Open Portuguese LLM Leaderboard",
+  "sigla": "Open PT LLM",
+  "descricao": {
+    "pt": "Quadro de avaliação de LLMs em tarefas em português (ENEM, BLUEX, OAB, ASSIN 2, FaQuAD, HateBR, PT Hate Speech, TweetSentBR); arquivado, sem novos envios.",
+    "en": "Leaderboard of LLMs on Portuguese tasks (ENEM, BLUEX, OAB, ASSIN 2, FaQuAD, HateBR, PT Hate Speech, TweetSentBR); archived, no new submissions."
+  },
+  "dominio": [
+    "geral"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "text-generation"
+  ],
+  "tipo": "leaderboard",
+  "datasets": [
+    "eduagarcia/enem_challenge",
+    "eduagarcia-temp/BLUEX_without_images",
+    "eduagarcia/oab_exams",
+    "eduagarcia/portuguese_benchmark",
+    "ruanchaves/faquad-nli",
+    "eduagarcia/tweetsentbr_fewshot"
+  ],
+  "criador": {
+    "publicador": "eduagarcia"
+  },
+  "links": {
+    "leaderboard": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard/raw/main/README.md",
+      "acessado": "2026-11-20",
+      "rotulo": "README do espaço",
+      "trecho": "short_description: Archived benchmark of open LLMs in Portuguese"
+    },
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/spaces/eduagarcia/open_pt_llm_leaderboard/raw/main/tasks_config/pt_config.yaml",
+      "acessado": "2026-11-20",
+      "rotulo": "configuração de tarefas",
+      "trecho": "LEADERBOARD_NAME: \"Open Portuguese LLM Leaderboard\""
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/html/2608.18138",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo (mapeamento sistemático)",
+      "trecho": "via the Open Portuguese LLM Leaderboard"
+    }
+  ]
+}

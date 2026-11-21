@@ -1,0 +1,47 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "pira",
+  "nome": "Pirá 2.0",
+  "sigla": "Pirá",
+  "descricao": {
+    "pt": "Perguntas e respostas bilíngues (português e inglês) sobre o oceano, a costa brasileira e as mudanças climáticas, com textos de apoio.",
+    "en": "Bilingual (Portuguese and English) question answering about the ocean, the Brazilian coast and climate change, with supporting texts."
+  },
+  "dominio": [
+    "outros"
+  ],
+  "idiomas": [
+    "pt",
+    "en"
+  ],
+  "tarefas": [
+    "question-answering"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "paulopirozelli/pira"
+  ],
+  "ano": 2023,
+  "links": {
+    "site": "https://huggingface.co/datasets/paulopirozelli/pira",
+    "artigo": "https://arxiv.org/abs/2309.10945",
+    "codigo": "https://github.com/C4AI/Pira"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/paulopirozelli/pira",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "Pirá is a crowdsourced reading comprehension dataset on the ocean, the Brazilian coast, and climate change."
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/abs/2309.10945",
+      "acessado": "2026-11-20",
+      "rotulo": "artigo (arXiv)",
+      "trecho": "Benchmarks for Pirá 2.0, a Reading Comprehension Dataset about the Ocean, the Brazilian Coast, and Climate Change"
+    }
+  ]
+}

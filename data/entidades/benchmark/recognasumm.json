@@ -1,0 +1,40 @@
+{
+  "spec": "1.0",
+  "entidade": "benchmark",
+  "id": "recognasumm",
+  "nome": "RecognaSumm",
+  "sigla": "RecognaSumm",
+  "descricao": {
+    "pt": "Notícias em português coletadas de agências e portais, com resumos, para sumarização automática de texto.",
+    "en": "Portuguese news from agencies and online portals, with summaries, for automatic text summarization."
+  },
+  "dominio": [
+    "outros"
+  ],
+  "idiomas": [
+    "pt"
+  ],
+  "tarefas": [
+    "summarization"
+  ],
+  "tipo": "conjunto",
+  "datasets": [
+    "recogna-nlp/recognasumm"
+  ],
+  "criador": {
+    "publicador": "recogna-nlp"
+  },
+  "ano": 2024,
+  "links": {
+    "site": "https://huggingface.co/datasets/recogna-nlp/recognasumm"
+  },
+  "fontes": [
+    {
+      "tipo": "repositorio",
+      "url": "https://huggingface.co/datasets/recogna-nlp/recognasumm",
+      "acessado": "2026-11-20",
+      "rotulo": "cartão do dataset",
+      "trecho": "RecognaSumm is a novel and comprehensive database specifically designed for the task of automatic text summarization in Portuguese"
+    }
+  ]
+}

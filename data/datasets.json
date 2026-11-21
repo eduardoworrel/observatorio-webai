@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-20",
+  "coletado_em": "2026-11-21",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
   "unidades": {
@@ -20,6 +20,10 @@
     "em": "2026-11-20",
     "sig": "549eb8ce1fbf"
    },
+   "ds:bench:extraglue": {
+    "em": "2026-11-21",
+    "sig": "5076bc3633b8"
+   },
    "ds:bench:faquad": {
     "em": "2026-11-20",
     "sig": "b2965a991e16"
@@ -35,6 +39,26 @@
    "ds:bench:oab-bench": {
     "em": "2026-11-20",
     "sig": "a23cb7f59d9e"
+   },
+   "ds:bench:open-pt-llm-leaderboard": {
+    "em": "2026-11-21",
+    "sig": "3e724bd499c6"
+   },
+   "ds:bench:pira": {
+    "em": "2026-11-21",
+    "sig": "05537fb990aa"
+   },
+   "ds:bench:porsimplessent": {
+    "em": "2026-11-21",
+    "sig": "e372018b2f06"
+   },
+   "ds:bench:pt-hate-speech": {
+    "em": "2026-11-21",
+    "sig": "32a411980cf8"
+   },
+   "ds:bench:recognasumm": {
+    "em": "2026-11-21",
+    "sig": "a755acef5099"
    },
    "ds:bench:sib-200": {
     "em": "2026-11-20",
@@ -104,6 +128,10 @@
     "em": "2026-11-20",
     "sig": ""
    },
+   "ds:pub:alfaneo": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
    "ds:pub:althayr": {
     "em": "2026-11-20",
     "sig": ""
@@ -114,6 +142,10 @@
    },
    "ds:pub:artificialguybr": {
     "em": "2026-11-20",
+    "sig": ""
+   },
+   "ds:pub:botbotrobotics": {
+    "em": "2026-11-21",
     "sig": ""
    },
    "ds:pub:c2d-usp": {
@@ -148,6 +180,14 @@
     "em": "2026-11-20",
     "sig": ""
    },
+   "ds:pub:eduagarcia": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
+   "ds:pub:felipeoes": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
    "ds:pub:g-assismoraes": {
     "em": "2026-11-20",
     "sig": ""
@@ -172,6 +212,10 @@
     "em": "2026-11-20",
     "sig": ""
    },
+   "ds:pub:melll-uff": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
    "ds:pub:neuralmind": {
     "em": "2026-11-20",
     "sig": ""
@@ -180,8 +224,16 @@
     "em": "2026-11-20",
     "sig": ""
    },
+   "ds:pub:pierreguillou": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
    "ds:pub:plvictor": {
     "em": "2026-11-20",
+    "sig": ""
+   },
+   "ds:pub:pucpr": {
+    "em": "2026-11-21",
     "sig": ""
    },
    "ds:pub:pucpr-br": {
@@ -194,6 +246,14 @@
    },
    "ds:pub:rhaymison": {
     "em": "2026-11-20",
+    "sig": ""
+   },
+   "ds:pub:ricardoz": {
+    "em": "2026-11-21",
+    "sig": ""
+   },
+   "ds:pub:sagui-nlp": {
+    "em": "2026-11-21",
     "sig": ""
    },
    "ds:pub:semantixai": {
@@ -210,6 +270,10 @@
    },
    "ds:pub:unicamp-dl": {
     "em": "2026-11-20",
+    "sig": ""
+   },
+   "ds:pub:wandgibaut": {
+    "em": "2026-11-21",
     "sig": ""
    },
    "ds:pub:wilsondesouza": {
@@ -391,6 +455,40 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/CrawlPT_dedup",
+   "publicador": "eduagarcia",
+   "nome": "CrawlPT_dedup",
+   "descricao": "CrawlPT is a generic Portuguese corpus extracted from various web pages.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 170128326194,
+   "faixa": ">10GB",
+   "linhas_faixa": "100M<n<1B",
+   "downloads": 2478,
+   "likes": 8,
+   "atualizado": "2024-03-14",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/CrawlPT_dedup",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "recogna-nlp/Bode-reasoning",
    "publicador": "recogna-nlp",
    "nome": "Bode-reasoning",
@@ -423,6 +521,38 @@
    ],
    "escopo": "br",
    "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/enem_challenge",
+   "publicador": "eduagarcia",
+   "nome": "enem_challenge",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1050045,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 2036,
+   "likes": 4,
+   "atualizado": "2024-01-30",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/enem_challenge",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:open-pt-llm-leaderboard",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": [
+    "open-pt-llm-leaderboard"
+   ]
   },
   {
    "id": "dominguesm/brwac",
@@ -696,6 +826,133 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/oab_exams",
+   "publicador": "eduagarcia",
+   "nome": "oab_exams",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1266721,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 1117,
+   "likes": 7,
+   "atualizado": "2024-01-30",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/oab_exams",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:open-pt-llm-leaderboard",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": [
+    "open-pt-llm-leaderboard"
+   ]
+  },
+  {
+   "id": "eduagarcia/tokenizer_benchmark_results",
+   "publicador": "eduagarcia",
+   "nome": "tokenizer_benchmark_results",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 417444809,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": null,
+   "downloads": 1050,
+   "likes": 0,
+   "atualizado": "2026-10-13",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/tokenizer_benchmark_results",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/LegalPT_dedup",
+   "publicador": "eduagarcia",
+   "nome": "LegalPT_dedup",
+   "descricao": "LegalPT aggregates the maximum amount of publicly available legal data in Portuguese, drawing from varied sources including legislation, jurisprudence, legal…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 87238503723,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 941,
+   "likes": 23,
+   "atualizado": "2024-05-07",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/LegalPT_dedup",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/LegalPT",
+   "publicador": "eduagarcia",
+   "nome": "LegalPT",
+   "descricao": "LegalPT aggregates the maximum amount of publicly available legal data in Portuguese, drawing from varied sources including legislation, jurisprudence, legal…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 134655182202,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 896,
+   "likes": 13,
+   "atualizado": "2024-05-07",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/LegalPT",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "recogna-nlp/UltrachatBR",
    "publicador": "recogna-nlp",
    "nome": "UltrachatBR",
@@ -728,6 +985,73 @@
    ],
    "escopo": "br",
    "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/CrawlPT",
+   "publicador": "eduagarcia",
+   "nome": "CrawlPT",
+   "descricao": "CrawlPT is a generic Portuguese corpus extracted from various web pages.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 219780367288,
+   "faixa": ">10GB",
+   "linhas_faixa": "100M<n<1B",
+   "downloads": 852,
+   "likes": 1,
+   "atualizado": "2024-03-14",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/CrawlPT",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/portuguese_benchmark",
+   "publicador": "eduagarcia",
+   "nome": "portuguese_benchmark",
+   "descricao": "This a collection of datasets in Portuguese initially meant to train and evaluate supervised language models such as BERT, RoBERTa, etc...",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 10549245,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 806,
+   "likes": 9,
+   "atualizado": "2024-04-30",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/portuguese_benchmark",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:open-pt-llm-leaderboard",
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": [
+    "open-pt-llm-leaderboard"
+   ]
   },
   {
    "id": "recogna-nlp/drbode360_dataset",
@@ -820,6 +1144,149 @@
    "benchmarks": []
   },
   {
+   "id": "pierreguillou/DocLayNet-large",
+   "publicador": "pierreguillou",
+   "nome": "DocLayNet-large",
+   "descricao": "Accurate document layout analysis is a key requirement for high-quality PDF document conversion. With the recent availability of public, large ground-truth…",
+   "idiomas": [
+    "de",
+    "en",
+    "fr",
+    "ja"
+   ],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [
+    "object-detection",
+    "image-segmentation",
+    "token-classification"
+   ],
+   "licenca": "other",
+   "tamanho_bytes": 37643714321,
+   "faixa": ">10GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 740,
+   "likes": 14,
+   "atualizado": "2023-05-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/pierreguillou/DocLayNet-large",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:pierreguillou"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "pierreguillou/DocLayNet-small",
+   "publicador": "pierreguillou",
+   "nome": "DocLayNet-small",
+   "descricao": "Accurate document layout analysis is a key requirement for high-quality PDF document conversion. With the recent availability of public, large ground-truth…",
+   "idiomas": [
+    "de",
+    "en",
+    "fr",
+    "ja"
+   ],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [
+    "object-detection",
+    "image-segmentation",
+    "token-classification"
+   ],
+   "licenca": "other",
+   "tamanho_bytes": 382514045,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "n<1K",
+   "downloads": 700,
+   "likes": 17,
+   "atualizado": "2023-05-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/pierreguillou/DocLayNet-small",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:pierreguillou"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/mc4-pt",
+   "publicador": "eduagarcia",
+   "nome": "mc4-pt",
+   "descricao": "MC4-PT is the is the portuguese subset from MC4.",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 312444515497,
+   "faixa": ">10GB",
+   "linhas_faixa": "100M<n<1B",
+   "downloads": 687,
+   "likes": 2,
+   "atualizado": "2024-02-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/mc4-pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "pierreguillou/DocLayNet-base",
+   "publicador": "pierreguillou",
+   "nome": "DocLayNet-base",
+   "descricao": "Accurate document layout analysis is a key requirement for high-quality PDF document conversion. With the recent availability of public, large ground-truth…",
+   "idiomas": [
+    "de",
+    "en",
+    "fr",
+    "ja"
+   ],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [
+    "object-detection",
+    "image-segmentation",
+    "token-classification"
+   ],
+   "licenca": "other",
+   "tamanho_bytes": 3801932219,
+   "faixa": "1-10GB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 664,
+   "likes": 20,
+   "atualizado": "2023-05-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/pierreguillou/DocLayNet-base",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:pierreguillou"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Itau-Unibanco/Aurora-PT",
    "publicador": "Itau-Unibanco",
    "nome": "Aurora-PT",
@@ -878,6 +1345,41 @@
    "u": [
     "ds:pt",
     "ds:pub:unicamp-dl"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/sick-br",
+   "publicador": "eduagarcia",
+   "nome": "sick-br",
+   "descricao": "This is a reproduction of the of the SICK-BR dataset in HuggingFace format, SICK-BR is a Portuguese inference corpus, aligned to and translated from SICK…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-classification",
+    "sentence-similarity"
+   ],
+   "licenca": "unknown",
+   "tamanho_bytes": 845322,
+   "faixa": "<1MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 520,
+   "likes": 3,
+   "atualizado": "2024-04-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/sick-br",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -1074,6 +1576,45 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/tweetsentbr_fewshot",
+   "publicador": "eduagarcia",
+   "nome": "tweetsentbr_fewshot",
+   "descricao": "This dataset is a subset of the tweetSentBR, it contains only 75 samples from the training set and all 2.000+ instances of the test set.This is meant for…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-classification"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 116846,
+   "faixa": "<1MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 481,
+   "likes": 1,
+   "atualizado": "2024-04-21",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:open-pt-llm-leaderboard",
+    "ds:bench:tweetsentbr",
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": [
+    "open-pt-llm-leaderboard",
+    "tweetsentbr"
+   ]
+  },
+  {
    "id": "c2d-usp/banking77-pt-br",
    "publicador": "c2d-usp",
    "nome": "banking77-pt-br",
@@ -1267,6 +1808,69 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/generic_conll",
+   "publicador": "eduagarcia",
+   "nome": "generic_conll",
+   "descricao": "Load ConLL formated files using datasets.load dataset.",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 6770,
+   "faixa": "<1MB",
+   "linhas_faixa": null,
+   "downloads": 330,
+   "likes": 2,
+   "atualizado": "2024-02-03",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/generic_conll",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/cc100-pt",
+   "publicador": "eduagarcia",
+   "nome": "cc100-pt",
+   "descricao": "CC100-PT is the is the portuguese subset from C100.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 34153653975,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 326,
+   "likes": 1,
+   "atualizado": "2024-02-24",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/cc100-pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "maritaca-ai/ag_news_pt",
    "publicador": "maritaca-ai",
    "nome": "ag_news_pt",
@@ -1443,15 +2047,18 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/recogna-nlp/recognasumm",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "u": [
+    "ds:bench:recognasumm",
     "ds:pt",
     "ds:pub:recogna-nlp"
    ],
    "escopo": "br",
-   "benchmarks": []
+   "benchmarks": [
+    "recognasumm"
+   ]
   },
   {
    "id": "nicholasKluge/instruct-aira-dataset",
@@ -1514,6 +2121,42 @@
    ],
    "u": [
     "ds:pub:carolina-c4ai"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/cc_news_pt_v2",
+   "publicador": "eduagarcia",
+   "nome": "cc_news_pt_v2",
+   "descricao": "This version of the dataset is the portuguese subset from stanford-oval/ccnews.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-classification",
+    "question-answering",
+    "text-generation"
+   ],
+   "licenca": "unknown",
+   "tamanho_bytes": 19366703094,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 270,
+   "likes": 4,
+   "atualizado": "2025-04-28",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/cc_news_pt_v2",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -2090,6 +2733,76 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/capes_teses_dissertacoes",
+   "publicador": "eduagarcia",
+   "nome": "capes_teses_dissertacoes",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 3173100377,
+   "faixa": "1-10GB",
+   "linhas_faixa": "1M<n<10M",
+   "downloads": 184,
+   "likes": 1,
+   "atualizado": "2025-04-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/capes_teses_dissertacoes",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/multilingual_tokenizer_benchmark",
+   "publicador": "eduagarcia",
+   "nome": "multilingual_tokenizer_benchmark",
+   "descricao": "Multilingual Tokenizer Benchmark",
+   "idiomas": [
+    "por",
+    "pt",
+    "ar",
+    "arb",
+    "cmn",
+    "code",
+    "de",
+    "deu"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 67198741,
+   "faixa": "1-100MB",
+   "linhas_faixa": "100K<n<1M",
+   "downloads": 183,
+   "likes": 2,
+   "atualizado": "2025-07-12",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/multilingual_tokenizer_benchmark",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "dominguesm/wikipedia-ptbr-20230601",
    "publicador": "dominguesm",
    "nome": "wikipedia-ptbr-20230601",
@@ -2358,6 +3071,40 @@
    "benchmarks": []
   },
   {
+   "id": "botbotrobotics/biology-ptbr",
+   "publicador": "botbotrobotics",
+   "nome": "biology-ptbr",
+   "descricao": "Tradução do Camel Biology dataset para Portuguese (PT-BR) usando NLLB 3.3b.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "cc-by-nc-4.0",
+   "tamanho_bytes": 29658393,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 160,
+   "likes": 4,
+   "atualizado": "2024-03-05",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/biology-ptbr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "cnmoro/GPT4-500k-Augmented-PTBR-Clean",
    "publicador": "cnmoro",
    "nome": "GPT4-500k-Augmented-PTBR-Clean",
@@ -2494,6 +3241,35 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/scielo_abstracts",
+   "publicador": "eduagarcia",
+   "nome": "scielo_abstracts",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1682967856,
+   "faixa": "1-10GB",
+   "linhas_faixa": "1M<n<10M",
+   "downloads": 139,
+   "likes": 1,
+   "atualizado": "2025-05-04",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/scielo_abstracts",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Guilherme34/Visual-Jeva-Converted",
    "publicador": "Guilherme34",
    "nome": "Visual-Jeva-Converted",
@@ -2518,6 +3294,35 @@
    ],
    "u": [
     "ds:pub:Guilherme34"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/blogset-br",
+   "publicador": "eduagarcia",
+   "nome": "blogset-br",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 7746829847,
+   "faixa": "1-10GB",
+   "linhas_faixa": "1M<n<10M",
+   "downloads": 138,
+   "likes": 3,
+   "atualizado": "2025-04-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/blogset-br",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -2552,6 +3357,35 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/brwac",
+   "publicador": "eduagarcia",
+   "nome": "brwac",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 11088153698,
+   "faixa": ">10GB",
+   "linhas_faixa": "1M<n<10M",
+   "downloads": 135,
+   "likes": 0,
+   "atualizado": "2023-07-24",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/brwac",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "rhaymison/mental-health-pt",
    "publicador": "rhaymison",
    "nome": "mental-health-pt",
@@ -2581,6 +3415,40 @@
    "u": [
     "ds:pt",
     "ds:pub:rhaymison"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/OSCAR-2301-pt_dedup",
+   "publicador": "eduagarcia",
+   "nome": "OSCAR-2301-pt_dedup",
+   "descricao": "OSCAR-2301-PT (deduplicated) is a curation from OSCAR-2301 in the Portuguese language, depuplicated by MinHash algorithm and Locality Sensitive Hashing,…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": null,
+   "tamanho_bytes": 36075703889,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 132,
+   "likes": 0,
+   "atualizado": "2024-01-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/OSCAR-2301-pt_dedup",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -2837,6 +3705,35 @@
    "u": [
     "ds:pt",
     "ds:pub:nicholasKluge"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/pagico",
+   "publicador": "eduagarcia",
+   "nome": "pagico",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 2596269248,
+   "faixa": "1-10GB",
+   "linhas_faixa": "100K<n<1M",
+   "downloads": 109,
+   "likes": 1,
+   "atualizado": "2024-04-26",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/pagico",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -3272,6 +4169,73 @@
    "benchmarks": []
   },
   {
+   "id": "botbotrobotics/aya_dataset_pt",
+   "publicador": "botbotrobotics",
+   "nome": "aya_dataset_pt",
+   "descricao": "CohereForAI Aya Dataset filtrado para português (PT).",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": "apache-2.0",
+   "tamanho_bytes": 1796617,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 87,
+   "likes": 3,
+   "atualizado": "2024-02-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/aya_dataset_pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/cc_news_pt",
+   "publicador": "eduagarcia",
+   "nome": "cc_news_pt",
+   "descricao": "CC-News-PT is a curation of news articles from CommonCrawl News in the Portuguese language.CommonCrawl News is a dataset containing news articles from news…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation",
+    "fill-mask"
+   ],
+   "licenca": "unknown",
+   "tamanho_bytes": 63226,
+   "faixa": "<1MB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 87,
+   "likes": 3,
+   "atualizado": "2023-06-25",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/cc_news_pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Venturus/AnonyMED-BR",
    "publicador": "Venturus",
    "nome": "AnonyMED-BR",
@@ -3467,6 +4431,74 @@
    ],
    "u": [
     "ds:pub:ufca-llms"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/MilkQA",
+   "publicador": "eduagarcia",
+   "nome": "MilkQA",
+   "descricao": "I am not the author of this dataset, this is a reproduction of the MilkQA dataset on HuggingFace, the original data can be downloaded from the link",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "question-answering",
+    "text-retrieval"
+   ],
+   "licenca": "cc-by-nc-nd-4.0",
+   "tamanho_bytes": 2796965,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 78,
+   "likes": 3,
+   "atualizado": "2024-04-23",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/MilkQA",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "botbotrobotics/physics-ptbr",
+   "publicador": "botbotrobotics",
+   "nome": "physics-ptbr",
+   "descricao": "Tradução do Camel Pyysics dataset para Portuguese (PT-BR) usando NLLB 3.3b.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "cc-by-nc-4.0",
+   "tamanho_bytes": 32045811,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 72,
+   "likes": 2,
+   "atualizado": "2024-03-05",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/physics-ptbr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:botbotrobotics"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -3786,6 +4818,70 @@
    "benchmarks": []
   },
   {
+   "id": "botbotrobotics/PortugueseDolly",
+   "publicador": "botbotrobotics",
+   "nome": "PortugueseDolly",
+   "descricao": "PortugueseDolly é uma tradição do Databricks Dolly 15k para português brasileiro (pt-br) utilizando o nllb 3.3b.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": "other",
+   "tamanho_bytes": 10760064,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 57,
+   "likes": 7,
+   "atualizado": "2024-03-07",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/PortugueseDolly",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "pierreguillou/lener_br_finetuning_language_model",
+   "publicador": "pierreguillou",
+   "nome": "lener_br_finetuning_language_model",
+   "descricao": "The LeNER-Br language modeling dataset is a collection of legal texts in Portuguese from the LeNER-Br dataset (official site).",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1171810,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 57,
+   "likes": 6,
+   "atualizado": "2022-10-25",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/pierreguillou/lener_br_finetuning_language_model",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:pierreguillou"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "recogna-nlp/fakerecogna2-extrativa",
    "publicador": "recogna-nlp",
    "nome": "fakerecogna2-extrativa",
@@ -3814,6 +4910,39 @@
    ],
    "u": [
     "ds:pub:recogna-nlp"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "botbotrobotics/chemistry-ptbr",
+   "publicador": "botbotrobotics",
+   "nome": "chemistry-ptbr",
+   "descricao": "Tradução do Camel Chemisty dataset para Portuguese (PT-BR) usando NLLB 3.3b.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "cc-by-nc-4.0",
+   "tamanho_bytes": 37752364,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 55,
+   "likes": 2,
+   "atualizado": "2024-03-04",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/chemistry-ptbr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:botbotrobotics"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -4000,6 +5129,38 @@
    "benchmarks": []
   },
   {
+   "id": "botbotrobotics/Cabra3k",
+   "publicador": "botbotrobotics",
+   "nome": "Cabra3k",
+   "descricao": "O conjunto de dados Cabra é uma coleção ampla e diversificada de 3.000 entradas ou conjuntos de perguntas e respostas (QA) sobre o Brasil. Inclui tópicos…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": "cc-by-sa-4.0",
+   "tamanho_bytes": 2690594,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 48,
+   "likes": 6,
+   "atualizado": "2024-06-18",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/Cabra3k",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "cnmoro/WizardVicuna-PTBR-Instruct-Clean",
    "publicador": "cnmoro",
    "nome": "WizardVicuna-PTBR-Instruct-Clean",
@@ -4091,6 +5252,39 @@
    "benchmarks": []
   },
   {
+   "id": "alfaneo/jurisbert-mlm-corpus",
+   "publicador": "alfaneo",
+   "nome": "jurisbert-mlm-corpus",
+   "descricao": "JurisBERT MLM Corpus (chunks 8k)",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [
+    "fill-mask"
+   ],
+   "licenca": "apache-2.0",
+   "tamanho_bytes": 239033430,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 45,
+   "likes": 0,
+   "atualizado": "2026-08-22",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/alfaneo/jurisbert-mlm-corpus",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:alfaneo"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "dominguesm/canarim-baderna-filtered",
    "publicador": "dominguesm",
    "nome": "canarim-baderna-filtered",
@@ -4115,6 +5309,41 @@
    ],
    "u": [
     "ds:pub:dominguesm"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "eduagarcia/FactNews",
+   "publicador": "eduagarcia",
+   "nome": "FactNews",
+   "descricao": "I am not the author of this dataset, this is a modified version of the FactCheck dataset on HuggingFace, the original data is made avaliable by Vargas et. al,…",
+   "idiomas": [
+    "por",
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-classification"
+   ],
+   "licenca": "unknown",
+   "tamanho_bytes": 2171601,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 44,
+   "likes": 3,
+   "atualizado": "2024-04-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/FactNews",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:eduagarcia"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -4241,6 +5470,38 @@
    "benchmarks": []
   },
   {
+   "id": "botbotrobotics/MetaMathQA-40K-PTBR",
+   "publicador": "botbotrobotics",
+   "nome": "MetaMathQA-40K-PTBR",
+   "descricao": "Tradução do MetaMathQA-4k para portugues com NLLB 3.3b.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [],
+   "licenca": "cc",
+   "tamanho_bytes": 34236631,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 42,
+   "likes": 5,
+   "atualizado": "2024-03-05",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/MetaMathQA-40K-PTBR",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "unicamp-dl/SurveySum",
    "publicador": "unicamp-dl",
    "nome": "SurveySum",
@@ -4265,6 +5526,35 @@
    ],
    "u": [
     "ds:pub:unicamp-dl"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "botbotrobotics/Open-Platypus-ptbr",
+   "publicador": "botbotrobotics",
+   "nome": "Open-Platypus-ptbr",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": "cc-by-nc-4.0",
+   "tamanho_bytes": 33201366,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 41,
+   "likes": 1,
+   "atualizado": "2024-03-08",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/Open-Platypus-ptbr",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:botbotrobotics"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -4398,6 +5688,37 @@
    "benchmarks": []
   },
   {
+   "id": "felipeoes/blab_wiki-gemini1-5",
+   "publicador": "felipeoes",
+   "nome": "blab_wiki-gemini1-5",
+   "descricao": "",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 658794,
+   "faixa": "<1MB",
+   "linhas_faixa": "n<1K",
+   "downloads": 36,
+   "likes": 1,
+   "atualizado": "2024-06-14",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/blab_wiki-gemini1-5",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "cnmoro/LexicalTriplets",
    "publicador": "cnmoro",
    "nome": "LexicalTriplets",
@@ -4518,6 +5839,35 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/pd_books_pt",
+   "publicador": "eduagarcia",
+   "nome": "pd_books_pt",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 517772314,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 32,
+   "likes": 1,
+   "atualizado": "2025-05-03",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/pd_books_pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Guilherme34/best-dataset",
    "publicador": "Guilherme34",
    "nome": "best-dataset",
@@ -4571,6 +5921,35 @@
    ],
    "u": [
     "ds:pub:cnmoro"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_chat_qa_v2",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_chat_qa_v2",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 368754082,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 30,
+   "likes": 0,
+   "atualizado": "2025-01-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_chat_qa_v2",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -4813,6 +6192,35 @@
    "benchmarks": []
   },
   {
+   "id": "pierreguillou/test_datasetdict",
+   "publicador": "pierreguillou",
+   "nome": "test_datasetdict",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1014330,
+   "faixa": "1-100MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 28,
+   "likes": 0,
+   "atualizado": "2021-12-07",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/pierreguillou/test_datasetdict",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:pierreguillou"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "cnmoro/Text_Structuring_SOLAR_10.7B_Distilled",
    "publicador": "cnmoro",
    "nome": "Text_Structuring_SOLAR_10.7B_Distilled",
@@ -4841,6 +6249,35 @@
    ],
    "u": [
     "ds:pub:cnmoro"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_chat_qa",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_chat_qa",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 665365895,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 27,
+   "likes": 1,
+   "atualizado": "2024-03-31",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_chat_qa",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -5019,6 +6456,35 @@
    ],
    "u": [
     "ds:pub:adalbertojunior"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_regex_filtered",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_regex_filtered",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 190944498,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 25,
+   "likes": 0,
+   "atualizado": "2025-03-30",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_regex_filtered",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -5374,6 +6840,37 @@
    "benchmarks": []
   },
   {
+   "id": "eduagarcia/dpo-mix-21k",
+   "publicador": "eduagarcia",
+   "nome": "dpo-mix-21k",
+   "descricao": "Similar to the argilla/dpo-mix-7k, but with 21k samples",
+   "idiomas": [
+    "en"
+   ],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": "mit",
+   "tamanho_bytes": 66369147,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 20,
+   "likes": 0,
+   "atualizado": "2024-04-29",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia/dpo-mix-21k",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:eduagarcia"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "adalbertojunior/gpt4v-dataset-portuguese",
    "publicador": "adalbertojunior",
    "nome": "gpt4v-dataset-portuguese",
@@ -5639,6 +7136,35 @@
    "benchmarks": []
   },
   {
+   "id": "felipeoes/cocoruta-evaluation",
+   "publicador": "felipeoes",
+   "nome": "cocoruta-evaluation",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 68121453,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 18,
+   "likes": 0,
+   "atualizado": "2024-08-18",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/cocoruta-evaluation",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Guilherme34/Dataset-for-updating-llm-to-be-aware-of-the-situation",
    "publicador": "Guilherme34",
    "nome": "Dataset-for-updating-llm-to-be-aware-of-the-situation",
@@ -5728,6 +7254,35 @@
    "benchmarks": []
   },
   {
+   "id": "melll-uff/legal-simplification-pt",
+   "publicador": "melll-uff",
+   "nome": "legal-simplification-pt",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 6128276538,
+   "faixa": "1-10GB",
+   "linhas_faixa": "100K<n<1M",
+   "downloads": 18,
+   "likes": 1,
+   "atualizado": "2026-04-14",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/melll-uff/legal-simplification-pt",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:melll-uff"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "ai-eldorado/Brazilian_CLT_preferences",
    "publicador": "ai-eldorado",
    "nome": "Brazilian_CLT_preferences",
@@ -5756,6 +7311,35 @@
    ],
    "u": [
     "ds:pub:ai-eldorado"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_chat_qa_llm_filtered",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_chat_qa_llm_filtered",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 401234555,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 17,
+   "likes": 0,
+   "atualizado": "2025-01-17",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_chat_qa_llm_filtered",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -5843,6 +7427,35 @@
    ],
    "u": [
     "ds:pub:CERTIFoundation"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_qa",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_qa",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 1300173190,
+   "faixa": "1-10GB",
+   "linhas_faixa": "100K<n<1M",
+   "downloads": 16,
+   "likes": 2,
+   "atualizado": "2024-03-10",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_qa",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -5959,6 +7572,66 @@
    ],
    "u": [
     "ds:pub:adalbertojunior"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "botbotrobotics/ptbr-deita-8k",
+   "publicador": "botbotrobotics",
+   "nome": "ptbr-deita-8k",
+   "descricao": "Portuguese translation of the Deita 8k dataset.",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": true,
+   "pt": true,
+   "tarefas": [],
+   "licenca": "apache-2.0",
+   "tamanho_bytes": 696140758,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 15,
+   "likes": 0,
+   "atualizado": "2025-02-03",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/botbotrobotics/ptbr-deita-8k",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:botbotrobotics"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_chat_qa_sft",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_chat_qa_sft",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 462370613,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 15,
+   "likes": 0,
+   "atualizado": "2025-01-18",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_chat_qa_sft",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -6109,6 +7782,35 @@
    "benchmarks": []
   },
   {
+   "id": "felipeoes/rio_de_janeiro_state_legislation",
+   "publicador": "felipeoes",
+   "nome": "rio_de_janeiro_state_legislation",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 20181022,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 14,
+   "likes": 0,
+   "atualizado": "2024-02-27",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/rio_de_janeiro_state_legislation",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Guilherme34/Samantha-newdataset-morelarge",
    "publicador": "Guilherme34",
    "nome": "Samantha-newdataset-morelarge",
@@ -6133,6 +7835,39 @@
    ],
    "u": [
     "ds:pub:Guilherme34"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "melll-uff/diplomatrixbr-gen",
+   "publicador": "melll-uff",
+   "nome": "diplomatrixbr-gen",
+   "descricao": "Diplomatrix-BR is a parallel corpus containing argumentative essays written based on questions from the Brazilian Diplomatic Career Admission Contest (CACD)…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "mit",
+   "tamanho_bytes": 10271484,
+   "faixa": "1-100MB",
+   "linhas_faixa": null,
+   "downloads": 14,
+   "likes": 0,
+   "atualizado": "2025-09-28",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/melll-uff/diplomatrixbr-gen",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:melll-uff"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -6812,6 +8547,35 @@
    "benchmarks": []
   },
   {
+   "id": "felipeoes/br_federal_legislation_blue_amazon_chat_qa_filtered_gpt-4o",
+   "publicador": "felipeoes",
+   "nome": "br_federal_legislation_blue_amazon_chat_qa_filtered_gpt-4o",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 650252376,
+   "faixa": "100MB-1GB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 10,
+   "likes": 0,
+   "atualizado": "2024-10-24",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/br_federal_legislation_blue_amazon_chat_qa_filtered_gpt-4o",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "Guilherme34/alpaca_chat_data",
    "publicador": "Guilherme34",
    "nome": "alpaca_chat_data",
@@ -7271,6 +9035,35 @@
    ],
    "u": [
     "ds:pub:Guilherme34"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "felipeoes/sao_paulo_state_legislation",
+   "publicador": "felipeoes",
+   "nome": "sao_paulo_state_legislation",
+   "descricao": "",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 94179734,
+   "faixa": "1-100MB",
+   "linhas_faixa": "10K<n<100K",
+   "downloads": 8,
+   "likes": 1,
+   "atualizado": "2024-02-27",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/felipeoes/sao_paulo_state_legislation",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:pub:felipeoes"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -18317,39 +20110,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/CrawlPT_dedup",
-   "publicador": "eduagarcia",
-   "nome": "CrawlPT_dedup",
-   "descricao": "CrawlPT is a generic Portuguese corpus extracted from various web pages.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 170128326194,
-   "faixa": ">10GB",
-   "linhas_faixa": "100M<n<1B",
-   "downloads": 2478,
-   "likes": 8,
-   "atualizado": "2024-03-14",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/CrawlPT_dedup",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "nilc-nlp/assin2",
    "publicador": "nilc-nlp",
    "nome": "assin2",
@@ -28061,37 +29821,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/LegalPT_dedup",
-   "publicador": "eduagarcia",
-   "nome": "LegalPT_dedup",
-   "descricao": "LegalPT aggregates the maximum amount of publicly available legal data in Portuguese, drawing from varied sources including legislation, jurisprudence, legal…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": null,
-   "tamanho_bytes": 87238503723,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 941,
-   "likes": 23,
-   "atualizado": "2024-05-07",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/LegalPT_dedup",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "piimb/mapa-eur-lex-pii",
    "publicador": "piimb",
    "nome": "mapa-eur-lex-pii",
@@ -28604,39 +30333,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/adr1t0s/estacao-meteorologica",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/LegalPT",
-   "publicador": "eduagarcia",
-   "nome": "LegalPT",
-   "descricao": "LegalPT aggregates the maximum amount of publicly available legal data in Portuguese, drawing from varied sources including legislation, jurisprudence, legal…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 134655182202,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 896,
-   "likes": 13,
-   "atualizado": "2024-05-07",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/LegalPT",
      "acessado": "2026-11-20"
     }
    ],
@@ -29342,37 +31038,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/CrawlPT",
-   "publicador": "eduagarcia",
-   "nome": "CrawlPT",
-   "descricao": "CrawlPT is a generic Portuguese corpus extracted from various web pages.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": null,
-   "tamanho_bytes": 219780367288,
-   "faixa": ">10GB",
-   "linhas_faixa": "100M<n<1B",
-   "downloads": 852,
-   "likes": 1,
-   "atualizado": "2024-03-14",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/CrawlPT",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "felixludos/babel-briefings",
    "publicador": "felixludos",
    "nome": "babel-briefings",
@@ -30000,37 +31665,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/singletongue/cc100-documents",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/portuguese_benchmark",
-   "publicador": "eduagarcia",
-   "nome": "portuguese_benchmark",
-   "descricao": "This a collection of datasets in Portuguese initially meant to train and evaluate supervised language models such as BERT, RoBERTa, etc...",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": null,
-   "tamanho_bytes": 10549245,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 806,
-   "likes": 9,
-   "atualizado": "2024-04-30",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/portuguese_benchmark",
      "acessado": "2026-11-20"
     }
    ],
@@ -31480,14 +33114,17 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/PORTULAN/extraglue",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "u": [
+    "ds:bench:extraglue",
     "ds:pt"
    ],
    "escopo": "pt",
-   "benchmarks": []
+   "benchmarks": [
+    "extraglue"
+   ]
   },
   {
    "id": "LiquidAI/structured-extraction",
@@ -33019,14 +34656,17 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/paulopirozelli/pira",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "u": [
+    "ds:bench:pira",
     "ds:pt"
    ],
    "escopo": "pt",
-   "benchmarks": []
+   "benchmarks": [
+    "pira"
+   ]
   },
   {
    "id": "raulmodena/leire-corpus",
@@ -37374,40 +39014,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/sick-br",
-   "publicador": "eduagarcia",
-   "nome": "sick-br",
-   "descricao": "This is a reproduction of the of the SICK-BR dataset in HuggingFace format, SICK-BR is a Portuguese inference corpus, aligned to and translated from SICK…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-classification",
-    "sentence-similarity"
-   ],
-   "licenca": "unknown",
-   "tamanho_bytes": 845322,
-   "faixa": "<1MB",
-   "linhas_faixa": "1K<n<10K",
-   "downloads": 520,
-   "likes": 3,
-   "atualizado": "2024-04-29",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/sick-br",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "mlkwy/observatorio-pernambuco",
    "publicador": "mlkwy",
    "nome": "observatorio-pernambuco",
@@ -38137,42 +39743,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/tweetsentbr_fewshot",
-   "publicador": "eduagarcia",
-   "nome": "tweetsentbr_fewshot",
-   "descricao": "This dataset is a subset of the tweetSentBR, it contains only 75 samples from the training set and all 2.000+ instances of the test set.This is meant for…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-classification"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 116846,
-   "faixa": "<1MB",
-   "linhas_faixa": "1K<n<10K",
-   "downloads": 481,
-   "likes": 1,
-   "atualizado": "2024-04-21",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/tweetsentbr_fewshot",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:bench:tweetsentbr",
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": [
-    "tweetsentbr"
-   ]
-  },
-  {
    "id": "leduckhai/S-Chain",
    "publicador": "leduckhai",
    "nome": "S-Chain",
@@ -38784,6 +40354,39 @@
    ],
    "escopo": "pt",
    "benchmarks": []
+  },
+  {
+   "id": "eduagarcia-temp/BLUEX_without_images",
+   "publicador": "eduagarcia-temp",
+   "nome": "BLUEX_without_images",
+   "descricao": "",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 550759,
+   "faixa": "<1MB",
+   "linhas_faixa": "n<1K",
+   "downloads": 454,
+   "likes": 1,
+   "atualizado": "2024-02-02",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/eduagarcia-temp/BLUEX_without_images",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:open-pt-llm-leaderboard"
+   ],
+   "escopo": "pt",
+   "benchmarks": [
+    "open-pt-llm-leaderboard"
+   ]
   },
   {
    "id": "aiana94/MultiGlobeQA",
@@ -45671,39 +47274,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/cc100-pt",
-   "publicador": "eduagarcia",
-   "nome": "cc100-pt",
-   "descricao": "CC100-PT is the is the portuguese subset from C100.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 34153653975,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 326,
-   "likes": 1,
-   "atualizado": "2024-02-24",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/cc100-pt",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "hotchpotch/NanoViDoRe_v3_WIP_converted",
    "publicador": "hotchpotch",
    "nome": "NanoViDoRe_v3_WIP_converted",
@@ -50245,41 +51815,6 @@
    "benchmarks": []
   },
   {
-   "id": "eduagarcia/cc_news_pt_v2",
-   "publicador": "eduagarcia",
-   "nome": "cc_news_pt_v2",
-   "descricao": "This version of the dataset is the portuguese subset from stanford-oval/ccnews.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-classification",
-    "question-answering",
-    "text-generation"
-   ],
-   "licenca": "unknown",
-   "tamanho_bytes": 19366703094,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 270,
-   "likes": 4,
-   "atualizado": "2025-04-28",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/cc_news_pt_v2",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "HPLT/HPLT3.0",
    "publicador": "HPLT",
    "nome": "HPLT3.0",
@@ -52256,14 +53791,17 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/hate-speech-portuguese/hate_speech_portuguese",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "u": [
+    "ds:bench:pt-hate-speech",
     "ds:pt"
    ],
    "escopo": "pt",
-   "benchmarks": []
+   "benchmarks": [
+    "pt-hate-speech"
+   ]
   },
   {
    "id": "amalia-llm/bigbenchhard-mt-pt",
@@ -57569,14 +59107,17 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/ruanchaves/faquad-nli",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "u": [
+    "ds:bench:open-pt-llm-leaderboard",
     "ds:pt"
    ],
    "escopo": "pt",
-   "benchmarks": []
+   "benchmarks": [
+    "open-pt-llm-leaderboard"
+   ]
   },
   {
    "id": "Fujitsu-FRE/MAPS_Verified",
@@ -59904,46 +61445,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/amalia-llm/saudade-pt",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/multilingual_tokenizer_benchmark",
-   "publicador": "eduagarcia",
-   "nome": "multilingual_tokenizer_benchmark",
-   "descricao": "Multilingual Tokenizer Benchmark",
-   "idiomas": [
-    "por",
-    "pt",
-    "ar",
-    "arb",
-    "cmn",
-    "code",
-    "de",
-    "deu"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 67198741,
-   "faixa": "1-100MB",
-   "linhas_faixa": "100K<n<1M",
-   "downloads": 183,
-   "likes": 2,
-   "atualizado": "2025-07-12",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/multilingual_tokenizer_benchmark",
      "acessado": "2026-11-20"
     }
    ],
@@ -64491,39 +65992,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/Youseff1987/multilingual_translation_gpt4o_gen",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "botbotrobotics/biology-ptbr",
-   "publicador": "botbotrobotics",
-   "nome": "biology-ptbr",
-   "descricao": "Tradução do Camel Biology dataset para Portuguese (PT-BR) usando NLLB 3.3b.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": true,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": "cc-by-nc-4.0",
-   "tamanho_bytes": 29658393,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 160,
-   "likes": 4,
-   "atualizado": "2024-03-05",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/botbotrobotics/biology-ptbr",
      "acessado": "2026-11-20"
     }
    ],
@@ -70060,39 +71528,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/BernardoAI/wpp_pav_transcrito_openai",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/OSCAR-2301-pt_dedup",
-   "publicador": "eduagarcia",
-   "nome": "OSCAR-2301-pt_dedup",
-   "descricao": "OSCAR-2301-PT (deduplicated) is a curation from OSCAR-2301 in the Portuguese language, depuplicated by MinHash algorithm and Locality Sensitive Hashing,…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": null,
-   "tamanho_bytes": 36075703889,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 132,
-   "likes": 0,
-   "atualizado": "2024-01-29",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/OSCAR-2301-pt_dedup",
      "acessado": "2026-11-20"
     }
    ],
@@ -79671,71 +81106,6 @@
    "benchmarks": []
   },
   {
-   "id": "botbotrobotics/aya_dataset_pt",
-   "publicador": "botbotrobotics",
-   "nome": "aya_dataset_pt",
-   "descricao": "CohereForAI Aya Dataset filtrado para português (PT).",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": "apache-2.0",
-   "tamanho_bytes": 1796617,
-   "faixa": "1-100MB",
-   "linhas_faixa": "1K<n<10K",
-   "downloads": 87,
-   "likes": 3,
-   "atualizado": "2024-02-29",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/botbotrobotics/aya_dataset_pt",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/cc_news_pt",
-   "publicador": "eduagarcia",
-   "nome": "cc_news_pt",
-   "descricao": "CC-News-PT is a curation of news articles from CommonCrawl News in the Portuguese language.CommonCrawl News is a dataset containing news articles from news…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation",
-    "fill-mask"
-   ],
-   "licenca": "unknown",
-   "tamanho_bytes": 63226,
-   "faixa": "<1MB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 87,
-   "likes": 3,
-   "atualizado": "2023-06-25",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/cc_news_pt",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "NetherQuartz/tatoeba-tokipona",
    "publicador": "NetherQuartz",
    "nome": "tatoeba-tokipona",
@@ -80069,40 +81439,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/ianncity/STEM-Multilingual-Prompts",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/MilkQA",
-   "publicador": "eduagarcia",
-   "nome": "MilkQA",
-   "descricao": "I am not the author of this dataset, this is a reproduction of the MilkQA dataset on HuggingFace, the original data can be downloaded from the link",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "question-answering",
-    "text-retrieval"
-   ],
-   "licenca": "cc-by-nc-nd-4.0",
-   "tamanho_bytes": 2796965,
-   "faixa": "1-100MB",
-   "linhas_faixa": "1K<n<10K",
-   "downloads": 78,
-   "likes": 3,
-   "atualizado": "2024-04-23",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/MilkQA",
      "acessado": "2026-11-20"
     }
    ],
@@ -81021,68 +82357,6 @@
    "benchmarks": []
   },
   {
-   "id": "botbotrobotics/PortugueseDolly",
-   "publicador": "botbotrobotics",
-   "nome": "PortugueseDolly",
-   "descricao": "PortugueseDolly é uma tradição do Databricks Dolly 15k para português brasileiro (pt-br) utilizando o nllb 3.3b.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": "other",
-   "tamanho_bytes": 10760064,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 57,
-   "likes": 7,
-   "atualizado": "2024-03-07",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/botbotrobotics/PortugueseDolly",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "pierreguillou/lener_br_finetuning_language_model",
-   "publicador": "pierreguillou",
-   "nome": "lener_br_finetuning_language_model",
-   "descricao": "The LeNER-Br language modeling dataset is a collection of legal texts in Portuguese from the LeNER-Br dataset (official site).",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": null,
-   "tamanho_bytes": 1171810,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 57,
-   "likes": 6,
-   "atualizado": "2022-10-25",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/pierreguillou/lener_br_finetuning_language_model",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "agentlans/literary-synthesis",
    "publicador": "agentlans",
    "nome": "literary-synthesis",
@@ -81345,37 +82619,6 @@
    "benchmarks": []
   },
   {
-   "id": "botbotrobotics/Cabra3k",
-   "publicador": "botbotrobotics",
-   "nome": "Cabra3k",
-   "descricao": "O conjunto de dados Cabra é uma coleção ampla e diversificada de 3.000 entradas ou conjuntos de perguntas e respostas (QA) sobre o Brasil. Inclui tópicos…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [],
-   "licenca": "cc-by-sa-4.0",
-   "tamanho_bytes": 2690594,
-   "faixa": "1-100MB",
-   "linhas_faixa": "1K<n<10K",
-   "downloads": 48,
-   "likes": 6,
-   "atualizado": "2024-06-18",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/botbotrobotics/Cabra3k",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
    "id": "erfanzar/UltraChat-Matic",
    "publicador": "erfanzar",
    "nome": "UltraChat-Matic",
@@ -81519,6 +82762,37 @@
    "benchmarks": []
   },
   {
+   "id": "ruanchaves/porsimplessent",
+   "publicador": "ruanchaves",
+   "nome": "porsimplessent",
+   "descricao": "PorSimplesSent is a Portuguese corpus of aligned sentence pairs and triplets created for the purpose of investigating sentence readability",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 12001,
+   "faixa": "<1MB",
+   "linhas_faixa": "1K<n<10K",
+   "downloads": 45,
+   "likes": 3,
+   "atualizado": "2023-04-12",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/ruanchaves/porsimplessent",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "u": [
+    "ds:bench:porsimplessent"
+   ],
+   "escopo": "pt",
+   "benchmarks": [
+    "porsimplessent"
+   ]
+  },
+  {
    "id": "AxeML/MediumSetPT",
    "publicador": "AxeML",
    "nome": "MediumSetPT",
@@ -81542,71 +82816,6 @@
     {
      "rotulo": "Dataset no Hugging Face",
      "url": "https://huggingface.co/datasets/AxeML/MediumSetPT",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "eduagarcia/FactNews",
-   "publicador": "eduagarcia",
-   "nome": "FactNews",
-   "descricao": "I am not the author of this dataset, this is a modified version of the FactCheck dataset on HuggingFace, the original data is made avaliable by Vargas et. al,…",
-   "idiomas": [
-    "por",
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-classification"
-   ],
-   "licenca": "unknown",
-   "tamanho_bytes": 2171601,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 44,
-   "likes": 3,
-   "atualizado": "2024-04-29",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/eduagarcia/FactNews",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "pt",
-   "benchmarks": []
-  },
-  {
-   "id": "botbotrobotics/MetaMathQA-40K-PTBR",
-   "publicador": "botbotrobotics",
-   "nome": "MetaMathQA-40K-PTBR",
-   "descricao": "Tradução do MetaMathQA-4k para portugues com NLLB 3.3b.",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": true,
-   "pt": true,
-   "tarefas": [],
-   "licenca": "cc",
-   "tamanho_bytes": 34236631,
-   "faixa": "1-100MB",
-   "linhas_faixa": "10K<n<100K",
-   "downloads": 42,
-   "likes": 5,
-   "atualizado": "2024-03-05",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/botbotrobotics/MetaMathQA-40K-PTBR",
      "acessado": "2026-11-20"
     }
    ],
