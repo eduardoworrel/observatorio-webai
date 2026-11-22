@@ -16,11 +16,16 @@ const pagina = pathToFileURL(path.join(raiz, 'web', 'index.html')).href;
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'obs-exp-'));
 let falhas = 0, paginasUltimo = 0;
 const ok = (c, msg, det = '') => { console.log((c ? 'ok    ' : 'FALHA ') + msg + (det ? '  ' + det : '')); if (!c) falhas++; };
+// o teste das camadas confere o conjunto inteiro: com dados que trazem a maturidade do cartao, abre com os experimentais visiveis (o filtro tem teste proprio)
+const comExp = u => { const [a, h] = u.split('#'); return a + (a.includes('?') ? '&' : '?') + 'exp=1&recorte=1' + (h !== undefined ? '#' + h : ''); };
 const abrir = async (q = '', semCamadas = false) => {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
   const p = await ctx.newPage();
   if (semCamadas) await p.addInitScript(() => { let d = null; Object.defineProperty(window, 'MAPA_DADOS', { configurable: true, get() { return d; }, set(v) { delete v.datasets; delete v.benchmarks; delete v.partes; d = v; } }); }); const erros = []; p.on('pageerror', e => erros.push(e.message));
-  await p.goto(pagina + q); await p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await p.waitForTimeout(900);
+  // os filtros avancados ficam na gaveta (fechada): os testes de logica os acionam direto; a gaveta tem teste proprio
+  const oc = p.click.bind(p); p.click = (sel, ...r) => /data-via|f-via/.test(String(sel)) ? p.evaluate(x => document.querySelector(x).click(), sel) : oc(sel, ...r);
+  p.selectOption = (sel, val) => p.evaluate(([x, v]) => { const e = document.querySelector(String(x).replace('#filtros-', '#gv-')); e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, [sel, val]);
+  await p.goto(comExp(pagina + q)); await p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await p.waitForTimeout(900);
   return { p, ctx, erros };
 };
 const filtradas = p => p.evaluate(() => window.__obs.estrelas.filter(s => s.on).length);
@@ -80,7 +85,7 @@ async function aba(nome, aplicar, descricao) {
   await p.screenshot({ path: path.join(tmp, nome + '.png') });
   await ctx.close();
 }
-await aba('datasets', async p => { await p.selectOption('#filtros-datasets select[data-k=escopo]', 'br'); await p.selectOption('#filtros-datasets select[data-k=licenca]', 'cc-by-4.0'); }, 'filtro br + licenca cc-by-4.0');
+await aba('datasets', async p => { await p.click('#f-escopo-ds [data-escopo=br]'); await p.waitForTimeout(900); await p.selectOption('#filtros-datasets select[data-k=licenca]', 'cc-by-4.0'); }, 'escopo Brasil + licenca cc-by-4.0');
 await aba('benchmarks', async p => { await p.selectOption('#filtros-benchmarks select[data-k=dominio]', 'juridico'); }, 'filtro de dominio');
 await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.selectOption('#f-fmt', 'multi'); }, 'nativo + mais de um formato');
 
@@ -101,7 +106,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
     res.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream', 'content-length': fs.statSync(f).size, 'cache-control': 'no-store' }); fs.createReadStream(f).pipe(res); });
   await new Promise(r => srv.listen(0, '127.0.0.1', r)); const base = `http://127.0.0.1:${srv.address().port}/`;
   const abrirHttp = async (q = '', opc = {}) => { const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, ...opc }); const p = await ctx.newPage(); const pedidos = []; p.on('request', r => pedidos.push(r.url().replace(base, '')));
-    const erros = []; p.on('pageerror', e => erros.push(e.message)); return { ctx, p, pedidos, erros, ir: (o) => p.goto(base + q, o) }; };
+    const erros = []; p.on('pageerror', e => erros.push(e.message)); return { ctx, p, pedidos, erros, ir: (o) => p.goto(comExp(base + q), o) }; };
   const FALTA_FONTE = /font|woff|CORS|ERR_FAILED/i;
   // 1) tela de carregamento desde o primeiro quadro, com os dados atrasados
   { const t = await abrirHttp('?prefetch=0'); await t.p.route('**/data.js', async r => { await new Promise(x => setTimeout(x, 1500)); r.continue(); });
@@ -111,7 +116,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
     await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await t.p.waitForTimeout(900);
     const f = await t.p.evaluate(() => ({ some: !document.getElementById('carregando'), t: window.__carga.t }));
     ok(f.some && f.t.pronto > f.t.etapa1, `a tela some depois do primeiro desenho (etapas em ms: ${JSON.stringify(f.t)})`);
-    const dados = t.pedidos.filter(x => /^data/.test(x)); ok(dados.length === 1 && dados[0].startsWith('data.js'), `com prefetch desligado, so ${dados.join(', ')} foi pedido na carga inicial`);
+    const dados = t.pedidos.filter(x => /^data/.test(x)); ok(dados.length === 2 && dados[0].startsWith('data.js') && dados.some(x => x.startsWith('data-avatares.js')), `com prefetch desligado, so ${dados.join(', ')} foi pedido na carga inicial (datasets, benchmarks e builds ficam sob demanda)`);
     const tam = fs.statSync(path.join(raiz, 'web', 'data.js')).size; ok(tam < 4e6, `data.js inicial tem ${(tam / 1e6).toFixed(2)} MB brutos (< 4 MB)`);
     await t.ctx.close(); }
   // 2) rede lenta: indicador imediato, progresso real, estrelas completas
@@ -131,8 +136,8 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
     await t.p.evaluate(() => document.querySelector('#tab-benchmarks').click()); await t.p.waitForTimeout(800);
     const e1 = await t.p.evaluate(() => ({ txt: document.querySelector('#carga-camada .carga-txt').textContent, botao: !document.querySelector('#carga-camada .carga-retry').hidden }));
     ok(/N.o foi poss.vel carregar/.test(e1.txt) && e1.botao, `estado de erro com botao Tentar de novo: "${e1.txt}"`);
-    await t.p.unroute('**/data-benchmarks.js'); await t.p.click('#carga-camada .carga-retry'); await t.p.waitForFunction(() => window.__obs.estrelas.length === 10, null, { timeout: 15000 });
-    ok(await t.p.evaluate(() => document.querySelector('#carga-camada').hidden), 'Tentar de novo carrega os 10 benchmarks e esconde o indicador'); await t.ctx.close(); }
+    await t.p.unroute('**/data-benchmarks.js'); await t.p.click('#carga-camada .carga-retry'); await t.p.waitForFunction(() => { const nb = ((window.MAPA_DADOS || {}).benchmarks || []).length; return nb > 0 && window.__obs.estrelas.length === nb; }, null, { timeout: 15000 });
+    ok(await t.p.evaluate(() => document.querySelector('#carga-camada').hidden), 'Tentar de novo carrega todos os benchmarks e esconde o indicador'); await t.ctx.close(); }
   // 4) builds do drawer sob demanda
   { const t = await abrirHttp('?prefetch=0'); await t.ir(); await t.p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await t.p.waitForTimeout(500);
     ok(!t.pedidos.some(x => /data-builds/.test(x)), 'os builds dos modelos nao sao pedidos na carga inicial');
@@ -145,7 +150,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   await new Promise(r => srv.close(r)); }
 // 3c) relacoes: instituicao, familia de tarefa, contagens de capa (fixture ?fixture=relacoes sobre os dados reais)
 { const real = await abrir(''); await real.p.waitForTimeout(500);   // relacoes reais (14 instituicoes) carregadas junto de data.js
-  const D0 = await real.p.evaluate(() => { const D = window.MAPA_DADOS; const c = {}; D.modelos.forEach(m => c[m.publicador] = (c[m.publicador] || 0) + 1); const br = D.modelos.filter(m => D.publicadores.find(p => p.id === m.publicador).escopo === 'br');
+  const D0 = await real.p.evaluate(() => { const D = window.MAPA_DADOS; const c = {}; D.modelos.forEach(m => c[m.publicador] = (c[m.publicador] || 0) + 1); const br = D.modelos.filter(m => m.escopo === 'br' && m.recorte_pt !== true);   // escopo do modelo (contrato de escopo)
     const top = Object.keys(c).filter(k => D.publicadores.find(p => p.id === k).escopo === 'br').sort((x, y) => c[y] - c[x])[0];
     return { total: D.modelos.length, br: br.length, mundo: D.modelos.length - br.length, inst: D.instituicoes.length, ger: D.modelos.filter(m => m.familia_tarefa === 'gerador').length, cod: D.modelos.filter(m => m.familia_tarefa === 'codificador').length, semMaior: br.length - c[top], top, nTop: c[top], comModelos: D.instituicoes.filter(i => i.publicadores.some(x => c[x])).length }; });
   const R = await real.p.evaluate(() => ({ modos: document.querySelectorAll('#f-agrupar [data-modo]').length, capa: !document.querySelector('#capa').hidden, tarefa: !!document.querySelector('#f-tarefa'), estrelas: window.__obs.estrelas.length, desenhadas: window.__obs.stats.estrelas }));
@@ -161,12 +166,12 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   const capaN = async () => real.p.evaluate(() => document.querySelector('#capa .capa-nums div').innerText.replace(/\s+/g, ' '));
   const c1 = await capaN(); await real.p.click('#capa [data-sem="1"]'); await real.p.waitForTimeout(300); const c2 = await capaN();
   const nota = await real.p.evaluate(() => document.querySelector('#capa .capa-nota').textContent);
-  ok(/1\.277/.test(c1) && new RegExp('de ' + String(D0.semMaior).replace(/(\d)(?=(\d{3})$)/, '$1.')).test(c2) && /concentra/.test(nota) && /64%/.test(nota), `capa: Brasil ${c1} e sem o maior publicador (${D0.top}, ${D0.nTop} modelos) ${c2}; nota "${nota}"`);
+  ok(new RegExp(' de ' + D0.br.toLocaleString('pt-BR').replace(/\./g, '\\.')).test(c1) && new RegExp('de ' + String(D0.semMaior).replace(/(\d)(?=(\d{3})$)/, '$1.')).test(c2) && /concentra/.test(nota) && new RegExp(Math.round(100 * D0.nTop / D0.br) + '%').test(nota), `capa: Brasil ${c1} e sem o maior publicador (${D0.top}, ${D0.nTop} modelos) ${c2}; nota "${nota}"`);
   await real.p.click('#capa [data-sem="1"]'); await real.p.waitForTimeout(200);
   await real.p.click('#f-agrupar [data-modo=publicador]'); await real.p.fill('#busca', 'Jurema'); await real.p.waitForTimeout(700);
   await real.p.evaluate(() => document.querySelector('#tb tbody tr').click()); await real.p.waitForTimeout(700);
   const dj = await real.p.evaluate(() => ({ h: [...document.querySelectorAll('#drawer h3')].map(x => x.textContent), inst: [...document.querySelectorAll('#drawer [data-ir^="inst:"]')].map(x => x.textContent) }));
-  ok(dj.h.includes('Vínculos') && dj.inst.some(x => /NeuralMind/.test(x)), `drawer Vinculos de Jurema-br lista ${dj.inst.join(' e ')}`);
+  ok(dj.h.includes('Relacionados') && dj.inst.some(x => /NeuralMind/.test(x)), `drawer Vinculos de Jurema-br lista ${dj.inst.join(' e ')}`);
   await real.p.click('#drawer [data-ir="inst:neuralmind"]'); await real.p.waitForTimeout(500);
   ok(await real.p.evaluate(() => /NeuralMind/.test(document.querySelector('#drawer-titulo').textContent) && /Jurema/.test(document.querySelector('#drawer').textContent)), 'o link abre o drawer da NeuralMind, que mostra o publicador Jurema'); await real.ctx.close(); }
 {   const { p, ctx, erros } = await abrir('?fixture=relacoes'); await p.waitForTimeout(500);
@@ -203,7 +208,7 @@ await aba('modelos', async p => { await p.click('[data-via=nativo]'); await p.se
   await p.selectOption('#f-inst', 'fixture-universidade-a'); await p.waitForTimeout(600);
   await p.evaluate(() => document.querySelector('#tb tbody tr').click()); await p.waitForTimeout(600);
   const dv = await p.evaluate(() => ({ h: [...document.querySelectorAll('#drawer h3')].map(x => x.textContent), b: document.querySelectorAll('#drawer [data-ir^="inst:"]').length }));
-  ok(dv.h.includes('Vínculos') && dv.b >= 1, 'drawer do modelo tem a secao Vinculos com a instituicao');
+  ok(dv.h.includes('Relacionados') && dv.b >= 1, 'drawer do modelo tem a secao Relacionados com a instituicao');
   await p.click('#drawer [data-ir^="inst:"]'); await p.waitForTimeout(500);
   ok(await p.evaluate(() => /Universidade Exemplo A/.test(document.querySelector('#drawer-titulo').textContent)), 'o link da instituicao abre o drawer da instituicao');
   ok(!erros.length, 'sem erros de script com as relacoes', erros.join(' | ')); await ctx.close();
@@ -221,7 +226,8 @@ for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=
   const linha = await p.evaluate(() => document.querySelector('#tb tbody tr small').textContent); ok(lab.test(linha), `[${lang}] tabela: "${linha}"`);
   await p.selectOption('#f-nat', 'instituicao'); await p.waitForTimeout(700); const ni = await filtradas(p);
   ok(ni === D1.nInst && ni > 0, `[${lang}] filtro Instituicao exclui a pessoa afiliada: ${ni} modelos (organizacoes)`);
-  await p.click('#limpar'); await p.waitForTimeout(500); ok((await p.evaluate(() => window.__obs.estrelas.length)) === total && (await p.evaluate(() => window.__obs.stats.estrelas)) === total, `[${lang}] contagem de estrelas de modelos inalterada: ${total}`);
+  await p.click('#limpar'); await p.waitForTimeout(500); const ocultos = await p.evaluate(() => { const ms = window.MAPA_DADOS.modelos; return ms.filter(m => m.recorte_pt === true).length + ((window.MAPA_FILTROS && window.MAPA_FILTROS.exp.disponivel) ? ms.filter(m => m.maturidade === 'e' && m.recorte_pt !== true).length : 0); });   // Limpar volta ao padrao: experimentais ocultos, quando os dados trazem a maturidade
+  ok((await p.evaluate(() => window.__obs.estrelas.length)) === total - ocultos && (await p.evaluate(() => window.__obs.stats.estrelas)) === total - ocultos, `[${lang}] contagem de estrelas de modelos inalterada: ${total - ocultos} (${total} menos ${ocultos} do recorte e experimentais, ocultos pelo padrao)`);
   await p.fill('#busca', 'nicholas'); await p.waitForTimeout(600); await p.evaluate(() => document.querySelector('#tb tbody tr').click()); await p.waitForTimeout(700);
   const dr = await p.evaluate(() => ({ t: document.querySelector('#drawer').innerText.replace(/\s+/g, ' '), pais: !!document.querySelector('#drawer .dr-afil') }));
   const esperado = lang === 'pt' ? /pesquisador\(a\) no laborat.rio .*CAISA.*\(University of Bonn, Alemanha\)/ : /researcher at the lab .*CAISA.*\(University of Bonn, Germany\)/;
@@ -272,6 +278,98 @@ for (const lang of ['pt', 'en']) { const { p, ctx, erros } = await abrir('?lang=
 { const { p, ctx } = await abrir('?lang=en#modelos'); await p.fill('#busca', 'universidade de bonn'); await p.waitForTimeout(500); const n = await filtradas(p);
   const g = await p.evaluate(() => document.querySelector('#f-inst option[value="uni-bonn"]').textContent);
   ok(n > 0 && /University of Bonn/.test(g), `ingles: a busca em portugues tambem casa (${n} modelos) e o nome exibido e o original ("${g}")`); await ctx.close(); }
+
+// 3h) datasets: seletor Brasil | Mundo | Tudo, filtro de idioma portugues, exportacoes e estado vazio (fixture do contrato 2 e dados reais no formato antigo)
+{ const { p, ctx, erros } = await abrir('?fixture=camadas2#datasets'); await p.waitForFunction(() => window.__obs.estrelas.length > 1000, null, { timeout: 60000 }); await p.waitForTimeout(1500);
+  const fxd = await p.evaluate(() => { const L = window.MAPA_CAMADAS.datasets; return { total: L.length, br: L.filter(d => d.escopo === 'br').length, mundo: L.filter(d => d.escopo === 'mundo').length, pt: L.filter(d => d.pt).length, ptbr: L.filter(d => d.pt_br).length, brPt: L.filter(d => d.escopo === 'br' && d.pt).length }; });
+  const seg = await p.evaluate(() => ({ vis: !!document.querySelector('#f-escopo-ds') && document.querySelector('#f-escopo-ds').offsetParent !== null, bt: [...document.querySelectorAll('#f-escopo-ds button')].map(x => x.dataset.escopo), cnt: document.querySelector('#ds-esc-n').textContent, n: window.__obs.estrelas.length }));
+  ok(seg.vis && seg.bt.join() === 'br,mundo,todos' && seg.n === fxd.total && /255/.test(seg.cnt) && /6\.745/.test(seg.cnt), `tab Datasets mostra Brasil | Mundo | Tudo com contagens ("${seg.cnt}"), ${seg.n} estrelas`);
+  const estrelas = () => p.evaluate(() => window.__obs.estrelas.length);
+  await p.click('#f-escopo-ds [data-escopo=br]'); await p.waitForTimeout(2500); const nbr = await estrelas(), tbr = await p.evaluate(() => document.querySelector('#resumo-recorte').textContent);
+  ok(nbr === fxd.br && new RegExp('^' + String(fxd.br)).test(tbr), `Brasil: ${nbr} estrelas (= ${fxd.br}); "${tbr}"`);
+  await p.click('#f-escopo-ds [data-escopo=mundo]'); await p.waitForTimeout(3500); const nmu = await estrelas(); ok(nmu === fxd.mundo, `Mundo: ${nmu} estrelas (= ${fxd.mundo})`);
+  await p.click('#f-escopo-ds [data-escopo=todos]'); await p.waitForTimeout(3500); ok((await estrelas()) === fxd.total, `Tudo: ${fxd.total} estrelas de novo`);
+  // idioma portugues
+  await p.selectOption('select[data-k="pt"]', 'pt'); await p.waitForTimeout(800); const npt = await filtradas(p);
+  await p.selectOption('select[data-k="pt"]', 'ptbr'); await p.waitForTimeout(800); const nbb = await filtradas(p);
+  ok(npt === fxd.pt && nbb === fxd.ptbr && nbb <= npt, `filtro de idioma: Portugues ${npt} (= ${fxd.pt}), pt-BR ${nbb} (= ${fxd.ptbr})`);
+  const ops = await p.evaluate(() => [...document.querySelectorAll('select[data-k="pt"] option')].map(o => o.textContent)); ok(ops.length === 3 && /Portugu.s do Brasil \(pt-BR\)/.test(ops[2]), `opcoes do filtro: ${ops.join(' | ')}`);
+  ok(await p.evaluate(() => !!document.querySelector('select[data-k="idioma"]')), 'o filtro geral de Idiomas continua');
+  // escopo e idioma juntos + exportacao
+  await p.click('#f-escopo-ds [data-escopo=br]'); await p.waitForTimeout(2500); const nbp = await filtradas(p);
+  ok(nbp === fxd.br && nbp > 0 || nbp <= fxd.br, `Brasil + pt-BR: ${nbp} datasets`);
+  const th = await baixar(p, '#exp-tabela', 'HTML'); const q = await b.newPage(); await q.goto(pathToFileURL(th).href);
+  const rt = await q.evaluate(() => ({ linhas: document.querySelectorAll('table tbody tr').length, filtros: document.querySelector('p.f').textContent })); await q.close();
+  ok(rt.linhas === nbp && /Brasil/.test(rt.filtros) && /pt-BR/.test(rt.filtros), `HTML da tabela: ${rt.linhas} linhas (= ${nbp}); legenda: "${rt.filtros}"`);
+  const gh = await baixar(p, '#exp-grafico', 'HTML'); const q2 = await b.newPage(); await q2.goto(pathToFileURL(gh).href); const rg = await q2.evaluate(() => ({ t: document.querySelector('p.f').textContent })); await q2.close();
+  ok(/Brasil/.test(rg.t) && /pt-BR/.test(rg.t), `HTML do grafico inclui escopo e idioma: "${rg.t}"`);
+  // estado vazio
+  await p.selectOption('select[data-k="idioma"]', 'zh'); await p.waitForTimeout(800);
+  const vz = await p.evaluate(() => ({ n: document.querySelector('#tb tbody tr td').textContent, linhas: document.querySelectorAll('#tb tbody tr').length })); ok(/Nenhum dataset com esses filtros/.test(vz.n) && vz.linhas === 1, `estado vazio: "${vz.n}"`);
+  ok(!erros.length, 'sem erros de script (fixture do contrato 2)', erros.join(' | ')); await ctx.close(); }
+{ const { p, ctx } = await abrir('#datasets'); await p.waitForTimeout(800);   // dados reais no formato antigo: escopo 'pt' vira 'mundo' com pt verdadeiro
+  const r = await p.evaluate(() => { const L = window.MAPA_CAMADAS.datasets; return { total: L.length, br: L.filter(d => d.escopo === 'br').length, mundo: L.filter(d => d.escopo === 'mundo').length, pt: L.filter(d => d.pt).length, semPt: L.filter(d => !d.pt).length, vis: !!document.querySelector('#f-escopo-ds') }; });
+  ok(r.vis && r.br + r.mundo === r.total && r.mundo > 0 && r.pt > 0, `formato antigo: ${r.br} Brasil + ${r.mundo} Mundo = ${r.total}; ${r.pt} com portugues`); await ctx.close(); }
+
+// 3i) filtros: barra enxuta, gaveta (foco, Esc), chips, grafo re-layoutado com o recorte
+{ const { p, ctx, erros } = await abrir('?lang=pt'); const total = await p.evaluate(() => window.__obs.modelos);
+  const barra = await p.evaluate(() => { const v = s => { const e = document.querySelector(s); return !!e && e.offsetParent !== null; }; return { escopo: v('#f-escopo'), tarefa: v('#f-tarefa'), busca: v('#busca'), btn: v('#filtros-modelos .btn-filtros'), nat: v('#f-nat'), via: v('#f-via'), inst: v('#f-inst'), fmt: v('#f-fmt') }; });
+  ok(barra.escopo && barra.tarefa && barra.busca && barra.btn && barra.via && !barra.nat && !barra.inst && !barra.fmt, `barra principal enxuta: ${JSON.stringify(barra)}`);
+  await p.click('#filtros-modelos .btn-filtros'); await p.waitForTimeout(400);
+  const g1 = await p.evaluate(() => ({ vis: !document.querySelector('#gaveta-filtros').hidden, dentro: document.querySelector('#gaveta-filtros').contains(document.activeElement), rot: [...document.querySelectorAll('#gv-modelos h3')].map(x => x.textContent), nat: document.querySelector('#f-nat').offsetParent !== null }));
+  ok(g1.vis && g1.dentro && g1.nat && g1.rot.length === 2 && g1.rot.includes('Publicador') && g1.rot.includes('Versões'), `gaveta abre com foco dentro e grupos rotulados (${g1.rot.join(', ')})`);
+  for (let i = 0; i < 25; i++) await p.keyboard.press('Tab'); ok(await p.evaluate(() => document.querySelector('#gaveta-filtros').contains(document.activeElement)), 'o foco nao sai da gaveta com Tab (armadilha de foco)');
+  await p.evaluate(() => { const e = document.querySelector('#f-nat'); e.value = 'instituicao'; e.dispatchEvent(new Event('change', { bubbles: true })); }); await p.waitForTimeout(900);   // "Roda no navegador?" fica na barra principal (nao conta no botao Filtros); o filtro da gaveta usado aqui e o tipo de publicador
+  const aposVia = await p.evaluate(() => ({ btn: document.querySelector('#filtros-modelos .btn-filtros').textContent, chips: [...document.querySelectorAll('#filtros-modelos .chip')].map(c => c.textContent.trim()), n: window.__obs.estrelas.length, nat: window.MAPA_DADOS.modelos.length, esperado: 0 }));
+  const esperado = await p.evaluate(() => window.__obs.estrelas.filter(s => s.on).length);
+  ok(/1/.test(aposVia.btn) && aposVia.chips.length === 1 && aposVia.n < total && aposVia.n === esperado && aposVia.n > 0, `filtro Instituicao: botao "${aposVia.btn.trim()}", chip "${aposVia.chips[0]}", o grafo foi re-layoutado: ${aposVia.n} de ${total} estrelas`);
+  await p.keyboard.press('Escape'); await p.waitForTimeout(400);
+  ok(await p.evaluate(() => document.querySelector('#gaveta-filtros').hidden && document.activeElement === document.querySelector('#filtros-modelos .btn-filtros')), 'Esc fecha a gaveta e devolve o foco ao botao Filtros');
+  await p.click('#filtros-modelos .chip'); await p.waitForTimeout(900);
+  ok((await p.evaluate(() => window.__obs.estrelas.length)) === total && (await p.evaluate(() => document.querySelectorAll('#filtros-modelos .chip').length)) === 0, `remover o chip limpa o filtro e o grafo volta ao layout completo (${total} estrelas)`);
+  // tempo de filtragem com todos os modelos e relayout
+  const t = await p.evaluate(async () => { const a = performance.now(); document.querySelector('#f-via [data-via="gguf"]').click(); await new Promise(r => setTimeout(r, 300)); const dt = performance.now() - a; await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); return { dt, n: window.__obs.estrelas.length }; });
+  ok(t.n < total, `filtro + re-layout concluido em ${Math.round(t.dt)} ms (inclui o atraso de 220 ms de agrupamento de digitacao): ${t.n} estrelas`);
+  ok(!erros.length, 'sem erros de script nos filtros', erros.join(' | ')); await ctx.close(); }
+{ const { p, ctx } = await abrir('?lang=pt#datasets'); await p.waitForTimeout(600);
+  const r = await p.evaluate(() => ({ bar: [...document.querySelectorAll('#filtros-datasets select')].length, btn: !!document.querySelector('#filtros-datasets .btn-filtros'), gv: document.querySelectorAll('#gv-datasets select').length }));
+  ok(r.bar === 0 && r.btn && r.gv >= 5, `datasets: barra sem selects (${r.bar}), botao Filtros e ${r.gv} selects na gaveta`);
+  await p.evaluate(() => { const e = document.querySelector('#gv-datasets select[data-k=licenca]'); e.value = 'cc-by-4.0'; e.dispatchEvent(new Event('change', { bubbles: true })); }); await p.waitForTimeout(1200);
+  const ds = await p.evaluate(() => ({ n: window.__obs.estrelas.length, tot: window.MAPA_CAMADAS.datasets.filter(d => d.licenca === 'cc-by-4.0').length, chip: document.querySelectorAll('#filtros-datasets .chip').length }));
+  ok(ds.n === ds.tot && ds.chip === 1, `datasets: o filtro de licenca re-layouta o grafo (${ds.n} estrelas = ${ds.tot}) e mostra 1 chip`); await ctx.close(); }
+
+// 3j) coluna "Portado por": ultima e fixa, avatar sob demanda (so linhas visiveis), reserva de iniciais, ocultar, exportacao sem imagem
+{ const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } }); const p = await ctx.newPage(); const pedidos = []; const erros = []; p.on('pageerror', e => erros.push(e.message));
+  const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64');
+  await p.route(/huggingface\.co\/avatars\/|cdn-avatars\.huggingface\.co\//, r => { pedidos.push(r.request().url()); if (/falha/.test(r.request().url())) return r.abort(); r.fulfill({ status: 200, contentType: 'image/png', body: PNG }); });
+  await p.goto(comExp(pagina + '?prefetch=0').replace('&recorte=1', '')); await p.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await p.waitForTimeout(2500);   // sem o recorte: a ordem da tabela e a dos modelos que o mapa mostra por padrao
+  const c = await p.evaluate(() => { const th = [...document.querySelectorAll('#tb thead th')], ult = th[th.length - 1], td = document.querySelector('#tb tbody tr td:last-child'); return { rot: ult.textContent.trim(), sticky: getComputedStyle(td).position, direita: getComputedStyle(td).right, links: [...td.querySelectorAll('a')].map(a => a.href), ref: td.querySelector('.av img') ? td.querySelector('.av img').referrerPolicy : null, linhas: document.querySelectorAll('#tb tbody tr').length }; });
+  ok(c.rot === 'Portado por' && c.sticky === 'sticky' && c.direita === '0px', `ultima coluna "${c.rot}", fixa a direita (position ${c.sticky})`);
+  ok(c.links.some(h => /huggingface\.co\/[^/]+$/.test(h)) && c.links.some(h => /huggingface\.co\/.+\/.+/.test(h)), `link para o perfil e para o repositorio do build: ${c.links.join(' , ')}`);
+  ok(pedidos.length > 0 && pedidos.length <= 60 && pedidos.length < c.linhas, `avatares sob demanda: ${pedidos.length} imagens pedidas para ${c.linhas} linhas na tabela (so as visiveis)`);
+  ok(c.ref === 'no-referrer', 'imagem com referrerpolicy=no-referrer');
+  const nenhumGuardado = await p.evaluate(() => !/huggingface\.co\/avatars|cdn-avatars/.test(document.querySelector('#grafo-camada').innerHTML) && !/\.av/.test('') );
+  const tx = await p.evaluate(() => window.MAPA_DADOS.modelos.filter(m => m.portado_por).length); ok(tx > 500, `${tx} modelos com autor de build nos dados; os demais mostram "—"`);
+  const ex = await baixar(p, '#exp-tabela', 'HTML'); const q = await b.newPage(); await q.goto(pathToFileURL(ex).href); const html = await q.evaluate(() => document.documentElement.outerHTML); await q.close();
+  ok(!/cdn-avatars|huggingface\.co\/avatars|<img/.test(html), 'a exportacao da tabela nao inclui imagens de avatar');
+  // reserva de iniciais quando a imagem falha ou o publicador pediu para ocultar
+  await p.evaluate(() => { window.MAPA_AVATARES = { 'falha-x': 'https://huggingface.co/avatars/falha.svg' }; document.body.insertAdjacentHTML('beforeend', '<span class="av" id="t1" data-autor="falha-x"><span class="ini">FX</span></span><span class="av" id="t2" data-autor="oculto-y"><span class="ini">OY</span></span>'); });
+  await p.evaluate(() => { const ev = new Event('x'); }); await p.waitForTimeout(100);
+  await ctx.close();
+  const m2 = await b.newContext({ viewport: { width: 390, height: 844 } }); const p2 = await m2.newPage(); await p2.goto(comExp(pagina + '?prefetch=0')); await p2.waitForFunction(() => window.__obs && window.__obs.stats.estrelas > 0); await p2.waitForTimeout(1200);
+  const mob = await p2.evaluate(() => ({ col: getComputedStyle(document.querySelector('#tb tbody tr td:last-child')).display, linha: getComputedStyle(document.querySelector('#tb tbody tr .porta-m')).display }));
+  ok(mob.col === 'none' && mob.linha === 'block', 'no celular a coluna vira linha secundaria sob o nome do modelo'); await m2.close();
+  ok(!erros.length, 'sem erros de script na coluna Portado por', erros.join(' | ')); }
+
+// 3k) coluna Tarefa: um elemento so por celula (tipo), tarefa original na dica e no drawer; a exportacao tambem
+{ const { p, ctx } = await abrir('?lang=pt'); await p.waitForTimeout(500);
+  const c = await p.evaluate(() => { const td = document.querySelectorAll('#tb tbody tr')[0].children[1]; return { filhos: td.children.length, small: td.querySelectorAll('small').length, badge: td.querySelector('.chip-t').textContent, dica: td.querySelector('.chip-t').title, texto: td.textContent.trim() }; });
+  ok(c.filhos === 1 && c.small === 0 && /^(Gerador|Codificador)$/.test(c.texto) && c.dica.length > 0, `celula de tarefa: so o badge "${c.badge}", tarefa original na dica ("${c.dica}")`);
+  await p.evaluate(() => document.querySelector('#tb tbody tr').click()); await p.waitForTimeout(600);
+  ok(await p.evaluate(() => /Tarefa[\s\S]*\(/.test(document.querySelector('#drawer').innerText)), 'o drawer do modelo mostra a tarefa original do Hugging Face');
+  const th = await baixar(p, '#exp-tabela', 'HTML'); const q = await b.newPage(); await q.goto(pathToFileURL(th).href);
+  const ex = await q.evaluate(() => { const cab = [...document.querySelectorAll('thead th')].map(x => x.textContent), i = cab.findIndex(x => /Tarefa/.test(x)); return [...document.querySelectorAll('tbody tr')].slice(0, 20).map(r => r.children[i].textContent); }); await q.close();
+  ok(ex.every(x => /^(Gerador|Codificador)$/.test(x)), `exportacao HTML da tabela: coluna Tarefa so com o tipo (${ex.slice(0, 3).join(', ')})`); await ctx.close(); }
 
 // 4) limpar restaura
 { const { p, ctx } = await abrir('?fixture=1#datasets'); const total = await filtradas(p);

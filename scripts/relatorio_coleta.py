@@ -165,6 +165,13 @@ def texto(r, a, d, antes_nome, chamadas=None, urls_ruins=()):
     sm = fd.get("sem_maior_publicador")
     if sm and sm.get("id"):
         ap(f"  sem o maior publicador ({sm['id']}, {sm['modelos']} modelos): Brasil {sm['brasil']['modelos']} modelos, nativo {sm['brasil']['so_nativo']}, nativo+GGUF {sm['brasil']['nativo_mais_gguf']}")
+    mdep = (fd.get("maturidade") or {})
+    if mdep:
+        mant = fa.get("maturidade") or {}
+        for esc in ("brasil", "mundo", "brasil_sem_maior"):
+            ap(f"  maturidade {esc}: " + "; ".join(f"{k} {(mant.get(esc) or {}).get(k, '-')} -> {mdep[esc][k]}" for k in ("experimental", "documentado", "indeterminado")))
+        for k, v in mdep["builds"].items():
+            ap(f"  builds de modelos {k}: {v['total']} modelos, {v['com_build_nativo']} com build nativo, {v['so_gguf_wllama']} so GGUF")
     ap(f"== Mudancas de status de build ({len(r['status'])})")
     for i, s0, s1, v0, v1 in r["status"]:
         ap(f"  {i}: status {s0} -> {s1}; via {v0} -> {v1}")

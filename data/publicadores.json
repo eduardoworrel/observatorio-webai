@@ -29,7 +29,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/22h",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 2,
@@ -101,7 +101,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/ai-eldorado",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 2,
@@ -140,7 +140,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/AIInstituteLNCC",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -252,7 +252,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/amadeusai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 18,
@@ -293,7 +293,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/artificialguybr",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 15,
@@ -406,7 +406,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/carolina-c4ai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 4,
@@ -449,7 +449,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/ceia-research",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -493,7 +493,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/CEIA-UFG",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -571,7 +571,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/coppead",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -759,11 +759,13 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/g-assismoraes",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 822,
-   "membro_de": [],
+   "membro_de": [
+    "melll-uff"
+   ],
    "instituicoes": [],
    "labs": [],
    "relacionados": [],
@@ -794,7 +796,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Giuliano",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 2,
@@ -911,7 +913,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/H2IA",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 4,
@@ -950,7 +952,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Itau-Unibanco",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -991,7 +993,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/joaoalvarenga",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -1033,7 +1035,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Jurema-br",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -1154,7 +1156,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/maritaca-ai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -1230,7 +1232,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/neuralmind",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 2,
@@ -1399,7 +1401,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/pucpr-br",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 14,
@@ -1482,7 +1484,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/rhaymison",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 15,
@@ -1589,7 +1591,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/semantixai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -1628,7 +1630,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/ufca-llms",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 13,
@@ -1667,7 +1669,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/unicamp-dl",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 21,
@@ -1700,7 +1702,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Venturus",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -1776,7 +1778,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/wilsondesouza",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -1786,6 +1788,90 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "aifeifei798",
+   "nome": "aifeifei",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 181,
+   "n_membros": null,
+   "url": "https://huggingface.co/aifeifei798",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/aifeifei798",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "akjindal53244",
+   "nome": "Ashvini Kumar Jindal",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 5,
+   "n_membros": null,
+   "url": "https://huggingface.co/akjindal53244",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/akjindal53244",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "Alibaba-NLP",
+   "nome": "Alibaba-NLP",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 74,
+   "n_membros": 17,
+   "url": "https://huggingface.co/Alibaba-NLP",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Alibaba-NLP",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "allenai",
@@ -1809,7 +1895,7 @@
     "regra": "lista curada (seed)"
    },
    "escopo": "mundo",
-   "n_modelos_hf": 984,
+   "n_modelos_hf": 985,
    "n_membros": 176,
    "url": "https://huggingface.co/allenai",
    "origem_lista": "lista mundo",
@@ -1818,10 +1904,418 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/allenai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 283,
+   "n_modelos_mapeados": 282,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "antoinelouis",
+   "nome": "Antoine Louis",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 60,
+   "n_membros": null,
+   "url": "https://huggingface.co/antoinelouis",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/antoinelouis",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "arcee-ai",
+   "nome": "Arcee AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 204,
+   "n_membros": 31,
+   "url": "https://huggingface.co/arcee-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/arcee-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "AtlaAI",
+   "nome": "Atla",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 7,
+   "n_membros": 15,
+   "url": "https://huggingface.co/AtlaAI",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/AtlaAI",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "Babelscape",
+   "nome": "Babelscape",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 18,
+   "n_membros": 5,
+   "url": "https://huggingface.co/Babelscape",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Babelscape",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "bardsai",
+   "nome": "bards.ai",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 28,
+   "n_membros": 7,
+   "url": "https://huggingface.co/bardsai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/bardsai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "bartowski",
+   "nome": "Bartowski",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2584,
+   "n_membros": null,
+   "url": "https://huggingface.co/bartowski",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/bartowski",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [
+    "Qwen",
+    "ibm-granite"
+   ],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "bigscience",
+   "nome": "BigScience Workshop",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 162,
+   "n_membros": 328,
+   "url": "https://huggingface.co/bigscience",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/bigscience",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 6,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "BSC-LT",
+   "nome": "Language Technologies Laboratory @ Barcelona Supercomputing Center",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 104,
+   "n_membros": 47,
+   "url": "https://huggingface.co/BSC-LT",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/BSC-LT",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "celiudos",
+   "nome": "Marcelo Anselmo de Souza Filho",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1,
+   "n_membros": null,
+   "url": "https://huggingface.co/celiudos",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/celiudos",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "chaoliangUNSW",
+   "nome": "chaoliang yan",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 21,
+   "n_membros": null,
+   "url": "https://huggingface.co/chaoliangUNSW",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/chaoliangUNSW",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "classla",
+   "nome": "CLASSLA - CLARIN Knowledge Centre for South Slavic Languages",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 28,
+   "n_membros": 6,
+   "url": "https://huggingface.co/classla",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/classla",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "codefuse-ai",
+   "nome": "CodeFuse AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 49,
+   "n_membros": 20,
+   "url": "https://huggingface.co/codefuse-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/codefuse-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 3,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "CohereLabs",
+   "nome": "Cohere Labs",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 55,
+   "n_membros": 138,
+   "url": "https://huggingface.co/CohereLabs",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/CohereLabs",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 7,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "convaiinnovations",
+   "nome": "Convai Innovations",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 38,
+   "n_membros": null,
+   "url": "https://huggingface.co/convaiinnovations",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/convaiinnovations",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "cross-encoder",
+   "nome": "Sentence Transformers - Cross-Encoders",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 38,
+   "n_membros": 2,
+   "url": "https://huggingface.co/cross-encoder",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/cross-encoder",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -1851,16 +2345,227 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/daveycodez",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 3,
+   "n_modelos_mapeados": 0,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "DavidAU",
+   "nome": "David Belton",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 374,
+   "n_membros": null,
+   "url": "https://huggingface.co/DavidAU",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/DavidAU",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "distilbert",
+   "nome": "DistilBERT community",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 9,
+   "n_membros": 2,
+   "url": "https://huggingface.co/distilbert",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/distilbert",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "ente-ai",
+   "nome": "Ente Technologies",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 7,
+   "n_membros": 1,
+   "url": "https://huggingface.co/ente-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ente-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "EuroBERT",
+   "nome": "EuroBERT",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 3,
+   "n_membros": 7,
+   "url": "https://huggingface.co/EuroBERT",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/EuroBERT",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "facebook",
+   "nome": "AI at Meta",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2351,
+   "n_membros": 355,
+   "url": "https://huggingface.co/facebook",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/facebook",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "FacebookAI",
+   "nome": "Facebook AI community",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 19,
+   "n_membros": 2,
+   "url": "https://huggingface.co/FacebookAI",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/FacebookAI",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 3,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "fastino",
+   "nome": "fastino",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 21,
+   "n_membros": 18,
+   "url": "https://huggingface.co/fastino",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/fastino",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "ghost-x",
+   "nome": "Ghost X",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 12,
+   "n_membros": 1,
+   "url": "https://huggingface.co/ghost-x",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ghost-x",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "google",
@@ -1885,18 +2590,44 @@
    },
    "escopo": "mundo",
    "n_modelos_hf": 1136,
-   "n_membros": 3886,
+   "n_membros": 3887,
    "url": "https://huggingface.co/google",
    "origem_lista": "lista mundo",
-   "modelos_fora_do_corte": 30,
+   "modelos_fora_do_corte": 29,
    "fontes": [
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/google",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 329,
+   "n_modelos_mapeados": 323,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "google-bert",
+   "nome": "BERT community",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 15,
+   "n_membros": 3,
+   "url": "https://huggingface.co/google-bert",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/google-bert",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -1926,7 +2657,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/hbfreed",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 4,
@@ -1936,6 +2667,87 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "hindsight-ai",
+   "nome": "Hindsight",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 3,
+   "n_membros": 4,
+   "url": "https://huggingface.co/hindsight-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/hindsight-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "Hiveurban",
+   "nome": "Hive-Contact",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 8,
+   "n_membros": null,
+   "url": "https://huggingface.co/Hiveurban",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Hiveurban",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "hugging-quants",
+   "nome": "Hugging Quants",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 21,
+   "n_membros": 6,
+   "url": "https://huggingface.co/hugging-quants",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/hugging-quants",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "HuggingFaceTB",
@@ -1968,10 +2780,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/HuggingFaceTB",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 71,
+   "n_modelos_mapeados": 64,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -2007,10 +2819,65 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/ibm-granite",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 139,
+   "n_modelos_mapeados": 134,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "intfloat",
+   "nome": "Liang Wang",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 20,
+   "n_membros": null,
+   "url": "https://huggingface.co/intfloat",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/intfloat",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 4,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "jinaai",
+   "nome": "Jina AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 124,
+   "n_membros": 21,
+   "url": "https://huggingface.co/jinaai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/jinaai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 4,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -2040,7 +2907,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/JonathanColetti",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 1,
@@ -2076,7 +2943,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/KrynexLabs",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 7,
@@ -2086,6 +2953,58 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "kyutai",
+   "nome": "Kyutai",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 97,
+   "n_membros": 21,
+   "url": "https://huggingface.co/kyutai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/kyutai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "lightonai",
+   "nome": "LightOn AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 106,
+   "n_membros": 14,
+   "url": "https://huggingface.co/lightonai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/lightonai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "LiquidAI",
@@ -2118,10 +3037,62 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/LiquidAI",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 145,
+   "n_modelos_mapeados": 79,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "livekit",
+   "nome": "LiveKit",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 4,
+   "n_membros": 36,
+   "url": "https://huggingface.co/livekit",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/livekit",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "lmstudio-community",
+   "nome": "LM Studio Community",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 762,
+   "n_membros": 9,
+   "url": "https://huggingface.co/lmstudio-community",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/lmstudio-community",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -2151,16 +3122,74 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/locriani",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 3,
+   "n_modelos_mapeados": 2,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "lxyuan",
+   "nome": "Lik Xun Yuan",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 14,
+   "n_membros": null,
+   "url": "https://huggingface.co/lxyuan",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/lxyuan",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "MaziyarPanahi",
+   "nome": "Maziyar Panahi",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2820,
+   "n_membros": null,
+   "url": "https://huggingface.co/MaziyarPanahi",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/MaziyarPanahi",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "meta-llama",
@@ -2193,7 +3222,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/meta-llama",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 36,
@@ -2232,10 +3261,10 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/microsoft",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 248,
+   "n_modelos_mapeados": 243,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -2271,10 +3300,36 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/mistralai",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 14,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "mixedbread-ai",
+   "nome": "Mixedbread",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 12,
+   "n_membros": 8,
+   "url": "https://huggingface.co/mixedbread-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/mixedbread-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
@@ -2304,16 +3359,149 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/mlboydaisuke",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 8,
+   "n_modelos_mapeados": 3,
    "membro_de": [],
    "instituicoes": [],
    "labs": [],
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "mlx-community",
+   "nome": "MLX Community",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 5866,
+   "n_membros": 6120,
+   "url": "https://huggingface.co/mlx-community",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/mlx-community",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "mobilint",
+   "nome": "Mobilint, Inc.",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 438,
+   "n_membros": 19,
+   "url": "https://huggingface.co/mobilint",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/mobilint",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 3,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "MoritzLaurer",
+   "nome": "Moritz Borrett-Laurer (formerly Laurer)",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 42,
+   "n_membros": null,
+   "url": "https://huggingface.co/MoritzLaurer",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/MoritzLaurer",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "nomic-ai",
+   "nome": "Nomic AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 73,
+   "n_membros": 6,
+   "url": "https://huggingface.co/nomic-ai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/nomic-ai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "NousResearch",
+   "nome": "NousResearch",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 127,
+   "n_membros": 19,
+   "url": "https://huggingface.co/NousResearch",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/NousResearch",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 3,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "nvidia",
@@ -2338,7 +3526,7 @@
    },
    "escopo": "mundo",
    "n_modelos_hf": 1064,
-   "n_membros": 5027,
+   "n_membros": 5028,
    "url": "https://huggingface.co/nvidia",
    "origem_lista": "lista mundo",
    "modelos_fora_do_corte": 160,
@@ -2346,13 +3534,94 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/nvidia",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 247,
+   "n_modelos_mapeados": 245,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
+  },
+  {
+   "id": "OpenMed",
+   "nome": "OpenMed",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2299,
+   "n_membros": 1,
+   "url": "https://huggingface.co/OpenMed",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/OpenMed",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 4,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "OVHaiLLM",
+   "nome": "OVHai LLM",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 20,
+   "n_membros": 16,
+   "url": "https://huggingface.co/OVHaiLLM",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/OVHaiLLM",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "papluca",
+   "nome": "Luca Papariello",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1,
+   "n_membros": null,
+   "url": "https://huggingface.co/papluca",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/papluca",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "Polygl0t",
@@ -2385,7 +3654,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Polygl0t",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 32,
@@ -2432,13 +3701,39 @@
      "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 19,
+   "n_modelos_mapeados": 18,
    "instituicoes": [
     "ulisboa"
    ],
    "labs": [
     "nlx-ulisboa"
    ],
+   "relacionados": []
+  },
+  {
+   "id": "QuantFactory",
+   "nome": "Quant Factory",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1420,
+   "n_membros": 3,
+   "url": "https://huggingface.co/QuantFactory",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/QuantFactory",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
+   "instituicoes": [],
+   "labs": [],
    "relacionados": []
   },
   {
@@ -2472,13 +3767,68 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Qwen",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
-   "n_modelos_mapeados": 207,
+   "n_modelos_mapeados": 156,
    "instituicoes": [],
    "labs": [],
    "relacionados": []
+  },
+  {
+   "id": "RedHatAI",
+   "nome": "Red Hat AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 812,
+   "n_membros": 59,
+   "url": "https://huggingface.co/RedHatAI",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/RedHatAI",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 8,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "saidutta69",
+   "nome": "RACER IS OP",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 95,
+   "n_membros": null,
+   "url": "https://huggingface.co/saidutta69",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/saidutta69",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "sallani",
@@ -2505,7 +3855,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/sallani",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 3,
@@ -2515,6 +3865,333 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "segment-any-text",
+   "nome": "Segment any Text",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 15,
+   "n_membros": 3,
+   "url": "https://huggingface.co/segment-any-text",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/segment-any-text",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "sentence-transformers",
+   "nome": "Sentence Transformers",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 128,
+   "n_membros": 3,
+   "url": "https://huggingface.co/sentence-transformers",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/sentence-transformers",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 5,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "setu4993",
+   "nome": "Setu Shah",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 5,
+   "n_membros": null,
+   "url": "https://huggingface.co/setu4993",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/setu4993",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "shibing624",
+   "nome": "Ming Xu (徐明)",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 46,
+   "n_membros": null,
+   "url": "https://huggingface.co/shibing624",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/shibing624",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "Snowflake",
+   "nome": "Snowflake",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 32,
+   "n_membros": 14,
+   "url": "https://huggingface.co/Snowflake",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Snowflake",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "speakleash",
+   "nome": "SpeakLeash | Spichlerz",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 129,
+   "n_membros": 17,
+   "url": "https://huggingface.co/speakleash",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/speakleash",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "stabilityai",
+   "nome": "Stability AI",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 120,
+   "n_membros": 22,
+   "url": "https://huggingface.co/stabilityai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/stabilityai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "tabularisai",
+   "nome": "tabularisai",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 9,
+   "n_membros": 8,
+   "url": "https://huggingface.co/tabularisai",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/tabularisai",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "tardellirs",
+   "nome": "Tardelli Stekel",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 36,
+   "n_membros": null,
+   "url": "https://huggingface.co/tardellirs",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/tardellirs",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "taronaeo",
+   "nome": "Aaron Teo",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 41,
+   "n_membros": null,
+   "url": "https://huggingface.co/taronaeo",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/taronaeo",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "tiiuae",
+   "nome": "Technology Innovation Institute",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 137,
+   "n_membros": 43,
+   "url": "https://huggingface.co/tiiuae",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/tiiuae",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "timpal0l",
+   "nome": "Tim",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 36,
+   "n_membros": null,
+   "url": "https://huggingface.co/timpal0l",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/timpal0l",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "TucanoBR",
@@ -2547,7 +4224,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/TucanoBR",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 10,
@@ -2559,6 +4236,194 @@
     "nicholasKluge",
     "Polygl0t"
    ]
+  },
+  {
+   "id": "Twitter",
+   "nome": "Twitter",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2,
+   "n_membros": 4,
+   "url": "https://huggingface.co/Twitter",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Twitter",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "Unbabel",
+   "nome": "Unbabel",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 44,
+   "n_membros": 38,
+   "url": "https://huggingface.co/Unbabel",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Unbabel",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "unsloth",
+   "nome": "Unsloth",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 1498,
+   "n_membros": 3,
+   "url": "https://huggingface.co/unsloth",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/unsloth",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "upskyy",
+   "nome": "Sangchun Ha",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 9,
+   "n_membros": null,
+   "url": "https://huggingface.co/upskyy",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/upskyy",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
+  },
+  {
+   "id": "utter-project",
+   "nome": "UTTER - Unified Transcription and Translation for Extended Reality",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 43,
+   "n_membros": 40,
+   "url": "https://huggingface.co/utter-project",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/utter-project",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 4,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "VAGOsolutions",
+   "nome": "VAGO solutions",
+   "tipo": "grupo",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 61,
+   "n_membros": 14,
+   "url": "https://huggingface.co/VAGOsolutions",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/VAGOsolutions",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 1,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
+  },
+  {
+   "id": "Vortecks",
+   "nome": "Mitch",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 5,
+   "n_membros": null,
+   "url": "https://huggingface.co/Vortecks",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/Vortecks",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 2,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   },
   {
    "id": "Xenova",
@@ -2585,7 +4450,7 @@
     {
      "rotulo": "Perfil no Hugging Face",
      "url": "https://huggingface.co/Xenova",
-     "acessado": "2026-11-20"
+     "acessado": "2026-11-21"
     }
    ],
    "n_modelos_mapeados": 8,
@@ -2597,6 +4462,35 @@
    "relacionados": [],
    "afiliado_a": [],
    "natureza_rotulo": "independente"
+  },
+  {
+   "id": "zenmagnets",
+   "nome": "Shihan Qu",
+   "tipo": "pessoa",
+   "classe_pais": "nao_classificado",
+   "evidencia_pais": null,
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "mundo",
+   "n_modelos_hf": 2,
+   "n_membros": null,
+   "url": "https://huggingface.co/zenmagnets",
+   "origem_lista": "recorte global em portugues",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/zenmagnets",
+     "acessado": "2026-11-21"
+    }
+   ],
+   "n_modelos_mapeados": 0,
+   "membro_de": [],
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": [],
+   "afiliado_a": [],
+   "natureza_rotulo": "nao_classificada"
   }
  ]
 }

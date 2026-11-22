@@ -4,24 +4,44 @@
  "corte_parametros_b": 12.0,
  "regra_filtro": 2,
  "brasil": {
-  "modelos": 1289,
-  "nativo_oficial": 13,
+  "modelos": 1305,
+  "nativo_oficial": 14,
   "nativo_comunidade": 3,
-  "so_gguf_wllama": 105,
+  "so_gguf_wllama": 109,
   "gguf_grande_sem_nativo": 64,
-  "nenhum": 1168,
-  "so_nativo": 16,
-  "nativo_mais_gguf": 121
+  "nenhum": 1179,
+  "so_nativo": 17,
+  "nativo_mais_gguf": 126
  },
  "mundo": {
-  "modelos": 1817,
-  "nativo_oficial": 112,
-  "nativo_comunidade": 257,
-  "so_gguf_wllama": 248,
-  "gguf_grande_sem_nativo": 244,
-  "nenhum": 1200,
-  "so_nativo": 369,
-  "nativo_mais_gguf": 617
+  "modelos": 1650,
+  "nativo_oficial": 95,
+  "nativo_comunidade": 211,
+  "so_gguf_wllama": 236,
+  "gguf_grande_sem_nativo": 240,
+  "nenhum": 1108,
+  "so_nativo": 306,
+  "nativo_mais_gguf": 542
+ },
+ "recorte_pt": {
+  "modelos": 115,
+  "nativo_oficial": 31,
+  "nativo_comunidade": 31,
+  "so_gguf_wllama": 18,
+  "gguf_grande_sem_nativo": 19,
+  "nenhum": 35,
+  "so_nativo": 62,
+  "nativo_mais_gguf": 80
+ },
+ "por_origem_brasil": {
+  "desenvolvedor": 10,
+  "foco_pt_br": 6,
+  "publicador": 1289
+ },
+ "pt_declarado": {
+  "brasil": 265,
+  "mundo": 131,
+  "recorte": 115
  },
  "brasil_independentes": {
   "modelos": 136,
@@ -34,14 +54,14 @@
   "nativo_mais_gguf": 59
  },
  "brasil_instituicoes": {
-  "modelos": 167,
+  "modelos": 181,
   "nativo_oficial": 4,
   "nativo_comunidade": 1,
-  "so_gguf_wllama": 23,
+  "so_gguf_wllama": 27,
   "gguf_grande_sem_nativo": 5,
-  "nenhum": 139,
+  "nenhum": 149,
   "so_nativo": 5,
-  "nativo_mais_gguf": 28
+  "nativo_mais_gguf": 32
  },
  "brasil_empresas": {
   "modelos": 36,
@@ -54,22 +74,22 @@
   "nativo_mais_gguf": 11
  },
  "brasil_natureza_nao_classificada": {
-  "modelos": 950,
-  "nativo_oficial": 6,
+  "modelos": 952,
+  "nativo_oficial": 7,
   "nativo_comunidade": 1,
   "so_gguf_wllama": 16,
   "gguf_grande_sem_nativo": 20,
-  "nenhum": 927,
-  "so_nativo": 7,
-  "nativo_mais_gguf": 23
+  "nenhum": 928,
+  "so_nativo": 8,
+  "nativo_mais_gguf": 24
  },
  "maior_publicador_br": {
   "id": "g-assismoraes",
   "modelos": 822
  },
  "publicadores": {
-  "brasil": 45,
-  "mundo": 21,
+  "brasil": 49,
+  "mundo": 19,
   "brasil_por_natureza": {
    "independente": 8,
    "instituicao": 15,
@@ -78,11 +98,11 @@
   }
  },
  "candidatos": {
-  "avaliados": 185,
+  "avaliados": 153,
   "classificados_brasil": 46,
-  "descartados": 139,
+  "descartados": 107,
   "descartados_por_motivo": {
-   "sem evidencia publica de ser do Brasil": 132,
+   "sem evidencia publica de ser do Brasil": 100,
    "sem modelos no corte": 6,
    "nao encontrado na API": 1
   }
@@ -110,7 +130,7 @@
    "id": "acso",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "adalberto-temp",
@@ -161,23 +181,6 @@
    ]
   },
   {
-   "id": "aifeifei798",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "aifeifei798/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored"
-   ]
-  },
-  {
-   "id": "akjindal53244",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "akjindal53244/Llama-3.1-Storm-8B",
-    "akjindal53244/Llama-3.1-Storm-8B-GGUF"
-   ]
-  },
-  {
    "id": "AlmawaveLabs",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -201,16 +204,6 @@
     "anthracite-org/magnum-v2-123b",
     "anthracite-org/magnum-v2-12b",
     "anthracite-org/magnum-v2-12b-gguf"
-   ]
-  },
-  {
-   "id": "arcee-ai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "arcee-ai/AFM-4.5B",
-    "arcee-ai/AFM-4.5B-Base",
-    "arcee-ai/Trinity-Large-Base"
    ]
   },
   {
@@ -243,14 +236,6 @@
    ]
   },
   {
-   "id": "AtlaAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "AtlaAI/Selene-1-Mini-Llama-3.1-8B"
-   ]
-  },
-  {
    "id": "AtomicChat",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -260,32 +245,12 @@
    ]
   },
   {
-   "id": "bartowski",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "bartowski/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
-    "bartowski/EuroLLM-9B-Instruct-GGUF",
-    "bartowski/Falcon3-7B-Instruct-GGUF"
-   ]
-  },
-  {
    "id": "benjleite",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "benjleite/ptt5-ptbr-qa",
     "benjleite/ptt5-ptbr-qg"
-   ]
-  },
-  {
-   "id": "bigscience",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "bigscience/bloom",
-    "bigscience/bloom-1b1",
-    "bigscience/bloom-1b7"
    ]
   },
   {
@@ -321,23 +286,13 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
-  },
-  {
-   "id": "BSC-LT",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "BSC-LT/ALIA-40b",
-    "BSC-LT/salamandra-2b",
-    "BSC-LT/salamandra-2b-instruct"
-   ]
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "c4ai-usp",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "casperhansen",
@@ -351,19 +306,19 @@
    "id": "ceia-br",
    "origem": "lista inicial",
    "motivo": "nao encontrado na API",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "CERTIFoundation",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "cesarbr",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (2 listados: 0 acima de 12 B, 0 de outra tarefa, 1 sem tarefa declarada, 1 adaptadores)",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "CMSManhattan",
@@ -373,16 +328,6 @@
     "CMSManhattan/JiRackDeltaNet_180b",
     "CMSManhattan/JiRackDeltaNet_27b",
     "CMSManhattan/JiRackUltra_14b"
-   ]
-  },
-  {
-   "id": "CohereLabs",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "CohereLabs/aya-23-35B",
-    "CohereLabs/aya-23-8B",
-    "CohereLabs/aya-expanse-32b"
    ]
   },
   {
@@ -411,16 +356,6 @@
    ]
   },
   {
-   "id": "DavidAU",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
-    "DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
-    "DavidAU/LFM2.5-8B-A1B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF"
-   ]
-  },
-  {
    "id": "dealignai",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -434,7 +369,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "diablomike20",
@@ -479,16 +414,6 @@
    "modelos_vistos": [
     "Epiculous/Violet_Twilight-v0.2",
     "Epiculous/Violet_Twilight-v0.2-GGUF"
-   ]
-  },
-  {
-   "id": "facebook",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "facebook/xglm-4.5B",
-    "facebook/xglm-564M",
-    "facebook/xglm-7.5B"
    ]
   },
   {
@@ -544,14 +469,6 @@
    "modelos_vistos": [
     "Gabs1346/gemma-4-e4b-cpt-clinico-ptbr",
     "Gabs1346/qwen3.5-9b-cpt-clinico-ptbr"
-   ]
-  },
-  {
-   "id": "ghost-x",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "ghost-x/ghost-8b-beta-1608"
    ]
   },
   {
@@ -622,7 +539,7 @@
    "id": "hiaac-nlp",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (2 listados: 0 acima de 12 B, 0 de outra tarefa, 2 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "hiwaifu-research",
@@ -632,16 +549,6 @@
     "hiwaifu-research/WaifuGemma4-26b-a4b-v1",
     "hiwaifu-research/WaifuGemma4-26b-a4b-v1-GGUF",
     "hiwaifu-research/WaifuGemma4-26b-a4b-v1-i1-GGUF"
-   ]
-  },
-  {
-   "id": "hugging-quants",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "hugging-quants/Llama-3.2-1B-Instruct-Q4_K_M-GGUF",
-    "hugging-quants/Llama-3.2-1B-Instruct-Q8_0-GGUF",
-    "hugging-quants/Llama-3.2-3B-Instruct-Q4_K_M-GGUF"
    ]
   },
   {
@@ -719,7 +626,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "joshnader",
@@ -734,7 +641,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "kosbu",
@@ -742,15 +649,6 @@
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "kosbu/Llama-3.3-70B-Instruct-AWQ"
-   ]
-  },
-  {
-   "id": "kyutai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "kyutai/helium-1-2b",
-    "kyutai/helium-1-preview-2b"
    ]
   },
   {
@@ -778,7 +676,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "LLaMAX",
@@ -790,21 +688,11 @@
    ]
   },
   {
-   "id": "lmstudio-community",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "lmstudio-community/Devstral-Small-2505-MLX-4bit",
-    "lmstudio-community/Devstral-Small-2507-MLX-4bit",
-    "lmstudio-community/Devstral-Small-2507-MLX-6bit"
-   ]
-  },
-  {
    "id": "lucasmg09",
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "Luciano",
@@ -830,7 +718,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "mattritchey",
@@ -841,41 +729,11 @@
    ]
   },
   {
-   "id": "MaziyarPanahi",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "MaziyarPanahi/BioMistral-7B-GGUF",
-    "MaziyarPanahi/Meta-Llama-3.1-405B-Instruct-GGUF",
-    "MaziyarPanahi/Meta-Llama-3.1-70B-Instruct-GGUF"
-   ]
-  },
-  {
    "id": "Melvin56",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "Melvin56/Phi-4-mini-instruct-abliterated-GGUF"
-   ]
-  },
-  {
-   "id": "mlx-community",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mlx-community/Llama-3.1-8B-Instruct-4bit",
-    "mlx-community/Llama-3.2-1B-Instruct-4bit",
-    "mlx-community/Llama-3.2-3B-Instruct-4bit"
-   ]
-  },
-  {
-   "id": "mobilint",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "mobilint/Llama-3.1-8B-Instruct",
-    "mobilint/Llama-3.2-1B-Instruct",
-    "mobilint/Llama-3.2-3B-Instruct"
    ]
   },
   {
@@ -920,16 +778,6 @@
     "NikolayKozloff/Llama-3-portuguese-Tom-cat-8b-instruct-Q6_K-GGUF",
     "NikolayKozloff/Llama-portuguese-13b-Luana-v0.2-GGUF",
     "NikolayKozloff/Mistral-portuguese-luana-7b-Mathematics-GGUF"
-   ]
-  },
-  {
-   "id": "NousResearch",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "NousResearch/Llama-3.2-1B",
-    "NousResearch/Meta-Llama-3.1-8B",
-    "NousResearch/Meta-Llama-3.1-8B-Instruct"
    ]
   },
   {
@@ -997,15 +845,6 @@
    ]
   },
   {
-   "id": "OVHaiLLM",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "OVHaiLLM/Olala-v1.0-mini-7A1B",
-    "OVHaiLLM/Olala-v1.0-mini-7A1B-GGUF"
-   ]
-  },
-  {
    "id": "Papuguinho",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -1017,7 +856,7 @@
    "id": "plvictor",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (11 listados: 0 acima de 12 B, 0 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20",
+   "coletado_em": "2026-11-21",
    "escopo": "mundo"
   },
   {
@@ -1038,26 +877,6 @@
    ]
   },
   {
-   "id": "QuantFactory",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "QuantFactory/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF",
-    "QuantFactory/gemma-portuguese-luana-2b-GGUF",
-    "QuantFactory/phi-3-portuguese-tom-cat-4k-instruct-GGUF"
-   ]
-  },
-  {
-   "id": "RedHatAI",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
-    "RedHatAI/Llama-3.2-1B-Instruct-FP8",
-    "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic"
-   ]
-  },
-  {
    "id": "RichardErkhov",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -1065,16 +884,6 @@
     "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-4bits",
     "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-124M-8bits",
     "RichardErkhov/nicholasKluge_-_Aira-2-portuguese-1B7-4bits"
-   ]
-  },
-  {
-   "id": "saidutta69",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "saidutta69/EuroLLM-1.7B-Instruct-heretic",
-    "saidutta69/LFM2.5-8B-A1B-heretic",
-    "saidutta69/LFM3-1.7B-Base-heretic"
    ]
   },
   {
@@ -1102,16 +911,6 @@
    ]
   },
   {
-   "id": "speakleash",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "speakleash/Bielik-11B-v3.0-Instruct",
-    "speakleash/Bielik-11B-v3.0-Instruct-GGUF",
-    "speakleash/Bielik-11B-v3.0-Instruct-awq"
-   ]
-  },
-  {
    "id": "ssmits",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
@@ -1121,35 +920,11 @@
    ]
   },
   {
-   "id": "stabilityai",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "stabilityai/stablelm-2-12b",
-    "stabilityai/stablelm-2-1_6b"
-   ]
-  },
-  {
    "id": "stelterlab",
    "origem": "busca na API",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [
     "stelterlab/Mistral-Small-24B-Instruct-2501-AWQ"
-   ]
-  },
-  {
-   "id": "tardellirs",
-   "origem": "lista inicial",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
-  },
-  {
-   "id": "taronaeo",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "taronaeo/Granite-4.2-3B-BE-GGUF"
    ]
   },
   {
@@ -1176,7 +951,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "ThomasBaruzier",
@@ -1185,16 +960,6 @@
    "modelos_vistos": [
     "ThomasBaruzier/Meta-Llama-3.1-405B-Instruct-GGUF",
     "ThomasBaruzier/Meta-Llama-3.1-8B-Instruct-GGUF"
-   ]
-  },
-  {
-   "id": "tiiuae",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "tiiuae/Falcon-H1-1.5B-Instruct",
-    "tiiuae/Falcon-H1-34B-Instruct",
-    "tiiuae/Falcon-H1-3B-Instruct"
    ]
   },
   {
@@ -1218,35 +983,7 @@
    "id": "ufmg-digital-pathology",
    "origem": "entidade curada",
    "motivo": "sem modelos no corte (1 listados: 0 acima de 12 B, 1 de outra tarefa, 0 sem tarefa declarada, 0 adaptadores)",
-   "coletado_em": "2026-11-20"
-  },
-  {
-   "id": "Unbabel",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Unbabel/Tower-Plus-9B"
-   ]
-  },
-  {
-   "id": "unsloth",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "unsloth/Devstral-Small-2507-unsloth-bnb-4bit",
-    "unsloth/LFM2.5-230M",
-    "unsloth/LFM2.5-230M-GGUF"
-   ]
-  },
-  {
-   "id": "utter-project",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "utter-project/EuroLLM-1.7B",
-    "utter-project/EuroLLM-1.7B-Instruct",
-    "utter-project/EuroLLM-22B-2512"
-   ]
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "vabatista",
@@ -1256,24 +993,6 @@
     "vabatista/question-generation-t5-base-pt-br",
     "vabatista/question-generation-t5-small-pt-br",
     "vabatista/question-generation-t5-small-pt-br-2"
-   ]
-  },
-  {
-   "id": "VAGOsolutions",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "VAGOsolutions/Llama-3.1-SauerkrautLM-70b-Instruct",
-    "VAGOsolutions/Llama-3.1-SauerkrautLM-8b-Instruct"
-   ]
-  },
-  {
-   "id": "Vortecks",
-   "origem": "busca na API",
-   "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
-   "modelos_vistos": [
-    "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
-    "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF"
    ]
   },
   {
@@ -1308,7 +1027,7 @@
    "origem": "lista inicial",
    "motivo": "sem evidencia publica de ser do Brasil (nao classificado)",
    "modelos_vistos": [],
-   "coletado_em": "2026-11-20"
+   "coletado_em": "2026-11-21"
   },
   {
    "id": "zhzh98",
@@ -1331,66 +1050,66 @@
  "por_familia_tarefa": {
   "gerador": {
    "brasil": {
-    "modelos": 771,
+    "modelos": 780,
     "nativo_oficial": 4,
     "nativo_comunidade": 0,
-    "so_gguf_wllama": 102,
+    "so_gguf_wllama": 106,
     "gguf_grande_sem_nativo": 64,
-    "nenhum": 665,
+    "nenhum": 670,
     "so_nativo": 4,
-    "nativo_mais_gguf": 106
+    "nativo_mais_gguf": 110
    },
    "mundo": {
-    "modelos": 1523,
-    "nativo_oficial": 97,
-    "nativo_comunidade": 222,
-    "so_gguf_wllama": 231,
-    "gguf_grande_sem_nativo": 237,
-    "nenhum": 973,
-    "so_nativo": 319,
-    "nativo_mais_gguf": 550
+    "modelos": 1361,
+    "nativo_oficial": 80,
+    "nativo_comunidade": 176,
+    "so_gguf_wllama": 219,
+    "gguf_grande_sem_nativo": 233,
+    "nenhum": 886,
+    "so_nativo": 256,
+    "nativo_mais_gguf": 475
    },
    "brasil_sem_maior": {
-    "modelos": 303,
+    "modelos": 312,
     "nativo_oficial": 4,
     "nativo_comunidade": 0,
-    "so_gguf_wllama": 101,
+    "so_gguf_wllama": 105,
     "gguf_grande_sem_nativo": 64,
-    "nenhum": 198,
+    "nenhum": 203,
     "so_nativo": 4,
-    "nativo_mais_gguf": 105
+    "nativo_mais_gguf": 109
    }
   },
   "codificador": {
    "brasil": {
-    "modelos": 518,
-    "nativo_oficial": 9,
+    "modelos": 525,
+    "nativo_oficial": 10,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
-    "nenhum": 503,
-    "so_nativo": 12,
-    "nativo_mais_gguf": 15
+    "nenhum": 509,
+    "so_nativo": 13,
+    "nativo_mais_gguf": 16
    },
    "mundo": {
-    "modelos": 294,
+    "modelos": 289,
     "nativo_oficial": 15,
     "nativo_comunidade": 35,
     "so_gguf_wllama": 17,
     "gguf_grande_sem_nativo": 7,
-    "nenhum": 227,
+    "nenhum": 222,
     "so_nativo": 50,
     "nativo_mais_gguf": 67
    },
    "brasil_sem_maior": {
-    "modelos": 164,
-    "nativo_oficial": 9,
+    "modelos": 171,
+    "nativo_oficial": 10,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
-    "nenhum": 149,
-    "so_nativo": 12,
-    "nativo_mais_gguf": 15
+    "nenhum": 155,
+    "so_nativo": 13,
+    "nativo_mais_gguf": 16
    }
   }
  },
@@ -1398,16 +1117,87 @@
   "id": "g-assismoraes",
   "modelos": 822,
   "brasil": {
-   "modelos": 467,
-   "nativo_oficial": 13,
+   "modelos": 483,
+   "nativo_oficial": 14,
    "nativo_comunidade": 3,
-   "so_gguf_wllama": 104,
+   "so_gguf_wllama": 108,
    "gguf_grande_sem_nativo": 64,
-   "nenhum": 347,
-   "so_nativo": 16,
-   "nativo_mais_gguf": 120
+   "nenhum": 358,
+   "so_nativo": 17,
+   "nativo_mais_gguf": 125
   },
-  "publicadores_brasil": 44
+  "publicadores_brasil": 48
+ },
+ "regra_maturidade": 1,
+ "maturidade": {
+  "brasil": {
+   "experimental": 858,
+   "documentado": 368,
+   "indeterminado": 79
+  },
+  "mundo": {
+   "experimental": 19,
+   "documentado": 1311,
+   "indeterminado": 320
+  },
+  "brasil_sem_maior": {
+   "experimental": 65,
+   "documentado": 355,
+   "indeterminado": 63
+  },
+  "por_familia_tarefa": {
+   "gerador": {
+    "brasil": {
+     "experimental": 493,
+     "documentado": 216,
+     "indeterminado": 71
+    },
+    "mundo": {
+     "experimental": 7,
+     "documentado": 1047,
+     "indeterminado": 307
+    },
+    "brasil_sem_maior": {
+     "experimental": 46,
+     "documentado": 211,
+     "indeterminado": 55
+    }
+   },
+   "codificador": {
+    "brasil": {
+     "experimental": 365,
+     "documentado": 152,
+     "indeterminado": 8
+    },
+    "mundo": {
+     "experimental": 12,
+     "documentado": 264,
+     "indeterminado": 13
+    },
+    "brasil_sem_maior": {
+     "experimental": 19,
+     "documentado": 144,
+     "indeterminado": 8
+    }
+   }
+  },
+  "builds": {
+   "experimental": {
+    "total": 877,
+    "com_build_nativo": 0,
+    "so_gguf_wllama": 14
+   },
+   "documentado": {
+    "total": 1785,
+    "com_build_nativo": 345,
+    "so_gguf_wllama": 323
+   },
+   "indeterminado": {
+    "total": 408,
+    "com_build_nativo": 40,
+    "so_gguf_wllama": 26
+   }
+  }
  },
  "instituicoes_por_pais": {
   "BR": 15,

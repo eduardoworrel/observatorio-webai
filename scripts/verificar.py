@@ -61,11 +61,11 @@ if os.path.exists(os.path.join(R, "data", "datasets.json")):
         n = "dataset " + d["id"]
         if d["id"].lower() in dids: err("dataset repetido " + d["id"])
         dids.add(d["id"].lower()); fontes(d, n)
-        if d["escopo"] not in ("br", "pt"): err(n + ": escopo")
+        if d["escopo"] not in ("br", "mundo"): err(n + ": escopo (so br ou mundo; o idioma e o atributo pt)")
         if d["escopo"] == "br" and d["publicador"] not in ids and d["publicador"] not in {x["id"] for x in foto["descartados"]}: err(n + ": escopo br com publicador desconhecido")
         if d["id"].split("/")[0] != d["publicador"]: err(n + ": publicador")
         if d["tamanho_bytes"] is not None and d["tamanho_bytes"] <= 0: err(n + ": tamanho invalido")
-        if d["escopo"] == "pt" and not d["benchmarks"] and not d.get("pt"): err(n + ": escopo pt sem idioma pt nem benchmark")
+        if d["escopo"] == "mundo" and not d["benchmarks"] and not d.get("pt") and d["publicador"] not in {p["id"] for p in pubs if p["escopo"] == "mundo"}: err(n + ": escopo mundo sem idioma pt, benchmark nem publicador do mundo no mapa")
         if not URL.match(d["fontes"][0]["url"]): err(n + ": url")
     bid = set()
     for b in bms:
@@ -81,6 +81,7 @@ if os.path.exists(os.path.join(R, "data", "datasets.json")):
             if x not in bid: err(f"dataset {d['id']}: benchmark desconhecido {x}")
     if fc["datasets"]["total"] != len(dss) or fc["benchmarks"]["total"] != len(bms): err("foto_camadas nao soma")
     if sum(fc["datasets"]["por_escopo"].values()) != len(dss): err("foto_camadas: escopos nao somam")
+    if sum(fc["datasets"]["pt"].values()) != len(dss) or sum(fc["datasets"]["por_downloads"].values()) != len(dss): err("foto_camadas: pt ou downloads nao somam")
 if os.path.exists(os.path.join(R, "data", "relacoes.json")):
     rl = L("relacoes")
     iids = {i["id"] for i in rl["instituicoes"]}; lids = {l["id"] for l in rl["laboratorios"]}; pids = {p["id"] for p in pubs}
@@ -88,8 +89,9 @@ if os.path.exists(os.path.join(R, "data", "relacoes.json")):
     for m in mods:
         if m.get("familia_tarefa") not in ("gerador", "codificador"): err(f"modelo {m['id']}: familia_tarefa")
         for c in m.get("creditos", []):
-            t, _, i = c.partition(":")
+            t, i, papel = (c.split(":") + ["", ""])[:3]
             if i not in nos.get(t, set()): err(f"modelo {m['id']}: credito desconhecido {c}")
+            if papel not in ("desenvolvedor", "financiador", "parceiro", "plataforma"): err(f"modelo {m['id']}: credito sem papel valido {c}")
     for v in rl["vinculos"]:
         for x in (v["de"], v["para"]):
             t, _, i = x.partition(":")
@@ -135,6 +137,18 @@ if os.path.exists(os.path.join(R, "data", "relacoes.json")):
         if sum(fp[f][esc]["modelos"] for f in ("gerador", "codificador")) != foto[esc]["modelos"]: err("foto por familia nao soma: " + esc)
     ms = foto["sem_maior_publicador"]
     if ms["id"] and ms["brasil"]["modelos"] + ms["modelos"] != foto["brasil"]["modelos"]: err("foto sem_maior_publicador nao soma")
+if any("maturidade" in m for m in mods):
+    for m in mods:
+        if m.get("maturidade") not in ("experimental", "documentado", "indeterminado"): err(f"modelo {m['id']}: maturidade")
+        if "sinais_maturidade" not in m or (m["maturidade"] == "indeterminado") != ("readme_indisponivel" in m["sinais_maturidade"]): err(f"modelo {m['id']}: sinais_maturidade incoerentes")
+    fm = foto.get("maturidade")
+    if not fm: err("foto sem maturidade")
+    else:
+        for esc in ("brasil", "mundo"):
+            if sum(fm[esc].values()) != foto[esc]["modelos"]: err("foto maturidade nao soma: " + esc)
+            for f in ("gerador", "codificador"):
+                pass
+        if sum(v["total"] for v in fm["builds"].values()) != len(mods): err("foto maturidade builds nao soma")
 if erros:
     print("\n".join(erros[:60])); print(len(erros), "erros"); sys.exit(1)
 print(f"ok: {len(pubs)} publicadores, {len(mods)} modelos, {len(const)} constelacoes" + (f", {len(dss)} datasets, {len(bms)} benchmarks" if os.path.exists(os.path.join(R, "data", "datasets.json")) else "") + (f", {len(rl['instituicoes'])} instituicoes, {len(rl['vinculos'])} vinculos" if os.path.exists(os.path.join(R, "data", "relacoes.json")) else ""))

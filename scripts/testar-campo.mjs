@@ -13,11 +13,12 @@ let falhas = 0; const ok = (c, m, x = '') => { console.log((c ? 'ok    ' : 'FALH
 // cobertura da camada estatica: grade 4x3 de celulas; fracao de pixels com alfa; faixas vazias de 40 px
 const medir = () => {
   const cv = document.querySelector('#sky-canvas'), c = cv.getContext('2d'), w = cv.width, h = cv.height, d = c.getImageData(0, 0, w, h).data;
-  const cols = new Uint32Array(w), lins = new Uint32Array(h); let tot = 0; const NX = 4, NY = 3, cel = new Uint32Array(NX * NY);
-  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) if (d[(y * w + x) * 4 + 3] > 2) { cols[x]++; lins[y]++; tot++; cel[Math.floor(y / h * NY) * NX + Math.floor(x / w * NX)]++; }
+  const dpr0 = w / cv.getBoundingClientRect().width, lim = innerWidth > 1050 ? Math.min(w, Math.ceil((document.querySelector('#ceu').getBoundingClientRect().right + 150) * dpr0)) : w;   // o grafo so desenha ate o fim do painel + 150 px (a coluna de conteudo, opaca, cobre o resto): a cobertura vale para essa regiao
+  const cols = new Uint32Array(lim), lins = new Uint32Array(h); let tot = 0; const NX = 4, NY = 3, cel = new Uint32Array(NX * NY);
+  for (let y = 0; y < h; y++) for (let x = 0; x < lim; x++) if (d[(y * w + x) * 4 + 3] > 2) { cols[x]++; lins[y]++; tot++; cel[Math.floor(y / h * NY) * NX + Math.floor(x / lim * NX)]++; }
   const faixa = (a, n) => { let vazia = 0; for (let i = 0; i + n <= a.length; i++) { let s = 0; for (let k = 0; k < n; k++) s += a[i + k]; if (s === 0) vazia++; } return vazia; };
   const dpr = w / cv.getBoundingClientRect().width;
-  return { frac: tot / (w * h), celMin: Math.min(...cel), celVazias: [...cel].filter(v => v === 0).length, colVazias: faixa(cols, Math.ceil(40 * dpr)), linVazias: faixa(lins, Math.ceil(40 * dpr)), w, h, campo: window.__obs.stats.campo, dados: window.__obs.estrelas.length };
+  return { frac: tot / (lim * h), celMin: Math.min(...cel), celVazias: [...cel].filter(v => v === 0).length, colVazias: faixa(cols, Math.ceil(40 * dpr)), linVazias: faixa(lins, Math.ceil(40 * dpr)), w, h, campo: window.__obs.stats.campo, dados: window.__obs.estrelas.length };
 };
 const FAIXA = [0.0008, 0.6];
 const t = (ctx, rot, r, base) => {
@@ -47,7 +48,7 @@ for (const esq of ['light', 'dark']) {
   await p.evaluate(() => document.querySelector('[data-sky-reset]').click());
   for (const [w, h] of [[1920, 1080], [1024, 700], [390, 844], [2560, 1300], [1440, 900]]) { await p.setViewportSize({ width: w, height: h }); await p.waitForTimeout(500); t(ctx, `janela ${w}x${h}`, await med(), base); }
   // nada de DOM, hit-test, busca ou teclado
-  const dom = await p.evaluate(() => ({ canvas: [...document.querySelectorAll('#ceu canvas')].every(c => c.getAttribute('aria-hidden') === 'true'), n: document.querySelectorAll('#ceu canvas').length, foco: document.querySelectorAll('#ceu [tabindex], #ceu button, #ceu a').length }));
+  const dom = await p.evaluate(() => ({ canvas: [...document.querySelectorAll('#grafo-camada canvas')].every(c => c.getAttribute('aria-hidden') === 'true'), n: document.querySelectorAll('#grafo-camada canvas').length, foco: document.querySelectorAll('#ceu [tabindex], #ceu button, #ceu a').length }));
   ok(dom.canvas && dom.n === 2, `campo desenhado nos canvas existentes (${dom.n} canvas, todos aria-hidden), sem novos elementos no DOM`);
   ok(erros.length === 0, 'sem erros de script', erros.join(' | ')); await ctx.close();
 }

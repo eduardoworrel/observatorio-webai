@@ -16,7 +16,11 @@ Canal principal para pedidos de remoção, correção e privacidade: o **relato 
 
 O Observatório mapeia quem publica modelos de Web AI no Brasil e no mundo. Os dados sobre pessoas são **somente informação profissional já pública**: nome profissional, afiliação e papel, áreas de pesquisa, publicações, modelos publicados, e links profissionais (página institucional, Hugging Face, GitHub, ORCID, Google Scholar, Lattes). São listados: donos de contas que publicam modelos, pesquisadores e docentes com página institucional ou perfil profissional público, e quem pediu para entrar.
 
-**Não** tratamos: e-mail, telefone, endereço, data de nascimento, documentos, fotos, redes sociais pessoais, nacionalidade, nem dados sensíveis (origem racial ou étnica, religião, opinião política, saúde, vida sexual, filiação sindical ou partidária, dados genéticos ou biométricos). Não inferimos atributos. Sem evidência pública, a classificação é "não classificado".
+**Não** tratamos: e-mail, telefone, endereço, data de nascimento, documentos, fotos (exceto o avatar público do perfil de quem publicou o build, descrito abaixo), redes sociais pessoais, nacionalidade, nem dados sensíveis (origem racial ou étnica, religião, opinião política, saúde, vida sexual, filiação sindical ou partidária, dados genéticos ou biométricos). Não inferimos atributos. Sem evidência pública, a classificação é "não classificado".
+
+### Avatar do Hugging Face na coluna "Portado por"
+
+A coluna "Portado por" exibe o avatar público do perfil de quem publicou o build, carregado do Hugging Face no navegador de quem visita, sem cópia no repositório (guardamos apenas o endereço da imagem). Quem quiser que a imagem não apareça pede por PR ou issue (campo `ocultar_avatar` na entidade do publicador ou inclusão em `ocultar` de `data/avatares.json`) e passa a ver iniciais.
 
 ### De onde vêm os dados
 
@@ -64,7 +68,11 @@ Main channel for removal, correction and privacy requests: the **private report 
 
 The Observatório maps who publishes Web AI models in Brazil and worldwide. Data about people is **only professional information that is already public**: professional name, affiliation and role, research areas, publications, published models, and professional links (institutional page, Hugging Face, GitHub, ORCID, Google Scholar, Lattes). Listed: owners of accounts that publish models, researchers and faculty with an institutional page or public professional profile, and people who asked to be included.
 
-We do **not** process e-mail, phone, address, birth date, documents, photos, personal social networks, nationality, or sensitive data (racial or ethnic origin, religion, political opinion, health, sex life, union or party membership, genetic or biometric data). We do not infer attributes. Without public evidence, the classification is "not classified".
+We do **not** process e-mail, phone, address, birth date, documents, photos (except the public avatar of the profile that published the build, described below), personal social networks, nationality, or sensitive data (racial or ethnic origin, religion, political opinion, health, sex life, union or party membership, genetic or biometric data). We do not infer attributes. Without public evidence, the classification is "not classified".
+
+### Hugging Face avatar in the "Ported by" column
+
+The "Ported by" column shows the public avatar of the profile that published the build, loaded from Hugging Face in the visitor's browser, with no copy in the repository (we keep only the image address). Anyone who prefers the image not to appear can ask by PR or issue (the `ocultar_avatar` field on the publisher entity, or an entry in `ocultar` of `data/avatares.json`) and will see initials instead.
 
 ### Sources
 

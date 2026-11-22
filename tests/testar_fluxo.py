@@ -29,6 +29,7 @@ class ApiFalsa(http.server.BaseHTTPRequestHandler):
     acessos = []    # (rota, autor)
     inverter = False
     datasets = []   # itens no formato da listagem de datasets
+    readmes = {}    # id do modelo -> texto do README (ausente: 404)
 
     def log_message(self, *a):
         pass
@@ -45,6 +46,17 @@ class ApiFalsa(http.server.BaseHTTPRequestHandler):
         u = urllib.parse.urlparse(self.path)
         q = urllib.parse.parse_qs(u.query)
         partes = u.path.strip("/").split("/")
+        if len(partes) == 5 and partes[2:] == ["raw", "main", "README.md"]:
+            rid = partes[0] + "/" + partes[1]
+            ApiFalsa.acessos.append(("readme", rid))
+            if rid in ApiFalsa.readmes:
+                corpo = ApiFalsa.readmes[rid].encode()
+                self.send_response(200)
+                self.send_header("Content-Length", str(len(corpo)))
+                self.end_headers()
+                self.wfile.write(corpo)
+                return
+            return self._json({}, 404)
         if partes[:2] == ["api", "users"] and partes[3:] == ["overview"]:
             a = ApiFalsa.autores.get(partes[2])
             ApiFalsa.acessos.append(("users", partes[2]))
@@ -109,12 +121,13 @@ class Base(unittest.TestCase):
         ApiFalsa.inverter = False
         ApiFalsa.acessos.clear()
         ApiFalsa.datasets = []
+        ApiFalsa.readmes = {}
 
     def por(self, e):
         json.dump(e, open(os.path.join(self.raiz, "data", "entidades", "publicador", e["id"] + ".json"), "w"), ensure_ascii=False, indent=2)
 
     def coletar(self, *args, esperar=0, popen=False):
-        env = dict(os.environ, COLETOR_RAIZ=self.raiz, COLETOR_API=self.api, COLETOR_PAUSA="0")
+        env = dict(os.environ, COLETOR_RAIZ=self.raiz, COLETOR_API=self.api, COLETOR_HF=self.api[: -len("/api")], COLETOR_PAUSA="0")
         if esperar:
             env["COLETOR_ESPERA_TESTE"] = str(esperar)
         cmd = [sys.executable, COLETAR, "--sem-descoberta", *args]
@@ -282,7 +295,9 @@ class TestCamadas(Base):
         f = self.final()
         self.assertEqual(set(f), {"teste-br/ds-a", "outro/ds-pt-popular", "outro/ds-pt-curtido", "externo/ds-bench"}, "inclui br, pt com limiar e o dataset do benchmark; exclui fechado, fraco, sem metadados, ingles e duplicata")
         self.assertEqual(f["teste-br/ds-a"]["escopo"], "br")
-        self.assertEqual(f["outro/ds-pt-popular"]["escopo"], "pt")
+        self.assertEqual(f["outro/ds-pt-popular"]["escopo"], "mundo")
+        self.assertTrue(f["outro/ds-pt-popular"]["pt"])
+        self.assertNotIn("pt", {x["escopo"] for x in f.values()}, "idioma e atributo, nao escopo")
         self.assertTrue(f["outro/ds-pt-popular"]["pt_br"])
         self.assertEqual(f["externo/ds-bench"]["benchmarks"], ["enem"])
         self.assertNotIn("fulano@", f["teste-br/ds-a"]["descricao"])
@@ -299,7 +314,23 @@ class TestCamadas(Base):
         self.assertEqual(d["datasets"]["colunas"][0], "id")
         self.assertEqual(len(d["datasets"]["linhas"]), 4)
         self.assertEqual(d["datasets"]["linhas"][0][14], "br", "ordem: Brasil primeiro")
-        self.assertEqual(d["foto_camadas"]["datasets"]["por_escopo"], {"br": 1, "pt": 3})
+        self.assertEqual(d["foto_camadas"]["datasets"]["por_escopo"], {"br": 1, "mundo": 3})
+        self.assertEqual(d["foto_camadas"]["datasets"]["pt"], {"sim": 3, "nao": 1})
+        self.assertEqual(d["datasets"]["colunas"][14], "escopo")
+        self.assertEqual(d["datasets"]["colunas"][16], "pt")
+
+    def test_publicador_do_mundo_entra_pelo_limiar_sem_idioma(self):
+        ApiFalsa.datasets += [dataset("teste-fora/ds-w1", 150, 0, ["language:en", "license:mit"], "Conjunto em ingles de publicador do mundo no mapa, acima do limiar"),
+                              dataset("teste-fora/ds-w2", 5, 1, ["language:en", "license:mit"], "Conjunto em ingles de publicador do mundo, abaixo do limiar"),
+                              dataset("teste-fora/ds-w3", 2, 4, ["language:pt", "license:mit"], "Conjunto em portugues de publicador do mundo com curtidas suficientes")]
+        self.por(entidade("google", "teste-fora"))
+        ApiFalsa.autores["teste-fora"] = {"nome": "Teste Fora", "modelos": [modelo("teste-fora", "m-1B")]}
+        self.assertEqual(self.coletar("--tudo").returncode, 0)
+        f = self.final()
+        self.assertEqual(f["teste-fora/ds-w1"]["escopo"], "mundo")
+        self.assertFalse(f["teste-fora/ds-w1"]["pt"])
+        self.assertNotIn("teste-fora/ds-w2", f)
+        self.assertTrue(f["teste-fora/ds-w3"]["pt"])
 
     def test_incremental_e_idempotente(self):
         self.assertEqual(self.coletar("--novos").returncode, 0)
@@ -524,7 +555,7 @@ class TestRelacoes(Base):
         json.dump(e, open(p, "w"), ensure_ascii=False)
         self.coletar("--novos")
         mods = {m["id"]: m for m in self.dados_js()["modelos"]}
-        self.assertEqual(mods["teste-br/alfa-1B"]["creditos"], ["inst:inst-a"])
+        self.assertEqual(mods["teste-br/alfa-1B"]["creditos"], ["inst:inst-a:desenvolvedor"])
         self.assertEqual(mods["teste-br/alfa-1B"]["publicador"], "teste-br", "o dono continua sendo um so")
         self.assertEqual(mods["teste-br/beta-2B"]["creditos"], [])
 
@@ -564,6 +595,53 @@ class TestValidadorRelacoes(unittest.TestCase):
         lab["instituicao"] = "inst-sem-cadastro"
         rc, out = self.valida([self.inst("inst-a"), lab | {"id": "lab-x"}])
         self.assertIn("REF_INEXISTENTE", out)
+
+
+class TestAvatares(unittest.TestCase):
+    """Avatar publico do Hugging Face de quem portou o build: so o endereco (nunca a imagem); ocultar_avatar e a lista ocultar valem."""
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+
+    def valida(self, conteudo, entidades=()):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp, True)
+        os.makedirs(os.path.join(tmp, "data"), exist_ok=True)
+        json.dump(conteudo, open(os.path.join(tmp, "data", "avatares.json"), "w"))
+        for e in entidades:
+            d = os.path.join(tmp, "data", "entidades", e["entidade"]); os.makedirs(d, exist_ok=True)
+            json.dump(e, open(os.path.join(d, e["id"] + ".json"), "w"), ensure_ascii=False)
+        r = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "validar.py")], env=dict(os.environ, VALIDAR_RAIZ=tmp), capture_output=True, text=True)
+        return r.returncode, r.stdout
+
+    def test_validador_aceita_e_rejeita(self):
+        ok = {"spec": "1.0", "ocultar": ["fulano"], "avatares": {"mradermacher": "https://huggingface.co/avatars/abc.svg"}}
+        rc, out = self.valida(ok)
+        self.assertEqual(rc, 0, out)
+        rc, out = self.valida({"spec": "1.0", "ocultar": [], "avatares": {"x": "https://exemplo.com/foto.png"}})   # so enderecos do proprio Hugging Face
+        self.assertEqual(rc, 1)
+        rc, out = self.valida({"spec": "1.0", "ocultar": ["fulano"], "avatares": {"fulano": "https://huggingface.co/avatars/abc.svg"}})   # quem pediu para ocultar nao pode ter avatar
+        self.assertIn("AVATAR_OCULTO", out)
+
+    def test_gerador_omite_quem_pediu_ocultar(self):
+        import coletar
+        antigo = coletar.RAIZ
+        tmp = tempfile.mkdtemp(); self.addCleanup(shutil.rmtree, tmp, True)
+        os.makedirs(os.path.join(tmp, "data", "entidades", "publicador"))
+        json.dump({"spec": "1.0", "ocultar": ["a"], "avatares": {"a": "https://huggingface.co/avatars/1.svg", "b": "https://huggingface.co/avatars/2.svg", "c": "https://huggingface.co/avatars/3.svg"}}, open(os.path.join(tmp, "data", "avatares.json"), "w"))
+        json.dump({"spec": "1.0", "entidade": "publicador", "id": "c", "ocultar_avatar": True}, open(os.path.join(tmp, "data", "entidades", "publicador", "c.json"), "w"))
+        coletar.RAIZ = tmp
+        try:
+            self.assertEqual(sorted(coletar.avatares_web()), ["b"])
+        finally:
+            coletar.RAIZ = antigo
+
+    def test_portador_do_build_em_destaque(self):
+        import coletar
+        m = {"publicador": "orig", "builds": [{"autor": "outro", "destaque": False, "url": "u1"}, {"autor": "comunidade", "destaque": True, "url": "u2", "runtime_org": False}]}
+        self.assertEqual(coletar.portador_info(m), {"portado_por": "comunidade", "portado_papel": "comunidade", "portado_url": "u2"})
+        self.assertEqual(coletar.portador_info({"publicador": "orig", "builds": [{"autor": "Orig", "url": "u"}]})["portado_papel"], "proprio")
+        self.assertEqual(coletar.portador_info({"publicador": "orig", "builds": []}), {})
 
 
 class TestFamilia(unittest.TestCase):
@@ -610,7 +688,7 @@ class TestCreditoRealVerificado(unittest.TestCase):
         self.assertEqual(fap["n_creditados"], 13)
         pessoa = [p for p in json.load(open(os.path.join(REPO, "data", "publicadores.json")))["publicadores"] if p["id"] == "nicholasKluge"][0]
         self.assertEqual(pessoa["labs"], ["caisa-b-it"], "pessoa afiliada ao laboratorio")
-        self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["creditos"], ["inst:fapergs"])
+        self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["creditos"], ["inst:fapergs:financiador"])
         self.assertEqual(mods["nicholasKluge/TeenyTinyLlama-460m"]["publicador"], "nicholasKluge", "o dono continua sendo um so")
         self.assertEqual(mods["nicholasKluge/Aira-2-124M"]["creditos"], [], "o que o cartao nao sustenta continua pessoal")
 
@@ -628,15 +706,217 @@ class TestRelacionadosPessoaGrupo(TestValidadorRelacoes):
         self.assertIn("PESSOA_RELACAO", out)
 
 
+CARTAO_PADRAO = """---
+library_name: transformers
+tags: []
+---
+
+# Model Card for Model ID
+
+<!-- Provide a quick summary of what the model is/does. -->
+
+## Model Details
+
+### Model Description
+
+This is the model card of a 🤗 transformers model that has been pushed on the Hub. This model card has been automatically generated.
+
+- **Developed by:** [More Information Needed]
+- **Funded by [optional]:** [More Information Needed]
+- **Model type:** [More Information Needed]
+
+## Uses
+
+[More Information Needed]
+
+## Bias, Risks, and Limitations
+
+[More Information Needed]
+
+### Recommendations
+
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
+
+## How to Get Started with the Model
+
+Use the code below to get started with the model.
+
+[More Information Needed]
+"""
+CARTAO_TRAINER = """---
+library_name: transformers
+license: gemma
+base_model: google/gemma-3-1b-it
+tags:
+- generated_from_trainer
+---
+
+<!-- This model card has been generated automatically according to the information the Trainer had access to. You
+should probably proofread and complete it, then remove this comment. -->
+
+# gemma-1b-it-assin2
+
+This model is a fine-tuned version of [google/gemma-3-1b-it](https://huggingface.co/google/gemma-3-1b-it) on an unknown dataset.
+It achieves the following results on the evaluation set:
+- Loss: 0.1835
+
+## Model description
+
+More information needed
+
+## Intended uses & limitations
+
+More information needed
+
+## Training and evaluation data
+
+More information needed
+
+### Training hyperparameters
+
+The following hyperparameters were used during training:
+- learning_rate: 2e-05
+- num_epochs: 2
+"""
+CARTAO_CHECKPOINT = """---
+language: en
+license: llama2
+base_model: locuslab/tofu_ft_llama2-7b
+---
+# IHL + Reset Both - TOFU forget10 - Epoch 9/20
+
+Input embeddings and LM head initialized from another model; other weights retained. Standalone full model checkpoint.
+"""
+CARTAO_ESCRITO = """---
+license: apache-2.0
+language: pt
+datasets:
+- exemplo/corpus
+base_model: exemplo/base
+---
+# Modelo Exemplo
+
+Modelo de linguagem pequeno treinado em português do Brasil. Este cartão descreve os dados de treino, a arquitetura, a avaliação em tarefas de classificação e de perguntas e respostas, os limites conhecidos e o uso pretendido. O treino usou 10 bilhões de tokens de textos públicos, filtrados por qualidade, e a avaliação comparou o modelo com linhas de base de tamanho semelhante em quatro conjuntos de teste, com resultados médios e desvio padrão por execução.
+
+## Uso
+
+```python
+from transformers import pipeline
+```
+
+## Citação
+
+Veja o artigo associado.
+"""
+
+
+class TestMaturidade(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import coletar
+        cls.m = staticmethod(coletar.maturidade)
+        cls.c = coletar
+
+    def test_cartoes_padrao_sao_experimentais(self):
+        mat, sin = self.m(CARTAO_PADRAO, "autor/modelo-run9")
+        self.assertEqual(mat, "experimental")
+        self.assertIn("cartao_padrao_hub", sin)
+        self.assertIn("placeholders_more_info", sin)
+        self.assertIn("sem_licenca", sin)
+        mat, sin = self.m(CARTAO_TRAINER, "autor/gemma-1b-it-assin2")
+        self.assertEqual((mat, sin[0]), ("experimental", "cartao_trainer_sem_descricao"))
+        self.assertEqual(self.m("---\nlicense: mit\n---\n# Curious\n", "a/b")[0], "experimental", "cartao sem conteudo proprio")
+
+    def test_cartao_curto_que_se_declara_checkpoint(self):
+        mat, sin = self.m(CARTAO_CHECKPOINT, "autor/tofu-llama2-7b-epoch09")
+        self.assertEqual((mat, sin[0]), ("experimental", "cartao_curto_de_checkpoint"))
+
+    def test_cartao_escrito_e_documentado_mesmo_sem_cabecalho_completo(self):
+        self.assertEqual(self.m(CARTAO_ESCRITO, "autor/modelo-exemplo")[0], "documentado")
+        sem_yaml = CARTAO_ESCRITO.split("---\n", 2)[2]
+        mat, sin = self.m(sem_yaml, "autor/modelo-exemplo")
+        self.assertEqual(mat, "documentado")
+        self.assertIn("sem_licenca", sin, "sinal fraco informativo; nao basta para experimental")
+        mat, _ = self.m(CARTAO_ESCRITO + "\n\n" + "Resultados.\n" * 5, "autor/modelo-run3")
+        self.assertEqual(mat, "documentado", "nome de checkpoint com cartao longo continua documentado")
+
+    def test_cartao_padrao_com_texto_proprio_substancial_e_documentado(self):
+        mat, _ = self.m(CARTAO_PADRAO + "\n\n## Descrição\n\n" + "Modelo treinado para tarefas de saúde em português, com dados clínicos anonimizados e avaliação em três hospitais. " * 4, "autor/modelo")
+        self.assertEqual(mat, "documentado")
+
+    def test_readme_indisponivel_e_indeterminado(self):
+        self.assertEqual(self.m(None, "a/b"), ("indeterminado", ["readme_indisponivel"]))
+
+    def test_compactacao_para_a_interface(self):
+        out = self.c.compactar_modelos([{"id": "a/b", "maturidade": "experimental", "sinais_maturidade": ["cartao_padrao_hub", "sem_licenca"]}, {"id": "a/c", "maturidade": "indeterminado", "sinais_maturidade": ["readme_indisponivel"]}])
+        self.assertEqual((out[0]["maturidade"], out[1]["maturidade"]), ("e", "i"))
+        self.assertEqual([self.c.SINAIS_MAT[i] for i in out[0]["sinais_maturidade"]], ["cartao_padrao_hub", "sem_licenca"])
+
+
+class TestMaturidadeNaColeta(Base):
+    def test_coleta_cache_e_contagens(self):
+        self.por(entidade("22h", "teste-br"))
+        self.por(entidade("google", "teste-fora"))
+        ApiFalsa.readmes = {"teste-br/alfa-1B": CARTAO_PADRAO, "teste-br/beta-2B": CARTAO_ESCRITO, "teste-fora/m-1B": CARTAO_ESCRITO}
+        self.assertEqual(self.coletar("--tudo").returncode, 0)
+        d = json.load(open(os.path.join(self.raiz, "data", "modelos.json")))["modelos"]
+        m = {x["id"]: x for x in d}
+        self.assertEqual((m["teste-br/alfa-1B"]["maturidade"], m["teste-br/beta-2B"]["maturidade"]), ("experimental", "documentado"))
+        self.assertEqual(m["teste-br/alfa-1B"]["sinais_maturidade"][0], "cartao_padrao_hub")
+        foto = json.load(open(os.path.join(self.raiz, "data", "foto.json")))
+        self.assertEqual(foto["maturidade"]["brasil"], {"experimental": 1, "documentado": 1, "indeterminado": 0})
+        self.assertEqual(foto["maturidade"]["mundo"]["documentado"], 1)
+        self.assertEqual(foto["maturidade"]["builds"]["experimental"]["total"], 1)
+        self.assertEqual(foto["regra_maturidade"], 1)
+        js = open(os.path.join(self.raiz, "web", "data.js")).read()
+        dados = json.loads(js[len("window.MAPA_DADOS="):-1])
+        mm = {x["id"]: x for x in dados["modelos"]}
+        self.assertEqual(mm["teste-br/alfa-1B"]["maturidade"], "e")
+        self.assertEqual(dados["dicionario_maturidade"]["maturidade"]["e"], "experimental")
+        self.assertEqual(dados["foto"]["maturidade"]["brasil"]["experimental"], 1)
+        lidos = sum(1 for a in ApiFalsa.acessos if a[0] == "readme")
+        self.assertEqual(lidos, 3)
+        r = self.coletar("--tudo", "--fresh")   # recoleta completa: o cache por modelo (mesma data de atualizacao) evita reler
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(sum(1 for a in ApiFalsa.acessos if a[0] == "readme"), lidos + 3, "--fresh apaga o cache e le de novo")
+        r = self.coletar("--novos")
+        self.assertIn("nada a coletar", r.stdout)
+
+    def test_indisponivel_e_sem_maturidade(self):
+        self.por(entidade("22h", "teste-br"))
+        self.coletar("--novos")
+        d = {x["id"]: x for x in json.load(open(os.path.join(self.raiz, "data", "modelos.json")))["modelos"]}
+        self.assertEqual(d["teste-br/alfa-1B"]["maturidade"], "indeterminado")
+        self.assertEqual(d["teste-br/alfa-1B"]["sinais_maturidade"], ["readme_indisponivel"])
+
+
+class TestDatasetsReais(unittest.TestCase):
+    def test_escopo_e_pais_do_publicador_e_nao_restam_datasets_pt(self):
+        d = json.load(open(os.path.join(REPO, "data", "datasets.json")))["datasets"]
+        pubs = {p["id"]: p for p in json.load(open(os.path.join(REPO, "data", "publicadores.json")))["publicadores"]}
+        self.assertTrue(d)
+        self.assertEqual({x["escopo"] for x in d} - {"br", "mundo"}, set(), "nao restam datasets com escopo pt")
+        self.assertTrue(any(x["escopo"] == "mundo" and not x["pt"] for x in d), "ha datasets do mundo sem portugues")
+        self.assertTrue(any(x["escopo"] == "mundo" and x["pt"] for x in d))
+        for x in d:
+            if x["publicador"] in pubs:
+                self.assertEqual(x["escopo"], "br" if pubs[x["publicador"]]["escopo"] == "br" else "mundo", x["id"])
+        js = open(os.path.join(REPO, "web", "data-datasets.js")).read()
+        col = json.loads(js[len("window.MAPA_DADOS.datasets="):-1])["colunas"]
+        self.assertEqual((col[14], col[16]), ("escopo", "pt"))
+
+
 class TestRotulos(unittest.TestCase):
     def test_tipos_de_fonte_tem_rotulo_em_pt_e_en(self):
         app = open(os.path.join(REPO, "web", "app.js"), encoding="utf-8").read()
+        drawer = open(os.path.join(REPO, "web", "drawer.js"), encoding="utf-8").read()   # o painel de detalhes tem modulo proprio
         tipos = json.load(open(os.path.join(REPO, "schema", "comum.schema.json")))["$defs"]["tipo_fonte"]["enum"]
         tipos += ["orgao_fomento", "perfil", "cartao", "institucional", "curadoria"]   # tipos de fonte e de evidencia derivada
         for t in tipos:
             self.assertEqual(app.count(f"src_{t}: '"), 2, f"falta rotulo PT e EN para {t}")
-        self.assertIn("tipoFonte(p.evidencia_pais.tipo)", app)
-        self.assertNotIn("evidencia_pais.tipo +", app, "o tipo cru nao deve ser impresso")
+        self.assertIn("tipoFonte(p.evidencia_pais.tipo)", app + drawer)
+        self.assertNotIn("evidencia_pais.tipo +", app + drawer, "o tipo cru nao deve ser impresso")
 
 
 @unittest.skipUnless(shutil.which("git") and shutil.which("bash"), "precisa de git e bash")
@@ -724,6 +1004,58 @@ class TestConversaoFiel(unittest.TestCase):
         self.assertEqual((b["autor"], b["oficial"], b["grau"]), ("a", False, "declarado"))
         self.assertTrue(saida[0]["gguf_wllama"])
         self.assertEqual(rel["movidos"][0]["para"], "b/modelo-x")
+
+
+class TestEscopoDoModelo(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import coletar
+        cls.c = coletar
+
+    def modelo(self, i, pub, creditos=(), foco=None):
+        m = {"id": i, "publicador": pub, "escopo": "mundo", "creditos": list(creditos), "url": "https://huggingface.co/" + i}
+        if foco:
+            m["foco_pt_br"] = foco
+        return m
+
+    def rodar(self, ms, fonte=None):
+        insts = {"financiadora-br": {"pais": "BR"}, "uni-de": {"pais": "DE"}}
+        mapa = {"pub-br": {"escopo": "br"}, "pub-x": {"escopo": "mundo"}}
+        fc = {(m["id"].lower(), c): fonte or {"url": "https://exemplo.org/p", "trecho": "financiado pela instituicao"} for m in ms for c in m["creditos"]}
+        self.c.atribuir_origem(ms, mapa, {}, insts, fc)
+        return {m["id"]: m for m in ms}
+
+    def test_condicoes(self):
+        r = self.rodar([self.modelo("pub-br/a", "pub-br"),
+                        self.modelo("pub-x/b", "pub-x", ["inst:financiadora-br:financiador"]),
+                        self.modelo("pub-x/c", "pub-x", ["inst:financiadora-br:desenvolvedor"]),
+                        self.modelo("pub-x/d", "pub-x", ["inst:financiadora-br:parceiro", "inst:uni-de:desenvolvedor"]),
+                        self.modelo("pub-x/e", "pub-x", foco={"criterio": "idioma_unico", "trecho": "language: pt"}),
+                        self.modelo("pub-x/f", "pub-x")])
+        self.assertEqual(r["pub-br/a"]["origem_motivo"], "publicador")
+        self.assertEqual((r["pub-x/b"]["escopo"], r["pub-x/b"]["origem_motivo"]), ("br", "financiador"))
+        self.assertEqual(r["pub-x/b"]["origem_fonte"]["trecho"], "financiado pela instituicao")
+        self.assertEqual(r["pub-x/c"]["origem_motivo"], "desenvolvedor")
+        self.assertEqual(r["pub-x/d"]["escopo"], "mundo")   # parceiro e instituicao estrangeira nao qualificam
+        self.assertEqual(r["pub-x/e"]["origem_motivo"], "foco_pt_br")
+        self.assertEqual(r["pub-x/f"]["escopo"], "mundo")
+        self.assertNotIn("origem_motivo", r["pub-x/f"])
+
+    def test_foco_so_portugues(self):
+        self.assertEqual(self.c.idiomas_tags(["pt-BR", "text-generation", "llama", "en"]), ["en", "pt"])
+        self.assertIsNone(self.c.foco_pt_br("a/b-ptpt-encoder", [], ["pt"]))             # portugues europeu fica fora
+        self.assertIsNone(self.c.foco_pt_br("a/b", ["pt-PT"], ["pt"]))
+        self.assertEqual(self.c.foco_pt_br("a/b-ptbr-encoder", [], ["pt"])["criterio"], "variante_explicita")
+        self.assertIsNone(self.c.foco_pt_br("a/b", [], ["en", "es", "pt"]))               # multilingue que so inclui o portugues
+        self.assertIsNone(self.c.foco_pt_br("a/b", [], ["en"]))
+
+    def test_alvo_declarado_no_artigo_e_codigo_fonte(self):
+        self.assertTrue(self.c.ALVO_ARTIGO.search("Although our efforts are mainly concerned with Brazilian Portuguese, we believe"))
+        self.assertFalse(self.c.ALVO_ARTIGO.search("A BERT model tailored for the Brazilian Portuguese language"))
+        self.c.BR_GITHUB["autor-br"] = "pub-br"
+        self.assertTrue(self.c.LINHA_CODIGO.search("This repository has the [source code](https://github.com/autor-br/x) used to train this model."))
+        self.c.BR_GITHUB.clear()
 
 
 if __name__ == "__main__":

@@ -28,6 +28,9 @@
     "codificador": 0
    },
    "n_creditados": 1,
+   "n_creditados_papel": {
+    "parceiro": 1
+   },
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -58,6 +61,9 @@
     "codificador": 0
    },
    "n_creditados": 13,
+   "n_creditados_papel": {
+    "financiador": 13
+   },
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -90,6 +96,7 @@
     "codificador": 3
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -122,6 +129,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -155,6 +163,9 @@
     "codificador": 2
    },
    "n_creditados": 1,
+   "n_creditados_papel": {
+    "desenvolvedor": 1
+   },
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -190,6 +201,7 @@
     "codificador": 31
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -222,6 +234,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -254,6 +267,7 @@
     "codificador": 3
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -289,6 +303,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -319,6 +334,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -351,6 +367,7 @@
     "codificador": 4
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -383,6 +400,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -408,16 +426,17 @@
    "publicadores": [
     "PORTULAN"
    ],
-   "n_modelos": 19,
+   "n_modelos": 18,
    "n_builds": {
     "nativo": 0,
     "gguf": 0
    },
    "por_familia_tarefa": {
-    "gerador": 4,
+    "gerador": 3,
     "codificador": 15
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -448,6 +467,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -485,6 +505,7 @@
     "codificador": 27
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -519,6 +540,7 @@
     "codificador": 7
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -555,6 +577,7 @@
     "codificador": 4
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -589,6 +612,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -625,6 +649,7 @@
     "codificador": 4
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -663,6 +688,7 @@
     "codificador": 25
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "pagina_pessoa",
@@ -701,6 +727,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -737,6 +764,7 @@
     "codificador": 12
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "perfil_oficial",
@@ -770,6 +798,7 @@
     "codificador": 0
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "site_institucional",
@@ -796,16 +825,17 @@
    "publicadores": [
     "PORTULAN"
    ],
-   "n_modelos": 19,
+   "n_modelos": 18,
    "n_builds": {
     "nativo": 0,
     "gguf": 0
    },
    "por_familia_tarefa": {
-    "gerador": 4,
+    "gerador": 3,
     "codificador": 15
    },
    "n_creditados": 0,
+   "n_creditados_papel": {},
    "fontes": [
     {
      "tipo": "cartao_modelo",
@@ -1404,7 +1434,7 @@
       {
        "tipo": "publicador",
        "id": "PORTULAN",
-       "n_modelos": 19,
+       "n_modelos": 18,
        "filhos": []
       }
      ]
@@ -1527,14 +1557,32 @@
   },
   {
    "tipo": "publicador",
+   "id": "aifeifei798",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "akjindal53244",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "alfaneo",
    "n_modelos": 6,
    "filhos": []
   },
   {
    "tipo": "publicador",
+   "id": "Alibaba-NLP",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "allenai",
-   "n_modelos": 283,
+   "n_modelos": 282,
    "filhos": []
   },
   {
@@ -1551,8 +1599,50 @@
   },
   {
    "tipo": "publicador",
+   "id": "antoinelouis",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "arcee-ai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "artificialguybr",
    "n_modelos": 15,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "AtlaAI",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Babelscape",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "bardsai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "bartowski",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "bigscience",
+   "n_modelos": 6,
    "filhos": []
   },
   {
@@ -1563,14 +1653,74 @@
   },
   {
    "tipo": "publicador",
+   "id": "BSC-LT",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "celiudos",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "chaoliangUNSW",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "classla",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "cnmoro",
    "n_modelos": 60,
    "filhos": []
   },
   {
    "tipo": "publicador",
-   "id": "daveycodez",
+   "id": "codefuse-ai",
    "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "CohereLabs",
+   "n_modelos": 7,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "convaiinnovations",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "cross-encoder",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "daveycodez",
+   "n_modelos": 0,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "DavidAU",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "distilbert",
+   "n_modelos": 1,
    "filhos": []
   },
   {
@@ -1583,6 +1733,36 @@
    "tipo": "publicador",
    "id": "eduagarcia",
    "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "ente-ai",
+   "n_modelos": 0,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "EuroBERT",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "facebook",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "FacebookAI",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "fastino",
+   "n_modelos": 1,
    "filhos": []
   },
   {
@@ -1605,6 +1785,12 @@
   },
   {
    "tipo": "publicador",
+   "id": "ghost-x",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "Giuliano",
    "n_modelos": 2,
    "filhos": []
@@ -1612,7 +1798,13 @@
   {
    "tipo": "publicador",
    "id": "google",
-   "n_modelos": 329,
+   "n_modelos": 323,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "google-bert",
+   "n_modelos": 2,
    "filhos": []
   },
   {
@@ -1635,14 +1827,44 @@
   },
   {
    "tipo": "publicador",
+   "id": "hindsight-ai",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Hiveurban",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "hugging-quants",
+   "n_modelos": 0,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "HuggingFaceTB",
-   "n_modelos": 71,
+   "n_modelos": 64,
    "filhos": []
   },
   {
    "tipo": "publicador",
    "id": "ibm-granite",
-   "n_modelos": 139,
+   "n_modelos": 134,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "intfloat",
+   "n_modelos": 4,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "jinaai",
+   "n_modelos": 4,
    "filhos": []
   },
   {
@@ -1665,14 +1887,38 @@
   },
   {
    "tipo": "publicador",
+   "id": "kyutai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "lightonai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "LiquidAI",
-   "n_modelos": 145,
+   "n_modelos": 79,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "livekit",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "lmstudio-community",
+   "n_modelos": 0,
    "filhos": []
   },
   {
    "tipo": "publicador",
    "id": "locriani",
-   "n_modelos": 3,
+   "n_modelos": 2,
    "filhos": []
   },
   {
@@ -1689,8 +1935,20 @@
   },
   {
    "tipo": "publicador",
+   "id": "lxyuan",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "maritaca-ai",
    "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "MaziyarPanahi",
+   "n_modelos": 1,
    "filhos": []
   },
   {
@@ -1708,7 +1966,7 @@
   {
    "tipo": "publicador",
    "id": "microsoft",
-   "n_modelos": 248,
+   "n_modelos": 243,
    "filhos": []
   },
   {
@@ -1719,14 +1977,68 @@
   },
   {
    "tipo": "publicador",
+   "id": "mixedbread-ai",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "mlboydaisuke",
-   "n_modelos": 8,
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "mlx-community",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "mobilint",
+   "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "MoritzLaurer",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "nomic-ai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "NousResearch",
+   "n_modelos": 3,
    "filhos": []
   },
   {
    "tipo": "publicador",
    "id": "nvidia",
-   "n_modelos": 247,
+   "n_modelos": 245,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "OpenMed",
+   "n_modelos": 4,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "OVHaiLLM",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "papluca",
+   "n_modelos": 1,
    "filhos": []
   },
   {
@@ -1737,14 +2049,26 @@
   },
   {
    "tipo": "publicador",
+   "id": "QuantFactory",
+   "n_modelos": 0,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "Qwen",
-   "n_modelos": 207,
+   "n_modelos": 156,
    "filhos": []
   },
   {
    "tipo": "publicador",
    "id": "recogna-nlp",
    "n_modelos": 11,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "RedHatAI",
+   "n_modelos": 8,
    "filhos": []
   },
   {
@@ -1767,14 +2091,134 @@
   },
   {
    "tipo": "publicador",
+   "id": "saidutta69",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "sallani",
    "n_modelos": 3,
    "filhos": []
   },
   {
    "tipo": "publicador",
+   "id": "segment-any-text",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "sentence-transformers",
+   "n_modelos": 5,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "setu4993",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "shibing624",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Snowflake",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "speakleash",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "stabilityai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "tabularisai",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "tardellirs",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "taronaeo",
+   "n_modelos": 0,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "tiiuae",
+   "n_modelos": 2,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "timpal0l",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Twitter",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Unbabel",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "unsloth",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "upskyy",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "utter-project",
+   "n_modelos": 4,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "VAGOsolutions",
+   "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
    "id": "Venturus",
    "n_modelos": 3,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "Vortecks",
+   "n_modelos": 2,
    "filhos": []
   },
   {
@@ -1793,6 +2237,12 @@
    "tipo": "publicador",
    "id": "Xenova",
    "n_modelos": 8,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "zenmagnets",
+   "n_modelos": 0,
    "filhos": []
   }
  ]

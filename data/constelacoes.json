@@ -7007,6 +7007,40 @@
    "arestas": []
   },
   {
+   "id": "aifeifei798",
+   "nome": "aifeifei",
+   "escopo": "mundo",
+   "modelos": [
+    "aifeifei798/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "akjindal53244",
+   "nome": "Ashvini Kumar Jindal",
+   "escopo": "mundo",
+   "modelos": [
+    "akjindal53244/Llama-3.1-Storm-8B"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Alibaba-NLP",
+   "nome": "Alibaba-NLP",
+   "escopo": "mundo",
+   "modelos": [
+    "Alibaba-NLP/gte-multilingual-base",
+    "Alibaba-NLP/gte-multilingual-reranker-base"
+   ],
+   "arestas": [
+    [
+     "Alibaba-NLP/gte-multilingual-base",
+     "Alibaba-NLP/gte-multilingual-reranker-base",
+     "gte"
+    ]
+   ]
+  },
+  {
    "id": "allenai",
    "nome": "Ai2",
    "escopo": "mundo",
@@ -7199,7 +7233,6 @@
     "allenai/OLMoE-1B-7B-0125",
     "allenai/OLMoE-1B-7B-0125-DPO",
     "allenai/OLMoE-1B-7B-0125-Instruct",
-    "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
     "allenai/OLMoE-1B-7B-0125-SFT",
     "allenai/OLMoE-1B-7B-0924",
     "allenai/OLMoE-1B-7B-0924-Instruct",
@@ -7918,11 +7951,6 @@
     ],
     [
      "allenai/OLMoE-1B-7B-0125-Instruct",
-     "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
-     "olmoe"
-    ],
-    [
-     "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
      "allenai/OLMoE-1B-7B-0125-SFT",
      "olmoe"
     ],
@@ -8449,21 +8477,287 @@
    ]
   },
   {
-   "id": "daveycodez",
-   "nome": "daveycodez",
+   "id": "antoinelouis",
+   "nome": "Antoine Louis",
    "escopo": "mundo",
    "modelos": [
-    "daveycodez/LFM2.5-1.2B-Thinking-Web-ONNX",
-    "daveycodez/LFM2.5-1.2B-Web-ONNX",
-    "daveycodez/LFM3-1.7B-Web-ONNX"
+    "antoinelouis/colbert-xm"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "arcee-ai",
+   "nome": "Arcee AI",
+   "escopo": "mundo",
+   "modelos": [
+    "arcee-ai/AFM-4.5B"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "AtlaAI",
+   "nome": "Atla",
+   "escopo": "mundo",
+   "modelos": [
+    "AtlaAI/Selene-1-Mini-Llama-3.1-8B"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Babelscape",
+   "nome": "Babelscape",
+   "escopo": "mundo",
+   "modelos": [
+    "Babelscape/wikineural-multilingual-ner"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "bardsai",
+   "nome": "bards.ai",
+   "escopo": "mundo",
+   "modelos": [
+    "bardsai/eu-pii-anonimization-multilang"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "bartowski",
+   "nome": "Bartowski",
+   "escopo": "mundo",
+   "modelos": [
+    "bartowski/mistralai_Ministral-3-3B-Instruct-2512-GGUF"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "bigscience",
+   "nome": "BigScience Workshop",
+   "escopo": "mundo",
+   "modelos": [
+    "bigscience/bloom-1b7",
+    "bigscience/bloom-560m",
+    "bigscience/bloom-7b1",
+    "bigscience/bloomz-560m",
+    "bigscience/bloomz-7b1",
+    "bigscience/bloomz-7b1-mt"
    ],
    "arestas": [
     [
-     "daveycodez/LFM2.5-1.2B-Thinking-Web-ONNX",
-     "daveycodez/LFM2.5-1.2B-Web-ONNX",
-     "lfm2.5"
+     "bigscience/bloom-1b7",
+     "bigscience/bloom-560m",
+     "bloom"
+    ],
+    [
+     "bigscience/bloom-560m",
+     "bigscience/bloom-7b1",
+     "bloom"
+    ],
+    [
+     "bigscience/bloomz-560m",
+     "bigscience/bloomz-7b1",
+     "bloomz"
+    ],
+    [
+     "bigscience/bloomz-7b1",
+     "bigscience/bloomz-7b1-mt",
+     "bloomz"
     ]
    ]
+  },
+  {
+   "id": "BSC-LT",
+   "nome": "Language Technologies Laboratory @ Barcelona Supercomputing Center",
+   "escopo": "mundo",
+   "modelos": [
+    "BSC-LT/salamandra-7b-instruct"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "celiudos",
+   "nome": "Marcelo Anselmo de Souza Filho",
+   "escopo": "mundo",
+   "modelos": [
+    "celiudos/legal-bert-lgpd"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "chaoliangUNSW",
+   "nome": "chaoliang yan",
+   "escopo": "mundo",
+   "modelos": [
+    "chaoliangUNSW/Jev-Style-0.8B-Decision-v3-GGUF"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "classla",
+   "nome": "CLASSLA - CLARIN Knowledge Centre for South Slavic Languages",
+   "escopo": "mundo",
+   "modelos": [
+    "classla/multilingual-IPTC-news-topic-classifier"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "codefuse-ai",
+   "nome": "CodeFuse AI",
+   "escopo": "mundo",
+   "modelos": [
+    "codefuse-ai/F2LLM-v2-0.6B",
+    "codefuse-ai/F2LLM-v2-4B",
+    "codefuse-ai/F2LLM-v2-80M"
+   ],
+   "arestas": [
+    [
+     "codefuse-ai/F2LLM-v2-0.6B",
+     "codefuse-ai/F2LLM-v2-4B",
+     "f2"
+    ],
+    [
+     "codefuse-ai/F2LLM-v2-4B",
+     "codefuse-ai/F2LLM-v2-80M",
+     "f2"
+    ]
+   ]
+  },
+  {
+   "id": "CohereLabs",
+   "nome": "Cohere Labs",
+   "escopo": "mundo",
+   "modelos": [
+    "CohereLabs/aya-23-8B",
+    "CohereLabs/aya-expanse-8b",
+    "CohereLabs/aya-vision-8b",
+    "CohereLabs/c4ai-command-r7b-12-2024",
+    "CohereLabs/c4ai-command-r7b-arabic-02-2025",
+    "CohereLabs/North-Micro-Vision-Instruct",
+    "CohereLabs/tiny-aya-global"
+   ],
+   "arestas": [
+    [
+     "CohereLabs/aya-expanse-8b",
+     "CohereLabs/aya-vision-8b",
+     "aya"
+    ],
+    [
+     "CohereLabs/c4ai-command-r7b-12-2024",
+     "CohereLabs/c4ai-command-r7b-arabic-02-2025",
+     "c4"
+    ]
+   ]
+  },
+  {
+   "id": "convaiinnovations",
+   "nome": "Convai Innovations",
+   "escopo": "mundo",
+   "modelos": [
+    "convaiinnovations/laya-multilingual"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "cross-encoder",
+   "nome": "Sentence Transformers - Cross-Encoders",
+   "escopo": "mundo",
+   "modelos": [
+    "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "daveycodez",
+   "nome": "daveycodez",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
+  },
+  {
+   "id": "DavidAU",
+   "nome": "David Belton",
+   "escopo": "mundo",
+   "modelos": [
+    "DavidAU/Llama3.3-8B-Instruct-Thinking-Claude-4.5-Opus-High-Reasoning",
+    "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "distilbert",
+   "nome": "DistilBERT community",
+   "escopo": "mundo",
+   "modelos": [
+    "distilbert/distilbert-base-multilingual-cased"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "ente-ai",
+   "nome": "Ente Technologies",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
+  },
+  {
+   "id": "EuroBERT",
+   "nome": "EuroBERT",
+   "escopo": "mundo",
+   "modelos": [
+    "EuroBERT/EuroBERT-210m"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "facebook",
+   "nome": "AI at Meta",
+   "escopo": "mundo",
+   "modelos": [
+    "facebook/w2v-bert-2.0",
+    "facebook/xlm-roberta-xl"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "FacebookAI",
+   "nome": "Facebook AI community",
+   "escopo": "mundo",
+   "modelos": [
+    "FacebookAI/xlm-roberta-base",
+    "FacebookAI/xlm-roberta-large",
+    "FacebookAI/xlm-roberta-large-finetuned-conll03-english"
+   ],
+   "arestas": [
+    [
+     "FacebookAI/xlm-roberta-base",
+     "FacebookAI/xlm-roberta-large",
+     "xlm"
+    ],
+    [
+     "FacebookAI/xlm-roberta-large",
+     "FacebookAI/xlm-roberta-large-finetuned-conll03-english",
+     "xlm"
+    ]
+   ]
+  },
+  {
+   "id": "fastino",
+   "nome": "fastino",
+   "escopo": "mundo",
+   "modelos": [
+    "fastino/gliner2-privacy-filter-PII-multi"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "ghost-x",
+   "nome": "Ghost X",
+   "escopo": "mundo",
+   "modelos": [
+    "ghost-x/ghost-8b-beta-1608"
+   ],
+   "arestas": []
   },
   {
    "id": "google",
@@ -8531,7 +8825,6 @@
     "google/gemma-2-instruct-9b-keras",
     "google/gemma-2b",
     "google/gemma-2b-aps-it",
-    "google/gemma-2b-AWQ",
     "google/gemma-2b-cpp",
     "google/gemma-2b-flax",
     "google/gemma-2b-it",
@@ -8549,7 +8842,6 @@
     "google/gemma-3-270m",
     "google/gemma-3-270m-it",
     "google/gemma-3-4b-it",
-    "google/gemma-3-4b-it-qat-q4_0-gguf",
     "google/gemma-3-4b-pt-qat-q4_0-gguf",
     "google/gemma-3n-E2B",
     "google/gemma-3n-E2B-it-litert-lm",
@@ -8566,20 +8858,17 @@
     "google/gemma-4-E2B",
     "google/gemma-4-E2B-it",
     "google/gemma-4-E2B-it-assistant",
-    "google/gemma-4-E2B-it-qat-q4_0-gguf",
     "google/gemma-4-E2B-it-qat-q4_0-unquantized",
     "google/gemma-4-E2B-it-qat-w4a16-ct",
     "google/gemma-4-E4B",
     "google/gemma-4-E4B-it",
     "google/gemma-4-E4B-it-assistant",
     "google/gemma-4-E4B-it-qat-mobile-ct",
-    "google/gemma-4-E4B-it-qat-q4_0-gguf",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized-assistant",
     "google/gemma-4-E4B-it-qat-w4a16-ct",
     "google/gemma-7b",
     "google/gemma-7b-aps-it",
-    "google/gemma-7b-AWQ",
     "google/gemma-7b-cpp",
     "google/gemma-7b-flax",
     "google/gemma-7b-it",
@@ -8796,7 +9085,6 @@
     "google/tapas-tiny-finetuned-tabfact",
     "google/tapas-tiny-masklm",
     "google/translategemma-4b-it",
-    "google/txgemma-9b-chat",
     "google/xtr-base-en",
     "google/xtr-base-multilingual"
    ],
@@ -9038,11 +9326,6 @@
     ],
     [
      "google/gemma-2b-aps-it",
-     "google/gemma-2b-AWQ",
-     "gemma"
-    ],
-    [
-     "google/gemma-2b-AWQ",
      "google/gemma-2b-cpp",
      "gemma"
     ],
@@ -9133,11 +9416,6 @@
     ],
     [
      "google/gemma-7b-aps-it",
-     "google/gemma-7b-AWQ",
-     "gemma"
-    ],
-    [
-     "google/gemma-7b-AWQ",
      "google/gemma-7b-cpp",
      "gemma"
     ],
@@ -9223,11 +9501,6 @@
     ],
     [
      "google/gemma-3-4b-it",
-     "google/gemma-3-4b-it-qat-q4_0-gguf",
-     "gemma-3"
-    ],
-    [
-     "google/gemma-3-4b-it-qat-q4_0-gguf",
      "google/gemma-3-4b-pt-qat-q4_0-gguf",
      "gemma-3"
     ],
@@ -9288,11 +9561,6 @@
     ],
     [
      "google/gemma-4-E2B-it-assistant",
-     "google/gemma-4-E2B-it-qat-q4_0-gguf",
-     "gemma-4"
-    ],
-    [
-     "google/gemma-4-E2B-it-qat-q4_0-gguf",
      "google/gemma-4-E2B-it-qat-q4_0-unquantized",
      "gemma-4"
     ],
@@ -9323,11 +9591,6 @@
     ],
     [
      "google/gemma-4-E4B-it-qat-mobile-ct",
-     "google/gemma-4-E4B-it-qat-q4_0-gguf",
-     "gemma-4"
-    ],
-    [
-     "google/gemma-4-E4B-it-qat-q4_0-gguf",
      "google/gemma-4-E4B-it-qat-q4_0-unquantized",
      "gemma-4"
     ],
@@ -10274,6 +10537,22 @@
    ]
   },
   {
+   "id": "google-bert",
+   "nome": "BERT community",
+   "escopo": "mundo",
+   "modelos": [
+    "google-bert/bert-base-multilingual-cased",
+    "google-bert/bert-base-multilingual-uncased"
+   ],
+   "arestas": [
+    [
+     "google-bert/bert-base-multilingual-cased",
+     "google-bert/bert-base-multilingual-uncased",
+     "bert-multilingual"
+    ]
+   ]
+  },
+  {
    "id": "hbfreed",
    "nome": "Henry",
    "escopo": "mundo",
@@ -10300,6 +10579,32 @@
      "tiny"
     ]
    ]
+  },
+  {
+   "id": "hindsight-ai",
+   "nome": "Hindsight",
+   "escopo": "mundo",
+   "modelos": [
+    "hindsight-ai/hs-embed-1",
+    "hindsight-ai/hs-rerank-1"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Hiveurban",
+   "nome": "Hive-Contact",
+   "escopo": "mundo",
+   "modelos": [
+    "Hiveurban/multilingual-e5-base"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "hugging-quants",
+   "nome": "Hugging Quants",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
   },
   {
    "id": "HuggingFaceTB",
@@ -10329,25 +10634,18 @@
     "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-135M",
     "HuggingFaceTB/SmolLM-135M-Instruct",
-    "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-360M",
     "HuggingFaceTB/SmolLM-360M-Instruct",
     "HuggingFaceTB/smollm-360M-instruct-add-basics",
-    "HuggingFaceTB/smollm-360M-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM2-1.7B",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct-16k",
-    "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
-    "HuggingFaceTB/SmolLM2-1.7B-Instruct-Q8-mlx",
     "HuggingFaceTB/SmolLM2-1.7B-sft-only",
     "HuggingFaceTB/SmolLM2-135M",
     "HuggingFaceTB/SmolLM2-135M-Instruct",
-    "HuggingFaceTB/SmolLM2-135M-Instruct-Q8-mlx",
     "HuggingFaceTB/smollm2-135M-SFT-Only",
     "HuggingFaceTB/SmolLM2-360M",
     "HuggingFaceTB/SmolLM2-360M-Instruct",
-    "HuggingFaceTB/SmolLM2-360M-Instruct-GGUF",
-    "HuggingFaceTB/SmolLM2-360M-Instruct-Q8-mlx",
     "HuggingFaceTB/SmolLM3-3B",
     "HuggingFaceTB/SmolLM3-3B-Base",
     "HuggingFaceTB/SmolLM3-3B-GSM8K-SFT",
@@ -10461,11 +10759,6 @@
     ],
     [
      "HuggingFaceTB/SmolLM-135M-Instruct",
-     "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
-     "smollm"
-    ],
-    [
-     "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
      "HuggingFaceTB/SmolLM-360M",
      "smollm"
     ],
@@ -10477,11 +10770,6 @@
     [
      "HuggingFaceTB/SmolLM-360M-Instruct",
      "HuggingFaceTB/smollm-360M-instruct-add-basics",
-     "smollm"
-    ],
-    [
-     "HuggingFaceTB/smollm-360M-instruct-add-basics",
-     "HuggingFaceTB/smollm-360M-instruct-v0.2-Q8_0-GGUF",
      "smollm"
     ],
     [
@@ -10496,16 +10784,6 @@
     ],
     [
      "HuggingFaceTB/SmolLM2-1.7B-Instruct-16k",
-     "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
-     "smollm2"
-    ],
-    [
-     "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
-     "HuggingFaceTB/SmolLM2-1.7B-Instruct-Q8-mlx",
-     "smollm2"
-    ],
-    [
-     "HuggingFaceTB/SmolLM2-1.7B-Instruct-Q8-mlx",
      "HuggingFaceTB/SmolLM2-1.7B-sft-only",
      "smollm2"
     ],
@@ -10521,11 +10799,6 @@
     ],
     [
      "HuggingFaceTB/SmolLM2-135M-Instruct",
-     "HuggingFaceTB/SmolLM2-135M-Instruct-Q8-mlx",
-     "smollm2"
-    ],
-    [
-     "HuggingFaceTB/SmolLM2-135M-Instruct-Q8-mlx",
      "HuggingFaceTB/smollm2-135M-SFT-Only",
      "smollm2"
     ],
@@ -10541,16 +10814,6 @@
     ],
     [
      "HuggingFaceTB/SmolLM2-360M-Instruct",
-     "HuggingFaceTB/SmolLM2-360M-Instruct-GGUF",
-     "smollm2"
-    ],
-    [
-     "HuggingFaceTB/SmolLM2-360M-Instruct-GGUF",
-     "HuggingFaceTB/SmolLM2-360M-Instruct-Q8-mlx",
-     "smollm2"
-    ],
-    [
-     "HuggingFaceTB/SmolLM2-360M-Instruct-Q8-mlx",
      "HuggingFaceTB/SmolVLM-256M-Instruct",
      "smollm2"
     ],
@@ -10732,7 +10995,6 @@
     "ibm-granite/granite-3.3-8b-math-prm-v2",
     "ibm-granite/granite-3b-code-base-128k",
     "ibm-granite/granite-3b-code-base-2k",
-    "ibm-granite/granite-3b-code-base-2k-GGUF",
     "ibm-granite/granite-3b-code-instruct-128k",
     "ibm-granite/granite-3b-code-instruct-2k",
     "ibm-granite/granite-4.0-1b",
@@ -10765,18 +11027,14 @@
     "ibm-granite/granite-4.2-3b-fp8",
     "ibm-granite/granite-4.2-3b-mxfp4",
     "ibm-granite/granite-4.2-3b-nvfp4",
-    "ibm-granite/granite-4.2-3b-q4-mlx",
-    "ibm-granite/granite-4.2-3b-q8-mlx",
     "ibm-granite/granite-4.2-8b",
     "ibm-granite/granite-4.2-8b-fp8",
     "ibm-granite/granite-4.2-8b-mxfp4",
     "ibm-granite/granite-4.2-8b-nvfp4",
-    "ibm-granite/granite-4.2-8b-q4-mlx",
     "ibm-granite/granite-7b-base",
     "ibm-granite/granite-7b-instruct",
     "ibm-granite/granite-8b-code-base-128k",
     "ibm-granite/granite-8b-code-base-4k",
-    "ibm-granite/granite-8b-code-base-4k-GGUF",
     "ibm-granite/granite-8b-code-instruct-128k",
     "ibm-granite/granite-8b-code-instruct-4k",
     "ibm-granite/granite-docling-258M",
@@ -11044,11 +11302,6 @@
     ],
     [
      "ibm-granite/granite-3b-code-base-2k",
-     "ibm-granite/granite-3b-code-base-2k-GGUF",
-     "granite"
-    ],
-    [
-     "ibm-granite/granite-3b-code-base-2k-GGUF",
      "ibm-granite/granite-3b-code-instruct-128k",
      "granite"
     ],
@@ -11079,11 +11332,6 @@
     ],
     [
      "ibm-granite/granite-8b-code-base-4k",
-     "ibm-granite/granite-8b-code-base-4k-GGUF",
-     "granite"
-    ],
-    [
-     "ibm-granite/granite-8b-code-base-4k-GGUF",
      "ibm-granite/granite-8b-code-instruct-128k",
      "granite"
     ],
@@ -11449,16 +11697,6 @@
     ],
     [
      "ibm-granite/granite-4.2-3b-nvfp4",
-     "ibm-granite/granite-4.2-3b-q4-mlx",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-q4-mlx",
-     "ibm-granite/granite-4.2-3b-q8-mlx",
-     "granite-4.2"
-    ],
-    [
-     "ibm-granite/granite-4.2-3b-q8-mlx",
      "ibm-granite/granite-4.2-8b-fp8",
      "granite-4.2"
     ],
@@ -11471,11 +11709,52 @@
      "ibm-granite/granite-4.2-8b-mxfp4",
      "ibm-granite/granite-4.2-8b-nvfp4",
      "granite-4.2"
+    ]
+   ]
+  },
+  {
+   "id": "intfloat",
+   "nome": "Liang Wang",
+   "escopo": "mundo",
+   "modelos": [
+    "intfloat/multilingual-e5-base",
+    "intfloat/multilingual-e5-large",
+    "intfloat/multilingual-e5-large-instruct",
+    "intfloat/multilingual-e5-small"
+   ],
+   "arestas": [
+    [
+     "intfloat/multilingual-e5-base",
+     "intfloat/multilingual-e5-large",
+     "multilingual"
     ],
     [
-     "ibm-granite/granite-4.2-8b-nvfp4",
-     "ibm-granite/granite-4.2-8b-q4-mlx",
-     "granite-4.2"
+     "intfloat/multilingual-e5-large",
+     "intfloat/multilingual-e5-large-instruct",
+     "multilingual"
+    ],
+    [
+     "intfloat/multilingual-e5-large-instruct",
+     "intfloat/multilingual-e5-small",
+     "multilingual"
+    ]
+   ]
+  },
+  {
+   "id": "jinaai",
+   "nome": "Jina AI",
+   "escopo": "mundo",
+   "modelos": [
+    "jinaai/jina-clip-v2",
+    "jinaai/jina-embeddings-v3",
+    "jinaai/jina-embeddings-v3-hf",
+    "jinaai/jina-vlm"
+   ],
+   "arestas": [
+    [
+     "jinaai/jina-embeddings-v3",
+     "jinaai/jina-embeddings-v3-hf",
+     "jina"
     ]
    ]
   },
@@ -11520,21 +11799,33 @@
    ]
   },
   {
+   "id": "kyutai",
+   "nome": "Kyutai",
+   "escopo": "mundo",
+   "modelos": [
+    "kyutai/helium-1-preview-2b"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "lightonai",
+   "nome": "LightOn AI",
+   "escopo": "mundo",
+   "modelos": [
+    "lightonai/LightOnOCR-2-1B"
+   ],
+   "arestas": []
+  },
+  {
    "id": "LiquidAI",
    "nome": "Liquid AI",
    "escopo": "mundo",
    "modelos": [
     "LiquidAI/d1-2B",
-    "LiquidAI/d1-2B-MLX-4bit",
-    "LiquidAI/d1-2B-MLX-8bit",
-    "LiquidAI/d1-2B-MLX-fp16",
     "LiquidAI/d1-3B",
-    "LiquidAI/d1-3B-MLX-4bit",
-    "LiquidAI/d1-3B-MLX-8bit",
     "LiquidAI/d1-3B-MLX-fp16",
     "LiquidAI/d1-3B-w8a8",
     "LiquidAI/d1-omni-600M",
-    "LiquidAI/d1-omni-600M-MLX-8bit",
     "LiquidAI/d1-omni-600M-MLX-fp16",
     "LiquidAI/LFM2-1.2B",
     "LiquidAI/LFM2-1.2B-Extract",
@@ -11559,62 +11850,27 @@
     "LiquidAI/LFM2.5-1.2B-Base",
     "LiquidAI/LFM2.5-1.2B-Instruct",
     "LiquidAI/LFM2.5-1.2B-Instruct-DSpark",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-bf16",
     "LiquidAI/LFM2.5-1.2B-JP",
     "LiquidAI/LFM2.5-1.2B-JP-202606",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-8bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-JP-MLX-bf16",
     "LiquidAI/LFM2.5-1.2B-Thinking",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-bf16",
     "LiquidAI/LFM2.5-2.6B",
     "LiquidAI/LFM2.5-2.6B-Base",
     "LiquidAI/LFM2.5-2.6B-DSpark",
     "LiquidAI/LFM2.5-2.6B-MLX",
-    "LiquidAI/LFM2.5-2.6B-MLX-4bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-5bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-6bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-8bit",
     "LiquidAI/LFM2.5-2.6B-MLX-bf16",
-    "LiquidAI/LFM2.5-2.6B-MLX-mxfp4",
-    "LiquidAI/LFM2.5-2.6B-MLX-mxfp8",
-    "LiquidAI/LFM2.5-2.6B-MLX-nvfp4",
     "LiquidAI/LFM2.5-230M",
     "LiquidAI/LFM2.5-230M-Base",
-    "LiquidAI/LFM2.5-230M-MLX-4bit",
-    "LiquidAI/LFM2.5-230M-MLX-5bit",
-    "LiquidAI/LFM2.5-230M-MLX-6bit",
-    "LiquidAI/LFM2.5-230M-MLX-8bit",
     "LiquidAI/LFM2.5-230M-MLX-bf16",
     "LiquidAI/LFM2.5-24B-A2B-DSpark",
     "LiquidAI/LFM2.5-350M",
     "LiquidAI/LFM2.5-350M-Base",
-    "LiquidAI/LFM2.5-350M-MLX-4bit",
-    "LiquidAI/LFM2.5-350M-MLX-5bit",
-    "LiquidAI/LFM2.5-350M-MLX-6bit",
-    "LiquidAI/LFM2.5-350M-MLX-8bit",
     "LiquidAI/LFM2.5-350M-MLX-bf16",
     "LiquidAI/LFM2.5-8B-A1B",
     "LiquidAI/LFM2.5-8B-A1B-Base",
     "LiquidAI/LFM2.5-8B-A1B-DSpark",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-4bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-5bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-6bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-8bit",
     "LiquidAI/LFM2.5-8B-A1B-MLX-bf16",
     "LiquidAI/LFM2.5-Audio-1.5B-GGUF",
     "LiquidAI/LFM2.5-Audio-1.5B-GGUF-LEAP",
@@ -11631,42 +11887,17 @@
     "LiquidAI/LFM2.5-VL-1.6B-Extract",
     "LiquidAI/LFM2.5-VL-3B",
     "LiquidAI/LFM2.5-VL-3B-DSpark",
-    "LiquidAI/LFM2.5-VL-3B-MLX-4bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-5bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-6bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-8bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-bf16",
     "LiquidAI/LFM2.5-VL-450M",
     "LiquidAI/LFM2.5-VL-450M-Extract",
-    "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-5bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-6bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-8bit",
     "LiquidAI/LFM2.5-VL-450M-MLX-bf16",
     "LiquidAI/LFM3-1.7B",
     "LiquidAI/LFM3-1.7B-Base",
     "LiquidAI/LFM3-1.7B-FP8",
-    "LiquidAI/LFM3-1.7B-MLX-4bit",
-    "LiquidAI/LFM3-1.7B-MLX-5bit",
-    "LiquidAI/LFM3-1.7B-MLX-6bit",
-    "LiquidAI/LFM3-1.7B-MLX-8bit",
-    "LiquidAI/LFM3-1.7B-MLX-bf16",
     "LiquidAI/LFM3-1.7B-NVFP4",
     "LiquidAI/LFM3-Audio-2B",
-    "LiquidAI/LFM3-Audio-2B-MLX-4bit",
-    "LiquidAI/LFM3-Audio-2B-MLX-8bit",
-    "LiquidAI/LFM3-Audio-2B-MLX-bf16",
     "LiquidAI/LFM3-Omni-2B",
-    "LiquidAI/LFM3-Omni-2B-MLX-4bit",
-    "LiquidAI/LFM3-Omni-2B-MLX-8bit",
-    "LiquidAI/LFM3-Omni-2B-MLX-bf16",
     "LiquidAI/LFM3-VL-2B",
     "LiquidAI/LFM3-VL-2B-FP8",
-    "LiquidAI/LFM3-VL-2B-MLX-4bit",
-    "LiquidAI/LFM3-VL-2B-MLX-5bit",
-    "LiquidAI/LFM3-VL-2B-MLX-6bit",
-    "LiquidAI/LFM3-VL-2B-MLX-8bit",
-    "LiquidAI/LFM3-VL-2B-MLX-bf16",
     "LiquidAI/LFM3-VL-2B-NVFP4",
     "LiquidAI/Liquid-Codec"
    ],
@@ -11688,31 +11919,6 @@
     ],
     [
      "LiquidAI/LFM3-1.7B-FP8",
-     "LiquidAI/LFM3-1.7B-MLX-4bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-1.7B-MLX-4bit",
-     "LiquidAI/LFM3-1.7B-MLX-5bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-1.7B-MLX-5bit",
-     "LiquidAI/LFM3-1.7B-MLX-6bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-1.7B-MLX-6bit",
-     "LiquidAI/LFM3-1.7B-MLX-8bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-1.7B-MLX-8bit",
-     "LiquidAI/LFM3-1.7B-MLX-bf16",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-1.7B-MLX-bf16",
      "LiquidAI/LFM3-1.7B-NVFP4",
      "lfm3"
     ],
@@ -11723,41 +11929,11 @@
     ],
     [
      "LiquidAI/LFM3-Audio-2B",
-     "LiquidAI/LFM3-Audio-2B-MLX-4bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Audio-2B-MLX-4bit",
-     "LiquidAI/LFM3-Audio-2B-MLX-8bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Audio-2B-MLX-8bit",
-     "LiquidAI/LFM3-Audio-2B-MLX-bf16",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Audio-2B-MLX-bf16",
      "LiquidAI/LFM3-Omni-2B",
      "lfm3"
     ],
     [
      "LiquidAI/LFM3-Omni-2B",
-     "LiquidAI/LFM3-Omni-2B-MLX-4bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Omni-2B-MLX-4bit",
-     "LiquidAI/LFM3-Omni-2B-MLX-8bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Omni-2B-MLX-8bit",
-     "LiquidAI/LFM3-Omni-2B-MLX-bf16",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-Omni-2B-MLX-bf16",
      "LiquidAI/LFM3-VL-2B",
      "lfm3"
     ],
@@ -11768,73 +11944,8 @@
     ],
     [
      "LiquidAI/LFM3-VL-2B-FP8",
-     "LiquidAI/LFM3-VL-2B-MLX-4bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-VL-2B-MLX-4bit",
-     "LiquidAI/LFM3-VL-2B-MLX-5bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-VL-2B-MLX-5bit",
-     "LiquidAI/LFM3-VL-2B-MLX-6bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-VL-2B-MLX-6bit",
-     "LiquidAI/LFM3-VL-2B-MLX-8bit",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-VL-2B-MLX-8bit",
-     "LiquidAI/LFM3-VL-2B-MLX-bf16",
-     "lfm3"
-    ],
-    [
-     "LiquidAI/LFM3-VL-2B-MLX-bf16",
      "LiquidAI/LFM3-VL-2B-NVFP4",
      "lfm3"
-    ],
-    [
-     "LiquidAI/d1-2B-MLX-4bit",
-     "LiquidAI/d1-2B-MLX-8bit",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-2B-MLX-8bit",
-     "LiquidAI/d1-2B-MLX-fp16",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-2B-MLX-fp16",
-     "LiquidAI/d1-3B-MLX-4bit",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-3B-MLX-4bit",
-     "LiquidAI/d1-3B-MLX-8bit",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-3B-MLX-8bit",
-     "LiquidAI/d1-3B-MLX-fp16",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-3B-MLX-fp16",
-     "LiquidAI/d1-3B-w8a8",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-3B-w8a8",
-     "LiquidAI/d1-omni-600M-MLX-8bit",
-     "d1"
-    ],
-    [
-     "LiquidAI/d1-omni-600M-MLX-8bit",
-     "LiquidAI/d1-omni-600M-MLX-fp16",
-     "d1"
     ],
     [
      "LiquidAI/d1-3B",
@@ -11858,26 +11969,6 @@
     ],
     [
      "LiquidAI/LFM2.5-1.2B-Instruct-DSpark",
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-4bit",
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-5bit",
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-6bit",
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-8bit",
      "LiquidAI/LFM2.5-1.2B-Instruct-MLX-bf16",
      "lfm2.5"
     ],
@@ -11893,46 +11984,6 @@
     ],
     [
      "LiquidAI/LFM2.5-1.2B-JP-202606",
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-4bit",
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-5bit",
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-6bit",
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-8bit",
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-4bit",
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-5bit",
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-6bit",
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-JP-MLX-8bit",
      "LiquidAI/LFM2.5-1.2B-JP-MLX-bf16",
      "lfm2.5"
     ],
@@ -11943,26 +11994,6 @@
     ],
     [
      "LiquidAI/LFM2.5-1.2B-Thinking",
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-4bit",
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-5bit",
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-6bit",
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-8bit",
      "LiquidAI/LFM2.5-1.2B-Thinking-MLX-bf16",
      "lfm2.5"
     ],
@@ -11988,46 +12019,11 @@
     ],
     [
      "LiquidAI/LFM2.5-2.6B-MLX",
-     "LiquidAI/LFM2.5-2.6B-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-4bit",
-     "LiquidAI/LFM2.5-2.6B-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-5bit",
-     "LiquidAI/LFM2.5-2.6B-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-6bit",
-     "LiquidAI/LFM2.5-2.6B-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-8bit",
      "LiquidAI/LFM2.5-2.6B-MLX-bf16",
      "lfm2.5"
     ],
     [
      "LiquidAI/LFM2.5-2.6B-MLX-bf16",
-     "LiquidAI/LFM2.5-2.6B-MLX-mxfp4",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-mxfp4",
-     "LiquidAI/LFM2.5-2.6B-MLX-mxfp8",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-mxfp8",
-     "LiquidAI/LFM2.5-2.6B-MLX-nvfp4",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-2.6B-MLX-nvfp4",
      "LiquidAI/LFM2.5-230M",
      "lfm2.5"
     ],
@@ -12038,26 +12034,6 @@
     ],
     [
      "LiquidAI/LFM2.5-230M-Base",
-     "LiquidAI/LFM2.5-230M-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-230M-MLX-4bit",
-     "LiquidAI/LFM2.5-230M-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-230M-MLX-5bit",
-     "LiquidAI/LFM2.5-230M-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-230M-MLX-6bit",
-     "LiquidAI/LFM2.5-230M-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-230M-MLX-8bit",
      "LiquidAI/LFM2.5-230M-MLX-bf16",
      "lfm2.5"
     ],
@@ -12078,26 +12054,6 @@
     ],
     [
      "LiquidAI/LFM2.5-350M-Base",
-     "LiquidAI/LFM2.5-350M-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-350M-MLX-4bit",
-     "LiquidAI/LFM2.5-350M-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-350M-MLX-5bit",
-     "LiquidAI/LFM2.5-350M-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-350M-MLX-6bit",
-     "LiquidAI/LFM2.5-350M-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-350M-MLX-8bit",
      "LiquidAI/LFM2.5-350M-MLX-bf16",
      "lfm2.5"
     ],
@@ -12118,26 +12074,6 @@
     ],
     [
      "LiquidAI/LFM2.5-8B-A1B-DSpark",
-     "LiquidAI/LFM2.5-8B-A1B-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-8B-A1B-MLX-4bit",
-     "LiquidAI/LFM2.5-8B-A1B-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-8B-A1B-MLX-5bit",
-     "LiquidAI/LFM2.5-8B-A1B-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-8B-A1B-MLX-6bit",
-     "LiquidAI/LFM2.5-8B-A1B-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-8B-A1B-MLX-8bit",
      "LiquidAI/LFM2.5-8B-A1B-MLX-bf16",
      "lfm2.5"
     ],
@@ -12218,31 +12154,6 @@
     ],
     [
      "LiquidAI/LFM2.5-VL-3B-DSpark",
-     "LiquidAI/LFM2.5-VL-3B-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-3B-MLX-4bit",
-     "LiquidAI/LFM2.5-VL-3B-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-3B-MLX-5bit",
-     "LiquidAI/LFM2.5-VL-3B-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-3B-MLX-6bit",
-     "LiquidAI/LFM2.5-VL-3B-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-3B-MLX-8bit",
-     "LiquidAI/LFM2.5-VL-3B-MLX-bf16",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-3B-MLX-bf16",
      "LiquidAI/LFM2.5-VL-450M",
      "lfm2.5"
     ],
@@ -12253,28 +12164,18 @@
     ],
     [
      "LiquidAI/LFM2.5-VL-450M-Extract",
-     "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
-     "LiquidAI/LFM2.5-VL-450M-MLX-5bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-450M-MLX-5bit",
-     "LiquidAI/LFM2.5-VL-450M-MLX-6bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-450M-MLX-6bit",
-     "LiquidAI/LFM2.5-VL-450M-MLX-8bit",
-     "lfm2.5"
-    ],
-    [
-     "LiquidAI/LFM2.5-VL-450M-MLX-8bit",
      "LiquidAI/LFM2.5-VL-450M-MLX-bf16",
      "lfm2.5"
+    ],
+    [
+     "LiquidAI/d1-3B-MLX-fp16",
+     "LiquidAI/d1-3B-w8a8",
+     "d1"
+    ],
+    [
+     "LiquidAI/d1-3B-w8a8",
+     "LiquidAI/d1-omni-600M-MLX-fp16",
+     "d1"
     ],
     [
      "LiquidAI/LFM2-1.2B",
@@ -12374,13 +12275,46 @@
    ]
   },
   {
+   "id": "livekit",
+   "nome": "LiveKit",
+   "escopo": "mundo",
+   "modelos": [
+    "livekit/turn-detector"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "lmstudio-community",
+   "nome": "LM Studio Community",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
+  },
+  {
    "id": "locriani",
    "nome": "Zach",
    "escopo": "mundo",
    "modelos": [
-    "locriani/qwen3-1.7b-base-onnx",
     "locriani/terrible-joke-qwen3-1.7b-onnx",
     "locriani/therapeutic-register-qwen3-1.7b-onnx"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "lxyuan",
+   "nome": "Lik Xun Yuan",
+   "escopo": "mundo",
+   "modelos": [
+    "lxyuan/distilbert-base-multilingual-cased-sentiments-student"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "MaziyarPanahi",
+   "nome": "Maziyar Panahi",
+   "escopo": "mundo",
+   "modelos": [
+    "MaziyarPanahi/BioMistral-7B-GGUF"
    ],
    "arestas": []
   },
@@ -12589,7 +12523,6 @@
     "microsoft/BiomedVLP-CXR-BERT-specialized",
     "microsoft/bitnet-b1.58-2B-4T",
     "microsoft/bitnet-b1.58-2B-4T-bf16",
-    "microsoft/bitnet-b1.58-2B-4T-gguf",
     "microsoft/bitnet-embedding-0.6b",
     "microsoft/bitnet-embedding-270m",
     "microsoft/bloom-deepspeed-inference-fp16",
@@ -12747,7 +12680,6 @@
     "microsoft/MediPhi-MedWiki",
     "microsoft/MediPhi-PubMed",
     "microsoft/MiniLM-L12-H384-uncased",
-    "microsoft/mistral-7b-instruct-v0.2-ONNX",
     "microsoft/mpnet-base",
     "microsoft/Multilingual-MiniLM-L12-H384",
     "microsoft/NextCoder-7B",
@@ -12767,9 +12699,7 @@
     "microsoft/Phi-3-mini-128k-instruct",
     "microsoft/Phi-3-mini-128k-instruct-onnx",
     "microsoft/Phi-3-mini-4k-instruct",
-    "microsoft/Phi-3-mini-4k-instruct-gguf",
     "microsoft/Phi-3-mini-4k-instruct-onnx",
-    "microsoft/Phi-3-mini-4k-instruct-onnx-web",
     "microsoft/Phi-3-small-128k-instruct",
     "microsoft/Phi-3-small-8k-instruct",
     "microsoft/Phi-3-small-8k-instruct-onnx-cuda",
@@ -12778,7 +12708,6 @@
     "microsoft/Phi-3-vision-128k-instruct-onnx-cuda",
     "microsoft/Phi-3-vision-128k-instruct-onnx-directml",
     "microsoft/Phi-3.5-mini-instruct",
-    "microsoft/Phi-3.5-mini-instruct-onnx",
     "microsoft/Phi-3.5-vision-instruct",
     "microsoft/Phi-4-mini-flash-reasoning",
     "microsoft/Phi-4-mini-instruct",
@@ -12881,11 +12810,6 @@
     ],
     [
      "microsoft/bitnet-b1.58-2B-4T-bf16",
-     "microsoft/bitnet-b1.58-2B-4T-gguf",
-     "bitnet"
-    ],
-    [
-     "microsoft/bitnet-b1.58-2B-4T-gguf",
      "microsoft/bitnet-embedding-0.6b",
      "bitnet"
     ],
@@ -13506,18 +13430,8 @@
     ],
     [
      "microsoft/Phi-3.5-mini-instruct",
-     "microsoft/Phi-3.5-mini-instruct-onnx",
-     "phi-3.5"
-    ],
-    [
-     "microsoft/Phi-3.5-mini-instruct-onnx",
      "microsoft/Phi-3.5-vision-instruct",
      "phi-3.5"
-    ],
-    [
-     "microsoft/mistral-7b-instruct-v0.2-ONNX",
-     "microsoft/Sentiment-Analysis-7B",
-     "mistral"
     ],
     [
      "microsoft/Orca-2-13b",
@@ -13576,21 +13490,11 @@
     ],
     [
      "microsoft/Phi-3-mini-4k-instruct",
-     "microsoft/Phi-3-mini-4k-instruct-gguf",
-     "phi-3"
-    ],
-    [
-     "microsoft/Phi-3-mini-4k-instruct-gguf",
      "microsoft/Phi-3-mini-4k-instruct-onnx",
      "phi-3"
     ],
     [
      "microsoft/Phi-3-mini-4k-instruct-onnx",
-     "microsoft/Phi-3-mini-4k-instruct-onnx-web",
-     "phi-3"
-    ],
-    [
-     "microsoft/Phi-3-mini-4k-instruct-onnx-web",
      "microsoft/Phi-3-small-128k-instruct",
      "phi-3"
     ],
@@ -13765,20 +13669,99 @@
    ]
   },
   {
+   "id": "mixedbread-ai",
+   "nome": "Mixedbread",
+   "escopo": "mundo",
+   "modelos": [
+    "mixedbread-ai/mxbai-rerank-base-v2",
+    "mixedbread-ai/mxbai-rerank-large-v2"
+   ],
+   "arestas": [
+    [
+     "mixedbread-ai/mxbai-rerank-base-v2",
+     "mixedbread-ai/mxbai-rerank-large-v2",
+     "mxbai"
+    ]
+   ]
+  },
+  {
    "id": "mlboydaisuke",
    "nome": "Daisuke Majima (MLBoy)",
    "escopo": "mundo",
    "modelos": [
     "mlboydaisuke/Falcon3-3B-Instruct-LiteRT",
-    "mlboydaisuke/gemma-3-270m-it-NPU-LiteRT",
-    "mlboydaisuke/gemma-4-E2B-it-litert-lm-rope-composite",
-    "mlboydaisuke/Llama-3.2-3B-Instruct-LiteRT",
     "mlboydaisuke/MiniCPM5-2B-LiteRT",
-    "mlboydaisuke/OvisOCR2-LiteRT",
-    "mlboydaisuke/Qwen2.5-3B-Instruct-LiteRT",
-    "mlboydaisuke/Qwen3-0.6B-LiteRT-gpu-composites"
+    "mlboydaisuke/OvisOCR2-LiteRT"
    ],
    "arestas": []
+  },
+  {
+   "id": "mlx-community",
+   "nome": "MLX Community",
+   "escopo": "mundo",
+   "modelos": [
+    "mlx-community/Llama-3.2-1B-Instruct-4bit",
+    "mlx-community/Llama-3.2-3B-Instruct-4bit"
+   ],
+   "arestas": [
+    [
+     "mlx-community/Llama-3.2-1B-Instruct-4bit",
+     "mlx-community/Llama-3.2-3B-Instruct-4bit",
+     "llama-3.2"
+    ]
+   ]
+  },
+  {
+   "id": "mobilint",
+   "nome": "Mobilint, Inc.",
+   "escopo": "mundo",
+   "modelos": [
+    "mobilint/Llama-3.1-8B-Instruct",
+    "mobilint/Llama-3.2-1B-Instruct",
+    "mobilint/Llama-3.2-3B-Instruct"
+   ],
+   "arestas": [
+    [
+     "mobilint/Llama-3.2-1B-Instruct",
+     "mobilint/Llama-3.2-3B-Instruct",
+     "llama-3.2"
+    ]
+   ]
+  },
+  {
+   "id": "MoritzLaurer",
+   "nome": "Moritz Borrett-Laurer (formerly Laurer)",
+   "escopo": "mundo",
+   "modelos": [
+    "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "nomic-ai",
+   "nome": "Nomic AI",
+   "escopo": "mundo",
+   "modelos": [
+    "nomic-ai/nomic-embed-text-v2-moe"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "NousResearch",
+   "nome": "NousResearch",
+   "escopo": "mundo",
+   "modelos": [
+    "NousResearch/Llama-3.2-1B",
+    "NousResearch/Meta-Llama-3.1-8B",
+    "NousResearch/Meta-Llama-3.1-8B-Instruct"
+   ],
+   "arestas": [
+    [
+     "NousResearch/Meta-Llama-3.1-8B",
+     "NousResearch/Meta-Llama-3.1-8B-Instruct",
+     "meta"
+    ]
+   ]
   },
   {
    "id": "nvidia",
@@ -13960,7 +13943,6 @@
     "nvidia/NV-Retriever-v1",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8",
-    "nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-DFlash",
@@ -13969,7 +13951,6 @@
     "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DSpark",
     "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
-    "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF",
     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
     "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD",
     "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
@@ -14651,11 +14632,6 @@
     ],
     [
      "nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8",
-     "nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF",
-     "nvidia"
-    ],
-    [
-     "nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF",
      "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
      "nvidia"
     ],
@@ -14691,11 +14667,6 @@
     ],
     [
      "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
-     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF",
-     "nvidia"
-    ],
-    [
-     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF",
      "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
      "nvidia"
     ],
@@ -14952,6 +14923,47 @@
    ]
   },
   {
+   "id": "OpenMed",
+   "nome": "OpenMed",
+   "escopo": "mundo",
+   "modelos": [
+    "OpenMed/OpenMed-PII-Portuguese-SnowflakeMed-Large-568M-v1",
+    "OpenMed/privacy-filter-multilingual",
+    "OpenMed/privacy-filter-multilingual-v2",
+    "OpenMed/privacy-filter-nemotron-v2"
+   ],
+   "arestas": [
+    [
+     "OpenMed/privacy-filter-multilingual",
+     "OpenMed/privacy-filter-multilingual-v2",
+     "privacy"
+    ],
+    [
+     "OpenMed/privacy-filter-multilingual-v2",
+     "OpenMed/privacy-filter-nemotron-v2",
+     "privacy"
+    ]
+   ]
+  },
+  {
+   "id": "OVHaiLLM",
+   "nome": "OVHai LLM",
+   "escopo": "mundo",
+   "modelos": [
+    "OVHaiLLM/Olala-v1.0-mini-7A1B"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "papluca",
+   "nome": "Luca Papariello",
+   "escopo": "mundo",
+   "modelos": [
+    "papluca/xlm-roberta-base-language-detection"
+   ],
+   "arestas": []
+  },
+  {
    "id": "Polygl0t",
    "nome": "Polyglot",
    "escopo": "mundo",
@@ -15114,7 +15126,6 @@
     "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
     "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
     "PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
-    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit",
     "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder",
     "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
     "PORTULAN/serafim-335m-portuguese-pt-sentence-encoder",
@@ -15169,11 +15180,6 @@
      "gervasio"
     ],
     [
-     "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
-     "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit",
-     "gervasio"
-    ],
-    [
      "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder",
      "PORTULAN/serafim-100m-portuguese-pt-sentence-encoder-ir",
      "serafim"
@@ -15199,6 +15205,13 @@
      "serafim"
     ]
    ]
+  },
+  {
+   "id": "QuantFactory",
+   "nome": "Quant Factory",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
   },
   {
    "id": "Qwen",
@@ -15250,22 +15263,13 @@
     "Qwen/Qwen1.5-7B-Chat-GPTQ-Int8",
     "Qwen/Qwen2-0.5B",
     "Qwen/Qwen2-0.5B-Instruct",
-    "Qwen/Qwen2-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-0.5B-Instruct-MLX",
     "Qwen/Qwen2-1.5B",
     "Qwen/Qwen2-1.5B-Instruct",
-    "Qwen/Qwen2-1.5B-Instruct-AWQ",
     "Qwen/Qwen2-1.5B-Instruct-GGUF",
-    "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-1.5B-Instruct-MLX",
     "Qwen/Qwen2-7B",
     "Qwen/Qwen2-7B-Instruct",
-    "Qwen/Qwen2-7B-Instruct-AWQ",
-    "Qwen/Qwen2-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-7B-Instruct-MLX",
     "Qwen/Qwen2-Math-1.5B",
     "Qwen/Qwen2-Math-1.5B-Instruct",
@@ -15273,55 +15277,25 @@
     "Qwen/Qwen2-Math-7B-Instruct",
     "Qwen/Qwen2-VL-2B",
     "Qwen/Qwen2-VL-2B-Instruct",
-    "Qwen/Qwen2-VL-2B-Instruct-AWQ",
-    "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-VL-7B",
     "Qwen/Qwen2-VL-7B-Instruct",
-    "Qwen/Qwen2-VL-7B-Instruct-AWQ",
-    "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-0.5B",
     "Qwen/Qwen2.5-0.5B-Instruct",
-    "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-1.5B",
     "Qwen/Qwen2.5-1.5B-Instruct",
-    "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-3B",
     "Qwen/Qwen2.5-3B-Instruct",
-    "Qwen/Qwen2.5-3B-Instruct-AWQ",
-    "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-7B",
     "Qwen/Qwen2.5-7B-Instruct",
     "Qwen/Qwen2.5-7B-Instruct-1M",
-    "Qwen/Qwen2.5-7B-Instruct-AWQ",
-    "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-0.5B",
     "Qwen/Qwen2.5-Coder-0.5B-Instruct",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-1.5B",
     "Qwen/Qwen2.5-Coder-1.5B-Instruct",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-3B",
     "Qwen/Qwen2.5-Coder-3B-Instruct",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-7B",
     "Qwen/Qwen2.5-Coder-7B-Instruct",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Math-1.5B",
     "Qwen/Qwen2.5-Math-1.5B-Instruct",
     "Qwen/Qwen2.5-Math-7B",
@@ -15333,27 +15307,16 @@
     "Qwen/Qwen2.5-Omni-7B-AWQ",
     "Qwen/Qwen2.5-Omni-7B-GPTQ-Int4",
     "Qwen/Qwen2.5-VL-3B-Instruct",
-    "Qwen/Qwen2.5-VL-3B-Instruct-AWQ",
     "Qwen/Qwen2.5-VL-7B-Instruct",
-    "Qwen/Qwen2.5-VL-7B-Instruct-AWQ",
     "Qwen/Qwen3-0.6B",
     "Qwen/Qwen3-0.6B-Base",
     "Qwen/Qwen3-0.6B-FP8",
-    "Qwen/Qwen3-0.6B-GPTQ-Int8",
-    "Qwen/Qwen3-0.6B-MLX-4bit",
-    "Qwen/Qwen3-0.6B-MLX-6bit",
-    "Qwen/Qwen3-0.6B-MLX-8bit",
     "Qwen/Qwen3-0.6B-MLX-bf16",
     "Qwen/Qwen3-1.7B",
     "Qwen/Qwen3-1.7B-Base",
     "Qwen/Qwen3-1.7B-FP8",
-    "Qwen/Qwen3-1.7B-GPTQ-Int8",
-    "Qwen/Qwen3-1.7B-MLX-4bit",
-    "Qwen/Qwen3-1.7B-MLX-6bit",
-    "Qwen/Qwen3-1.7B-MLX-8bit",
     "Qwen/Qwen3-1.7B-MLX-bf16",
     "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-4B-AWQ",
     "Qwen/Qwen3-4B-Base",
     "Qwen/Qwen3-4B-FP8",
     "Qwen/Qwen3-4B-Instruct-2507",
@@ -15366,7 +15329,6 @@
     "Qwen/Qwen3-4B-Thinking-2507",
     "Qwen/Qwen3-4B-Thinking-2507-FP8",
     "Qwen/Qwen3-8B",
-    "Qwen/Qwen3-8B-AWQ",
     "Qwen/Qwen3-8B-Base",
     "Qwen/Qwen3-8B-FP8",
     "Qwen/Qwen3-8B-MLX-4bit",
@@ -15651,21 +15613,6 @@
     ],
     [
      "Qwen/Qwen2-0.5B-Instruct",
-     "Qwen/Qwen2-0.5B-Instruct-AWQ",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-0.5B-Instruct-AWQ",
-     "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int4",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int8",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2-0.5B-Instruct-MLX",
      "qwen2"
     ],
@@ -15681,26 +15628,11 @@
     ],
     [
      "Qwen/Qwen2-1.5B-Instruct",
-     "Qwen/Qwen2-1.5B-Instruct-AWQ",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-1.5B-Instruct-AWQ",
      "Qwen/Qwen2-1.5B-Instruct-GGUF",
      "qwen2"
     ],
     [
      "Qwen/Qwen2-1.5B-Instruct-GGUF",
-     "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int4",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int8",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2-1.5B-Instruct-MLX",
      "qwen2"
     ],
@@ -15716,21 +15648,6 @@
     ],
     [
      "Qwen/Qwen2-7B-Instruct",
-     "Qwen/Qwen2-7B-Instruct-AWQ",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-7B-Instruct-AWQ",
-     "Qwen/Qwen2-7B-Instruct-GPTQ-Int4",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-7B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2-7B-Instruct-GPTQ-Int8",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-7B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2-7B-Instruct-MLX",
      "qwen2"
     ],
@@ -15766,42 +15683,12 @@
     ],
     [
      "Qwen/Qwen2-VL-2B-Instruct",
-     "Qwen/Qwen2-VL-2B-Instruct-AWQ",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-2B-Instruct-AWQ",
-     "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int4",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int8",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2-VL-7B",
      "qwen2"
     ],
     [
      "Qwen/Qwen2-VL-7B",
      "Qwen/Qwen2-VL-7B-Instruct",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-7B-Instruct",
-     "Qwen/Qwen2-VL-7B-Instruct-AWQ",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-7B-Instruct-AWQ",
-     "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int4",
-     "qwen2"
-    ],
-    [
-     "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int8",
      "qwen2"
     ],
     [
@@ -15811,21 +15698,6 @@
     ],
     [
      "Qwen/Qwen2.5-0.5B-Instruct",
-     "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
-     "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-1.5B",
      "qwen2.5"
     ],
@@ -15836,21 +15708,6 @@
     ],
     [
      "Qwen/Qwen2.5-1.5B-Instruct",
-     "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
-     "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-3B",
      "qwen2.5"
     ],
@@ -15861,21 +15718,6 @@
     ],
     [
      "Qwen/Qwen2.5-3B-Instruct",
-     "Qwen/Qwen2.5-3B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-3B-Instruct-AWQ",
-     "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-7B",
      "qwen2.5"
     ],
@@ -15891,21 +15733,6 @@
     ],
     [
      "Qwen/Qwen2.5-7B-Instruct-1M",
-     "Qwen/Qwen2.5-7B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-7B-Instruct-AWQ",
-     "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-Coder-0.5B",
      "qwen2.5"
     ],
@@ -15916,21 +15743,6 @@
     ],
     [
      "Qwen/Qwen2.5-Coder-0.5B-Instruct",
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-AWQ",
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-Coder-1.5B",
      "qwen2.5"
     ],
@@ -15941,21 +15753,6 @@
     ],
     [
      "Qwen/Qwen2.5-Coder-1.5B-Instruct",
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-AWQ",
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-Coder-3B",
      "qwen2.5"
     ],
@@ -15966,21 +15763,6 @@
     ],
     [
      "Qwen/Qwen2.5-Coder-3B-Instruct",
-     "Qwen/Qwen2.5-Coder-3B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-3B-Instruct-AWQ",
-     "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-Coder-7B",
      "qwen2.5"
     ],
@@ -15991,21 +15773,6 @@
     ],
     [
      "Qwen/Qwen2.5-Coder-7B-Instruct",
-     "Qwen/Qwen2.5-Coder-7B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-7B-Instruct-AWQ",
-     "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4",
-     "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int8",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int8",
      "Qwen/Qwen2.5-Math-1.5B",
      "qwen2.5"
     ],
@@ -16061,17 +15828,7 @@
     ],
     [
      "Qwen/Qwen2.5-VL-3B-Instruct",
-     "Qwen/Qwen2.5-VL-3B-Instruct-AWQ",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-VL-3B-Instruct-AWQ",
      "Qwen/Qwen2.5-VL-7B-Instruct",
-     "qwen2.5"
-    ],
-    [
-     "Qwen/Qwen2.5-VL-7B-Instruct",
-     "Qwen/Qwen2.5-VL-7B-Instruct-AWQ",
      "qwen2.5"
     ],
     [
@@ -16086,26 +15843,6 @@
     ],
     [
      "Qwen/Qwen3-0.6B-FP8",
-     "Qwen/Qwen3-0.6B-GPTQ-Int8",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-0.6B-GPTQ-Int8",
-     "Qwen/Qwen3-0.6B-MLX-4bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-0.6B-MLX-4bit",
-     "Qwen/Qwen3-0.6B-MLX-6bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-0.6B-MLX-6bit",
-     "Qwen/Qwen3-0.6B-MLX-8bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-0.6B-MLX-8bit",
      "Qwen/Qwen3-0.6B-MLX-bf16",
      "qwen3"
     ],
@@ -16126,26 +15863,6 @@
     ],
     [
      "Qwen/Qwen3-1.7B-FP8",
-     "Qwen/Qwen3-1.7B-GPTQ-Int8",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-1.7B-GPTQ-Int8",
-     "Qwen/Qwen3-1.7B-MLX-4bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-1.7B-MLX-4bit",
-     "Qwen/Qwen3-1.7B-MLX-6bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-1.7B-MLX-6bit",
-     "Qwen/Qwen3-1.7B-MLX-8bit",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-1.7B-MLX-8bit",
      "Qwen/Qwen3-1.7B-MLX-bf16",
      "qwen3"
     ],
@@ -16156,11 +15873,6 @@
     ],
     [
      "Qwen/Qwen3-4B",
-     "Qwen/Qwen3-4B-AWQ",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-4B-AWQ",
      "Qwen/Qwen3-4B-Base",
      "qwen3"
     ],
@@ -16221,11 +15933,6 @@
     ],
     [
      "Qwen/Qwen3-8B",
-     "Qwen/Qwen3-8B-AWQ",
-     "qwen3"
-    ],
-    [
-     "Qwen/Qwen3-8B-AWQ",
      "Qwen/Qwen3-8B-Base",
      "qwen3"
     ],
@@ -16412,6 +16119,57 @@
    ]
   },
   {
+   "id": "RedHatAI",
+   "nome": "Red Hat AI",
+   "escopo": "mundo",
+   "modelos": [
+    "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic",
+    "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic",
+    "RedHatAI/Meta-Llama-3.1-8B-FP8",
+    "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
+    "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
+    "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
+   ],
+   "arestas": [
+    [
+     "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
+     "RedHatAI/Meta-Llama-3.1-8B-FP8",
+     "llama-3.1"
+    ],
+    [
+     "RedHatAI/Meta-Llama-3.1-8B-FP8",
+     "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
+     "llama-3.1"
+    ],
+    [
+     "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
+     "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
+     "llama-3.1"
+    ],
+    [
+     "RedHatAI/Llama-3.2-1B-Instruct-FP8",
+     "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic",
+     "llama-3.2"
+    ],
+    [
+     "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic",
+     "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic",
+     "llama-3.2"
+    ]
+   ]
+  },
+  {
+   "id": "saidutta69",
+   "nome": "RACER IS OP",
+   "escopo": "mundo",
+   "modelos": [
+    "saidutta69/Qwen3.5-4B-heretic"
+   ],
+   "arestas": []
+  },
+  {
    "id": "sallani",
    "nome": "Dr Sabri ALLANI",
    "escopo": "mundo",
@@ -16419,6 +16177,142 @@
     "sallani/EUAIAct-Risk-Qwen2.5-1.5B-Edge-ONNX",
     "sallani/MrCompliance-AIRisk-Qwen2.5-1.5B-Edge-ONNX",
     "sallani/PrivaMesh-Edge"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "segment-any-text",
+   "nome": "Segment any Text",
+   "escopo": "mundo",
+   "modelos": [
+    "segment-any-text/sat-12l-sm",
+    "segment-any-text/sat-3l-sm"
+   ],
+   "arestas": [
+    [
+     "segment-any-text/sat-12l-sm",
+     "segment-any-text/sat-3l-sm",
+     "sat"
+    ]
+   ]
+  },
+  {
+   "id": "sentence-transformers",
+   "nome": "Sentence Transformers",
+   "escopo": "mundo",
+   "modelos": [
+    "sentence-transformers/distiluse-base-multilingual-cased-v1",
+    "sentence-transformers/distiluse-base-multilingual-cased-v2",
+    "sentence-transformers/LaBSE",
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+   ],
+   "arestas": [
+    [
+     "sentence-transformers/distiluse-base-multilingual-cased-v1",
+     "sentence-transformers/distiluse-base-multilingual-cased-v2",
+     "distiluse-multilingual"
+    ],
+    [
+     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+     "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+     "paraphrase"
+    ]
+   ]
+  },
+  {
+   "id": "setu4993",
+   "nome": "Setu Shah",
+   "escopo": "mundo",
+   "modelos": [
+    "setu4993/LEALLA-base"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "shibing624",
+   "nome": "Ming Xu (徐明)",
+   "escopo": "mundo",
+   "modelos": [
+    "shibing624/text2vec-base-multilingual"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Snowflake",
+   "nome": "Snowflake",
+   "escopo": "mundo",
+   "modelos": [
+    "Snowflake/snowflake-arctic-embed-l-v2.0",
+    "Snowflake/snowflake-arctic-embed-m-v2.0"
+   ],
+   "arestas": [
+    [
+     "Snowflake/snowflake-arctic-embed-l-v2.0",
+     "Snowflake/snowflake-arctic-embed-m-v2.0",
+     "snowflake"
+    ]
+   ]
+  },
+  {
+   "id": "speakleash",
+   "nome": "SpeakLeash | Spichlerz",
+   "escopo": "mundo",
+   "modelos": [
+    "speakleash/Bielik-11B-v3.0-Instruct"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "stabilityai",
+   "nome": "Stability AI",
+   "escopo": "mundo",
+   "modelos": [
+    "stabilityai/stablelm-2-1_6b"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "tabularisai",
+   "nome": "tabularisai",
+   "escopo": "mundo",
+   "modelos": [
+    "tabularisai/multilingual-sentiment-analysis"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "tardellirs",
+   "nome": "Tardelli Stekel",
+   "escopo": "mundo",
+   "modelos": [
+    "tardellirs/colibri-embed-ptbr"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "taronaeo",
+   "nome": "Aaron Teo",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
+  },
+  {
+   "id": "tiiuae",
+   "nome": "Technology Innovation Institute",
+   "escopo": "mundo",
+   "modelos": [
+    "tiiuae/falcon-11B",
+    "tiiuae/Falcon3-7B-Instruct"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "timpal0l",
+   "nome": "Tim",
+   "escopo": "mundo",
+   "modelos": [
+    "timpal0l/mdeberta-v3-base-squad2"
    ],
    "arestas": []
   },
@@ -16482,6 +16376,90 @@
    ]
   },
   {
+   "id": "Twitter",
+   "nome": "Twitter",
+   "escopo": "mundo",
+   "modelos": [
+    "Twitter/twhin-bert-base"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Unbabel",
+   "nome": "Unbabel",
+   "escopo": "mundo",
+   "modelos": [
+    "Unbabel/Tower-Plus-9B"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "unsloth",
+   "nome": "Unsloth",
+   "escopo": "mundo",
+   "modelos": [
+    "unsloth/Llama-3.1-8B-Instruct"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "upskyy",
+   "nome": "Sangchun Ha",
+   "escopo": "mundo",
+   "modelos": [
+    "upskyy/bge-m3-korean"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "utter-project",
+   "nome": "UTTER - Unified Transcription and Translation for Extended Reality",
+   "escopo": "mundo",
+   "modelos": [
+    "utter-project/EuroLLM-1.7B-Instruct",
+    "utter-project/EuroLLM-9B",
+    "utter-project/EuroLLM-9B-Instruct",
+    "utter-project/mHuBERT-147"
+   ],
+   "arestas": [
+    [
+     "utter-project/EuroLLM-1.7B-Instruct",
+     "utter-project/EuroLLM-9B",
+     "eurollm"
+    ],
+    [
+     "utter-project/EuroLLM-9B",
+     "utter-project/EuroLLM-9B-Instruct",
+     "eurollm"
+    ]
+   ]
+  },
+  {
+   "id": "VAGOsolutions",
+   "nome": "VAGO solutions",
+   "escopo": "mundo",
+   "modelos": [
+    "VAGOsolutions/Llama-3.1-SauerkrautLM-8b-Instruct"
+   ],
+   "arestas": []
+  },
+  {
+   "id": "Vortecks",
+   "nome": "Mitch",
+   "escopo": "mundo",
+   "modelos": [
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF"
+   ],
+   "arestas": [
+    [
+     "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
+     "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF",
+     "lfm3"
+    ]
+   ]
+  },
+  {
    "id": "Xenova",
    "nome": "Joshua",
    "escopo": "mundo",
@@ -16502,6 +16480,13 @@
      "bge-en"
     ]
    ]
+  },
+  {
+   "id": "zenmagnets",
+   "nome": "Shihan Qu",
+   "escopo": "mundo",
+   "modelos": [],
+   "arestas": []
   }
  ]
 }
