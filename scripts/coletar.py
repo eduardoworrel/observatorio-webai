@@ -1715,10 +1715,11 @@ def _nomes_extra(e):
     return {k: e[k] for k in ("nome_pt", "aliases") if e.get(k)}
 
 
-def atribuir_origem(modelos, mapa, labs, insts, fonte_cred):
+def atribuir_origem(modelos, mapa, labs, insts, fonte_cred, excecoes=None):
     """Escopo Brasil do MODELO, por uma destas condicoes (SPEC 9.7), com a evidencia registrada em origem_motivo e origem_fonte:
       publicador   : o publicador esta no Brasil (regra B);
-      desenvolvedor: credito de papel desenvolvedor de laboratorio ou instituicao com pais BR e fonte;
+      desenvolvedor: credito de papel desenvolvedor de laboratorio ou instituicao com pais BR e fonte; ou excecao registrada por familia
+                     (data/entidades/familia, campo excecao_escopo_br: lista fechada de modelos com a fonte publica);
       financiador  : credito de papel financiador de laboratorio ou instituicao com pais BR e fonte;
       foco_pt_br   : o cartao declara somente portugues, ou declara literalmente o portugues do Brasil como alvo.
     Parceiro e plataforma nao qualificam. O publicador continua sendo atributo proprio do modelo (hospedado por)."""
@@ -1743,6 +1744,9 @@ def atribuir_origem(modelos, mapa, labs, insts, fonte_cred):
                     break
             if achou:
                 break
+        ex = (excecoes or {}).get(m["id"].lower())
+        if not achou and ex:
+            achou = ("desenvolvedor", {"url": ex["fonte"]["url"], "trecho": ex["fonte"]["trecho"], "familia": ex["familia"]})
         if not achou and m.get("dev_br"):
             d = m["dev_br"]
             achou = ("desenvolvedor", {"url": m["url"], "trecho": d["trecho"], "credito": "pub:" + d["publicador"]})
@@ -1832,7 +1836,12 @@ def montar_relacoes(pubs, modelos):
         for c in m["creditos"]:
             ent, papel = c.rsplit(":", 1)
             n_cred_papel[ent][papel] += 1
-    atribuir_origem(modelos, mapa, labs, insts, fonte_cred)
+    excecoes = {}   # excecao de escopo Brasil por familia: so os modelos listados no arquivo curado, com a fonte registrada
+    for fid, f in sorted(carregar_entidades("familia").items()):
+        ex = f.get("excecao_escopo_br")
+        for mid in (ex or {}).get("modelos", []):
+            excecoes[mid.lower()] = {"familia": fid, "fonte": ex["fontes"][0]}
+    atribuir_origem(modelos, mapa, labs, insts, fonte_cred, excecoes)
     # hierarquia e contagens
     filhos = collections.defaultdict(list)
     for iid, pi in pai.items():

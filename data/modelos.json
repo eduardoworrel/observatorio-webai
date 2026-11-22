@@ -245116,7 +245116,7 @@
    "id": "Polygl0t/Tucano2-0.6B-Base",
    "nome": "Tucano2-0.6B-Base",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245173,13 +245173,19 @@
    "sinais_maturidade": [
     "sem_base_model"
    ],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-0.5B-Base",
    "nome": "Tucano2-qwen-0.5B-Base",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Qwen3",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245214,13 +245220,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-0.5B-Instruct",
    "nome": "Tucano2-qwen-0.5B-Instruct",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245294,13 +245306,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-0.5B-Think",
    "nome": "Tucano2-qwen-0.5B-Think",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245335,13 +245353,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-1.5B-Base",
    "nome": "Tucano2-qwen-1.5B-Base",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Qwen3",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245376,13 +245400,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-1.5B-Instruct",
    "nome": "Tucano2-qwen-1.5B-Instruct",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245417,13 +245447,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-1.5B-Think",
    "nome": "Tucano2-qwen-1.5B-Think",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245458,13 +245494,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-3.7B-Base",
    "nome": "Tucano2-qwen-3.7B-Base",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Qwen3",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245499,13 +245541,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-3.7B-Instruct",
    "nome": "Tucano2-qwen-3.7B-Instruct",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245540,13 +245588,19 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "Polygl0t/Tucano2-qwen-3.7B-Think",
    "nome": "Tucano2-qwen-3.7B-Think",
    "publicador": "Polygl0t",
-   "escopo": "mundo",
+   "escopo": "br",
    "familia": "Tucano2",
    "tarefa": "text-generation",
    "familia_tarefa": "gerador",
@@ -245581,7 +245635,13 @@
    ],
    "maturidade": "documentado",
    "sinais_maturidade": [],
-   "creditos": []
+   "creditos": [],
+   "origem_motivo": "desenvolvedor",
+   "origem_fonte": {
+    "url": "https://arxiv.org/html/2603.03543",
+    "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab",
+    "familia": "tucano2"
+   }
   },
   {
    "id": "PORTULAN/albertina-100m-portuguese-ptbr-encoder",

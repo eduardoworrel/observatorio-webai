@@ -1,0 +1,55 @@
+{
+  "spec": "1.0",
+  "entidade": "familia",
+  "id": "tucano2",
+  "nome": "Tucano2",
+  "origem": "Polygl0t",
+  "descricao": {
+    "pt": "Modelos de linguagem abertos para português, sucessores do Tucano, lançados pelo projeto Polyglot (Universidade de Bonn) com a equipe do Tucano original.",
+    "en": "Open language models for Portuguese, successors of Tucano, released by the Polyglot project (University of Bonn) with the original Tucano team."
+  },
+  "links": {
+    "hf": "https://huggingface.co/Polygl0t"
+  },
+  "excecao_escopo_br": {
+    "motivo": "desenvolvedor",
+    "modelos": [
+      "Polygl0t/Tucano2-0.6B-Base",
+      "Polygl0t/Tucano2-qwen-0.5B-Base",
+      "Polygl0t/Tucano2-qwen-0.5B-Instruct",
+      "Polygl0t/Tucano2-qwen-0.5B-Think",
+      "Polygl0t/Tucano2-qwen-1.5B-Base",
+      "Polygl0t/Tucano2-qwen-1.5B-Instruct",
+      "Polygl0t/Tucano2-qwen-1.5B-Think",
+      "Polygl0t/Tucano2-qwen-3.7B-Base",
+      "Polygl0t/Tucano2-qwen-3.7B-Instruct",
+      "Polygl0t/Tucano2-qwen-3.7B-Think"
+    ],
+    "fontes": [
+      {
+        "tipo": "artigo",
+        "url": "https://arxiv.org/html/2603.03543",
+        "acessado": "2026-11-22",
+        "rotulo": "artigo Tucano 2, líder do projeto e afiliação",
+        "trecho": "Leads: Nicholas Kluge Corrêa Affiliation: Bonn-Aachen International Center for Information Technology (b-it) / CAISA Lab"
+      },
+      {
+        "tipo": "site_institucional",
+        "url": "https://bancobrasileiro.ia.br/modelos",
+        "acessado": "2026-11-22",
+        "rotulo": "Banco Brasileiro de Soluções de IA (governo federal), ficha do Tucano 2",
+        "trecho": "Polygl0t — Universidade de Bonn (equipe do Tucano original; financiamento público alemão)"
+      }
+    ]
+  },
+  "fontes": [
+    {
+      "tipo": "artigo",
+      "url": "https://arxiv.org/html/2603.03543",
+      "acessado": "2026-11-22",
+      "rotulo": "artigo Better Open Source LLMs for Portuguese",
+      "trecho": "please refer to the Polyglot project page: huggingface.co/Polygl0t"
+    }
+  ],
+  "status": "ativo"
+}

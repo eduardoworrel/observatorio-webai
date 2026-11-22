@@ -46,6 +46,37 @@
     },
     "origem": {
       "$ref": "comum.schema.json#/$defs/id_publicador"
+    },
+    "excecao_escopo_br": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "motivo",
+        "modelos",
+        "fontes"
+      ],
+      "properties": {
+        "motivo": {
+          "const": "desenvolvedor"
+        },
+        "modelos": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "comum.schema.json#/$defs/id_modelo"
+          }
+        },
+        "fontes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "comum.schema.json#/$defs/evidencia"
+          }
+        }
+      }
     }
   }
 }
