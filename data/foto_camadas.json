@@ -1,19 +1,30 @@
 {
  "datasets": {
-  "total": 2268,
+  "total": 3926,
   "por_escopo": {
    "br": 312,
-   "pt": 1956
+   "mundo": 3614
+  },
+  "pt": {
+   "sim": 2070,
+   "nao": 1856
   },
   "pt_br": 265,
-  "por_faixa": {
-   "1-100MB": 738,
-   "1-10GB": 415,
-   "100MB-1GB": 436,
-   "<1MB": 255,
-   ">10GB": 424
+  "por_downloads": {
+   "<100": 315,
+   "100-999": 2652,
+   "1000-9999": 749,
+   ">=10000": 210
   },
-  "downloads_total": 6498796
+  "por_faixa": {
+   "1-100MB": 958,
+   "1-10GB": 1234,
+   "100MB-1GB": 719,
+   "<1MB": 329,
+   ">10GB": 684,
+   "desconhecido": 2
+  },
+  "downloads_total": 18771901
  },
  "benchmarks": {
   "total": 16,

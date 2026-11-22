@@ -237,6 +237,83 @@ def e_build_de(nome_modelo, nome_cand):
     return len(c) > len(m) and c[: len(m)] == m and all(TOK_FMT.match(x) for x in c[len(m):])
 
 
+# ---------- idiomas e foco no portugues do Brasil (SPEC 9.7) ----------
+ISO639_1 = set("aa ab ae af ak am an ar as av ay az ba be bg bh bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu".split()) | {"por"}
+FOCO_PT_BR = re.compile(
+    r"(?:fine-?tuned|adapted|trained|specialized|designed|built|optimi[sz]ed|pre-?trained|developed)\b[^.\n]{0,60}\b(?:brazilian portuguese|portugu[eê]s (?:do )?brasil(?:eiro)?|pt-br)\b"
+    r"|(?:modelo|model)\b[^.\n]{0,40}\b(?:para|for)\b[^.\n]{0,20}\b(?:portugu[eê]s (?:do )?brasil(?:eiro)?|brazilian portuguese)\b"
+    r"|(?:treinado|ajustado|adaptado|especializado|desenvolvido|otimizado)\b[^.\n]{0,60}\bportugu[eê]s (?:do )?brasil(?:eiro)?\b", re.I)
+
+
+def idiomas_tags(tags):
+    """Idiomas declarados nas tags do cartao (ISO 639-1 e 'por'); pt-BR conta como pt."""
+    out = set()
+    for t in tags:
+        t = t.lower()
+        if t in ("pt-br", "pt_br", "por"):
+            out.add("pt")
+        elif t in ISO639_1:
+            out.add(t)
+    return sorted(out)
+
+
+PT_EUROPEU_ID = re.compile(r"pt[-_]?pt\b|ptpt|portugal|europe", re.I)
+PT_EUROPEU_CARTAO = re.compile(r"european portuguese|portugu[eê]s europeu|portugu[eê]s de portugal|\bpt-pt\b", re.I)
+PT_BR_ID = re.compile(r"(?<![a-z])(?:pt[-_]?br|brazil|brasil)", re.I)
+ALVO_ARTIGO = re.compile(r"\bour (?:efforts|work|models?|corpus|datasets?|resources?|study)\b[^.]{0,100}\b(?:mainly|primarily|specifically|mostly)\b[^.]{0,40}\bBrazilian Portuguese\b", re.I)
+LINHA_CODIGO = re.compile(r"source code|c[oó]digo[- ]fonte|developed by|desenvolvido por", re.I)
+BR_GITHUB = {}   # login do GitHub (minusculas) -> publicador do Brasil que o liga no proprio perfil do Hugging Face (preenchido em main)
+
+
+def carregar_br_github(pubs_br):
+    for pid in pubs_br:
+        h = perfil(pid)["html"]
+        import html as H
+        m = re.search(r'"github"\s*:\s*"([^"]+)"', H.unescape(h)) or re.search(r"github\.com/(?!huggingface\b|sponsors|orgs)([A-Za-z0-9_-]+)", H.unescape(h))
+        if m:
+            BR_GITHUB[m.group(1).lower()] = pid
+
+
+def dev_br_do_cartao(rid):
+    """Condicao 2 por cartao: a linha do codigo-fonte do cartao aponta para um repositorio de GitHub que o perfil de um publicador do Brasil declara como seu."""
+    for linha in texto(f"https://huggingface.co/{rid}/raw/main/README.md").splitlines():
+        if LINHA_CODIGO.search(linha):
+            for login in re.findall(r"github\.com/([A-Za-z0-9_-]+)", linha):
+                if login.lower() in BR_GITHUB:
+                    return {"publicador": BR_GITHUB[login.lower()], "trecho": sem_pii(re.sub(r"\s+", " ", linha).strip())[:240]}
+    return None
+
+
+def foco_pt_br(rid, tags, idiomas):
+    """Condicao 3 do escopo Brasil (SPEC 9.8). Devolve {"criterio", "trecho", "url"?} ou None. Portugues unico NAO basta:
+    exclui o portugues europeu (nome, tag ou cartao com ptpt, pt-PT, European Portuguese, portugues europeu, Portugal no nome) e exige
+    (a) variante explicita no nome ou nas tags (ptbr, pt-BR, Brazilian, brasil), ou
+    (b) declaracao literal do portugues do Brasil como alvo no cartao, ou
+    (c) declaracao literal no artigo (arXiv) que as tags do modelo citam ("our efforts are mainly concerned with Brazilian Portuguese").
+    Idiomas: so pt, ou pt e en. Multilingue que apenas inclui o portugues nao conta."""
+    if "pt" not in idiomas or not set(idiomas) <= {"pt", "en"}:
+        return None
+    nome = rid.split("/")[-1]
+    if PT_EUROPEU_ID.search(nome) or any(t.lower() == "pt-pt" for t in tags):
+        return None
+    if PT_BR_ID.search(nome) or any(t.lower() in ("pt-br", "pt_br") for t in tags):
+        return {"criterio": "variante_explicita", "trecho": nome}
+    cartao = texto(f"https://huggingface.co/{rid}/raw/main/README.md")
+    if PT_EUROPEU_CARTAO.search(cartao):
+        return None
+    for linha in cartao.splitlines():
+        if FOCO_PT_BR.search(linha):
+            return {"criterio": "declaracao", "trecho": sem_pii(re.sub(r"\s+", " ", linha).strip())[:240]}
+    for t in tags:
+        if t.startswith("arxiv:"):
+            h = texto(f"https://arxiv.org/html/{t[6:]}")
+            txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"(?s)<(script|style).*?</\1>", "", h)))
+            m = ALVO_ARTIGO.search(txt)
+            if m:
+                return {"criterio": "artigo", "trecho": txt[max(0, m.start() - 20):m.end()][:240].strip(), "url": f"https://arxiv.org/abs/{t[6:]}"}
+    return None
+
+
 # ---------- conversao fiel: build do modelo original, nao modelo novo (SPEC 0.2, regra C) ----------
 CONV_CHAVE = {"gguf", "ggufs", "awq", "gptq", "exl2", "mlx", "onnx", "mlc", "litert", "litertlm", "quantized"}
 FMT_EXTRA = CONV_CHAVE | {"4bit", "8bit", "bnb", "imatrix", "i1", "fp8", "int4", "int8"}
@@ -661,6 +738,15 @@ def construir(x, pub, escopo, idx, puros_do_pub, ev_extra=None):
     m = {"id": rid, "nome": nome, "publicador": pub, "escopo": escopo, "familia": familia(rid, tags), "tarefa": x.get("pipeline_tag"), "familia_tarefa": familia_tarefa(x.get("pipeline_tag")), "licenca": licenca(tags),
          "parametros_b": params_b(x), "downloads": x.get("downloads"), "atualizado": (x.get("lastModified") or "")[:10], "idioma_pt": marca_pt(tags, rid),
          "url": f"https://huggingface.co/{rid}", "base": base_primaria(tags), "formatos_proprios": formatos(rid, tags), "builds": []}
+    m["idiomas"] = idiomas_tags(tags)
+    m["pt"] = "pt" in m["idiomas"]
+    if escopo != "br":
+        foco = foco_pt_br(rid, tags, m["idiomas"])
+        if foco:
+            m["foco_pt_br"] = foco
+        dev = dev_br_do_cartao(rid) if BR_GITHUB else None
+        if dev:
+            m["dev_br"] = dev
     if x.get("tarefa_inferida"):
         m["tarefa_inferida"], m["regra_tarefa"] = True, x["regra_tarefa"]
     if ev_extra:
@@ -786,7 +872,7 @@ def escopo_de(ent):
 
 def assinatura(c):
     e = c.get("curado") or {}
-    nucleo = [REGRA_FILTRO, c["escopo"], c.get("tipo"), e.get("classe_pais"), e.get("natureza"), e.get("nome"), e.get("tipo"), e.get("evidencia_pais"), e.get("evidencia_natureza")]
+    nucleo = [REGRA_FILTRO, c["escopo"], c.get("tipo"), e.get("classe_pais"), e.get("natureza"), e.get("nome"), e.get("tipo"), e.get("evidencia_pais"), e.get("evidencia_natureza"), c.get("achados") if c.get("tipo") == "global_pt" else None]
     return hashlib.sha1(json.dumps(nucleo, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
 
 
@@ -815,7 +901,7 @@ def carregar_existente():
     pubs = (carregar_json(os.path.join(RAIZ, "data", "publicadores.json"), {}) or {}).get("publicadores", [])
     mods = (carregar_json(os.path.join(RAIZ, "data", "modelos.json"), {}) or {}).get("modelos", [])
     foto = carregar_json(os.path.join(RAIZ, "data", "foto.json"), {}) or {}
-    return {"pubs": {p["id"].lower(): p for p in pubs}, "modelos": mods, "desc": {d["id"].lower(): d for d in foto.get("descartados", [])}, "regra": foto.get("regra_filtro")}
+    return {"pubs": {p["id"].lower(): p for p in pubs}, "modelos": mods, "desc": {d["id"].lower(): d for d in foto.get("descartados", [])}, "regra": foto.get("regra_filtro"), "regra_mat": foto.get("regra_maturidade")}
 
 
 def _chk(pid):
@@ -923,6 +1009,8 @@ def unidade(c, ctx):
         reg.update(_unidade_curada(c, ent, info, ctx))
     elif c["escopo"] == "br":
         reg.update(_unidade_br_auto(c, info, ctx))
+    elif c["tipo"] == "global_pt":
+        reg.update(_unidade_global(c, info, ctx))
     elif c["tipo"] == "indep":
         reg.update(_unidade_indep(c, info, ctx))
     else:
@@ -994,6 +1082,47 @@ def _unidade_indep(c, info, ctx):
         return {"descartado": _sem_modelos(pid, c, fora, "mundo")}
     ev_nat = {"classe": "independente", "tipo": "perfil", "url": f"https://huggingface.co/{pid}", "trecho": "conta de pessoa no Hugging Face; vinculo nao conferido", "acessado": HOJE, "regra": "N3 (pessoa)"}
     return {"pub": _pub(pid, info["nome"], "pessoa", "nao_classificado", None, "independente", ev_nat, "mundo", dict(info, n_membros=None), c["origem"], fora, len(ms)), "modelos": ms}
+
+
+# ---------- recorte "Em portugues (global)" (SPEC 9.8) ----------
+GLOBAL_PT_MIN_DOWNLOADS = 10000   # downloads em 30 dias (corte escolhido pelo orcamento de peso do data.js; ver SPEC 9.8)
+GLOBAL_PT_MIN_LIKES = 100
+GLOBAL_PT_ORIGEM = "recorte global em portugues"
+GLOBAL_X = {}   # id -> registro da listagem (preenchido na descoberta; a unidade le daqui)
+
+
+def descobrir_global_pt(cands, exist):
+    """Modelos de qualquer origem com portugues declarado nas tags, geradores ou codificadores ate MAX_B, sem adaptadores, com pelo menos
+    GLOBAL_PT_MIN_DOWNLOADS downloads em 30 dias ou GLOBAL_PT_MIN_LIKES curtidas; de publicadores que ainda nao estao no mapa. Devolve candidatos por publicador."""
+    q = [("filter", "pt"), ("sort", "downloads"), ("direction", -1), ("limit", 100)] + [("expand[]", k) for k in EXPAND]
+    todos = paginar(f"{API}/models?" + urllib.parse.urlencode(q), 40)
+    globais = {k for k, p in exist["pubs"].items() if p.get("origem_lista") == GLOBAL_PT_ORIGEM}   # reavaliados a cada execucao
+    conhecidos = {m["id"].lower() for m in exist["modelos"] if m["publicador"].lower() not in globais}
+    pubs_conhecidos = (set(exist["pubs"]) - globais) | {k for k, c in cands.items() if c.get("curado")}   # o recorte aceita tambem contas descartadas por falta de evidencia de pais
+    por_pub = collections.defaultdict(list)
+    for x in todos:
+        pid = x["id"].split("/")[0]
+        if x["id"].lower() in conhecidos or pid.lower() in pubs_conhecidos or pid in EXCLUIR:
+            continue
+        if x.get("pipeline_tag") not in TAREFAS or e_adaptador(x) or "pt" not in idiomas_tags(x.get("tags", [])):
+            continue
+        p = params_b(x)
+        if p is None or p > MAX_B:
+            continue
+        if (x.get("downloads") or 0) < GLOBAL_PT_MIN_DOWNLOADS and (x.get("likes") or 0) < GLOBAL_PT_MIN_LIKES:
+            continue
+        GLOBAL_X[x["id"]] = x
+        por_pub[pid].append(x["id"])
+    return {pid.lower(): {"id": pid, "origem": GLOBAL_PT_ORIGEM, "escopo": "mundo", "tipo": "global_pt", "curado": None, "achados": sorted(ids)} for pid, ids in por_pub.items()}
+
+
+def _unidade_global(c, info, ctx):
+    pid = c["id"]
+    xs = [GLOBAL_X[i] for i in c["achados"] if i in GLOBAL_X]
+    ms = [construir(x, pid, "mundo", ctx.idx, [], {"recorte_pt": True}) for x in xs]
+    if not ms:
+        return {"descartado": {"id": pid, "origem": c["origem"], "motivo": "sem modelos no recorte global em portugues", "escopo": "mundo", "coletado_em": HOJE}}
+    return {"pub": _pub(pid, info["nome"], info["tipo"], "nao_classificado", None, "nao_classificada", None, "mundo", info, c["origem"], 0, len(ms)), "modelos": ms}
 
 
 def descobrir_independentes(ctx, conhecidos):
@@ -1076,7 +1205,8 @@ def montar(pubs, modelos, descartados):
             f["publicadores"].append(m["publicador"])
     pub_by = {p["id"]: p for p in pubs}
     br = [m for m in modelos if m["escopo"] == "br"]
-    mu = [m for m in modelos if m["escopo"] == "mundo"]
+    mu = [m for m in modelos if m["escopo"] == "mundo" and not m.get("recorte_pt")]
+    rec = [m for m in modelos if m["escopo"] == "mundo" and m.get("recorte_pt")]
     nat = lambda ms, n: [m for m in ms if pub_by[m["publicador"]]["natureza"] == n]
     cand_br = [d for d in descartados if d.get("escopo") != "mundo" and d.get("origem") != "lista mundo"]
     por_motivo = {}
@@ -1087,7 +1217,8 @@ def montar(pubs, modelos, descartados):
     data = max([p["fontes"][0]["acessado"] for p in pubs if p.get("fontes")] or [HOJE])
     foto = {"data": data, "regra_gguf": f"GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate {CORTE_GGUF_GB:g} GB",
             "corte_parametros_b": MAX_B, "regra_filtro": REGRA_FILTRO,
-            "brasil": contar(br), "mundo": contar(mu),
+            "brasil": contar(br), "mundo": contar(mu), "recorte_pt": contar(rec), "por_origem_brasil": dict(sorted(collections.Counter(m.get("origem_motivo") for m in br).items())),
+            "pt_declarado": {"brasil": sum(1 for m in br if m.get("pt")), "mundo": sum(1 for m in mu if m.get("pt")), "recorte": len(rec)},
             "brasil_independentes": contar(nat(br, "independente")), "brasil_instituicoes": contar(nat(br, "instituicao")), "brasil_empresas": contar(nat(br, "empresa")), "brasil_natureza_nao_classificada": contar(nat(br, "nao_classificada")),
             "maior_publicador_br": (lambda c: {"id": c[0][0], "modelos": c[0][1]} if c else None)(sorted(((p, sum(1 for m in br if m["publicador"] == p)) for p in set(m["publicador"] for m in br)), key=lambda x: (-x[1], x[0].lower()))),
             "publicadores": {"brasil": len(set(m["publicador"] for m in br)), "mundo": len(set(m["publicador"] for m in mu)),
@@ -1105,6 +1236,17 @@ def montar(pubs, modelos, descartados):
     foto["por_familia_tarefa"] = {f: {"brasil": contar([m for m in br if m["familia_tarefa"] == f]), "mundo": contar([m for m in mu if m["familia_tarefa"] == f]),
                                       "brasil_sem_maior": contar([m for m in sem if m["familia_tarefa"] == f])} for f in ("gerador", "codificador")}
     foto["sem_maior_publicador"] = {"id": maior[0] if maior else None, "modelos": maior[1] if maior else 0, "brasil": contar(sem), "publicadores_brasil": len(por_pub_br) - (1 if maior else 0)}
+    def cont_mat(ms):
+        c = {"experimental": 0, "documentado": 0, "indeterminado": 0}
+        for m in ms:
+            c[m.get("maturidade", "indeterminado")] += 1
+        return c
+    foto["regra_maturidade"] = REGRA_MATURIDADE
+    foto["maturidade"] = {"brasil": cont_mat(br), "mundo": cont_mat(mu), "brasil_sem_maior": cont_mat(sem),
+                          "por_familia_tarefa": {f: {"brasil": cont_mat([m for m in br if m["familia_tarefa"] == f]), "mundo": cont_mat([m for m in mu if m["familia_tarefa"] == f]),
+                                                     "brasil_sem_maior": cont_mat([m for m in sem if m["familia_tarefa"] == f])} for f in ("gerador", "codificador")},
+                          "builds": {k: {"total": sum(1 for m in modelos if m.get("maturidade") == k), "com_build_nativo": sum(1 for m in modelos if m.get("maturidade") == k and m["via"] == "nativo"),
+                                         "so_gguf_wllama": sum(1 for m in modelos if m.get("maturidade") == k and m["via"] == "gguf")} for k in ("experimental", "documentado", "indeterminado")}}
     meta = {"coletado_em": data, "fonte": "Hugging Face API publica", "versao_spec": "1.0"}
     return meta, {"publicadores": pubs, "modelos": modelos, "constelacoes": const, "familias": [fams[k] for k in sorted(fams)]}, foto
 
@@ -1113,7 +1255,7 @@ def camadas_atuais():
     """Camadas de datasets e benchmarks como estao em data/ (quando a execucao nao as recoleta)."""
     d = carregar_datasets_existentes()
     b = (carregar_json(os.path.join(RAIZ, "data", "benchmarks.json"), {}) or {}).get("benchmarks", [])
-    f = carregar_json(os.path.join(RAIZ, "data", "foto_camadas.json"), {}) or {"datasets": {"total": 0, "por_escopo": {"br": 0, "pt": 0}, "pt_br": 0, "por_faixa": {}, "downloads_total": 0}, "benchmarks": {"total": 0, "por_dominio": {}, "por_tipo": {}}}
+    f = carregar_json(os.path.join(RAIZ, "data", "foto_camadas.json"), {}) or {"datasets": {"total": 0, "por_escopo": {"br": 0, "mundo": 0}, "pt": {"sim": 0, "nao": 0}, "pt_br": 0, "por_downloads": {}, "por_faixa": {}, "downloads_total": 0}, "benchmarks": {"total": 0, "por_dominio": {}, "por_tipo": {}}}
     return d["datasets"], b, f, d["unidades"]
 
 
@@ -1155,10 +1297,11 @@ def guardar_antes():
 
 # ---------- camada de datasets e benchmarks (SPEC.md secoes 4.8, 4.9 e 9.5) ----------
 EXPAND_DS = ["tags", "downloads", "likes", "lastModified", "description", "gated", "private", "createdAt", "mainSize"]
-MIN_DOWNLOADS_DS, MIN_LIKES_DS = 100, 3   # datasets em portugues de publicadores fora do Brasil: 100 downloads (30 dias) ou 3 curtidas
+MIN_DOWNLOADS_DS, MIN_LIKES_DS = 100, 3   # datasets com portugues entre os idiomas, de qualquer publicador: 100 downloads (30 dias) ou 3 curtidas
+MIN_DOWNLOADS_MUNDO, MIN_LIKES_MUNDO = 100, 3   # datasets dos publicadores do mundo no mapa: 100 downloads (30 dias) ou 3 curtidas
 LINGUAS_PT = ("pt", "pt-br", "por")
 DOMINIOS = ("geral", "vestibular_educacao", "juridico", "saude", "codigo", "matematica", "extracao_classificacao", "cultura_lingua", "outros")
-COLUNAS_DS = ["id", "publicador", "nome", "descricao", "idiomas", "pt_br", "tarefas", "licenca", "bytes", "faixa", "linhas_faixa", "downloads", "likes", "atualizado", "escopo", "benchmarks"]
+COLUNAS_DS = ["id", "publicador", "nome", "descricao", "idiomas", "pt_br", "tarefas", "licenca", "bytes", "faixa", "linhas_faixa", "downloads", "likes", "atualizado", "escopo", "benchmarks", "pt"]
 RX_BR_TAG = re.compile(r"(^|[:_-])(pt-?br|brazil|brasil|brazilian|brasileir)", re.I)
 RX_MD = [(re.compile(r"!\[[^\]]*\]\([^)]*\)"), " "), (re.compile(r"\[([^\]]*)\]\([^)]*\)"), r"\1"), (re.compile(r"<[^>]+>"), " "), (re.compile(r"https?://\S+"), " "),
          (re.compile(r"[#*_`>|]+"), " "), (re.compile(r"\s+"), " ")]
@@ -1238,9 +1381,10 @@ def _sig_ds(unid, bench):
     return ""
 
 
-def unidades_ds(br_ids, bench):
-    """Unidades de coleta da camada de datasets: os do idioma, um por publicador do Brasil e um por benchmark."""
-    return ["ds:pt"] + ["ds:pub:" + p for p in sorted(br_ids, key=str.lower)] + ["ds:bench:" + b for b in sorted(bench)]
+def unidades_ds(br_ids, mundo_ids, bench):
+    """Unidades de coleta da camada de datasets: os do idioma, um por publicador do Brasil, um por publicador do mundo no mapa e um por benchmark."""
+    return (["ds:pt"] + ["ds:pub:" + p for p in sorted(br_ids, key=str.lower)] + ["ds:mundo:" + p for p in sorted(set(mundo_ids) - set(br_ids), key=str.lower)]
+            + ["ds:bench:" + b for b in sorted(bench)])
 
 
 def situacao_ds(unid, exist_ds, bench, dias):
@@ -1261,21 +1405,25 @@ def coletar_unidade_ds(unid, bench):
         r = registro_dataset(x, unid)
         if r:
             regs[r["id"].lower()] = r
+    def paginar_limiar(params, min_dl, min_likes):
+        for ordem, limiar in (("downloads", lambda x: (x.get("downloads") or 0) < min_dl), ("likes", lambda x: (x.get("likes") or 0) < min_likes)):
+            url = f"{API}/datasets?" + urllib.parse.urlencode(params + [("sort", ordem), ("direction", -1), ("limit", 1000)] + [("expand[]", k) for k in EXPAND_DS])
+            for _ in range(8):
+                d, link = get(url)
+                if not isinstance(d, list) or not d:
+                    break
+                for x in d:
+                    if (x.get("downloads") or 0) >= min_dl or (x.get("likes") or 0) >= min_likes:
+                        add(x)
+                m = re.search(r'<([^>]+)>;\s*rel="next"', link or "")
+                if limiar(d[-1]) or not m:
+                    break
+                url = m.group(1)
     if unid == "ds:pt":
         for lang in LINGUAS_PT:
-            for ordem, limiar in (("downloads", lambda x: x.get("downloads", 0) < MIN_DOWNLOADS_DS), ("likes", lambda x: x.get("likes", 0) < MIN_LIKES_DS)):
-                url = f"{API}/datasets?" + urllib.parse.urlencode([("filter", "language:" + lang), ("sort", ordem), ("direction", -1), ("limit", 1000)] + [("expand[]", k) for k in EXPAND_DS])
-                for _ in range(8):
-                    d, link = get(url)
-                    if not isinstance(d, list) or not d:
-                        break
-                    for x in d:
-                        if (x.get("downloads") or 0) >= MIN_DOWNLOADS_DS or (x.get("likes") or 0) >= MIN_LIKES_DS:
-                            add(x)
-                    m = re.search(r'<([^>]+)>;\s*rel="next"', link or "")
-                    if limiar(d[-1]) or not m:
-                        break
-                    url = m.group(1)
+            paginar_limiar([("filter", "language:" + lang)], MIN_DOWNLOADS_DS, MIN_LIKES_DS)
+    elif unid.startswith("ds:mundo:"):
+        paginar_limiar([("author", unid[9:])], MIN_DOWNLOADS_MUNDO, MIN_LIKES_MUNDO)
     elif unid.startswith("ds:pub:"):
         for x in listar_ds(max_paginas=6, author=unid[7:], limit=1000, sort="downloads", direction=-1):
             add(x)
@@ -1316,20 +1464,23 @@ def mesclar_ds(exist_ds, resultados, unidades_ativas, bench, remover_inativas):
     return list(por_id.values()), dict(sorted(unidades.items()))
 
 
-def montar_camadas(raw, bench, br_ids):
-    """Aplica a regra de relevancia (SPEC 9.5) e deriva escopo, benchmarks e contagens. Ordem estavel."""
+def montar_camadas(raw, bench, br_ids, mundo_ids=()):
+    """Aplica a regra de relevancia (SPEC 9.5) e deriva escopo (pais do publicador), idioma, benchmarks e contagens. Ordem estavel."""
     br = {b.lower() for b in br_ids}
+    mundo = {b.lower() for b in mundo_ids}
     por_ds = collections.defaultdict(list)
     for bid, b in sorted(bench.items()):
         for d in b.get("datasets", []):
             por_ds[d.lower()].append(bid)
     mantidos = []
     for r in raw:
-        k, em_bench = r["id"].lower(), r["id"].lower() in por_ds
-        if r["publicador"].lower() in br:
+        k, em_bench, pub = r["id"].lower(), r["id"].lower() in por_ds, r["publicador"].lower()
+        pt_ok = bool(r.get("pt")) and (r["downloads"] >= MIN_DOWNLOADS_DS or r["likes"] >= MIN_LIKES_DS)
+        mundo_ok = pub in mundo and (r["downloads"] >= MIN_DOWNLOADS_MUNDO or r["likes"] >= MIN_LIKES_MUNDO)
+        if pub in br:
             esc = "br"
-        elif em_bench or (r.get("pt") and (r["downloads"] >= MIN_DOWNLOADS_DS or r["likes"] >= MIN_LIKES_DS)):
-            esc = "pt"
+        elif em_bench or pt_ok or mundo_ok:
+            esc = "mundo"
             if not em_bench and not r["licenca"] and not r["descricao"]:
                 continue   # reupload sem metadados minimos
         else:
@@ -1337,7 +1488,7 @@ def montar_camadas(raw, bench, br_ids):
         mantidos.append(dict(r, escopo=esc, benchmarks=por_ds.get(k, [])))
     vistos = {}
     for r in sorted(mantidos, key=lambda r: (-r["downloads"], r["id"].lower())):   # duplicata obvia: mesmo nome e mesmo tamanho fora do Brasil
-        if r["escopo"] == "pt" and not r["benchmarks"] and r["tamanho_bytes"]:
+        if r["escopo"] == "mundo" and not r["benchmarks"] and r["tamanho_bytes"]:
             chave = (r["nome"].lower(), r["tamanho_bytes"])
             if chave in vistos:
                 r["_dup"] = True
@@ -1351,11 +1502,30 @@ def montar_camadas(raw, bench, br_ids):
         o = {k: b[k] for k in ("id", "nome", "sigla", "descricao", "dominio", "idiomas", "tarefas", "tipo", "datasets", "criador", "ano", "links", "fontes") if k in b}
         o.update(n_datasets=len(ds), tamanho_total_bytes=sum(d["tamanho_bytes"] or 0 for d in ds) or None, downloads_total=sum(d["downloads"] for d in ds))
         bs.append(o)
-    foto = {"datasets": {"total": len(final), "por_escopo": {e: sum(1 for r in final if r["escopo"] == e) for e in ("br", "pt")}, "pt_br": sum(1 for r in final if r["pt_br"]),
+    foto = {"datasets": {"total": len(final), "por_escopo": {e: sum(1 for r in final if r["escopo"] == e) for e in ("br", "mundo")},
+                         "pt": {"sim": sum(1 for r in final if r.get("pt")), "nao": sum(1 for r in final if not r.get("pt"))}, "pt_br": sum(1 for r in final if r["pt_br"]),
+                         "por_downloads": {k: sum(1 for r in final if lo <= r["downloads"] < hi) for k, lo, hi in (("<100", 0, 100), ("100-999", 100, 1000), ("1000-9999", 1000, 10000), (">=10000", 10000, 10**12))},
                          "por_faixa": dict(sorted(collections.Counter(r["faixa"] or "desconhecido" for r in final).items())), "downloads_total": sum(r["downloads"] for r in final)},
             "benchmarks": {"total": len(bs), "por_dominio": dict(sorted(collections.Counter(d for b in bs for d in b["dominio"]).items())),
                            "por_tipo": dict(sorted(collections.Counter(b["tipo"] for b in bs).items()))}}
     return final, bs, foto
+
+
+def portador_info(m):
+    """Quem portou o modelo para a web: autor do build em destaque (ou do primeiro); papel: proprio | runtime | comunidade."""
+    bs = m.get("builds") or []
+    if not bs:
+        return {}
+    b = next((x for x in bs if x.get("destaque")), bs[0])
+    papel = "proprio" if (b.get("proprio") or str(b.get("autor", "")).lower() == str(m.get("publicador", "")).lower()) else "runtime" if b.get("runtime_org") else "comunidade"
+    return {"portado_por": b.get("autor"), "portado_papel": papel, "portado_url": b.get("url")}
+
+
+def avatares_web():
+    """Enderecos (nunca imagens) dos avatares publicos do Hugging Face; quem pediu para ocultar (data/avatares.json e ocultar_avatar nas entidades) fica de fora."""
+    arq = carregar_json(os.path.join(RAIZ, "data", "avatares.json"), {}) or {}
+    ocultar = {x.lower() for x in arq.get("ocultar", [])} | {k.lower() for k, e in carregar_entidades("publicador").items() if e.get("ocultar_avatar") is True}
+    return {k: v for k, v in sorted((arq.get("avatares") or {}).items(), key=lambda kv: kv[0].lower()) if k.lower() not in ocultar}
 
 
 def arquivos_web(meta, foto, pacote, ds, bs, foto_c, rel=None):
@@ -1363,16 +1533,17 @@ def arquivos_web(meta, foto, pacote, ds, bs, foto_c, rel=None):
     ficam em arquivos proprios, carregados sob demanda pela interface. window.MAPA_DADOS continua com as mesmas chaves depois de carregados."""
     dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
     leves, detalhes = [], {}
-    for m in pacote["modelos"]:
-        leves.append({k: v for k, v in m.items() if k not in ("builds", "fontes")})
+    for m in compactar_modelos(pacote["modelos"]):
+        leves.append(dict({k: v for k, v in m.items() if k not in ("builds", "fontes")}, **portador_info(m)))
         detalhes[m["id"]] = {"builds": m["builds"], "fontes": m["fontes"]}
-    partes = {"builds": "data-builds.js", "datasets": "data-datasets.js", "benchmarks": "data-benchmarks.js"}
+    partes = {"builds": "data-builds.js", "datasets": "data-datasets.js", "benchmarks": "data-benchmarks.js", "avatares": "data-avatares.js"}
     w = lambda nome: os.path.join("web", nome)
     extras = {w("data-builds.js"): "window.MAPA_DETALHES=" + dump(detalhes) + ";",
               w("data-datasets.js"): "window.MAPA_DADOS.datasets=" + dump(compactar_datasets(ds)) + ";",
-              w("data-benchmarks.js"): "window.MAPA_DADOS.benchmarks=" + dump(bs) + ";"}
+              w("data-benchmarks.js"): "window.MAPA_DADOS.benchmarks=" + dump(bs) + ";",
+              w("data-avatares.js"): "window.MAPA_AVATARES=" + dump(avatares_web()) + ";"}
     tamanhos = {nome: len(extras[w(arq)].encode("utf-8")) for nome, arq in partes.items()}   # bytes brutos: a interface mostra o progresso real
-    nucleo = dict(meta=meta, foto=foto, **dict(pacote, modelos=leves), foto_camadas=foto_c, contrato_camadas=1, partes=partes, partes_bytes=tamanhos)
+    nucleo = dict(meta=meta, foto=foto, **dict(pacote, modelos=leves), foto_camadas=foto_c, contrato_camadas=1, dicionario_maturidade=DICIONARIO_MATURIDADE, contrato_maturidade=1, partes=partes, partes_bytes=tamanhos)
     if rel is not None:   # relacoes (instituicoes, laboratorios, vinculos): parte pequena, fica no arquivo inicial
         nucleo.update(instituicoes=rel["instituicoes"], laboratorios=rel["laboratorios"], vinculos=compactar_vinculos(rel["vinculos"]), hierarquia=rel["hierarquia"], contrato_relacoes=1)
     return dict({w("data.js"): "window.MAPA_DADOS=" + dump(nucleo) + ";"}, **extras)
@@ -1380,8 +1551,147 @@ def arquivos_web(meta, foto, pacote, ds, bs, foto_c, rel=None):
 
 def compactar_datasets(final):
     linhas = [[r["id"], r["publicador"], r["nome"], r["descricao"], r["idiomas"], r["pt_br"], r["tarefas"], r["licenca"], r["tamanho_bytes"], r["faixa"], r["linhas_faixa"],
-               r["downloads"], r["likes"], r["atualizado"], r["escopo"], r["benchmarks"]] for r in final]
+               r["downloads"], r["likes"], r["atualizado"], r["escopo"], r["benchmarks"], bool(r.get("pt"))] for r in final]
     return {"colunas": COLUNAS_DS, "linhas": linhas}
+
+
+# ---------- maturidade do cartao (SPEC.md secao 9.7) ----------
+REGRA_MATURIDADE = 1   # versao da regra de maturidade; mudou: os cartoes sao reclassificados (o cache guarda o texto classificado)
+HF_RAIZ = os.environ.get("COLETOR_HF") or "https://huggingface.co"
+MAT_NOMES = {"e": "experimental", "d": "documentado", "i": "indeterminado"}
+SINAIS_MAT = ["cartao_padrao_hub", "placeholders_more_info", "cartao_trainer_sem_descricao", "cartao_vazio", "cartao_curto_de_checkpoint", "readme_indisponivel",
+              "sem_licenca", "sem_base_model", "sem_idioma", "sem_datasets", "nome_de_checkpoint"]
+_MAT_HUB = re.compile(r"model card of a .{0,6}transformers model that has been pushed on the Hub|This model card has been automatically generated", re.I)
+_MAT_TRAINER = re.compile(r"generated automatically according to the information the Trainer had access to|generated from a Trainer|^- generated_from_trainer", re.I | re.M)
+_MAT_NOME = re.compile(r"(checkpoint|[-_.]step[-_]?\d+|[-_]ckpt|[-_]epoch\d*|[-_]ep\d+|[-_]run\d+|[-_]fold\d+|[-_]tmp\b|[-_]test\b|[-_]v0\.0\.\d+)", re.I)
+_MAT_CKPT = re.compile(r"\b(checkpoint|epoch\s*\d+\s*/\s*\d+|step\s*\d+|ckpt)\b", re.I)
+_MAT_BOILER = [r"^\s*[-*] \*\*[^*]+\*\*.*$", r"Users \(both direct and downstream\) should be made aware of the risks, biases and limitations of the model\.?", r"for further recommendations\.?",
+               r"Use the code below to get started with the model\.?", r"Carbon emissions can be estimated.*", r"This is the model card of a .{0,6}transformers model that has been pushed on the Hub\.?",
+               r"This model card has been automatically generated\.?", r"\[More Information Needed\]", r"More information needed",
+               r"This model is a fine-tuned version of \[[^\]]*\]\([^)]*\) on an unknown dataset\.?", r"This model is a fine-tuned version of .*? on (the|an) .{0,60}dataset\.?",
+               r"It achieves the following results on the evaluation set:", r"The following hyperparameters were used during training:", r"^- [\w_ ./-]+: .*$", r"^#+ .*$",
+               r"\*\*BibTeX:\*\*|\*\*APA:\*\*", r"\|.*\|", r"^:?-+:?[ |:-]*$"]
+
+
+def _mat_yaml(t):
+    m = re.match(r"---\n(.*?)\n---", t, re.S)
+    return m.group(1) if m else ""
+
+
+def _mat_proprio(t):
+    c = re.sub(r"<!--.*?-->", "", re.sub(r"\A---\n.*?\n---\n", "", t, flags=re.S), flags=re.S)
+    for r in _MAT_BOILER:
+        c = re.sub(r, "", c, flags=re.M | re.I)
+    return len(re.sub(r"[\s`*_>#|\-:.]+", " ", c).strip())
+
+
+def maturidade(texto, nome=""):
+    """Classifica o cartao (README) de um modelo: ('experimental'|'documentado'|'indeterminado', sinais). So olha o texto do cartao;
+    nao julga o autor. Conservadora: so e experimental o cartao sem conteudo proprio (padrao do Hub, gerado por Trainer ou vazio) ou
+    o cartao curto que se declara checkpoint."""
+    if texto is None:
+        return "indeterminado", ["readme_indisponivel"]
+    y, p, s = _mat_yaml(texto), _mat_proprio(texto), []
+    hub = bool(_MAT_HUB.search(texto))
+    ph = len(re.findall(r"\[More Information Needed\]", texto)) >= 3
+    tr = bool(_MAT_TRAINER.search(texto)) and len(re.findall(r"More information needed", texto, re.I)) >= 2
+    corpo = re.sub(r"\A---\n.*?\n---\n", "", texto, flags=re.S)
+    if hub:
+        s.append("cartao_padrao_hub")
+    if ph:
+        s.append("placeholders_more_info")
+    if tr:
+        s.append("cartao_trainer_sem_descricao")
+    vazio = p < 30 and not (hub or ph or tr)
+    if vazio:
+        s.append("cartao_vazio")
+    ck = not (hub or ph or tr or vazio) and p < 300 and bool(_MAT_NOME.search(nome.split("/")[-1]) or _MAT_CKPT.search(corpo))
+    if ck:
+        s.append("cartao_curto_de_checkpoint")
+    exp = ((hub or ph or tr) and p < 200) or vazio or ck
+    fracos = []
+    if not re.search(r"^license:", y, re.M):
+        fracos.append("sem_licenca")
+    if not re.search(r"^base_model:", y, re.M):
+        fracos.append("sem_base_model")
+    if not re.search(r"^(language|lang):", y, re.M):
+        fracos.append("sem_idioma")
+    if not re.search(r"^datasets:", y, re.M):
+        fracos.append("sem_datasets")
+    if _MAT_NOME.search(nome.split("/")[-1]) and "cartao_curto_de_checkpoint" not in s:
+        fracos.append("nome_de_checkpoint")
+    return ("experimental" if exp else "documentado"), s + fracos[:3]
+
+
+def _ler_readme(rid):
+    """README do modelo: (texto, codigo). codigo 200 ou o HTTP de erro; (None, 0) em falha de rede (nao e cacheada)."""
+    url = f"{HF_RAIZ}/{rid}/raw/main/README.md"
+    for tentativa in range(5):
+        try:
+            _esperar_limite()
+            time.sleep(PAUSA)
+            estado["rede"] += 1
+            _janela.append(time.time())
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60) as r:
+                return r.read(2_000_000).decode("utf8", "ignore"), 200
+        except urllib.error.HTTPError as e:
+            if e.code in (401, 403, 404, 410):
+                return None, e.code
+            time.sleep(8 * (tentativa + 1))
+            _janela.clear()
+        except Exception:
+            time.sleep(4 * (tentativa + 1))
+    return None, 0
+
+
+def _chk_mat(rid):
+    return os.path.join(RAIZ, ".cache", "maturidade", hashlib.sha1(rid.lower().encode()).hexdigest() + ".json")
+
+
+def pendentes_maturidade(modelos, regra_gravada):
+    return [m for m in modelos if not (m.get("maturidade") and regra_gravada == REGRA_MATURIDADE)]
+
+
+def maturar(modelos, regra_gravada, progresso=True):
+    """Preenche maturidade e sinais_maturidade. Cache por modelo (chave: data de atualizacao e versao da regra): so le o README quando precisa."""
+    pend = pendentes_maturidade(modelos, regra_gravada)
+    n, t0, lidos, falhas = len(pend), time.time(), 0, 0
+    for i, m in enumerate(pend, 1):
+        chk, c = _chk_mat(m["id"]), None
+        if os.path.exists(chk):
+            c = carregar_json(chk)
+            if not (c and c.get("v") == REGRA_MATURIDADE and c.get("atualizado") == m.get("atualizado")):
+                c = None
+        if c is None:
+            texto, cod = _ler_readme(m["id"])
+            if cod == 0:
+                falhas += 1
+                m["maturidade"], m["sinais_maturidade"] = "indeterminado", ["readme_indisponivel"]
+                continue
+            lidos += 1
+            mat, sin = maturidade(texto, m["id"])
+            c = {"v": REGRA_MATURIDADE, "atualizado": m.get("atualizado"), "m": mat, "s": sin, "codigo": cod}
+            _atomico(chk, json.dumps(c, ensure_ascii=False))
+            if progresso and lidos % 50 == 0:
+                resto = (time.time() - t0) / lidos * (n - i)
+                log(f"[maturidade {i}/{n}] {lidos} cartoes lidos; restam ~{resto / 60:.1f} min")
+        m["maturidade"], m["sinais_maturidade"] = c["m"], c["s"]
+    return {"lidos": lidos, "falhas": falhas, "total": n}
+
+
+def compactar_modelos(modelos):
+    """Modelos para web/data.js: maturidade em codigo curto (e, d, i) e sinais como indices do dicionario."""
+    inv = {v: k for k, v in MAT_NOMES.items()}
+    saida = []
+    for m in modelos:
+        c = dict(m)
+        c["maturidade"] = inv.get(m.get("maturidade"), "i")
+        c["sinais_maturidade"] = [SINAIS_MAT.index(x) for x in m.get("sinais_maturidade", []) if x in SINAIS_MAT]
+        saida.append(c)
+    return saida
+
+
+DICIONARIO_MATURIDADE = {"maturidade": MAT_NOMES, "sinais": SINAIS_MAT}
 
 
 # ---------- relacoes: instituicoes, laboratorios, vinculos e hierarquia (SPEC.md secoes 4.10 a 4.12) ----------
@@ -1403,6 +1713,45 @@ def _contagens(ms):
 def _nomes_extra(e):
     """Campos opcionais da entidade: nome em portugues e apelidos (so entram nos dados quando existem)."""
     return {k: e[k] for k in ("nome_pt", "aliases") if e.get(k)}
+
+
+def atribuir_origem(modelos, mapa, labs, insts, fonte_cred):
+    """Escopo Brasil do MODELO, por uma destas condicoes (SPEC 9.7), com a evidencia registrada em origem_motivo e origem_fonte:
+      publicador   : o publicador esta no Brasil (regra B);
+      desenvolvedor: credito de papel desenvolvedor de laboratorio ou instituicao com pais BR e fonte;
+      financiador  : credito de papel financiador de laboratorio ou instituicao com pais BR e fonte;
+      foco_pt_br   : o cartao declara somente portugues, ou declara literalmente o portugues do Brasil como alvo.
+    Parceiro e plataforma nao qualificam. O publicador continua sendo atributo proprio do modelo (hospedado por)."""
+    def br(chave):
+        tipo, _, resto = chave.partition(":")
+        eid = resto.rsplit(":", 1)[0]
+        if tipo == "inst":
+            return insts.get(eid, {}).get("pais") == "BR"
+        return insts.get((labs.get(eid) or {}).get("instituicao"), {}).get("pais") == "BR"
+    for m in modelos:
+        m.pop("origem_motivo", None), m.pop("origem_fonte", None)
+        if mapa[m["publicador"]]["escopo"] == "br":
+            m["escopo"], m["origem_motivo"] = "br", "publicador"
+            continue
+        m["escopo"] = "mundo"
+        achou = None
+        for papel in ("desenvolvedor", "financiador"):
+            for c in m["creditos"]:
+                if c.rsplit(":", 1)[1] == papel and br(c):
+                    f = fonte_cred[(m["id"].lower(), c)]
+                    achou = (papel, {"url": f["url"], "trecho": f["trecho"], "credito": c})
+                    break
+            if achou:
+                break
+        if not achou and m.get("dev_br"):
+            d = m["dev_br"]
+            achou = ("desenvolvedor", {"url": m["url"], "trecho": d["trecho"], "credito": "pub:" + d["publicador"]})
+        if not achou and m.get("foco_pt_br"):
+            f = m["foco_pt_br"]
+            achou = ("foco_pt_br", {"url": f.get("url") or m["url"], "trecho": f["trecho"], "criterio": f["criterio"]})
+        if achou:
+            m["escopo"], m["origem_motivo"], m["origem_fonte"] = "br", achou[0], achou[1]
+            m.pop("recorte_pt", None)
 
 
 def montar_relacoes(pubs, modelos):
@@ -1466,15 +1815,24 @@ def montar_relacoes(pubs, modelos):
         else:   # a interface diz "afiliado(a) a <instituicao>" em vez de "Instituicao" para uma pessoa
             p["afiliado_a"] = p["instituicoes"] if p["natureza"] in ("instituicao", "empresa") else []
             p["natureza_rotulo"] = "afiliada" if p["natureza"] in ("instituicao", "empresa") else p["natureza"]
-    # creditos nos modelos
+    # creditos nos modelos: "inst:ID:papel" ou "lab:ID:papel" (papel: desenvolvedor, financiador, parceiro, plataforma)
     cred = collections.defaultdict(list)
+    fonte_cred = {}
     for prefixo, ents in (("lab:", labs), ("inst:", insts)):
         for eid, e in ents.items():
             for c in e.get("modelos_creditados") or []:
-                cred[c["modelo"].lower()].append(prefixo + eid)
+                chave = f"{prefixo}{eid}:{c['papel']}"
+                cred[c["modelo"].lower()].append(chave)
+                fonte_cred[(c["modelo"].lower(), chave)] = c["fonte"]
     for m in modelos:
         m["creditos"] = sorted(set(cred.get(m["id"].lower(), ())))
-    n_cred = collections.Counter(c for m in modelos for c in m["creditos"])
+    n_cred = collections.Counter(c.rsplit(":", 1)[0] for m in modelos for c in m["creditos"])
+    n_cred_papel = collections.defaultdict(collections.Counter)
+    for m in modelos:
+        for c in m["creditos"]:
+            ent, papel = c.rsplit(":", 1)
+            n_cred_papel[ent][papel] += 1
+    atribuir_origem(modelos, mapa, labs, insts, fonte_cred)
     # hierarquia e contagens
     filhos = collections.defaultdict(list)
     for iid, pi in pai.items():
@@ -1497,11 +1855,11 @@ def montar_relacoes(pubs, modelos):
         ps = pubs_da_inst(iid)
         L_inst.append({"id": iid, "nome": i["nome"], **_nomes_extra(i), "sigla": i.get("sigla"), "pais": i["pais"], "regiao": i.get("regiao"), "tipo": i["tipo"], "parte_de": i.get("parte_de"),
                        "labs": sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower), "publicadores": sorted(ps, key=str.lower),
-                       **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("inst:" + iid, 0), "fontes": i["fontes"]})
+                       **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("inst:" + iid, 0), "n_creditados_papel": dict(sorted(n_cred_papel.get("inst:" + iid, {}).items())), "fontes": i["fontes"]})
     for lid, l in sorted(labs.items(), key=lambda kv: kv[0].lower()):
         ps = {x for x in lab_pubs.get(lid, set()) if x in mapa}
         L_lab.append({"id": lid, "nome": l["nome"], **_nomes_extra(l), "sigla": l.get("sigla"), "instituicao": l["instituicao"], "pais": (insts.get(l["instituicao"]) or {}).get("pais"), "parceiras": sorted((pc["instituicao"] for pc in l.get("parceiras") or []), key=str.lower),
-                      "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("lab:" + lid, 0), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
+                      "publicadores": sorted(ps, key=str.lower), **_contagens([m for pid in ps for m in por_pub.get(pid, [])]), "n_creditados": n_cred.get("lab:" + lid, 0), "n_creditados_papel": dict(sorted(n_cred_papel.get("lab:" + lid, {}).items())), "fontes": [l["vinculo_fonte"]] + list(l.get("fontes") or [])})
     folha = lambda pid: {"tipo": "publicador", "id": pid, "n_modelos": len(por_pub.get(pid, [])), "filhos": []}
     def no_inst(iid, visto=()):
         fs = [{"tipo": "laboratorio", "id": l, "pais": (insts.get(labs[l]["instituicao"]) or {}).get("pais"), "filhos": [folha(x) for x in sorted((y for y in lab_pubs.get(l, ()) if y in mapa), key=str.lower)]} for l in sorted((l for l, lab in labs.items() if lab["instituicao"] == iid), key=str.lower)]
@@ -1550,11 +1908,15 @@ def main():
     ap.add_argument("--fresh", action="store_true")
     ap.add_argument("--sem-descoberta", action="store_true")
     ap.add_argument("--sem-datasets", action="store_true", help="nao coleta a camada de datasets e benchmarks")
+    ap.add_argument("--sem-maturidade", action="store_true", help="nao le cartoes (README) para classificar a maturidade")
     ap.add_argument("--so-datasets", action="store_true", help="coleta so a camada de datasets e benchmarks")
+    ap.add_argument("--global-pt", action="store_true", help="coleta o recorte 'Em portugues (global)': modelos de qualquer origem com portugues declarado (SPEC 9.8); incremental e retomavel")
     ap.add_argument("--max-candidatos", type=int, default=150)
     a = ap.parse_args()
-    if not (a.novos or a.tudo or a.so or a.normalizar):
-        ap.error("escolha um modo: --novos, --tudo ou --so a,b")
+    if not (a.novos or a.tudo or a.so or a.normalizar or a.global_pt):
+        ap.error("escolha um modo: --novos, --tudo, --so a,b ou --global-pt")
+    if a.global_pt:
+        a.sem_datasets = True
     global CACHE_DIAS
     CACHE_DIAS = a.cache_dias
     if a.fresh and not a.dry_run:
@@ -1568,6 +1930,8 @@ def main():
     REMOVIDOS.update(i["sha256"] for i in (carregar_json(os.path.join(RAIZ, "data", "remocoes.json"), {}) or {}).get("itens", []))
     exist = carregar_existente()
     CURADOS_ID.update({k.lower(): k for k in carregar_curados()})
+    if not a.normalizar:
+        carregar_br_github(sorted(p["id"] for p in exist["pubs"].values() if p["escopo"] == "br"))
     if a.normalizar:
         for m in exist["modelos"]:
             m["builds"].sort(key=lambda b: (b["formato"], b["repo"]))
@@ -1579,9 +1943,14 @@ def main():
         print("normalizado; arquivos alterados:", gravar(meta, pacote, foto, None, rel) or "nenhum")
         return
     cands = candidatos_locais(seed, carregar_curados(), exist)
-    modo = "--so" if a.so else "--novos" if a.novos else "--tudo"
+    modo = "--so" if a.so else "--novos" if a.novos else "--tudo" if a.tudo else "--global-pt"
+    if a.global_pt:
+        for k, c in descobrir_global_pt(cands, exist).items():
+            cands[k] = c
 
     def selecionar():
+        if a.global_pt and not (a.so or a.novos or a.tudo):
+            return [(c, "global") for k, c in cands.items() if c.get("tipo") == "global_pt"]
         if a.so:
             pedidos = {x.strip().lower() for x in a.so.split(",") if x.strip()}
             for x in sorted(pedidos - set(cands)):
@@ -1601,9 +1970,10 @@ def main():
     bench = carregar_benchmarks()
     exist_ds = carregar_datasets_existentes()
     br_ids = {c["id"] for c in cands.values() if c["curado"] and c["escopo"] == "br"} | {p["id"] for p in exist["pubs"].values() if p["escopo"] == "br"}
+    mundo_ids = {p["id"] for p in exist["pubs"].values() if p["escopo"] == "mundo"}
 
-    def alvos_ds(br):
-        todas = unidades_ds(br, bench)
+    def alvos_ds(br, mundo=None):
+        todas = unidades_ds(br, mundo_ids if mundo is None else mundo, bench)
         if a.sem_datasets:
             return [], todas
         if a.so:
@@ -1623,8 +1993,11 @@ def main():
                 xs, _, fora = modelos_do_publicador(c["id"])
                 print(f"            previa: {len(xs)} modelo(s) no corte" + (f", {fora} acima de {MAX_B:g} B" if fora else "") + (": " + ", ".join(x["id"].split("/")[-1] for x in xs[:5]) + (" ..." if len(xs) > 5 else "") if xs else ""))
         ch, mi = estimativa(ncur, len(alvos) - ncur)
+        mp = 0 if a.sem_maturidade else len(pendentes_maturidade(exist["modelos"], exist.get("regra_mat")))
+        if mp:
+            print(f"maturidade: {mp} cartao(oes) a ler (cerca de {mp * (PAUSA + 0.3) / 60:.0f} min); o cache por modelo permite retomar")
         ads, todas_ds = alvos_ds(br_ids)
-        print(f"datasets: unidades {len(todas_ds)} (publicadores do Brasil: {len(br_ids)}, benchmarks: {len(bench)}); a coletar: {len(ads)}")
+        print(f"datasets: unidades {len(todas_ds)} (publicadores do Brasil: {len(br_ids)}, do mundo: {len(mundo_ids)}, benchmarks: {len(bench)}); a coletar: {len(ads)}")
         for u, x in ads:
             print(f"  {x:9} {u}")
         ch += sum(7 if u == "ds:pt" else 2 for u, _ in ads)
@@ -1632,7 +2005,8 @@ def main():
         return
     ads, _ = alvos_ds(br_ids)
     rel_antes = ((carregar_json(os.path.join(RAIZ, "data", "relacoes.json"), {}) or {}).get("meta") or {}).get("assinatura")
-    if not alvos and not ads and rel_antes == assinatura_relacoes() and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
+    mat_pend = 0 if a.sem_maturidade else len(pendentes_maturidade(exist["modelos"], exist.get("regra_mat")))
+    if not alvos and not ads and not mat_pend and rel_antes == assinatura_relacoes() and not any(p["id"] in EXCLUIR for p in exist["pubs"].values()):
         print(f"{modo}: nada a coletar ({len(cands)} candidatos em dia). Nenhum arquivo alterado.")
         return
 
@@ -1677,21 +2051,33 @@ def main():
     if a.tudo and not a.so_datasets:   # coleta completa: quem deixou de ser candidato (entidade arquivada ou apagada, saiu das listas) sai dos dados
         descoberta_rodou = not a.sem_descoberta
         for k, p in list(exist["pubs"].items()) + list(exist["desc"].items()):
-            if k not in cands and (descoberta_rodou or p.get("origem_lista", p.get("origem")) != "busca na API"):
+            if k not in cands and p.get("origem_lista", p.get("origem")) != GLOBAL_PT_ORIGEM and (descoberta_rodou or p.get("origem_lista", p.get("origem")) != "busca na API"):
                 remover.add(k)
     guardar_antes()
     pubs, modelos, desc = mesclar(exist, regs, remover)
     modelos, rel_conv = reatribuir_conversoes(pubs, modelos)
     _atomico(os.path.join(RAIZ, ".relatorios", f"atribuicao-{HOJE}.json"), json.dumps(rel_conv, ensure_ascii=False, indent=1))
+    mat_info = {"lidos": 0, "falhas": 0, "total": 0}
+    if not a.sem_maturidade:
+        try:
+            mat_info = maturar(modelos, exist.get("regra_mat"))
+        except KeyboardInterrupt:
+            log("interrompido na maturidade: os cartoes ja lidos estao em .cache/maturidade/; rode o mesmo comando para continuar")
+            sys.exit(130)
+        if mat_info["falhas"]:
+            log(f"maturidade: {mat_info['falhas']} cartao(oes) sem resposta (falha de rede); ficam indeterminados e serao lidos na proxima coleta")
     rel = montar_relacoes(pubs, modelos)
     meta, pacote, foto = montar(pubs, modelos, desc)
     foto["instituicoes_por_pais"] = rel["por_pais"]
+    if a.sem_maturidade or mat_info["falhas"]:
+        foto["regra_maturidade"] = exist.get("regra_mat")
     if a.so or a.so_datasets or len(regs) < len(alvos):   # a regra so e marcada como aplicada quando todos os candidatos foram coletados
         foto["regra_filtro"] = exist.get("regra")
 
     # camada de datasets e benchmarks: unidades incrementais, com checkpoint
     br_ids = {c["id"] for c in cands.values() if c["curado"] and c["escopo"] == "br"} | {p["id"] for p in pubs if p["escopo"] == "br"}
-    ads, todas_ds = alvos_ds(br_ids)
+    mundo_ids = {p["id"] for p in pubs if p["escopo"] == "mundo"}
+    ads, todas_ds = alvos_ds(br_ids, mundo_ids)
     resultados, nd = [], len(ads)
     if ads:
         log(f"datasets: {nd} unidade(s) a coletar")
@@ -1719,7 +2105,7 @@ def main():
         log(f"interrompido: {len(resultados)} unidade(s) de datasets ja estao em .cache/datasets/; rode o mesmo comando para continuar")
         sys.exit(130)
     raw, unidades = mesclar_ds(exist_ds, resultados, set(todas_ds), bench, a.tudo and not a.sem_datasets)
-    camadas = montar_camadas(raw, bench, br_ids) + (unidades,)
+    camadas = montar_camadas(raw, bench, br_ids, mundo_ids) + (unidades,)
     mudou = gravar(meta, pacote, foto, camadas, rel)
     log(f"coleta concluida em {(time.time() - t_ini) / 60:.1f} min; chamadas de rede: {estado['rede']}, do cache: {estado['cache']}")
     print(json.dumps({"coletados": len(regs), "unidades_datasets": len(resultados), "arquivos_alterados": mudou, **{k: foto[k] for k in ("brasil", "mundo")}, "camadas": camadas[2]}, ensure_ascii=False, indent=1))

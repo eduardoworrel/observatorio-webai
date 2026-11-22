@@ -1,6 +1,6 @@
 # Contrato de dados das camadas de datasets e benchmarks
 
-Versão do contrato: **1**. Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo ou de coluna cria uma nova versão deste arquivo, com o número no título e o campo `contrato` em `window.MAPA_DADOS.contrato_camadas`.
+Versão do contrato: **2** (a versão 1 está descrita no fim; a mudança é a do campo `escopo` e a coluna nova `pt`). Quem consome (a interface) e quem produz (o coletor) seguem este texto. Mudança de campo ou de coluna cria uma nova versão deste arquivo, com o número no título e o campo `contrato` em `window.MAPA_DADOS.contrato_camadas`.
 
 ## Onde estão os dados
 
@@ -33,8 +33,9 @@ Versão do contrato: **1**. Quem consome (a interface) e quem produz (o coletor)
 | 11 | `downloads` | inteiro | downloads dos últimos 30 dias (campo `downloads` da API) |
 | 12 | `likes` | inteiro | curtidas |
 | 13 | `atualizado` | texto | data `AAAA-MM-DD` da última modificação |
-| 14 | `escopo` | texto | `br` (publicador do Brasil com evidência) ou `pt` (só pelo idioma). Dataset de escopo mundo não entra |
+| 14 | `escopo` | texto | país do **publicador**, como nos modelos: `br` (publicador do Brasil com evidência) ou `mundo` (os demais). O valor `pt` da versão 1 não existe mais |
 | 15 | `benchmarks` | texto[] | ids dos benchmarks que apontam para o dataset (`[]` se nenhum) |
+| 16 | `pt` | booleano | (versão 2) o cartão lista português (`pt`, `pt-br` ou `por`) entre os idiomas. O idioma é atributo, não escopo; `pt_br` (coluna 5) continua marcando português do Brasil |
 
 `url` e `fontes[]` não vão em `web/data.js`: a `url` se monta do `id`, e as fontes (URL e data de acesso) estão em `data/datasets.json`.
 
@@ -63,7 +64,7 @@ Versão do contrato: **1**. Quem consome (a interface) e quem produz (o coletor)
 
 ```
 {
-  "datasets":   {"total": n, "por_escopo": {"br": n, "pt": n}, "pt_br": n, "por_faixa": {"<1MB": n, ...}, "downloads_total": n},
+  "datasets":   {"total": n, "por_escopo": {"br": n, "mundo": n}, "pt": {"sim": n, "nao": n}, "pt_br": n, "por_downloads": {"<100": n, "100-999": n, "1000-9999": n, ">=10000": n}, "por_faixa": {"<1MB": n, ...}, "downloads_total": n},
   "benchmarks": {"total": n, "por_dominio": {"juridico": n, ...}, "por_tipo": {"avaliacao": n, ...}}
 }
 ```
@@ -72,4 +73,11 @@ Um benchmark com mais de um domínio conta uma vez em cada.
 
 ## Ordem
 
-`datasets.linhas` em ordem estável: escopo (`br` antes de `pt`), `downloads` decrescente, `id` sem diferenciar maiúsculas. `benchmarks` por `id`.
+`datasets.linhas` em ordem estável: escopo (`br` antes de `mundo`), `downloads` decrescente, `id` sem diferenciar maiúsculas. `benchmarks` por `id`.
+
+## Mudança da versão 1 para a 2 e compatibilidade
+
+- As colunas 0 a 15 mantêm posição e significado, exceto `escopo` (14): os valores passam a ser `br` e `mundo`. Quem filtrava `escopo === "pt"` deve filtrar a coluna `pt` (16). O seletor Brasil | Mundo | Tudo vale para datasets como para modelos.
+- A coluna `pt` (16) é nova e vai no fim da linha, então leitores que usam as 16 primeiras posições continuam funcionando.
+- O universo cresce: além dos datasets dos publicadores do Brasil e dos marcados com português, entram os datasets dos publicadores do mundo no mapa (regra em `docs/SPEC.md`, seção 9.5). Qualquer publicador pode ser escolhido no seletor de publicador, pois cada linha tem `publicador`.
+- `foto_camadas.datasets.por_escopo` passa a ser `{br, mundo}`; `pt` (`{sim, nao}`) e `por_downloads` são novos.

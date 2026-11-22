@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "avatares.schema.json",
+  "title": "data/avatares.json (SPEC 1.0)",
+  "type": "object",
+  "required": [
+    "spec",
+    "ocultar",
+    "avatares"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "spec": {
+      "const": "1.0"
+    },
+    "gerado_em": {
+      "$ref": "comum.schema.json#/$defs/data"
+    },
+    "ocultar": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+      }
+    },
+    "avatares": {
+      "type": "object",
+      "description": "handle do Hugging Face -> endereco https do avatar publico (huggingface.co/avatars/ ou cdn-avatars.huggingface.co); conferido por scripts/validar.py"
+    }
+  }
+}

@@ -25,6 +25,8 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
 @media(prefers-reduced-motion:reduce){#carregando,#carregando .c-barra i{transition:none}}
 </style>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="filtros.css">
+<link rel="stylesheet" href="drawer.css">
 <script>
   try { var t = localStorage.getItem('observatorio-tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -61,6 +63,8 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
 })();
 </script>
 <canvas id="fundo" aria-hidden="true"></canvas>
+<div class="grafo-camada" id="grafo-camada" aria-hidden="false"><canvas id="sky-canvas" aria-hidden="true"></canvas><canvas id="sky-canvas-brilho" aria-hidden="true"></canvas><div class="sky-points" id="sky-points"></div></div>
+<div class="sky-tip" id="sky-tip" hidden></div>
 <a class="skip-link" href="#tabela" data-i18n="skip">Pular o mapa e ir para a tabela</a>
 <header class="site-header">
   <a class="brand" href="#inicio" aria-label="Observatório, início">
@@ -91,10 +95,6 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
         </span>
       </div>
       <div class="model-sky" tabindex="0" role="region" aria-label="Mapa estrelado" id="ceu" aria-describedby="sky-ajuda">
-        <canvas id="sky-canvas" aria-hidden="true"></canvas>
-        <canvas id="sky-canvas-brilho" aria-hidden="true"></canvas>
-                <div class="sky-points" id="sky-points"></div>
-        <div class="sky-tip" id="sky-tip" hidden></div>
         <div class="carga-camada carga-ceu" id="carga-ceu" aria-hidden="true" hidden><span class="c-spin" aria-hidden="true"></span><span class="carga-txt"></span><div class="c-barra-p" aria-hidden="true"><i></i></div></div>
       </div>
       <div class="sky-tools">
@@ -107,7 +107,7 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
         </div>
       </div>
       <div class="sky-legend" id="legenda"></div>
-      <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam o status do build; tamanho, o download. Estrelas tênues no fundo são decorativas.</p>
+      <p class="sky-bottom" data-i18n="sky_nota">Posição é só organização por grupo; brilho e cor indicam se o modelo roda no navegador; tamanho, o download. Estrelas tênues no fundo são decorativas.</p>
     </div>
     <div class="right-col">
     <div class="tabs" role="tablist" id="tabs" aria-label="Camadas" data-i18n-aria="tabs_aria">
@@ -133,25 +133,27 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
           <button type="button" data-escopo="mundo" aria-pressed="false" data-i18n="mundo">Mundo</button>
           <button type="button" data-escopo="todos" aria-pressed="true" data-i18n="todos">Tudo</button>
         </div>
-        <div class="segmented" role="group" aria-label="Build" id="f-via">
-          <button type="button" data-via="todos" aria-pressed="true" data-i18n="v_todos">Todos</button>
-          <button type="button" data-via="nativo" aria-pressed="false" data-i18n="v_nativo">Nativo</button>
-          <button type="button" data-via="gguf" aria-pressed="false" data-i18n="v_gguf">+ GGUF</button>
-          <button type="button" data-via="nenhum" aria-pressed="false" data-i18n="v_nenhum">Sem build</button>
-        </div>
-        <label class="sel"><span class="sr" data-i18n="f_nat">Natureza do publicador</span>
-          <select id="f-nat"></select></label>
         <div class="segmented" role="group" aria-label="Tarefa" id="f-tarefa" data-i18n-aria="f_tarefa">
           <button type="button" data-tarefa="" aria-pressed="true" data-i18n="ta_todas">Todas</button>
           <button type="button" data-tarefa="gerador" aria-pressed="false" data-i18n="ta_gerador">Gerador</button>
           <button type="button" data-tarefa="codificador" aria-pressed="false" data-i18n="ta_codificador">Codificador</button>
         </div>
-        <label class="sel" id="w-inst" hidden><span class="sr" data-i18n="f_inst">Instituição</span><select id="f-inst"></select></label>
-        <label class="sel" id="w-lab" hidden><span class="sr" data-i18n="f_lab">Laboratório</span><select id="f-lab"></select></label>
-        <label class="sel"><span class="sr" data-i18n="f_fmt">Formatos de build</span>
-          <select id="f-fmt"></select></label>
+        <div class="f-build" id="f-build">
+          <span class="f-build-q" id="f-build-q" data-i18n="roda_q">Roda no navegador?</span>
+          <div class="segmented" role="group" aria-labelledby="f-build-q" id="f-via">
+            <button type="button" data-via="todos" aria-pressed="true" data-i18n="v_todos">Todos</button>
+            <button type="button" data-via="nativo" aria-pressed="false" data-i18n="v_nativo">Sim</button>
+            <button type="button" data-via="gguf" aria-pressed="false" data-i18n="v_gguf">Com limitações</button>
+            <button type="button" data-via="nenhum" aria-pressed="false" data-i18n="v_nenhum">Ainda não</button>
+          </div>
+          <p class="f-build-dica" id="f-build-dica" aria-live="polite"></p>
+        </div>
         <label class="sel search"><span class="sr" data-i18n="buscar">Buscar</span>
           <input id="busca" type="search" placeholder="Buscar" data-i18n-ph="buscar_ph" autocomplete="off"></label>
+        <button type="button" class="btn-filtros" data-abrir-filtros aria-haspopup="dialog"><span data-i18n="filtros">Filtros</span><span class="n" aria-hidden="true"></span></button>
+        <span class="exp-slot" id="exp-slot" hidden></span>
+        <span class="exp-slot" id="rec-slot" hidden></span>
+        <span class="chips-filtros" role="list"></span>
       </div>
       <div class="home-filters" id="filtros-datasets" hidden></div>
       <div class="home-filters" id="filtros-benchmarks" hidden></div>
@@ -172,9 +174,9 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
   </section>
 
   <section class="home-paths" aria-label="Atalhos">
-    <a href="#tabela" data-go="tabela"><span>01</span><h2 data-i18n="p1_t">Quem já tem build?<br>Quem não tem?</h2><p data-i18n="p1_p">Tabela com status, tamanho e fontes de cada modelo.</p><b>↗</b></a>
-    <a href="#mapa" data-go="gguf"><span>02</span><h2 data-i18n="p2_t">E o GGUF?<br>Roda no navegador?</h2><p data-i18n="p2_p">Via wllama, até um tamanho plausível. Contado à parte.</p><b>↗</b></a>
-    <a href="#metodo"><span>03</span><h2 data-i18n="p3_t">O que é um modelo<br>brasileiro?</h2><p data-i18n="p3_p">Criado por brasileiros, com evidência pública por publicador.</p><b>↗</b></a>
+    <a href="#tabela" data-go="tabela"><span>01</span><h2 data-i18n="p1_t">Quem já roda<br>no navegador?</h2><p data-i18n="p1_p">Tabela com status, tamanho e fontes de cada modelo.</p><b>↗</b></a>
+    <a href="#mapa" data-go="gguf"><span>02</span><h2 data-i18n="p2_t">E os modelos<br>mais pesados?</h2><p data-i18n="p2_p">Rodam no navegador, com limitações: mais pesados e com limite de tamanho. Contados à parte.</p><b>↗</b></a>
+    <a href="#metodo"><span>03</span><h2 data-i18n="p3_t">O que é um modelo<br>brasileiro?</h2><p data-i18n="p3_p">Quem desenvolveu ou financiou, com evidência pública, ou focado no português do Brasil.</p><b>↗</b></a>
   </section>
 
   <div class="home-inventory" id="foto" aria-live="polite"></div>
@@ -193,6 +195,28 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
     <p><span data-i18n="fonte_lic">Fonte Atkinson Hyperlegible, licença SIL OFL 1.1.</span> <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank" rel="noopener">OFL</a></p>
   </div>
 </footer>
+<div id="gaveta-scrim" hidden></div>
+<aside id="gaveta-filtros" role="dialog" aria-modal="true" aria-labelledby="gaveta-t" hidden tabindex="-1">
+  <div class="gv-topo"><h2 id="gaveta-t" data-i18n="filtros">Filtros</h2><button type="button" id="gaveta-x" aria-label="Fechar" data-i18n-aria="fechar">×</button></div>
+  <div class="gv-corpo">
+    <div class="gv-sec" id="gv-modelos">
+      <div class="gv-grupo"><h3 data-i18n="g_publicador">Publicador</h3>
+        <label class="sel"><span class="gv-rot" data-i18n="f_nat">Natureza do publicador</span>
+          <select id="f-nat"></select></label>
+        <label class="sel" id="w-inst" hidden><span class="gv-rot" data-i18n="f_inst">Instituição</span><select id="f-inst"></select></label>
+        <label class="sel" id="w-lab" hidden><span class="gv-rot" data-i18n="f_lab">Laboratório</span><select id="f-lab"></select></label>
+        <div class="gv-papel" id="w-papel" hidden><span class="gv-rot" id="f-papel-q" data-i18n="f_papel">Papel</span><div class="segmented" role="group" aria-labelledby="f-papel-q" id="f-papel"></div></div>
+      </div>
+      <div class="gv-grupo"><h3 data-i18n="g_formato">Versões</h3>
+        <label class="sel"><span class="gv-rot" data-i18n="f_fmt">Versões para o navegador</span>
+          <select id="f-fmt"></select></label>
+      </div>
+    </div>
+    <div class="gv-sec" id="gv-datasets" hidden></div>
+    <div class="gv-sec" id="gv-benchmarks" hidden></div>
+  </div>
+  <div class="gv-pe"><button type="button" class="text-button" id="gaveta-limpar" data-i18n="limpar">Limpar filtros</button><button type="button" class="exp-btn" id="gaveta-ok" data-i18n="gaveta_ver">Ver resultados</button></div>
+</aside>
 <div id="scrim" hidden></div>
 <aside id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-titulo" hidden tabindex="-1">
   <button type="button" class="drawer-x" id="drawer-x" aria-label="Fechar">×</button>
@@ -201,10 +225,13 @@ html[data-theme=dark] #carregando{background:linear-gradient(160deg,#2c376d,#262
 <script src="config.js"></script>
 <script src="data.js"></script>
 <script>window.__carga&&__carga.etapa(1)</script>
-<script>if(/[?&]fixture=(1|camadas)\b/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>');if(/[?&]fixture=relacoes/.test(location.search))document.write('<script src="fixtures/relacoes.js"><\/script>')</script>
+<script>if(/[?&]fixture=(1|camadas)\b/.test(location.search))document.write('<script src="fixtures/camadas.js"><\/script>');if(/[?&]fixture=camadas2/.test(location.search))document.write('<script src="fixtures/camadas2.js"><\/script>');if(/[?&]fixture=relacoes/.test(location.search))document.write('<script src="fixtures/relacoes.js"><\/script>');if(/[?&]fixture=maturidade/.test(location.search))document.write('<script src="fixtures/maturidade.js"><\/script>');if(/[?&]fixture=papeis/.test(location.search))document.write('<script src="fixtures/papeis.js"><\/script>')</script>
 <script src="relacoes.js"></script>
+<script src="filtros.js"></script>
 <script src="camadas.js"></script>
 <script src="exportar.js"></script>
+<script src="avatar.js"></script>
+<script src="drawer.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

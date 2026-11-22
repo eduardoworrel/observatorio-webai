@@ -347,6 +347,18 @@ def contexto(arqs_ent):
             out = []; schema_check(o, {"$ref": "remocoes.schema.json"}, {}, (), out); loc = Loc(t); loc.val(0, ())
             for p, c, m, d in out: emit(rm, loc, p, "ERRO", c, m, d)
             ctx["removidos"] = {i["sha256"] for i in o.get("itens", []) if isinstance(i, dict) and "sha256" in i}
+    av = os.path.join(RAIZ, "data", "avatares.json")   # enderecos de avatares publicos (sem imagem) e pedidos de ocultar
+    if os.path.exists(av):
+        o, t = carregar_json(av)
+        if o is not None:
+            out = []; schema_check(o, {"$ref": "avatares.schema.json"}, {}, (), out); loc = Loc(t); loc.val(0, ())
+            for p, c, m, d in out: emit(av, loc, p, "ERRO", c, m, d)
+            import re as _re
+            for h, u in ((o.get("avatares") or {}).items() if isinstance(o, dict) and isinstance(o.get("avatares"), dict) else []):
+                if not _re.match(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$", str(h)) or not isinstance(u, str) or not _re.match(r"^https://(huggingface\.co/avatars/|cdn-avatars\.huggingface\.co/)\S+$", u):
+                    emit(av, loc, ("avatares", h), "ERRO", "AVATAR_URL", "so enderecos https do proprio Hugging Face (huggingface.co/avatars/ ou cdn-avatars.huggingface.co); nunca a imagem", "use scripts/avatares.py")
+            for h in (o.get("ocultar") or []) if isinstance(o, dict) else []:
+                if isinstance(h, str) and h in (o.get("avatares") or {}): emit(av, loc, ("avatares", h), "ERRO", "AVATAR_OCULTO", "o avatar de quem pediu para ocultar nao pode estar em avatares", "remova a entrada de avatares")
     for a in arqs_ent:  # ids das proprias contribuicoes, para referencias cruzadas
         try: o = json.load(open(a, encoding="utf-8"))
         except Exception: continue

@@ -136,6 +136,9 @@
           }
         }
       }
+    },
+    "ocultar_avatar": {
+      "type": "boolean"
     }
   }
 }

@@ -118,6 +118,10 @@ Não há arquivo curado de dataset. Cada dataset tem `id` (`<publicador>/<nome>`
 
 `id` (kebab-case), `nome`, `sigla?`, `descricao` (`pt` e `en`, 1 a 2 linhas), `dominio[]` (obrigatório; um ou mais de `geral`, `vestibular_educacao`, `juridico`, `saude`, `codigo`, `matematica`, `extracao_classificacao`, `cultura_lingua`, `outros`), `idiomas[]`, `tarefas[]`, `tipo` (`conjunto`, `avaliacao` ou `leaderboard`; `leaderboard` exige `links.leaderboard`), `datasets[]` (ids do Hugging Face, `<publicador>/<nome>`), `criador?` (`publicador` do Hugging Face, ou `nome` institucional com `fonte`), `ano?`, `links` (`artigo`, `site`, `leaderboard`, `codigo`; pelo menos um) e `fontes` (pelo menos uma, **cada uma com trecho literal** da página, como as demais evidências da seção 4.7). Campos derivados (`n_datasets`, `tamanho_total_bytes`, `downloads_total`) são calculados pelo coletor a partir dos datasets que a coleta encontra; um dataset citado que não existe, é privado ou tem acesso restrito não conta e aparece no relatório da coleta.
 
+### Campos derivados para a interface (modelos com build)
+
+`portado_por` (autor do build em destaque, ou do primeiro), `portado_papel` (`proprio`, `runtime` ou `comunidade`) e `portado_url` (repositório do build), calculados pelo gerador a partir de `builds[]`. Endereços dos avatares públicos do Hugging Face de quem portou ficam em `data/avatares.json` (`avatares`: só URL, nunca a imagem; `ocultar`: quem pediu para não exibir; `ocultar_avatar?` na entidade do publicador tem o mesmo efeito), gerados por `scripts/avatares.py`.
+
 ### 4.10 instituicao
 
 `id` (kebab-case), `nome`, `nome_pt?` (nome em português, só quando confirmado em fonte pública ou tradução inequívoca), `aliases?` (até 8 apelidos documentados em fonte pública; nunca inventados), `sigla?`, `tipo` (`universidade`, `instituto`, `empresa`, `governo` ou `outro`), `pais` (ISO 3166-1), `regiao?`, `parte_de?` (id de outra instituição; a hierarquia não pode ter ciclos, `VINCULO_CICLO`), `modelos_creditados[]` opcional (4.11), `links`, `descricao?` e `fontes` (pelo menos uma, **cada uma com trecho literal** que identifica a instituição, como nas demais evidências da seção 4.7). Uma instituição é uma só, mesmo com várias contas no Hugging Face: as contas se ligam a ela pelos vínculos (4.11), sem duplicar a entidade.
@@ -227,18 +231,61 @@ Os mantenedores rodam `scripts/coletar.py` em modo incremental (`--novos`: só p
 
 ### 9.5 Camada de datasets
 
-O coletor deriva a camada de datasets por unidades, cada uma com checkpoint: os datasets em português, um conjunto por publicador do Brasil e um por benchmark. Entram no mapa apenas datasets públicos (não privados, não gated), pela regra:
+O coletor deriva a camada de datasets por unidades, cada uma com checkpoint: os datasets com português entre os idiomas, um conjunto por publicador do Brasil, um por publicador do mundo no mapa e um por benchmark. Entram apenas datasets públicos (não privados, não gated).
 
-1. **Escopo `br`:** todos os datasets públicos dos publicadores brasileiros curados (classe `br_evidencia`, com ou sem modelos no corte).
-2. **Escopo `pt`:** datasets com idioma `pt`, `pt-br` ou `por` no cartão, de outros publicadores, com pelo menos **100 downloads** (últimos 30 dias) **ou 3 curtidas**. Fica de fora o reupload sem metadados mínimos (sem licença **e** sem descrição) e a duplicata óbvia (mesmo nome e mesmo tamanho; permanece o de mais downloads).
-3. **Datasets de benchmark:** todo dataset público citado por um benchmark curado entra, mesmo abaixo dos limiares, com escopo `pt` quando o publicador não é do Brasil.
-4. Datasets de escopo mundo (sem idioma português e sem benchmark) não entram.
+**Escopo e idioma são independentes.** O `escopo` de um dataset é o país do **publicador**, como nos modelos: `br` quando o publicador é `br_evidencia`, `mundo` em todos os demais casos. O idioma é um atributo: `pt` (booleano: o cartão lista `pt`, `pt-br` ou `por` entre os idiomas) e `pt_br` (o cartão marca português do Brasil).
 
-A ordem é estável: Brasil antes de português, `downloads` decrescente, `id`. Rodar a coleta duas vezes sem mudança na fonte não altera nenhum arquivo.
+Regra de relevância (um dataset entra se cumprir qualquer item):
+
+1. **Publicador do Brasil** (classe `br_evidencia`, com ou sem modelos no corte): todos os datasets públicos.
+2. **Publicador do mundo no mapa** (os publicadores de escopo mundo, inclusive os curados com país fora do Brasil): datasets públicos com pelo menos **100 downloads** (últimos 30 dias) **ou 3 curtidas**.
+3. **Português, de qualquer publicador:** datasets com `pt` entre os idiomas, com pelo menos **100 downloads ou 3 curtidas**.
+4. **Benchmark:** todo dataset público citado por um benchmark curado, mesmo abaixo dos limiares.
+
+Ficam de fora os demais datasets do Hub, o reupload sem metadados mínimos (sem licença **e** sem descrição, salvo de publicador do Brasil ou de benchmark) e a duplicata óbvia (mesmo nome e mesmo tamanho fora do Brasil; permanece o de mais downloads). Os limites do item 2 são os mesmos do item 3 para manter o total entre 3.500 e 7.000 itens; um limite de 1.000 downloads ou 10 curtidas deixaria o total abaixo disso. A versão 1 dos dados usava `escopo` `pt` (só pelo idioma); a versão 2 não tem esse valor.
+
+A ordem é estável: Brasil antes de mundo, `downloads` decrescente, `id`. Rodar a coleta duas vezes sem mudança na fonte não altera nenhum arquivo.
 
 ### 9.6 Contagens publicadas
 
 `foto.brasil` e `foto.mundo` contam todos os modelos do mapa, geradores e codificadores. `foto.por_familia_tarefa` repete as contagens por família. Como um único publicador pode concentrar muitos modelos de experimento, a foto traz também `foto.sem_maior_publicador` e, por família, `brasil_sem_maior`: as contagens do Brasil sem o publicador de mais modelos, sempre ao lado das contagens com todos. Mudar a regra de relevância muda `foto.regra_filtro`, e a coleta incremental recoleta todos os publicadores.
+
+### 9.7 Maturidade do cartão
+
+Cada modelo traz `maturidade` e `sinais_maturidade`, derivados do texto do cartão (`README.md` do repositório) por regra. É uma classificação **por cartão**, não um juízo sobre o autor, sobre a qualidade do modelo ou sobre o trabalho que o originou: o mapa continua mostrando todos os modelos, e a maturidade só serve para filtrar a visualização e as contagens.
+
+| Valor | Código | Significado |
+|---|---|---|
+| `documentado` | `d` | o cartão tem conteúdo próprio |
+| `experimental` | `e` | o cartão não tem conteúdo próprio, segundo os sinais abaixo |
+| `indeterminado` | `i` | o cartão não pôde ser lido (README ausente, acesso restrito ou falha de rede) |
+
+**Sinais que tornam um modelo `experimental`** (qualquer um dos três grupos):
+
+1. `cartao_padrao_hub` (texto padrão do Hub, "This model card has been automatically generated" ou "This is the model card of a transformers model that has been pushed on the Hub") ou `placeholders_more_info` (três ou mais "[More Information Needed]"), **e** menos de 200 caracteres de texto próprio, isto é, o que sobra depois de retirar o texto padrão, os títulos, os campos do modelo padrão e as tabelas.
+2. `cartao_trainer_sem_descricao`: cartão gerado pelo `Trainer` (comentário ou etiqueta `generated_from_trainer`) com duas ou mais seções "More information needed" e menos de 200 caracteres de texto próprio.
+3. `cartao_vazio` (menos de 30 caracteres de texto próprio, sem os marcadores acima) ou `cartao_curto_de_checkpoint` (menos de 300 caracteres de texto próprio e nome com padrão de checkpoint, como `-epoch`, `-step`, `-run`, `-fold`, `-ckpt`, `-tmp`, `-test`, ou o próprio cartão chamando o modelo de checkpoint ou indicando época ou passo).
+
+**Sinais informativos** (não bastam para `experimental`; entram em `sinais_maturidade`, no máximo três): `sem_licenca`, `sem_base_model`, `sem_idioma`, `sem_datasets` (ausentes do cabeçalho YAML) e `nome_de_checkpoint`. Um cartão escrito, ainda que sem cabeçalho completo, é `documentado`.
+
+A regra é conservadora de propósito: prefere classificar como `documentado` um cartão curto a classificar como `experimental` um modelo com cartão escrito. O cartão é lido uma vez por modelo e guardado em cache (chave: data de atualização do modelo e versão da regra); a coleta incremental só relê o cartão quando o modelo muda. `foto.regra_maturidade` guarda a versão da regra. `foto.maturidade` traz as contagens por maturidade (Brasil e mundo, com e sem o maior publicador, por família de tarefa) e o número de modelos de cada maturidade que têm build nativo ou só GGUF.
+
+### 9.8 Escopo Brasil do modelo e recorte "Em português (global)"
+
+**Escopo do modelo.** O modelo é Brasil se vale uma destas condições, registrada em `origem_motivo` com a evidência em `origem_fonte` (url e trecho):
+
+| `origem_motivo` | condição |
+|---|---|
+| `publicador` | o publicador está no Brasil (regra B, seção 6) |
+| `desenvolvedor` | crédito (4.11) de papel `desenvolvedor` de laboratório ou instituição com `pais = BR`, com fonte; ou a linha de código-fonte do cartão do modelo aponta para o repositório de GitHub que o perfil de um publicador do Brasil declara como seu (o trecho do cartão fica em `origem_fonte`, com `credito: "pub:ID"`) |
+| `financiador` | crédito de papel `financiador` de laboratório ou instituição com `pais = BR`, com fonte |
+| `foco_pt_br` | idiomas só `pt` ou `pt` e `en`, sem marcador de português europeu, e: variante explícita no nome ou nas tags (`ptbr`, `pt-BR`, `Brazilian`, `brasil`); ou declaração literal do português do Brasil como alvo no cartão; ou declaração literal no artigo (arXiv) citado nas tags do modelo, do tipo "our efforts are mainly concerned with Brazilian Portuguese". O trecho e o link ficam em `origem_fonte` (`criterio`: `variante_explicita`, `declaracao` ou `artigo`) |
+
+Português único, sozinho, não basta. Marcador de português europeu (`ptpt`, `pt-PT`, `Portugal` no nome, `European Portuguese` ou `português europeu` no cartão) exclui o modelo da condição 3, e ele fica em Mundo. Papéis `parceiro` e `plataforma` não qualificam. Nunca por nome de pessoa. Modelo multilíngue que apenas inclui o português não entra. O publicador continua sendo atributo próprio (`publicador`, "hospedado por"). Quando valem várias condições, a ordem é a da tabela. Os créditos de cada modelo saem como `inst:ID:papel` ou `lab:ID:papel`, e cada instituição e laboratório traz `n_creditados` (total) e `n_creditados_papel` (por papel).
+
+**Idiomas.** Cada modelo traz `idiomas` (códigos ISO 639-1 do cartão) e `pt` (português entre eles).
+
+**Recorte "Em português (global)".** Modelos de qualquer origem com português declarado, de publicadores que ainda não estão no mapa, geradores ou codificadores até 12 B, sem adaptadores, com pelo menos 10.000 downloads em 30 dias ou 100 curtidas. Têm `recorte_pt: true`, escopo Mundo, e não entram nas contagens de Mundo (`foto.recorte_pt`); a interface os mostra só quando o recorte é ligado. Coleta com `coletar.py --global-pt` (incremental e retomável).
 
 ## 10. Texto, idiomas, licenças
 

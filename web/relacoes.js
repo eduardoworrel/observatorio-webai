@@ -39,8 +39,11 @@
   var porPub = {};
   var tem = function (p) { return porPub[p] || (porPub[p] = { inst: [], labs: [], rel: [], membro: [] }); };
   arr(D.publicadores).forEach(function (p) { var o = tem(p.id); o.inst = arr(p.instituicoes).slice(); o.labs = arr(p.labs).slice(); o.rel = arr(p.relacionados).slice(); o.membro = arr(p.membro_de).slice(); });
+  // financiador e credito, nao afiliacao: o vinculo de papel 'financiador' (coluna papel, ou tipo) nao entra na afiliacao nem atrai grupos no layout (le com tolerancia: sem o papel, como antes)
+  var financiador = {};
+  vinc.forEach(function (v) { if ((v.papel || v.tipo) === 'financiador') { var a = /^pub:(.*)$/.exec(v.de), b = /^(?:inst|lab):(.*)$/.exec(v.para); if (a && b) financiador[a[1] + '|' + b[1]] = true; } });
   vinc.forEach(function (v) {
-    var a = /^pub:(.*)$/.exec(v.de), b = /^(inst|lab):(.*)$/.exec(v.para); if (!a || !b) return; var o = tem(a[1]);
+    var a = /^pub:(.*)$/.exec(v.de), b = /^(inst|lab):(.*)$/.exec(v.para); if (!a || !b || financiador[a[1] + '|' + b[2]]) return; var o = tem(a[1]);
     if (b[1] === 'inst' && o.inst.indexOf(b[2]) < 0) o.inst.push(b[2]);
     if (b[1] === 'lab') { if (o.labs.indexOf(b[2]) < 0) o.labs.push(b[2]); var l = labBy[b[2]]; if (l && o.inst.indexOf(l.instituicao) < 0) o.inst.push(l.instituicao); }
   });
@@ -49,7 +52,7 @@
   Object.keys(porPub).forEach(function (p) { porPub[p].rel.forEach(function (q) { if (!vistos[p + '|' + q] && !vistos[q + '|' + p]) { vistos[p + '|' + q] = 1; pares.push([p, q]); } }); });
 
   window.MAPA_REL = {
-    disponivel: disponivel, fixture: !!fx, inst: inst, lab: lab, instBy: instBy, labBy: labBy, vinculos: vinc, pares: pares, porPub: porPub,
+    financiador: financiador, disponivel: disponivel, fixture: !!fx, inst: inst, lab: lab, instBy: instBy, labBy: labBy, vinculos: vinc, pares: pares, porPub: porPub,
     famDeTarefa: famDeTarefa, raiz: raiz, rot: rot,
     instDoPub: function (p) { return (porPub[p] || { inst: [] }).inst; }, labsDoPub: function (p) { return (porPub[p] || { labs: [] }).labs; },
     raizDoPub: function (p) { var l = (porPub[p] || { inst: [] }).inst; return l.length ? raiz(l[0]) : null; },

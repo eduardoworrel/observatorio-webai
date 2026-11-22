@@ -1,0 +1,29 @@
+/* Barra principal: "Roda no navegador?" e o chip Experimentais (so classes novas; layout geral em style.css) */
+.f-build{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;min-width:0}
+.f-build-q{font-size:var(--ctl-fs);color:var(--ink);font-weight:600;white-space:nowrap}
+.f-build .segmented{flex:0 1 auto;min-width:0}
+.f-build .segmented button{white-space:nowrap}
+.f-build-dica{flex:1 1 100%;margin:0;font-size:12px;line-height:1.35;color:var(--muted)}
+.exp-slot{display:inline-flex;max-width:100%}
+#foto .rec-n{margin-top:2px;font-size:.85em;opacity:.8}
+.exp-slot[hidden]{display:none}
+.chip-exp{display:inline-flex;align-items:center;gap:8px;height:var(--ctl-h);box-sizing:border-box;max-width:100%;padding:0 12px;border:1px dashed var(--accent);border-radius:var(--ctl-r);background:var(--paper);color:var(--ink);font:inherit;font-size:var(--ctl-fs);cursor:pointer;white-space:nowrap}
+.chip-exp:hover{background:var(--tint2)}
+.chip-exp:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.chip-exp i{flex:none;width:9px;height:9px;border-radius:50%;border:2px dashed var(--accent)}
+.chip-exp b{font-weight:600;color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.chip-exp.on{border-style:solid;background:var(--tint)}
+.chip-exp.on i{border-style:solid;background:var(--accent)}
+.capa-rot.cont{text-transform:none;letter-spacing:0;font-size:var(--ui-xs,13px);color:var(--muted)}
+.capa-rot.cont b{font-weight:600;color:var(--ink)}
+.badge.mat-e{border-style:dashed}
+.badge.mat-d{background:var(--tint);color:var(--accent-ink);border-color:transparent}
+@media(max-width:760px){
+  .f-build{flex-direction:column;flex-wrap:nowrap;align-items:stretch}
+  .f-build-dica{flex:0 0 auto}
+  .f-build .segmented{flex:none;width:100%;box-sizing:border-box}
+  .f-build .segmented button{padding:0 4px;font-size:12px;min-width:0}
+  .exp-slot{flex:1 1 auto}
+  .chip-exp{width:100%;justify-content:center;white-space:normal;height:auto;min-height:var(--ctl-h);padding:4px 10px;text-align:left}
+}
+.gv-papel{margin-top:8px}.gv-papel .gv-rot{display:block;margin-bottom:4px}#f-papel{flex-wrap:wrap}#f-papel button{white-space:nowrap}

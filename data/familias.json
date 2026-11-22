@@ -61,6 +61,16 @@
    ]
   },
   {
+   "id": "afm",
+   "nome": "AFM",
+   "modelos": [
+    "arcee-ai/AFM-4.5B"
+   ],
+   "publicadores": [
+    "arcee-ai"
+   ]
+  },
+  {
    "id": "agnews",
    "nome": "AgNews",
    "modelos": [
@@ -311,6 +321,27 @@
    ]
   },
   {
+   "id": "aya",
+   "nome": "aya",
+   "modelos": [
+    "CohereLabs/aya-expanse-8b",
+    "CohereLabs/aya-vision-8b"
+   ],
+   "publicadores": [
+    "CohereLabs"
+   ]
+  },
+  {
+   "id": "aya-23",
+   "nome": "aya-23",
+   "modelos": [
+    "CohereLabs/aya-23-8B"
+   ],
+   "publicadores": [
+    "CohereLabs"
+   ]
+  },
+  {
    "id": "banglabert",
    "nome": "banglabert",
    "modelos": [
@@ -336,6 +367,16 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "bekko",
+   "nome": "bekko",
+   "modelos": [
+    "hindsight-ai/hs-embed-1"
+   ],
+   "publicadores": [
+    "hindsight-ai"
    ]
   },
   {
@@ -366,12 +407,15 @@
     "pucpr/biobertpt-all",
     "pucpr/biobertpt-bio",
     "pucpr/biobertpt-clin",
-    "Venturus/mBERT-AnonyMED-BR-syn"
+    "Venturus/mBERT-AnonyMED-BR-syn",
+    "google-bert/bert-base-multilingual-cased",
+    "google-bert/bert-base-multilingual-uncased"
    ],
    "publicadores": [
     "alfaneo",
     "pucpr",
-    "Venturus"
+    "Venturus",
+    "google-bert"
    ]
   },
   {
@@ -526,10 +570,12 @@
    "nome": "bge",
    "modelos": [
     "cnmoro/portuguese-bge-m3",
-    "cnmoro/portuguese-en-bge-m3"
+    "cnmoro/portuguese-en-bge-m3",
+    "upskyy/bge-m3-korean"
    ],
    "publicadores": [
-    "cnmoro"
+    "cnmoro",
+    "upskyy"
    ]
   },
   {
@@ -572,6 +618,16 @@
    ],
    "publicadores": [
     "allenai"
+   ]
+  },
+  {
+   "id": "bielik",
+   "nome": "Bielik",
+   "modelos": [
+    "speakleash/Bielik-11B-v3.0-Instruct"
+   ],
+   "publicadores": [
+    "speakleash"
    ]
   },
   {
@@ -654,12 +710,21 @@
    ]
   },
   {
+   "id": "biomistral",
+   "nome": "BioMistral",
+   "modelos": [
+    "MaziyarPanahi/BioMistral-7B-GGUF"
+   ],
+   "publicadores": [
+    "MaziyarPanahi"
+   ]
+  },
+  {
    "id": "bitnet",
    "nome": "bitnet",
    "modelos": [
     "microsoft/bitnet-b1.58-2B-4T",
     "microsoft/bitnet-b1.58-2B-4T-bf16",
-    "microsoft/bitnet-b1.58-2B-4T-gguf",
     "microsoft/bitnet-embedding-0.6b",
     "microsoft/bitnet-embedding-270m"
    ],
@@ -684,13 +749,29 @@
     "joaoalvarenga/bloom-8bit",
     "nicholasKluge/Aira-2-portuguese-1B7",
     "nicholasKluge/Aira-2-portuguese-560M",
+    "bigscience/bloom-1b7",
+    "bigscience/bloom-560m",
+    "bigscience/bloom-7b1",
     "microsoft/bloom-deepspeed-inference-fp16",
     "microsoft/bloom-deepspeed-inference-int8"
    ],
    "publicadores": [
     "joaoalvarenga",
     "nicholasKluge",
+    "bigscience",
     "microsoft"
+   ]
+  },
+  {
+   "id": "bloomz",
+   "nome": "bloomz",
+   "modelos": [
+    "bigscience/bloomz-560m",
+    "bigscience/bloomz-7b1",
+    "bigscience/bloomz-7b1-mt"
+   ],
+   "publicadores": [
+    "bigscience"
    ]
   },
   {
@@ -746,6 +827,17 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "c4",
+   "nome": "c4",
+   "modelos": [
+    "CohereLabs/c4ai-command-r7b-12-2024",
+    "CohereLabs/c4ai-command-r7b-arabic-02-2025"
+   ],
+   "publicadores": [
+    "CohereLabs"
    ]
   },
   {
@@ -1057,18 +1149,22 @@
    "id": "d1",
    "nome": "d1",
    "modelos": [
-    "LiquidAI/d1-2B-MLX-4bit",
-    "LiquidAI/d1-2B-MLX-8bit",
-    "LiquidAI/d1-2B-MLX-fp16",
-    "LiquidAI/d1-3B-MLX-4bit",
-    "LiquidAI/d1-3B-MLX-8bit",
     "LiquidAI/d1-3B-MLX-fp16",
     "LiquidAI/d1-3B-w8a8",
-    "LiquidAI/d1-omni-600M-MLX-8bit",
     "LiquidAI/d1-omni-600M-MLX-fp16"
    ],
    "publicadores": [
     "LiquidAI"
+   ]
+  },
+  {
+   "id": "darkidol",
+   "nome": "DarkIdol",
+   "modelos": [
+    "aifeifei798/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored"
+   ],
+   "publicadores": [
+    "aifeifei798"
    ]
   },
   {
@@ -1348,6 +1444,20 @@
    ]
   },
   {
+   "id": "distilbert-multilingual",
+   "nome": "distilbert-multilingual",
+   "modelos": [
+    "distilbert/distilbert-base-multilingual-cased",
+    "lxyuan/distilbert-base-multilingual-cased-sentiments-student",
+    "tabularisai/multilingual-sentiment-analysis"
+   ],
+   "publicadores": [
+    "distilbert",
+    "lxyuan",
+    "tabularisai"
+   ]
+  },
+  {
    "id": "distilgpt2",
    "nome": "distilgpt2",
    "modelos": [
@@ -1365,6 +1475,17 @@
    ],
    "publicadores": [
     "adalbertojunior"
+   ]
+  },
+  {
+   "id": "distiluse-multilingual",
+   "nome": "distiluse-multilingual",
+   "modelos": [
+    "sentence-transformers/distiluse-base-multilingual-cased-v1",
+    "sentence-transformers/distiluse-base-multilingual-cased-v2"
+   ],
+   "publicadores": [
+    "sentence-transformers"
    ]
   },
   {
@@ -1487,10 +1608,12 @@
    "id": "embeddinggemma",
    "nome": "embeddinggemma",
    "modelos": [
-    "google/embeddinggemma-300m"
+    "google/embeddinggemma-300m",
+    "tardellirs/colibri-embed-ptbr"
    ],
    "publicadores": [
-    "google"
+    "google",
+    "tardellirs"
    ]
   },
   {
@@ -1528,13 +1651,59 @@
    ]
   },
   {
+   "id": "eurobert",
+   "nome": "EuroBERT",
+   "modelos": [
+    "EuroBERT/EuroBERT-210m"
+   ],
+   "publicadores": [
+    "EuroBERT"
+   ]
+  },
+  {
+   "id": "eurollm",
+   "nome": "EuroLLM",
+   "modelos": [
+    "utter-project/EuroLLM-1.7B-Instruct",
+    "utter-project/EuroLLM-9B",
+    "utter-project/EuroLLM-9B-Instruct"
+   ],
+   "publicadores": [
+    "utter-project"
+   ]
+  },
+  {
+   "id": "f2",
+   "nome": "F2",
+   "modelos": [
+    "codefuse-ai/F2LLM-v2-0.6B",
+    "codefuse-ai/F2LLM-v2-4B",
+    "codefuse-ai/F2LLM-v2-80M"
+   ],
+   "publicadores": [
+    "codefuse-ai"
+   ]
+  },
+  {
+   "id": "falcon",
+   "nome": "falcon",
+   "modelos": [
+    "tiiuae/falcon-11B"
+   ],
+   "publicadores": [
+    "tiiuae"
+   ]
+  },
+  {
    "id": "falcon3",
    "nome": "Falcon3",
    "modelos": [
-    "mlboydaisuke/Falcon3-3B-Instruct-LiteRT"
+    "mlboydaisuke/Falcon3-3B-Instruct-LiteRT",
+    "tiiuae/Falcon3-7B-Instruct"
    ],
    "publicadores": [
-    "mlboydaisuke"
+    "mlboydaisuke",
+    "tiiuae"
    ]
   },
   {
@@ -1672,7 +1841,6 @@
     "rhaymison/gemma-portuguese-tom-cat-2b-it",
     "google/gemma-2b",
     "google/gemma-2b-aps-it",
-    "google/gemma-2b-AWQ",
     "google/gemma-2b-cpp",
     "google/gemma-2b-flax",
     "google/gemma-2b-it",
@@ -1691,7 +1859,6 @@
     "google/gemma-3n-E4B-it-litert-lm",
     "google/gemma-7b",
     "google/gemma-7b-aps-it",
-    "google/gemma-7b-AWQ",
     "google/gemma-7b-cpp",
     "google/gemma-7b-flax",
     "google/gemma-7b-it",
@@ -1748,11 +1915,13 @@
     "google/gemma-2-9b-it-pytorch",
     "google/gemma-2-9b-keras",
     "google/gemma-2-9b-pytorch",
-    "google/gemma-2-instruct-9b-keras"
+    "google/gemma-2-instruct-9b-keras",
+    "Unbabel/Tower-Plus-9B"
    ],
    "publicadores": [
     "lucianosb",
-    "google"
+    "google",
+    "Unbabel"
    ]
   },
   {
@@ -1836,10 +2005,8 @@
     "google/gemma-3-270m",
     "google/gemma-3-270m-it",
     "google/gemma-3-4b-it",
-    "google/gemma-3-4b-it-qat-q4_0-gguf",
     "google/gemma-3-4b-pt-qat-q4_0-gguf",
     "google/shieldgemma-2-4b-it",
-    "mlboydaisuke/gemma-3-270m-it-NPU-LiteRT",
     "nvidia/Nemotron-3-Content-Safety",
     "nvidia/Nemotron-Content-Safety-Reasoning-4B",
     "sallani/PrivaMesh-Edge"
@@ -1849,7 +2016,6 @@
     "g-assismoraes",
     "Guilherme34",
     "google",
-    "mlboydaisuke",
     "nvidia",
     "sallani"
    ]
@@ -1873,24 +2039,20 @@
     "google/gemma-4-E2B",
     "google/gemma-4-E2B-it",
     "google/gemma-4-E2B-it-assistant",
-    "google/gemma-4-E2B-it-qat-q4_0-gguf",
     "google/gemma-4-E2B-it-qat-q4_0-unquantized",
     "google/gemma-4-E2B-it-qat-w4a16-ct",
     "google/gemma-4-E4B",
     "google/gemma-4-E4B-it",
     "google/gemma-4-E4B-it-assistant",
     "google/gemma-4-E4B-it-qat-mobile-ct",
-    "google/gemma-4-E4B-it-qat-q4_0-gguf",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized",
     "google/gemma-4-E4B-it-qat-q4_0-unquantized-assistant",
     "google/gemma-4-E4B-it-qat-w4a16-ct",
-    "mlboydaisuke/gemma-4-E2B-it-litert-lm-rope-composite",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16"
    ],
    "publicadores": [
     "Guilherme34",
     "google",
-    "mlboydaisuke",
     "nvidia"
    ]
   },
@@ -1945,11 +2107,20 @@
    "nome": "gervasio",
    "modelos": [
     "PORTULAN/gervasio-7b-portuguese-ptbr-decoder",
-    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder",
-    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder-quantized-4bit"
+    "PORTULAN/gervasio-7b-portuguese-ptpt-decoder"
    ],
    "publicadores": [
     "PORTULAN"
+   ]
+  },
+  {
+   "id": "ghost",
+   "nome": "ghost",
+   "modelos": [
+    "ghost-x/ghost-8b-beta-1608"
+   ],
+   "publicadores": [
+    "ghost-x"
    ]
   },
   {
@@ -2006,6 +2177,16 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "gliner2",
+   "nome": "gliner2",
+   "modelos": [
+    "fastino/gliner2-privacy-filter-PII-multi"
+   ],
+   "publicadores": [
+    "fastino"
    ]
   },
   {
@@ -2076,14 +2257,12 @@
     "cnmoro/prompt-router",
     "ibm-granite/granite-3b-code-base-128k",
     "ibm-granite/granite-3b-code-base-2k",
-    "ibm-granite/granite-3b-code-base-2k-GGUF",
     "ibm-granite/granite-3b-code-instruct-128k",
     "ibm-granite/granite-3b-code-instruct-2k",
     "ibm-granite/granite-7b-base",
     "ibm-granite/granite-7b-instruct",
     "ibm-granite/granite-8b-code-base-128k",
     "ibm-granite/granite-8b-code-base-4k",
-    "ibm-granite/granite-8b-code-base-4k-GGUF",
     "ibm-granite/granite-8b-code-instruct-128k",
     "ibm-granite/granite-8b-code-instruct-4k",
     "ibm-granite/granite-docling-258M",
@@ -2262,12 +2441,9 @@
     "ibm-granite/granite-4.2-3b-fp8",
     "ibm-granite/granite-4.2-3b-mxfp4",
     "ibm-granite/granite-4.2-3b-nvfp4",
-    "ibm-granite/granite-4.2-3b-q4-mlx",
-    "ibm-granite/granite-4.2-3b-q8-mlx",
     "ibm-granite/granite-4.2-8b-fp8",
     "ibm-granite/granite-4.2-8b-mxfp4",
-    "ibm-granite/granite-4.2-8b-nvfp4",
-    "ibm-granite/granite-4.2-8b-q4-mlx"
+    "ibm-granite/granite-4.2-8b-nvfp4"
    ],
    "publicadores": [
     "ibm-granite"
@@ -2298,9 +2474,12 @@
    "id": "gte",
    "nome": "gte",
    "modelos": [
+    "Alibaba-NLP/gte-multilingual-base",
+    "Alibaba-NLP/gte-multilingual-reranker-base",
     "Xenova/gte-small"
    ],
    "publicadores": [
+    "Alibaba-NLP",
     "Xenova"
    ]
   },
@@ -2452,6 +2631,16 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "helium-1",
+   "nome": "helium-1",
+   "modelos": [
+    "kyutai/helium-1-preview-2b"
+   ],
+   "publicadores": [
+    "kyutai"
    ]
   },
   {
@@ -2632,6 +2821,16 @@
    ]
   },
   {
+   "id": "jev",
+   "nome": "Jev",
+   "modelos": [
+    "chaoliangUNSW/Jev-Style-0.8B-Decision-v3-GGUF"
+   ],
+   "publicadores": [
+    "chaoliangUNSW"
+   ]
+  },
+  {
    "id": "jeva",
    "nome": "Jeva",
    "modelos": [
@@ -2639,6 +2838,17 @@
    ],
    "publicadores": [
     "Guilherme34"
+   ]
+  },
+  {
+   "id": "jina",
+   "nome": "jina",
+   "modelos": [
+    "jinaai/jina-embeddings-v3",
+    "jinaai/jina-embeddings-v3-hf"
+   ],
+   "publicadores": [
+    "jinaai"
    ]
   },
   {
@@ -2723,6 +2933,26 @@
    ]
   },
   {
+   "id": "labse",
+   "nome": "LaBSE",
+   "modelos": [
+    "sentence-transformers/LaBSE"
+   ],
+   "publicadores": [
+    "sentence-transformers"
+   ]
+  },
+  {
+   "id": "laya",
+   "nome": "laya",
+   "modelos": [
+    "convaiinnovations/laya-multilingual"
+   ],
+   "publicadores": [
+    "convaiinnovations"
+   ]
+  },
+  {
    "id": "layer",
    "nome": "layer",
    "modelos": [
@@ -2752,6 +2982,16 @@
    ],
    "publicadores": [
     "pierreguillou"
+   ]
+  },
+  {
+   "id": "lealla",
+   "nome": "LEALLA",
+   "modelos": [
+    "setu4993/LEALLA-base"
+   ],
+   "publicadores": [
+    "setu4993"
    ]
   },
   {
@@ -2831,69 +3071,32 @@
    "nome": "LFM2.5",
    "modelos": [
     "Guilherme34/LFM2.5-2.6B-Abliterated-Advanced",
-    "daveycodez/LFM2.5-1.2B-Thinking-Web-ONNX",
-    "daveycodez/LFM2.5-1.2B-Web-ONNX",
     "LiquidAI/d1-3B",
     "LiquidAI/d1-omni-600M",
     "LiquidAI/LFM2.5-1.2B-Base",
     "LiquidAI/LFM2.5-1.2B-Instruct",
     "LiquidAI/LFM2.5-1.2B-Instruct-DSpark",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-Instruct-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-Instruct-MLX-bf16",
     "LiquidAI/LFM2.5-1.2B-JP",
     "LiquidAI/LFM2.5-1.2B-JP-202606",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-JP-202606-MLX-8bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-JP-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-JP-MLX-bf16",
     "LiquidAI/LFM2.5-1.2B-Thinking",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-4bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-5bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-6bit",
-    "LiquidAI/LFM2.5-1.2B-Thinking-MLX-8bit",
     "LiquidAI/LFM2.5-1.2B-Thinking-MLX-bf16",
     "LiquidAI/LFM2.5-2.6B",
     "LiquidAI/LFM2.5-2.6B-Base",
     "LiquidAI/LFM2.5-2.6B-DSpark",
     "LiquidAI/LFM2.5-2.6B-MLX",
-    "LiquidAI/LFM2.5-2.6B-MLX-4bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-5bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-6bit",
-    "LiquidAI/LFM2.5-2.6B-MLX-8bit",
     "LiquidAI/LFM2.5-2.6B-MLX-bf16",
-    "LiquidAI/LFM2.5-2.6B-MLX-mxfp4",
-    "LiquidAI/LFM2.5-2.6B-MLX-mxfp8",
-    "LiquidAI/LFM2.5-2.6B-MLX-nvfp4",
     "LiquidAI/LFM2.5-230M",
     "LiquidAI/LFM2.5-230M-Base",
-    "LiquidAI/LFM2.5-230M-MLX-4bit",
-    "LiquidAI/LFM2.5-230M-MLX-5bit",
-    "LiquidAI/LFM2.5-230M-MLX-6bit",
-    "LiquidAI/LFM2.5-230M-MLX-8bit",
     "LiquidAI/LFM2.5-230M-MLX-bf16",
     "LiquidAI/LFM2.5-24B-A2B-DSpark",
     "LiquidAI/LFM2.5-350M",
     "LiquidAI/LFM2.5-350M-Base",
-    "LiquidAI/LFM2.5-350M-MLX-4bit",
-    "LiquidAI/LFM2.5-350M-MLX-5bit",
-    "LiquidAI/LFM2.5-350M-MLX-6bit",
-    "LiquidAI/LFM2.5-350M-MLX-8bit",
     "LiquidAI/LFM2.5-350M-MLX-bf16",
     "LiquidAI/LFM2.5-8B-A1B",
     "LiquidAI/LFM2.5-8B-A1B-Base",
     "LiquidAI/LFM2.5-8B-A1B-DSpark",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-4bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-5bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-6bit",
-    "LiquidAI/LFM2.5-8B-A1B-MLX-8bit",
     "LiquidAI/LFM2.5-8B-A1B-MLX-bf16",
     "LiquidAI/LFM2.5-Audio-1.5B-GGUF",
     "LiquidAI/LFM2.5-Audio-1.5B-GGUF-LEAP",
@@ -2910,22 +3113,12 @@
     "LiquidAI/LFM2.5-VL-1.6B-Extract",
     "LiquidAI/LFM2.5-VL-3B",
     "LiquidAI/LFM2.5-VL-3B-DSpark",
-    "LiquidAI/LFM2.5-VL-3B-MLX-4bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-5bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-6bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-8bit",
-    "LiquidAI/LFM2.5-VL-3B-MLX-bf16",
     "LiquidAI/LFM2.5-VL-450M",
     "LiquidAI/LFM2.5-VL-450M-Extract",
-    "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-5bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-6bit",
-    "LiquidAI/LFM2.5-VL-450M-MLX-8bit",
     "LiquidAI/LFM2.5-VL-450M-MLX-bf16"
    ],
    "publicadores": [
     "Guilherme34",
-    "daveycodez",
     "LiquidAI"
    ]
   },
@@ -2933,37 +3126,22 @@
    "id": "lfm3",
    "nome": "LFM3",
    "modelos": [
-    "daveycodez/LFM3-1.7B-Web-ONNX",
     "LiquidAI/d1-2B",
     "LiquidAI/LFM3-1.7B",
     "LiquidAI/LFM3-1.7B-Base",
     "LiquidAI/LFM3-1.7B-FP8",
-    "LiquidAI/LFM3-1.7B-MLX-4bit",
-    "LiquidAI/LFM3-1.7B-MLX-5bit",
-    "LiquidAI/LFM3-1.7B-MLX-6bit",
-    "LiquidAI/LFM3-1.7B-MLX-8bit",
-    "LiquidAI/LFM3-1.7B-MLX-bf16",
     "LiquidAI/LFM3-1.7B-NVFP4",
     "LiquidAI/LFM3-Audio-2B",
-    "LiquidAI/LFM3-Audio-2B-MLX-4bit",
-    "LiquidAI/LFM3-Audio-2B-MLX-8bit",
-    "LiquidAI/LFM3-Audio-2B-MLX-bf16",
     "LiquidAI/LFM3-Omni-2B",
-    "LiquidAI/LFM3-Omni-2B-MLX-4bit",
-    "LiquidAI/LFM3-Omni-2B-MLX-8bit",
-    "LiquidAI/LFM3-Omni-2B-MLX-bf16",
     "LiquidAI/LFM3-VL-2B",
     "LiquidAI/LFM3-VL-2B-FP8",
-    "LiquidAI/LFM3-VL-2B-MLX-4bit",
-    "LiquidAI/LFM3-VL-2B-MLX-5bit",
-    "LiquidAI/LFM3-VL-2B-MLX-6bit",
-    "LiquidAI/LFM3-VL-2B-MLX-8bit",
-    "LiquidAI/LFM3-VL-2B-MLX-bf16",
-    "LiquidAI/LFM3-VL-2B-NVFP4"
+    "LiquidAI/LFM3-VL-2B-NVFP4",
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-GGUF",
+    "Vortecks/LFM3-1.7B-Heretic-Abliterated-i1-GGUF"
    ],
    "publicadores": [
-    "daveycodez",
-    "LiquidAI"
+    "LiquidAI",
+    "Vortecks"
    ]
   },
   {
@@ -2974,6 +3152,16 @@
    ],
    "publicadores": [
     "mistralai"
+   ]
+  },
+  {
+   "id": "lightonocr-2",
+   "nome": "LightOnOCR-2",
+   "modelos": [
+    "lightonai/LightOnOCR-2-1B"
+   ],
+   "publicadores": [
+    "lightonai"
    ]
   },
   {
@@ -3125,6 +3313,7 @@
     "c2d-usp/llama_3.1_8b_instruct_tuned_alpaca_gpt4_full",
     "Guilherme34/ArliAI-RPMax-Formax-v1",
     "recogna-nlp/Bode-3.1-8B-Instruct-full",
+    "akjindal53244/Llama-3.1-Storm-8B",
     "allenai/Llama-3.1-70B-Instruct-RM-RB2",
     "allenai/Llama-3.1-8B-Base-RM-RB2",
     "allenai/Llama-3.1-8B-Instruct-RM-RB2",
@@ -3146,12 +3335,14 @@
     "allenai/Llama-3.1-Tulu-3-8B-SFT-no-wildchat-data",
     "allenai/Llama-3.1-Tulu-3-8B-SFT-RM-RB2",
     "allenai/Llama-3.1-Tulu-3.1-8B",
+    "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
     "meta-llama/Llama-3.1-8B",
     "meta-llama/Llama-3.1-8B-Instruct",
     "meta-llama/Llama-Guard-3-8B",
     "microsoft/HARC-Llama-3.1-8B-Instruct",
     "microsoft/UserLM-2.0",
     "microsoft/UserLM-8b",
+    "mobilint/Llama-3.1-8B-Instruct",
     "nvidia/DLER-Llama-Nemotron-8B-Merge-Research",
     "nvidia/Llama-3.1-8B-Instruct-FP8",
     "nvidia/Llama-3.1-8B-Instruct-NVFP4",
@@ -3168,18 +3359,30 @@
     "nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1-mcore",
     "nvidia/Llama-3.1-Nemotron-Safety-Guard-8B-v3",
     "nvidia/OpenMath2-Llama3.1-8B",
-    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder"
+    "PORTULAN/gervasio-8b-portuguese-ptpt-decoder",
+    "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
+    "RedHatAI/Meta-Llama-3.1-8B-FP8",
+    "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
+    "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
+    "unsloth/Llama-3.1-8B-Instruct",
+    "VAGOsolutions/Llama-3.1-SauerkrautLM-8b-Instruct"
    ],
    "publicadores": [
     "ai-eldorado",
     "c2d-usp",
     "Guilherme34",
     "recogna-nlp",
+    "akjindal53244",
     "allenai",
+    "AtlaAI",
     "meta-llama",
     "microsoft",
+    "mobilint",
     "nvidia",
-    "PORTULAN"
+    "PORTULAN",
+    "RedHatAI",
+    "unsloth",
+    "VAGOsolutions"
    ]
   },
   {
@@ -3278,8 +3481,15 @@
     "meta-llama/Llama-3.2-3B-Instruct",
     "meta-llama/Llama-3.2-3B-Instruct-QLORA_INT4_EO8",
     "meta-llama/Llama-3.2-3B-Instruct-SpinQuant_INT4_EO8",
-    "mlboydaisuke/Llama-3.2-3B-Instruct-LiteRT",
-    "nvidia/llama-nv-embed-reasoning-3b"
+    "mlx-community/Llama-3.2-1B-Instruct-4bit",
+    "mlx-community/Llama-3.2-3B-Instruct-4bit",
+    "mobilint/Llama-3.2-1B-Instruct",
+    "mobilint/Llama-3.2-3B-Instruct",
+    "NousResearch/Llama-3.2-1B",
+    "nvidia/llama-nv-embed-reasoning-3b",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8-dynamic",
+    "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic"
    ],
    "publicadores": [
     "artificialguybr",
@@ -3287,17 +3497,22 @@
     "Guilherme34",
     "HuggingFaceTB",
     "meta-llama",
-    "mlboydaisuke",
-    "nvidia"
+    "mlx-community",
+    "mobilint",
+    "NousResearch",
+    "nvidia",
+    "RedHatAI"
    ]
   },
   {
    "id": "llama-3.3",
    "nome": "Llama-3.3",
    "modelos": [
+    "DavidAU/Llama3.3-8B-Instruct-Thinking-Claude-4.5-Opus-High-Reasoning",
     "nvidia/Llama-3.3-70B-Instruct-Eagle3"
    ],
    "publicadores": [
+    "DavidAU",
     "nvidia"
    ]
   },
@@ -3573,11 +3788,15 @@
     "g-assismoraes/mdeberta-semeval25_thresh07_fold5",
     "g-assismoraes/mdeberta-semeval25task10",
     "g-assismoraes/mdeberta-semeval25task10-domain",
-    "microsoft/mdeberta-v3-base"
+    "microsoft/mdeberta-v3-base",
+    "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7",
+    "timpal0l/mdeberta-v3-base-squad2"
    ],
    "publicadores": [
     "g-assismoraes",
-    "microsoft"
+    "microsoft",
+    "MoritzLaurer",
+    "timpal0l"
    ]
   },
   {
@@ -3632,7 +3851,9 @@
     "allenai/llama-3-tulu-2-8b",
     "meta-llama/Meta-Llama-3-8B",
     "meta-llama/Meta-Llama-3-8B-Instruct",
-    "meta-llama/Meta-Llama-Guard-2-8B"
+    "meta-llama/Meta-Llama-Guard-2-8B",
+    "NousResearch/Meta-Llama-3.1-8B",
+    "NousResearch/Meta-Llama-3.1-8B-Instruct"
    ],
    "publicadores": [
     "ai-eldorado",
@@ -3641,7 +3862,18 @@
     "rhaymison",
     "semantixai",
     "allenai",
-    "meta-llama"
+    "meta-llama",
+    "NousResearch"
+   ]
+  },
+  {
+   "id": "mhubert-147",
+   "nome": "mHuBERT-147",
+   "modelos": [
+    "utter-project/mHuBERT-147"
+   ],
+   "publicadores": [
+    "utter-project"
    ]
   },
   {
@@ -3700,6 +3932,7 @@
    "id": "ministral-3",
    "nome": "Ministral-3",
    "modelos": [
+    "bartowski/mistralai_Ministral-3-3B-Instruct-2512-GGUF",
     "mistralai/Ministral-3-3B-Instruct-2512-GGUF",
     "mistralai/Ministral-3-3B-Instruct-2512-ONNX",
     "mistralai/Ministral-3-3B-Reasoning-2512-GGUF",
@@ -3710,6 +3943,7 @@
     "nvidia/Nemotron-3.5-Rerank-8B-BF16"
    ],
    "publicadores": [
+    "bartowski",
     "mistralai",
     "nvidia"
    ]
@@ -3743,7 +3977,6 @@
     "rhaymison/Mistral-portuguese-luana-7b-chat",
     "rhaymison/Mistral-portuguese-luana-7b-Mathematics",
     "rhaymison/Mistral-portuguese-luana-7b-mental-health",
-    "microsoft/mistral-7b-instruct-v0.2-ONNX",
     "microsoft/Sentiment-Analysis-7B",
     "mistralai/Mistral-7B-Instruct-v0.1",
     "mistralai/Mistral-7B-Instruct-v0.2",
@@ -3772,6 +4005,16 @@
    ]
   },
   {
+   "id": "mmbert",
+   "nome": "mmBERT",
+   "modelos": [
+    "hindsight-ai/hs-rerank-1"
+   ],
+   "publicadores": [
+    "hindsight-ai"
+   ]
+  },
+  {
    "id": "mminilm",
    "nome": "mMiniLM",
    "modelos": [
@@ -3785,6 +4028,16 @@
    ],
    "publicadores": [
     "unicamp-dl"
+   ]
+  },
+  {
+   "id": "mminilmv2",
+   "nome": "mMiniLMv2",
+   "modelos": [
+    "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
+   ],
+   "publicadores": [
+    "cross-encoder"
    ]
   },
   {
@@ -3916,14 +4169,21 @@
    "modelos": [
     "cnmoro/multilingual-e5-small-distilled-16m",
     "cnmoro/portuguese-multilingual-e5-small",
+    "Hiveurban/multilingual-e5-base",
     "HuggingFaceTB/finemath-classifier",
+    "intfloat/multilingual-e5-base",
+    "intfloat/multilingual-e5-large",
+    "intfloat/multilingual-e5-large-instruct",
+    "intfloat/multilingual-e5-small",
     "microsoft/Multilingual-MiniLM-L12-H384",
     "nvidia/multilingual-domain-classifier",
     "Xenova/multilingual-e5-small"
    ],
    "publicadores": [
     "cnmoro",
+    "Hiveurban",
     "HuggingFaceTB",
+    "intfloat",
     "microsoft",
     "nvidia",
     "Xenova"
@@ -3948,6 +4208,17 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "mxbai",
+   "nome": "mxbai",
+   "modelos": [
+    "mixedbread-ai/mxbai-rerank-base-v2",
+    "mixedbread-ai/mxbai-rerank-large-v2"
+   ],
+   "publicadores": [
+    "mixedbread-ai"
    ]
   },
   {
@@ -4091,11 +4362,13 @@
    "modelos": [
     "pierreguillou/ner-bert-base-cased-pt-lenerbr",
     "pierreguillou/ner-bert-large-cased-pt-lenerbr",
-    "Venturus/BERTimbau-AnonyMED-BR"
+    "Venturus/BERTimbau-AnonyMED-BR",
+    "celiudos/legal-bert-lgpd"
    ],
    "publicadores": [
     "pierreguillou",
-    "Venturus"
+    "Venturus",
+    "celiudos"
    ]
   },
   {
@@ -4119,10 +4392,12 @@
     "cnmoro/static-nomic-384-pten-v2-st",
     "cnmoro/static-nomic-eng-ptbr",
     "cnmoro/static-nomic-eng-ptbr-large",
-    "cnmoro/static-nomic-eng-ptbr-tiny"
+    "cnmoro/static-nomic-eng-ptbr-tiny",
+    "nomic-ai/nomic-embed-text-v2-moe"
    ],
    "publicadores": [
-    "cnmoro"
+    "cnmoro",
+    "nomic-ai"
    ]
   },
   {
@@ -4135,6 +4410,16 @@
    ],
    "publicadores": [
     "Itau-Unibanco"
+   ]
+  },
+  {
+   "id": "north-vision",
+   "nome": "North-Vision",
+   "modelos": [
+    "CohereLabs/North-Micro-Vision-Instruct"
+   ],
+   "publicadores": [
+    "CohereLabs"
    ]
   },
   {
@@ -4160,7 +4445,6 @@
     "nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
     "nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8",
-    "nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
     "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-DFlash",
@@ -4168,7 +4452,6 @@
     "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DSpark",
     "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
-    "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF",
     "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
     "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD",
     "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
@@ -4194,6 +4477,16 @@
    ],
    "publicadores": [
     "nvidia"
+   ]
+  },
+  {
+   "id": "olala",
+   "nome": "Olala",
+   "modelos": [
+    "OVHaiLLM/Olala-v1.0-mini-7A1B"
+   ],
+   "publicadores": [
+    "OVHaiLLM"
    ]
   },
   {
@@ -4303,7 +4596,6 @@
     "allenai/OLMoE-1B-7B-0125",
     "allenai/OLMoE-1B-7B-0125-DPO",
     "allenai/OLMoE-1B-7B-0125-Instruct",
-    "allenai/OLMoE-1B-7B-0125-Instruct-GGUF",
     "allenai/OLMoE-1B-7B-0125-SFT",
     "allenai/OLMoE-1B-7B-0924",
     "allenai/OLMoE-1B-7B-0924-Instruct",
@@ -4625,9 +4917,12 @@
    "id": "paraphrase",
    "nome": "paraphrase",
    "modelos": [
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
     "Xenova/paraphrase-multilingual-MiniLM-L12-v2"
    ],
    "publicadores": [
+    "sentence-transformers",
     "Xenova"
    ]
   },
@@ -4687,9 +4982,7 @@
     "microsoft/Phi-3-mini-128k-instruct",
     "microsoft/Phi-3-mini-128k-instruct-onnx",
     "microsoft/Phi-3-mini-4k-instruct",
-    "microsoft/Phi-3-mini-4k-instruct-gguf",
     "microsoft/Phi-3-mini-4k-instruct-onnx",
-    "microsoft/Phi-3-mini-4k-instruct-onnx-web",
     "microsoft/Phi-3-small-128k-instruct",
     "microsoft/Phi-3-small-8k-instruct",
     "microsoft/Phi-3-small-8k-instruct-onnx-cuda",
@@ -4715,7 +5008,6 @@
     "microsoft/MediPhi-MedWiki",
     "microsoft/MediPhi-PubMed",
     "microsoft/Phi-3.5-mini-instruct",
-    "microsoft/Phi-3.5-mini-instruct-onnx",
     "microsoft/Phi-3.5-vision-instruct"
    ],
    "publicadores": [
@@ -4815,6 +5107,18 @@
    ],
    "publicadores": [
     "ufca-llms"
+   ]
+  },
+  {
+   "id": "privacy",
+   "nome": "privacy",
+   "modelos": [
+    "OpenMed/privacy-filter-multilingual",
+    "OpenMed/privacy-filter-multilingual-v2",
+    "OpenMed/privacy-filter-nemotron-v2"
+   ],
+   "publicadores": [
+    "OpenMed"
    ]
   },
   {
@@ -4996,22 +5300,13 @@
     "nvidia/VideoITG-8B",
     "Qwen/Qwen2-0.5B",
     "Qwen/Qwen2-0.5B-Instruct",
-    "Qwen/Qwen2-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-0.5B-Instruct-MLX",
     "Qwen/Qwen2-1.5B",
     "Qwen/Qwen2-1.5B-Instruct",
-    "Qwen/Qwen2-1.5B-Instruct-AWQ",
     "Qwen/Qwen2-1.5B-Instruct-GGUF",
-    "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-1.5B-Instruct-MLX",
     "Qwen/Qwen2-7B",
     "Qwen/Qwen2-7B-Instruct",
-    "Qwen/Qwen2-7B-Instruct-AWQ",
-    "Qwen/Qwen2-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-7B-Instruct-MLX",
     "Qwen/Qwen2-Math-1.5B",
     "Qwen/Qwen2-Math-1.5B-Instruct",
@@ -5019,14 +5314,8 @@
     "Qwen/Qwen2-Math-7B-Instruct",
     "Qwen/Qwen2-VL-2B",
     "Qwen/Qwen2-VL-2B-Instruct",
-    "Qwen/Qwen2-VL-2B-Instruct-AWQ",
-    "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2-VL-7B",
-    "Qwen/Qwen2-VL-7B-Instruct",
-    "Qwen/Qwen2-VL-7B-Instruct-AWQ",
-    "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int8"
+    "Qwen/Qwen2-VL-7B-Instruct"
    ],
    "publicadores": [
     "artificialguybr",
@@ -5110,12 +5399,12 @@
     "allenai/olmOCR-7B-0725-FP8",
     "allenai/olmOCR-7B-0825",
     "allenai/olmOCR-7B-0825-FP8",
+    "livekit/turn-detector",
     "microsoft/GUI-Actor-3B-Qwen2.5-VL",
     "microsoft/GUI-Actor-7B-Qwen2.5-VL",
     "microsoft/HARC-Qwen2.5-7B-Instruct",
     "microsoft/NextCoder-7B",
     "microsoft/X-Reasoner-7B",
-    "mlboydaisuke/Qwen2.5-3B-Instruct-LiteRT",
     "nvidia/Cosmos-Reason1-7B",
     "nvidia/CUDA-Autocomplete",
     "nvidia/Eagle2-1B",
@@ -5136,45 +5425,21 @@
     "nvidia/Qwen2.5-VL-7B-Surg-CholecT50",
     "Qwen/Qwen2.5-0.5B",
     "Qwen/Qwen2.5-0.5B-Instruct",
-    "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-1.5B",
     "Qwen/Qwen2.5-1.5B-Instruct",
-    "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-3B",
     "Qwen/Qwen2.5-3B-Instruct",
-    "Qwen/Qwen2.5-3B-Instruct-AWQ",
-    "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-7B",
     "Qwen/Qwen2.5-7B-Instruct",
     "Qwen/Qwen2.5-7B-Instruct-1M",
-    "Qwen/Qwen2.5-7B-Instruct-AWQ",
-    "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-0.5B",
     "Qwen/Qwen2.5-Coder-0.5B-Instruct",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-0.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-1.5B",
     "Qwen/Qwen2.5-Coder-1.5B-Instruct",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-1.5B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-3B",
     "Qwen/Qwen2.5-Coder-3B-Instruct",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-3B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Coder-7B",
     "Qwen/Qwen2.5-Coder-7B-Instruct",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-AWQ",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4",
-    "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int8",
     "Qwen/Qwen2.5-Math-1.5B",
     "Qwen/Qwen2.5-Math-1.5B-Instruct",
     "Qwen/Qwen2.5-Math-7B",
@@ -5186,9 +5451,8 @@
     "Qwen/Qwen2.5-Omni-7B-AWQ",
     "Qwen/Qwen2.5-Omni-7B-GPTQ-Int4",
     "Qwen/Qwen2.5-VL-3B-Instruct",
-    "Qwen/Qwen2.5-VL-3B-Instruct-AWQ",
     "Qwen/Qwen2.5-VL-7B-Instruct",
-    "Qwen/Qwen2.5-VL-7B-Instruct-AWQ"
+    "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
    ],
    "publicadores": [
     "amadeusai",
@@ -5197,10 +5461,11 @@
     "g-assismoraes",
     "Jurema-br",
     "allenai",
+    "livekit",
     "microsoft",
-    "mlboydaisuke",
     "nvidia",
-    "Qwen"
+    "Qwen",
+    "RedHatAI"
    ]
   },
   {
@@ -5450,12 +5715,11 @@
     "allenai/MolmoWeb-Pretrained-8B",
     "allenai/tmax-sft-8b",
     "HuggingFaceTB/qwen3-1.7b-gsm8k-sft",
-    "locriani/qwen3-1.7b-base-onnx",
+    "jinaai/jina-vlm",
     "microsoft/AesCode-8B",
     "microsoft/FrogBoss-32B-2510",
     "microsoft/FrogMini-14B-2510",
     "microsoft/UniRG-CXR",
-    "mlboydaisuke/Qwen3-0.6B-LiteRT-gpu-composites",
     "nvidia/Cosmos-Reason2-2B",
     "nvidia/Cosmos-Reason2-8B",
     "nvidia/EGM-4B",
@@ -5486,21 +5750,12 @@
     "Qwen/Qwen3-0.6B",
     "Qwen/Qwen3-0.6B-Base",
     "Qwen/Qwen3-0.6B-FP8",
-    "Qwen/Qwen3-0.6B-GPTQ-Int8",
-    "Qwen/Qwen3-0.6B-MLX-4bit",
-    "Qwen/Qwen3-0.6B-MLX-6bit",
-    "Qwen/Qwen3-0.6B-MLX-8bit",
     "Qwen/Qwen3-0.6B-MLX-bf16",
     "Qwen/Qwen3-1.7B",
     "Qwen/Qwen3-1.7B-Base",
     "Qwen/Qwen3-1.7B-FP8",
-    "Qwen/Qwen3-1.7B-GPTQ-Int8",
-    "Qwen/Qwen3-1.7B-MLX-4bit",
-    "Qwen/Qwen3-1.7B-MLX-6bit",
-    "Qwen/Qwen3-1.7B-MLX-8bit",
     "Qwen/Qwen3-1.7B-MLX-bf16",
     "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-4B-AWQ",
     "Qwen/Qwen3-4B-Base",
     "Qwen/Qwen3-4B-FP8",
     "Qwen/Qwen3-4B-Instruct-2507",
@@ -5513,7 +5768,6 @@
     "Qwen/Qwen3-4B-Thinking-2507",
     "Qwen/Qwen3-4B-Thinking-2507-FP8",
     "Qwen/Qwen3-8B",
-    "Qwen/Qwen3-8B-AWQ",
     "Qwen/Qwen3-8B-Base",
     "Qwen/Qwen3-8B-FP8",
     "Qwen/Qwen3-8B-MLX-4bit",
@@ -5561,9 +5815,8 @@
     "ufca-llms",
     "allenai",
     "HuggingFaceTB",
-    "locriani",
+    "jinaai",
     "microsoft",
-    "mlboydaisuke",
     "nvidia",
     "Polygl0t",
     "Qwen"
@@ -5579,6 +5832,7 @@
     "Guilherme34/Firefly-V1Q-Beta",
     "Guilherme34/Firefly-V2Q-NonThinking-RP",
     "Guilherme34/Firefly-V2Q-Think-RP-BETA",
+    "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF",
     "JonathanColetti/Qwen3.5-0.8B-Astra-WeightEdit",
     "microsoft/Fara1.5-4B",
     "microsoft/Fara1.5-9B",
@@ -5596,15 +5850,18 @@
     "Qwen/Qwen3.5-4B",
     "Qwen/Qwen3.5-4B-Base",
     "Qwen/Qwen3.5-9B",
-    "Qwen/Qwen3.5-9B-Base"
+    "Qwen/Qwen3.5-9B-Base",
+    "saidutta69/Qwen3.5-4B-heretic"
    ],
    "publicadores": [
     "cnmoro",
     "Guilherme34",
+    "DavidAU",
     "JonathanColetti",
     "microsoft",
     "nvidia",
-    "Qwen"
+    "Qwen",
+    "saidutta69"
    ]
   },
   {
@@ -5795,6 +6052,16 @@
    ]
   },
   {
+   "id": "salamandra",
+   "nome": "salamandra",
+   "modelos": [
+    "BSC-LT/salamandra-7b-instruct"
+   ],
+   "publicadores": [
+    "BSC-LT"
+   ]
+  },
+  {
    "id": "samantha",
    "nome": "Samantha",
    "modelos": [
@@ -5876,6 +6143,17 @@
    ],
    "publicadores": [
     "Guilherme34"
+   ]
+  },
+  {
+   "id": "sat",
+   "nome": "sat",
+   "modelos": [
+    "segment-any-text/sat-12l-sm",
+    "segment-any-text/sat-3l-sm"
+   ],
+   "publicadores": [
+    "segment-any-text"
    ]
   },
   {
@@ -5979,11 +6257,9 @@
     "HuggingFaceTB/smollm-1.7B-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-135M",
     "HuggingFaceTB/SmolLM-135M-Instruct",
-    "HuggingFaceTB/smollm-135M-instruct-v0.2-Q8_0-GGUF",
     "HuggingFaceTB/SmolLM-360M",
     "HuggingFaceTB/SmolLM-360M-Instruct",
-    "HuggingFaceTB/smollm-360M-instruct-add-basics",
-    "HuggingFaceTB/smollm-360M-instruct-v0.2-Q8_0-GGUF"
+    "HuggingFaceTB/smollm-360M-instruct-add-basics"
    ],
    "publicadores": [
     "HuggingFaceTB"
@@ -5996,17 +6272,12 @@
     "HuggingFaceTB/SmolLM2-1.7B",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "HuggingFaceTB/SmolLM2-1.7B-Instruct-16k",
-    "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
-    "HuggingFaceTB/SmolLM2-1.7B-Instruct-Q8-mlx",
     "HuggingFaceTB/SmolLM2-1.7B-sft-only",
     "HuggingFaceTB/SmolLM2-135M",
     "HuggingFaceTB/SmolLM2-135M-Instruct",
-    "HuggingFaceTB/SmolLM2-135M-Instruct-Q8-mlx",
     "HuggingFaceTB/smollm2-135M-SFT-Only",
     "HuggingFaceTB/SmolLM2-360M",
     "HuggingFaceTB/SmolLM2-360M-Instruct",
-    "HuggingFaceTB/SmolLM2-360M-Instruct-GGUF",
-    "HuggingFaceTB/SmolLM2-360M-Instruct-Q8-mlx",
     "HuggingFaceTB/SmolVLM-256M-Instruct",
     "HuggingFaceTB/SmolVLM-500M-Instruct",
     "HuggingFaceTB/SmolVLM-Base",
@@ -6051,11 +6322,16 @@
    "nome": "snowflake",
    "modelos": [
     "cnmoro/snowflake-arctic-embed-m-v2.0-cpu",
-    "HuggingFaceTB/python-edu-scorer"
+    "HuggingFaceTB/python-edu-scorer",
+    "OpenMed/OpenMed-PII-Portuguese-SnowflakeMed-Large-568M-v1",
+    "Snowflake/snowflake-arctic-embed-l-v2.0",
+    "Snowflake/snowflake-arctic-embed-m-v2.0"
    ],
    "publicadores": [
     "cnmoro",
-    "HuggingFaceTB"
+    "HuggingFaceTB",
+    "OpenMed",
+    "Snowflake"
    ]
   },
   {
@@ -6087,6 +6363,16 @@
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "stablelm-2",
+   "nome": "stablelm-2",
+   "modelos": [
+    "stabilityai/stablelm-2-1_6b"
+   ],
+   "publicadores": [
+    "stabilityai"
    ]
   },
   {
@@ -6305,6 +6591,16 @@
    ]
   },
   {
+   "id": "text2",
+   "nome": "text2",
+   "modelos": [
+    "shibing624/text2vec-base-multilingual"
+   ],
+   "publicadores": [
+    "shibing624"
+   ]
+  },
+  {
    "id": "therapeutic",
    "nome": "therapeutic",
    "modelos": [
@@ -6319,6 +6615,7 @@
    "nome": "tiny",
    "modelos": [
     "dominguesm/tiny-random-canarim",
+    "CohereLabs/tiny-aya-global",
     "hbfreed/tiny-dark-stories-big",
     "hbfreed/tiny-dark-stories-medium",
     "hbfreed/tiny-dark-stories-small",
@@ -6326,6 +6623,7 @@
    ],
    "publicadores": [
     "dominguesm",
+    "CohereLabs",
     "hbfreed"
    ]
   },
@@ -6543,6 +6841,16 @@
    ]
   },
   {
+   "id": "twhin",
+   "nome": "twhin",
+   "modelos": [
+    "Twitter/twhin-bert-base"
+   ],
+   "publicadores": [
+    "Twitter"
+   ]
+  },
+  {
    "id": "twil",
    "nome": "TwIL",
    "modelos": [
@@ -6550,16 +6858,6 @@
    ],
    "publicadores": [
     "Guilherme34"
-   ]
-  },
-  {
-   "id": "txgemma",
-   "nome": "txgemma",
-   "modelos": [
-    "google/txgemma-9b-chat"
-   ],
-   "publicadores": [
-    "google"
    ]
   },
   {
@@ -6665,6 +6963,16 @@
    ]
   },
   {
+   "id": "w2",
+   "nome": "w2",
+   "modelos": [
+    "facebook/w2v-bert-2.0"
+   ],
+   "publicadores": [
+    "facebook"
+   ]
+  },
+  {
    "id": "wavecoder",
    "nome": "wavecoder",
    "modelos": [
@@ -6695,6 +7003,16 @@
    ],
    "publicadores": [
     "microsoft"
+   ]
+  },
+  {
+   "id": "wikineural",
+   "nome": "wikineural",
+   "modelos": [
+    "Babelscape/wikineural-multilingual-ner"
+   ],
+   "publicadores": [
+    "Babelscape"
    ]
   },
   {
@@ -6743,10 +7061,34 @@
    "id": "xlm",
    "nome": "xlm",
    "modelos": [
-    "microsoft/xlm-align-base"
+    "bardsai/eu-pii-anonimization-multilang",
+    "classla/multilingual-IPTC-news-topic-classifier",
+    "facebook/xlm-roberta-xl",
+    "FacebookAI/xlm-roberta-base",
+    "FacebookAI/xlm-roberta-large",
+    "FacebookAI/xlm-roberta-large-finetuned-conll03-english",
+    "jinaai/jina-clip-v2",
+    "microsoft/xlm-align-base",
+    "papluca/xlm-roberta-base-language-detection"
    ],
    "publicadores": [
-    "microsoft"
+    "bardsai",
+    "classla",
+    "facebook",
+    "FacebookAI",
+    "jinaai",
+    "microsoft",
+    "papluca"
+   ]
+  },
+  {
+   "id": "xmod",
+   "nome": "xmod",
+   "modelos": [
+    "antoinelouis/colbert-xm"
+   ],
+   "publicadores": [
+    "antoinelouis"
    ]
   },
   {
