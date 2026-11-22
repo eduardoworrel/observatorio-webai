@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -506,6 +506,38 @@
    "relacionados": [
     "amadeusai"
    ]
+  },
+  {
+   "id": "ClassiCC-Corpus",
+   "nome": "ClassiCC-Corpus",
+   "tipo": "grupo",
+   "classe_pais": "br_evidencia",
+   "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2512.12770",
+    "acessado": "2026-11-22",
+    "rotulo": "artigo Curió-Edu 7B, afiliação dos autores",
+    "trecho": "Thales Sales Almeida Affiliation: Institute of Computing (IC) Affiliation: University of Campinas (UNICAMP) Affiliation: Maritaca AI"
+   },
+   "natureza": "nao_classificada",
+   "evidencia_natureza": null,
+   "escopo": "br",
+   "n_modelos_hf": 13,
+   "n_membros": 1,
+   "url": "https://huggingface.co/ClassiCC-Corpus",
+   "origem_lista": "entidade curada",
+   "modelos_fora_do_corte": 0,
+   "fontes": [
+    {
+     "rotulo": "Perfil no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "n_modelos_mapeados": 9,
+   "instituicoes": [],
+   "labs": [],
+   "relacionados": []
   },
   {
    "id": "cnmoro",

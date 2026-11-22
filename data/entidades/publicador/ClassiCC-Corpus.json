@@ -1,0 +1,35 @@
+{
+  "spec": "1.0",
+  "entidade": "publicador",
+  "id": "ClassiCC-Corpus",
+  "nome": "ClassiCC-Corpus",
+  "tipo": "grupo",
+  "natureza": "nao_classificada",
+  "classe_pais": "br_evidencia",
+  "pais": "BR",
+  "evidencia_pais": {
+    "tipo": "artigo",
+    "url": "https://arxiv.org/html/2512.12770",
+    "acessado": "2026-11-22",
+    "rotulo": "artigo Curió-Edu 7B, afiliação dos autores",
+    "trecho": "Thales Sales Almeida Affiliation: Institute of Computing (IC) Affiliation: University of Campinas (UNICAMP) Affiliation: Maritaca AI"
+  },
+  "links": {
+    "hf": "https://huggingface.co/ClassiCC-Corpus"
+  },
+  "fontes": [
+    {
+      "tipo": "perfil_oficial",
+      "url": "https://huggingface.co/ClassiCC-Corpus",
+      "acessado": "2026-11-22",
+      "rotulo": "Perfil no Hugging Face"
+    },
+    {
+      "tipo": "artigo",
+      "url": "https://sites.usp.br/keml/en/language-models-for-portuguese/",
+      "acessado": "2026-11-22",
+      "rotulo": "Lista de modelos para português do KEML (USP): Curió, português do Brasil"
+    }
+  ],
+  "status": "ativo"
+}

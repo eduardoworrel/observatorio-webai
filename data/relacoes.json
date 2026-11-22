@@ -1,9 +1,9 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
-  "assinatura": "dd743ffb3565ebe6"
+  "assinatura": "814348d12b35702a"
  },
  "instituicoes": [
   {
@@ -1667,6 +1667,12 @@
    "tipo": "publicador",
    "id": "chaoliangUNSW",
    "n_modelos": 1,
+   "filhos": []
+  },
+  {
+   "tipo": "publicador",
+   "id": "ClassiCC-Corpus",
+   "n_modelos": 9,
    "filhos": []
   },
   {
