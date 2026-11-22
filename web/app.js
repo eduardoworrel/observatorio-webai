@@ -890,6 +890,9 @@
         var fora = g.px < -OX - g.lw - 30 || g.px > VW - OX + g.lw + 30 || g.py < -OY - 40 || g.py > VH - OY + 40;
         if (fora !== g.cull) { g.cull = fora; g.el.classList.toggle('cull', fora); }
         if (!fora) { var tr = 'translate(' + g.px + 'px,' + g.py + 'px) translate(-50%,-50%)'; if (tr !== g.trAnt) { g.trAnt = tr; g.el.style.transform = tr; } }
+        // a ancora do rotulo (e da linha-guia) acompanha a camera: do proprio grupo ou, no rotulo composto, o centro dos grupos citados
+        if (g.cl) { var sx = 0, sy = 0; g.cl.forEach(function (q) { sx += q.px; sy += q.py; }); g.ax = sx / g.cl.length; g.ay = sy / g.cl.length; } else { g.ax = g.px; g.ay = g.py; }
+        if (g.chv && !fora) { var tl2 = 'translate(' + (g.chv[0] + g.ax - g.px) + 'px,' + (g.chv[1] - 11 + g.ay - g.py) + 'px)'; if (g.lx !== tl2) { g.lx = tl2; g.nome_el.style.transform = tl2; } }
       });
     } else {
     var tRot = performance.now();   // medicao do layout dos rotulos (STATS.rotMs)
@@ -1005,7 +1008,7 @@
   var layerEl = $('#grafo-camada'), rotEl = $('#sky-points');
   function medirPainel() {   // posicao do painel na janela; devolve se mudou
     var b = stage.getBoundingClientRect(), stg = $('.sky-stage').getBoundingClientRect(), ty = (innerWidth > 1050 && stg.top < 86) ? 86 + (b.top - stg.top) : b.top;   // no fim da pagina o painel sticky solta e sobe: o grafo continua fixo atras do conteudo, na posicao do painel fixo
-    CX1V = innerWidth > 1050 ? Math.min(VW, b.right + 150) : VW;
+    CX1V = VW;   // o grafo e o fundo estelar cobrem a janela inteira (a coluna da direita e semitransparente: nada de regiao nao desenhada)
     var mud = b.left !== OX || ty !== OY || b.width !== W || b.height !== H; rectEst = b; OX = b.left; OY = ty; W = b.width || 1; H = b.height || 1; RAD = Math.min(W, H) / 2 - 8;
     rotEl.style.left = OX + 'px'; rotEl.style.top = OY + 'px'; rotEl.style.width = W + 'px'; rotEl.style.height = H + 'px'; return mud;
   }
@@ -1056,8 +1059,14 @@
   stage.addEventListener('pointerdown', function (e) {
     if (e.target.closest('button') && !e.target.closest('.sky-model')) return;
     if (e.button !== 0) return;
-    drag = { x: e.clientX, y: e.clientY }; moved = 0; stage.setPointerCapture(e.pointerId); stage.classList.add('is-dragging');
-  }, { passive: true });
+    drag = { x: e.clientX, y: e.clientY }; moved = 0; try { stage.setPointerCapture(e.pointerId); } catch (x) {} stage.classList.add('is-dragging');
+    // durante o arrasto o documento inteiro nao seleciona texto (so durante o gesto) e o cursor segue 'grabbing' mesmo fora do painel
+    document.documentElement.classList.add('arrastando-grafo'); try { var sel0 = getSelection(); if (sel0 && sel0.rangeCount) sel0.removeAllRanges(); } catch (x) {}
+    e.preventDefault();
+  }, { passive: false });
+  ['selectstart', 'dragstart'].forEach(function (ev) { document.addEventListener(ev, function (e) { if (drag) e.preventDefault(); }, true); });
+  stage.addEventListener('lostpointercapture', function () { fim(null); });
+  addEventListener('blur', function () { fim(null); }); document.addEventListener('visibilitychange', function () { if (document.hidden) fim(null); });
   stage.addEventListener('pointermove', function (e) {
     var b = rectEst || (rectEst = stage.getBoundingClientRect());
     if (drag) {
@@ -1068,7 +1077,7 @@
   }, { passive: true });
   function fim(e) {
     if (!drag) return;
-    var clique = moved < 5; drag = null; stage.classList.remove('is-dragging'); salvaUrl();
+    var clique = moved < 5; drag = null; stage.classList.remove('is-dragging'); document.documentElement.classList.remove('arrastando-grafo'); salvaUrl();
     if (clique && e && e.type === 'pointerup') {
       var b = rectEst || (rectEst = stage.getBoundingClientRect()), s = achar(e.clientX - OX, e.clientY - OY);
       if (s) selecionar({ t: 'm', id: s.m.id }, stage);
@@ -1181,7 +1190,16 @@
     ms.sort(function (a, b) { var x = col.val(a), y = col.val(b); if (x == null && y == null) return (b.downloads || 0) - (a.downloads || 0); if (x == null) return 1; if (y == null) return -1; return (x < y ? -1 : x > y ? 1 : ((b.downloads || 0) - (a.downloads || 0))) * (x === y ? 1 : d); });
     return ms;
   }
+  // a tabela refeita pelo zoom/pan do grafo nao pode mudar a rolagem: guarda scrollY e scrollTop e segura a altura enquanto o usuario nao rola por conta propria
+  var rolEl = $('.home-average-scroll');
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, function (e) { if (rolEl.style.minHeight && !(e.target.closest && e.target.closest('#ceu'))) rolEl.style.minHeight = ''; }, { passive: true, capture: true }); });
   function renderTabela() {
+    var y0 = scrollY, st0 = rolEl.scrollTop, h0 = rolEl.offsetHeight, ancorar = y0 > 120 && !rolEl.style.minHeight;
+    if (ancorar) rolEl.style.minHeight = h0 + 'px';
+    renderTabelaIn();
+    rolEl.scrollTop = st0; if (Math.abs(scrollY - y0) > 1) window.scrollTo({ top: y0, behavior: 'instant' });
+  }
+  function renderTabelaIn() {
     var ms = ordenados(), cols = CAM.cols;
     $('#tb').dataset.camada = CAM.id;
     $('#tb thead').innerHTML = '<tr>' + cols.map(function (c) { return '<th scope="col" aria-sort="' + (S.sort.k === c.k ? (S.sort.d > 0 ? 'ascending' : 'descending') : 'none') + '"><button type="button" data-sort="' + c.k + '">' + t(c.rot) + '</button></th>'; }).join('') + '</tr>';
