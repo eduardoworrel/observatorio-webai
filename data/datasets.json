@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0",
   "unidades": {
@@ -170,6 +170,10 @@
    },
    "ds:pub:CERTIFoundation": {
     "em": "2026-11-20",
+    "sig": ""
+   },
+   "ds:pub:ClassiCC-Corpus": {
+    "em": "2026-11-22",
     "sig": ""
    },
    "ds:pub:FMendonca": {
@@ -538,6 +542,35 @@
    ],
    "u": [
     "ds:pub:artificialguybr"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "ClassiCC-Corpus/ClassiCC-PT",
+   "publicador": "ClassiCC-Corpus",
+   "nome": "ClassiCC-PT",
+   "descricao": "📚 ClassiCC-PT: Classified Common Crawl Corpus for Portuguese",
+   "idiomas": [],
+   "pt_br": false,
+   "pt": false,
+   "tarefas": [],
+   "licenca": null,
+   "tamanho_bytes": 164777362119,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 3277,
+   "likes": 16,
+   "atualizado": "2026-02-02",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/ClassiCC-Corpus/ClassiCC-PT",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "u": [
+    "ds:pub:ClassiCC-Corpus"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -2621,6 +2654,40 @@
    "benchmarks": []
   },
   {
+   "id": "ClassiCC-Corpus/curio-rewrite-non-edu-dataset",
+   "publicador": "ClassiCC-Corpus",
+   "nome": "curio-rewrite-non-edu-dataset",
+   "descricao": "Curio Rewrite — Non-Educational",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "cc-by-4.0",
+   "tamanho_bytes": 354882983498,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 216,
+   "likes": 0,
+   "atualizado": "2026-05-11",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/ClassiCC-Corpus/curio-rewrite-non-edu-dataset",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:ClassiCC-Corpus"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
    "id": "recogna-nlp/EduBench",
    "publicador": "recogna-nlp",
    "nome": "EduBench",
@@ -3152,6 +3219,40 @@
    "u": [
     "ds:pt",
     "ds:pub:nicholasKluge"
+   ],
+   "escopo": "br",
+   "benchmarks": []
+  },
+  {
+   "id": "ClassiCC-Corpus/curio-rewrite-edu-dataset",
+   "publicador": "ClassiCC-Corpus",
+   "nome": "curio-rewrite-edu-dataset",
+   "descricao": "Portuguese web texts (educational subset, filtered from ClassiCC) rewritten by Qwen2.5-7B-Instruct under four prompt styles. Used to train the Curio rewrite…",
+   "idiomas": [
+    "pt"
+   ],
+   "pt_br": false,
+   "pt": true,
+   "tarefas": [
+    "text-generation"
+   ],
+   "licenca": "cc-by-4.0",
+   "tamanho_bytes": 217634296364,
+   "faixa": ">10GB",
+   "linhas_faixa": "10M<n<100M",
+   "downloads": 166,
+   "likes": 0,
+   "atualizado": "2026-05-11",
+   "fontes": [
+    {
+     "rotulo": "Dataset no Hugging Face",
+     "url": "https://huggingface.co/datasets/ClassiCC-Corpus/curio-rewrite-edu-dataset",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "u": [
+    "ds:pt",
+    "ds:pub:ClassiCC-Corpus"
    ],
    "escopo": "br",
    "benchmarks": []
@@ -105093,39 +105194,6 @@
    "benchmarks": []
   },
   {
-   "id": "ClassiCC-Corpus/curio-rewrite-non-edu-dataset",
-   "publicador": "ClassiCC-Corpus",
-   "nome": "curio-rewrite-non-edu-dataset",
-   "descricao": "Curio Rewrite — Non-Educational",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": "cc-by-4.0",
-   "tamanho_bytes": 354882983498,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 209,
-   "likes": 0,
-   "atualizado": "2026-05-11",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/ClassiCC-Corpus/curio-rewrite-non-edu-dataset",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
-   ],
-   "escopo": "mundo",
-   "benchmarks": []
-  },
-  {
    "id": "ParaPat/para_pat",
    "publicador": "ParaPat",
    "nome": "para_pat",
@@ -112388,39 +112456,6 @@
    ],
    "u": [
     "ds:mundo:allenai"
-   ],
-   "escopo": "mundo",
-   "benchmarks": []
-  },
-  {
-   "id": "ClassiCC-Corpus/curio-rewrite-edu-dataset",
-   "publicador": "ClassiCC-Corpus",
-   "nome": "curio-rewrite-edu-dataset",
-   "descricao": "Portuguese web texts (educational subset, filtered from ClassiCC) rewritten by Qwen2.5-7B-Instruct under four prompt styles. Used to train the Curio rewrite…",
-   "idiomas": [
-    "pt"
-   ],
-   "pt_br": false,
-   "pt": true,
-   "tarefas": [
-    "text-generation"
-   ],
-   "licenca": "cc-by-4.0",
-   "tamanho_bytes": 217634296364,
-   "faixa": ">10GB",
-   "linhas_faixa": "10M<n<100M",
-   "downloads": 170,
-   "likes": 0,
-   "atualizado": "2026-05-11",
-   "fontes": [
-    {
-     "rotulo": "Dataset no Hugging Face",
-     "url": "https://huggingface.co/datasets/ClassiCC-Corpus/curio-rewrite-edu-dataset",
-     "acessado": "2026-11-20"
-    }
-   ],
-   "u": [
-    "ds:pt"
    ],
    "escopo": "mundo",
    "benchmarks": []

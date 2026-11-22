@@ -1,17 +1,17 @@
 {
- "data": "2026-11-21",
+ "data": "2026-11-22",
  "regra_gguf": "GGUF conta se a menor variante Q4 (ou a mais leve, se nao ha Q4) somar ate 4 GB",
  "corte_parametros_b": 12.0,
  "regra_filtro": 2,
  "brasil": {
-  "modelos": 1305,
+  "modelos": 1314,
   "nativo_oficial": 14,
   "nativo_comunidade": 3,
-  "so_gguf_wllama": 109,
-  "gguf_grande_sem_nativo": 64,
-  "nenhum": 1179,
+  "so_gguf_wllama": 112,
+  "gguf_grande_sem_nativo": 66,
+  "nenhum": 1185,
   "so_nativo": 17,
-  "nativo_mais_gguf": 126
+  "nativo_mais_gguf": 129
  },
  "mundo": {
   "modelos": 1650,
@@ -36,7 +36,7 @@
  "por_origem_brasil": {
   "desenvolvedor": 10,
   "foco_pt_br": 6,
-  "publicador": 1289
+  "publicador": 1298
  },
  "pt_declarado": {
   "brasil": 265,
@@ -74,32 +74,32 @@
   "nativo_mais_gguf": 11
  },
  "brasil_natureza_nao_classificada": {
-  "modelos": 952,
+  "modelos": 961,
   "nativo_oficial": 7,
   "nativo_comunidade": 1,
-  "so_gguf_wllama": 16,
-  "gguf_grande_sem_nativo": 20,
-  "nenhum": 928,
+  "so_gguf_wllama": 19,
+  "gguf_grande_sem_nativo": 22,
+  "nenhum": 934,
   "so_nativo": 8,
-  "nativo_mais_gguf": 24
+  "nativo_mais_gguf": 27
  },
  "maior_publicador_br": {
   "id": "g-assismoraes",
   "modelos": 822
  },
  "publicadores": {
-  "brasil": 49,
+  "brasil": 50,
   "mundo": 19,
   "brasil_por_natureza": {
    "independente": 8,
    "instituicao": 15,
    "empresa": 7,
-   "nao_classificada": 16
+   "nao_classificada": 17
   }
  },
  "candidatos": {
-  "avaliados": 153,
-  "classificados_brasil": 46,
+  "avaliados": 154,
+  "classificados_brasil": 47,
   "descartados": 107,
   "descartados_por_motivo": {
    "sem evidencia publica de ser do Brasil": 100,
@@ -1050,14 +1050,14 @@
  "por_familia_tarefa": {
   "gerador": {
    "brasil": {
-    "modelos": 780,
+    "modelos": 786,
     "nativo_oficial": 4,
     "nativo_comunidade": 0,
-    "so_gguf_wllama": 106,
-    "gguf_grande_sem_nativo": 64,
-    "nenhum": 670,
+    "so_gguf_wllama": 109,
+    "gguf_grande_sem_nativo": 66,
+    "nenhum": 673,
     "so_nativo": 4,
-    "nativo_mais_gguf": 110
+    "nativo_mais_gguf": 113
    },
    "mundo": {
     "modelos": 1361,
@@ -1070,24 +1070,24 @@
     "nativo_mais_gguf": 475
    },
    "brasil_sem_maior": {
-    "modelos": 312,
+    "modelos": 318,
     "nativo_oficial": 4,
     "nativo_comunidade": 0,
-    "so_gguf_wllama": 105,
-    "gguf_grande_sem_nativo": 64,
-    "nenhum": 203,
+    "so_gguf_wllama": 108,
+    "gguf_grande_sem_nativo": 66,
+    "nenhum": 206,
     "so_nativo": 4,
-    "nativo_mais_gguf": 109
+    "nativo_mais_gguf": 112
    }
   },
   "codificador": {
    "brasil": {
-    "modelos": 525,
+    "modelos": 528,
     "nativo_oficial": 10,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
-    "nenhum": 509,
+    "nenhum": 512,
     "so_nativo": 13,
     "nativo_mais_gguf": 16
    },
@@ -1102,12 +1102,12 @@
     "nativo_mais_gguf": 67
    },
    "brasil_sem_maior": {
-    "modelos": 171,
+    "modelos": 174,
     "nativo_oficial": 10,
     "nativo_comunidade": 3,
     "so_gguf_wllama": 3,
     "gguf_grande_sem_nativo": 0,
-    "nenhum": 155,
+    "nenhum": 158,
     "so_nativo": 13,
     "nativo_mais_gguf": 16
    }
@@ -1117,22 +1117,22 @@
   "id": "g-assismoraes",
   "modelos": 822,
   "brasil": {
-   "modelos": 483,
+   "modelos": 492,
    "nativo_oficial": 14,
    "nativo_comunidade": 3,
-   "so_gguf_wllama": 108,
-   "gguf_grande_sem_nativo": 64,
-   "nenhum": 358,
+   "so_gguf_wllama": 111,
+   "gguf_grande_sem_nativo": 66,
+   "nenhum": 364,
    "so_nativo": 17,
-   "nativo_mais_gguf": 125
+   "nativo_mais_gguf": 128
   },
-  "publicadores_brasil": 48
+  "publicadores_brasil": 49
  },
  "regra_maturidade": 1,
  "maturidade": {
   "brasil": {
-   "experimental": 858,
-   "documentado": 368,
+   "experimental": 861,
+   "documentado": 374,
    "indeterminado": 79
   },
   "mundo": {
@@ -1141,15 +1141,15 @@
    "indeterminado": 320
   },
   "brasil_sem_maior": {
-   "experimental": 65,
-   "documentado": 355,
+   "experimental": 68,
+   "documentado": 361,
    "indeterminado": 63
   },
   "por_familia_tarefa": {
    "gerador": {
     "brasil": {
-     "experimental": 493,
-     "documentado": 216,
+     "experimental": 496,
+     "documentado": 219,
      "indeterminado": 71
     },
     "mundo": {
@@ -1158,15 +1158,15 @@
      "indeterminado": 307
     },
     "brasil_sem_maior": {
-     "experimental": 46,
-     "documentado": 211,
+     "experimental": 49,
+     "documentado": 214,
      "indeterminado": 55
     }
    },
    "codificador": {
     "brasil": {
      "experimental": 365,
-     "documentado": 152,
+     "documentado": 155,
      "indeterminado": 8
     },
     "mundo": {
@@ -1176,21 +1176,21 @@
     },
     "brasil_sem_maior": {
      "experimental": 19,
-     "documentado": 144,
+     "documentado": 147,
      "indeterminado": 8
     }
    }
   },
   "builds": {
    "experimental": {
-    "total": 877,
+    "total": 880,
     "com_build_nativo": 0,
-    "so_gguf_wllama": 14
+    "so_gguf_wllama": 15
    },
    "documentado": {
-    "total": 1785,
+    "total": 1791,
     "com_build_nativo": 345,
-    "so_gguf_wllama": 323
+    "so_gguf_wllama": 325
    },
    "indeterminado": {
     "total": 408,

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -563,6 +563,59 @@
     "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it"
    ],
    "arestas": []
+  },
+  {
+   "id": "ClassiCC-Corpus",
+   "nome": "ClassiCC-Corpus",
+   "escopo": "br",
+   "modelos": [
+    "ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+    "ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+    "ClassiCC-Corpus/ClassiCC-PT-toxic-classifier",
+    "ClassiCC-Corpus/Curio-1.1b",
+    "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+    "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+    "ClassiCC-Corpus/Curio-7b",
+    "ClassiCC-Corpus/Curio-edu-1.1b",
+    "ClassiCC-Corpus/Curio-edu-7b"
+   ],
+   "arestas": [
+    [
+     "ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+     "ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+     "classicc"
+    ],
+    [
+     "ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+     "ClassiCC-Corpus/ClassiCC-PT-toxic-classifier",
+     "classicc"
+    ],
+    [
+     "ClassiCC-Corpus/Curio-1.1b",
+     "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+     "curio"
+    ],
+    [
+     "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+     "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+     "curio"
+    ],
+    [
+     "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+     "ClassiCC-Corpus/Curio-7b",
+     "curio"
+    ],
+    [
+     "ClassiCC-Corpus/Curio-7b",
+     "ClassiCC-Corpus/Curio-edu-1.1b",
+     "curio"
+    ],
+    [
+     "ClassiCC-Corpus/Curio-edu-1.1b",
+     "ClassiCC-Corpus/Curio-edu-7b",
+     "curio"
+    ]
+   ]
   },
   {
    "id": "cnmoro",

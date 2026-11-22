@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -7321,6 +7321,546 @@
    "maturidade": "documentado",
    "sinais_maturidade": [
     "sem_datasets"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+   "nome": "ClassiCC-PT-edu-classifier",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "ClassiCC",
+   "tarefa": "text-classification",
+   "familia_tarefa": "codificador",
+   "licenca": null,
+   "parametros_b": 0.11,
+   "downloads": 16,
+   "atualizado": "2026-02-02",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+   "nome": "ClassiCC-PT-stem-classifier",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "ClassiCC",
+   "tarefa": "text-classification",
+   "familia_tarefa": "codificador",
+   "licenca": null,
+   "parametros_b": 0.11,
+   "downloads": 17,
+   "atualizado": "2026-02-02",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/ClassiCC-PT-toxic-classifier",
+   "nome": "ClassiCC-PT-toxic-classifier",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "ClassiCC",
+   "tarefa": "text-classification",
+   "familia_tarefa": "codificador",
+   "licenca": null,
+   "parametros_b": 0.11,
+   "downloads": 12,
+   "atualizado": "2026-02-02",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-toxic-classifier",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/ClassiCC-PT-toxic-classifier",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-1.1b",
+   "nome": "Curio-1.1b",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 1.1,
+   "downloads": 22,
+   "atualizado": "2025-09-09",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [
+    {
+     "repo": "mradermacher/Curio-1.1b-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-GGUF",
+     "atualizado": "2025-08-30",
+     "downloads": 103,
+     "proprio": false,
+     "gb": 0.67,
+     "variante": "Curio-1.1b.Q4_K_M.gguf",
+     "destaque": true
+    },
+    {
+     "repo": "mradermacher/Curio-1.1b-i1-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-i1-GGUF",
+     "atualizado": "2025-12-23",
+     "downloads": 199,
+     "proprio": false,
+     "gb": 0.67,
+     "variante": "Curio-1.1b.i1-Q4_K_M.gguf",
+     "destaque": true
+    }
+   ],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": true,
+   "gguf_wllama": true,
+   "gguf_gb": 0.67,
+   "gguf_origem": "comunidade",
+   "gguf_grande": false,
+   "via": "gguf",
+   "gb_navegador": 0.67,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-GGUF",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-i1-GGUF",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+   "nome": "Curio-1.1b-intermediate-checkpoint-100B",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 1.1,
+   "downloads": 13,
+   "atualizado": "2025-08-10",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [
+    {
+     "repo": "mradermacher/Curio-1.1b-intermediate-checkpoint-100B-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-intermediate-checkpoint-100B-GGUF",
+     "atualizado": "2025-09-06",
+     "downloads": 75,
+     "proprio": false,
+     "gb": 0.67,
+     "variante": "Curio-1.1b-intermediate-checkpoint-100B.Q4_K_M.gguf",
+     "destaque": true
+    },
+    {
+     "repo": "mradermacher/Curio-1.1b-intermediate-checkpoint-100B-i1-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-intermediate-checkpoint-100B-i1-GGUF",
+     "atualizado": "2025-12-28",
+     "downloads": 267,
+     "proprio": false,
+     "gb": 0.67,
+     "variante": "Curio-1.1b-intermediate-checkpoint-100B.i1-Q4_K_M.gguf",
+     "destaque": true
+    }
+   ],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": true,
+   "gguf_wllama": true,
+   "gguf_gb": 0.67,
+   "gguf_origem": "comunidade",
+   "gguf_grande": false,
+   "via": "gguf",
+   "gb_navegador": 0.67,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-intermediate-checkpoint-100B-GGUF",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-1.1b-intermediate-checkpoint-100B-i1-GGUF",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+   "nome": "Curio-1.1b-intermediate-checkpoint-50B",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 1.1,
+   "downloads": 5,
+   "atualizado": "2025-08-10",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": false,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": false,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "documentado",
+   "sinais_maturidade": [
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-7b",
+   "nome": "Curio-7b",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 6.74,
+   "downloads": 15,
+   "atualizado": "2025-11-22",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-7b",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [
+    {
+     "repo": "mradermacher/Curio-7b-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-7b-GGUF",
+     "atualizado": "2026-10-13",
+     "downloads": 208,
+     "proprio": false,
+     "gb": 4.08,
+     "variante": "Curio-7b.Q4_K_M.gguf",
+     "destaque": true
+    }
+   ],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": true,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": true,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-7b",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-7b-GGUF",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "experimental",
+   "sinais_maturidade": [
+    "cartao_padrao_hub",
+    "placeholders_more_info",
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-edu-1.1b",
+   "nome": "Curio-edu-1.1b",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 1.1,
+   "downloads": 13,
+   "atualizado": "2025-11-22",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-edu-1.1b",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [
+    {
+     "repo": "mradermacher/Curio-edu-1.1b-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-edu-1.1b-GGUF",
+     "atualizado": "2025-11-23",
+     "downloads": 107,
+     "proprio": false,
+     "gb": 0.67,
+     "variante": "Curio-edu-1.1b.Q4_K_M.gguf",
+     "destaque": true
+    }
+   ],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": true,
+   "gguf_wllama": true,
+   "gguf_gb": 0.67,
+   "gguf_origem": "comunidade",
+   "gguf_grande": false,
+   "via": "gguf",
+   "gb_navegador": 0.67,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-edu-1.1b",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-edu-1.1b-GGUF",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "experimental",
+   "sinais_maturidade": [
+    "cartao_padrao_hub",
+    "placeholders_more_info",
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
+   ],
+   "creditos": [],
+   "origem_motivo": "publicador"
+  },
+  {
+   "id": "ClassiCC-Corpus/Curio-edu-7b",
+   "nome": "Curio-edu-7b",
+   "publicador": "ClassiCC-Corpus",
+   "escopo": "br",
+   "familia": "Curio",
+   "tarefa": "text-generation",
+   "familia_tarefa": "gerador",
+   "licenca": null,
+   "parametros_b": 6.74,
+   "downloads": 12,
+   "atualizado": "2025-11-22",
+   "idioma_pt": false,
+   "url": "https://huggingface.co/ClassiCC-Corpus/Curio-edu-7b",
+   "base": null,
+   "formatos_proprios": [],
+   "builds": [
+    {
+     "repo": "mradermacher/Curio-edu-7b-GGUF",
+     "autor": "mradermacher",
+     "formato": "gguf",
+     "oficial": false,
+     "runtime_org": false,
+     "url": "https://huggingface.co/mradermacher/Curio-edu-7b-GGUF",
+     "atualizado": "2026-10-13",
+     "downloads": 181,
+     "proprio": false,
+     "gb": 4.08,
+     "variante": "Curio-edu-7b.Q4_K_M.gguf",
+     "destaque": true
+    }
+   ],
+   "idiomas": [],
+   "pt": false,
+   "status": "sem_build",
+   "gguf": true,
+   "gguf_wllama": false,
+   "gguf_gb": null,
+   "gguf_origem": null,
+   "gguf_grande": true,
+   "via": "nenhum",
+   "gb_navegador": null,
+   "formatos_navegador": [],
+   "fontes": [
+    {
+     "rotulo": "Modelo no Hugging Face",
+     "url": "https://huggingface.co/ClassiCC-Corpus/Curio-edu-7b",
+     "acessado": "2026-11-22"
+    },
+    {
+     "rotulo": "Build gguf (da comunidade)",
+     "url": "https://huggingface.co/mradermacher/Curio-edu-7b-GGUF",
+     "acessado": "2026-11-22"
+    }
+   ],
+   "maturidade": "experimental",
+   "sinais_maturidade": [
+    "cartao_padrao_hub",
+    "placeholders_more_info",
+    "sem_licenca",
+    "sem_base_model",
+    "sem_idioma"
    ],
    "creditos": [],
    "origem_motivo": "publicador"

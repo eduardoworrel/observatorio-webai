@@ -1,6 +1,6 @@
 {
  "meta": {
-  "coletado_em": "2026-11-21",
+  "coletado_em": "2026-11-22",
   "fonte": "Hugging Face API publica",
   "versao_spec": "1.0"
  },
@@ -916,6 +916,18 @@
    ]
   },
   {
+   "id": "classicc",
+   "nome": "ClassiCC",
+   "modelos": [
+    "ClassiCC-Corpus/ClassiCC-PT-edu-classifier",
+    "ClassiCC-Corpus/ClassiCC-PT-stem-classifier",
+    "ClassiCC-Corpus/ClassiCC-PT-toxic-classifier"
+   ],
+   "publicadores": [
+    "ClassiCC-Corpus"
+   ]
+  },
+  {
    "id": "clinicalnerpt",
    "nome": "clinicalnerpt",
    "modelos": [
@@ -1133,6 +1145,21 @@
    ],
    "publicadores": [
     "HuggingFaceTB"
+   ]
+  },
+  {
+   "id": "curio",
+   "nome": "Curio",
+   "modelos": [
+    "ClassiCC-Corpus/Curio-1.1b",
+    "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-100B",
+    "ClassiCC-Corpus/Curio-1.1b-intermediate-checkpoint-50B",
+    "ClassiCC-Corpus/Curio-7b",
+    "ClassiCC-Corpus/Curio-edu-1.1b",
+    "ClassiCC-Corpus/Curio-edu-7b"
+   ],
+   "publicadores": [
+    "ClassiCC-Corpus"
    ]
   },
   {
