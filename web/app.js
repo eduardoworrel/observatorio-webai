@@ -1190,19 +1190,17 @@
     ms.sort(function (a, b) { var x = col.val(a), y = col.val(b); if (x == null && y == null) return (b.downloads || 0) - (a.downloads || 0); if (x == null) return 1; if (y == null) return -1; return (x < y ? -1 : x > y ? 1 : ((b.downloads || 0) - (a.downloads || 0))) * (x === y ? 1 : d); });
     return ms;
   }
-  // a tabela refeita pelo zoom/pan do grafo nao pode mudar a rolagem: guarda scrollY e scrollTop e segura a altura enquanto o usuario nao rola por conta propria
-  var rolEl = $('.home-average-scroll');
-  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, function (e) { if (rolEl.style.minHeight && !(e.target.closest && e.target.closest('#ceu'))) rolEl.style.minHeight = ''; }, { passive: true, capture: true }); });
+  // a caixa da tabela tem altura fixa e rolagem interna; o recorte pode mudar com zoom/pan, a caixa nao. O scrollTop so volta ao topo se o recorte mudou de fato.
+  var rolEl = $('.home-average-scroll'), sigTab = '';
   function renderTabela() {
-    var y0 = scrollY, st0 = rolEl.scrollTop, h0 = rolEl.offsetHeight, ancorar = y0 > 120 && !rolEl.style.minHeight;
-    if (ancorar) rolEl.style.minHeight = h0 + 'px';
-    renderTabelaIn();
-    rolEl.scrollTop = st0; if (Math.abs(scrollY - y0) > 1) window.scrollTo({ top: y0, behavior: 'instant' });
+    var st0 = rolEl.scrollTop; renderTabelaIn();
+    if (sigTab === rolEl.dataset.sig) rolEl.scrollTop = st0; else { rolEl.scrollTop = 0; sigTab = rolEl.dataset.sig; }
   }
   function renderTabelaIn() {
     var ms = ordenados(), cols = CAM.cols;
     $('#tb').dataset.camada = CAM.id;
     $('#tb thead').innerHTML = '<tr>' + cols.map(function (c) { return '<th scope="col" aria-sort="' + (S.sort.k === c.k ? (S.sort.d > 0 ? 'ascending' : 'descending') : 'none') + '"><button type="button" data-sort="' + c.k + '">' + t(c.rot) + '</button></th>'; }).join('') + '</tr>';
+    rolEl.dataset.sig = S.tab + ':' + sigDe(ms);
     var mostrar = ms.slice(0, S.limite);
     $('#tb tbody').innerHTML = mostrar.length ? mostrar.map(function (m) {
       return '<tr tabindex="0" data-id="' + esc(m.id) + '"' + (S.sel && S.sel.t === 'm' && S.sel.id === m.id ? ' class="is-sel"' : '') + '>' + cols.map(function (c) { return c.td(m); }).join('') + '</tr>';
