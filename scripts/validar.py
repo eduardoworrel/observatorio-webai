@@ -304,6 +304,9 @@ def semantica(arq, o, loc, ctx, rejeitado=False):
         ds = o.get("datasets") or []
         if len(ds) != len({d.lower() for d in ds if isinstance(d, str)}): E(("datasets",), "ID_DUPLICADO", "dataset repetido na lista", "")
         if o.get("tipo") == "leaderboard" and not (o.get("links") or {}).get("leaderboard"): E(("links", "leaderboard"), "CAMPO_FALTA", "tipo leaderboard exige links.leaderboard", "")
+    if ent == "familia":
+        for i, mid in enumerate((o.get("excecao_escopo_br") or {}).get("modelos") or []):
+            if mid not in ctx["modelos"]: E(("excecao_escopo_br", "modelos", i), "REF_INEXISTENTE", f"modelo {mid!r} nao existe nos dados (o modelo e derivado pelo coletor; nao se cadastra)", "")
     if ent == "familia" and o.get("origem") and o["origem"] not in ctx["pubs"]: E(("origem",), "REF_INEXISTENTE", f"publicador {o['origem']!r} nao existe", "")
 
 def carregar_json(arq):

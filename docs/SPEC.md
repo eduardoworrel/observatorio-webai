@@ -97,6 +97,8 @@ Não há arquivo curado de modelo. Os modelos, com id `<publicador>/<nome>` como
 
 `id` (kebab-case), `nome`, `origem?` (publicador), `descricao`, `links`, `fontes`. A pertença de modelos à família sai da regra F ([docs/SPEC_0.2_coleta.md](SPEC_0.2_coleta.md)). O arquivo curado só dá o nome de marca, quando o cartão de um modelo da família ou o artigo oficial o cita (a fonte traz o trecho literal); o `id` é a chave derivada em kebab-case.
 
+`excecao_escopo_br?` `{motivo, modelos[], fontes[]}`: registra, por família, que a equipe que desenvolveu os modelos é a de um projeto brasileiro, embora o cartão aponte para a organização de um grupo no exterior. `motivo` é sempre `desenvolvedor`; `modelos` é uma lista fechada de ids (cada um precisa existir nos dados derivados, `REF_INEXISTENTE`); `fontes` traz evidências (4.7) públicas, com trecho literal de um artigo ou de uma página oficial. Nenhum modelo entra por nome, padrão de nome ou nome de pessoa; modelo novo da família só entra por edição da lista, com a fonte. A primeira fonte vira `origem_fonte` de cada modelo listado. Exemplo: `data/entidades/familia/tucano2.json`.
+
 ### 4.7 Fonte e evidência (referências mínimas)
 
 Fonte: `{tipo, url, acessado}` + opcionais `rotulo`, `trecho`. Evidência: igual, com `trecho` **obrigatório** (citação literal curta, até 240 caracteres, do que a página diz). Tipos:
@@ -277,7 +279,7 @@ A regra é conservadora de propósito: prefere classificar como `documentado` um
 | `origem_motivo` | condição |
 |---|---|
 | `publicador` | o publicador está no Brasil (regra B, seção 6) |
-| `desenvolvedor` | crédito (4.11) de papel `desenvolvedor` de laboratório ou instituição com `pais = BR`, com fonte; ou a linha de código-fonte do cartão do modelo aponta para o repositório de GitHub que o perfil de um publicador do Brasil declara como seu (o trecho do cartão fica em `origem_fonte`, com `credito: "pub:ID"`) |
+| `desenvolvedor` | crédito (4.11) de papel `desenvolvedor` de laboratório ou instituição com `pais = BR`, com fonte; ou exceção registrada por família (4.6, `excecao_escopo_br`; o trecho do artigo ou da página pública fica em `origem_fonte`, com `familia: ID`); ou a linha de código-fonte do cartão do modelo aponta para o repositório de GitHub que o perfil de um publicador do Brasil declara como seu (o trecho do cartão fica em `origem_fonte`, com `credito: "pub:ID"`) |
 | `financiador` | crédito de papel `financiador` de laboratório ou instituição com `pais = BR`, com fonte |
 | `foco_pt_br` | idiomas só `pt` ou `pt` e `en`, sem marcador de português europeu, e: variante explícita no nome ou nas tags (`ptbr`, `pt-BR`, `Brazilian`, `brasil`); ou declaração literal do português do Brasil como alvo no cartão; ou declaração literal no artigo (arXiv) citado nas tags do modelo, do tipo "our efforts are mainly concerned with Brazilian Portuguese". O trecho e o link ficam em `origem_fonte` (`criterio`: `variante_explicita`, `declaracao` ou `artigo`) |
 

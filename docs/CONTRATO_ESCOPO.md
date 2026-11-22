@@ -6,7 +6,7 @@ Campos novos de cada modelo, em `data/modelos.json` e em `web/data.js` (objeto p
 |---|---|---|
 | `escopo` | `"br"` ou `"mundo"` | escopo do **modelo** (seção 9.8 da SPEC) |
 | `origem_motivo` | `"publicador"`, `"desenvolvedor"`, `"financiador"` ou `"foco_pt_br"` | por que é Brasil; ausente quando o escopo é Mundo |
-| `origem_fonte` | objeto | para os motivos diferentes de `publicador`: `url`, `trecho` e, conforme o motivo, `credito` (`inst:ID:papel` ou `pub:ID`) ou `criterio` (`variante_explicita`, `declaracao` ou `artigo`) |
+| `origem_fonte` | objeto | para os motivos diferentes de `publicador`: `url`, `trecho` e, conforme o motivo, `credito` (`inst:ID:papel` ou `pub:ID`), `familia` (id da família, quando a origem é uma exceção registrada em `excecao_escopo_br`) ou `criterio` (`variante_explicita`, `declaracao` ou `artigo`) |
 | `publicador` | texto | quem hospeda o modelo; atributo próprio, separado da origem |
 | `creditos` | lista de textos `inst:ID:papel` ou `lab:ID:papel` | papel: `desenvolvedor`, `financiador`, `parceiro` ou `plataforma` |
 | `idiomas` | lista | idiomas do cartão (ISO 639-1) |
